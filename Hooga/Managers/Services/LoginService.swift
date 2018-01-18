@@ -33,18 +33,17 @@ class LoginService{
                     "password":password]
         Common.showHud()
         Service.postRequest(endPoint: kServiceUrl+ServiceName.LOGIN.rawValue,params: dict) { (response) in
-
+             Common.hideHud()
             if response.isSuccess(),let obj = response.data{
 //                let json = JSON(response.data!)
                 let login = LoginResponseDto(map: obj)
                 StorageModel().saveUserData(model: login!)
                 let data = StorageModel().getUserData()
-                
-//                callback(true,Mapper<ProductModel>().mapArray(JSONArray: json.arrayObject as! [[String:Any]]), response.message!);
+                callback(true, response.message!);
             } else {
                 callback(false,response.message!);
             }
-            Common.hideHud()
+           
         }
     }
     

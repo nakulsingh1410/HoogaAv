@@ -64,7 +64,12 @@ class LoginViewController: UIViewController {
     }
     
     
-    
+    fileprivate func navigateToEvent(){
+        let storyboard = UIStoryboard(name: "Event", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "EventListViewController") as? EventListViewController{
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
     
     /*********************************************************************************/
     // MARK: IB_Actions
@@ -94,8 +99,13 @@ class LoginViewController: UIViewController {
 extension LoginViewController{
     
     func loginAPI(userName:String,password:String)  {
-        LoginService.loginUser(username: userName, password: password) { (flag, message) in
-            
+        LoginService.loginUser(username: userName, password: password) {[weak self]  (flag, message) in
+            guard let weakSelf = self else {return}
+            if flag {
+                weakSelf.navigateToEvent()
+            }else{
+                Common.showAlert(message: message)
+            }
         }
     }
     

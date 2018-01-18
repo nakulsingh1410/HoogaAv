@@ -53,7 +53,6 @@
 		30D77BFE200B37C400386438 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77BF8200B37C400386438 /* LoginViewController.swift */; };
 		30D77BFF200B37C400386438 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77BF9200B37C400386438 /* RegisterViewController.swift */; };
 		30D77C00200B37C400386438 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D77BFB200B37C400386438 /* Main.storyboard */; };
-		30D77C04200B380D00386438 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C03200B380D00386438 /* HomeViewController.swift */; };
 		30D77C07200B399800386438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D77C06200B399800386438 /* LaunchScreen.storyboard */; };
 		30D77C09200B3AFA00386438 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C08200B3AFA00386438 /* LoginService.swift */; };
 		30D77C0C200B3BBA00386438 /* LoginResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C0B200B3BBA00386438 /* LoginResponseDto.swift */; };
@@ -62,6 +61,9 @@
 		30D77C12200CD77900386438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D77C11200CD77900386438 /* Assets.xcassets */; };
 		30D77C15200CD81400386438 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 30D77C14200CD81400386438 /* loading.gif */; };
 		30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C16200CDA4000386438 /* UIImage+Gif.swift */; };
+		30D77C1B201088B400386438 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C1A201088B400386438 /* HomeViewController.swift */; };
+		30D77C1F201088F700386438 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D77C1E201088F700386438 /* Event.storyboard */; };
+		30D77C212010891900386438 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C202010891900386438 /* EventListViewController.swift */; };
 		737D16CEEF1F2D5BEB869FDB /* Pods_Hooga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4DDC9C7D5ED88786B8A3C9 /* Pods_Hooga.framework */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
@@ -138,7 +140,6 @@
 		30D77BF8200B37C400386438 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		30D77BF9200B37C400386438 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		30D77BFB200B37C400386438 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		30D77C03200B380D00386438 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		30D77C06200B399800386438 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30D77C08200B3AFA00386438 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		30D77C0B200B3BBA00386438 /* LoginResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDto.swift; sourceTree = "<group>"; };
@@ -147,6 +148,9 @@
 		30D77C11200CD77900386438 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30D77C14200CD81400386438 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		30D77C16200CDA4000386438 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		30D77C1A201088B400386438 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		30D77C1E201088F700386438 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		30D77C202010891900386438 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		6D665E74FE8F852E0924AC9A /* Pods-Hooga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hooga.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hooga/Pods-Hooga.release.xcconfig"; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -321,8 +325,8 @@
 		30D77BAE200B306900386438 /* AppModules */ = {
 			isa = PBXGroup;
 			children = (
+				30D77C18201088B400386438 /* Event */,
 				30D77C05200B399800386438 /* Splash */,
-				30D77BFC200B37C400386438 /* Home */,
 				30D77BF5200B37C400386438 /* Login */,
 			);
 			path = AppModules;
@@ -430,30 +434,6 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		30D77BFC200B37C400386438 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				30D77C01200B37E500386438 /* Controller */,
-				30D77C02200B37E500386438 /* Storyboard */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		30D77C01200B37E500386438 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				30D77C03200B380D00386438 /* HomeViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		30D77C02200B37E500386438 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		30D77C05200B399800386438 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +456,40 @@
 				30D77C14200CD81400386438 /* loading.gif */,
 			);
 			path = Gif;
+			sourceTree = "<group>";
+		};
+		30D77C18201088B400386438 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				30D77C19201088B400386438 /* Controller */,
+				30D77C1C201088DF00386438 /* Model */,
+				30D77C1D201088DF00386438 /* Storyboard */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		30D77C19201088B400386438 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				30D77C1A201088B400386438 /* HomeViewController.swift */,
+				30D77C202010891900386438 /* EventListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		30D77C1C201088DF00386438 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30D77C1D201088DF00386438 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				30D77C1E201088F700386438 /* Event.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		5585BAD315FA0F91E67A4FC9 /* Pods */ = {
@@ -612,6 +626,7 @@
 				301B866C2007452900DA7855 /* Assets.xcassets in Resources */,
 				30D77B98200B217E00386438 /* Frutiger in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
+				30D77C1F201088F700386438 /* Event.storyboard in Resources */,
 				30D77B97200B217E00386438 /* Eurostile in Resources */,
 				30D77C00200B37C400386438 /* Main.storyboard in Resources */,
 				30D77B9C200B217E00386438 /* Gotham-Book.otf in Resources */,
@@ -808,7 +823,6 @@
 			files = (
 				30D77BD6200B361400386438 /* UIApplication.swift in Sources */,
 				30D77BEF200B36B400386438 /* RightViewController.swift in Sources */,
-				30D77C04200B380D00386438 /* HomeViewController.swift in Sources */,
 				30D77BC8200B35AF00386438 /* Reachability.swift in Sources */,
 				30D77BE2200B366C00386438 /* ResponseDto.swift in Sources */,
 				30D77B8C200B203300386438 /* HoogaTextField.swift in Sources */,
@@ -830,6 +844,7 @@
 				30D77B9F200B2AC900386438 /* HoogaButton.swift in Sources */,
 				30D77BFF200B37C400386438 /* RegisterViewController.swift in Sources */,
 				30D77C0C200B3BBA00386438 /* LoginResponseDto.swift in Sources */,
+				30D77C1B201088B400386438 /* HomeViewController.swift in Sources */,
 				30D77C09200B3AFA00386438 /* LoginService.swift in Sources */,
 				301B863520073F2C00DA7855 /* Hooga.xcdatamodeld in Sources */,
 				30D77BD5200B361400386438 /* String.swift in Sources */,
@@ -839,6 +854,7 @@
 				30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */,
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,
+				30D77C212010891900386438 /* EventListViewController.swift in Sources */,
 				30D77BC0200B350800386438 /* ServiceManager.swift in Sources */,
 				30D77BF2200B36B400386438 /* BaseTableViewCell.swift in Sources */,
 				30D77BC4200B355500386438 /* Constant.swift in Sources */,
