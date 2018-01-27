@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HoogaLabel: UITextField {
+class HoogaLabel: UILabel {
 
     /*
     // Only override draw() if you perform custom drawing.

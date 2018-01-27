@@ -47,8 +47,10 @@ var kBounds = UIScreen.main.bounds
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 /************************ Server Url ************************/
-let kDomain = "http://158.140.133.89/HoogaAPI/";
+let kDomain    = "http://158.140.133.89/HoogaAPI/";
 let kSubDomain = "api/users/";
+let kEvent     = "api/events/"
+
 let kServiceUrl  = kDomain + kSubDomain
 
 /************************ FontSizes ************************/
@@ -69,6 +71,13 @@ struct FontSizes {
 
 public enum ServiceName:String {
     case LOGIN = "validateUser"
+    case VERIFY_OTP = "verifyOTP"
+    case RIGISTER_USER = "registerUser"
+    case SHOW_CATEGORIES = "showCategories"
+    case SHOW_ENTRY_TYPES = "showEntryTypes"
+    case Fill_TAGS_LIST = "fillTagsList"
+    case ON_GOING_EVENTS = "showOngoingEvents"
+
     
 }
 
@@ -82,12 +91,17 @@ let kCancel = "Cancel";
 
 public enum MessageError: String{
     
-    case USER_FIRST_NAME   = "Please enter first name."
-    case USER_LAST_NAME    = "Please enter last name."
-    case USER_NAME         = "Please enter name."
+    case USER_FIRST_NAME_BLANK      = "Please enter first name."
+    case USER_LAST_NAME_BLANK       = "Please enter last name."
     
-    case EMAIL_BLANK       = "Please enter email address."
-    case EMAIL_INVALID     = "Please enter valid email address."
+    case USER_NAME_BLANK            = "Please enter email / hand phone."
+    case EMAIL_BLANK                = "Please enter email address."
+    case EMAIL_INVALID              = "Please enter valid email address."
+    case USER_GENDER_BLANK          = "Please select gender."
+    case USER_DOB_BLANK             = "Please enter date of birth."
+    case ADDRESS1_BLANK             = "Please enter address1."
+    case ADDRESS2_BLANK             = "Please enter address2."
+
     
     case PASSWORD_EMPTY    = "Please enter password."
     case PASSWORD_MATCH    = "Password and Confirm Password should be same."

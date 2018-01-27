@@ -10,6 +10,7 @@ import UIKit
 
 class ForgotPasswordViewController: UIViewController {
 
+    @IBOutlet weak var txtFEmail: HoogaTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,19 +23,16 @@ class ForgotPasswordViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
+    /*********************************************************************************/
+    // MARK: IB_Action
+    /*********************************************************************************/
     @IBAction func btnBackTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func btnSubmitTapped(_ sender: Any) {
 
+    }
+    @IBAction func btnCancelTapped(_ sender: Any) {
+    }
 }

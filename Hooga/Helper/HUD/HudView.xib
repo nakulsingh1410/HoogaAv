@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,34 +19,24 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYE-en-zDh">
-                    <rect key="frame" x="112.5" y="163.5" width="150" height="150"/>
+                    <rect key="frame" x="113" y="259" width="150" height="150"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="5oZ-wc-FZG"/>
                         <constraint firstAttribute="width" constant="150" id="CIH-lY-dwq"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5R-Jr-sVb">
-                    <rect key="frame" x="50" y="323" width="275" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="0.27680329623287681" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="W8y-Po-wg8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5fr-q4-3pS"/>
-                <constraint firstItem="W5R-Jr-sVb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BXZ-nV-kze"/>
                 <constraint firstItem="W8y-Po-wg8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Dfb-Rt-RCp"/>
-                <constraint firstItem="W5R-Jr-sVb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="E3Y-Ia-Mpf"/>
                 <constraint firstItem="wYE-en-zDh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ljz-OJ-hhM"/>
-                <constraint firstItem="W5R-Jr-sVb" firstAttribute="top" secondItem="wYE-en-zDh" secondAttribute="bottom" constant="10" id="XFW-L6-Cic"/>
+                <constraint firstItem="wYE-en-zDh" firstAttribute="centerY" secondItem="W8y-Po-wg8" secondAttribute="centerY" id="ag9-jW-hPZ"/>
                 <constraint firstAttribute="bottom" secondItem="W8y-Po-wg8" secondAttribute="bottom" id="irg-Ra-08h"/>
-                <constraint firstItem="W5R-Jr-sVb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="m9k-2g-FX0"/>
+                <constraint firstItem="wYE-en-zDh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="peR-gk-Nul"/>
                 <constraint firstAttribute="trailing" secondItem="W8y-Po-wg8" secondAttribute="trailing" id="vtN-aJ-mxa"/>
-                <constraint firstAttribute="trailing" secondItem="W5R-Jr-sVb" secondAttribute="trailing" constant="50" id="z5R-ZI-YOC"/>
             </constraints>
             <connections>
-                <outlet property="hudTitle" destination="W5R-Jr-sVb" id="syU-5Y-x5Y"/>
                 <outlet property="loaderImageView" destination="wYE-en-zDh" id="ZUK-u6-FPe"/>
             </connections>
             <point key="canvasLocation" x="-91.5" y="-153.5"/>

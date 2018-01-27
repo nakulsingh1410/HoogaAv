@@ -25,13 +25,13 @@ class HudView: UIView {
     
     override func draw(_ rect: CGRect) {
         if let loaderTitle = title {
-            hudTitle.text = loaderTitle
+            //hudTitle.text = loaderTitle
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-         loaderImageView.image = UIImage.gif(name: "loading")
+         loaderImageView.image = UIImage.gif(name: "loader2")
     }
    
 

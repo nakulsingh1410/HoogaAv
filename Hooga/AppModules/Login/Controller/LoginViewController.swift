@@ -36,16 +36,16 @@ class LoginViewController: UIViewController {
     /*********************************************************************************/
     
     private func loginUser()  {
-    
         var message : String?
-        if let userName = txtFEmail.text,let password = txtFPassword.text {
-            loginAPI(userName: userName, password: password)
-
+        if let userName = txtFEmail.text,userName.trimmingCharacters(in: .whitespaces).isEmpty{
+            message = MessageError.USER_NAME_BLANK .rawValue
+        }else if let password = txtFPassword.text,password.trimmingCharacters(in: .whitespaces).isEmpty {
+                       message = MessageError.PASSWORD_EMPTY.rawValue
         }
-        
         if let errorMsg = message {
-            
+            Common.showAlert(message: errorMsg)
         }else{
+            loginAPI(userName: txtFEmail.text!, password: txtFPassword.text!)
         }
     }
     
@@ -76,7 +76,9 @@ class LoginViewController: UIViewController {
     /*********************************************************************************/
     
     @IBAction func btnLoginTapped(_ sender: Any) {
-        loginUser()
+//        loginUser()
+        navigateToEvent()
+        
     }
     @IBAction func btnCancelTapped(_ sender: Any) {
         txtFEmail.text = ""

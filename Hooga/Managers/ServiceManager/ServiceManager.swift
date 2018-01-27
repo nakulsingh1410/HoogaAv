@@ -113,3 +113,23 @@ class Service : NSObject{
     //    }
     
 }
+
+
+extension Service {
+    
+    static func postRequestWithJsonResponse(endPoint: String, params: [String : Any], callback: @escaping (DataResponse<Any>) -> Void) {
+        //  let _params = getDefaultParams(params: params)
+        print(params)
+        print(endPoint)
+        if Common.isConnectedToNetwork(){
+            Alamofire.request(endPoint, method: .post, parameters: params, encoding: URLEncoding.default, headers: setHeader()).responseJSON(completionHandler: { (response) in
+                print(response.result.value ?? String(data: response.data!, encoding: .utf8) ?? kNoResponse)
+                callback(response)
+//                requestCallBack(result: response.result, callback: callback);
+            })
+        }else{
+//            callback(ResponseDto(internetAvailable: true, message: MessageError.INTERNET_ERROR.rawValue));
+        }
+    }
+    
+}

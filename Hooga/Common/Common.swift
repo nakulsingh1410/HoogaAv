@@ -196,4 +196,11 @@ class Common: NSObject{
         HudView.sharedInstance.removeFromSuperview()
     }
     
+    static func getString(text:String?)->String{
+        if let string = text {
+            return string
+        }
+        return ""
+    }
+    
 }

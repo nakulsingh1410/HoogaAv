@@ -9,34 +9,128 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
+    @IBOutlet weak var txtFFirstName: HoogaTextField!
+    @IBOutlet weak var txtFLastName: HoogaTextField!
+    @IBOutlet weak var txtFGender: HoogaTextField!
+    @IBOutlet weak var txtFPhoneNumber: HoogaTextField!
+    
+    @IBOutlet weak var txtFDOB: HoogaTextField!
+    @IBOutlet weak var txtFEmail: HoogaTextField!
+    @IBOutlet weak var txtFAddress1: HoogaTextField!
+    @IBOutlet weak var txtFAddress2: HoogaTextField!
+    @IBOutlet weak var txtFCity: HoogaTextField!
+    @IBOutlet weak var txtFPostalCode: HoogaTextField!
+    @IBOutlet weak var imgViewProfilePic: UIImageView!
+    @IBOutlet weak var btnUpload: HoogaButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    /*********************************************************************************/
+    // MARK: Methods
+    /*********************************************************************************/
+    
+    private func validate()->(message:String?,isEmpty:Bool){
+        
+        var message : String?
+        if let value = txtFFirstName.text,value.trimmingCharacters(in: .whitespaces).isEmpty{
+            message = MessageError.USER_FIRST_NAME_BLANK .rawValue
+        }else if let value = txtFLastName.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+            message = MessageError.USER_LAST_NAME_BLANK .rawValue
+        }else if let value = txtFGender.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+            message = MessageError.USER_GENDER_BLANK .rawValue
+        }else if let value = txtFPhoneNumber.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+            message = MessageError.PHONE_EMPTY .rawValue
+        }else if let value = txtFDOB.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+            message = MessageError.USER_DOB_BLANK .rawValue
+        }else if let value = txtFEmail.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+            message = MessageError.EMAIL_BLANK.rawValue
+        }else if let value = txtFAddress1.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+            message = MessageError.ADDRESS1_BLANK .rawValue
+        }else if let value = txtFAddress2.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+            message = MessageError.ADDRESS2_BLANK .rawValue
+        }else if let value = txtFCity.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+            message = MessageError.CITY_EMPTY.rawValue
+        }else if let value = txtFPostalCode.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+            message = MessageError.POSTCODE_EMPTY.rawValue
+        }
+        return (message == nil) ? (message,false):(message,true)
     }
-    */
+    
+    private func registerUser()  {
+        let touple =   validate()
+        if touple.isEmpty == true , let errorMsg = touple.message {
+            Common.showAlert(message: errorMsg)
+        }else{
+            registerAPI()
+        }
+    }
+    
+    private func navigateToOTP(){
+        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RequestOTPViewController") as? RequestOTPViewController{
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
     
     /*********************************************************************************/
     // MARK: IB_Action
     /*********************************************************************************/
     @IBAction func btnBackTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }    
+    
+    @IBAction func btnGenderTapped(_ sender: Any) {
+    }
+    
+    @IBAction func btnUploadTapped(_ sender: Any) {
+    }
+    
+    @IBAction func btnCityTapped(_ sender: Any) {
+    }
+    
+    @IBAction func btnSubmitTapped(_ sender: Any) {
+        registerUser()
+        
+    }
+    @IBAction func btnCancelTapped(_ sender: Any) {
+    }
+}
+
+/*********************************************************************************/
+// MARK: API
+/*********************************************************************************/
+extension RegisterViewController{
+    
+    func registerAPI()  {
+        LoginService.appRegisterUser(firstname: txtFFirstName.text!,
+                                     lastname: txtFLastName.text!,
+                                     gender: txtFGender.text!,
+                                     dateofbirth: txtFDOB.text!,
+                                     handphone: txtFPhoneNumber.text!,
+                                     email: txtFEmail.text!,
+                                     address1: txtFAddress1.text!,
+                                     address2: txtFAddress2.text!,
+                                     city: txtFCity.text!,
+                                     postalcode: txtFPostalCode.text!,
+                                     profilePic:imgViewProfilePic.image) {[weak self]  (flag, message) in
+                                        
+                                        guard let weakSelf = self else {return}
+                                        if flag {
+                                            weakSelf.navigateToOTP()
+                                        }else{
+                                            Common.showAlert(message: message)
+                                        }
+        }
     }
     
 }

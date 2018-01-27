@@ -32,7 +32,9 @@ class LoginResponseDto: NSObject,Mappable,NSCoding {
         var status : String?
         var Message : String?
     
-    
+    override init() {
+        
+    }
     required init?(map: Map) {
         userid            <- map["userid"]
         firstname         <- map["firstname"]

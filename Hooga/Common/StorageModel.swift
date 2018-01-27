@@ -10,7 +10,7 @@ import Foundation
 
 class StorageModel {
     
-    func saveUserData(model:LoginResponseDto?)  {
+   class func saveUserData(model:LoginResponseDto?)  {
         if let dataModel = model {
             let userDefaults = UserDefaults.standard
             let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: dataModel)
@@ -20,7 +20,7 @@ class StorageModel {
        
     }
     
-    func getUserData() ->LoginResponseDto? {
+   class func getUserData() ->LoginResponseDto? {
         let userDefaults = UserDefaults.standard
         if let decoded  = userDefaults.object(forKey: kUserInfo) as? Data {
             let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? LoginResponseDto
