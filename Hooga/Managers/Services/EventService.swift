@@ -93,9 +93,4 @@ class EventService {
             
         }
     }
-    
-    
-    
-    
-    
 }

@@ -163,6 +163,17 @@ extension UIView {
         set { layer.cornerRadius = newValue ; layer.masksToBounds = true;}
     }
     
+    func createGradientLayer() {
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = self.bounds
+        let colorTop = UIColor.init(hex: "#089FF2").cgColor
+        let colorBottom = UIColor.init(hex: "#148CFC").cgColor
+        gradientLayer.colors = [colorTop, colorBottom]
+        
+        self.layer.addSublayer(gradientLayer)
+    }
+    
 }
 
 // MARK:- Make StoryBoard Object

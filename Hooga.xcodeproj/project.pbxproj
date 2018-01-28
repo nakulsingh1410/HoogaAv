@@ -73,6 +73,8 @@
 		30EA5F8D201D82C6009D4278 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F8C201D82C6009D4278 /* CustomDatePicker.swift */; };
 		30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F8E201D92E9009D4278 /* SetPasswordViewController.swift */; };
 		30EA5F92201D9B3B009D4278 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F91201D9B3B009D4278 /* NavigationManager.swift */; };
+		30EA5F94201DC9B3009D4278 /* HoogaImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F93201DC9B3009D4278 /* HoogaImageView.swift */; };
+		30EA5F96201DCFCF009D4278 /* HoogaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F95201DCFCF009D4278 /* HoogaView.swift */; };
 		737D16CEEF1F2D5BEB869FDB /* Pods_Hooga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4DDC9C7D5ED88786B8A3C9 /* Pods_Hooga.framework */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
@@ -169,6 +171,8 @@
 		30EA5F8C201D82C6009D4278 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		30EA5F8E201D92E9009D4278 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 		30EA5F91201D9B3B009D4278 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		30EA5F93201DC9B3009D4278 /* HoogaImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaImageView.swift; sourceTree = "<group>"; };
+		30EA5F95201DCFCF009D4278 /* HoogaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaView.swift; sourceTree = "<group>"; };
 		6D665E74FE8F852E0924AC9A /* Pods-Hooga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hooga.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hooga/Pods-Hooga.release.xcconfig"; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,8 +294,10 @@
 				30D77BC5200B359D00386438 /* Extensions.swift */,
 				30D77BC3200B355500386438 /* Constant.swift */,
 				30D77BC1200B352900386438 /* Common.swift */,
+				30EA5F95201DCFCF009D4278 /* HoogaView.swift */,
 				30D77B8B200B203300386438 /* HoogaTextField.swift */,
 				30D77B8D200B206400386438 /* HoogaLabel.swift */,
+				30EA5F93201DC9B3009D4278 /* HoogaImageView.swift */,
 				30D77B9E200B2AC900386438 /* HoogaButton.swift */,
 				30D77C0D200B3E4D00386438 /* ValidateModel.swift */,
 				30D77C0F200B504F00386438 /* StorageModel.swift */,
@@ -901,11 +907,13 @@
 				30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */,
 				30D77BFF200B37C400386438 /* RegisterViewController.swift in Sources */,
 				30D77C0C200B3BBA00386438 /* LoginResponseDto.swift in Sources */,
+				30EA5F96201DCFCF009D4278 /* HoogaView.swift in Sources */,
 				3028D894201CC9B400922752 /* EventService.swift in Sources */,
 				30D77C09200B3AFA00386438 /* LoginService.swift in Sources */,
 				301B863520073F2C00DA7855 /* Hooga.xcdatamodeld in Sources */,
 				30D77BD5200B361400386438 /* String.swift in Sources */,
 				30D77C0E200B3E4D00386438 /* ValidateModel.swift in Sources */,
+				30EA5F94201DC9B3009D4278 /* HoogaImageView.swift in Sources */,
 				30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */,
 				30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */,
 				30D77BE0200B361F00386438 /* Constarints.swift in Sources */,

@@ -17,5 +17,13 @@ class HoogaTextField: UITextField {
         // Drawing code
     }
     */
-
+    override func awakeFromNib() {
+        setLeftPadding()
+    }
+    
+    func setLeftPadding()  {
+       self.addLeftMargin(leftMargin: 8)
+    }
 }
+
+

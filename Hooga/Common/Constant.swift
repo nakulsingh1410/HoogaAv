@@ -37,6 +37,15 @@ let kUserInfo = "userInfo"
 /************************ color ************************/
 
 let kBlueColor = UIColor.colorWithHexString(hex: "#0a4a7d")
+let kBackgroundColor = UIColor.colorWithHexString(hex: "#0a4a7d")
+let kButonBackgroundColor = UIColor.colorWithHexString(hex: "#0080FF")
+
+/*
+ 
+ android:startColor="#089FF2"
+ android:endColor="#148CFC"
+ */
+
 /************************ xxxxx ************************/
 
 

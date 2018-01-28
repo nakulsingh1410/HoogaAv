@@ -9,14 +9,14 @@
 import UIKit
 
 class ForgotPasswordViewController: UIViewController {
-
+    
     @IBOutlet weak var txtFEmail: HoogaTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,6 +39,15 @@ class ForgotPasswordViewController: UIViewController {
             setForgotPasswordAPI(password: txtFEmail.text!)
         }
     }
+    
+    private func navigateToOTP(){
+        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RequestOTPViewController") as? RequestOTPViewController{
+            vcObj.screenFlow = "ForgotPasswordFlow"
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
     
     /*********************************************************************************/
     // MARK: IB_Action
@@ -64,11 +73,10 @@ extension ForgotPasswordViewController{
         LoginService.setForgotPassword(username: password) {[weak self]  (flag, message) in
             guard let weakSelf = self else {return}
             if flag {
-//                weakSelf.navigateToEvent()
+                weakSelf.navigateToOTP()
             }else{
                 Common.showAlert(message: message)
             }
         }
     }
-    
 }

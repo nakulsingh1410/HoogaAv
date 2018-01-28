@@ -105,13 +105,19 @@ class LoginService{
     }
     
     
-    static func requestOTP(OTP:String,callback: @escaping (Bool,String) -> Void)  {
+    static func requestOTP(OTP:String,OTPScreen:String,callback: @escaping (Bool,String) -> Void)  {
         // { "userid": 1, "OTP": "1234", "OTPType": "R" }
         guard  let userid = StorageModel.getUserData()?.userid else {return}
+        var optType = "R"
+        if OTPScreen == "RegisterationFlow"{
+            optType = "R"
+        }else if OTPScreen == "ForgotPasswordFlow"{
+            optType = "F"
+        }
         
         let dict = ["userid":String(userid),
                     "OTP":OTP,
-                    "OTPType":"R"]
+                    "OTPType":optType] //
         Common.showHud()
         Service.postRequestWithJsonResponse(endPoint: kServiceUrl+ServiceName.VERIFY_OTP.rawValue,params: dict) { (response) in
             Common.hideHud()

@@ -13,6 +13,8 @@ class RequestOTPViewController: UIViewController {
     @IBOutlet weak var lblEmail: HoogaLabel!
     @IBOutlet weak var lblMobile: HoogaLabel!
     @IBOutlet weak var txtFOTP: HoogaTextField!
+    
+    var screenFlow = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -59,7 +61,7 @@ class RequestOTPViewController: UIViewController {
 extension RequestOTPViewController{
     
     func requestOTP(otp:String)  {
-        LoginService.requestOTP(OTP: otp) {[weak self]  (flag, message) in
+        LoginService.requestOTP(OTP: otp, OTPScreen:screenFlow) {[weak self]  (flag, message) in
             guard let weakSelf = self else {return}
             if flag {
                 weakSelf.navigateToSetPassword()
