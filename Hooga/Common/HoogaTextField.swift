@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HoogaTextField: UITextField {
+class HoogaTextField: UITextField ,UITextFieldDelegate{
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -18,4 +18,13 @@ class HoogaTextField: UITextField {
     }
     */
 
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        let frames = bounds
+        return frames.insetBy(dx:10,dy:0)
+    }
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        let frames = bounds
+        return frames.insetBy(dx:10,dy:0)
+    }
 }

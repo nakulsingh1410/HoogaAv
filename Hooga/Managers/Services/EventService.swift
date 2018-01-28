@@ -16,10 +16,14 @@ class EventService {
         let kServerUrl = kDomain + kEvent + ServiceName.SHOW_CATEGORIES.rawValue
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: [:])  { (response) in
             Common.hideHud()
-            if let obj = response.result.value as? [[String:Any]]{
-                let array = Mapper<CategoryModel>().mapArray(JSONArray: obj)
-                callback(true,array);
-            } else {
+            if let obj = response.result.value as? [String:Any]{
+                if let EntryTypes = obj["categories"] as? [[String : Any]]{
+                    let array = Mapper<CategoryModel>().mapArray(JSONArray:EntryTypes )
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
                 callback(false,nil);
             }
             
@@ -32,13 +36,16 @@ class EventService {
         let kServerUrl = kDomain + kEvent + ServiceName.SHOW_ENTRY_TYPES.rawValue
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: [:])  { (response) in
             Common.hideHud()
-            if let obj = response.result.value as? [[String:Any]]{
-                let array = Mapper<EntryTypes>().mapArray(JSONArray: obj)
-                callback(true,array);
+            if let obj = response.result.value as? [String:Any]{
+                if let EntryTypes = obj["EntryTypes"] as? [[String : Any]]{
+                    let array = Mapper<EntryTypes>().mapArray(JSONArray:EntryTypes )
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
             } else {
                 callback(false,nil);
             }
-            
         }
     }
     
@@ -47,10 +54,14 @@ class EventService {
         let kServerUrl = kDomain + kEvent + ServiceName.Fill_TAGS_LIST.rawValue
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: [:])  { (response) in
             Common.hideHud()
-            if let obj = response.result.value as? [[String:Any]]{
-                let array = Mapper<Tags>().mapArray(JSONArray: obj)
-                callback(true,array);
-            } else {
+            if let obj = response.result.value as? [String:Any]{
+                if let EntryTypes = obj["Tags"] as? [[String : Any]]{
+                    let array = Mapper<Tags>().mapArray(JSONArray:EntryTypes )
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
                 callback(false,nil);
             }
             
@@ -69,10 +80,14 @@ class EventService {
         let kServerUrl = kDomain + kEvent + ServiceName.ON_GOING_EVENTS.rawValue
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
             Common.hideHud()
-            if let obj = response.result.value as? [[String:Any]]{
-                let array = Mapper<Events>().mapArray(JSONArray: obj)
-                callback(true,array);
-            } else {
+            if let obj = response.result.value as? [String:Any]{
+                if let EntryTypes = obj["EventsList"] as? [[String : Any]]{
+                    let array = Mapper<Events>().mapArray(JSONArray:EntryTypes )
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
                 callback(false,nil);
             }
             

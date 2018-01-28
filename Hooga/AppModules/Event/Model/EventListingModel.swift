@@ -1,10 +1,8 @@
 //
 //  EventListingModel.swift
 //  Hooga
-//
 //  Created by Nakul Singh on 1/27/18.
 //  Copyright © 2018 Nakul Singh. All rights reserved.
-//
 
 import Foundation
 import ObjectMapper
@@ -83,10 +81,7 @@ class Events: NSObject,Mappable {
         startdate              <- map["startdate"]
         starttime              <- map["starttime"]
         bannerimage              <- map["bannerimage"]
-
     }
-    
-
 }
 
 
