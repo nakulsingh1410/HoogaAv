@@ -20,5 +20,4 @@ class RequestEvent: NSObject {
         self.entryType =  ""
         self.tag = ""
     }
-    
 }

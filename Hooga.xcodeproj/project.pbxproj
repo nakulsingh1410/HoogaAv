@@ -77,6 +77,18 @@
 		75A1C68B201DA62400358B41 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1C68A201DA62400358B41 /* Color.swift */; };
 		75A1C68D201DAF8100358B41 /* RequestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1C68C201DAF8100358B41 /* RequestEvent.swift */; };
 		75A1C690201DF63000358B41 /* GrediantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1C68F201DF63000358B41 /* GrediantView.swift */; };
+		75A1C696201E27F100358B41 /* EventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75A1C695201E27F100358B41 /* EventDetail.storyboard */; };
+		75A1C698201E281100358B41 /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1C697201E281100358B41 /* EventDetailVC.swift */; };
+		75A1C69B201E298A00358B41 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1C699201E298A00358B41 /* BannerCell.swift */; };
+		75A1C69C201E298A00358B41 /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A1C69A201E298A00358B41 /* BannerCell.xib */; };
+		75A1C69F201E29AB00358B41 /* EventTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1C69D201E29AB00358B41 /* EventTitleCell.swift */; };
+		75A1C6A0201E29AB00358B41 /* EventTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A1C69E201E29AB00358B41 /* EventTitleCell.xib */; };
+		75A1C6A3201E29C300358B41 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1C6A1201E29C300358B41 /* ContactCell.swift */; };
+		75A1C6A4201E29C300358B41 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A1C6A2201E29C300358B41 /* ContactCell.xib */; };
+		75A1C6A7201E29F400358B41 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1C6A5201E29F400358B41 /* GalleryCell.swift */; };
+		75A1C6A8201E29F400358B41 /* GalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A1C6A6201E29F400358B41 /* GalleryCell.xib */; };
+		75A1C6AB201E2EAE00358B41 /* ShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A1C6A9201E2EAE00358B41 /* ShareCell.swift */; };
+		75A1C6AC201E2EAE00358B41 /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75A1C6AA201E2EAE00358B41 /* ShareCell.xib */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
 /* End PBXBuildFile section */
@@ -176,6 +188,18 @@
 		75A1C68A201DA62400358B41 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		75A1C68C201DAF8100358B41 /* RequestEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEvent.swift; sourceTree = "<group>"; };
 		75A1C68F201DF63000358B41 /* GrediantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrediantView.swift; sourceTree = "<group>"; };
+		75A1C695201E27F100358B41 /* EventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetail.storyboard; sourceTree = "<group>"; };
+		75A1C697201E281100358B41 /* EventDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailVC.swift; sourceTree = "<group>"; };
+		75A1C699201E298A00358B41 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		75A1C69A201E298A00358B41 /* BannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCell.xib; sourceTree = "<group>"; };
+		75A1C69D201E29AB00358B41 /* EventTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTitleCell.swift; sourceTree = "<group>"; };
+		75A1C69E201E29AB00358B41 /* EventTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTitleCell.xib; sourceTree = "<group>"; };
+		75A1C6A1201E29C300358B41 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		75A1C6A2201E29C300358B41 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
+		75A1C6A5201E29F400358B41 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		75A1C6A6201E29F400358B41 /* GalleryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCell.xib; sourceTree = "<group>"; };
+		75A1C6A9201E2EAE00358B41 /* ShareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
+		75A1C6AA201E2EAE00358B41 /* ShareCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A2B191A578EA47A70B75B6 /* Pods-HoogaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoogaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoogaTests/Pods-HoogaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -367,6 +391,7 @@
 		30D77BAE200B306900386438 /* AppModules */ = {
 			isa = PBXGroup;
 			children = (
+				75A1C691201E276E00358B41 /* EventDetail */,
 				30D77C18201088B400386438 /* Event */,
 				30D77C05200B399800386438 /* Splash */,
 				30D77BF5200B37C400386438 /* Login */,
@@ -541,6 +566,49 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		75A1C691201E276E00358B41 /* EventDetail */ = {
+			isa = PBXGroup;
+			children = (
+				75A1C692201E27A500358B41 /* Model */,
+				75A1C693201E27A500358B41 /* Storyboard */,
+				75A1C694201E27A500358B41 /* Controller */,
+			);
+			path = EventDetail;
+			sourceTree = "<group>";
+		};
+		75A1C692201E27A500358B41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		75A1C693201E27A500358B41 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				75A1C695201E27F100358B41 /* EventDetail.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		75A1C694201E27A500358B41 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				75A1C697201E281100358B41 /* EventDetailVC.swift */,
+				75A1C699201E298A00358B41 /* BannerCell.swift */,
+				75A1C69A201E298A00358B41 /* BannerCell.xib */,
+				75A1C69D201E29AB00358B41 /* EventTitleCell.swift */,
+				75A1C69E201E29AB00358B41 /* EventTitleCell.xib */,
+				75A1C6A1201E29C300358B41 /* ContactCell.swift */,
+				75A1C6A2201E29C300358B41 /* ContactCell.xib */,
+				75A1C6A5201E29F400358B41 /* GalleryCell.swift */,
+				75A1C6A6201E29F400358B41 /* GalleryCell.xib */,
+				75A1C6A9201E2EAE00358B41 /* ShareCell.swift */,
+				75A1C6AA201E2EAE00358B41 /* ShareCell.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -657,16 +725,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A1C6A8201E29F400358B41 /* GalleryCell.xib in Resources */,
 				30348FFC201CF8EC00A2CDA1 /* loader2.gif in Resources */,
 				30D77B9B200B217E00386438 /* GillSans.ttc in Resources */,
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
+				75A1C6A4201E29C300358B41 /* ContactCell.xib in Resources */,
 				301B866C2007452900DA7855 /* Assets.xcassets in Resources */,
 				30D77B98200B217E00386438 /* Frutiger in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
+				75A1C696201E27F100358B41 /* EventDetail.storyboard in Resources */,
+				75A1C6A0201E29AB00358B41 /* EventTitleCell.xib in Resources */,
 				30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */,
 				30D77B97200B217E00386438 /* Eurostile in Resources */,
 				75407EE3201D7EBD00C6285D /* EventCell.xib in Resources */,
 				30D77C00200B37C400386438 /* Main.storyboard in Resources */,
+				75A1C69C201E298A00358B41 /* BannerCell.xib in Resources */,
+				75A1C6AC201E2EAE00358B41 /* ShareCell.xib in Resources */,
 				30D77B9C200B217E00386438 /* Gotham-Book.otf in Resources */,
 				75407EEA201D7EDB00C6285D /* AMMenuCell.xib in Resources */,
 				30D77C07200B399800386438 /* LaunchScreen.storyboard in Resources */,
@@ -871,11 +945,14 @@
 				30D77BF3200B36B400386438 /* DataTableViewCell.swift in Sources */,
 				30D77B8E200B206400386438 /* HoogaLabel.swift in Sources */,
 				30D77BD7200B361400386438 /* UIColor.swift in Sources */,
+				75A1C698201E281100358B41 /* EventDetailVC.swift in Sources */,
 				30D77BFD200B37C400386438 /* ForgotPasswordViewController.swift in Sources */,
 				30D77BDD200B361400386438 /* HudView.swift in Sources */,
 				30D77BC2200B352900386438 /* Common.swift in Sources */,
 				75A1C68B201DA62400358B41 /* Color.swift in Sources */,
 				75407EE1201D7EA800C6285D /* EventCell.swift in Sources */,
+				75A1C6AB201E2EAE00358B41 /* ShareCell.swift in Sources */,
+				75A1C69B201E298A00358B41 /* BannerCell.swift in Sources */,
 				301B86702007452900DA7855 /* AppDelegate.swift in Sources */,
 				30D77BDB200B361400386438 /* UIView.swift in Sources */,
 				75407EE9201D7EDB00C6285D /* MenuTitleAppearance.swift in Sources */,
@@ -888,8 +965,10 @@
 				30D77B9F200B2AC900386438 /* HoogaButton.swift in Sources */,
 				30D77BFF200B37C400386438 /* RegisterViewController.swift in Sources */,
 				30D77C0C200B3BBA00386438 /* LoginResponseDto.swift in Sources */,
+				75A1C6A7201E29F400358B41 /* GalleryCell.swift in Sources */,
 				3028D894201CC9B400922752 /* EventService.swift in Sources */,
 				30D77C09200B3AFA00386438 /* LoginService.swift in Sources */,
+				75A1C69F201E29AB00358B41 /* EventTitleCell.swift in Sources */,
 				301B863520073F2C00DA7855 /* Hooga.xcdatamodeld in Sources */,
 				30D77BD5200B361400386438 /* String.swift in Sources */,
 				75407EE8201D7EDB00C6285D /* AMHorizontalMenu.swift in Sources */,
@@ -897,6 +976,7 @@
 				30D77C0E200B3E4D00386438 /* ValidateModel.swift in Sources */,
 				30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */,
 				30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */,
+				75A1C6A3201E29C300358B41 /* ContactCell.swift in Sources */,
 				30D77BE0200B361F00386438 /* Constarints.swift in Sources */,
 				30D77BD8200B361400386438 /* UIImage.swift in Sources */,
 				30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */,

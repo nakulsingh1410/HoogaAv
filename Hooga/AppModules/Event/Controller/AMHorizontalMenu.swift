@@ -178,6 +178,16 @@ extension AMHorizontalMenu : UICollectionViewDelegate , UICollectionViewDelegate
             selectedIndexPath = indexPath
             collectionView.reloadData()
             delegate?.menuSelected(index: indexPath, data: menuItems[indexPath.row])
+            
+            let theAttributes:UICollectionViewLayoutAttributes! = collectionView.layoutAttributesForItem(at: indexPath)
+            var cellFrameInSuperview:CGRect!  = collectionView.convert(theAttributes.frame, to: collectionView.superview)
+            cellFrameInSuperview.size.height = self.frame.size.height
+            
+             cellFrameInSuperview.origin.y = 0
+            let view = UIView(frame:cellFrameInSuperview)
+            view.backgroundColor = Color.white
+            self.insertSubview(view, at: 0)
+            
         }
     }
     
@@ -185,6 +195,6 @@ extension AMHorizontalMenu : UICollectionViewDelegate , UICollectionViewDelegate
 //
 //        return CGSize(width:50,height:50)
 //
-//    }
+//    }//LoginModule
 
 }

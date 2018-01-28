@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 struct Color {
-    
     static let blue         = UIColor.init(hex: "3B01FF")
     static let lightGray = UIColor.lightGray
-    static let white = UIColor.white
+    static let white       = UIColor.white
 }
