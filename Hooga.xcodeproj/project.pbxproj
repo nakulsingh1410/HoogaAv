@@ -75,6 +75,16 @@
 		30EA5F92201D9B3B009D4278 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F91201D9B3B009D4278 /* NavigationManager.swift */; };
 		30EA5F94201DC9B3009D4278 /* HoogaImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F93201DC9B3009D4278 /* HoogaImageView.swift */; };
 		30EA5F96201DCFCF009D4278 /* HoogaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F95201DCFCF009D4278 /* HoogaView.swift */; };
+		30EA5F9B201DE0AD009D4278 /* LeftSideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F9A201DE0AD009D4278 /* LeftSideMenu.storyboard */; };
+		30EA5F9D201E283E009D4278 /* RequestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F9C201E283E009D4278 /* RequestEvent.swift */; };
+		30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F9E201E2892009D4278 /* AMMenuCell.xib */; };
+		30EA5FA6201E2892009D4278 /* GrediantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F9F201E2892009D4278 /* GrediantView.swift */; };
+		30EA5FA7201E2892009D4278 /* MenuTitleAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FA0201E2892009D4278 /* MenuTitleAppearance.swift */; };
+		30EA5FA8201E2892009D4278 /* AMHorizontalMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FA1201E2892009D4278 /* AMHorizontalMenu.swift */; };
+		30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5FA2201E2892009D4278 /* EventCell.xib */; };
+		30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FA3201E2892009D4278 /* AMMenuCell.swift */; };
+		30EA5FAB201E2892009D4278 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FA4201E2892009D4278 /* EventCell.swift */; };
+		30EA5FAD201E29BB009D4278 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FAC201E29BB009D4278 /* Color.swift */; };
 		737D16CEEF1F2D5BEB869FDB /* Pods_Hooga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4DDC9C7D5ED88786B8A3C9 /* Pods_Hooga.framework */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
@@ -173,6 +183,16 @@
 		30EA5F91201D9B3B009D4278 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		30EA5F93201DC9B3009D4278 /* HoogaImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaImageView.swift; sourceTree = "<group>"; };
 		30EA5F95201DCFCF009D4278 /* HoogaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaView.swift; sourceTree = "<group>"; };
+		30EA5F9A201DE0AD009D4278 /* LeftSideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LeftSideMenu.storyboard; sourceTree = "<group>"; };
+		30EA5F9C201E283E009D4278 /* RequestEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEvent.swift; sourceTree = "<group>"; };
+		30EA5F9E201E2892009D4278 /* AMMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMenuCell.xib; sourceTree = "<group>"; };
+		30EA5F9F201E2892009D4278 /* GrediantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrediantView.swift; sourceTree = "<group>"; };
+		30EA5FA0201E2892009D4278 /* MenuTitleAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTitleAppearance.swift; sourceTree = "<group>"; };
+		30EA5FA1201E2892009D4278 /* AMHorizontalMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMHorizontalMenu.swift; sourceTree = "<group>"; };
+		30EA5FA2201E2892009D4278 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		30EA5FA3201E2892009D4278 /* AMMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMMenuCell.swift; sourceTree = "<group>"; };
+		30EA5FA4201E2892009D4278 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		30EA5FAC201E29BB009D4278 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6D665E74FE8F852E0924AC9A /* Pods-Hooga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hooga.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hooga/Pods-Hooga.release.xcconfig"; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,6 +309,7 @@
 		301B86632007452900DA7855 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				30EA5FAC201E29BB009D4278 /* Color.swift */,
 				30D77BDF200B361F00386438 /* Constarints.swift */,
 				30D77BC7200B35AF00386438 /* Reachability.swift */,
 				30D77BC5200B359D00386438 /* Extensions.swift */,
@@ -338,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */,
+				30EA5F9C201E283E009D4278 /* RequestEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,6 +389,7 @@
 		30D77BAE200B306900386438 /* AppModules */ = {
 			isa = PBXGroup;
 			children = (
+				30EA5F97201DE086009D4278 /* LeftSideMenu */,
 				30D77C18201088B400386438 /* Event */,
 				30D77C05200B399800386438 /* Splash */,
 				30D77BF5200B37C400386438 /* Login */,
@@ -518,6 +541,13 @@
 		30D77C19201088B400386438 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				30EA5FA1201E2892009D4278 /* AMHorizontalMenu.swift */,
+				30EA5FA3201E2892009D4278 /* AMMenuCell.swift */,
+				30EA5F9E201E2892009D4278 /* AMMenuCell.xib */,
+				30EA5FA4201E2892009D4278 /* EventCell.swift */,
+				30EA5FA2201E2892009D4278 /* EventCell.xib */,
+				30EA5F9F201E2892009D4278 /* GrediantView.swift */,
+				30EA5FA0201E2892009D4278 /* MenuTitleAppearance.swift */,
 				30D77C202010891900386438 /* EventListViewController.swift */,
 			);
 			path = Controller;
@@ -547,6 +577,30 @@
 				30EA5F91201D9B3B009D4278 /* NavigationManager.swift */,
 			);
 			path = NavigationManager;
+			sourceTree = "<group>";
+		};
+		30EA5F97201DE086009D4278 /* LeftSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				30EA5F98201DE0A5009D4278 /* Controller */,
+				30EA5F99201DE0A5009D4278 /* Storyboard */,
+			);
+			path = LeftSideMenu;
+			sourceTree = "<group>";
+		};
+		30EA5F98201DE0A5009D4278 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		30EA5F99201DE0A5009D4278 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				30EA5F9A201DE0AD009D4278 /* LeftSideMenu.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		5585BAD315FA0F91E67A4FC9 /* Pods */ = {
@@ -683,8 +737,10 @@
 				30D77B9B200B217E00386438 /* GillSans.ttc in Resources */,
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
 				301B866C2007452900DA7855 /* Assets.xcassets in Resources */,
+				30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */,
 				30D77B98200B217E00386438 /* Frutiger in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
+				30EA5F9B201DE0AD009D4278 /* LeftSideMenu.storyboard in Resources */,
 				30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */,
 				30D77B97200B217E00386438 /* Eurostile in Resources */,
 				30D77C00200B37C400386438 /* Main.storyboard in Resources */,
@@ -692,6 +748,7 @@
 				30D77C07200B399800386438 /* LaunchScreen.storyboard in Resources */,
 				30D77B9A200B217E00386438 /* FrutiRom in Resources */,
 				30D77C15200CD81400386438 /* loading.gif in Resources */,
+				30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */,
 				30D77BF4200B36B400386438 /* DataTableViewCell.xib in Resources */,
 				30D77B99200B217E00386438 /* FrutiLig in Resources */,
 				30D77BF0200B36B400386438 /* SlideMenu.storyboard in Resources */,
@@ -883,6 +940,7 @@
 			files = (
 				30D77BD6200B361400386438 /* UIApplication.swift in Sources */,
 				30D77BEF200B36B400386438 /* RightViewController.swift in Sources */,
+				30EA5F9D201E283E009D4278 /* RequestEvent.swift in Sources */,
 				30D77BC8200B35AF00386438 /* Reachability.swift in Sources */,
 				30D77BE2200B366C00386438 /* ResponseDto.swift in Sources */,
 				30D77B8C200B203300386438 /* HoogaTextField.swift in Sources */,
@@ -893,19 +951,24 @@
 				30D77BD7200B361400386438 /* UIColor.swift in Sources */,
 				30D77BFD200B37C400386438 /* ForgotPasswordViewController.swift in Sources */,
 				30D77BDD200B361400386438 /* HudView.swift in Sources */,
+				30EA5FA6201E2892009D4278 /* GrediantView.swift in Sources */,
 				30D77BC2200B352900386438 /* Common.swift in Sources */,
 				301B86702007452900DA7855 /* AppDelegate.swift in Sources */,
 				30D77BDB200B361400386438 /* UIView.swift in Sources */,
+				30EA5FAD201E29BB009D4278 /* Color.swift in Sources */,
 				30D77BF1200B36B400386438 /* SlideMenuController.swift in Sources */,
 				30D77BDA200B361400386438 /* UITableViewExtension.swift in Sources */,
 				30D77BC6200B359D00386438 /* Extensions.swift in Sources */,
 				30D77BDC200B361400386438 /* UIViewController.swift in Sources */,
 				30D77BED200B36B400386438 /* ExSlideMenuController.swift in Sources */,
+				30EA5FAB201E2892009D4278 /* EventCell.swift in Sources */,
 				30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */,
+				30EA5FA8201E2892009D4278 /* AMHorizontalMenu.swift in Sources */,
 				30D77BD9200B361400386438 /* UIImageView.swift in Sources */,
 				30D77B9F200B2AC900386438 /* HoogaButton.swift in Sources */,
 				30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */,
 				30D77BFF200B37C400386438 /* RegisterViewController.swift in Sources */,
+				30EA5FA7201E2892009D4278 /* MenuTitleAppearance.swift in Sources */,
 				30D77C0C200B3BBA00386438 /* LoginResponseDto.swift in Sources */,
 				30EA5F96201DCFCF009D4278 /* HoogaView.swift in Sources */,
 				3028D894201CC9B400922752 /* EventService.swift in Sources */,
@@ -919,6 +982,7 @@
 				30D77BE0200B361F00386438 /* Constarints.swift in Sources */,
 				30D77BD8200B361400386438 /* UIImage.swift in Sources */,
 				30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */,
+				30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */,
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,
 				30D77C212010891900386438 /* EventListViewController.swift in Sources */,

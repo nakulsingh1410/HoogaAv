@@ -11,8 +11,8 @@ import UIKit
 class HoogaImageView: UIImageView {
     
     override func awakeFromNib() {
-        self.image = nil
-        self.backgroundColor = UIColor.clear
+//        self.image = nil
+//        self.backgroundColor = UIColor.clear
     }
     
 }

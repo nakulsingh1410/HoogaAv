@@ -10,6 +10,10 @@ import UIKit
 
 class HoogaView: UIView {
     override func awakeFromNib() {
+        
+    }
+    
+    override func layoutSubviews() {
         self.createGradientLayer()
     }
 }

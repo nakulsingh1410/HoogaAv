@@ -40,6 +40,8 @@ let kBlueColor = UIColor.colorWithHexString(hex: "#0a4a7d")
 let kBackgroundColor = UIColor.colorWithHexString(hex: "#0a4a7d")
 let kButonBackgroundColor = UIColor.colorWithHexString(hex: "#0080FF")
 
+
+
 /*
  
  android:startColor="#089FF2"
@@ -59,6 +61,9 @@ let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let kDomain    = "http://158.140.133.89/HoogaAPI/";
 let kSubDomain = "api/users/";
 let kEvent     = "api/events/"
+
+let kImgaeView = "http://158.140.133.89/Hooga/HoogaFiles/Assets/"
+let placeHolderImageUrl = URL(string: "http://158.140.133.89/Hooga/HoogaFiles/Assets/default.png")
 
 let kServiceUrl  = kDomain + kSubDomain
 
