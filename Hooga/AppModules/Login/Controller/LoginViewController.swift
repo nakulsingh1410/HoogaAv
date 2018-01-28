@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         txtFEmail.text = "marca@gmail.com"
         txtFPassword.text = "1234"
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,25 +49,16 @@ class LoginViewController: UIViewController {
     }
     
     private func userRegistration(){
-        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
-        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController{
-            navigationController?.pushViewController(vcObj, animated: true)
-        }
+        NavigationManager.userRegistration(navigationController: self.navigationController)
     }
     
     private func forgotPassword(){
-        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
-        if let vcObj = storyboard.instantiateViewController(withIdentifier: "ForgotPasswordViewController") as? ForgotPasswordViewController{
-            navigationController?.pushViewController(vcObj, animated: true)
-        }
+        NavigationManager.forgotPassword(navigationController: self.navigationController)
     }
     
     
     fileprivate func navigateToEvent(){
-        let storyboard = UIStoryboard(name: "Event", bundle:  Bundle(for: LoginViewController.self) )
-        if let vcObj = storyboard.instantiateViewController(withIdentifier: "EventListViewController") as? EventListViewController{
-            navigationController?.pushViewController(vcObj, animated: true)
-        }
+        NavigationManager.navigateToEvent(navigationController: self.navigationController)
     }
     
     /*********************************************************************************/
@@ -76,14 +66,12 @@ class LoginViewController: UIViewController {
     /*********************************************************************************/
     
     @IBAction func btnLoginTapped(_ sender: Any) {
-//        loginUser()
-        navigateToEvent()
-        
+        loginUser()
+//        navigateToEvent()
     }
     @IBAction func btnCancelTapped(_ sender: Any) {
         txtFEmail.text = ""
         txtFPassword.text = ""
-
     }
     @IBAction func btnRegisterTapped(_ sender: Any) {
         userRegistration()
@@ -93,7 +81,6 @@ class LoginViewController: UIViewController {
     }
     
 }
-
 
 /*********************************************************************************/
 // MARK: API

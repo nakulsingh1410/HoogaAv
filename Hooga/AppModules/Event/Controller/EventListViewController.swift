@@ -10,7 +10,7 @@ import UIKit
 
 class EventListViewController: UIViewController {
     
-    var arrCategories    = [CategoryModel]()
+    var arrCategories   = [CategoryModel]()
     var arrEntryType    = [EntryTypes]()
     var arrTags         = [Tags]()
     var arrEvents       = [Events]()
@@ -43,9 +43,8 @@ extension EventListViewController{
             guard let weakSelf = self else {return}
             if let array = categories {
                 weakSelf.arrCategories = array
-                if let categoryId = array.first?.categoryid{
-                    weakSelf.getEventList(catId: categoryId, entryType: "", tag: "")
-                }
+                weakSelf.getEventList(catId: 0, entryType: "", tag: "")
+
             }else{
                 //Common.showAlert(message: message)
             }

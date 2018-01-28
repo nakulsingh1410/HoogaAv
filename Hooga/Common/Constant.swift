@@ -77,7 +77,8 @@ public enum ServiceName:String {
     case SHOW_ENTRY_TYPES = "showEntryTypes"
     case Fill_TAGS_LIST = "fillTagsList"
     case ON_GOING_EVENTS = "showOngoingEvents"
-
+    case SET_PASSWORD = "setPassword"
+    case VERIY_USER = "verifyUser"
     
 }
 
@@ -101,6 +102,7 @@ public enum MessageError: String{
     case USER_DOB_BLANK             = "Please enter date of birth."
     case ADDRESS1_BLANK             = "Please enter address1."
     case ADDRESS2_BLANK             = "Please enter address2."
+    case OTP_BLANK                  = "Please enter otp."
 
     
     case PASSWORD_EMPTY    = "Please enter password."

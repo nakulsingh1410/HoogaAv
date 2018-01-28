@@ -67,6 +67,12 @@
 		30D77C15200CD81400386438 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 30D77C14200CD81400386438 /* loading.gif */; };
 		30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C16200CDA4000386438 /* UIImage+Gif.swift */; };
 		30D77C212010891900386438 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C202010891900386438 /* EventListViewController.swift */; };
+		30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F85201D798A009D4278 /* CustomPickerView.swift */; };
+		30EA5F88201D799C009D4278 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F87201D799C009D4278 /* CustomPickerView.xib */; };
+		30EA5F8B201D82B2009D4278 /* CustomDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */; };
+		30EA5F8D201D82C6009D4278 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F8C201D82C6009D4278 /* CustomDatePicker.swift */; };
+		30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F8E201D92E9009D4278 /* SetPasswordViewController.swift */; };
+		30EA5F92201D9B3B009D4278 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F91201D9B3B009D4278 /* NavigationManager.swift */; };
 		737D16CEEF1F2D5BEB869FDB /* Pods_Hooga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4DDC9C7D5ED88786B8A3C9 /* Pods_Hooga.framework */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
@@ -157,6 +163,12 @@
 		30D77C14200CD81400386438 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		30D77C16200CDA4000386438 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		30D77C202010891900386438 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		30EA5F85201D798A009D4278 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
+		30EA5F87201D799C009D4278 /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
+		30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDatePicker.xib; sourceTree = "<group>"; };
+		30EA5F8C201D82C6009D4278 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
+		30EA5F8E201D92E9009D4278 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
+		30EA5F91201D9B3B009D4278 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		6D665E74FE8F852E0924AC9A /* Pods-Hooga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hooga.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hooga/Pods-Hooga.release.xcconfig"; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +310,8 @@
 		301B866A2007452900DA7855 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				30EA5F89201D829E009D4278 /* CustomDatePicker */,
+				30EA5F84201D796A009D4278 /* CustomPickerView */,
 				30D77BE3200B36B400386438 /* SlideMenu */,
 				30D77BC9200B361400386438 /* Extensions */,
 				30D77BD2200B361400386438 /* HUD */,
@@ -357,6 +371,7 @@
 		30D77BBA200B34EF00386438 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				30EA5F90201D9B26009D4278 /* NavigationManager */,
 				30D77BBB200B34EF00386438 /* ServiceManager */,
 				30D77BBC200B34EF00386438 /* Services */,
 			);
@@ -446,6 +461,7 @@
 				30D77BF8200B37C400386438 /* LoginViewController.swift */,
 				30D77BF9200B37C400386438 /* RegisterViewController.swift */,
 				30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */,
+				30EA5F8E201D92E9009D4278 /* SetPasswordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -499,6 +515,32 @@
 				30D77C202010891900386438 /* EventListViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		30EA5F84201D796A009D4278 /* CustomPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				30EA5F85201D798A009D4278 /* CustomPickerView.swift */,
+				30EA5F87201D799C009D4278 /* CustomPickerView.xib */,
+			);
+			path = CustomPickerView;
+			sourceTree = "<group>";
+		};
+		30EA5F89201D829E009D4278 /* CustomDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */,
+				30EA5F8C201D82C6009D4278 /* CustomDatePicker.swift */,
+			);
+			path = CustomDatePicker;
+			sourceTree = "<group>";
+		};
+		30EA5F90201D9B26009D4278 /* NavigationManager */ = {
+			isa = PBXGroup;
+			children = (
+				30EA5F91201D9B3B009D4278 /* NavigationManager.swift */,
+			);
+			path = NavigationManager;
 			sourceTree = "<group>";
 		};
 		5585BAD315FA0F91E67A4FC9 /* Pods */ = {
@@ -631,6 +673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30348FFC201CF8EC00A2CDA1 /* loader2.gif in Resources */,
+				30EA5F88201D799C009D4278 /* CustomPickerView.xib in Resources */,
 				30D77B9B200B217E00386438 /* GillSans.ttc in Resources */,
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
 				301B866C2007452900DA7855 /* Assets.xcassets in Resources */,
@@ -648,6 +691,7 @@
 				30D77BF0200B36B400386438 /* SlideMenu.storyboard in Resources */,
 				30D77BDE200B361400386438 /* HudView.xib in Resources */,
 				30D77C12200CD77900386438 /* Assets.xcassets in Resources */,
+				30EA5F8B201D82B2009D4278 /* CustomDatePicker.xib in Resources */,
 				301B86742007463B00DA7855 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -836,6 +880,7 @@
 				30D77BC8200B35AF00386438 /* Reachability.swift in Sources */,
 				30D77BE2200B366C00386438 /* ResponseDto.swift in Sources */,
 				30D77B8C200B203300386438 /* HoogaTextField.swift in Sources */,
+				30EA5F8D201D82C6009D4278 /* CustomDatePicker.swift in Sources */,
 				30D77BFE200B37C400386438 /* LoginViewController.swift in Sources */,
 				30D77BF3200B36B400386438 /* DataTableViewCell.swift in Sources */,
 				30D77B8E200B206400386438 /* HoogaLabel.swift in Sources */,
@@ -850,8 +895,10 @@
 				30D77BC6200B359D00386438 /* Extensions.swift in Sources */,
 				30D77BDC200B361400386438 /* UIViewController.swift in Sources */,
 				30D77BED200B36B400386438 /* ExSlideMenuController.swift in Sources */,
+				30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */,
 				30D77BD9200B361400386438 /* UIImageView.swift in Sources */,
 				30D77B9F200B2AC900386438 /* HoogaButton.swift in Sources */,
+				30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */,
 				30D77BFF200B37C400386438 /* RegisterViewController.swift in Sources */,
 				30D77C0C200B3BBA00386438 /* LoginResponseDto.swift in Sources */,
 				3028D894201CC9B400922752 /* EventService.swift in Sources */,
@@ -867,6 +914,7 @@
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,
 				30D77C212010891900386438 /* EventListViewController.swift in Sources */,
+				30EA5F92201D9B3B009D4278 /* NavigationManager.swift in Sources */,
 				30D77BC0200B350800386438 /* ServiceManager.swift in Sources */,
 				30D77BF2200B36B400386438 /* BaseTableViewCell.swift in Sources */,
 				30D77BC4200B355500386438 /* Constant.swift in Sources */,

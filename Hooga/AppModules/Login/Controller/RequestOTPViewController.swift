@@ -26,7 +26,10 @@ class RequestOTPViewController: UIViewController {
     /*********************************************************************************/
     // MARK: Function
     /*********************************************************************************/
-
+    
+    private func navigateToSetPassword(){
+        NavigationManager.navigateToSetPassword(navigationController: self.navigationController)
+    }
   
 
     /*********************************************************************************/
@@ -36,7 +39,12 @@ class RequestOTPViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func btnSubmitTapped(_ sender: Any) {
-
+        if let value = txtFOTP.text,value.trimmingCharacters(in: .whitespaces).isEmpty{
+           let message = MessageError.OTP_BLANK .rawValue
+            Common.showAlert(message: message)
+            return
+        }
+        requestOTP(otp: txtFOTP.text!)
     }
     
     @IBAction func btnRequestOTPTapped(_ sender: Any) {
@@ -54,10 +62,11 @@ extension RequestOTPViewController{
         LoginService.requestOTP(OTP: otp) {[weak self]  (flag, message) in
             guard let weakSelf = self else {return}
             if flag {
-
+                weakSelf.navigateToSetPassword()
             }else{
-                Common.showAlert(message: message)
+//                Common.showAlert(message: message)
             }
+            weakSelf.navigateToSetPassword()
         }
     }
     
