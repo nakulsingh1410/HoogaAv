@@ -10,7 +10,9 @@ import Foundation
 import ObjectMapper
 
 class EventService {
-    
+    /***************************************************************/
+    //MARK: Event Listing Apis
+    /***************************************************************/
     static func getCategories(callback: @escaping (Bool,[CategoryModel]?) -> Void){
         Common.showHud()
         let kServerUrl = kDomain + kEvent + ServiceName.SHOW_CATEGORIES.rawValue
@@ -93,9 +95,128 @@ class EventService {
             
         }
     }
+}
+/***************************************************************/
+//MARK: Event Details Apis
+/***************************************************************/
+extension EventService{
+    
+    static func getEventDetail(eventid:Int,
+                             callback: @escaping (Bool,EventDetail?) -> Void){
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_EVENT_DETAIL.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                let eventDetail = Mapper<EventDetail>().map(JSON: obj)
+                callback(true,eventDetail);
+            }else {
+                callback(false,nil);
+            }
+            
+        }
+    }
+    static func getEventAssets(eventid:Int,
+                               callback: @escaping (Bool,[EventAssets]?) -> Void){
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_EVENT_ASSETS.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let arrObj = obj["Asserts"] as? [[String : Any]]{
+                    let array = Mapper<EventAssets>().mapArray(JSONArray:arrObj )
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+            
+        }
+    }
+    
+    static func getEventPlatform(eventid:Int,
+                               callback: @escaping (Bool,[EventPlatform]?) -> Void){
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_EVENT_Platform.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let arrObj = obj["Platforms"] as? [[String : Any]]{
+                    let array = Mapper<EventPlatform>().mapArray(JSONArray:arrObj )
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+            
+        }
+    }
+    
+    static func getEventFAQ(eventid:Int,
+                               callback: @escaping (Bool,[EventFAQ]?) -> Void){
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_EVENT_FAQs.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let arrObj = obj["FAQs"] as? [[String : Any]]{
+                    let array = Mapper<EventFAQ>().mapArray(JSONArray:arrObj )
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+            
+            
+        }
+    }
     
     
+    static func getEventTermsConditions(eventid:Int,
+                            callback: @escaping (Bool,[EventTersmNCondition]?) -> Void){
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_EVENT_TERSM_CONDITION.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let arrObj = obj["TermsConditions"] as? [[String : Any]]{
+                    let array = Mapper<EventTersmNCondition>().mapArray(JSONArray:arrObj )
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+            
+        }
+    }
     
-    
-    
+ 
 }

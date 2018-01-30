@@ -15,9 +15,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="W8y-Po-wg8">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYE-en-zDh">
                     <rect key="frame" x="113" y="259" width="150" height="150"/>
                     <constraints>
@@ -26,15 +23,11 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="0.27680329623287681" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="0.10704647404977823" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="W8y-Po-wg8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5fr-q4-3pS"/>
-                <constraint firstItem="W8y-Po-wg8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Dfb-Rt-RCp"/>
                 <constraint firstItem="wYE-en-zDh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ljz-OJ-hhM"/>
-                <constraint firstItem="wYE-en-zDh" firstAttribute="centerY" secondItem="W8y-Po-wg8" secondAttribute="centerY" id="ag9-jW-hPZ"/>
-                <constraint firstAttribute="bottom" secondItem="W8y-Po-wg8" secondAttribute="bottom" id="irg-Ra-08h"/>
+                <constraint firstItem="wYE-en-zDh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="m6s-5i-deD"/>
                 <constraint firstItem="wYE-en-zDh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="peR-gk-Nul"/>
-                <constraint firstAttribute="trailing" secondItem="W8y-Po-wg8" secondAttribute="trailing" id="vtN-aJ-mxa"/>
             </constraints>
             <connections>
                 <outlet property="loaderImageView" destination="wYE-en-zDh" id="ZUK-u6-FPe"/>
@@ -42,7 +35,4 @@
             <point key="canvasLocation" x="-91.5" y="-153.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="background" width="375" height="666"/>
-    </resources>
 </document>

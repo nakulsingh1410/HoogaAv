@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GalleryImageCell" customModule="Hooga" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="54"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="54"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolderImage" translatesAutoresizingMaskIntoConstraints="NO" id="AVZ-R8-YdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="54"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQ0-VA-261">
+                        <rect key="frame" x="7.5" y="9.5" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="QJd-Wi-30f"/>
+                            <constraint firstAttribute="width" constant="35" id="d5b-Bg-hXD"/>
+                        </constraints>
+                        <state key="normal" image="play_video"/>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="qQ0-VA-261" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="6LB-eG-ssQ"/>
+                <constraint firstItem="AVZ-R8-YdQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AI9-Jf-D3s"/>
+                <constraint firstAttribute="trailing" secondItem="AVZ-R8-YdQ" secondAttribute="trailing" id="XRf-Zb-ICb"/>
+                <constraint firstAttribute="bottom" secondItem="AVZ-R8-YdQ" secondAttribute="bottom" id="go8-uV-Wfw"/>
+                <constraint firstItem="AVZ-R8-YdQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mw3-eV-4qy"/>
+                <constraint firstItem="qQ0-VA-261" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="tmF-Xb-LV0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="50" height="54"/>
+            <connections>
+                <outlet property="buttonPlay" destination="qQ0-VA-261" id="KDi-qb-2Zk"/>
+                <outlet property="image" destination="AVZ-R8-YdQ" id="fLO-yS-WTx"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="93"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="placeHolderImage" width="320" height="200"/>
+        <image name="play_video" width="50" height="50"/>
+    </resources>
+</document>

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AMMenuDelegate {
- 
+    
     func menuSelected(index:IndexPath,data:CategoryModel)
     
 }
@@ -29,11 +29,11 @@ enum AMMenuImagePosition {
 
 
 class AMHorizontalMenu: UIView {
-
+    
     private var menuItems = [CategoryModel](){
         didSet{
             if collectionView != nil {
-               collectionView?.reloadData()
+                collectionView?.reloadData()
             }
         }
     }
@@ -43,7 +43,7 @@ class AMHorizontalMenu: UIView {
     var selectedIndexPath : IndexPath?
     
     
-     var imagePosition : AMMenuImagePosition!
+    var imagePosition : AMMenuImagePosition!
     
     var menuType       : AMMenuType?
     
@@ -61,7 +61,7 @@ class AMHorizontalMenu: UIView {
     init(frame:CGRect , type:AMMenuType) {
         super .init(frame: frame)
         self.menuType = type
-         configCollectionView()
+        configCollectionView()
         
     }
     
@@ -73,7 +73,7 @@ class AMHorizontalMenu: UIView {
     init(frame:CGRect , item:[CategoryModel]) {
         super .init(frame: frame)
         self.menuItems = item
-         configCollectionView()
+        configCollectionView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -90,7 +90,7 @@ class AMHorizontalMenu: UIView {
     func setNib(index:Int)  {
         
         
-         //let nibs =     nibCell.instantiate(withOwner: self, options: nil)
+        //let nibs =     nibCell.instantiate(withOwner: self, options: nil)
         
     }
     
@@ -104,7 +104,7 @@ class AMHorizontalMenu: UIView {
         case .left: break
             
         case .right: break
-           
+            
         case .none: break
             
         case .some(_): break
@@ -116,15 +116,15 @@ class AMHorizontalMenu: UIView {
         let layout = UICollectionViewFlowLayout()
         
         layout.scrollDirection = .horizontal
-
-        layout.minimumInteritemSpacing = 5;
-        layout.minimumLineSpacing        = 5;
+        
+        layout.minimumInteritemSpacing = 0;
+        layout.minimumLineSpacing        = 0;
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         
-       layout.estimatedItemSize = CGSize(width: 1,height: 1)
+        // layout.estimatedItemSize = CGSize(width: 1,height: 1)
         
-        collectionView = UICollectionView(frame: CGRect(x:0,y:8,width:self.frame.size.width,height:self.frame.size.height-16), collectionViewLayout: layout)
-       selectedIndexPath = IndexPath.init(row: 0, section: 0)
+        collectionView = UICollectionView(frame: CGRect(x:0,y:0,width:self.frame.size.width,height:self.frame.size.height ), collectionViewLayout: layout)
+        selectedIndexPath = IndexPath.init(row: 0, section: 0)
         self.addSubview(collectionView!)
         collectionView?.register(nibCell, forCellWithReuseIdentifier: cellId)
         collectionView?.showsHorizontalScrollIndicator = false
@@ -133,7 +133,7 @@ class AMHorizontalMenu: UIView {
         collectionView?.dataSource = self
         
         collectionView?.reloadData()
-        }
+    }
 }
 
 extension AMHorizontalMenu : UICollectionViewDataSource{
@@ -150,6 +150,7 @@ extension AMHorizontalMenu : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cellMenu = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AMMenuCell
+        
         cellMenu.title.text = menuItems[indexPath.row].category?.uppercased()
         
         if selectedIndexPath != nil {
@@ -157,13 +158,12 @@ extension AMHorizontalMenu : UICollectionViewDataSource{
                 cellMenu.title.textColor = Color.blue
                 cellMenu.backgroundColor = Color.white
             }else{
-                  cellMenu.backgroundColor = Color.blue
-                cellMenu.title.textColor = Color.white
+                cellMenu.backgroundColor = Color.clear
+                cellMenu.title.textColor      = Color.white
             }
         }else{
-            
-            cellMenu.title.textColor = Color.white
-            cellMenu.backgroundColor = Color.blue
+            cellMenu.title.textColor       = Color.white
+            cellMenu.backgroundColor = Color.clear
         }
         return cellMenu;
     }
@@ -178,23 +178,19 @@ extension AMHorizontalMenu : UICollectionViewDelegate , UICollectionViewDelegate
             selectedIndexPath = indexPath
             collectionView.reloadData()
             delegate?.menuSelected(index: indexPath, data: menuItems[indexPath.row])
-            
-            let theAttributes:UICollectionViewLayoutAttributes! = collectionView.layoutAttributesForItem(at: indexPath)
-            var cellFrameInSuperview:CGRect!  = collectionView.convert(theAttributes.frame, to: collectionView.superview)
-            cellFrameInSuperview.size.height = self.frame.size.height
-            
-             cellFrameInSuperview.origin.y = 0
-            let view = UIView(frame:cellFrameInSuperview)
-            view.backgroundColor = Color.white
-            self.insertSubview(view, at: 0)
-            
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-//
-//        return CGSize(width:50,height:50)
-//
-//    }//LoginModule
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+        let str = menuItems[indexPath.row].category?.uppercased()
+        let width = textWidth(text: str!, font: UIFont.systemFont(ofSize: 14, weight: .medium)) + 8.0
+        return CGSize(width:width,height:40)
+        
+    }
+    
+    func textWidth(text: String, font: UIFont) -> CGFloat {
+        let attributes = [NSAttributedStringKey.font: font]
+        return text.size(withAttributes: attributes ).width
+    }
 }
+

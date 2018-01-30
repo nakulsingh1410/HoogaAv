@@ -20,6 +20,8 @@ class EventListViewController: UIViewController,AMMenuDelegate {
     
     @IBOutlet weak var textSearchTag: UITextField!
     @IBOutlet weak var tableViewEventList : UITableView!
+    @IBOutlet weak var headerView : CustomNavHeaderView!
+    @IBOutlet weak var btnLeftMenu: LeftMenuButton!
     
     var categoryMenu : AMHorizontalMenu?
     
@@ -35,6 +37,8 @@ class EventListViewController: UIViewController,AMMenuDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        //        headerView.viewController = self
+        btnLeftMenu.viewController = self
         configTableViewForEventList()
         getCategoryList()
         getEntryTypeList()
@@ -45,7 +49,15 @@ class EventListViewController: UIViewController,AMMenuDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // self.setNavigationBarItem()
+    }
+    
     func menuSelected(index: IndexPath, data: CategoryModel) {
         
         if data.categoryid != nil {
@@ -73,13 +85,13 @@ class EventListViewController: UIViewController,AMMenuDelegate {
         
         buttonPay.backgroundColor = Color.blue
         buttonFree.backgroundColor = Color.lightGray
-    
+        
         if arrEntryType.count > 1 {
             let type = arrEntryType[0]
             request.entryType = type.entrytype
             getEventList(catId: request.catId!  , entryType:  request.entryType!, tag:  request.tag!)
-            }
         }
+    }
     
     
     @IBAction func buttonFree_didPressed(_ sender: UIButton) {
@@ -91,18 +103,18 @@ class EventListViewController: UIViewController,AMMenuDelegate {
             request.entryType = type.entrytype
             getEventList(catId: request.catId!  , entryType:  request.entryType!, tag:  request.tag!)
         }
-       
-    
+        
+        
     }
     
     
     @IBAction func textChanged_OnEdit(_ sender: UITextField) {
-    
+        
     }
     
     func configCategoryMenu(item:[CategoryModel]){
         
-        categoryMenu = AMHorizontalMenu(frame:CGRect(x:16,y:20,width:self.view.frame.size.width - 32,height:50) , item:item)
+        categoryMenu = AMHorizontalMenu(frame:CGRect(x:16,y:5,width:self.view.frame.size.width - 32,height:40) , item:item)
         categoryMenu?.delegate = self
         viewheader.addSubview(categoryMenu!)
     }
@@ -128,19 +140,35 @@ extension EventListViewController : UITableViewDataSource{
         cellEvent.labelEventDate.text = event.startdate
         cellEvent.labelEventTime.text = event.starttime
         cellEvent.labelEventTitle.text = event.title
-       cellEvent.selectionStyle = .none
-        let url = URL(string: "http://158.140.133.89/Hooga/HoogaFiles/Assets/default.png")
-         cellEvent.imageViewEvent.kf.setImage(with: url)
-       // cellEvent.viewForShadow.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
+        cellEvent.selectionStyle = .none
+        
+        
+        if let bnanner = event.bannerimage {
+            let url = kImgaeView + bnanner
+            cellEvent.imageViewEvent.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
+                if image == nil {
+                    cellEvent.imageViewEvent.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                }
+            }
+            
+        }
+        
+        cellEvent.buttonEventDetail.tag = indexPath.row
+        cellEvent.buttonEventDetail.addTarget(self, action:#selector(buttonDetail_Pressed(_:)), for: .touchUpInside)
+        
+        // cellEvent.viewForShadow.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
         return cellEvent
     }
- 
+    
+    @objc func buttonDetail_Pressed(_ button:UIButton)  {
+        NavigationManager.eventDetail(navigationController: self.navigationController,evnt:arrEvents[button.tag])
+    }
 }
-
+//
 extension EventListViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 202.0//UITableViewAutomaticDimension;
+        return UITableViewAutomaticDimension;
     }
 }
 
@@ -156,7 +184,7 @@ extension EventListViewController {
                 weakSelf.arrCategories = array
                 
                 DispatchQueue.main.async {
-                   weakSelf.configCategoryMenu(item:array)
+                    weakSelf.configCategoryMenu(item:array)
                 }
                 if (array.first?.categoryid) != nil{
                     weakSelf.getEventList(catId: 0, entryType: "", tag: "")
@@ -189,7 +217,7 @@ extension EventListViewController {
     }
     
     func getEventList(catId:Int,entryType:String,tag:String)  {
-         arrEvents = [Events]()
+        arrEvents = [Events]()
         tableViewEventList.reloadData()
         EventService.getEventList(categoryid: catId, entrytype: entryType, tag: tag, callback: {[weak self] (flag, events) in
             guard let weakSelf = self else {return}
@@ -204,3 +232,4 @@ extension EventListViewController {
     
     
 }
+

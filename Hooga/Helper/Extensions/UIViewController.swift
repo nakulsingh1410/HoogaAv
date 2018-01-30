@@ -19,6 +19,11 @@ extension UIViewController {
         self.slideMenuController()?.addRightGestures()
     }
     
+    func setLeftMenuButtonForCustomeHeader(){
+        self.toggleLeft()
+        
+    }
+    
     func removeNavigationBarItem() {
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.rightBarButtonItem = nil
@@ -60,4 +65,6 @@ extension UIViewController {
     //            }
     //        }
     //    }
+    
+    
 }

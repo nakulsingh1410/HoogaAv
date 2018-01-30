@@ -37,6 +37,17 @@ let kUserInfo = "userInfo"
 /************************ color ************************/
 
 let kBlueColor = UIColor.colorWithHexString(hex: "#0a4a7d")
+let kBackgroundColor = UIColor.colorWithHexString(hex: "#0a4a7d")
+let kButonBackgroundColor = UIColor.colorWithHexString(hex: "#0080FF")
+
+
+
+/*
+ 
+ android:startColor="#089FF2"
+ android:endColor="#148CFC"
+ */
+
 /************************ xxxxx ************************/
 
 
@@ -50,6 +61,9 @@ let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let kDomain    = "http://158.140.133.89/HoogaAPI/";
 let kSubDomain = "api/users/";
 let kEvent     = "api/events/"
+
+let kImgaeView = "http://158.140.133.89/Hooga/HoogaFiles/Assets/"
+let placeHolderImageUrl = URL(string: "http://158.140.133.89/Hooga/HoogaFiles/Assets/default.png")
 
 let kServiceUrl  = kDomain + kSubDomain
 
@@ -77,8 +91,14 @@ public enum ServiceName:String {
     case SHOW_ENTRY_TYPES = "showEntryTypes"
     case Fill_TAGS_LIST = "fillTagsList"
     case ON_GOING_EVENTS = "showOngoingEvents"
+    case SET_PASSWORD = "setPassword"
+    case VERIY_USER = "verifyUser"
+    case SHOW_EVENT_DETAIL = "showEventDetails"
+    case SHOW_EVENT_ASSETS = "showEventAssets"
+    case SHOW_EVENT_Platform = "showEventPlatforms"
+    case SHOW_EVENT_FAQs = "showEventFAQs"
+    case SHOW_EVENT_TERSM_CONDITION = "showEventTermsConditions"
 
-    
 }
 
 
@@ -101,6 +121,7 @@ public enum MessageError: String{
     case USER_DOB_BLANK             = "Please enter date of birth."
     case ADDRESS1_BLANK             = "Please enter address1."
     case ADDRESS2_BLANK             = "Please enter address2."
+    case OTP_BLANK                  = "Please enter otp."
 
     
     case PASSWORD_EMPTY    = "Please enter password."

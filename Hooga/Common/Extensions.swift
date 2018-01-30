@@ -163,6 +163,17 @@ extension UIView {
         set { layer.cornerRadius = newValue ; layer.masksToBounds = true;}
     }
     
+    func createGradientLayer() {
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = self.bounds
+        let colorTop = UIColor.init(hex: "#089FF2").cgColor
+        let colorBottom = UIColor.init(hex: "#148CFC").cgColor
+        gradientLayer.colors = [colorTop, colorBottom]
+        
+        self.layer.addSublayer(gradientLayer)
+    }
+    
 }
 
 // MARK:- Make StoryBoard Object
@@ -642,4 +653,23 @@ extension UIDevice {
 
 
 
+public extension UIWindow {
+    public var visibleViewController: UIViewController? {
+        return UIWindow.getVisibleViewControllerFrom(vc: self.rootViewController)
+    }
+    
+    public static func getVisibleViewControllerFrom(vc: UIViewController?) -> UIViewController? {
+        if let nc = vc as? UINavigationController {
+            return UIWindow.getVisibleViewControllerFrom(vc: nc.visibleViewController)
+        } else if let tc = vc as? UITabBarController {
+            return UIWindow.getVisibleViewControllerFrom(vc: tc.selectedViewController)
+        } else {
+            if let pvc = vc?.presentedViewController {
+                return UIWindow.getVisibleViewControllerFrom(vc: pvc)
+            } else {
+                return vc
+            }
+        }
+    }
+}
 

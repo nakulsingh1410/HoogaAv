@@ -203,4 +203,29 @@ class Common: NSObject{
         return ""
     }
     
+    static func backgroundcolorGradient()->CAGradientLayer {
+        var gl:CAGradientLayer!
+        let colorTop = UIColor.init(hex: "#089FF2").cgColor
+        let colorBottom = UIColor.init(hex: "#148CFC").cgColor
+        gl = CAGradientLayer()
+        gl.colors = [colorTop, colorBottom]
+        gl.locations = [0.0, 1.0]
+        
+        return gl
+    }
+
+  static  func createGradientLayer(view:UIView) {
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = view.bounds
+        let colorTop = UIColor.init(hex: "#089FF2").cgColor
+        let colorBottom = UIColor.init(hex: "#148CFC").cgColor
+        gradientLayer.colors = [colorTop, colorBottom]
+        
+        view.layer.addSublayer(gradientLayer)
+    }
+    
 }
+
+
+

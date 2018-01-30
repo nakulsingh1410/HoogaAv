@@ -17,7 +17,9 @@ class EventTitleCell: UITableViewCell {
     
     @IBOutlet weak var labelDescription: UILabel!
     @IBOutlet weak var labelVanue: UILabel!
+    @IBOutlet weak var readMoreBtnConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var btnReadMore: UIButton!
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
@@ -36,4 +38,6 @@ class EventTitleCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func btnReadMoreTapped(_ sender: Any) {
+    }
 }

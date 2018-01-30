@@ -54,14 +54,14 @@ class LoginService{
                                 dateofbirth:String,
                                 handphone:String,
                                 email:String,
-                                address1:String,
-                                address2:String,
-                                city:String,
-                                postalcode:String,
+                                address1:String?,
+                                address2:String?,
+                                city:String?,
+                                postalcode:String?,
                                 profilePic:UIImage?,
                                 callback: @escaping (Bool,String) -> Void)  {
         
-    
+        
         var profilePicData: Data?
         if let image = profilePic{
             profilePicData = UIImageJPEGRepresentation(image, 1.0)!
@@ -86,46 +86,99 @@ class LoginService{
         dictParam["isfirsttimeuser"] = "True"
         dictParam["status"] = "True"
         
-
-        Service.postRequest(endPoint: kServiceUrl+ServiceName.RIGISTER_USER.rawValue,params: dictParam) { (response) in
+        
+        Service.postRequestWithJsonResponse(endPoint: kServiceUrl+ServiceName.RIGISTER_USER.rawValue,params: dictParam) { (response) in
             Common.hideHud()
-            if response.isSuccess(),let obj = response.data{
+            
+            if let obj = response.result.value as? [String:Any]{
                 let loginModel = LoginResponseDto()
-                loginModel.userid = obj["id"] as? Int
+                if let userId = obj["id"] as? Int{
+                    loginModel.userid = userId
+                }
                 StorageModel.saveUserData(model: loginModel)
-                let data = StorageModel.getUserData()
-                callback(true,Common.getString(text:response.message));
+                callback(true,"Success");
             } else {
-                callback(false,Common.getString(text:response.message));
-                
+                callback(false,"");
             }
             
         }
     }
     
     
-    static func requestOTP(OTP:String,callback: @escaping (Bool,String) -> Void)  {
+    static func requestOTP(OTP:String,OTPScreen:String,callback: @escaping (Bool,String) -> Void)  {
+        // { "userid": 1, "OTP": "1234", "OTPType": "R" }
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+        var optType = "R"
+        if OTPScreen == "RegisterationFlow"{
+            optType = "R"
+        }else if OTPScreen == "ForgotPasswordFlow"{
+            optType = "F"
+        }
+        
+        let dict = ["userid":String(userid),
+                    "OTP":OTP,
+                    "OTPType":optType] //
+        Common.showHud()
+        Service.postRequestWithJsonResponse(endPoint: kServiceUrl+ServiceName.VERIFY_OTP.rawValue,params: dict) { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let message = obj["Message"] as? String,message.length > 0 {
+                    callback(false,message);
+                }else{
+                    callback(true,"");
+                }
+            } else {
+                callback(false,"");
+            }
+            
+        }
+    }
+    static func setPassword(password:String,callback: @escaping (Bool,String) -> Void)  {
         // { "userid": 1, "OTP": "1234", "OTPType": "R" }
         guard  let userid = StorageModel.getUserData()?.userid else {return}
         
         let dict = ["userid":String(userid),
-                    "OTP":OTP,
-                    "OTPType":"R"]
+                    "password":password,
+                    "deviceid":"123",
+                    "gsmid":""]
         Common.showHud()
-        Service.postRequest(endPoint: kServiceUrl+ServiceName.VERIFY_OTP.rawValue,params: dict) { (response) in
+        Service.postRequestWithJsonResponse(endPoint: kServiceUrl+ServiceName.SET_PASSWORD.rawValue,params: dict) { (response) in
             Common.hideHud()
-            if response.isSuccess(),let obj = response.data{
-                //                let json = JSON(response.data!)
-                
-                callback(true, response.message!);
+            if let obj = response.result.value as? [String:Any]{
+                if let status = obj["Status"] as? String,status == "Success" {
+                    callback(true,"");
+                }else{
+                    callback(false,"");
+                }
             } else {
-                callback(false,response.message!);
+                if let obj = response.result.value as? [String:Any], let message = obj["Message"] as? String {
+                    callback(false,message);
+                }
+                callback(false,"");
             }
             
         }
     }
     
-    
-    
-    
+    static func setForgotPassword(username:String,callback: @escaping (Bool,String) -> Void)  {
+        //{ "userid": 1, "username": "sriram@mindmaster.com.sg" }
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+        
+        let dict = ["userid":String(userid),
+                    "username":username]
+        Common.showHud()
+        Service.postRequestWithJsonResponse(endPoint: kServiceUrl+ServiceName.VERIY_USER.rawValue,params: dict) { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let message = obj["message"] as? String,message.length > 0{
+                    callback(false,message);
+                }else{
+                    callback(true,"");
+                }
+            } else {
+                callback(false,"");
+            }
+            
+        }
+    }
 }

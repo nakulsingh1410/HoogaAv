@@ -12,31 +12,43 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="124" id="KGk-i7-Jjw" customClass="ShareCell" customModule="Hooga" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="147" id="KGk-i7-Jjw" customClass="ShareCell" customModule="Hooga" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="122.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="132.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSj-ys-B1e">
-                        <rect key="frame" x="8" y="8" width="171" height="20"/>
+                        <rect key="frame" x="8" y="8" width="171" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="171" id="Yps-Ef-hWx"/>
-                            <constraint firstAttribute="height" constant="20" id="jim-oU-n8u"/>
+                            <constraint firstAttribute="height" constant="25" id="jim-oU-n8u"/>
                         </constraints>
-                        <state key="normal" title="FAQ"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <state key="normal" title="FAQ">
+                            <color key="titleColor" red="0.23137254900000001" green="0.0039215686269999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonFaq_didPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yt9-z9-FYH"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6s3-gc-cbL">
-                        <rect key="frame" x="8" y="31" width="171" height="20"/>
+                        <rect key="frame" x="8" y="33" width="171" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="O45-Mg-4uQ"/>
+                            <constraint firstAttribute="height" constant="25" id="O45-Mg-4uQ"/>
                             <constraint firstAttribute="width" constant="171" id="UZf-6Y-98z"/>
                         </constraints>
-                        <state key="normal" title="TERMS &amp; CONDITIONS"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <state key="normal" title="TERMS &amp; CONDITIONS">
+                            <color key="titleColor" red="0.23137254900000001" green="0.0039215686269999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonTermCondition_didPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iBJ-wo-YuH"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLw-Uq-ux4">
-                        <rect key="frame" x="8" y="56" width="82" height="21"/>
+                        <rect key="frame" x="8" y="63" width="82" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="82" id="Vql-LU-lnB"/>
                             <constraint firstAttribute="height" constant="21" id="WJn-fQ-eaP"/>
@@ -45,44 +57,53 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iQ-b2-tRU">
-                        <rect key="frame" x="8" y="79" width="35" height="35"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="V6t-rW-NzK">
+                        <rect key="frame" x="8" y="86" width="152" height="35"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iQ-b2-tRU" customClass="SocialButton" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="FCQ-fw-OHc"/>
+                                    <constraint firstAttribute="width" constant="35" id="c5A-2g-aCi"/>
+                                </constraints>
+                                <state key="normal" image="facebook"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itc-rP-Vn0" customClass="SocialButton" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="39" y="0.0" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2s8-OJ-hid"/>
+                                    <constraint firstAttribute="width" constant="35" id="YS2-cC-PgI"/>
+                                </constraints>
+                                <state key="normal" image="Twitter-icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viQ-jY-vDb" customClass="SocialButton" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="78" y="0.0" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="TDX-2d-Lqz"/>
+                                    <constraint firstAttribute="height" constant="35" id="whN-6R-wZ6"/>
+                                </constraints>
+                                <state key="normal" image="google-plus"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqv-Gf-lfY" customClass="SocialButton" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="117" y="0.0" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="8Zo-gV-oIV"/>
+                                    <constraint firstAttribute="height" constant="35" id="Of8-iA-MhO"/>
+                                </constraints>
+                                <state key="normal" image="insta"/>
+                            </button>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="35" id="FCQ-fw-OHc"/>
-                            <constraint firstAttribute="width" constant="35" id="c5A-2g-aCi"/>
+                            <constraint firstAttribute="height" constant="35" id="CQu-4t-PlB"/>
+                            <constraint firstAttribute="width" constant="152" id="jqb-WY-8Qb"/>
                         </constraints>
-                        <state key="normal" title="FAQ"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itc-rP-Vn0">
-                        <rect key="frame" x="44" y="79" width="35" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="2s8-OJ-hid"/>
-                            <constraint firstAttribute="width" constant="35" id="YS2-cC-PgI"/>
-                        </constraints>
-                        <state key="normal" title="FAQ"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viQ-jY-vDb">
-                        <rect key="frame" x="80" y="79" width="35" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="35" id="TDX-2d-Lqz"/>
-                            <constraint firstAttribute="height" constant="35" id="whN-6R-wZ6"/>
-                        </constraints>
-                        <state key="normal" title="FAQ"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqv-Gf-lfY">
-                        <rect key="frame" x="116" y="79" width="35" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="35" id="8Zo-gV-oIV"/>
-                            <constraint firstAttribute="height" constant="35" id="Of8-iA-MhO"/>
-                        </constraints>
-                        <state key="normal" title="FAQ"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sp-We-vka">
-                        <rect key="frame" x="203" y="82" width="109" height="30"/>
+                    </stackView>
+                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sp-We-vka" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
+                        <rect key="frame" x="201" y="87.5" width="109" height="32"/>
                         <color key="backgroundColor" red="0.24198424816131592" green="0.49645906686782837" blue="0.98203366994857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="109" id="Czx-Gl-CdK"/>
-                            <constraint firstAttribute="height" constant="30" id="W1W-nN-KIb"/>
+                            <constraint firstAttribute="height" constant="32" id="W1W-nN-KIb"/>
                         </constraints>
                         <state key="normal" title="REGISTER">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,29 +113,40 @@
                                 <real key="value" value="8"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="buttonRegister_didPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Hl7-ha-dSN"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="7sp-We-vka" secondAttribute="trailing" constant="8" id="6ZK-dP-dgb"/>
+                    <constraint firstAttribute="bottom" secondItem="V6t-rW-NzK" secondAttribute="bottom" constant="11.5" id="2l4-Pf-eMw"/>
+                    <constraint firstItem="7sp-We-vka" firstAttribute="centerY" secondItem="V6t-rW-NzK" secondAttribute="centerY" id="2yD-kI-Ble"/>
+                    <constraint firstAttribute="trailing" secondItem="7sp-We-vka" secondAttribute="trailing" constant="10" id="6ZK-dP-dgb"/>
                     <constraint firstItem="tSj-ys-B1e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="76H-bg-Jxh"/>
-                    <constraint firstItem="aqv-Gf-lfY" firstAttribute="leading" secondItem="viQ-jY-vDb" secondAttribute="trailing" constant="1" id="8lq-4F-Sqj"/>
-                    <constraint firstItem="8iQ-b2-tRU" firstAttribute="top" secondItem="PLw-Uq-ux4" secondAttribute="bottom" constant="2" id="C0x-09-c6y"/>
                     <constraint firstItem="PLw-Uq-ux4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="DeR-v2-y2Z"/>
-                    <constraint firstItem="8iQ-b2-tRU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="KLZ-oh-5p1"/>
                     <constraint firstItem="PLw-Uq-ux4" firstAttribute="top" secondItem="6s3-gc-cbL" secondAttribute="bottom" constant="5" id="NKU-AD-pJE"/>
-                    <constraint firstItem="6s3-gc-cbL" firstAttribute="top" secondItem="tSj-ys-B1e" secondAttribute="bottom" constant="3" id="Q3P-wz-mab"/>
-                    <constraint firstItem="aqv-Gf-lfY" firstAttribute="top" secondItem="6s3-gc-cbL" secondAttribute="bottom" constant="28" id="RIF-21-Qh9"/>
-                    <constraint firstItem="7sp-We-vka" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="82" id="W4U-Bi-RSW"/>
+                    <constraint firstItem="V6t-rW-NzK" firstAttribute="top" secondItem="PLw-Uq-ux4" secondAttribute="bottom" constant="2" id="Ntd-Th-LoW"/>
+                    <constraint firstItem="6s3-gc-cbL" firstAttribute="top" secondItem="tSj-ys-B1e" secondAttribute="bottom" id="Rtn-ln-hqG"/>
+                    <constraint firstItem="V6t-rW-NzK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Znn-T6-831"/>
                     <constraint firstItem="tSj-ys-B1e" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="bf5-F2-7PT"/>
-                    <constraint firstItem="Itc-rP-Vn0" firstAttribute="top" secondItem="PLw-Uq-ux4" secondAttribute="bottom" constant="2" id="cwT-rN-DWk"/>
-                    <constraint firstItem="viQ-jY-vDb" firstAttribute="top" secondItem="PLw-Uq-ux4" secondAttribute="bottom" constant="2" id="dxR-Nn-2hr"/>
-                    <constraint firstItem="Itc-rP-Vn0" firstAttribute="leading" secondItem="8iQ-b2-tRU" secondAttribute="trailing" constant="1" id="jXG-zO-E7a"/>
-                    <constraint firstItem="viQ-jY-vDb" firstAttribute="leading" secondItem="Itc-rP-Vn0" secondAttribute="trailing" constant="1" id="osr-6i-UNN"/>
                     <constraint firstItem="6s3-gc-cbL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="tpG-Cg-jJQ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="80" y="93"/>
+            <connections>
+                <outlet property="buttnFaceBook" destination="8iQ-b2-tRU" id="2le-z8-1x0"/>
+                <outlet property="buttonGoogle" destination="viQ-jY-vDb" id="9kE-Of-bzj"/>
+                <outlet property="buttonInsta" destination="aqv-Gf-lfY" id="v5A-zI-vvm"/>
+                <outlet property="buttonTwitter" destination="Itc-rP-Vn0" id="WcA-NB-MRY"/>
+                <outlet property="buttonregister" destination="7sp-We-vka" id="0yk-7I-z4C"/>
+            </connections>
+            <point key="canvasLocation" x="135" y="114"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Twitter-icon" width="30" height="30"/>
+        <image name="facebook" width="30" height="30"/>
+        <image name="google-plus" width="30" height="30"/>
+        <image name="insta" width="30" height="30"/>
+    </resources>
 </document>

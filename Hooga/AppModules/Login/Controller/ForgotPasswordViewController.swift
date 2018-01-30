@@ -9,20 +9,46 @@
 import UIKit
 
 class ForgotPasswordViewController: UIViewController {
-
+    
     @IBOutlet weak var txtFEmail: HoogaTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    /*********************************************************************************/
+    // MARK: Function
+    /*********************************************************************************/
     
-
+    private func forgotPassword()  {
+        var message : String?
+        if let userName = txtFEmail.text,userName.trimmingCharacters(in: .whitespaces).isEmpty{
+            message = MessageError.USER_NAME_BLANK .rawValue
+        }else if let value = txtFEmail.text,value.isEmail == false{
+            message = MessageError.EMAIL_INVALID.rawValue
+        }
+        
+        if let errorMsg = message {
+            Common.showAlert(message: errorMsg)
+        }else{
+            setForgotPasswordAPI(password: txtFEmail.text!)
+        }
+    }
+    
+    private func navigateToOTP(){
+        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RequestOTPViewController") as? RequestOTPViewController{
+            vcObj.screenFlow = "ForgotPasswordFlow"
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    
     /*********************************************************************************/
     // MARK: IB_Action
     /*********************************************************************************/
@@ -31,8 +57,26 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-
+        forgotPassword()
     }
     @IBAction func btnCancelTapped(_ sender: Any) {
+        txtFEmail.text = ""
+    }
+}
+
+/*********************************************************************************/
+// MARK: API
+/*********************************************************************************/
+extension ForgotPasswordViewController{
+    
+    func setForgotPasswordAPI(password:String)  {
+        LoginService.setForgotPassword(username: password) {[weak self]  (flag, message) in
+            guard let weakSelf = self else {return}
+            if flag {
+                weakSelf.navigateToOTP()
+            }else{
+                Common.showAlert(message: message)
+            }
+        }
     }
 }

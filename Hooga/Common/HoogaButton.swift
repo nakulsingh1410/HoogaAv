@@ -9,17 +9,19 @@
 import UIKit
 
 class HoogaButton: UIButton {
-
+    
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
     
     override func awakeFromNib() {
+        
         cornerRadius()
+        setbackgroundColor()
     }
     
     func cornerRadius() {
@@ -27,5 +29,11 @@ class HoogaButton: UIButton {
         self.layer.masksToBounds = true
     }
     
-
+    func setbackgroundColor()  {
+        if self.titleLabel?.text != "Back"{
+            self.backgroundColor = kButonBackgroundColor
+        }
+    }
+    
+    
 }
