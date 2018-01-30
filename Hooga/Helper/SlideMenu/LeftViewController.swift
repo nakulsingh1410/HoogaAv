@@ -7,6 +7,16 @@
 
 import UIKit
 
+class MenuItem:NSObject {
+    var title :String?
+    var icon :String?
+    
+    init(titleString:String,imageIcon:String?) {
+        title = titleString
+        icon = imageIcon
+    }
+}
+
 enum LeftMenu: Int {
     case main = 0
     case login
@@ -22,13 +32,11 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var imgViewUser: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Home", "Login","Contact Us"]
+    var menus = [MenuItem]()
     var mainViewController: UIViewController!
 
     var contactUsViewController: UIViewController!
-    var loginViewController: UIViewController!
-
-//    var imageHeaderView: ImageHeaderView!
+    var myEventViewController: UIViewController!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,14 +45,13 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         
         let storyboard = UIStoryboard(name: "LeftSideMenu", bundle: nil)
 //        let contactUsController = storyboard.instantiateViewController(withIdentifier: "ContactUsViewController") as! ContactUsViewController
 //        self.contactUsViewController = UINavigationController(rootViewController: contactUsController)
 
-        let loginVc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.loginViewController = UINavigationController(rootViewController: loginVc)
+        let myEventVc = storyboard.instantiateViewController(withIdentifier: "MyEventViewController") as! MyEventViewController
+        self.myEventViewController = UINavigationController(rootViewController: myEventVc)
 //
 //        let goViewController = storyboard.instantiateViewController(withIdentifier: "GoViewController") as! GoViewController
 //        self.goViewController = UINavigationController(rootViewController: contactUsController)
@@ -52,10 +59,9 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
 //        let nonMenuController = storyboard.instantiateViewController(withIdentifier: "NonMenuController") as! NonMenuController
 //        nonMenuController.delegate = self
 //        self.nonMenuViewController = UINavigationController(rootViewController: contactUsController)
-        
-        
-        self.tableView.registerCellClass(BaseTableViewCell.self)
-        
+        setUpMenu()
+        setUpTableView()
+       
         imgViewUser.layer.cornerRadius = imgViewUser.frame.height/2
         imgViewUser.layer.masksToBounds = true
     }
@@ -69,14 +75,28 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
         self.view.layoutIfNeeded()
     }
     
+    private func setUpMenu(){
+        menus.append(MenuItem(titleString: "Home", imageIcon: "home"))
+        menus.append(MenuItem(titleString: "My Profile", imageIcon: "profile"))
+        menus.append(MenuItem(titleString: "My Event", imageIcon: "star"))
+    }
+    
+   private  func setUpTableView() {
+    tableView.register( UINib(nibName: "DataTableViewCell", bundle: Bundle(for: LeftViewController.self)), forCellReuseIdentifier: "DataTableViewCell")
+    tableView.tableFooterView = UIView()
+    tableView.separatorColor = UIColor.white
+    }
+    
     func changeViewController(_ menu: LeftMenu) {
         switch menu {
         case .main:
-            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+            //self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+             self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
         case .contactUs:
-            self.slideMenuController()?.changeMainViewController(self.contactUsViewController, close: true)
+            //self.slideMenuController()?.changeMainViewController(self.contactUsViewController, close: true)
+             self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
         case .login:
-            self.slideMenuController()?.changeMainViewController(self.loginViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
         }
     }
 }
@@ -116,9 +136,11 @@ extension LeftViewController : UITableViewDataSource {
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
             case .main, .contactUs, .login:
-                let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
-                cell.setData(menus[indexPath.row])
-                return cell
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "DataTableViewCell") as? DataTableViewCell{
+                    cell.setData(menus[indexPath.row])
+                    return cell
+                }
+                return UITableViewCell()
             }
         }
         return UITableViewCell()

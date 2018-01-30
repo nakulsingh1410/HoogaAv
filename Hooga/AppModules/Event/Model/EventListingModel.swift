@@ -61,7 +61,7 @@ class Events: NSObject,Mappable {
     var categoryid : Int?
     var category : String?
     var entrytype : String?
-    var eventid : String?
+    var eventid : Int?
     var title : String?
     var eventcode : String?
     var startdate : String?

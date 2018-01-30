@@ -117,13 +117,13 @@ class AMHorizontalMenu: UIView {
         
         layout.scrollDirection = .horizontal
 
-        layout.minimumInteritemSpacing = 5;
-        layout.minimumLineSpacing        = 5;
+        layout.minimumInteritemSpacing = 0;
+        layout.minimumLineSpacing        = 0;
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         
-       layout.estimatedItemSize = CGSize(width: 1,height: 1)
+      // layout.estimatedItemSize = CGSize(width: 1,height: 1)
         
-        collectionView = UICollectionView(frame: CGRect(x:0,y:8,width:self.frame.size.width,height:self.frame.size.height-16), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x:0,y:0,width:self.frame.size.width,height:self.frame.size.height ), collectionViewLayout: layout)
        selectedIndexPath = IndexPath.init(row: 0, section: 0)
         self.addSubview(collectionView!)
         collectionView?.register(nibCell, forCellWithReuseIdentifier: cellId)
@@ -150,6 +150,7 @@ extension AMHorizontalMenu : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cellMenu = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AMMenuCell
+        
         cellMenu.title.text = menuItems[indexPath.row].category?.uppercased()
         
         if selectedIndexPath != nil {
@@ -157,13 +158,12 @@ extension AMHorizontalMenu : UICollectionViewDataSource{
                 cellMenu.title.textColor = Color.blue
                 cellMenu.backgroundColor = Color.white
             }else{
-                  cellMenu.backgroundColor = Color.blue
-                cellMenu.title.textColor = Color.white
+                cellMenu.backgroundColor = Color.clear
+                cellMenu.title.textColor      = Color.white
             }
         }else{
-            
-            cellMenu.title.textColor = Color.white
-            cellMenu.backgroundColor = Color.blue
+            cellMenu.title.textColor       = Color.white
+            cellMenu.backgroundColor = Color.clear
         }
         return cellMenu;
     }
@@ -181,10 +181,15 @@ extension AMHorizontalMenu : UICollectionViewDelegate , UICollectionViewDelegate
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-//
-//        return CGSize(width:50,height:50)
-//
-//    }
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+        let str = menuItems[indexPath.row].category?.uppercased()
+        let width = textWidth(text: str!, font: UIFont.systemFont(ofSize: 14, weight: .medium)) + 8.0
+        return CGSize(width:width,height:40)
+        
+    }
+    
+    func textWidth(text: String, font: UIFont) -> CGFloat {
+        let attributes = [NSAttributedStringKey.font: font]
+        return text.size(withAttributes: attributes ).width
+    }
 }

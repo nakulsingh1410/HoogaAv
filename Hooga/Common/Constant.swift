@@ -93,7 +93,12 @@ public enum ServiceName:String {
     case ON_GOING_EVENTS = "showOngoingEvents"
     case SET_PASSWORD = "setPassword"
     case VERIY_USER = "verifyUser"
-    
+    case SHOW_EVENT_DETAIL = "showEventDetails"
+    case SHOW_EVENT_ASSETS = "showEventAssets"
+    case SHOW_EVENT_Platform = "showEventPlatforms"
+    case SHOW_EVENT_FAQs = "showEventFAQs"
+    case SHOW_EVENT_TERSM_CONDITION = "showEventTermsConditions"
+
 }
 
 

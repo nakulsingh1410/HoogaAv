@@ -18,24 +18,45 @@ struct DataTableViewCellData {
     var text: String
 }
 
-class DataTableViewCell : BaseTableViewCell {
+class DataTableViewCell : UITableViewCell {
     
     @IBOutlet weak var dataImage: UIImageView!
     @IBOutlet weak var dataText: UILabel!
     
     override func awakeFromNib() {
-        self.dataText?.font = UIFont.italicSystemFont(ofSize: 16)
-        self.dataText?.textColor = UIColor(hex: "9E9E9E")
-    }
- 
-    override class func height() -> CGFloat {
-        return 80
+//        self.dataText?.font = UIFont.italicSystemFont(ofSize: 16)
+//        self.dataText?.textColor = UIColor(hex: "9E9E9E")
     }
     
-    override func setData(_ data: Any?) {
-        if let data = data as? DataTableViewCellData {
-            self.dataImage.setRandomDownloadImage(80, height: 80)
-            self.dataText.text = data.text
+    
+    open func setData(_ data: MenuItem) {
+        self.backgroundColor = UIColor.clear
+        //        self.textLabel?.font = UIFont.italicSystemFont(ofSize: 18)
+        dataText.textColor = UIColor.white
+        if let menuText = data.title{
+            dataText.text = menuText
+        }
+        if let imageName = data.icon{
+            dataImage.image = UIImage(named: imageName)
         }
     }
+    
+    override open func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            self.alpha = 0.4
+        } else {
+            self.alpha = 1.0
+        }
+    }
+ 
+//    override class func height() -> CGFloat {
+//        return 80
+//    }
+//
+//    override func setData(_ data: Any?) {
+//        if let data = data as? DataTableViewCellData {
+//            self.dataImage.setRandomDownloadImage(80, height: 80)
+//            self.dataText.text = data.text
+//        }
+//    }
 }

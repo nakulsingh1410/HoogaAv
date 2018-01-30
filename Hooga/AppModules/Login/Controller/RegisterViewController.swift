@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum Gender:String{
+    case male = "Male"
+     case female = "Female"
+}
+
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var txtFFirstName: HoogaTextField!
@@ -24,7 +29,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var imgViewProfilePic: UIImageView!
     @IBOutlet weak var btnUpload: HoogaButton!
     
-    var arrGender = ["Male","Female"]
+    var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
+    var arrCity = ["Singapore"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,7 +56,15 @@ class RegisterViewController: UIViewController {
             view.addSubview(picker)
         }
     }
-    
+    private func openCityPicker(){
+        if let picker = CustomPickerView.loadPickerView(){
+            picker.frame = view.frame
+            picker.pickerType = .cityPicker
+            picker.pickerDataSource = arrCity
+            picker.customPickerViewDelegate = self
+            view.addSubview(picker)
+        }
+    }
     private func openDatePicker(){
         if let picker = CustomDatePicker.loadDatePickerView(){
             picker.frame = view.frame
@@ -100,6 +114,22 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    private func pickProfileImage(){
+        let imageController = OpenImagePickerViewController()
+        imageController.configure {[weak self]  (flag, image) in
+               guard let weakSelf = self else {return}
+            if flag {
+                weakSelf.imgViewProfilePic.image = image
+                weakSelf.btnUpload.isHidden = true
+            }
+            else{
+                
+            }
+        }
+        let vcObj = appDelegate.window?.visibleViewController
+        vcObj?.present(imageController, animated: true, completion: nil);
+    }
+    
     private func navigateToOTP(){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "RequestOTPViewController") as? RequestOTPViewController{
@@ -116,25 +146,33 @@ class RegisterViewController: UIViewController {
     }    
     
     @IBAction func btnGenderTapped(_ sender: Any) {
+        view.endEditing(true)
         openGenderPicker()
     }
     
     @IBAction func btnDOBTapped(_ sender: Any) {
+         view.endEditing(true)
         openDatePicker()
     }
     
     @IBAction func btnUploadTapped(_ sender: Any) {
+         view.endEditing(true)
+        pickProfileImage()
     }
     
     @IBAction func btnCityTapped(_ sender: Any) {
+         view.endEditing(true)
+        openCityPicker()
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
 //        registerUser()
+         view.endEditing(true)
         navigateToOTP()
         
     }
     @IBAction func btnCancelTapped(_ sender: Any) {
+         view.endEditing(true)
         txtFFirstName.text = ""
         txtFLastName.text = ""
         txtFGender.text = ""
@@ -143,7 +181,7 @@ class RegisterViewController: UIViewController {
         txtFEmail.text = ""
         txtFAddress1.text = ""
         txtFAddress2.text = ""
-        //txtFCity.text = ""
+        txtFCity.text = ""
         txtFPostalCode.text = ""
     }
 }
@@ -156,7 +194,10 @@ extension RegisterViewController:CustomPickerViewDelegate{
     }
     func didSelectPickerValueAt(title: String, index: Int, pickerType: PickerType?) {
         if let type = pickerType , type == .gendePicker {
-            txtFGender.text = title
+            txtFGender.text = (title == Gender.male.rawValue) ? "M" : "F"
+        }
+        if let type = pickerType , type == .cityPicker {
+            txtFCity.text = title
         }
     }
 }

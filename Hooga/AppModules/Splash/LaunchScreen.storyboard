@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,13 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="AMC-Kp-c8a">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="AMC-Kp-c8a">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="dBl-Ae-CPy">
+                                <rect key="frame" x="127.5" y="273.5" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="f6u-JV-hTG"/>
+                                    <constraint firstAttribute="height" constant="120" id="o43-vH-i2V"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dBl-Ae-CPy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1ZH-Lt-IsT"/>
                             <constraint firstItem="AMC-Kp-c8a" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7KL-D9-Tj5"/>
+                            <constraint firstItem="dBl-Ae-CPy" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9xg-dc-bf6"/>
                             <constraint firstItem="AMC-Kp-c8a" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="CO9-QI-SBJ"/>
                             <constraint firstItem="AMC-Kp-c8a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mgx-4E-rMV"/>
                             <constraint firstItem="AMC-Kp-c8a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dme-b1-KN1"/>
@@ -38,6 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Splash" width="415" height="739"/>
+        <image name="Logo" width="256" height="256"/>
+        <image name="background" width="375" height="666"/>
     </resources>
 </document>

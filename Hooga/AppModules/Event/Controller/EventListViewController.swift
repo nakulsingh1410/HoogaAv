@@ -20,6 +20,8 @@ class EventListViewController: UIViewController,AMMenuDelegate {
     
     @IBOutlet weak var textSearchTag: UITextField!
     @IBOutlet weak var tableViewEventList : UITableView!
+    @IBOutlet weak var headerView : CustomNavHeaderView!
+    @IBOutlet weak var btnLeftMenu: LeftMenuButton!
     
     var categoryMenu : AMHorizontalMenu?
     
@@ -35,6 +37,8 @@ class EventListViewController: UIViewController,AMMenuDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+//        headerView.viewController = self
+        btnLeftMenu.viewController = self
         configTableViewForEventList()
         getCategoryList()
         getEntryTypeList()
@@ -44,6 +48,14 @@ class EventListViewController: UIViewController,AMMenuDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       // self.setNavigationBarItem()
     }
 
     func menuSelected(index: IndexPath, data: CategoryModel) {
@@ -102,7 +114,7 @@ class EventListViewController: UIViewController,AMMenuDelegate {
     
     func configCategoryMenu(item:[CategoryModel]){
         
-        categoryMenu = AMHorizontalMenu(frame:CGRect(x:16,y:20,width:self.view.frame.size.width - 32,height:50) , item:item)
+        categoryMenu = AMHorizontalMenu(frame:CGRect(x:16,y:5,width:self.view.frame.size.width - 32,height:40) , item:item)
         categoryMenu?.delegate = self
         viewheader.addSubview(categoryMenu!)
     }
@@ -130,22 +142,33 @@ extension EventListViewController : UITableViewDataSource{
         cellEvent.labelEventTitle.text = event.title
        cellEvent.selectionStyle = .none
         
-      //  cellEvent.imageViewEvent.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+      
         if let bnanner = event.bannerimage {
             let url = kImgaeView + bnanner
-            cellEvent.imageViewEvent.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
-
+            cellEvent.imageViewEvent.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
+                if image == nil {
+                    cellEvent.imageViewEvent.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                }
+            }
+            
         }
+        
+        cellEvent.buttonEventDetail.tag = indexPath.row
+        cellEvent.buttonEventDetail.addTarget(self, action:#selector(buttonDetail_Pressed(_:)), for: .touchUpInside)
+        
        // cellEvent.viewForShadow.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
         return cellEvent
     }
  
+    @objc func buttonDetail_Pressed(_ button:UIButton)  {
+        NavigationManager.eventDetail(navigationController: self.navigationController,evnt:arrEvents[button.tag])
+    }
 }
-
+//
 extension EventListViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 202.0//UITableViewAutomaticDimension;
+        return UITableViewAutomaticDimension;
     }
 }
 

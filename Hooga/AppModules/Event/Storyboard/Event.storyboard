@@ -18,14 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="cKn-uy-bbI">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnM-Mp-QiL" customClass="HoogaView" customModule="Hooga" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Xh-Rq-LsK">
+                                <rect key="frame" x="0.0" y="20" width="375" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="FLV-Q7-ayA"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVu-9i-4w8">
-                                <rect key="frame" x="0.0" y="20" width="375" height="122"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="122"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TAG | SEARCH" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vfl-OV-6FH" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="80" width="200" height="35"/>
+                                        <rect key="frame" x="16" y="57" width="200" height="35"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="abK-uv-zC8"/>
@@ -38,7 +46,7 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRP-oO-ppf">
-                                        <rect key="frame" x="217" y="80" width="142" height="35"/>
+                                        <rect key="frame" x="217" y="57" width="142" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCy-jx-OMA">
                                                 <rect key="frame" x="33" y="5" width="35" height="25"/>
@@ -107,42 +115,57 @@
                                             <constraint firstItem="PCy-jx-OMA" firstAttribute="top" secondItem="aRP-oO-ppf" secondAttribute="top" constant="5" id="xZg-Jr-rZ6"/>
                                         </constraints>
                                     </view>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xU-V8-CXz" customClass="LeftMenuButton" customModule="Hooga" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="14" width="30" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="NwP-yf-ZXb"/>
+                                            <constraint firstAttribute="height" constant="35" id="hhs-ca-QIh"/>
+                                        </constraints>
+                                        <state key="normal" title="Menu"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="aRP-oO-ppf" firstAttribute="centerY" secondItem="vfl-OV-6FH" secondAttribute="centerY" id="0DC-tQ-Zp6"/>
+                                    <constraint firstItem="vfl-OV-6FH" firstAttribute="top" secondItem="NVu-9i-4w8" secondAttribute="top" constant="57" id="4eW-3w-36Z"/>
                                     <constraint firstAttribute="trailing" secondItem="aRP-oO-ppf" secondAttribute="trailing" constant="16" id="6So-1D-w9V"/>
-                                    <constraint firstAttribute="bottom" secondItem="aRP-oO-ppf" secondAttribute="bottom" constant="7" id="Aki-Xa-TED"/>
-                                    <constraint firstAttribute="bottom" secondItem="vfl-OV-6FH" secondAttribute="bottom" constant="7" id="CoI-EU-qGg"/>
+                                    <constraint firstItem="5xU-V8-CXz" firstAttribute="leading" secondItem="NVu-9i-4w8" secondAttribute="leading" constant="16" id="8b4-jS-P12"/>
                                     <constraint firstAttribute="height" constant="122" id="PcT-Du-JgK"/>
                                     <constraint firstItem="vfl-OV-6FH" firstAttribute="leading" secondItem="NVu-9i-4w8" secondAttribute="leading" constant="16" id="onu-LZ-mAi"/>
+                                    <constraint firstItem="5xU-V8-CXz" firstAttribute="top" secondItem="NVu-9i-4w8" secondAttribute="top" constant="14" id="zMh-yY-qbN"/>
                                     <constraint firstItem="aRP-oO-ppf" firstAttribute="leading" secondItem="vfl-OV-6FH" secondAttribute="trailing" constant="1" id="zTe-7d-EAd"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y7r-S9-6yh">
-                                <rect key="frame" x="0.0" y="142" width="375" height="523"/>
+                                <rect key="frame" x="0.0" y="162" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6Xh-Rq-LsK" firstAttribute="leading" secondItem="Ll5-4v-lXF" secondAttribute="leading" id="2Cn-nn-ze4"/>
+                            <constraint firstItem="NVu-9i-4w8" firstAttribute="top" secondItem="6Xh-Rq-LsK" secondAttribute="bottom" constant="20" id="4Dj-2P-ABD"/>
                             <constraint firstItem="Y7r-S9-6yh" firstAttribute="top" secondItem="NVu-9i-4w8" secondAttribute="bottom" id="4W6-vA-coF"/>
-                            <constraint firstItem="Ll5-4v-lXF" firstAttribute="bottom" secondItem="cKn-uy-bbI" secondAttribute="bottom" id="59z-OM-Sbi"/>
-                            <constraint firstItem="cKn-uy-bbI" firstAttribute="top" secondItem="CsN-E8-IXT" secondAttribute="top" id="8YS-aM-l2J"/>
-                            <constraint firstItem="cKn-uy-bbI" firstAttribute="leading" secondItem="Ll5-4v-lXF" secondAttribute="leading" id="AHH-Vc-pWb"/>
-                            <constraint firstItem="Ll5-4v-lXF" firstAttribute="trailing" secondItem="cKn-uy-bbI" secondAttribute="trailing" id="L75-Mt-kmQ"/>
+                            <constraint firstItem="Ll5-4v-lXF" firstAttribute="trailing" secondItem="6Xh-Rq-LsK" secondAttribute="trailing" id="8bO-BP-upm"/>
+                            <constraint firstItem="Ll5-4v-lXF" firstAttribute="trailing" secondItem="nnM-Mp-QiL" secondAttribute="trailing" id="BWu-ks-gPT"/>
                             <constraint firstItem="NVu-9i-4w8" firstAttribute="trailing" secondItem="Ll5-4v-lXF" secondAttribute="trailing" id="Lu5-y0-QGp"/>
                             <constraint firstItem="Y7r-S9-6yh" firstAttribute="bottom" secondItem="Ll5-4v-lXF" secondAttribute="bottom" constant="-2" id="RV9-A1-9OL"/>
+                            <constraint firstItem="6Xh-Rq-LsK" firstAttribute="top" secondItem="Ll5-4v-lXF" secondAttribute="top" id="VFc-1s-1CD"/>
+                            <constraint firstItem="nnM-Mp-QiL" firstAttribute="top" secondItem="CsN-E8-IXT" secondAttribute="top" id="Wjf-WR-kRl"/>
+                            <constraint firstAttribute="bottom" secondItem="nnM-Mp-QiL" secondAttribute="bottom" id="YnP-DM-BbT"/>
                             <constraint firstItem="NVu-9i-4w8" firstAttribute="leading" secondItem="Ll5-4v-lXF" secondAttribute="leading" id="dfX-xZ-Ia1"/>
                             <constraint firstItem="Y7r-S9-6yh" firstAttribute="trailing" secondItem="Ll5-4v-lXF" secondAttribute="trailing" id="fGy-39-rdi"/>
+                            <constraint firstItem="nnM-Mp-QiL" firstAttribute="leading" secondItem="Ll5-4v-lXF" secondAttribute="leading" id="isf-cV-z7e"/>
                             <constraint firstItem="Y7r-S9-6yh" firstAttribute="leading" secondItem="Ll5-4v-lXF" secondAttribute="leading" id="jNH-4P-th8"/>
-                            <constraint firstItem="NVu-9i-4w8" firstAttribute="top" secondItem="Ll5-4v-lXF" secondAttribute="top" id="yOv-lq-AtJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ll5-4v-lXF"/>
                     </view>
                     <navigationItem key="navigationItem" id="hbQ-EC-T6q"/>
                     <connections>
+                        <outlet property="btnLeftMenu" destination="5xU-V8-CXz" id="fbe-Mp-9Ps"/>
                         <outlet property="buttonFree" destination="KRV-Ey-GWq" id="aWT-7s-lX4"/>
                         <outlet property="buttonPay" destination="mFc-dD-SNo" id="fvP-0A-31q"/>
+                        <outlet property="headerView" destination="6Xh-Rq-LsK" id="9px-R6-x45"/>
                         <outlet property="labelFree" destination="0Xy-bz-ZvV" id="BoE-A9-ddk"/>
                         <outlet property="labelPay" destination="PCy-jx-OMA" id="D95-tS-QsW"/>
                         <outlet property="tableViewEventList" destination="Y7r-S9-6yh" id="RkB-Xh-uh7"/>
@@ -173,7 +196,4 @@
             <point key="canvasLocation" x="28" y="109"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="background" width="375" height="666"/>
-    </resources>
 </document>

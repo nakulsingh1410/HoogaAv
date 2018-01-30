@@ -11,6 +11,8 @@ import UIKit
 
 enum PickerType:String {
     case gendePicker = "Gender"
+    case cityPicker = "City"
+
 }
 
 protocol CustomPickerViewDelegate {
