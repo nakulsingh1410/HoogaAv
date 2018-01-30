@@ -181,10 +181,14 @@ extension EventListViewController {
         EventService.getCategories() {[weak self]  (flag, categories) in
             guard let weakSelf = self else {return}
             if let array = categories {
-                weakSelf.arrCategories = array
                 
+                let catAll = CategoryModel()
+                catAll.category = "All"
+                catAll.categoryid = 0
+                weakSelf.arrCategories = array
+                weakSelf.arrCategories.insert(catAll, at: 0)
                 DispatchQueue.main.async {
-                   weakSelf.configCategoryMenu(item:array)
+                   weakSelf.configCategoryMenu(item:weakSelf.arrCategories)
                 }
                 if (array.first?.categoryid) != nil{
                     weakSelf.getEventList(catId: 0, entryType: "", tag: "")
@@ -225,7 +229,7 @@ extension EventListViewController {
                 weakSelf.arrEvents = array
                 weakSelf.tableViewEventList.reloadData()
             }else{
-                Common.showAlert(message: "No data available...")
+                Common.showAlert(message: "No data available")
                 
             }
         })

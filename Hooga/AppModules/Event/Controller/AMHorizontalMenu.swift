@@ -183,7 +183,7 @@ extension AMHorizontalMenu : UICollectionViewDelegate , UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         let str = menuItems[indexPath.row].category?.uppercased()
-        let width = textWidth(text: str!, font: UIFont.systemFont(ofSize: 14, weight: .medium)) + 8.0
+        let width = textWidth(text: str!, font: UIFont.systemFont(ofSize: 14, weight: .medium)) + 12.0
         return CGSize(width:width,height:40)
         
     }
