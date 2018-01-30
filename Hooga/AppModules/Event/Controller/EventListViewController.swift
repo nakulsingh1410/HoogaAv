@@ -225,7 +225,8 @@ extension EventListViewController {
                 weakSelf.arrEvents = array
                 weakSelf.tableViewEventList.reloadData()
             }else{
-                Common.showAlert(message: "No data available")
+                Common.showAlert(message: "No data available...")
+                
             }
         })
     }
