@@ -155,15 +155,18 @@ extension AMHorizontalMenu : UICollectionViewDataSource{
         
         if selectedIndexPath != nil {
             if selectedIndexPath == indexPath{
-                cellMenu.title.textColor = Color.blue
-                cellMenu.backgroundColor = Color.white
+               cellMenu.title.textColor = Color.blue
+                //cellMenu.backgroundColor = Color.white
+                 cellMenu.viewBG.isHidden = false
             }else{
-                cellMenu.backgroundColor = Color.clear
+                //cellMenu.backgroundColor = Color.clear
                 cellMenu.title.textColor      = Color.white
+                 cellMenu.viewBG.isHidden = true
             }
         }else{
             cellMenu.title.textColor       = Color.white
-            cellMenu.backgroundColor = Color.clear
+            //cellMenu.backgroundColor = Color.clear
+            cellMenu.viewBG.isHidden = true
         }
         return cellMenu;
     }

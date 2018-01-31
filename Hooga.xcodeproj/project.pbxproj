@@ -107,6 +107,7 @@
 		7530D962201FE3DF00B9BB52 /* SocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D961201FE3DF00B9BB52 /* SocialButton.swift */; };
 		7530D964201FECA100B9BB52 /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D963201FECA100B9BB52 /* FaqVC.swift */; };
 		7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D965201FECF100B9BB52 /* FaqCell.swift */; };
+		754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E26B0202149DE00129381 /* TagSearchVC.swift */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
 /* End PBXBuildFile section */
@@ -238,6 +239,7 @@
 		7530D961201FE3DF00B9BB52 /* SocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButton.swift; sourceTree = "<group>"; };
 		7530D963201FECA100B9BB52 /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
 		7530D965201FECF100B9BB52 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
+		754E26B0202149DE00129381 /* TagSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchVC.swift; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A2B191A578EA47A70B75B6 /* Pods-HoogaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoogaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoogaTests/Pods-HoogaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -606,6 +608,7 @@
 				30EA5F9F201E2892009D4278 /* GrediantView.swift */,
 				30EA5FA0201E2892009D4278 /* MenuTitleAppearance.swift */,
 				30D77C202010891900386438 /* EventListViewController.swift */,
+				754E26B0202149DE00129381 /* TagSearchVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1118,6 +1121,7 @@
 				30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */,
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
 				30ED06192020833100D354BE /* HoogaView.swift in Sources */,
+				754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */,
 				7530D953201F888300B9BB52 /* BannerCell.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,
 				30D77C212010891900386438 /* EventListViewController.swift in Sources */,

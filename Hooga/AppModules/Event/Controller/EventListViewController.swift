@@ -114,7 +114,7 @@ class EventListViewController: UIViewController,AMMenuDelegate {
     
     func configCategoryMenu(item:[CategoryModel]){
         
-        categoryMenu = AMHorizontalMenu(frame:CGRect(x:16,y:5,width:self.view.frame.size.width - 32,height:40) , item:item)
+        categoryMenu = AMHorizontalMenu(frame:CGRect(x:16,y:0,width:self.view.frame.size.width - 32,height:40) , item:item)
         categoryMenu?.delegate = self
         viewheader.addSubview(categoryMenu!)
     }
