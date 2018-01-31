@@ -67,7 +67,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func btnLoginTapped(_ sender: Any) {
         loginUser()
-//        navigateToEvent()
     }
     @IBAction func btnCancelTapped(_ sender: Any) {
         txtFEmail.text = ""

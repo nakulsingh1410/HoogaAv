@@ -66,9 +66,8 @@ extension RequestOTPViewController{
             if flag {
                 weakSelf.navigateToSetPassword()
             }else{
-//                Common.showAlert(message: message)
+                Common.showAlert(message: message)
             }
-            weakSelf.navigateToSetPassword()
         }
     }
     

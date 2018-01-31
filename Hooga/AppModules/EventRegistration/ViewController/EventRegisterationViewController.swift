@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  EventRegisterationViewController.swift
 //  Hooga
 //
 //  Created by Nakul Singh on 1/14/18.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-enum Gender:String{
-    case male = "Male"
-     case female = "Female"
-}
 
-class RegisterViewController: UIViewController {
+class EventRegisterationViewController: UIViewController {
+    
+    @IBOutlet weak var lblEventTitle: HoogaLabel!
+    @IBOutlet weak var lblEventLocation: HoogaLabel!
+    @IBOutlet weak var lblEventTime: HoogaLabel!
     
     @IBOutlet weak var txtFFirstName: HoogaTextField!
     @IBOutlet weak var txtFLastName: HoogaTextField!
@@ -28,19 +28,56 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtFPostalCode: HoogaTextField!
     @IBOutlet weak var imgViewProfilePic: UIImageView!
     @IBOutlet weak var btnUpload: HoogaButton!
+    @IBOutlet weak var imgViewBanner: UIImageView!
     
-    var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
-    var arrCity = ["Singapore"]
+   fileprivate var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
+   fileprivate var arrCity = ["Singapore"]
+    var eventDetail:EventDetail?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        txtFCity.text = "Singapore"
+        txtFCity.text = "Select City"
+        loadDefaultValues()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadDefaultValues()  {
+        if let evetDtl = eventDetail{
+            
+                if let path = evetDtl.bannerimage {
+                    let url = kImgaeView + path
+                    imgViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){[weak self] (image, error, cacheType, url) in
+                        guard let weakSelf = self else {return}
+                        if image == nil {
+                            weakSelf.imgViewBanner.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                        }
+                    }
+                }else{
+                    imgViewBanner.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                }
+            
+            lblEventTitle.text = evetDtl.title
+            lblEventLocation.text = evetDtl.eventlocation?.trim()
+            
+            let date = getDateString(strDate:evetDtl.startdate) + " - " + getDateString(strDate:evetDtl.enddate)
+            let time = getDateString(strDate:evetDtl.starttime) + " - " + getDateString(strDate:eventDetail?.endtime)
+            lblEventTime.text =  date + " | " + time
+        }
+        
+        
+    }
+    
+    func getDateString(strDate:String?) -> String {
+        if let string = strDate {
+            let array = string.components(separatedBy: " ")
+            return array.first!
+        }
+        return ""
     }
     
     /*********************************************************************************/
@@ -130,12 +167,8 @@ class RegisterViewController: UIViewController {
         vcObj?.present(imageController, animated: true, completion: nil);
     }
     
-    private func navigateToOTP(){
-        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
-        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RequestOTPViewController") as? RequestOTPViewController{
-            vcObj.screenFlow = "RegisterationFlow"
-            navigationController?.pushViewController(vcObj, animated: true)
-        }
+    private func navigateToEventListing(){
+        navigationController?.popToRootViewController(animated: true)
     }
     
     /*********************************************************************************/
@@ -166,7 +199,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-            registerUser()
+        registerUser()
          view.endEditing(true)
         
     }
@@ -187,7 +220,7 @@ class RegisterViewController: UIViewController {
 /*********************************************************************************/
 // MARK: CustomPickerView Deleagte
 /*********************************************************************************/
-extension RegisterViewController:CustomPickerViewDelegate{
+extension EventRegisterationViewController:CustomPickerViewDelegate{
     func dismissPickerView() {
         
     }
@@ -204,7 +237,7 @@ extension RegisterViewController:CustomPickerViewDelegate{
 /*********************************************************************************/
 // MARK: CustomDatePicker Deleagte
 /*********************************************************************************/
-extension RegisterViewController:CustomDatePickerDelegate{
+extension EventRegisterationViewController:CustomDatePickerDelegate{
   
     func didSelectDate(dob: String) {
         txtFDOB.text = dob
@@ -214,10 +247,11 @@ extension RegisterViewController:CustomDatePickerDelegate{
 /*********************************************************************************/
 // MARK: API
 /*********************************************************************************/
-extension RegisterViewController{
+extension EventRegisterationViewController{
     
     func registerAPI()  {
-        LoginService.appRegisterUser(firstname: txtFFirstName.text!,
+        EventService.eventRegistration(eventid:(eventDetail?.eventid!)!,
+                                       firstname: txtFFirstName.text!,
                                      lastname: txtFLastName.text!,
                                      gender: txtFGender.text!,
                                      dateofbirth: txtFDOB.text!,
@@ -231,7 +265,9 @@ extension RegisterViewController{
                                         
                                         guard let weakSelf = self else {return}
                                         if flag {
-                                            weakSelf.navigateToOTP()
+                                            weakSelf.navigateToEventListing()
+                                            Common.showAlert(message: message)
+
                                         }else{
                                             Common.showAlert(message: message)
                                         }
