@@ -46,6 +46,15 @@ class NavigationManager {
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
+    class func eventRegistration(navigationController:UINavigationController? , evntDetail : EventDetail){
+        let storyboard = UIStoryboard(name: "EventRegistration", bundle:  Bundle(for: EventRegisterationViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "EventRegisterationViewController") as? EventRegisterationViewController{
+            vcObj.eventDetail = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    
     
      class func setUpSlideMenu()  {
         let storyboard = UIStoryboard(name: "Event", bundle: nil)

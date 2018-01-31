@@ -220,3 +220,71 @@ extension EventService{
     
  
 }
+
+/***************************************************************/
+//MARK: Event Registration
+/***************************************************************/
+extension EventService{
+    
+    static func eventRegistration(eventid:Int,
+                                  firstname:String,
+                                lastname:String,
+                                gender:String,
+                                dateofbirth:String,
+                                handphone:String,
+                                email:String,
+                                address1:String?,
+                                address2:String?,
+                                city:String?,
+                                postalcode:String?,
+                                profilePic:UIImage?,
+                                callback: @escaping (Bool,String) -> Void)  {
+        
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+
+        var profilePicData: Data?
+        if let image = profilePic{
+            profilePicData = UIImageJPEGRepresentation(image, 1.0)!
+        }
+        
+        Common.showHud()
+        var dictParam = Dictionary<String,Any>()
+        dictParam["userid"] = userid
+        dictParam["eventid"] = eventid
+        dictParam["firstname"] = firstname
+        dictParam["lastname"] = lastname
+        dictParam["gender"] = gender
+        dictParam["dateofbirth"] = dateofbirth
+        dictParam["handphone"] = handphone
+        dictParam["email"] = email
+        dictParam["address1"] = address1
+        dictParam["address2"] = address2
+        dictParam["city"] = city
+        dictParam["postalcode"] = postalcode
+        //dictParam["profilepic"] = profilePicData
+        dictParam["status"] = "True"
+
+        
+        Service.postRequestWithJsonResponse(endPoint: kServiceUrl+ServiceName.REGISTER_EVENT.rawValue,params: dictParam) { (response) in
+            Common.hideHud()
+            
+            if let obj = response.result.value as? [String:Any]{
+                var msg = ""
+                if let regNo = obj["registrationnumber"] as? String{
+                     msg = "Registered successfully your registration number is \(regNo)"
+                }else{
+                    if let message = obj["message"] as? String{
+                         msg = message
+                    }
+                }
+                callback(true,msg);
+
+               
+            } else {
+                callback(false,"Error");
+            }
+            
+        }
+    }
+    
+}

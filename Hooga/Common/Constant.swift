@@ -99,6 +99,7 @@ public enum ServiceName:String {
     case SHOW_EVENT_FAQs = "showEventFAQs"
     case SHOW_EVENT_TERSM_CONDITION = "showEventTermsConditions"
 
+    case REGISTER_EVENT = "registerEvent"
 }
 
 
