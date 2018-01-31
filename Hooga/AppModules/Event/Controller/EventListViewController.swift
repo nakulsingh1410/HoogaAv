@@ -9,8 +9,9 @@
 import UIKit
 import Kingfisher
 
-class EventListViewController: UIViewController,AMMenuDelegate {
-    
+class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate ,UITextFieldDelegate{
+   
+
     @IBOutlet weak var labelFree: UILabel!
     @IBOutlet weak var labelPay: UILabel!
     @IBOutlet weak var buttonFree: UIButton!
@@ -38,6 +39,7 @@ class EventListViewController: UIViewController,AMMenuDelegate {
         
         // Do any additional setup after loading the view.
 //        headerView.viewController = self
+        textSearchTag.delegate = self
         btnLeftMenu.viewController = self
         configTableViewForEventList()
         getCategoryList()
@@ -61,6 +63,7 @@ class EventListViewController: UIViewController,AMMenuDelegate {
     func menuSelected(index: IndexPath, data: CategoryModel) {
         
         if data.categoryid != nil {
+            textSearchTag.text = ""
             request.catId = data.categoryid
             getEventList(catId: request.catId!  , entryType:  request.entryType!, tag:  request.tag!)
         }
@@ -103,9 +106,8 @@ class EventListViewController: UIViewController,AMMenuDelegate {
             request.entryType = type.entrytype
             getEventList(catId: request.catId!  , entryType:  request.entryType!, tag:  request.tag!)
         }
-       
-    
     }
+    
     
     
     @IBAction func textChanged_OnEdit(_ sender: UITextField) {
@@ -118,8 +120,30 @@ class EventListViewController: UIViewController,AMMenuDelegate {
         categoryMenu?.delegate = self
         viewheader.addSubview(categoryMenu!)
     }
+    
+    //MARK: search delegate methods
+    func selectedTag(tag: Tags) {
+    
+            request.tag = tag.tag?.lowercased()
+            textSearchTag.text = tag.tag
+            getEventList(catId: request.catId!  , entryType:  request.entryType!, tag:  request.tag!)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        textField.resignFirstResponder()
+        if arrTags.count > 0 {
+             let search = self.storyboard?.instantiateViewController(withIdentifier: "TagSearchVC") as! TagSearchVC
+            search.arrTags  = arrTags
+            search.delegate = self
+            self.present(search, animated: true, completion: nil)
+        }
+       
+        
+        
+        
+        
+    }
 }
-
 /*********************************************************************************/
 // MARK: TableView Delegate and DataSource
 /*********************************************************************************/

@@ -14,11 +14,11 @@
         <scene sceneID="BB0-VO-3oB">
             <objects>
                 <viewController storyboardIdentifier="EventRegisterationViewController" id="DiV-dp-npf" customClass="EventRegisterationViewController" customModule="Hooga" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jgX-j2-vZ1">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="jgX-j2-vZ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pR8-3G-q0n">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pR8-3G-q0n">
                                 <rect key="frame" x="0.0" y="20" width="375" height="680"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tph-vZ-d0Z">

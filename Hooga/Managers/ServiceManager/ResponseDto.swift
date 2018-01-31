@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit;
-import ObjectMapper;
+import UIKit
+import ObjectMapper
 
 class ResponseDto:  Mappable {
     
