@@ -250,14 +250,15 @@ extension EventListViewController {
     func getEventList(catId:Int,entryType:String,tag:String)  {
          arrEvents = [Events]()
         tableViewEventList.reloadData()
+        tableViewEventList.backgroundView = nil
         EventService.getEventList(categoryid: catId, entrytype: entryType, tag: tag, callback: {[weak self] (flag, events) in
             guard let weakSelf = self else {return}
             if let array = events {
                 weakSelf.arrEvents = array
                 weakSelf.tableViewEventList.reloadData()
             }else{
-                Common.showAlert(message: "No data available")
-                
+//                Common.showAlert(message: "No data available")
+                Common.EmptyMessage(message: "No data available", viewController: weakSelf, tableView: weakSelf.tableViewEventList)
             }
         })
     }

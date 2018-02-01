@@ -225,6 +225,19 @@ class Common: NSObject{
         view.layer.addSublayer(gradientLayer)
     }
     
+    class func EmptyMessage(message:String, viewController:UIViewController,tableView:UITableView) {
+        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: viewController.view.bounds.size.width, height: viewController.view.bounds.size.height))
+        let messageLabel = UILabel(frame: rect)
+        messageLabel.text = message
+        messageLabel.textColor = UIColor.black
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center;
+//        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
+        messageLabel.sizeToFit()
+        tableView.backgroundView = messageLabel;
+        tableView.separatorStyle = .none;
+    }
+    
 }
 
 
