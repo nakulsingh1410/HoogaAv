@@ -23,10 +23,6 @@
 		30D77B8A200B0ED400386438 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B89200B0ED400386438 /* Images.xcassets */; };
 		30D77B8C200B203300386438 /* HoogaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77B8B200B203300386438 /* HoogaTextField.swift */; };
 		30D77B8E200B206400386438 /* HoogaLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77B8D200B206400386438 /* HoogaLabel.swift */; };
-		30D77B97200B217E00386438 /* Eurostile in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B90200B217E00386438 /* Eurostile */; };
-		30D77B98200B217E00386438 /* Frutiger in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B91200B217E00386438 /* Frutiger */; };
-		30D77B99200B217E00386438 /* FrutiLig in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B92200B217E00386438 /* FrutiLig */; };
-		30D77B9A200B217E00386438 /* FrutiRom in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B93200B217E00386438 /* FrutiRom */; };
 		30D77B9B200B217E00386438 /* GillSans.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B94200B217E00386438 /* GillSans.ttc */; };
 		30D77B9C200B217E00386438 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B95200B217E00386438 /* Gotham-Book.otf */; };
 		30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B96200B217E00386438 /* Lobster-Regular.ttf */; };
@@ -158,10 +154,6 @@
 		30D77B89200B0ED400386438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		30D77B8B200B203300386438 /* HoogaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaTextField.swift; sourceTree = "<group>"; };
 		30D77B8D200B206400386438 /* HoogaLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaLabel.swift; sourceTree = "<group>"; };
-		30D77B90200B217E00386438 /* Eurostile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Eurostile; sourceTree = "<group>"; };
-		30D77B91200B217E00386438 /* Frutiger */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Frutiger; sourceTree = "<group>"; };
-		30D77B92200B217E00386438 /* FrutiLig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FrutiLig; sourceTree = "<group>"; };
-		30D77B93200B217E00386438 /* FrutiRom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FrutiRom; sourceTree = "<group>"; };
 		30D77B94200B217E00386438 /* GillSans.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttc; sourceTree = "<group>"; };
 		30D77B95200B217E00386438 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		30D77B96200B217E00386438 /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
@@ -467,10 +459,6 @@
 			isa = PBXGroup;
 			children = (
 				75959D9D2022B0EE00DC307A /* HLFont.swift */,
-				30D77B90200B217E00386438 /* Eurostile */,
-				30D77B91200B217E00386438 /* Frutiger */,
-				30D77B92200B217E00386438 /* FrutiLig */,
-				30D77B93200B217E00386438 /* FrutiRom */,
 				30D77B94200B217E00386438 /* GillSans.ttc */,
 				30D77B95200B217E00386438 /* Gotham-Book.otf */,
 				30D77B96200B217E00386438 /* Lobster-Regular.ttf */,
@@ -891,11 +879,9 @@
 				7530D956201F888300B9BB52 /* ContactCell.xib in Resources */,
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
 				30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */,
-				30D77B98200B217E00386438 /* Frutiger in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
 				30EA5F9B201DE0AD009D4278 /* LeftSideMenu.storyboard in Resources */,
 				30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */,
-				30D77B97200B217E00386438 /* Eurostile in Resources */,
 				7530D95D201F888300B9BB52 /* GalleryImageCell.xib in Resources */,
 				30D77C00200B37C400386438 /* Main.storyboard in Resources */,
 				30D77B9C200B217E00386438 /* Gotham-Book.otf in Resources */,
@@ -903,12 +889,10 @@
 				7530D954201F888300B9BB52 /* BannerCell.xib in Resources */,
 				30D77C07200B399800386438 /* LaunchScreen.storyboard in Resources */,
 				30EA5FB6201EF1D4009D4278 /* CustomNavHeaderView.xib in Resources */,
-				30D77B9A200B217E00386438 /* FrutiRom in Resources */,
 				30D77C15200CD81400386438 /* loading.gif in Resources */,
 				7530D95B201F888300B9BB52 /* GalleryCell.xib in Resources */,
 				30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */,
 				30D77BF4200B36B400386438 /* DataTableViewCell.xib in Resources */,
-				30D77B99200B217E00386438 /* FrutiLig in Resources */,
 				301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */,
 				30D77BF0200B36B400386438 /* SlideMenu.storyboard in Resources */,
 				7530D95F201F888300B9BB52 /* ShareCell.xib in Resources */,
