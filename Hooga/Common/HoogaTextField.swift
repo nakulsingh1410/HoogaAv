@@ -19,7 +19,7 @@ class HoogaTextField: UITextField {
     */
     override func awakeFromNib() {
         setLeftPadding()
-        self.font = Font.lobster(size: 14.0)
+       // self.font = Font.lobster(size: 14.0)
     }
     
     func setLeftPadding()  {
