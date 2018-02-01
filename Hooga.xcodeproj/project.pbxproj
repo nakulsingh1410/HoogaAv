@@ -10,8 +10,8 @@
 		301B863520073F2C00DA7855 /* Hooga.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 301B863320073F2C00DA7855 /* Hooga.xcdatamodeld */; };
 		301B864520073F2D00DA7855 /* HoogaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B864420073F2D00DA7855 /* HoogaTests.swift */; };
 		301B865020073F2D00DA7855 /* HoogaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B864F20073F2D00DA7855 /* HoogaUITests.swift */; };
-		301B866C2007452900DA7855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301B865F2007452900DA7855 /* Assets.xcassets */; };
 		301B86702007452900DA7855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B86692007452900DA7855 /* AppDelegate.swift */; };
+		301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301BF2142022001D0099ADD9 /* Assets.xcassets */; };
 		3028D894201CC9B400922752 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3028D893201CC9B400922752 /* EventService.swift */; };
 		30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */; };
 		30348FFC201CF8EC00A2CDA1 /* loader2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 30348FFB201CF8EC00A2CDA1 /* loader2.gif */; };
@@ -143,9 +143,9 @@
 		301B864B20073F2D00DA7855 /* HoogaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoogaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		301B864F20073F2D00DA7855 /* HoogaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaUITests.swift; sourceTree = "<group>"; };
 		301B865120073F2D00DA7855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		301B865F2007452900DA7855 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		301B86692007452900DA7855 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		301B86732007463B00DA7855 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		301BF2142022001D0099ADD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3028D893201CC9B400922752 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingModel.swift; sourceTree = "<group>"; };
 		30348FFB201CF8EC00A2CDA1 /* loader2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader2.gif; sourceTree = "<group>"; };
@@ -199,7 +199,6 @@
 		30D77C0B200B3BBA00386438 /* LoginResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDto.swift; sourceTree = "<group>"; };
 		30D77C0D200B3E4D00386438 /* ValidateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateModel.swift; sourceTree = "<group>"; };
 		30D77C0F200B504F00386438 /* StorageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageModel.swift; sourceTree = "<group>"; };
-		30D77C11200CD77900386438 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30D77C14200CD81400386438 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		30D77C16200CDA4000386438 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		30D77C202010891900386438 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
@@ -352,10 +351,9 @@
 		301B865D2007452900DA7855 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				301BF2142022001D0099ADD9 /* Assets.xcassets */,
 				30D77C13200CD78A00386438 /* Gif */,
-				30D77C11200CD77900386438 /* Assets.xcassets */,
 				301B86752007467000DA7855 /* AppImages */,
-				301B865F2007452900DA7855 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -889,7 +887,6 @@
 				30D77B9B200B217E00386438 /* GillSans.ttc in Resources */,
 				7530D956201F888300B9BB52 /* ContactCell.xib in Resources */,
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
-				301B866C2007452900DA7855 /* Assets.xcassets in Resources */,
 				30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */,
 				30D77B98200B217E00386438 /* Frutiger in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
@@ -909,6 +906,7 @@
 				30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */,
 				30D77BF4200B36B400386438 /* DataTableViewCell.xib in Resources */,
 				30D77B99200B217E00386438 /* FrutiLig in Resources */,
+				301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */,
 				30D77BF0200B36B400386438 /* SlideMenu.storyboard in Resources */,
 				7530D95F201F888300B9BB52 /* ShareCell.xib in Resources */,
 				30D77BDE200B361400386438 /* HudView.xib in Resources */,
