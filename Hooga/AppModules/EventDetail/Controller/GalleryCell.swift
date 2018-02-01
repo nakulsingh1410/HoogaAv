@@ -149,16 +149,36 @@ extension GalleryCell : UICollectionViewDataSource{
             }
         }
      
-          cellImage.buttonPlay.addTarget(self, action: #selector(buttonLeft_didPressed(button:)), for: .touchUpInside)
+          cellImage.buttonPlay.addTarget(self, action: #selector(buttonPlay_didPressed(button:)), for: .touchUpInside)
         return cellImage
     }
     
-    func playVideo(url :String)  {
+    func playVideo(rul :String)  {
         
-        
+        let url = kImgaeView + rul
+        let videoURL = URL(string: url)
+        let player = AVPlayer(url: videoURL!)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        if let vc = UIApplication.shared.keyWindow?.visibleViewController{
+            vc.present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+        }
     }
-    @objc func buttonLeft_didPressed(button:UIButton)  {
+    @objc func buttonPlay_didPressed(button:UIButton)  {
         
+        let indxPaath = collectionViewGallery.indexPathsForVisibleItems
+        
+        if indxPaath.count < 2 {
+            let indx = indxPaath[0].row
+            let assest  = arrImageAssets[indx]
+            if assest.mediatype?.trim() == "Video" {
+                if let path = assest.path {
+                    playVideo(rul: path)
+                }
+            }
+        }
     }
 }
 
@@ -169,18 +189,7 @@ extension GalleryCell : UICollectionViewDelegate{
         let assest  = arrImageAssets[indexPath.row]
         if assest.mediatype?.trim() == "Video" {
             if let path = assest.path {
-                let url = kImgaeView + path
-                        let videoURL = URL(string: url)
-                        let player = AVPlayer(url: videoURL!)
-                        let playerViewController = AVPlayerViewController()
-                        playerViewController.player = player
-                if let vc = UIApplication.shared.keyWindow?.visibleViewController{
-                    vc.present(playerViewController, animated: true) {
-                        playerViewController.player!.play()
-                    }
-                }
-                
-                
+              playVideo(rul: path)
             }
         }
        
