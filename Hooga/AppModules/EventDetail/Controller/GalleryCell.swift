@@ -192,18 +192,7 @@ extension GalleryCell : UICollectionViewDelegate{
               playVideo(rul: path)
             }
         }
-       
-        
-        
-        
-        
-//        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
-//        let player = AVPlayer(url: videoURL!)
-//        let playerViewController = AVPlayerViewController()
-//        playerViewController.player = player
-//        self.present(playerViewController, animated: true) {
-//            playerViewController.player!.play()
-//        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
