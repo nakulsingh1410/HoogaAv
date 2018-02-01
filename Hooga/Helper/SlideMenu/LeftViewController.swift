@@ -17,51 +17,48 @@ class MenuItem:NSObject {
     }
 }
 
-enum LeftMenu: Int {
-    case main = 0
-    case login
-    case contactUs
-
+enum LeftMenu: String {
+    case home = "Home"
+    case myEvents = "My Events"
+    case myProfile = "My Profile"
+    case logout = "Logout"
+    
 }
 
-protocol LeftMenuProtocol : class {
-    func changeViewController(_ menu: LeftMenu)
-}
-
-class LeftViewController : UIViewController, LeftMenuProtocol {
+class LeftViewController : UIViewController {
     
     @IBOutlet weak var imgViewUser: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var menus = [MenuItem]()
     var mainViewController: UIViewController!
-
+    
     var contactUsViewController: UIViewController!
     var myEventViewController: UIViewController!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         let storyboard = UIStoryboard(name: "LeftSideMenu", bundle: nil)
-//        let contactUsController = storyboard.instantiateViewController(withIdentifier: "ContactUsViewController") as! ContactUsViewController
-//        self.contactUsViewController = UINavigationController(rootViewController: contactUsController)
-
+        //        let contactUsController = storyboard.instantiateViewController(withIdentifier: "ContactUsViewController") as! ContactUsViewController
+        //        self.contactUsViewController = UINavigationController(rootViewController: contactUsController)
+        
         let myEventVc = storyboard.instantiateViewController(withIdentifier: "MyEventViewController") as! MyEventViewController
         self.myEventViewController = getNavigationController(viewController: myEventVc)
-//
-//        let goViewController = storyboard.instantiateViewController(withIdentifier: "GoViewController") as! GoViewController
-//        self.goViewController = UINavigationController(rootViewController: contactUsController)
-//
-//        let nonMenuController = storyboard.instantiateViewController(withIdentifier: "NonMenuController") as! NonMenuController
-//        nonMenuController.delegate = self
-//        self.nonMenuViewController = UINavigationController(rootViewController: contactUsController)
+        //
+        //        let goViewController = storyboard.instantiateViewController(withIdentifier: "GoViewController") as! GoViewController
+        //        self.goViewController = UINavigationController(rootViewController: contactUsController)
+        //
+        //        let nonMenuController = storyboard.instantiateViewController(withIdentifier: "NonMenuController") as! NonMenuController
+        //        nonMenuController.delegate = self
+        //        self.nonMenuViewController = UINavigationController(rootViewController: contactUsController)
         setUpMenu()
         setUpTableView()
-       
+        
         imgViewUser.layer.cornerRadius = imgViewUser.frame.height/2
         imgViewUser.layer.masksToBounds = true
     }
@@ -85,46 +82,53 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     }
     
     private func setUpMenu(){
-        menus.append(MenuItem(titleString: "Home", imageIcon: "home"))
-        menus.append(MenuItem(titleString: "My Profile", imageIcon: "profile"))
-        menus.append(MenuItem(titleString: "My Event", imageIcon: "star"))
+        menus.append(MenuItem(titleString: LeftMenu.home.rawValue, imageIcon: "home"))
+        menus.append(MenuItem(titleString: LeftMenu.myEvents.rawValue, imageIcon: "star"))
+        menus.append(MenuItem(titleString: LeftMenu.myProfile.rawValue, imageIcon: "profile"))
+        menus.append(MenuItem(titleString: LeftMenu.logout.rawValue, imageIcon: "logout"))
+        
     }
     
-   private  func setUpTableView() {
-    tableView.register( UINib(nibName: "DataTableViewCell", bundle: Bundle(for: LeftViewController.self)), forCellReuseIdentifier: "DataTableViewCell")
-    tableView.tableFooterView = UIView()
-    tableView.separatorColor = UIColor.white
+    private  func setUpTableView() {
+        tableView.register( UINib(nibName: "DataTableViewCell", bundle: Bundle(for: LeftViewController.self)), forCellReuseIdentifier: "DataTableViewCell")
+        tableView.tableFooterView = UIView()
+        tableView.separatorColor = UIColor.white
     }
     
-    func changeViewController(_ menu: LeftMenu) {
-        switch menu {
-        case .main:
-            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
-//             self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
-        case .contactUs:
-            //self.slideMenuController()?.changeMainViewController(self.contactUsViewController, close: true)
-             self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
-        case .login:
-            self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
+    func changeViewController(_ menu: MenuItem) {
+        if let title = menu.title {
+            switch title {
+            case LeftMenu.home.rawValue:
+                self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+            case LeftMenu.myEvents.rawValue:
+                self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
+            case LeftMenu.myProfile.rawValue:
+                myProfile()
+            case LeftMenu.logout.rawValue:
+                logoutFromApp()
+            default:
+                break
+            }
         }
+       
+    }
+    private func myProfile(){
+        NavigationManager.userRegistration(navigationController: self.navigationController, screenShown: .myProfile)
+
+    }
+    private func logoutFromApp()  {
+        NavigationManager.logout()
     }
 }
 
 extension LeftViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let menu = LeftMenu(rawValue: indexPath.row) {
-            switch menu {
-            case .main, .contactUs, .login:
-                return BaseTableViewCell.height()
-            }
-        }
-        return 0
+        return BaseTableViewCell.height()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let menu = LeftMenu(rawValue: indexPath.row) {
+        let menu = menus[indexPath.row]
             self.changeViewController(menu)
-        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -139,21 +143,13 @@ extension LeftViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menus.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let menu = LeftMenu(rawValue: indexPath.row) {
-            switch menu {
-            case .main, .contactUs, .login:
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "DataTableViewCell") as? DataTableViewCell{
-                    cell.setData(menus[indexPath.row])
-                    return cell
-                }
-                return UITableViewCell()
-            }
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "DataTableViewCell") as? DataTableViewCell{
+            cell.setData(menus[indexPath.row])
+            return cell
         }
         return UITableViewCell()
     }
-    
     
 }

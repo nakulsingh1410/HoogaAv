@@ -18,9 +18,10 @@ class NavigationManager {
 //        }
     }
     
-    class func userRegistration(navigationController:UINavigationController?){
+    class func userRegistration(navigationController:UINavigationController?,screenShown:RequestForScreen){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController{
+            vcObj.requestingScreen = screenShown
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
@@ -51,6 +52,21 @@ class NavigationManager {
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "EventRegisterationViewController") as? EventRegisterationViewController{
             vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    class func logout(){
+        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController{
+            let nvc: UINavigationController = UINavigationController(rootViewController: vcObj)
+            UINavigationBar.appearance().tintColor = UIColor.white
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+            UINavigationBar.appearance().barTintColor = kBlueColor
+            nvc.navigationBar.isHidden = true
+            vcObj.modalTransitionStyle = .crossDissolve
+            vcObj.modalPresentationStyle = .custom
+            appDelegate.window?.rootViewController = nvc
+            appDelegate.window?.makeKeyAndVisible()
         }
     }
     

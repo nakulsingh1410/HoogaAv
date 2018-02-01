@@ -26,6 +26,7 @@ class DataTableViewCell : UITableViewCell {
     override func awakeFromNib() {
 //        self.dataText?.font = UIFont.italicSystemFont(ofSize: 16)
 //        self.dataText?.textColor = UIColor(hex: "9E9E9E")
+        selectionStyle = .none
     }
     
     
@@ -43,12 +44,12 @@ class DataTableViewCell : UITableViewCell {
     
     override open func setHighlighted(_ highlighted: Bool, animated: Bool) {
         if highlighted {
-            self.alpha = 0.4
+            self.alpha = 0.5
         } else {
             self.alpha = 1.0
         }
     }
- 
+//
 //    override class func height() -> CGFloat {
 //        return 80
 //    }

@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
     }
     
     private func userRegistration(){
-        NavigationManager.userRegistration(navigationController: self.navigationController)
+        NavigationManager.userRegistration(navigationController: self.navigationController, screenShown: .login)
     }
     
     private func forgotPassword(){

@@ -12,6 +12,10 @@ enum Gender:String{
     case male = "Male"
      case female = "Female"
 }
+enum RequestForScreen:String{
+    case login = "login"
+    case myProfile = "MyProfile"
+}
 
 class RegisterViewController: UIViewController {
     
@@ -29,12 +33,15 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var imgViewProfilePic: UIImageView!
     @IBOutlet weak var btnUpload: HoogaButton!
     
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
+
+    var requestingScreen:RequestForScreen = .login
+    
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
     var arrCity = ["Singapore"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+       // configoreNavigationHeader()
         txtFCity.text = "Singapore"
     }
     
@@ -46,7 +53,17 @@ class RegisterViewController: UIViewController {
     /*********************************************************************************/
     // MARK: Methods
     /*********************************************************************************/
-    
+   private func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+    if requestingScreen == .login {
+        navHeaderView.navBarTitle = "REGISTRATION"
+        navHeaderView.backButtonType = .Back
+    }else if requestingScreen == .myProfile {
+        navHeaderView.navBarTitle = "MY PROFILE"
+        navHeaderView.backButtonType = .LeftMenu
+    }
+    }
+
     private func openGenderPicker(){
         if let picker = CustomPickerView.loadPickerView(){
             picker.frame = view.frame
@@ -167,6 +184,7 @@ class RegisterViewController: UIViewController {
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
             registerUser()
+//        navigateToOTP()
          view.endEditing(true)
         
     }
