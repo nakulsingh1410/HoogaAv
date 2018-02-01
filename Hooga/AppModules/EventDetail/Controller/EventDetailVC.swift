@@ -187,7 +187,7 @@ extension EventDetailVC : UITableViewDelegate{
         }else if cellType == 2 {
             return 65
         }else if cellType == 3 {
-            return 193
+            return UITableViewAutomaticDimension
         }else if cellType == 4{
             return UITableViewAutomaticDimension
         }
