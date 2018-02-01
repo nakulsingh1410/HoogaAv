@@ -51,7 +51,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
 //        self.contactUsViewController = UINavigationController(rootViewController: contactUsController)
 
         let myEventVc = storyboard.instantiateViewController(withIdentifier: "MyEventViewController") as! MyEventViewController
-        self.myEventViewController = UINavigationController(rootViewController: myEventVc)
+        self.myEventViewController = getNavigationController(viewController: myEventVc)
 //
 //        let goViewController = storyboard.instantiateViewController(withIdentifier: "GoViewController") as! GoViewController
 //        self.goViewController = UINavigationController(rootViewController: contactUsController)
@@ -64,6 +64,15 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
        
         imgViewUser.layer.cornerRadius = imgViewUser.frame.height/2
         imgViewUser.layer.masksToBounds = true
+    }
+    
+    private func getNavigationController(viewController:UIViewController) -> UINavigationController {
+        let nvc: UINavigationController = UINavigationController(rootViewController: viewController)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().barTintColor = kBlueColor
+        nvc.navigationBar.isHidden = true
+        return nvc
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,8 +99,8 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     func changeViewController(_ menu: LeftMenu) {
         switch menu {
         case .main:
-            //self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
-             self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+//             self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
         case .contactUs:
             //self.slideMenuController()?.changeMainViewController(self.contactUsViewController, close: true)
              self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
