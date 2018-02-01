@@ -26,7 +26,7 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     
     var categoryMenu : AMHorizontalMenu?
     
-    let request = RequestEvent()
+    var request = RequestEvent()
     
     
     var arrCategories    = [CategoryModel]()
@@ -63,7 +63,10 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     func menuSelected(index: IndexPath, data: CategoryModel) {
         
         if data.categoryid != nil {
+            request = RequestEvent()
             textSearchTag.text = ""
+            buttonPay.backgroundColor  = Color.lightGray
+            buttonFree.backgroundColor = Color.lightGray
             request.catId = data.categoryid
             getEventList(catId: request.catId!  , entryType:  request.entryType!, tag:  request.tag!)
         }

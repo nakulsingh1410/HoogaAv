@@ -110,6 +110,7 @@
 		7530D964201FECA100B9BB52 /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D963201FECA100B9BB52 /* FaqVC.swift */; };
 		7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D965201FECF100B9BB52 /* FaqCell.swift */; };
 		754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E26B0202149DE00129381 /* TagSearchVC.swift */; };
+		75959D9C2022AA3700DC307A /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75959D9B2022AA3700DC307A /* AVKit.framework */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
 /* End PBXBuildFile section */
@@ -244,6 +245,7 @@
 		7530D963201FECA100B9BB52 /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
 		7530D965201FECF100B9BB52 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
 		754E26B0202149DE00129381 /* TagSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchVC.swift; sourceTree = "<group>"; };
+		75959D9B2022AA3700DC307A /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A2B191A578EA47A70B75B6 /* Pods-HoogaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoogaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoogaTests/Pods-HoogaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75959D9C2022AA3700DC307A /* AVKit.framework in Frameworks */,
 				737D16CEEF1F2D5BEB869FDB /* Pods_Hooga.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +286,7 @@
 		2BA49112B8767AC7A34A5A50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75959D9B2022AA3700DC307A /* AVKit.framework */,
 				2B4DDC9C7D5ED88786B8A3C9 /* Pods_Hooga.framework */,
 				7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */,
 				7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */,

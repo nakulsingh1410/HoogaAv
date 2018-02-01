@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import AVKit
 
 class GalleryCell: UITableViewCell {
 
     @IBOutlet weak var collectionViewGallery : UICollectionView!
+    @IBOutlet weak var buttonLeft : UIButton!
+    @IBOutlet weak var buttonRight : UIButton!
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
@@ -20,9 +23,17 @@ class GalleryCell: UITableViewCell {
         didSet{
             if collectionViewGallery != nil {
                 collectionViewGallery?.reloadData()
+                buttonLeft.isHidden = true
+                buttonRight.isHidden = true
+                if arrImageAssets.count > 1 {
+                    buttonRight.isHidden = false
+                }
             }
         }
     }
+    
+    var scrolIndex = 0
+    
     static var identifier: String {
         return String(describing: self)
     }
@@ -30,6 +41,7 @@ class GalleryCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         configCollectionView()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -47,7 +59,7 @@ class GalleryCell: UITableViewCell {
         _flowLayout.minimumLineSpacing        = 3;
         _flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         // edit properties here
-        let width = collectionViewGallery.frame.size.width / 2.5
+        let width = UIScreen.main.bounds.size.width - 16 // / 2.5
          _flowLayout.itemSize = CGSize(width: width, height: 160)
         
         return _flowLayout
@@ -61,10 +73,54 @@ class GalleryCell: UITableViewCell {
         collectionViewGallery?.backgroundColor = UIColor.clear
         collectionViewGallery?.delegate = self
         collectionViewGallery?.dataSource = self
-        
+        collectionViewGallery?.isPagingEnabled = true
         collectionViewGallery?.reloadData()
+        collectionViewGallery?.isScrollEnabled = false
+        ///////////////////////////////////
+       
     }
     
+    @IBAction func buttonLeft_didPressed(left:UIButton){
+        
+        let indxPaath = collectionViewGallery.indexPathsForVisibleItems
+        
+        if indxPaath.count < 2 {
+           let  index = indxPaath[0].row
+            scrolIndex = index - 1
+            if scrolIndex >= 0 {
+                collectionViewGallery?.isScrollEnabled = true
+                collectionViewGallery?.scrollToItem(at: IndexPath.init(row: scrolIndex, section: 0), at: .centeredHorizontally, animated: true)
+                buttonRight.isHidden = false
+                if  scrolIndex == 0 {
+                    buttonLeft.isHidden = true
+                }
+            }
+             collectionViewGallery?.isScrollEnabled = false
+        }
+        
+        
+        
+    }
+    
+    @IBAction func buttonRight_didPressed(left:UIButton){
+        
+        let indxPaath = collectionViewGallery.indexPathsForVisibleItems
+        if indxPaath.count < 2 {
+            let  index = indxPaath[0].row
+            scrolIndex = index + 1
+            if scrolIndex <  arrImageAssets.count {
+                collectionViewGallery?.isScrollEnabled = true
+                collectionViewGallery?.scrollToItem(at: IndexPath.init(row: scrolIndex, section: 0), at: .centeredHorizontally, animated: true)
+                 self.buttonLeft.isHidden = false
+                let cnt = arrImageAssets.count - 1
+                if  scrolIndex == cnt  {
+                    self.buttonRight.isHidden = true
+                    
+                 }
+            }
+          }
+        collectionViewGallery?.isScrollEnabled = false
+        }
 }
 
 extension GalleryCell : UICollectionViewDataSource{
@@ -92,19 +148,58 @@ extension GalleryCell : UICollectionViewDataSource{
                 cellImage.image.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
             }
         }
-   
+     
+          cellImage.buttonPlay.addTarget(self, action: #selector(buttonLeft_didPressed(button:)), for: .touchUpInside)
         return cellImage
     }
     
-    
-    
+    func playVideo(url :String)  {
+        
+        
+    }
+    @objc func buttonLeft_didPressed(button:UIButton)  {
+        
+    }
 }
 
 extension GalleryCell : UICollectionViewDelegate{
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let assest  = arrImageAssets[indexPath.row]
+        if assest.mediatype?.trim() == "Video" {
+            if let path = assest.path {
+                let url = kImgaeView + path
+                        let videoURL = URL(string: url)
+                        let player = AVPlayer(url: videoURL!)
+                        let playerViewController = AVPlayerViewController()
+                        playerViewController.player = player
+                if let vc = UIApplication.shared.keyWindow?.visibleViewController{
+                    vc.present(playerViewController, animated: true) {
+                        playerViewController.player!.play()
+                    }
+                }
+                
+                
+            }
+        }
+       
+        
+        
+        
+        
+//        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+//        let player = AVPlayer(url: videoURL!)
+//        let playerViewController = AVPlayerViewController()
+//        playerViewController.player = player
+//        self.present(playerViewController, animated: true) {
+//            playerViewController.player!.play()
+//        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
       
-        let width = (collectionView.frame.size.width / 3) + 10
+        let width = UIScreen.main.bounds.size.width - 16//(collectionView.frame.size.width / 3) + 10
         return CGSize(width:width,height:160)
         
     }
