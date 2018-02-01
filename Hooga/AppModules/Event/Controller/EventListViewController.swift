@@ -9,8 +9,9 @@
 import UIKit
 import Kingfisher
 
-class EventListViewController: UIViewController,AMMenuDelegate {
-    
+class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate ,UITextFieldDelegate{
+   
+
     @IBOutlet weak var labelFree: UILabel!
     @IBOutlet weak var labelPay: UILabel!
     @IBOutlet weak var buttonFree: UIButton!
@@ -25,7 +26,7 @@ class EventListViewController: UIViewController,AMMenuDelegate {
     
     var categoryMenu : AMHorizontalMenu?
     
-    let request = RequestEvent()
+    var request = RequestEvent()
     
     
     var arrCategories    = [CategoryModel]()
@@ -37,7 +38,8 @@ class EventListViewController: UIViewController,AMMenuDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        //        headerView.viewController = self
+//        headerView.viewController = self
+        textSearchTag.delegate = self
         btnLeftMenu.viewController = self
         configTableViewForEventList()
         getCategoryList()
@@ -61,6 +63,10 @@ class EventListViewController: UIViewController,AMMenuDelegate {
     func menuSelected(index: IndexPath, data: CategoryModel) {
         
         if data.categoryid != nil {
+            request = RequestEvent()
+            textSearchTag.text = ""
+            buttonPay.backgroundColor  = Color.lightGray
+            buttonFree.backgroundColor = Color.lightGray
             request.catId = data.categoryid
             getEventList(catId: request.catId!  , entryType:  request.entryType!, tag:  request.tag!)
         }
@@ -103,9 +109,8 @@ class EventListViewController: UIViewController,AMMenuDelegate {
             request.entryType = type.entrytype
             getEventList(catId: request.catId!  , entryType:  request.entryType!, tag:  request.tag!)
         }
-        
-        
     }
+    
     
     
     @IBAction func textChanged_OnEdit(_ sender: UITextField) {
@@ -114,12 +119,34 @@ class EventListViewController: UIViewController,AMMenuDelegate {
     
     func configCategoryMenu(item:[CategoryModel]){
         
-        categoryMenu = AMHorizontalMenu(frame:CGRect(x:16,y:5,width:self.view.frame.size.width - 32,height:40) , item:item)
+        categoryMenu = AMHorizontalMenu(frame:CGRect(x:16,y:0,width:self.view.frame.size.width - 32,height:40) , item:item)
         categoryMenu?.delegate = self
         viewheader.addSubview(categoryMenu!)
     }
+    
+    //MARK: search delegate methods
+    func selectedTag(tag: Tags) {
+    
+            request.tag = tag.tag?.lowercased()
+            textSearchTag.text = tag.tag
+            getEventList(catId: request.catId!  , entryType:  request.entryType!, tag:  request.tag!)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        textField.resignFirstResponder()
+        if arrTags.count > 0 {
+             let search = self.storyboard?.instantiateViewController(withIdentifier: "TagSearchVC") as! TagSearchVC
+            search.arrTags  = arrTags
+            search.delegate = self
+            self.present(search, animated: true, completion: nil)
+        }
+       
+        
+        
+        
+        
+    }
 }
-
 /*********************************************************************************/
 // MARK: TableView Delegate and DataSource
 /*********************************************************************************/
@@ -181,10 +208,14 @@ extension EventListViewController {
         EventService.getCategories() {[weak self]  (flag, categories) in
             guard let weakSelf = self else {return}
             if let array = categories {
-                weakSelf.arrCategories = array
                 
+                let catAll = CategoryModel()
+                catAll.category = "All"
+                catAll.categoryid = 0
+                weakSelf.arrCategories = array
+                weakSelf.arrCategories.insert(catAll, at: 0)
                 DispatchQueue.main.async {
-                    weakSelf.configCategoryMenu(item:array)
+                    weakSelf.configCategoryMenu(item:weakSelf.arrCategories)
                 }
                 if (array.first?.categoryid) != nil{
                     weakSelf.getEventList(catId: 0, entryType: "", tag: "")
@@ -219,13 +250,15 @@ extension EventListViewController {
     func getEventList(catId:Int,entryType:String,tag:String)  {
         arrEvents = [Events]()
         tableViewEventList.reloadData()
+        tableViewEventList.backgroundView = nil
         EventService.getEventList(categoryid: catId, entrytype: entryType, tag: tag, callback: {[weak self] (flag, events) in
             guard let weakSelf = self else {return}
             if let array = events {
                 weakSelf.arrEvents = array
                 weakSelf.tableViewEventList.reloadData()
             }else{
-                Common.showAlert(message: "No data available")
+//                Common.showAlert(message: "No data available")
+                Common.EmptyMessage(message: "No data available", viewController: weakSelf, tableView: weakSelf.tableViewEventList)
             }
         })
     }

@@ -14,6 +14,7 @@ class RequestEvent: NSObject {
     var entryType:String?
     var tag:String?
     
+    
     override init() {
         super.init()
         self.catId = 0

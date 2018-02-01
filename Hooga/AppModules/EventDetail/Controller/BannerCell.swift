@@ -1,10 +1,7 @@
-//
 //  BannerCell.swift
 //  Hooga
-//
 //  Created by @mrendra on 28/01/18.
 //  Copyright © 2018 Nakul Singh. All rights reserved.
-//
 
 import UIKit
 

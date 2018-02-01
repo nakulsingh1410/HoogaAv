@@ -155,15 +155,18 @@ extension AMHorizontalMenu : UICollectionViewDataSource{
         
         if selectedIndexPath != nil {
             if selectedIndexPath == indexPath{
-                cellMenu.title.textColor = Color.blue
-                cellMenu.backgroundColor = Color.white
+               cellMenu.title.textColor = Color.blue
+                //cellMenu.backgroundColor = Color.white
+                 cellMenu.viewBG.isHidden = false
             }else{
-                cellMenu.backgroundColor = Color.clear
+                //cellMenu.backgroundColor = Color.clear
                 cellMenu.title.textColor      = Color.white
+                 cellMenu.viewBG.isHidden = true
             }
         }else{
             cellMenu.title.textColor       = Color.white
-            cellMenu.backgroundColor = Color.clear
+            //cellMenu.backgroundColor = Color.clear
+            cellMenu.viewBG.isHidden = true
         }
         return cellMenu;
     }
@@ -183,7 +186,7 @@ extension AMHorizontalMenu : UICollectionViewDelegate , UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         let str = menuItems[indexPath.row].category?.uppercased()
-        let width = textWidth(text: str!, font: UIFont.systemFont(ofSize: 14, weight: .medium)) + 8.0
+        let width = textWidth(text: str!, font: UIFont.systemFont(ofSize: 14, weight: .medium)) + 12.0
         return CGSize(width:width,height:40)
         
     }

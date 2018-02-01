@@ -485,7 +485,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udn-mw-xmB">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImg" translatesAutoresizingMaskIntoConstraints="NO" id="udn-mw-xmB">
                                                 <rect key="frame" x="180" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -644,8 +644,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S20-Xe-C6g">
                                         <rect key="frame" x="20" y="515" width="335" height="35"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPN-cL-Zj4">
+                                                <rect key="frame" x="167" y="0.0" width="1" height="35"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="9eH-rW-MvF"/>
+                                                </constraints>
+                                            </view>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSY-pC-DOt" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="40" y="0.0" width="70" height="35"/>
+                                                <rect key="frame" x="57" y="0.0" width="70" height="35"/>
                                                 <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="SUBMIT">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -655,7 +662,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhW-Mb-BVf" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="225" y="0.0" width="70" height="35"/>
+                                                <rect key="frame" x="208" y="0.0" width="70" height="35"/>
                                                 <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="2h4-UF-srD"/>
@@ -671,13 +678,16 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="eSY-pC-DOt" secondAttribute="bottom" id="23f-In-Otw"/>
+                                            <constraint firstAttribute="bottom" secondItem="gPN-cL-Zj4" secondAttribute="bottom" id="Lgf-EG-o2F"/>
                                             <constraint firstItem="UhW-Mb-BVf" firstAttribute="width" secondItem="eSY-pC-DOt" secondAttribute="width" id="Oma-Mc-fDS"/>
-                                            <constraint firstAttribute="trailing" secondItem="UhW-Mb-BVf" secondAttribute="trailing" constant="40" id="TNu-22-aU8"/>
                                             <constraint firstAttribute="bottom" secondItem="UhW-Mb-BVf" secondAttribute="bottom" id="WXS-A1-JWH"/>
+                                            <constraint firstItem="gPN-cL-Zj4" firstAttribute="centerX" secondItem="S20-Xe-C6g" secondAttribute="centerX" id="aDV-eU-31F"/>
                                             <constraint firstItem="eSY-pC-DOt" firstAttribute="top" secondItem="S20-Xe-C6g" secondAttribute="top" id="buG-NP-MY4"/>
+                                            <constraint firstItem="gPN-cL-Zj4" firstAttribute="top" secondItem="S20-Xe-C6g" secondAttribute="top" id="dff-2r-rKQ"/>
                                             <constraint firstItem="UhW-Mb-BVf" firstAttribute="top" secondItem="S20-Xe-C6g" secondAttribute="top" id="dwy-qb-Brm"/>
                                             <constraint firstItem="UhW-Mb-BVf" firstAttribute="height" secondItem="eSY-pC-DOt" secondAttribute="height" id="feS-d5-3Lv"/>
-                                            <constraint firstItem="eSY-pC-DOt" firstAttribute="leading" secondItem="S20-Xe-C6g" secondAttribute="leading" constant="40" id="h0t-Bm-OYF"/>
+                                            <constraint firstItem="UhW-Mb-BVf" firstAttribute="leading" secondItem="gPN-cL-Zj4" secondAttribute="trailing" constant="40" id="gOH-zv-vWJ"/>
+                                            <constraint firstItem="gPN-cL-Zj4" firstAttribute="leading" secondItem="eSY-pC-DOt" secondAttribute="trailing" constant="40" id="qvc-qx-Jjv"/>
                                             <constraint firstAttribute="height" constant="35" id="vAX-85-hrx"/>
                                         </constraints>
                                     </view>
@@ -1337,6 +1347,7 @@
         <image name="calander" width="30" height="30"/>
         <image name="downArraow" width="30" height="30"/>
         <image name="password" width="35" height="36"/>
+        <image name="profileImg" width="64" height="64"/>
         <image name="username" width="35" height="36"/>
     </resources>
 </document>

@@ -10,21 +10,19 @@
 		301B863520073F2C00DA7855 /* Hooga.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 301B863320073F2C00DA7855 /* Hooga.xcdatamodeld */; };
 		301B864520073F2D00DA7855 /* HoogaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B864420073F2D00DA7855 /* HoogaTests.swift */; };
 		301B865020073F2D00DA7855 /* HoogaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B864F20073F2D00DA7855 /* HoogaUITests.swift */; };
-		301B866C2007452900DA7855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301B865F2007452900DA7855 /* Assets.xcassets */; };
 		301B86702007452900DA7855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B86692007452900DA7855 /* AppDelegate.swift */; };
+		301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301BF2142022001D0099ADD9 /* Assets.xcassets */; };
 		3028D894201CC9B400922752 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3028D893201CC9B400922752 /* EventService.swift */; };
 		30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */; };
 		30348FFC201CF8EC00A2CDA1 /* loader2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 30348FFB201CF8EC00A2CDA1 /* loader2.gif */; };
 		305471DE202092650009A8EC /* OpenImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471DD202092650009A8EC /* OpenImagePickerViewController.swift */; };
+		305471ED20213B3B0009A8EC /* EventRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305471EC20213B3B0009A8EC /* EventRegistration.storyboard */; };
+		305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */; };
 		30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C33E4C2011CF45008C5826 /* Event.storyboard */; };
 		30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */; };
 		30D77B8A200B0ED400386438 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B89200B0ED400386438 /* Images.xcassets */; };
 		30D77B8C200B203300386438 /* HoogaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77B8B200B203300386438 /* HoogaTextField.swift */; };
 		30D77B8E200B206400386438 /* HoogaLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77B8D200B206400386438 /* HoogaLabel.swift */; };
-		30D77B97200B217E00386438 /* Eurostile in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B90200B217E00386438 /* Eurostile */; };
-		30D77B98200B217E00386438 /* Frutiger in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B91200B217E00386438 /* Frutiger */; };
-		30D77B99200B217E00386438 /* FrutiLig in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B92200B217E00386438 /* FrutiLig */; };
-		30D77B9A200B217E00386438 /* FrutiRom in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B93200B217E00386438 /* FrutiRom */; };
 		30D77B9B200B217E00386438 /* GillSans.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B94200B217E00386438 /* GillSans.ttc */; };
 		30D77B9C200B217E00386438 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B95200B217E00386438 /* Gotham-Book.otf */; };
 		30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B96200B217E00386438 /* Lobster-Regular.ttf */; };
@@ -107,6 +105,9 @@
 		7530D962201FE3DF00B9BB52 /* SocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D961201FE3DF00B9BB52 /* SocialButton.swift */; };
 		7530D964201FECA100B9BB52 /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D963201FECA100B9BB52 /* FaqVC.swift */; };
 		7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D965201FECF100B9BB52 /* FaqCell.swift */; };
+		754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E26B0202149DE00129381 /* TagSearchVC.swift */; };
+		75959D9C2022AA3700DC307A /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75959D9B2022AA3700DC307A /* AVKit.framework */; };
+		75959D9E2022B0EE00DC307A /* HLFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75959D9D2022B0EE00DC307A /* HLFont.swift */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
 /* End PBXBuildFile section */
@@ -139,22 +140,20 @@
 		301B864B20073F2D00DA7855 /* HoogaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoogaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		301B864F20073F2D00DA7855 /* HoogaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaUITests.swift; sourceTree = "<group>"; };
 		301B865120073F2D00DA7855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		301B865F2007452900DA7855 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		301B86692007452900DA7855 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		301B86732007463B00DA7855 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		301BF2142022001D0099ADD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3028D893201CC9B400922752 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingModel.swift; sourceTree = "<group>"; };
 		30348FFB201CF8EC00A2CDA1 /* loader2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader2.gif; sourceTree = "<group>"; };
 		305471DD202092650009A8EC /* OpenImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenImagePickerViewController.swift; sourceTree = "<group>"; };
+		305471EC20213B3B0009A8EC /* EventRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventRegistration.storyboard; sourceTree = "<group>"; };
+		305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegisterationViewController.swift; sourceTree = "<group>"; };
 		30C33E4C2011CF45008C5826 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOTPViewController.swift; sourceTree = "<group>"; };
 		30D77B89200B0ED400386438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		30D77B8B200B203300386438 /* HoogaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaTextField.swift; sourceTree = "<group>"; };
 		30D77B8D200B206400386438 /* HoogaLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaLabel.swift; sourceTree = "<group>"; };
-		30D77B90200B217E00386438 /* Eurostile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Eurostile; sourceTree = "<group>"; };
-		30D77B91200B217E00386438 /* Frutiger */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Frutiger; sourceTree = "<group>"; };
-		30D77B92200B217E00386438 /* FrutiLig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FrutiLig; sourceTree = "<group>"; };
-		30D77B93200B217E00386438 /* FrutiRom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FrutiRom; sourceTree = "<group>"; };
 		30D77B94200B217E00386438 /* GillSans.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttc; sourceTree = "<group>"; };
 		30D77B95200B217E00386438 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		30D77B96200B217E00386438 /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
@@ -193,7 +192,6 @@
 		30D77C0B200B3BBA00386438 /* LoginResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseDto.swift; sourceTree = "<group>"; };
 		30D77C0D200B3E4D00386438 /* ValidateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateModel.swift; sourceTree = "<group>"; };
 		30D77C0F200B504F00386438 /* StorageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageModel.swift; sourceTree = "<group>"; };
-		30D77C11200CD77900386438 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30D77C14200CD81400386438 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		30D77C16200CDA4000386438 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		30D77C202010891900386438 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +236,9 @@
 		7530D961201FE3DF00B9BB52 /* SocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButton.swift; sourceTree = "<group>"; };
 		7530D963201FECA100B9BB52 /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
 		7530D965201FECF100B9BB52 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
+		754E26B0202149DE00129381 /* TagSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchVC.swift; sourceTree = "<group>"; };
+		75959D9B2022AA3700DC307A /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		75959D9D2022B0EE00DC307A /* HLFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLFont.swift; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A2B191A578EA47A70B75B6 /* Pods-HoogaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoogaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoogaTests/Pods-HoogaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -251,6 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75959D9C2022AA3700DC307A /* AVKit.framework in Frameworks */,
 				737D16CEEF1F2D5BEB869FDB /* Pods_Hooga.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +279,7 @@
 		2BA49112B8767AC7A34A5A50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75959D9B2022AA3700DC307A /* AVKit.framework */,
 				2B4DDC9C7D5ED88786B8A3C9 /* Pods_Hooga.framework */,
 				7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */,
 				7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */,
@@ -342,10 +345,9 @@
 		301B865D2007452900DA7855 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				301BF2142022001D0099ADD9 /* Assets.xcassets */,
 				30D77C13200CD78A00386438 /* Gif */,
-				30D77C11200CD77900386438 /* Assets.xcassets */,
 				301B86752007467000DA7855 /* AppImages */,
-				301B865F2007452900DA7855 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -410,6 +412,31 @@
 			path = ImagePickByDevice;
 			sourceTree = "<group>";
 		};
+		305471E920213B200009A8EC /* EventRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				305471EA20213B200009A8EC /* Storyboard */,
+				305471EB20213B200009A8EC /* ViewController */,
+			);
+			path = EventRegistration;
+			sourceTree = "<group>";
+		};
+		305471EA20213B200009A8EC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				305471EC20213B3B0009A8EC /* EventRegistration.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		305471EB20213B200009A8EC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		30C33E4A2011CF45008C5826 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,10 +458,7 @@
 		30D77B8F200B217E00386438 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				30D77B90200B217E00386438 /* Eurostile */,
-				30D77B91200B217E00386438 /* Frutiger */,
-				30D77B92200B217E00386438 /* FrutiLig */,
-				30D77B93200B217E00386438 /* FrutiRom */,
+				75959D9D2022B0EE00DC307A /* HLFont.swift */,
 				30D77B94200B217E00386438 /* GillSans.ttc */,
 				30D77B95200B217E00386438 /* Gotham-Book.otf */,
 				30D77B96200B217E00386438 /* Lobster-Regular.ttf */,
@@ -445,6 +469,7 @@
 		30D77BAE200B306900386438 /* AppModules */ = {
 			isa = PBXGroup;
 			children = (
+				305471E920213B200009A8EC /* EventRegistration */,
 				7530D941201F888300B9BB52 /* EventDetail */,
 				30EA5F97201DE086009D4278 /* LeftSideMenu */,
 				30D77C18201088B400386438 /* Event */,
@@ -606,6 +631,7 @@
 				30EA5F9F201E2892009D4278 /* GrediantView.swift */,
 				30EA5FA0201E2892009D4278 /* MenuTitleAppearance.swift */,
 				30D77C202010891900386438 /* EventListViewController.swift */,
+				754E26B0202149DE00129381 /* TagSearchVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -852,25 +878,22 @@
 				30D77B9B200B217E00386438 /* GillSans.ttc in Resources */,
 				7530D956201F888300B9BB52 /* ContactCell.xib in Resources */,
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
-				301B866C2007452900DA7855 /* Assets.xcassets in Resources */,
 				30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */,
-				30D77B98200B217E00386438 /* Frutiger in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
 				30EA5F9B201DE0AD009D4278 /* LeftSideMenu.storyboard in Resources */,
 				30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */,
-				30D77B97200B217E00386438 /* Eurostile in Resources */,
 				7530D95D201F888300B9BB52 /* GalleryImageCell.xib in Resources */,
 				30D77C00200B37C400386438 /* Main.storyboard in Resources */,
 				30D77B9C200B217E00386438 /* Gotham-Book.otf in Resources */,
+				305471ED20213B3B0009A8EC /* EventRegistration.storyboard in Resources */,
 				7530D954201F888300B9BB52 /* BannerCell.xib in Resources */,
 				30D77C07200B399800386438 /* LaunchScreen.storyboard in Resources */,
 				30EA5FB6201EF1D4009D4278 /* CustomNavHeaderView.xib in Resources */,
-				30D77B9A200B217E00386438 /* FrutiRom in Resources */,
 				30D77C15200CD81400386438 /* loading.gif in Resources */,
 				7530D95B201F888300B9BB52 /* GalleryCell.xib in Resources */,
 				30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */,
 				30D77BF4200B36B400386438 /* DataTableViewCell.xib in Resources */,
-				30D77B99200B217E00386438 /* FrutiLig in Resources */,
+				301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */,
 				30D77BF0200B36B400386438 /* SlideMenu.storyboard in Resources */,
 				7530D95F201F888300B9BB52 /* ShareCell.xib in Resources */,
 				30D77BDE200B361400386438 /* HudView.xib in Resources */,
@@ -1109,6 +1132,7 @@
 				30D77BD5200B361400386438 /* String.swift in Sources */,
 				30D77C0E200B3E4D00386438 /* ValidateModel.swift in Sources */,
 				30EA5FB4201EF1C5009D4278 /* CustomNavHeaderView.swift in Sources */,
+				75959D9E2022B0EE00DC307A /* HLFont.swift in Sources */,
 				30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */,
 				30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */,
 				30D77BE0200B361F00386438 /* Constarints.swift in Sources */,
@@ -1117,7 +1141,9 @@
 				30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */,
 				30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */,
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
+				305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */,
 				30ED06192020833100D354BE /* HoogaView.swift in Sources */,
+				754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */,
 				7530D953201F888300B9BB52 /* BannerCell.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,
 				30D77C212010891900386438 /* EventListViewController.swift in Sources */,
@@ -1190,7 +1216,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mind Master Solutions Pte Ltd (U8E7VTBHLX)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1209,12 +1235,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "2aa9f45c-2306-421b-b3dd-52c97b47afe0";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1247,7 +1275,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mind Master Solutions Pte Ltd (U8E7VTBHLX)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1260,10 +1288,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "2aa9f45c-2306-421b-b3dd-52c97b47afe0";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1273,16 +1303,26 @@
 			baseConfigurationReference = CB206C60E38C051EAE206490 /* Pods-Hooga.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mind Master Solutions Pte Ltd (U8E7VTBHLX)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T3PHT66QH7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+				);
 				INFOPLIST_FILE = Hooga/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mindmaster.hooga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2aa9f45c-2306-421b-b3dd-52c97b47afe0";
+				PROVISIONING_PROFILE = "a40de6f3-8eec-471f-be9e-b85cfe38ddd3";
 				PROVISIONING_PROFILE_SPECIFIER = HoogaDeveloper30Jan18;
 				SWIFT_VERSION = 4.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1292,16 +1332,26 @@
 			baseConfigurationReference = 6D665E74FE8F852E0924AC9A /* Pods-Hooga.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mind Master Solutions Pte Ltd (U8E7VTBHLX)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T3PHT66QH7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+				);
 				INFOPLIST_FILE = Hooga/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mindmaster.hooga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2aa9f45c-2306-421b-b3dd-52c97b47afe0";
+				PROVISIONING_PROFILE = "a40de6f3-8eec-471f-be9e-b85cfe38ddd3";
 				PROVISIONING_PROFILE_SPECIFIER = HoogaDeveloper30Jan18;
 				SWIFT_VERSION = 4.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

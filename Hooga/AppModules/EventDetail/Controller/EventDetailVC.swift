@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventDetailVC: UIViewController ,ShareCellDelegate{
+class EventDetailVC: UIViewController{
     
     
     
@@ -52,23 +52,6 @@ class EventDetailVC: UIViewController ,ShareCellDelegate{
         tableDetail.dataSource          = self
     }
     
-    func faqSelected() {
-        
-        if arrEventFaq.count > 0 {
-            let faqVc = self.storyboard?.instantiateViewController(withIdentifier: "FaqVC") as! FaqVC
-            faqVc.arrFaq = arrEventFaq            
-            self.navigationController?.pushViewController(faqVc, animated: true)
-        }
-        
-    }
-    
-    func termSelected() {
-        if arrEventTermsCondition.count > 0 {
-            let faqVc = self.storyboard?.instantiateViewController(withIdentifier: "FaqVC") as! FaqVC
-            faqVc.arrTermsCondition = arrEventTermsCondition
-            self.navigationController?.pushViewController(faqVc, animated: true)
-        }
-    }
     
     @IBAction func buttonBack_didpressed(button:UIButton){
         self.navigationController?.popViewController(animated: true)
@@ -204,7 +187,7 @@ extension EventDetailVC : UITableViewDelegate{
         }else if cellType == 2 {
             return 65
         }else if cellType == 3 {
-            return 193
+            return UITableViewAutomaticDimension
         }else if cellType == 4{
             return UITableViewAutomaticDimension
         }
@@ -212,6 +195,33 @@ extension EventDetailVC : UITableViewDelegate{
     }
     
     
+}
+
+extension EventDetailVC :ShareCellDelegate{
+    func registerBttonSelected(cell: ShareCell) {
+        if let evntDtl = eventDetail{
+             NavigationManager.eventRegistration(navigationController: self.navigationController, evntDetail: evntDtl)
+        }
+       
+    }
+    
+    func faqSelected() {
+        
+        if arrEventFaq.count > 0 {
+            let faqVc = self.storyboard?.instantiateViewController(withIdentifier: "FaqVC") as! FaqVC
+            faqVc.arrFaq = arrEventFaq
+            self.navigationController?.pushViewController(faqVc, animated: true)
+        }
+        
+    }
+    
+    func termSelected() {
+        if arrEventTermsCondition.count > 0 {
+            let faqVc = self.storyboard?.instantiateViewController(withIdentifier: "FaqVC") as! FaqVC
+            faqVc.arrTermsCondition = arrEventTermsCondition
+            self.navigationController?.pushViewController(faqVc, animated: true)
+        }
+    }
 }
 
 extension EventDetailVC {

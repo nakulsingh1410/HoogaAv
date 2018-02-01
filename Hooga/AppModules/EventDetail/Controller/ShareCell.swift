@@ -11,6 +11,7 @@ import UIKit
 protocol ShareCellDelegate {
     func faqSelected()
     func termSelected()
+    func registerBttonSelected(cell:ShareCell)
 }
 class ShareCell: UITableViewCell {
 
@@ -18,7 +19,7 @@ class ShareCell: UITableViewCell {
     @IBOutlet weak var buttnFaceBook: SocialButton!
     @IBOutlet weak var buttonGoogle: SocialButton!
     @IBOutlet weak var buttonTwitter: SocialButton!
-    var delegate : ShareCellDelegate!
+    var delegate : ShareCellDelegate?
     
     
     @IBOutlet weak var buttonregister: UIButton!
@@ -45,16 +46,17 @@ class ShareCell: UITableViewCell {
         guard (delegate) != nil else {
             return
         }
-        delegate.termSelected()
+        delegate?.termSelected()
     }
     @IBAction func buttonFaq_didPressed(_ sender: Any) {
         
         guard (delegate) != nil else {
             return
         }
-        delegate.faqSelected()
+        delegate?.faqSelected()
     }
     
     @IBAction func buttonRegister_didPressed(_ sender: Any) {
+        delegate?.registerBttonSelected(cell: self)
     }
 }

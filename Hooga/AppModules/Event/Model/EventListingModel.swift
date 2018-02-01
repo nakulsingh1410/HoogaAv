@@ -13,6 +13,9 @@ class CategoryModel: NSObject,Mappable {
     var category : String?
     var categoryid : Int?
     
+    override init() {
+        
+    }
     required init?(map: Map) {
         
     }
