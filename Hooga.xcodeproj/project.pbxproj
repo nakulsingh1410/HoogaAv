@@ -111,6 +111,7 @@
 		7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D965201FECF100B9BB52 /* FaqCell.swift */; };
 		754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E26B0202149DE00129381 /* TagSearchVC.swift */; };
 		75959D9C2022AA3700DC307A /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75959D9B2022AA3700DC307A /* AVKit.framework */; };
+		75959D9E2022B0EE00DC307A /* HLFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75959D9D2022B0EE00DC307A /* HLFont.swift */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
 /* End PBXBuildFile section */
@@ -245,6 +246,7 @@
 		7530D965201FECF100B9BB52 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
 		754E26B0202149DE00129381 /* TagSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchVC.swift; sourceTree = "<group>"; };
 		75959D9B2022AA3700DC307A /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		75959D9D2022B0EE00DC307A /* HLFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLFont.swift; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A2B191A578EA47A70B75B6 /* Pods-HoogaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoogaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoogaTests/Pods-HoogaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 		30D77B8F200B217E00386438 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				75959D9D2022B0EE00DC307A /* HLFont.swift */,
 				30D77B90200B217E00386438 /* Eurostile */,
 				30D77B91200B217E00386438 /* Frutiger */,
 				30D77B92200B217E00386438 /* FrutiLig */,
@@ -1145,6 +1148,7 @@
 				30D77BD5200B361400386438 /* String.swift in Sources */,
 				30D77C0E200B3E4D00386438 /* ValidateModel.swift in Sources */,
 				30EA5FB4201EF1C5009D4278 /* CustomNavHeaderView.swift in Sources */,
+				75959D9E2022B0EE00DC307A /* HLFont.swift in Sources */,
 				30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */,
 				30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */,
 				30D77BE0200B361F00386438 /* Constarints.swift in Sources */,
