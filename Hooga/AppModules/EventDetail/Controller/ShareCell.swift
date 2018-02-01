@@ -19,6 +19,9 @@ class ShareCell: UITableViewCell {
     @IBOutlet weak var buttnFaceBook: SocialButton!
     @IBOutlet weak var buttonGoogle: SocialButton!
     @IBOutlet weak var buttonTwitter: SocialButton!
+    @IBOutlet weak var viewTicketView: UIView!
+    @IBOutlet weak var viewTicketViewHeightConstraint: NSLayoutConstraint!
+    
     var delegate : ShareCellDelegate?
     
     
@@ -35,6 +38,18 @@ class ShareCell: UITableViewCell {
         // Initialization code
     }
 
+    
+    func showShareCell(isComingFrom:ComingFromScreen)  {
+        if isComingFrom == ComingFromScreen.eventListing {
+            viewTicketViewHeightConstraint.constant = 0
+            buttonregister.isHidden = false
+
+        }else{
+            viewTicketViewHeightConstraint.constant = 45
+            buttonregister.isHidden = true
+        }
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -57,6 +72,8 @@ class ShareCell: UITableViewCell {
     }
     
     @IBAction func buttonRegister_didPressed(_ sender: Any) {
-        delegate?.registerBttonSelected(cell: self)
+        if let title = buttonregister.titleLabel?.text , title == RegisterButtonTitle.register.rawValue {
+            delegate?.registerBttonSelected(cell: self)
+        }
     }
 }

@@ -140,14 +140,6 @@
                                             <constraint firstAttribute="width" constant="115" id="vrX-3f-y4V"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xU-V8-CXz" customClass="LeftMenuButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="14" width="30" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="NwP-yf-ZXb"/>
-                                            <constraint firstAttribute="height" constant="35" id="hhs-ca-QIh"/>
-                                        </constraints>
-                                        <state key="normal" title="Menu"/>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vf-6P-MPO" customClass="GradientView" customModule="Hooga" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -176,13 +168,11 @@
                                     <constraint firstItem="aRP-oO-ppf" firstAttribute="centerY" secondItem="vfl-OV-6FH" secondAttribute="centerY" id="0DC-tQ-Zp6"/>
                                     <constraint firstItem="vfl-OV-6FH" firstAttribute="top" secondItem="NVu-9i-4w8" secondAttribute="top" constant="56" id="4eW-3w-36Z"/>
                                     <constraint firstAttribute="trailing" secondItem="aRP-oO-ppf" secondAttribute="trailing" constant="27" id="6So-1D-w9V"/>
-                                    <constraint firstItem="5xU-V8-CXz" firstAttribute="leading" secondItem="NVu-9i-4w8" secondAttribute="leading" constant="16" id="8b4-jS-P12"/>
                                     <constraint firstItem="9vf-6P-MPO" firstAttribute="top" secondItem="NVu-9i-4w8" secondAttribute="top" id="Fpb-hN-ZSt"/>
                                     <constraint firstAttribute="height" constant="106" id="PcT-Du-JgK"/>
                                     <constraint firstAttribute="trailing" secondItem="9vf-6P-MPO" secondAttribute="trailing" id="iQt-Vx-7s2"/>
                                     <constraint firstItem="vfl-OV-6FH" firstAttribute="leading" secondItem="NVu-9i-4w8" secondAttribute="leading" constant="16" id="onu-LZ-mAi"/>
                                     <constraint firstItem="9vf-6P-MPO" firstAttribute="leading" secondItem="NVu-9i-4w8" secondAttribute="leading" id="qjD-HF-7hq"/>
-                                    <constraint firstItem="5xU-V8-CXz" firstAttribute="top" secondItem="NVu-9i-4w8" secondAttribute="top" constant="14" id="zMh-yY-qbN"/>
                                     <constraint firstItem="aRP-oO-ppf" firstAttribute="leading" secondItem="vfl-OV-6FH" secondAttribute="trailing" constant="8" id="zTe-7d-EAd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -224,7 +214,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="hbQ-EC-T6q"/>
                     <connections>
-                        <outlet property="btnLeftMenu" destination="5xU-V8-CXz" id="fbe-Mp-9Ps"/>
                         <outlet property="buttonFree" destination="KRV-Ey-GWq" id="aWT-7s-lX4"/>
                         <outlet property="buttonPay" destination="mFc-dD-SNo" id="fvP-0A-31q"/>
                         <outlet property="labelFree" destination="0Xy-bz-ZvV" id="BoE-A9-ddk"/>

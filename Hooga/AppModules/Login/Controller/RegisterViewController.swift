@@ -11,6 +11,7 @@ import UIKit
 enum Gender:String{
     case male = "Male"
      case female = "Female"
+    case other = "Other"
 }
 enum RequestForScreen:String{
     case login = "login"
@@ -37,7 +38,7 @@ class RegisterViewController: UIViewController {
 
     var requestingScreen:RequestForScreen = .login
     
-    var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
+    var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
     var arrCity = ["Singapore"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -211,7 +212,7 @@ extension RegisterViewController:CustomPickerViewDelegate{
     }
     func didSelectPickerValueAt(title: String, index: Int, pickerType: PickerType?) {
         if let type = pickerType , type == .gendePicker {
-            txtFGender.text = (title == Gender.male.rawValue) ? "M" : "F"
+            txtFGender.text = title
         }
         if let type = pickerType , type == .cityPicker {
             txtFCity.text = title

@@ -263,7 +263,6 @@ extension EventService{
         dictParam["postalcode"] = postalcode
         //dictParam["profilepic"] = profilePicData
         dictParam["status"] = "True"
-
         
         Service.postRequestWithJsonResponse(endPoint: kServiceUrl+ServiceName.REGISTER_EVENT.rawValue,params: dictParam) { (response) in
             Common.hideHud()
@@ -286,5 +285,45 @@ extension EventService{
             
         }
     }
-    
 }
+
+/***************************************************************/
+//MARK: My Events
+/***************************************************************/
+extension EventService{
+    
+    static func getMyEvents(isOnGoingEvents:Bool,callback: @escaping (Bool,[MyEventModel]?) -> Void)  {
+        
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+
+        Common.showHud()
+        var dictParam = Dictionary<String,Any>()
+        dictParam["userid"] = userid
+
+        var serviceName = ""
+        if isOnGoingEvents {
+            serviceName = ServiceName.SHOW_ONGOING_EVENTS.rawValue
+        }else{
+            serviceName = ServiceName.SHOW_COMPLETED_EVENTS.rawValue
+        }
+        let kServerUrl = kDomain + kEvent + serviceName
+
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl,params: dictParam) { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let arrObj = obj["MyEvents"]  as? [[String:Any]]{
+                let array = Mapper<MyEventModel>().mapArray(JSONArray:arrObj)
+                callback(true,array);
+                }else{
+                     callback(false,nil);
+                }
+            } else {
+                callback(false,nil);
+            }
+            
+        }
+    }
+}
+
+
+

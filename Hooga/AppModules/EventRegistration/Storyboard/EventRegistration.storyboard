@@ -14,14 +14,14 @@
             <objects>
                 <viewController storyboardIdentifier="EventRegisterationViewController" id="DiV-dp-npf" customClass="EventRegisterationViewController" customModule="Hooga" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="jgX-j2-vZ1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pR8-3G-q0n">
-                                <rect key="frame" x="0.0" y="20" width="375" height="680"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="730"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tph-vZ-d0Z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.8067781690140845" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Dw-hD-NGb" userLabel="Header">
@@ -71,13 +71,13 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5B-Al-3cL">
-                                <rect key="frame" x="0.0" y="67" width="375" height="633"/>
+                                <rect key="frame" x="0.0" y="67" width="375" height="683"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c55-6f-inr">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="653"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="653" id="11e-EY-UkS"/>
+                                            <constraint firstAttribute="height" constant="700" id="11e-EY-UkS"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1lM-rK-ct4" userLabel="EventDetail">
@@ -179,88 +179,90 @@
                                         <rect key="frame" x="20" y="165" width="335" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWk-Nq-iin" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="4.5" width="67" height="21"/>
+                                                <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c8j-3f-rac" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="70" y="0.0" width="40" height="30"/>
+                                                <rect key="frame" x="125" y="0.0" width="180" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="wmJ-Yc-ohB"/>
-                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downArraow" translatesAutoresizingMaskIntoConstraints="NO" id="RAp-bR-t5t">
-                                                <rect key="frame" x="110" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="305" y="0.0" width="30" height="30"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgR-Zz-3T1">
-                                                <rect key="frame" x="1" y="0.0" width="139" height="30"/>
+                                                <rect key="frame" x="1" y="0.0" width="334" height="30"/>
                                                 <connections>
                                                     <action selector="btnGenderTapped:" destination="DiV-dp-npf" eventType="touchUpInside" id="pZz-tg-yw1"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="__/ __/ __" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aeN-Ag-BLA" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="196" y="0.0" width="109" height="30"/>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="JgR-Zz-3T1" firstAttribute="top" secondItem="yaq-cQ-F6j" secondAttribute="top" id="0MC-QF-Jbe"/>
+                                            <constraint firstAttribute="trailing" secondItem="RAp-bR-t5t" secondAttribute="trailing" id="5fV-wN-sgL"/>
+                                            <constraint firstItem="c8j-3f-rac" firstAttribute="top" secondItem="yaq-cQ-F6j" secondAttribute="top" id="91n-Re-KeA"/>
+                                            <constraint firstItem="eWk-Nq-iin" firstAttribute="leading" secondItem="yaq-cQ-F6j" secondAttribute="leading" id="B8r-cW-Vbk"/>
+                                            <constraint firstAttribute="bottom" secondItem="JgR-Zz-3T1" secondAttribute="bottom" id="Gse-lV-o0H"/>
+                                            <constraint firstItem="RAp-bR-t5t" firstAttribute="centerY" secondItem="eWk-Nq-iin" secondAttribute="centerY" id="IiS-mQ-8EY"/>
+                                            <constraint firstItem="eWk-Nq-iin" firstAttribute="centerY" secondItem="yaq-cQ-F6j" secondAttribute="centerY" id="It4-oy-xsk"/>
+                                            <constraint firstAttribute="height" constant="30" id="MzI-8W-GRB"/>
+                                            <constraint firstItem="JgR-Zz-3T1" firstAttribute="leading" secondItem="yaq-cQ-F6j" secondAttribute="leading" constant="1" id="SgW-TV-cX9"/>
+                                            <constraint firstAttribute="bottom" secondItem="c8j-3f-rac" secondAttribute="bottom" id="WJJ-0B-nFD"/>
+                                            <constraint firstItem="RAp-bR-t5t" firstAttribute="trailing" secondItem="JgR-Zz-3T1" secondAttribute="trailing" id="Xbk-Yy-fua"/>
+                                            <constraint firstItem="c8j-3f-rac" firstAttribute="leading" secondItem="eWk-Nq-iin" secondAttribute="trailing" constant="10" id="Zs7-GJ-eaV"/>
+                                            <constraint firstItem="RAp-bR-t5t" firstAttribute="leading" secondItem="c8j-3f-rac" secondAttribute="trailing" id="aqa-lu-654"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOr-6b-Od5" userLabel="DOB">
+                                        <rect key="frame" x="20" y="205" width="335" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcn-jw-dKY">
+                                                <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="__/ __/ __" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fK-Je-2Xa" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                                                <rect key="frame" x="125" y="0.0" width="180" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xH3-7J-w2b" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="150" y="5" width="35.5" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1h-Ln-0vk">
-                                                <rect key="frame" x="150" y="0.0" width="185" height="30"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calander" translatesAutoresizingMaskIntoConstraints="NO" id="DSL-lu-Dzk">
+                                                <rect key="frame" x="305" y="0.0" width="30" height="30"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMN-jY-Uuh">
+                                                <rect key="frame" x="1" y="0.0" width="334" height="30"/>
                                                 <connections>
-                                                    <action selector="btnDOBTapped:" destination="DiV-dp-npf" eventType="touchUpInside" id="EEj-xO-7Ap"/>
+                                                    <action selector="btnDOBTapped:" destination="DiV-dp-npf" eventType="touchUpInside" id="asa-bc-yTN"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calander" translatesAutoresizingMaskIntoConstraints="NO" id="kfE-bj-Gtm">
-                                                <rect key="frame" x="305" y="0.0" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="U7i-gm-V0x"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="JgR-Zz-3T1" firstAttribute="top" secondItem="yaq-cQ-F6j" secondAttribute="top" id="0MC-QF-Jbe"/>
-                                            <constraint firstItem="A1h-Ln-0vk" firstAttribute="leading" secondItem="xH3-7J-w2b" secondAttribute="leading" id="1Cg-kB-xKQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="aeN-Ag-BLA" secondAttribute="bottom" id="6Ve-ex-rZq"/>
-                                            <constraint firstItem="xH3-7J-w2b" firstAttribute="centerY" secondItem="eWk-Nq-iin" secondAttribute="centerY" id="7tV-qC-P3b"/>
-                                            <constraint firstItem="c8j-3f-rac" firstAttribute="top" secondItem="yaq-cQ-F6j" secondAttribute="top" id="91n-Re-KeA"/>
-                                            <constraint firstItem="eWk-Nq-iin" firstAttribute="leading" secondItem="yaq-cQ-F6j" secondAttribute="leading" id="B8r-cW-Vbk"/>
-                                            <constraint firstAttribute="trailing" secondItem="aeN-Ag-BLA" secondAttribute="trailing" constant="30" id="CiF-YU-0C7"/>
-                                            <constraint firstItem="A1h-Ln-0vk" firstAttribute="top" secondItem="yaq-cQ-F6j" secondAttribute="top" id="CyU-uN-shk"/>
-                                            <constraint firstItem="aeN-Ag-BLA" firstAttribute="top" secondItem="yaq-cQ-F6j" secondAttribute="top" id="DSQ-Tw-Ce8"/>
-                                            <constraint firstAttribute="bottom" secondItem="JgR-Zz-3T1" secondAttribute="bottom" id="Gse-lV-o0H"/>
-                                            <constraint firstItem="RAp-bR-t5t" firstAttribute="centerY" secondItem="eWk-Nq-iin" secondAttribute="centerY" id="IiS-mQ-8EY"/>
-                                            <constraint firstItem="eWk-Nq-iin" firstAttribute="centerY" secondItem="yaq-cQ-F6j" secondAttribute="centerY" id="It4-oy-xsk"/>
-                                            <constraint firstAttribute="trailing" secondItem="kfE-bj-Gtm" secondAttribute="trailing" id="JJv-B1-Pyj"/>
-                                            <constraint firstItem="aeN-Ag-BLA" firstAttribute="leading" secondItem="xH3-7J-w2b" secondAttribute="trailing" constant="10" id="MCX-8O-W3I"/>
-                                            <constraint firstAttribute="bottom" secondItem="aeN-Ag-BLA" secondAttribute="bottom" id="MOH-bn-yyb"/>
-                                            <constraint firstAttribute="height" constant="30" id="MzI-8W-GRB"/>
-                                            <constraint firstItem="JgR-Zz-3T1" firstAttribute="leading" secondItem="yaq-cQ-F6j" secondAttribute="leading" constant="1" id="SgW-TV-cX9"/>
-                                            <constraint firstAttribute="bottom" secondItem="c8j-3f-rac" secondAttribute="bottom" id="WJJ-0B-nFD"/>
-                                            <constraint firstItem="RAp-bR-t5t" firstAttribute="trailing" secondItem="JgR-Zz-3T1" secondAttribute="trailing" id="Xbk-Yy-fua"/>
-                                            <constraint firstItem="c8j-3f-rac" firstAttribute="leading" secondItem="eWk-Nq-iin" secondAttribute="trailing" constant="3" id="Zs7-GJ-eaV"/>
-                                            <constraint firstItem="RAp-bR-t5t" firstAttribute="leading" secondItem="c8j-3f-rac" secondAttribute="trailing" id="aqa-lu-654"/>
-                                            <constraint firstAttribute="bottom" secondItem="A1h-Ln-0vk" secondAttribute="bottom" id="bxN-ub-prR"/>
-                                            <constraint firstItem="xH3-7J-w2b" firstAttribute="leading" secondItem="c8j-3f-rac" secondAttribute="trailing" constant="40" id="doz-C6-HuM"/>
-                                            <constraint firstItem="aeN-Ag-BLA" firstAttribute="top" secondItem="yaq-cQ-F6j" secondAttribute="top" id="kuf-OR-3aN"/>
-                                            <constraint firstItem="kfE-bj-Gtm" firstAttribute="centerY" secondItem="RAp-bR-t5t" secondAttribute="centerY" id="phY-xc-cci"/>
-                                            <constraint firstAttribute="trailing" secondItem="A1h-Ln-0vk" secondAttribute="trailing" id="vlz-QN-Vv9"/>
+                                            <constraint firstItem="DSL-lu-Dzk" firstAttribute="centerY" secondItem="Kcn-jw-dKY" secondAttribute="centerY" id="7pY-55-ePl"/>
+                                            <constraint firstItem="Kcn-jw-dKY" firstAttribute="leading" secondItem="yOr-6b-Od5" secondAttribute="leading" id="DsY-8n-ob7"/>
+                                            <constraint firstItem="UMN-jY-Uuh" firstAttribute="leading" secondItem="yOr-6b-Od5" secondAttribute="leading" constant="1" id="EeN-P4-4ip"/>
+                                            <constraint firstItem="UMN-jY-Uuh" firstAttribute="top" secondItem="yOr-6b-Od5" secondAttribute="top" id="EuY-0d-HTy"/>
+                                            <constraint firstItem="1fK-Je-2Xa" firstAttribute="leading" secondItem="Kcn-jw-dKY" secondAttribute="trailing" constant="10" id="HKT-7l-zaY"/>
+                                            <constraint firstAttribute="bottom" secondItem="UMN-jY-Uuh" secondAttribute="bottom" id="Phy-pW-MTg"/>
+                                            <constraint firstAttribute="height" constant="30" id="RF0-zu-jcr"/>
+                                            <constraint firstItem="1fK-Je-2Xa" firstAttribute="top" secondItem="yOr-6b-Od5" secondAttribute="top" id="Rbp-iW-6OF"/>
+                                            <constraint firstItem="DSL-lu-Dzk" firstAttribute="trailing" secondItem="UMN-jY-Uuh" secondAttribute="trailing" id="bHc-mm-RVW"/>
+                                            <constraint firstAttribute="trailing" secondItem="DSL-lu-Dzk" secondAttribute="trailing" id="gdT-8V-bpj"/>
+                                            <constraint firstAttribute="trailing" secondItem="1fK-Je-2Xa" secondAttribute="trailing" constant="30" id="kVr-gb-fPo"/>
+                                            <constraint firstAttribute="bottom" secondItem="1fK-Je-2Xa" secondAttribute="bottom" id="qwk-I1-LwZ"/>
+                                            <constraint firstItem="Kcn-jw-dKY" firstAttribute="centerY" secondItem="yOr-6b-Od5" secondAttribute="centerY" id="yuQ-Ot-NMf"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcB-lo-mJd" userLabel="Mobile">
-                                        <rect key="frame" x="20" y="205" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="245" width="335" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISg-Ik-OKY" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
@@ -288,7 +290,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6f-x1-nuy" userLabel="Email">
-                                        <rect key="frame" x="20" y="245" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="285" width="335" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmq-En-phG" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
@@ -316,7 +318,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBi-WJ-r2B" userLabel="Profile Pic">
-                                        <rect key="frame" x="20" y="290" width="335" height="100"/>
+                                        <rect key="frame" x="20" y="330" width="335" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROFILE PICTURE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5d-CM-Ils" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="39.5" width="140" height="21"/>
@@ -354,7 +356,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vgn-9x-RQV" userLabel="Address1">
-                                        <rect key="frame" x="20" y="405" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="445" width="335" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRRESS 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iU-Jm-ggU" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
@@ -382,7 +384,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEm-UX-Aje" userLabel="Address2">
-                                        <rect key="frame" x="20" y="445" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="485" width="335" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja0-TJ-Rq5" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
@@ -410,7 +412,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cro-gi-Vq6" userLabel="City">
-                                        <rect key="frame" x="20" y="485" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="525" width="335" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctn-bL-ogO">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
@@ -453,7 +455,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1C-Ev-2Hc" userLabel="Postal code">
-                                        <rect key="frame" x="20" y="525" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="565" width="335" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POSTAL CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJc-kf-EDf" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
@@ -481,7 +483,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Www-I6-Sot">
-                                        <rect key="frame" x="20" y="580" width="335" height="35"/>
+                                        <rect key="frame" x="20" y="620" width="335" height="35"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDs-jx-BK7">
                                                 <rect key="frame" x="166.5" y="0.0" width="1" height="35"/>
@@ -537,13 +539,16 @@
                                     <constraint firstItem="DBi-WJ-r2B" firstAttribute="leading" secondItem="xcA-Tt-Aef" secondAttribute="leading" id="2f6-jg-4N0"/>
                                     <constraint firstItem="DBi-WJ-r2B" firstAttribute="top" secondItem="z6f-x1-nuy" secondAttribute="bottom" constant="15" id="3wr-ZD-gAo"/>
                                     <constraint firstItem="z6f-x1-nuy" firstAttribute="trailing" secondItem="xcA-Tt-Aef" secondAttribute="trailing" id="4s7-5h-PYR"/>
+                                    <constraint firstItem="Kcn-jw-dKY" firstAttribute="width" secondItem="ENT-q5-ndv" secondAttribute="width" id="5fe-1Q-bqH"/>
                                     <constraint firstAttribute="trailing" secondItem="xcA-Tt-Aef" secondAttribute="trailing" constant="20" id="6Nw-mv-VUO"/>
                                     <constraint firstItem="Www-I6-Sot" firstAttribute="top" secondItem="b1C-Ev-2Hc" secondAttribute="bottom" constant="25" id="86m-G7-Oh7"/>
                                     <constraint firstItem="yaq-cQ-F6j" firstAttribute="leading" secondItem="xcA-Tt-Aef" secondAttribute="leading" id="8lW-Ld-qaL"/>
                                     <constraint firstAttribute="trailing" secondItem="sfG-CW-Vpg" secondAttribute="trailing" constant="20" id="9BF-bU-koE"/>
+                                    <constraint firstItem="tcB-lo-mJd" firstAttribute="top" secondItem="yOr-6b-Od5" secondAttribute="bottom" constant="10" id="9K3-nE-qeU"/>
                                     <constraint firstItem="b1C-Ev-2Hc" firstAttribute="top" secondItem="cro-gi-Vq6" secondAttribute="bottom" constant="10" id="9Ni-Ig-j3k"/>
                                     <constraint firstItem="sfG-CW-Vpg" firstAttribute="top" secondItem="xcA-Tt-Aef" secondAttribute="bottom" constant="10" id="Cn7-YE-sUX"/>
                                     <constraint firstItem="cro-gi-Vq6" firstAttribute="trailing" secondItem="xcA-Tt-Aef" secondAttribute="trailing" id="Cw9-YY-uVX"/>
+                                    <constraint firstItem="yOr-6b-Od5" firstAttribute="top" secondItem="yaq-cQ-F6j" secondAttribute="bottom" constant="10" id="Gaq-UP-OWP"/>
                                     <constraint firstItem="yaq-cQ-F6j" firstAttribute="trailing" secondItem="xcA-Tt-Aef" secondAttribute="trailing" id="GnI-gy-TBp"/>
                                     <constraint firstItem="xcA-Tt-Aef" firstAttribute="top" secondItem="1lM-rK-ct4" secondAttribute="bottom" constant="10" id="I5P-D6-8he"/>
                                     <constraint firstItem="tcB-lo-mJd" firstAttribute="leading" secondItem="xcA-Tt-Aef" secondAttribute="leading" id="Jy1-Id-83u"/>
@@ -559,6 +564,7 @@
                                     <constraint firstItem="b1C-Ev-2Hc" firstAttribute="trailing" secondItem="xcA-Tt-Aef" secondAttribute="trailing" id="Pep-eh-208"/>
                                     <constraint firstItem="c55-6f-inr" firstAttribute="centerX" secondItem="I5B-Al-3cL" secondAttribute="centerX" id="Rda-xD-9u5"/>
                                     <constraint firstItem="1lM-rK-ct4" firstAttribute="top" secondItem="I5B-Al-3cL" secondAttribute="top" constant="10" id="TMm-j0-7b2"/>
+                                    <constraint firstItem="eWk-Nq-iin" firstAttribute="width" secondItem="ENT-q5-ndv" secondAttribute="width" id="Uc1-aD-ojd"/>
                                     <constraint firstItem="qEm-UX-Aje" firstAttribute="leading" secondItem="xcA-Tt-Aef" secondAttribute="leading" id="YHm-ys-bld"/>
                                     <constraint firstItem="Vgn-9x-RQV" firstAttribute="top" secondItem="DBi-WJ-r2B" secondAttribute="bottom" constant="15" id="ZOD-SF-Ac6"/>
                                     <constraint firstItem="cro-gi-Vq6" firstAttribute="top" secondItem="qEm-UX-Aje" secondAttribute="bottom" constant="10" id="a8D-hZ-mYk"/>
@@ -569,13 +575,14 @@
                                     <constraint firstItem="c55-6f-inr" firstAttribute="leading" secondItem="I5B-Al-3cL" secondAttribute="leading" id="hMh-yH-D1v"/>
                                     <constraint firstItem="qEm-UX-Aje" firstAttribute="trailing" secondItem="xcA-Tt-Aef" secondAttribute="trailing" id="hhr-6e-WXh"/>
                                     <constraint firstItem="ctn-bL-ogO" firstAttribute="width" secondItem="ENT-q5-ndv" secondAttribute="width" id="hl5-p1-EXk"/>
+                                    <constraint firstItem="yOr-6b-Od5" firstAttribute="leading" secondItem="xcA-Tt-Aef" secondAttribute="leading" id="k19-8g-Km5"/>
                                     <constraint firstAttribute="bottom" secondItem="c55-6f-inr" secondAttribute="bottom" id="kpw-gd-Qby"/>
                                     <constraint firstItem="Www-I6-Sot" firstAttribute="leading" secondItem="xcA-Tt-Aef" secondAttribute="leading" id="lDq-An-1vS"/>
                                     <constraint firstItem="DBi-WJ-r2B" firstAttribute="trailing" secondItem="xcA-Tt-Aef" secondAttribute="trailing" id="ljA-CW-XYd"/>
                                     <constraint firstItem="cro-gi-Vq6" firstAttribute="leading" secondItem="xcA-Tt-Aef" secondAttribute="leading" id="mxr-jX-SDl"/>
                                     <constraint firstItem="c55-6f-inr" firstAttribute="top" secondItem="I5B-Al-3cL" secondAttribute="top" id="oFL-jS-eq7"/>
                                     <constraint firstItem="z6f-x1-nuy" firstAttribute="leading" secondItem="xcA-Tt-Aef" secondAttribute="leading" id="p5R-eS-EfH"/>
-                                    <constraint firstItem="tcB-lo-mJd" firstAttribute="top" secondItem="yaq-cQ-F6j" secondAttribute="bottom" constant="10" id="sEc-zw-Y8P"/>
+                                    <constraint firstItem="yOr-6b-Od5" firstAttribute="trailing" secondItem="xcA-Tt-Aef" secondAttribute="trailing" id="pIT-sj-P9C"/>
                                     <constraint firstItem="sfG-CW-Vpg" firstAttribute="leading" secondItem="I5B-Al-3cL" secondAttribute="leading" constant="20" id="spT-LE-7d2"/>
                                     <constraint firstItem="xcA-Tt-Aef" firstAttribute="leading" secondItem="I5B-Al-3cL" secondAttribute="leading" constant="20" id="t7G-h4-sFF"/>
                                     <constraint firstItem="6iU-Jm-ggU" firstAttribute="width" secondItem="ENT-q5-ndv" secondAttribute="width" id="wI6-ch-m08"/>
@@ -604,7 +611,7 @@
                         <viewLayoutGuide key="safeArea" id="9Yi-hq-H56"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="700"/>
+                    <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="btnUpload" destination="aOX-1s-Dlz" id="Wh2-rl-0Wj"/>
                         <outlet property="imgViewBanner" destination="pR8-3G-q0n" id="yml-kX-SuV"/>
@@ -615,7 +622,7 @@
                         <outlet property="txtFAddress1" destination="8hJ-fL-LcQ" id="0R3-Wm-Ov6"/>
                         <outlet property="txtFAddress2" destination="8be-kO-XgN" id="Jj5-0t-lZg"/>
                         <outlet property="txtFCity" destination="4l9-ZP-e6H" id="HTg-Cx-K4Z"/>
-                        <outlet property="txtFDOB" destination="aeN-Ag-BLA" id="4db-bc-Vtk"/>
+                        <outlet property="txtFDOB" destination="1fK-Je-2Xa" id="n5Z-in-rsw"/>
                         <outlet property="txtFEmail" destination="Wqc-aV-0x0" id="iPC-1s-Ls6"/>
                         <outlet property="txtFFirstName" destination="Cjj-z3-B7H" id="tde-qQ-IdJ"/>
                         <outlet property="txtFGender" destination="c8j-3f-rac" id="LA8-wF-WVc"/>

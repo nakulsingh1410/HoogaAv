@@ -100,6 +100,9 @@ public enum ServiceName:String {
     case SHOW_EVENT_TERSM_CONDITION = "showEventTermsConditions"
 
     case REGISTER_EVENT = "registerEvent"
+    case SHOW_ONGOING_EVENTS = "showMyOngoingEvents"
+    case SHOW_COMPLETED_EVENTS = "showMyCompletedEvents"
+    case DISPLAY_MY_PROFILE = "displayMyProfile"
 }
 
 

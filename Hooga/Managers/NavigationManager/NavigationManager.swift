@@ -40,10 +40,11 @@ class NavigationManager {
         }
     }
     
-    class func eventDetail(navigationController:UINavigationController? , evnt : Events){
+    class func eventDetail(navigationController:UINavigationController? , evntId : Int,comingFrom:ComingFromScreen){
         let storyboard = UIStoryboard(name: "EventDetail", bundle:  Bundle(for: EventDetailVC.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "EventDetail") as? EventDetailVC{
-            vcObj.event = evnt
+            vcObj.eventID = evntId
+            vcObj.comingFrom = comingFrom
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }

@@ -12,6 +12,7 @@
 		301B865020073F2D00DA7855 /* HoogaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B864F20073F2D00DA7855 /* HoogaUITests.swift */; };
 		301B86702007452900DA7855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301B86692007452900DA7855 /* AppDelegate.swift */; };
 		301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301BF2142022001D0099ADD9 /* Assets.xcassets */; };
+		301BF2222023888C0099ADD9 /* MyEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301BF2212023888C0099ADD9 /* MyEventModel.swift */; };
 		3028D894201CC9B400922752 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3028D893201CC9B400922752 /* EventService.swift */; };
 		30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */; };
 		30348FFC201CF8EC00A2CDA1 /* loader2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 30348FFB201CF8EC00A2CDA1 /* loader2.gif */; };
@@ -143,6 +144,7 @@
 		301B86692007452900DA7855 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		301B86732007463B00DA7855 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301BF2142022001D0099ADD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		301BF2212023888C0099ADD9 /* MyEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventModel.swift; sourceTree = "<group>"; };
 		3028D893201CC9B400922752 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingModel.swift; sourceTree = "<group>"; };
 		30348FFB201CF8EC00A2CDA1 /* loader2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader2.gif; sourceTree = "<group>"; };
@@ -402,6 +404,14 @@
 				30D77B89200B0ED400386438 /* Images.xcassets */,
 			);
 			path = AppImages;
+			sourceTree = "<group>";
+		};
+		301BF220202388750099ADD9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				301BF2212023888C0099ADD9 /* MyEventModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		305471DC2020925B0009A8EC /* ImagePickByDevice */ = {
@@ -665,6 +675,7 @@
 		30EA5F97201DE086009D4278 /* LeftSideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				301BF220202388750099ADD9 /* Model */,
 				30EA5F98201DE0A5009D4278 /* Controller */,
 				30EA5F99201DE0A5009D4278 /* Storyboard */,
 			);
@@ -1146,6 +1157,7 @@
 				754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */,
 				7530D953201F888300B9BB52 /* BannerCell.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,
+				301BF2222023888C0099ADD9 /* MyEventModel.swift in Sources */,
 				30D77C212010891900386438 /* EventListViewController.swift in Sources */,
 				30EA5F92201D9B3B009D4278 /* NavigationManager.swift in Sources */,
 				30D77BC0200B350800386438 /* ServiceManager.swift in Sources */,

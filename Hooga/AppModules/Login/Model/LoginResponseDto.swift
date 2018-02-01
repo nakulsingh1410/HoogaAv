@@ -14,7 +14,6 @@ import ObjectMapper
 
 class LoginResponseDto: NSObject,Mappable,NSCoding {
     
-
         var userid : Int?
         var firstname : String?
         var lastname : String?

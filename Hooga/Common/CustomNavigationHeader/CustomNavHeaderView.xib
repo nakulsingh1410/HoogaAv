@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38V-9R-Jd1">
-                    <rect key="frame" x="166" y="21.5" width="42" height="21"/>
+                    <rect key="frame" x="166" y="22" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -51,10 +51,10 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="tpL-ve-gHl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="576-H3-wbB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tm9-bc-iFT" secondAttribute="trailing" id="9Af-dc-oC7"/>
                 <constraint firstItem="38V-9R-Jd1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GTT-T5-wbg"/>
                 <constraint firstItem="tpL-ve-gHl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="TGv-Ni-iwY"/>
-                <constraint firstItem="tpL-ve-gHl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="17" id="YCe-rW-fNj"/>
                 <constraint firstItem="38V-9R-Jd1" firstAttribute="centerY" secondItem="tpL-ve-gHl" secondAttribute="centerY" id="fiD-Tl-46x"/>
                 <constraint firstItem="Tm9-bc-iFT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hDF-qM-uwO"/>
                 <constraint firstItem="Tm9-bc-iFT" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="jme-qm-gU3"/>

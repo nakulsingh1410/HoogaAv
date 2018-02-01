@@ -181,4 +181,25 @@ class LoginService{
             
         }
     }
+    
+    
+    static func getMyProfile(username:String, password:String,callback: @escaping (Bool,String) -> Void)  {
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+        let dict = ["userid":userid]
+        Common.showHud()
+        Service.postRequest(endPoint: kServiceUrl+ServiceName.DISPLAY_MY_PROFILE.rawValue,params: dict) { (response) in
+            Common.hideHud()
+            if response.isSuccess(),let obj = response.data{
+                //                let json = JSON(response.data!)
+                let login = LoginResponseDto(map: obj)
+                StorageModel.saveUserData(model: login!)
+//                let data = StorageModel.getUserData()
+                callback(true,Common.getString(text:response.message));
+            } else {
+                callback(false,Common.getString(text:response.message));
+            }
+            
+        }
+    }
+    
 }

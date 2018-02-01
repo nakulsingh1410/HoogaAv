@@ -68,7 +68,7 @@ class EventRegisterationViewController: UIViewController {
             let time = getDateString(strDate:evetDtl.starttime) + " - " + getDateString(strDate:eventDetail?.endtime)
             lblEventTime.text =  date + " | " + time
         }
-        
+        prefilledUsedData()
         
     }
     
@@ -84,6 +84,31 @@ class EventRegisterationViewController: UIViewController {
     // MARK: Methods
     /*********************************************************************************/
     
+    private func prefilledUsedData(){
+        if let userData = StorageModel.getUserData(){
+            txtFFirstName.text = userData.firstname
+            txtFLastName.text = userData.lastname
+            txtFGender.text = userData.gender
+            txtFPhoneNumber.text = userData.handphone
+            txtFDOB.text = userData.dateofbirth
+            txtFEmail.text = userData.email
+            txtFAddress1.text = userData.address1
+            txtFAddress2.text = userData.address2
+            txtFCity.text = userData.city
+            txtFPostalCode.text = userData.postalcode
+            
+            if let bnanner = userData.profilepic {
+                let url = kImgaeView + bnanner
+                imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
+                    if image == nil {
+                        self.btnUpload.isHidden = false
+                    }
+                }
+                
+            }
+        }
+
+    }
     private func openGenderPicker(){
         if let picker = CustomPickerView.loadPickerView(){
             picker.frame = view.frame
@@ -226,7 +251,7 @@ extension EventRegisterationViewController:CustomPickerViewDelegate{
     }
     func didSelectPickerValueAt(title: String, index: Int, pickerType: PickerType?) {
         if let type = pickerType , type == .gendePicker {
-            txtFGender.text = (title == Gender.male.rawValue) ? "M" : "F"
+            txtFGender.text = title
         }
         if let type = pickerType , type == .cityPicker {
             txtFCity.text = title
@@ -273,5 +298,6 @@ extension EventRegisterationViewController{
                                         }
         }
     }
+    
     
 }

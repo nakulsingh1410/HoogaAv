@@ -32,7 +32,7 @@ class EventDetail: NSObject,Mappable {
     var eventlogo : String?
     var bannerimage : String?
     var iseventcompleted : String?
-    var regidvar : Int?
+    var regid : Int?
     
     required init?(map: Map) {
         
@@ -61,7 +61,7 @@ class EventDetail: NSObject,Mappable {
         eventlogo           <- map["eventlogo"]
         bannerimage         <- map["bannerimage"]
         iseventcompleted    <- map["iseventcompleted"]
-        regidvar            <- map["regidvar"]
+        regid               <- map["regid"]
     }
 }
 
