@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -219,19 +218,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jde-aX-pjE" customClass="HoogaView" customModule="Hooga" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.74901960779999999" blue="1" alpha="0.97163842430000003" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqE-OL-glI" userLabel="Header">
                                 <rect key="frame" x="0.0" y="20" width="375" height="47"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5i-AH-pae" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="6" width="70" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5i-AH-pae">
+                                        <rect key="frame" x="0.0" y="6" width="70" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="Pzm-FD-Sqy"/>
                                             <constraint firstAttribute="height" constant="35" id="fL5-3I-E3u"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Back" image="back">
+                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -261,7 +260,7 @@
                                     <constraint firstItem="mXZ-4P-EjX" firstAttribute="top" secondItem="z5i-AH-pae" secondAttribute="bottom" constant="5" id="B46-em-CDx"/>
                                     <constraint firstItem="xZu-3c-0BE" firstAttribute="centerX" secondItem="JqE-OL-glI" secondAttribute="centerX" id="Eax-w9-bJa"/>
                                     <constraint firstItem="mXZ-4P-EjX" firstAttribute="leading" secondItem="JqE-OL-glI" secondAttribute="leading" constant="5" id="ErC-hK-WPC"/>
-                                    <constraint firstItem="z5i-AH-pae" firstAttribute="leading" secondItem="JqE-OL-glI" secondAttribute="leading" constant="5" id="IZp-4w-U2o"/>
+                                    <constraint firstItem="z5i-AH-pae" firstAttribute="leading" secondItem="JqE-OL-glI" secondAttribute="leading" id="IZp-4w-U2o"/>
                                     <constraint firstItem="xZu-3c-0BE" firstAttribute="centerY" secondItem="z5i-AH-pae" secondAttribute="centerY" id="Ogo-Lc-lH6"/>
                                     <constraint firstAttribute="trailing" secondItem="mXZ-4P-EjX" secondAttribute="trailing" constant="5" id="PNP-Ms-S7Q"/>
                                     <constraint firstAttribute="height" constant="47" id="vqY-tC-04J"/>
@@ -787,19 +786,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDG-Mc-nvZ" customClass="HoogaView" customModule="Hooga" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.74901960779999999" blue="1" alpha="0.97163842430000003" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-uF-vLx" userLabel="Header">
                                 <rect key="frame" x="0.0" y="20" width="375" height="47"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1d-7y-cUI" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="6" width="70" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1d-7y-cUI">
+                                        <rect key="frame" x="0.0" y="6" width="70" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="PLI-cl-r8G"/>
                                             <constraint firstAttribute="width" constant="70" id="osu-oT-0yf"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Back" image="back">
+                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -832,7 +831,7 @@
                                     <constraint firstItem="ndN-l9-p8R" firstAttribute="top" secondItem="G1d-7y-cUI" secondAttribute="bottom" constant="5" id="ckg-ED-MKD"/>
                                     <constraint firstAttribute="height" constant="47" id="iRw-1c-VlE"/>
                                     <constraint firstItem="FCe-ax-Peg" firstAttribute="centerX" secondItem="HCt-uF-vLx" secondAttribute="centerX" id="uud-NY-Yhw"/>
-                                    <constraint firstItem="G1d-7y-cUI" firstAttribute="leading" secondItem="HCt-uF-vLx" secondAttribute="leading" constant="5" id="zPw-nk-YnQ"/>
+                                    <constraint firstItem="G1d-7y-cUI" firstAttribute="leading" secondItem="HCt-uF-vLx" secondAttribute="leading" id="zPw-nk-YnQ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xci-1h-2qG" userLabel="Email">
@@ -905,8 +904,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-9U-6ZC">
                                 <rect key="frame" x="20" y="237" width="335" height="35"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdC-9i-PUv">
+                                        <rect key="frame" x="167" y="0.0" width="1" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="nht-wu-ul0"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0d-7p-6sM" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="17" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="SUBMIT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -916,7 +922,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4U-Cd-DRL" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="185" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="208" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="irw-bq-sp3"/>
@@ -931,14 +937,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="S0d-7p-6sM" firstAttribute="leading" secondItem="ggG-9U-6ZC" secondAttribute="leading" constant="40" id="65c-ZJ-po8"/>
                                     <constraint firstItem="S0d-7p-6sM" firstAttribute="top" secondItem="ggG-9U-6ZC" secondAttribute="top" id="7Fz-2C-HbZ"/>
+                                    <constraint firstItem="J4U-Cd-DRL" firstAttribute="leading" secondItem="tdC-9i-PUv" secondAttribute="trailing" constant="40" id="DUx-6V-hjI"/>
                                     <constraint firstItem="J4U-Cd-DRL" firstAttribute="top" secondItem="ggG-9U-6ZC" secondAttribute="top" id="Ien-PS-iOd"/>
                                     <constraint firstItem="J4U-Cd-DRL" firstAttribute="width" secondItem="S0d-7p-6sM" secondAttribute="width" id="OHa-fu-Eq3"/>
                                     <constraint firstItem="J4U-Cd-DRL" firstAttribute="height" secondItem="S0d-7p-6sM" secondAttribute="height" id="YRC-W9-hME"/>
-                                    <constraint firstAttribute="trailing" secondItem="J4U-Cd-DRL" secondAttribute="trailing" constant="40" id="fi0-j2-aby"/>
+                                    <constraint firstItem="tdC-9i-PUv" firstAttribute="top" secondItem="ggG-9U-6ZC" secondAttribute="top" id="ZGF-m2-SJI"/>
+                                    <constraint firstAttribute="bottom" secondItem="tdC-9i-PUv" secondAttribute="bottom" id="esG-By-ieA"/>
                                     <constraint firstAttribute="bottom" secondItem="J4U-Cd-DRL" secondAttribute="bottom" id="hKz-EK-Udn"/>
+                                    <constraint firstItem="tdC-9i-PUv" firstAttribute="centerX" secondItem="ggG-9U-6ZC" secondAttribute="centerX" id="mML-Ef-qjY"/>
                                     <constraint firstAttribute="height" constant="35" id="q0l-85-XjX"/>
+                                    <constraint firstItem="tdC-9i-PUv" firstAttribute="leading" secondItem="S0d-7p-6sM" secondAttribute="trailing" constant="40" id="tMf-eC-3Zu"/>
                                     <constraint firstAttribute="bottom" secondItem="S0d-7p-6sM" secondAttribute="bottom" id="x3T-mi-8So"/>
                                 </constraints>
                             </view>
@@ -987,7 +996,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nq8-L2-f1b" customClass="HoogaView" customModule="Hooga" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.74901960779999999" blue="1" alpha="0.97163842430000003" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER YOUR  EMAIL / MOBILE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yv7-Gd-v6k" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                 <rect key="frame" x="126" y="107" width="124" height="41"/>
@@ -1018,8 +1027,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98N-CO-bvX">
                                 <rect key="frame" x="20" y="238" width="335" height="35"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IN8-NQ-ojB">
+                                        <rect key="frame" x="167" y="0.0" width="1" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="UoE-yh-bmm"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R74-PF-UXK" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="17" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="SUBMIT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1029,7 +1045,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-wC-zH2" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="185" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="208" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="qry-e3-Kpp"/>
@@ -1044,28 +1060,31 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="wbK-wC-zH2" firstAttribute="leading" secondItem="IN8-NQ-ojB" secondAttribute="trailing" constant="40" id="09A-56-NdB"/>
                                     <constraint firstAttribute="height" constant="35" id="0QV-Gr-Q8G"/>
                                     <constraint firstItem="wbK-wC-zH2" firstAttribute="width" secondItem="R74-PF-UXK" secondAttribute="width" id="1U9-lY-gYM"/>
-                                    <constraint firstItem="R74-PF-UXK" firstAttribute="leading" secondItem="98N-CO-bvX" secondAttribute="leading" constant="40" id="6ly-g3-QTD"/>
                                     <constraint firstAttribute="bottom" secondItem="R74-PF-UXK" secondAttribute="bottom" id="D51-fw-QoZ"/>
                                     <constraint firstItem="wbK-wC-zH2" firstAttribute="top" secondItem="98N-CO-bvX" secondAttribute="top" id="NXn-Rg-bsa"/>
+                                    <constraint firstItem="IN8-NQ-ojB" firstAttribute="top" secondItem="98N-CO-bvX" secondAttribute="top" id="PZ2-QK-Lhs"/>
                                     <constraint firstItem="R74-PF-UXK" firstAttribute="top" secondItem="98N-CO-bvX" secondAttribute="top" id="Q4G-iT-ADM"/>
                                     <constraint firstAttribute="bottom" secondItem="wbK-wC-zH2" secondAttribute="bottom" id="Zzw-id-uNK"/>
+                                    <constraint firstAttribute="bottom" secondItem="IN8-NQ-ojB" secondAttribute="bottom" id="gjH-gC-Lgk"/>
+                                    <constraint firstItem="IN8-NQ-ojB" firstAttribute="centerX" secondItem="98N-CO-bvX" secondAttribute="centerX" id="oQV-6b-rUs"/>
+                                    <constraint firstItem="IN8-NQ-ojB" firstAttribute="leading" secondItem="R74-PF-UXK" secondAttribute="trailing" constant="40" id="q6A-ty-e7j"/>
                                     <constraint firstItem="wbK-wC-zH2" firstAttribute="height" secondItem="R74-PF-UXK" secondAttribute="height" id="uEB-b2-7AU"/>
-                                    <constraint firstAttribute="trailing" secondItem="wbK-wC-zH2" secondAttribute="trailing" constant="40" id="wao-Mx-3gX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grZ-CS-Hcq" userLabel="Header">
                                 <rect key="frame" x="0.0" y="20" width="375" height="47"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ytc-Ky-VNw" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="6" width="70" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ytc-Ky-VNw">
+                                        <rect key="frame" x="0.0" y="6" width="70" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="JJr-VW-5qy"/>
                                             <constraint firstAttribute="width" constant="70" id="njC-YI-Qww"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Back" image="back">
+                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1093,7 +1112,7 @@
                                 <constraints>
                                     <constraint firstItem="4La-QK-whq" firstAttribute="leading" secondItem="grZ-CS-Hcq" secondAttribute="leading" constant="5" id="3O8-VR-F1M"/>
                                     <constraint firstItem="LIK-Mt-ZMi" firstAttribute="centerX" secondItem="grZ-CS-Hcq" secondAttribute="centerX" id="91e-TZ-z8R"/>
-                                    <constraint firstItem="Ytc-Ky-VNw" firstAttribute="leading" secondItem="grZ-CS-Hcq" secondAttribute="leading" constant="5" id="FLC-m1-waV"/>
+                                    <constraint firstItem="Ytc-Ky-VNw" firstAttribute="leading" secondItem="grZ-CS-Hcq" secondAttribute="leading" id="FLC-m1-waV"/>
                                     <constraint firstAttribute="trailing" secondItem="4La-QK-whq" secondAttribute="trailing" constant="5" id="MSV-1T-LaD"/>
                                     <constraint firstAttribute="bottom" secondItem="4La-QK-whq" secondAttribute="bottom" id="dnh-Io-0Ei"/>
                                     <constraint firstItem="4La-QK-whq" firstAttribute="top" secondItem="Ytc-Ky-VNw" secondAttribute="bottom" constant="5" id="gvf-ls-2Pk"/>
@@ -1157,7 +1176,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y51-we-ea4" customClass="HoogaView" customModule="Hooga" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.74901960779999999" blue="1" alpha="0.97163842430000003" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-Dx-PgR" userLabel="First Name">
                                 <rect key="frame" x="20" y="147" width="335" height="56"/>
@@ -1226,8 +1245,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZ4-SX-QGL">
                                 <rect key="frame" x="20" y="277" width="335" height="35"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWY-Pm-Eoz">
+                                        <rect key="frame" x="167" y="0.0" width="1" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="XGS-Sh-Qp6"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMO-Nt-hHX" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="17" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="SUBMIT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1237,7 +1263,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-aV-Kkz" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="185" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="208" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="Mn6-eS-Acz"/>
@@ -1253,27 +1279,30 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="PMO-Nt-hHX" firstAttribute="top" secondItem="dZ4-SX-QGL" secondAttribute="top" id="5X4-Xz-PTe"/>
-                                    <constraint firstItem="PMO-Nt-hHX" firstAttribute="leading" secondItem="dZ4-SX-QGL" secondAttribute="leading" constant="40" id="5jz-9Z-1Ac"/>
+                                    <constraint firstItem="PWY-Pm-Eoz" firstAttribute="centerX" secondItem="dZ4-SX-QGL" secondAttribute="centerX" id="81t-hO-3z8"/>
                                     <constraint firstItem="ePY-aV-Kkz" firstAttribute="width" secondItem="PMO-Nt-hHX" secondAttribute="width" id="Bpy-OO-mW2"/>
                                     <constraint firstItem="ePY-aV-Kkz" firstAttribute="height" secondItem="PMO-Nt-hHX" secondAttribute="height" id="GAz-L5-5Am"/>
                                     <constraint firstAttribute="height" constant="35" id="KMi-Uc-4Ob"/>
                                     <constraint firstItem="ePY-aV-Kkz" firstAttribute="top" secondItem="dZ4-SX-QGL" secondAttribute="top" id="Tks-4p-Niy"/>
                                     <constraint firstAttribute="bottom" secondItem="PMO-Nt-hHX" secondAttribute="bottom" id="Uaa-JL-jiD"/>
+                                    <constraint firstItem="ePY-aV-Kkz" firstAttribute="leading" secondItem="PWY-Pm-Eoz" secondAttribute="trailing" constant="40" id="apf-m2-FcI"/>
+                                    <constraint firstItem="PWY-Pm-Eoz" firstAttribute="top" secondItem="dZ4-SX-QGL" secondAttribute="top" id="bk3-s9-t69"/>
                                     <constraint firstAttribute="bottom" secondItem="ePY-aV-Kkz" secondAttribute="bottom" id="euj-Lb-PdT"/>
-                                    <constraint firstAttribute="trailing" secondItem="ePY-aV-Kkz" secondAttribute="trailing" constant="40" id="zlW-yS-5ST"/>
+                                    <constraint firstItem="PWY-Pm-Eoz" firstAttribute="leading" secondItem="PMO-Nt-hHX" secondAttribute="trailing" constant="40" id="gbE-Xu-yUe"/>
+                                    <constraint firstAttribute="bottom" secondItem="PWY-Pm-Eoz" secondAttribute="bottom" id="ijL-Xy-cq0"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRg-vv-Nn7" userLabel="Header">
                                 <rect key="frame" x="0.0" y="20" width="375" height="47"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ln9-7K-SaA" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="6" width="70" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ln9-7K-SaA">
+                                        <rect key="frame" x="0.0" y="6" width="70" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="n2M-wS-RtH"/>
                                             <constraint firstAttribute="height" constant="35" id="y48-dA-x0c"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Back" image="back">
+                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1303,7 +1332,7 @@
                                     <constraint firstItem="RD7-J1-QHF" firstAttribute="top" secondItem="ln9-7K-SaA" secondAttribute="bottom" constant="5" id="aX0-lT-4Xk"/>
                                     <constraint firstAttribute="bottom" secondItem="RD7-J1-QHF" secondAttribute="bottom" id="gL6-Na-4zZ"/>
                                     <constraint firstItem="RD7-J1-QHF" firstAttribute="leading" secondItem="LRg-vv-Nn7" secondAttribute="leading" constant="5" id="keN-ZO-Fte"/>
-                                    <constraint firstItem="ln9-7K-SaA" firstAttribute="leading" secondItem="LRg-vv-Nn7" secondAttribute="leading" constant="5" id="kfr-Rv-FEk"/>
+                                    <constraint firstItem="ln9-7K-SaA" firstAttribute="leading" secondItem="LRg-vv-Nn7" secondAttribute="leading" id="kfr-Rv-FEk"/>
                                     <constraint firstAttribute="trailing" secondItem="RD7-J1-QHF" secondAttribute="trailing" constant="5" id="n5I-zb-s1X"/>
                                     <constraint firstAttribute="height" constant="47" id="oZS-Bd-9SN"/>
                                     <constraint firstItem="sDE-3D-R3l" firstAttribute="centerY" secondItem="ln9-7K-SaA" secondAttribute="centerY" id="xvz-Ey-F2p"/>

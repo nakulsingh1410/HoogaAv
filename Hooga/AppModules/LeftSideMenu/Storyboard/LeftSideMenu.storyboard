@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="-586" y="-981"/>
         </scene>
-        <!--Register View Controller-->
+        <!--View Controller-->
         <scene sceneID="LQA-2S-VE1">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" id="1WM-aL-2Vz" customClass="RegisterViewController" customModule="Hooga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1WM-aL-2Vz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8er-j8-YSq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
