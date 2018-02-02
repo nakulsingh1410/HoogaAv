@@ -22,8 +22,8 @@ class MyEventViewController: UIViewController {
 
         configoreNavigationHeader()
         configTableViewForEventList()
-        isOngoingSelected(isOngoing: false)
-        getOngoingEvents(isOnGoingEvents: false)
+        isOngoingSelected(isOngoing: true)
+        getOngoingEvents(isOnGoingEvents: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +34,7 @@ class MyEventViewController: UIViewController {
 
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
-        navHeaderView.navBarTitle = "MY EVENTS"
+        navHeaderView.navBarTitle = "My Events"
         navHeaderView.backButtonType = .LeftMenu
     }
     func configTableViewForEventList()  {
@@ -50,28 +50,29 @@ class MyEventViewController: UIViewController {
     
     func isOngoingSelected(isOngoing:Bool)  {
         if isOngoing {
-            btnOnGoingEvents.backgroundColor = UIColor.colorWithHexString(hex: "0080FF")
-            btnOnGoingEvents.setTitleColor(UIColor.white, for: .normal)
-            
-            btnCompletedEvents.backgroundColor = UIColor.white
-            btnCompletedEvents.setTitleColor(UIColor.colorWithHexString(hex: "0080FF"), for: .normal)
-        }else{
             btnCompletedEvents.backgroundColor = UIColor.colorWithHexString(hex: "0080FF")
             btnCompletedEvents.setTitleColor(UIColor.white, for: .normal)
             
             btnOnGoingEvents.backgroundColor = UIColor.white
             btnOnGoingEvents.setTitleColor(UIColor.colorWithHexString(hex: "0080FF"), for: .normal)
+        }else{
+            
+            btnOnGoingEvents.backgroundColor = UIColor.colorWithHexString(hex: "0080FF")
+            btnOnGoingEvents.setTitleColor(UIColor.white, for: .normal)
+            
+            btnCompletedEvents.backgroundColor = UIColor.white
+            btnCompletedEvents.setTitleColor(UIColor.colorWithHexString(hex: "0080FF"), for: .normal)
         }
     }
     
     @IBAction func btnCompletedEventsTapped(_ sender: UIButton) {
-          isOngoingSelected(isOngoing: false)
-        getOngoingEvents(isOnGoingEvents: false)
+          isOngoingSelected(isOngoing: true)
+        getOngoingEvents(isOnGoingEvents: true)
       
     }
     @IBAction func btnOnGoingEventsTapped(_ sender: UIButton) {
-        isOngoingSelected(isOngoing: true)
-        getOngoingEvents(isOnGoingEvents: true)
+        isOngoingSelected(isOngoing: false)
+        getOngoingEvents(isOnGoingEvents: false)
 
     }
 }

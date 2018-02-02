@@ -84,10 +84,9 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sp-We-vka" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="201" y="62.5" width="109" height="32"/>
+                        <rect key="frame" x="240" y="62.5" width="70" height="32"/>
                         <color key="backgroundColor" red="0.24198424816131592" green="0.49645906686782837" blue="0.98203366994857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="109" id="Czx-Gl-CdK"/>
                             <constraint firstAttribute="height" constant="32" id="W1W-nN-KIb"/>
                         </constraints>
                         <state key="normal" title="REGISTER">
@@ -106,12 +105,9 @@
                         <rect key="frame" x="0.0" y="104.5" width="320" height="45"/>
                         <subviews>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYB-0S-8yU" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="-0.5" width="109" height="37.5"/>
+                                <rect key="frame" x="10" y="-0.5" width="95" height="37.5"/>
                                 <color key="backgroundColor" red="0.2419842482" green="0.49645906690000002" blue="0.98203366989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="109" id="0mg-T1-cfW"/>
-                                </constraints>
-                                <state key="normal" title="VIEW TICKET">
+                                <state key="normal" title=" View Tickets ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -124,12 +120,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQV-FQ-Qjs" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="201" y="0.0" width="109" height="37"/>
+                                <rect key="frame" x="222" y="0.0" width="88" height="37"/>
                                 <color key="backgroundColor" red="0.2419842482" green="0.49645906690000002" blue="0.98203366989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="109" id="U7b-it-00v"/>
-                                </constraints>
-                                <state key="normal" title="LUCKY DRAW">
+                                <state key="normal" title=" Lucky Draw ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

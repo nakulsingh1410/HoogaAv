@@ -33,6 +33,7 @@ class LeftViewController : UIViewController {
     var mainViewController: UIViewController!
     
     var contactUsViewController: UIViewController!
+    var myProfileController: UIViewController!
     var myEventViewController: UIViewController!
     
     required init?(coder aDecoder: NSCoder) {
@@ -53,9 +54,10 @@ class LeftViewController : UIViewController {
         //        let goViewController = storyboard.instantiateViewController(withIdentifier: "GoViewController") as! GoViewController
         //        self.goViewController = UINavigationController(rootViewController: contactUsController)
         //
-        //        let nonMenuController = storyboard.instantiateViewController(withIdentifier: "NonMenuController") as! NonMenuController
-        //        nonMenuController.delegate = self
-        //        self.nonMenuViewController = UINavigationController(rootViewController: contactUsController)
+        let myProfile = storyboard.instantiateViewController(withIdentifier: "MyProfileViewController") as! MyProfileViewController
+        self.myProfileController = getNavigationController(viewController: myProfile)
+        
+        
         setUpMenu()
         setUpTableView()
         
@@ -103,7 +105,9 @@ class LeftViewController : UIViewController {
             case LeftMenu.myEvents.rawValue:
                 self.slideMenuController()?.changeMainViewController(self.myEventViewController, close: true)
             case LeftMenu.myProfile.rawValue:
-                myProfile()
+                //myProfile()
+                self.slideMenuController()?.changeMainViewController(self.myProfileController, close: true)
+                
             case LeftMenu.logout.rawValue:
                 logoutFromApp()
             default:
@@ -113,7 +117,7 @@ class LeftViewController : UIViewController {
        
     }
     private func myProfile(){
-        NavigationManager.userRegistration(navigationController: self.navigationController, screenShown: .myProfile)
+        NavigationManager.myProfile(screenShown: .myProfile)
 
     }
     private func logoutFromApp()  {

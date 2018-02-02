@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  MyProfileViewController.swift
 //  Hooga
 //
 //  Created by Nakul Singh on 1/14/18.
@@ -8,17 +8,8 @@
 
 import UIKit
 
-enum Gender:String{
-    case male = "Male"
-     case female = "Female"
-    case other = "Other"
-}
-enum RequestForScreen:String{
-    case login = "login"
-    case myProfile = "MyProfile"
-}
 
-class RegisterViewController: UIViewController {
+class MyProfileViewController: UIViewController {
     
     @IBOutlet weak var txtFFirstName: HoogaTextField!
     @IBOutlet weak var txtFLastName: HoogaTextField!
@@ -42,8 +33,9 @@ class RegisterViewController: UIViewController {
     var arrCity = ["Singapore"]
     override func viewDidLoad() {
         super.viewDidLoad()
-       // configoreNavigationHeader()
+        configoreNavigationHeader()
         txtFCity.text = "Singapore"
+        prefilledUsedData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,13 +48,34 @@ class RegisterViewController: UIViewController {
     /*********************************************************************************/
    private func configoreNavigationHeader()  {
         navHeaderView.viewController = self
-    if requestingScreen == .login {
-        navHeaderView.navBarTitle = "Registration"
-        navHeaderView.backButtonType = .Back
-    }else if requestingScreen == .myProfile {
         navHeaderView.navBarTitle = "My Profile"
         navHeaderView.backButtonType = .LeftMenu
+    
     }
+    private func prefilledUsedData(){
+        if let userData = StorageModel.getUserData(){
+            txtFFirstName.text = userData.firstname
+            txtFLastName.text = userData.lastname
+            txtFGender.text = userData.gender
+            txtFPhoneNumber.text = userData.handphone
+            txtFDOB.text = userData.dateofbirth
+            txtFEmail.text = userData.email
+            txtFAddress1.text = userData.address1
+            txtFAddress2.text = userData.address2
+            txtFCity.text = userData.city
+            txtFPostalCode.text = userData.postalcode
+            
+            if let bnanner = userData.profilepic {
+                let url = kImgaeView + bnanner
+                imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
+                    if image == nil {
+                        self.btnUpload.isHidden = false
+                    }
+                }
+                
+            }
+        }
+        
     }
 
     private func openGenderPicker(){
@@ -184,7 +197,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-            registerUser()
+         //   registerUser()
 //        navigateToOTP()
          view.endEditing(true)
         
@@ -206,7 +219,7 @@ class RegisterViewController: UIViewController {
 /*********************************************************************************/
 // MARK: CustomPickerView Deleagte
 /*********************************************************************************/
-extension RegisterViewController:CustomPickerViewDelegate{
+extension MyProfileViewController:CustomPickerViewDelegate{
     func dismissPickerView() {
         
     }
@@ -223,7 +236,7 @@ extension RegisterViewController:CustomPickerViewDelegate{
 /*********************************************************************************/
 // MARK: CustomDatePicker Deleagte
 /*********************************************************************************/
-extension RegisterViewController:CustomDatePickerDelegate{
+extension MyProfileViewController:CustomDatePickerDelegate{
   
     func didSelectDate(dob: String) {
         txtFDOB.text = dob
@@ -233,7 +246,7 @@ extension RegisterViewController:CustomDatePickerDelegate{
 /*********************************************************************************/
 // MARK: API
 /*********************************************************************************/
-extension RegisterViewController{
+extension MyProfileViewController{
     
     func registerAPI()  {
         LoginService.appRegisterUser(firstname: txtFFirstName.text!,

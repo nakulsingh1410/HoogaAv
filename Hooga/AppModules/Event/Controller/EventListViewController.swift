@@ -58,7 +58,7 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
-        navHeaderView.navBarTitle = "EVENTS"
+        navHeaderView.navBarTitle = "Events"
         navHeaderView.backButtonType = .LeftMenu
         textSearchTag.delegate = self
     }

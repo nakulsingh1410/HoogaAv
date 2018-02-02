@@ -9,8 +9,8 @@
 import UIKit
 
 enum RegisterButtonTitle:String{
-    case register = "REGISTER"
-    case bookTickets = "BOOK TICKETS"
+    case register = " Register "
+    case bookTickets = " Book Tickets "
 }
 
 enum ComingFromScreen:String{

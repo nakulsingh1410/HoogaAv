@@ -27,14 +27,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Dw-hD-NGb" userLabel="Header">
                                 <rect key="frame" x="0.0" y="20" width="375" height="47"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zww-5A-mP5" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zww-5A-mP5">
                                         <rect key="frame" x="5" y="6" width="70" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="6BZ-FA-5ae"/>
                                             <constraint firstAttribute="height" constant="35" id="bdd-rs-qPa"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Back" image="back">
+                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
