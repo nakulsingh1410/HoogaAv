@@ -103,6 +103,7 @@ public enum ServiceName:String {
     case SHOW_ONGOING_EVENTS = "showMyOngoingEvents"
     case SHOW_COMPLETED_EVENTS = "showMyCompletedEvents"
     case DISPLAY_MY_PROFILE = "displayMyProfile"
+    case UPDATE_MY_PROFILE = "updateMyProfile"
 }
 
 
@@ -159,4 +160,17 @@ public enum MessageError: String{
     case MEDICAL_EMPTY          = "Please enter medical center name."
     
     case REGISTRATION_MSG       = "Registration successfull. Please activate your account from received email."
+}
+
+
+enum RegisterButtonTitle:String{
+    case register = " Register "
+    case bookTickets = " Book Tickets "
+}
+
+enum ComingFromScreen:String{
+    case eventListing = "Event Listing"
+    case myEvent = "My Events"
+    case registration = "Registration"
+    case forgotPassword = "Forgot Password"
 }

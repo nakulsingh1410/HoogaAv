@@ -116,6 +116,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="btnViewTicketsTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Kiq-Ay-GY6"/>
                                     <action selector="buttonRegister_didPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SUg-lI-ad3"/>
                                 </connections>
                             </button>
@@ -131,6 +132,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="btnLuckyDrawTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vwa-Jy-XBa"/>
                                     <action selector="buttonRegister_didPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nWg-au-Cq4"/>
                                 </connections>
                             </button>

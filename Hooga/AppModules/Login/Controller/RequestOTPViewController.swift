@@ -14,11 +14,10 @@ class RequestOTPViewController: UIViewController {
     @IBOutlet weak var lblMobile: HoogaLabel!
     @IBOutlet weak var txtFOTP: HoogaTextField!
     
-    var screenFlow = ""
+    var screenFlow = ComingFromScreen.registration
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        loadValues()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +27,17 @@ class RequestOTPViewController: UIViewController {
     /*********************************************************************************/
     // MARK: Function
     /*********************************************************************************/
+    
+    private func loadValues(){
+        if let userData = StorageModel.getUserData(){
+            if let email = userData.email{
+                lblEmail.text = "Email: " + email
+            }
+            if let phone = userData.handphone{
+                lblMobile.text = "Mobile: " + phone
+            }
+        }
+    }
     
     private func navigateToSetPassword(){
         NavigationManager.navigateToSetPassword(navigationController: self.navigationController)
@@ -50,7 +60,7 @@ class RequestOTPViewController: UIViewController {
     }
     
     @IBAction func btnRequestOTPTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+
     }
 }
 
@@ -61,7 +71,7 @@ class RequestOTPViewController: UIViewController {
 extension RequestOTPViewController{
     
     func requestOTP(otp:String)  {
-        LoginService.requestOTP(OTP: otp, OTPScreen:screenFlow) {[weak self]  (flag, message) in
+        LoginService.requestOTP(OTP: otp, OTPScreen:screenFlow.rawValue) {[weak self]  (flag, message) in
             guard let weakSelf = self else {return}
             if flag {
                 weakSelf.navigateToSetPassword()

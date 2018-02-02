@@ -27,7 +27,8 @@ class CustomDatePicker: UIView {
     
     override func awakeFromNib() {
         datePickerView.datePickerMode = .date
-//        datePickerView.minimumDate = Date.no
+        datePickerView.maximumDate = Calendar.current.date(byAdding: .year, value: -10, to: Date())
+
     }
     
     class func loadDatePickerView() -> CustomDatePicker? {

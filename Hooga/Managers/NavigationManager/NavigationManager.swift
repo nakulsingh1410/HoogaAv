@@ -48,6 +48,15 @@ class NavigationManager {
         }
     }
     
+    
+    class func navigateToOTP(navigationController:UINavigationController?,screenComingFrom:ComingFromScreen){
+        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RequestOTPViewController") as? RequestOTPViewController{
+            vcObj.screenFlow = screenComingFrom
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
     class func navigateToSetPassword(navigationController:UINavigationController?){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: RequestOTPViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "SetPasswordViewController") as? SetPasswordViewController{
@@ -71,6 +80,17 @@ class NavigationManager {
         }
     }
     
+    class func ticketBooking(navigationController:UINavigationController? , evntDetail : EventDetail){
+        let storyboard = UIStoryboard(name: "LeftSideMenu", bundle:  Bundle(for: TicketBookingViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "TicketBookingViewController") as? TicketBookingViewController{
+//            vcObj.eventDetail = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    
+    
+    
     class func logout(){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController{
@@ -83,6 +103,7 @@ class NavigationManager {
             vcObj.modalPresentationStyle = .custom
             appDelegate.window?.rootViewController = nvc
             appDelegate.window?.makeKeyAndVisible()
+            StorageModel.removeUserData()
         }
     }
     

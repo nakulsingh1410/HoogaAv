@@ -149,11 +149,7 @@ class RegisterViewController: UIViewController {
     }
     
     private func navigateToOTP(){
-        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
-        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RequestOTPViewController") as? RequestOTPViewController{
-            vcObj.screenFlow = "RegisterationFlow"
-            navigationController?.pushViewController(vcObj, animated: true)
-        }
+         NavigationManager.navigateToOTP(navigationController: navigationController, screenComingFrom: ComingFromScreen.registration)
     }
     
     /*********************************************************************************/

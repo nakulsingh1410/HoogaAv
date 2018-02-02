@@ -37,6 +37,9 @@ class LoginService{
             if response.isSuccess(),let obj = response.data{
                 //                let json = JSON(response.data!)
                 let login = LoginResponseDto(map: obj)
+                if let dob = login?.dateofbirth{
+                 login?.dateofbirth = dob.getDateString()
+                }
                 StorageModel.saveUserData(model: login!)
                 let data = StorageModel.getUserData()
                 callback(true,Common.getString(text:response.message));
@@ -91,12 +94,18 @@ class LoginService{
             Common.hideHud()
             
             if let obj = response.result.value as? [String:Any]{
-                let loginModel = LoginResponseDto()
-                if let userId = obj["id"] as? Int{
+                if let userId = obj["id"] as? Int,userId != 0{
+                     let loginModel = LoginResponseDto()
                     loginModel.userid = userId
+                    loginModel.email = email
+                    loginModel.handphone = handphone
+                    StorageModel.saveUserData(model: loginModel)
+                    callback(true,"Success");
+                }else{
+                    if let message = obj["message"] as? String{
+                        callback(false,message);
+                    }
                 }
-                StorageModel.saveUserData(model: loginModel)
-                callback(true,"Success");
             } else {
                 callback(false,"");
             }
@@ -183,17 +192,18 @@ class LoginService{
     }
     
     
-    static func getMyProfile(username:String, password:String,callback: @escaping (Bool,String) -> Void)  {
+    static func getMyProfile(callback: @escaping (Bool,String) -> Void)  {
         guard  let userid = StorageModel.getUserData()?.userid else {return}
         let dict = ["userid":userid]
         Common.showHud()
         Service.postRequest(endPoint: kServiceUrl+ServiceName.DISPLAY_MY_PROFILE.rawValue,params: dict) { (response) in
             Common.hideHud()
             if response.isSuccess(),let obj = response.data{
-                //                let json = JSON(response.data!)
                 let login = LoginResponseDto(map: obj)
+                if let dob = login?.dateofbirth{
+                    login?.dateofbirth = dob.getDateString()
+                }
                 StorageModel.saveUserData(model: login!)
-//                let data = StorageModel.getUserData()
                 callback(true,Common.getString(text:response.message));
             } else {
                 callback(false,Common.getString(text:response.message));
@@ -201,5 +211,70 @@ class LoginService{
             
         }
     }
+    static func updateMyProfile(firstname:String,
+                                lastname:String,
+                                gender:String,
+                                dateofbirth:String,
+                                handphone:String,
+                                email:String,
+                                address1:String?,
+                                address2:String?,
+                                city:String?,
+                                postalcode:String?,
+                                profilePic:UIImage?,
+                                callback: @escaping (Bool,String) -> Void)  {
+        
+        
+        var profilePicData: Data?
+        if let image = profilePic{
+            profilePicData = UIImageJPEGRepresentation(image, 1.0)!
+        }
+        
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+
+        
+        Common.showHud()
+        var dictParam = Dictionary<String,Any>()
+        dictParam["userid"] = userid
+        dictParam["usertype"] = "App User"
+        dictParam["firstname"] = firstname
+        dictParam["lastname"] = lastname
+        dictParam["gender"] = gender
+        dictParam["dateofbirth"] = dateofbirth
+        dictParam["handphone"] = handphone
+        dictParam["email"] = email
+        dictParam["address1"] = address1
+        dictParam["address2"] = address2
+        dictParam["city"] = city
+        dictParam["postalcode"] = postalcode
+        dictParam["profilepic"] = profilePicData
+        dictParam["deviceid"] = "123"
+        dictParam["gsmid"] = "123"
+        
+        
+        Common.showHud()
+        Service.postRequestWithJsonResponse(endPoint: kServiceUrl+ServiceName.UPDATE_MY_PROFILE.rawValue,params: dictParam) { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let message = obj["message"] as? String,message.length > 0{
+                    callback(false,message);
+                }else{
+                    getMyProfile(callback: { (flag, message) in
+                        if flag {
+                            callback(true,"");
+                        }else{
+                             callback(false,"");
+                        }
+                    })
+                    
+                }
+            } else {
+                callback(false,"");
+            }
+            
+        }
+    }
+    
+    
     
 }

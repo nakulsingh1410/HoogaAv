@@ -483,6 +483,19 @@ extension String {
         return timeStamp
     }
     
+    
+    func getDateString()->String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatterGet.date(from: self){
+          return  dateFormatter.string(from: date)
+        }
+        return ""
+    }
+    
+    
     func trim() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines);
     }

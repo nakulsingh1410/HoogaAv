@@ -35,7 +35,11 @@ class MyProfileViewController: UIViewController {
         super.viewDidLoad()
         configoreNavigationHeader()
         txtFCity.text = "Singapore"
-        prefilledUsedData()
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         prefilledUsedData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -136,12 +140,12 @@ class MyProfileViewController: UIViewController {
         return (message == nil) ? (message,false):(message,true)
     }
     
-    private func registerUser()  {
+    private func updateUser()  {
         let touple =   validate()
         if touple.isEmpty == true , let errorMsg = touple.message {
             Common.showAlert(message: errorMsg)
         }else{
-            registerAPI()
+            updateProfileAPI()
         }
     }
     
@@ -160,14 +164,7 @@ class MyProfileViewController: UIViewController {
         let vcObj = appDelegate.window?.visibleViewController
         vcObj?.present(imageController, animated: true, completion: nil);
     }
-    
-    private func navigateToOTP(){
-        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
-        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RequestOTPViewController") as? RequestOTPViewController{
-            vcObj.screenFlow = "RegisterationFlow"
-            navigationController?.pushViewController(vcObj, animated: true)
-        }
-    }
+   
     
     /*********************************************************************************/
     // MARK: IB_Action
@@ -197,8 +194,7 @@ class MyProfileViewController: UIViewController {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-         //   registerUser()
-//        navigateToOTP()
+            updateUser()
          view.endEditing(true)
         
     }
@@ -248,8 +244,8 @@ extension MyProfileViewController:CustomDatePickerDelegate{
 /*********************************************************************************/
 extension MyProfileViewController{
     
-    func registerAPI()  {
-        LoginService.appRegisterUser(firstname: txtFFirstName.text!,
+    func updateProfileAPI()  {
+        LoginService.updateMyProfile(firstname: txtFFirstName.text!,
                                      lastname: txtFLastName.text!,
                                      gender: txtFGender.text!,
                                      dateofbirth: txtFDOB.text!,
@@ -259,11 +255,9 @@ extension MyProfileViewController{
                                      address2: txtFAddress2.text,
                                      city: txtFCity.text,
                                      postalcode: txtFPostalCode.text,
-                                     profilePic:imgViewProfilePic.image) {[weak self]  (flag, message) in
-                                        
-                                        guard let weakSelf = self else {return}
+                                     profilePic:imgViewProfilePic.image) { (flag, message) in
                                         if flag {
-                                            weakSelf.navigateToOTP()
+                                            Common.showAlert(message: "Profile successfully updated")
                                         }else{
                                             Common.showAlert(message: message)
                                         }

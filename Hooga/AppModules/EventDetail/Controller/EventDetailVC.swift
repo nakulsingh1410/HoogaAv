@@ -8,16 +8,7 @@
 
 import UIKit
 
-enum RegisterButtonTitle:String{
-    case register = " Register "
-    case bookTickets = " Book Tickets "
-}
 
-enum ComingFromScreen:String{
-    
-    case eventListing = "Event Listing"
-    case myEvent = "My Events"
-}
 
 class EventDetailVC: UIViewController{
     @IBOutlet var tableDetail : UITableView!
@@ -212,9 +203,24 @@ extension EventDetailVC : UITableViewDelegate{
 }
 
 extension EventDetailVC :ShareCellDelegate{
+    func viewTicketDidSelected(cell: ShareCell) {
+        
+        
+    }
+    
+    func luckyDrawDidSelected(cell: ShareCell) {
+        
+    }
+    
     func registerBttonSelected(cell: ShareCell) {
-        if let evntDtl = eventDetail{
+        guard let evntDtl = eventDetail else{return}
+            if let title = cell.buttonregister.titleLabel?.text ,
+                title == RegisterButtonTitle.register.rawValue
+                 {
              NavigationManager.eventRegistration(navigationController: self.navigationController, evntDetail: evntDtl)
+            }else if let title = cell.buttonregister.titleLabel?.text ,
+                title == RegisterButtonTitle.bookTickets.rawValue{
+                NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl)
         }
        
     }

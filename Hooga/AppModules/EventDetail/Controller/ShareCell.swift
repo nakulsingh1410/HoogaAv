@@ -12,6 +12,10 @@ protocol ShareCellDelegate {
     func faqSelected()
     func termSelected()
     func registerBttonSelected(cell:ShareCell)
+    func viewTicketDidSelected(cell:ShareCell)
+    func luckyDrawDidSelected(cell:ShareCell)
+
+    
 }
 class ShareCell: UITableViewCell {
 
@@ -72,8 +76,14 @@ class ShareCell: UITableViewCell {
     }
     
     @IBAction func buttonRegister_didPressed(_ sender: Any) {
-        if let title = buttonregister.titleLabel?.text , title == RegisterButtonTitle.register.rawValue {
             delegate?.registerBttonSelected(cell: self)
-        }
+    }
+    @IBAction func btnViewTicketsTapped(_ sender: Any) {
+        delegate?.viewTicketDidSelected(cell: self)
+        
+    }
+    @IBAction func btnLuckyDrawTapped(_ sender: Any) {
+        delegate?.luckyDrawDidSelected(cell: self)
+
     }
 }
