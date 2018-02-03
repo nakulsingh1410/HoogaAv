@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TicketQuantityView" customModule="Hooga" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iud-EY-8AZ">
+                    <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="463-Cp-uPL"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="glu-re-SNI">
+                    <rect key="frame" x="20" y="0.0" width="335" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TkP-0g-0jN">
+                        <size key="itemSize" width="80" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="iud-EY-8AZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9vj-Eq-iHK"/>
+                <constraint firstItem="glu-re-SNI" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="EOx-m2-8My"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="glu-re-SNI" secondAttribute="trailing" constant="20" id="VGx-5m-Aop"/>
+                <constraint firstAttribute="trailing" secondItem="iud-EY-8AZ" secondAttribute="trailing" id="cf2-ni-OEt"/>
+                <constraint firstItem="glu-re-SNI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uil-df-O1F"/>
+                <constraint firstItem="iud-EY-8AZ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="xaS-0i-UoM"/>
+                <constraint firstItem="glu-re-SNI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zpd-qb-RmS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="collectionQuantity" destination="glu-re-SNI" id="oYR-YF-1tg"/>
+            </connections>
+            <point key="canvasLocation" x="22.5" y="159"/>
+        </view>
+    </objects>
+</document>

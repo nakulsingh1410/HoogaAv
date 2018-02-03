@@ -39,5 +39,6 @@ class EventTitleCell: UITableViewCell {
     }
     
     @IBAction func btnReadMoreTapped(_ sender: Any) {
+        
     }
 }

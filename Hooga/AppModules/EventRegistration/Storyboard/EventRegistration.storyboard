@@ -683,10 +683,32 @@
                                 <rect key="frame" x="0.0" y="67" width="375" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXp-3A-twv">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTp-ab-haP" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
+                                                <rect key="frame" x="125" y="537" width="125" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="BHj-Pe-EuC"/>
+                                                    <constraint firstAttribute="height" constant="45" id="hry-ge-eVK"/>
+                                                </constraints>
+                                                <state key="normal" title="PROCEED">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="fBP-xr-Zw4" kind="show" id="t1L-Oj-jJ9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="630" id="E0o-Qe-fNT"/>
+                                            <constraint firstAttribute="bottom" secondItem="iTp-ab-haP" secondAttribute="bottom" constant="18" id="COa-xR-s9g"/>
+                                            <constraint firstAttribute="height" constant="600" id="E0o-Qe-fNT"/>
+                                            <constraint firstItem="iTp-ab-haP" firstAttribute="centerX" secondItem="hXp-3A-twv" secondAttribute="centerX" id="qgg-By-5dN"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K92-wp-Jud" userLabel="EventDetail">
@@ -773,7 +795,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nN4-ay-a7j" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="101"/>
+            <point key="canvasLocation" x="1693.5999999999999" y="100.29985007496252"/>
+        </scene>
+        <!--Booking DetailVC-->
+        <scene sceneID="PqF-B5-iEC">
+            <objects>
+                <viewController id="fBP-xr-Zw4" customClass="BookingDetailVC" customModule="Hooga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dg0-VO-eEp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcB-hU-uJY" userLabel="Header">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0Y-JY-xXS">
+                                        <rect key="frame" x="5" y="21" width="70" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="2Ca-hz-5gt"/>
+                                            <constraint firstAttribute="width" constant="70" id="8sy-VA-bBS"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonBack_didpressedWithButton:" destination="fBP-xr-Zw4" eventType="touchUpInside" id="tnE-jd-Z4F"/>
+                                        </connections>
+                                    </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4o-Sg-7xo">
+                                        <rect key="frame" x="5" y="63" width="365" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOOKING DETAILS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lba-BL-qTu" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                        <rect key="frame" x="83" y="28" width="219" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Bgc-oX-k3H"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.24651351569999999" green="0.50405985119999996" blue="0.99807041880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Lba-BL-qTu" secondAttribute="trailing" constant="73" id="Bia-YQ-Khk"/>
+                                    <constraint firstItem="Lba-BL-qTu" firstAttribute="leading" secondItem="r0Y-JY-xXS" secondAttribute="trailing" constant="8" id="LEd-h3-YDd"/>
+                                    <constraint firstItem="r0Y-JY-xXS" firstAttribute="leading" secondItem="wcB-hU-uJY" secondAttribute="leading" constant="5" id="PD7-DC-DCg"/>
+                                    <constraint firstAttribute="height" constant="64" id="V6n-hA-R4L"/>
+                                    <constraint firstItem="r0Y-JY-xXS" firstAttribute="top" secondItem="wcB-hU-uJY" secondAttribute="top" constant="21" id="Xbo-mb-ORR"/>
+                                    <constraint firstItem="Lba-BL-qTu" firstAttribute="top" secondItem="wcB-hU-uJY" secondAttribute="top" constant="28" id="bpC-UJ-kQU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVK-wh-ILr" customClass="CommonHeaderView" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="61d-n0-ZpK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bsf-S4-PQw">
+                                <rect key="frame" x="0.0" y="202" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="03G-LO-AKS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hl7-Zu-edP">
+                                <rect key="frame" x="0.0" y="252" width="375" height="415"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hl7-Zu-edP" firstAttribute="leading" secondItem="fxf-Mp-y9e" secondAttribute="leading" id="02Y-FH-eKa"/>
+                            <constraint firstItem="Bsf-S4-PQw" firstAttribute="top" secondItem="DVK-wh-ILr" secondAttribute="bottom" id="0wi-AF-pUH"/>
+                            <constraint firstItem="Hl7-Zu-edP" firstAttribute="trailing" secondItem="fxf-Mp-y9e" secondAttribute="trailing" id="2CR-l0-LGE"/>
+                            <constraint firstItem="DVK-wh-ILr" firstAttribute="trailing" secondItem="fxf-Mp-y9e" secondAttribute="trailing" id="76c-h8-lY0"/>
+                            <constraint firstItem="wcB-hU-uJY" firstAttribute="leading" secondItem="fxf-Mp-y9e" secondAttribute="leading" id="8vV-4t-jwZ"/>
+                            <constraint firstItem="DVK-wh-ILr" firstAttribute="top" secondItem="wcB-hU-uJY" secondAttribute="bottom" constant="8" id="BRm-mW-CaB"/>
+                            <constraint firstItem="Hl7-Zu-edP" firstAttribute="top" secondItem="Bsf-S4-PQw" secondAttribute="bottom" id="IDl-GV-bEq"/>
+                            <constraint firstItem="Bsf-S4-PQw" firstAttribute="leading" secondItem="fxf-Mp-y9e" secondAttribute="leading" id="Tie-wU-qUd"/>
+                            <constraint firstItem="wcB-hU-uJY" firstAttribute="top" secondItem="Dg0-VO-eEp" secondAttribute="top" id="UYT-Fq-J3X"/>
+                            <constraint firstItem="Bsf-S4-PQw" firstAttribute="trailing" secondItem="fxf-Mp-y9e" secondAttribute="trailing" id="WeH-SO-uoM"/>
+                            <constraint firstItem="DVK-wh-ILr" firstAttribute="leading" secondItem="fxf-Mp-y9e" secondAttribute="leading" id="gRA-QX-MDF"/>
+                            <constraint firstItem="wcB-hU-uJY" firstAttribute="trailing" secondItem="fxf-Mp-y9e" secondAttribute="trailing" id="jQY-el-Y1H"/>
+                            <constraint firstItem="Hl7-Zu-edP" firstAttribute="bottom" secondItem="fxf-Mp-y9e" secondAttribute="bottom" id="lqT-FJ-Cdm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fxf-Mp-y9e"/>
+                    </view>
+                    <connections>
+                        <outlet property="viewBookingDetail" destination="Hl7-Zu-edP" id="izx-vr-bD6"/>
+                        <outlet property="viewQuantity" destination="Bsf-S4-PQw" id="LsG-Oz-BYy"/>
+                        <outlet property="viewTitle" destination="DVK-wh-ILr" id="sxA-ZE-gLz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aim-Vc-XcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2476" y="88.605697151424295"/>
         </scene>
     </scenes>
     <resources>

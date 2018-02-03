@@ -109,6 +109,17 @@
 		7530D964201FECA100B9BB52 /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D963201FECA100B9BB52 /* FaqVC.swift */; };
 		7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D965201FECF100B9BB52 /* FaqCell.swift */; };
 		754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E26B0202149DE00129381 /* TagSearchVC.swift */; };
+		7574C3BA2025788D0010A4F1 /* BookingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3B92025788D0010A4F1 /* BookingDetailView.swift */; };
+		7574C3BC202578A00010A4F1 /* BookingDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7574C3BB202578A00010A4F1 /* BookingDetailView.xib */; };
+		7574C3BE20258F510010A4F1 /* TicketQuantityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7574C3BD20258F510010A4F1 /* TicketQuantityView.xib */; };
+		7574C3C020258F610010A4F1 /* TicketQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3BF20258F610010A4F1 /* TicketQuantityView.swift */; };
+		7574C3C32025D4C70010A4F1 /* BookingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3C22025D4C70010A4F1 /* BookingDetail.swift */; };
+		7574C3C52025D8350010A4F1 /* DetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7574C3C42025D8350010A4F1 /* DetailHeaderView.xib */; };
+		7574C3C72025D8570010A4F1 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3C62025D8570010A4F1 /* DetailHeaderView.swift */; };
+		7574C3C92025E3700010A4F1 /* CommonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3C82025E3700010A4F1 /* CommonHeaderView.swift */; };
+		7574C3CC2025E7360010A4F1 /* QuantityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3CA2025E7360010A4F1 /* QuantityCell.swift */; };
+		7574C3CD2025E7360010A4F1 /* QuantityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7574C3CB2025E7360010A4F1 /* QuantityCell.xib */; };
+		7574C3CF2025EA3E0010A4F1 /* BookingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3CE2025EA3E0010A4F1 /* BookingDetailVC.swift */; };
 		75959D9C2022AA3700DC307A /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75959D9B2022AA3700DC307A /* AVKit.framework */; };
 		75959D9E2022B0EE00DC307A /* HLFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75959D9D2022B0EE00DC307A /* HLFont.swift */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
@@ -243,6 +254,17 @@
 		7530D963201FECA100B9BB52 /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
 		7530D965201FECF100B9BB52 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
 		754E26B0202149DE00129381 /* TagSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchVC.swift; sourceTree = "<group>"; };
+		7574C3B92025788D0010A4F1 /* BookingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailView.swift; sourceTree = "<group>"; };
+		7574C3BB202578A00010A4F1 /* BookingDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingDetailView.xib; sourceTree = "<group>"; };
+		7574C3BD20258F510010A4F1 /* TicketQuantityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketQuantityView.xib; sourceTree = "<group>"; };
+		7574C3BF20258F610010A4F1 /* TicketQuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketQuantityView.swift; sourceTree = "<group>"; };
+		7574C3C22025D4C70010A4F1 /* BookingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetail.swift; sourceTree = "<group>"; };
+		7574C3C42025D8350010A4F1 /* DetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailHeaderView.xib; sourceTree = "<group>"; };
+		7574C3C62025D8570010A4F1 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		7574C3C82025E3700010A4F1 /* CommonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHeaderView.swift; sourceTree = "<group>"; };
+		7574C3CA2025E7360010A4F1 /* QuantityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityCell.swift; sourceTree = "<group>"; };
+		7574C3CB2025E7360010A4F1 /* QuantityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuantityCell.xib; sourceTree = "<group>"; };
+		7574C3CE2025EA3E0010A4F1 /* BookingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailVC.swift; sourceTree = "<group>"; };
 		75959D9B2022AA3700DC307A /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		75959D9D2022B0EE00DC307A /* HLFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLFont.swift; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -429,6 +451,7 @@
 		305471E920213B200009A8EC /* EventRegistration */ = {
 			isa = PBXGroup;
 			children = (
+				7574C3C120258FCA0010A4F1 /* ModelBookingDetail */,
 				305471EA20213B200009A8EC /* Storyboard */,
 				305471EB20213B200009A8EC /* ViewController */,
 			);
@@ -448,6 +471,16 @@
 			children = (
 				30DC22AD20256680006D5A05 /* TicketBookingViewController.swift */,
 				305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */,
+				7574C3CE2025EA3E0010A4F1 /* BookingDetailVC.swift */,
+				7574C3B92025788D0010A4F1 /* BookingDetailView.swift */,
+				7574C3BB202578A00010A4F1 /* BookingDetailView.xib */,
+				7574C3BF20258F610010A4F1 /* TicketQuantityView.swift */,
+				7574C3BD20258F510010A4F1 /* TicketQuantityView.xib */,
+				7574C3CA2025E7360010A4F1 /* QuantityCell.swift */,
+				7574C3CB2025E7360010A4F1 /* QuantityCell.xib */,
+				7574C3C62025D8570010A4F1 /* DetailHeaderView.swift */,
+				7574C3C42025D8350010A4F1 /* DetailHeaderView.xib */,
+				7574C3C82025E3700010A4F1 /* CommonHeaderView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -774,6 +807,14 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		7574C3C120258FCA0010A4F1 /* ModelBookingDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7574C3C22025D4C70010A4F1 /* BookingDetail.swift */,
+			);
+			path = ModelBookingDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -894,11 +935,14 @@
 				30EA5F88201D799C009D4278 /* CustomPickerView.xib in Resources */,
 				30D77B9B200B217E00386438 /* GillSans.ttc in Resources */,
 				7530D956201F888300B9BB52 /* ContactCell.xib in Resources */,
+				7574C3CD2025E7360010A4F1 /* QuantityCell.xib in Resources */,
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
 				30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */,
+				7574C3C52025D8350010A4F1 /* DetailHeaderView.xib in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
 				30EA5F9B201DE0AD009D4278 /* LeftSideMenu.storyboard in Resources */,
 				30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */,
+				7574C3BC202578A00010A4F1 /* BookingDetailView.xib in Resources */,
 				7530D95D201F888300B9BB52 /* GalleryImageCell.xib in Resources */,
 				30D77C00200B37C400386438 /* Main.storyboard in Resources */,
 				30D77B9C200B217E00386438 /* Gotham-Book.otf in Resources */,
@@ -907,6 +951,7 @@
 				30D77C07200B399800386438 /* LaunchScreen.storyboard in Resources */,
 				30EA5FB6201EF1D4009D4278 /* CustomNavHeaderView.xib in Resources */,
 				30D77C15200CD81400386438 /* loading.gif in Resources */,
+				7574C3BE20258F510010A4F1 /* TicketQuantityView.xib in Resources */,
 				7530D95B201F888300B9BB52 /* GalleryCell.xib in Resources */,
 				30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */,
 				30D77BF4200B36B400386438 /* DataTableViewCell.xib in Resources */,
@@ -1110,8 +1155,11 @@
 				30ED061D2020866F00D354BE /* LeftMenuButton.swift in Sources */,
 				7530D958201F888300B9BB52 /* EventTitleCell.swift in Sources */,
 				7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */,
+				7574C3CC2025E7360010A4F1 /* QuantityCell.swift in Sources */,
 				30D77BFE200B37C400386438 /* LoginViewController.swift in Sources */,
+				7574C3C72025D8570010A4F1 /* DetailHeaderView.swift in Sources */,
 				30D77BF3200B36B400386438 /* DataTableViewCell.swift in Sources */,
+				7574C3C92025E3700010A4F1 /* CommonHeaderView.swift in Sources */,
 				7530D955201F888300B9BB52 /* ContactCell.swift in Sources */,
 				30D77B8E200B206400386438 /* HoogaLabel.swift in Sources */,
 				30D77BD7200B361400386438 /* UIColor.swift in Sources */,
@@ -1133,9 +1181,12 @@
 				301BF22A20241C990099ADD9 /* MyProfileViewController.swift in Sources */,
 				30D77BDC200B361400386438 /* UIViewController.swift in Sources */,
 				30D77BED200B36B400386438 /* ExSlideMenuController.swift in Sources */,
+				7574C3CF2025EA3E0010A4F1 /* BookingDetailVC.swift in Sources */,
 				30EA5FAB201E2892009D4278 /* EventCell.swift in Sources */,
+				7574C3BA2025788D0010A4F1 /* BookingDetailView.swift in Sources */,
 				30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */,
 				30EA5FA8201E2892009D4278 /* AMHorizontalMenu.swift in Sources */,
+				7574C3C32025D4C70010A4F1 /* BookingDetail.swift in Sources */,
 				30D77BD9200B361400386438 /* UIImageView.swift in Sources */,
 				30D77B9F200B2AC900386438 /* HoogaButton.swift in Sources */,
 				30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */,
@@ -1146,6 +1197,7 @@
 				30EA5F96201DCFCF009D4278 /* HoogaImageView.swift in Sources */,
 				3028D894201CC9B400922752 /* EventService.swift in Sources */,
 				30D77C09200B3AFA00386438 /* LoginService.swift in Sources */,
+				7574C3C020258F610010A4F1 /* TicketQuantityView.swift in Sources */,
 				7530D957201F888300B9BB52 /* EventDetailVC.swift in Sources */,
 				301B863520073F2C00DA7855 /* Hooga.xcdatamodeld in Sources */,
 				30D77BD5200B361400386438 /* String.swift in Sources */,
