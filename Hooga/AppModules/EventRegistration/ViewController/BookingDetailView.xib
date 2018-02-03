@@ -227,6 +227,9 @@
                                     <state key="normal" title="UPLOAD">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="buttonUpload_didPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="yeq-xC-WFc"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -326,6 +329,9 @@
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgp-Xf-6jJ">
                                     <rect key="frame" x="1" y="0.0" width="334" height="30"/>
+                                    <connections>
+                                        <action selector="buttonCity_didPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Pae-PD-F4R"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -396,6 +402,9 @@
                                     <state key="normal" title="PAY">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="buttonPay_didPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="agU-S5-604"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYJ-7C-ie4" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
                                     <rect key="frame" x="208" y="0.0" width="70" height="35"/>
@@ -407,6 +416,9 @@
                                     <state key="normal" title="CANCEL">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="buttonCancel_didPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="f4P-pF-AFo"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -483,6 +495,18 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="address1" destination="cDX-nw-wDf" id="K0N-Oa-hD3"/>
+                <outlet property="address2" destination="iSj-BN-t1Y" id="JaW-cD-cWq"/>
+                <outlet property="city" destination="QHs-5h-zaf" id="A2r-ZK-c4d"/>
+                <outlet property="dob" destination="Kr7-h1-1Vs" id="aeW-8B-ryS"/>
+                <outlet property="email" destination="jRz-nW-LDq" id="mzq-4i-0Ar"/>
+                <outlet property="firstName" destination="tsi-ja-6La" id="flY-lM-Gzd"/>
+                <outlet property="gender" destination="ZWe-Rd-gMa" id="xcP-i9-h0Z"/>
+                <outlet property="lastName" destination="1OJ-Wm-PLt" id="3vc-cr-OGp"/>
+                <outlet property="mobile" destination="mNV-Ip-gBv" id="sUS-vP-O7Q"/>
+                <outlet property="postalCode" destination="Qh8-Y8-7GD" id="zap-Lv-te6"/>
+            </connections>
             <point key="canvasLocation" x="24.5" y="-42"/>
         </view>
     </objects>

@@ -21,6 +21,7 @@ class BookingDetail: NSObject {
     var address2 : String!
     var city : String!
     var postalCode  : String!
+    var ticketId  : NSInteger!
     
     override init() {
         super.init()
@@ -35,14 +36,6 @@ class BookingDetail: NSObject {
         self.city = ""
         self.postalCode = ""
         self.mobile = ""
+        ticketId = 0
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
