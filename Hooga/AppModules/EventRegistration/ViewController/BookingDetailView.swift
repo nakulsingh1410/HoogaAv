@@ -42,6 +42,7 @@ class BookingDetailView: UIView {
     }
     
     @IBAction func buttonPay_didPressed(_ sender: Any) {
+        
     }
     
     @IBAction func buttonCancel_didPressed(_ sender: Any) {

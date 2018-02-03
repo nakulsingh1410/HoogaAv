@@ -15,6 +15,7 @@
 		301BF2222023888C0099ADD9 /* MyEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301BF2212023888C0099ADD9 /* MyEventModel.swift */; };
 		301BF22A20241C990099ADD9 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301BF22920241C990099ADD9 /* MyProfileViewController.swift */; };
 		3028D894201CC9B400922752 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3028D893201CC9B400922752 /* EventService.swift */; };
+		302D1312202638D000AB10DD /* TicketBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D1311202638D000AB10DD /* TicketBookingService.swift */; };
 		30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */; };
 		30348FFC201CF8EC00A2CDA1 /* loader2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 30348FFB201CF8EC00A2CDA1 /* loader2.gif */; };
 		305471DE202092650009A8EC /* OpenImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471DD202092650009A8EC /* OpenImagePickerViewController.swift */; };
@@ -164,6 +165,7 @@
 		301BF2212023888C0099ADD9 /* MyEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventModel.swift; sourceTree = "<group>"; };
 		301BF22920241C990099ADD9 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		3028D893201CC9B400922752 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		302D1311202638D000AB10DD /* TicketBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBookingService.swift; sourceTree = "<group>"; };
 		30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingModel.swift; sourceTree = "<group>"; };
 		30348FFB201CF8EC00A2CDA1 /* loader2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader2.gif; sourceTree = "<group>"; };
 		305471DD202092650009A8EC /* OpenImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenImagePickerViewController.swift; sourceTree = "<group>"; };
@@ -561,6 +563,7 @@
 			children = (
 				30D77C08200B3AFA00386438 /* LoginService.swift */,
 				3028D893201CC9B400922752 /* EventService.swift */,
+				302D1311202638D000AB10DD /* TicketBookingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1228,6 +1231,7 @@
 				30D77BDC200B361400386438 /* UIViewController.swift in Sources */,
 				30D77BED200B36B400386438 /* ExSlideMenuController.swift in Sources */,
 				7574C3CF2025EA3E0010A4F1 /* BookingDetailVC.swift in Sources */,
+				302D1312202638D000AB10DD /* TicketBookingService.swift in Sources */,
 				30EA5FAB201E2892009D4278 /* EventCell.swift in Sources */,
 				7574C3BA2025788D0010A4F1 /* BookingDetailView.swift in Sources */,
 				30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 
 class BookingDetail: NSObject {
    
@@ -39,3 +40,75 @@ class BookingDetail: NSObject {
         ticketId = 0
     }
 }
+
+
+class SaveBookingDetail: NSObject,Mappable {
+    var eventid : Int?
+    var tickettypeid : Int?
+    var registrationid : Int?
+    var tickettype : String?
+    var firstname : String?
+    var lastname : String?
+    var gender : String?
+    var dateofbirth : String?
+    var handphone : String?
+    var email : String?
+    var address1 : String?
+    var address2 : String?
+    var city : String?
+    var postalcode : String?
+    var profilepic : String?
+    var isearlybird : String?
+    var status = "false"
+    
+    override init() {
+      
+    }
+    
+    required init?(map: Map) {
+ 
+    }
+    
+    public func mapping(map: Map) {
+        eventid            <- map["eventid"]
+        tickettypeid            <- map["tickettypeid"]
+        registrationid            <- map["registrationid"]
+        tickettype            <- map["tickettype"]
+        firstname            <- map["firstname"]
+        lastname            <- map["lastname"]
+        gender            <- map["gender"]
+        dateofbirth            <- map["dateofbirth"]
+        handphone            <- map["handphone"]
+        email            <- map["email"]
+        address1            <- map["address1"]
+        address2            <- map["address2"]
+        city            <- map["city"]
+        postalcode            <- map["postalcode"]
+        profilepic            <- map["profilepic"]
+        isearlybird            <- map["isearlybird"]
+        status            <- map["status"]
+        
+    }
+    
+}
+
+class BookingDetailResponse: NSObject,Mappable {
+    
+            var ticketid : Int?
+            var tickettypeid : Int?
+            var eventid : Int?
+            var registrationid : Int?
+            var isearlybird: String?
+    
+    required init?(map: Map) {
+    }
+    
+    public func mapping(map: Map) {
+        eventid            <- map["eventid"]
+        tickettypeid            <- map["tickettypeid"]
+        registrationid            <- map["registrationid"]
+        isearlybird            <- map["isearlybird"]
+    }
+}
+
+
