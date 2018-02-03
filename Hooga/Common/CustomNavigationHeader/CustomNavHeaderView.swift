@@ -23,7 +23,11 @@ class CustomNavHeaderView: UIView {
     var navBarTitle:String?
     var backButtonType : BackButtonType?
     var titleColor =  UIColor.white
-    
+    var isBottonLineHidden = true {
+        didSet{
+            lblSeperatorLine.isHidden = isBottonLineHidden
+        }
+    }
     /******************************************************/
     //MARK: Function
     /******************************************************/
@@ -56,7 +60,7 @@ class CustomNavHeaderView: UIView {
         }
         
         titleHeader.textColor = titleColor
-        lblSeperatorLine.isHidden = true
+    
         
         if let backType = backButtonType, backType == BackButtonType.LeftMenu ,let _ = viewController {
             leftButton.setTitle(nil, for: .normal)

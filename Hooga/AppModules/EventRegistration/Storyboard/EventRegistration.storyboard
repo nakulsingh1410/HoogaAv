@@ -635,6 +635,146 @@
             </objects>
             <point key="canvasLocation" x="1028" y="138.53073463268368"/>
         </scene>
+        <!--Ticket Booking View Controller-->
+        <scene sceneID="YQe-o8-dAA">
+            <objects>
+                <viewController storyboardIdentifier="TicketBookingViewController" id="PeI-Rk-SLM" customClass="TicketBookingViewController" customModule="Hooga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hNe-30-rkD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LuN-PN-U8G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.8129126320422535" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HHj-h3-DWP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9k-S4-81E" customClass="GradientView" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="yxz-HG-VbL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.14639642829999999" green="0.13929361100000001" blue="0.68096595999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.19443514940000001" green="0.41664087770000002" blue="0.81364452840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-cF-zkW" customClass="CustomNavHeaderView" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rUs-76-z3W"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIY-HN-vZq">
+                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXp-3A-twv">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="630" id="E0o-Qe-fNT"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K92-wp-Jud" userLabel="EventDetail">
+                                        <rect key="frame" x="20" y="10" width="335" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENTTITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHf-GK-mFt" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENT LOACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cu2-nr-hVf" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="19" width="335" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENT TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9a-vz-XeX" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="38" width="335" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="e9a-vz-XeX" firstAttribute="leading" secondItem="K92-wp-Jud" secondAttribute="leading" id="9wL-bV-ss1"/>
+                                            <constraint firstItem="cu2-nr-hVf" firstAttribute="leading" secondItem="K92-wp-Jud" secondAttribute="leading" id="MeI-ed-kdv"/>
+                                            <constraint firstItem="cHf-GK-mFt" firstAttribute="top" secondItem="K92-wp-Jud" secondAttribute="top" id="SSA-au-7J3"/>
+                                            <constraint firstAttribute="height" constant="65" id="bDb-6k-FUg"/>
+                                            <constraint firstItem="e9a-vz-XeX" firstAttribute="top" secondItem="cu2-nr-hVf" secondAttribute="bottom" constant="1" id="c72-gc-k91"/>
+                                            <constraint firstItem="cu2-nr-hVf" firstAttribute="top" secondItem="cHf-GK-mFt" secondAttribute="bottom" constant="1" id="deZ-kp-ewV"/>
+                                            <constraint firstAttribute="trailing" secondItem="e9a-vz-XeX" secondAttribute="trailing" id="jge-0m-2UQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="cHf-GK-mFt" secondAttribute="trailing" id="o1V-lk-Q2V"/>
+                                            <constraint firstItem="cHf-GK-mFt" firstAttribute="leading" secondItem="K92-wp-Jud" secondAttribute="leading" id="qmu-hI-Iid"/>
+                                            <constraint firstAttribute="trailing" secondItem="cu2-nr-hVf" secondAttribute="trailing" id="u5U-PS-V63"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="K92-wp-Jud" firstAttribute="top" secondItem="EIY-HN-vZq" secondAttribute="top" constant="10" id="C0c-RT-m2c"/>
+                                    <constraint firstItem="K92-wp-Jud" firstAttribute="leading" secondItem="EIY-HN-vZq" secondAttribute="leading" constant="20" id="YGq-a8-pLy"/>
+                                    <constraint firstItem="hXp-3A-twv" firstAttribute="centerX" secondItem="EIY-HN-vZq" secondAttribute="centerX" id="ep9-fc-HP9"/>
+                                    <constraint firstItem="hXp-3A-twv" firstAttribute="top" secondItem="EIY-HN-vZq" secondAttribute="top" id="rn4-YB-SkD"/>
+                                    <constraint firstAttribute="trailing" secondItem="K92-wp-Jud" secondAttribute="trailing" constant="20" id="sR7-Rq-tDS"/>
+                                    <constraint firstAttribute="trailing" secondItem="hXp-3A-twv" secondAttribute="trailing" id="sRz-72-9E3"/>
+                                    <constraint firstAttribute="bottom" secondItem="hXp-3A-twv" secondAttribute="bottom" id="umw-w3-dF7"/>
+                                    <constraint firstItem="hXp-3A-twv" firstAttribute="leading" secondItem="EIY-HN-vZq" secondAttribute="leading" id="vJG-0Q-C4z"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="LuN-PN-U8G" firstAttribute="leading" secondItem="duw-2k-cGf" secondAttribute="leading" id="2fc-F9-z4h"/>
+                            <constraint firstItem="SP1-cF-zkW" firstAttribute="leading" secondItem="duw-2k-cGf" secondAttribute="leading" id="BvB-XN-W8C"/>
+                            <constraint firstItem="HHj-h3-DWP" firstAttribute="trailing" secondItem="hNe-30-rkD" secondAttribute="trailing" id="DU9-Sz-1hr"/>
+                            <constraint firstItem="LuN-PN-U8G" firstAttribute="top" secondItem="hNe-30-rkD" secondAttribute="top" id="EPK-gN-iSV"/>
+                            <constraint firstItem="HHj-h3-DWP" firstAttribute="top" secondItem="hNe-30-rkD" secondAttribute="top" id="Nod-eK-5Vt"/>
+                            <constraint firstItem="K9k-S4-81E" firstAttribute="trailing" secondItem="duw-2k-cGf" secondAttribute="trailing" id="OmM-7q-PG5"/>
+                            <constraint firstAttribute="bottom" secondItem="HHj-h3-DWP" secondAttribute="bottom" id="RSz-D7-9cx"/>
+                            <constraint firstItem="HHj-h3-DWP" firstAttribute="leading" secondItem="duw-2k-cGf" secondAttribute="leading" id="UYR-EX-zQg"/>
+                            <constraint firstItem="K9k-S4-81E" firstAttribute="top" secondItem="hNe-30-rkD" secondAttribute="top" id="bus-of-dRg"/>
+                            <constraint firstItem="EIY-HN-vZq" firstAttribute="bottom" secondItem="duw-2k-cGf" secondAttribute="bottom" id="cGV-yD-aS7"/>
+                            <constraint firstItem="duw-2k-cGf" firstAttribute="trailing" secondItem="LuN-PN-U8G" secondAttribute="trailing" id="cMW-BB-O2e"/>
+                            <constraint firstItem="LuN-PN-U8G" firstAttribute="bottom" secondItem="hNe-30-rkD" secondAttribute="bottom" id="dvh-eF-1yU"/>
+                            <constraint firstItem="EIY-HN-vZq" firstAttribute="top" secondItem="SP1-cF-zkW" secondAttribute="bottom" constant="3" id="jqC-Kq-KCb"/>
+                            <constraint firstItem="SP1-cF-zkW" firstAttribute="top" secondItem="hNe-30-rkD" secondAttribute="top" constant="20" id="sPf-Jh-jfR"/>
+                            <constraint firstItem="K9k-S4-81E" firstAttribute="leading" secondItem="duw-2k-cGf" secondAttribute="leading" id="vub-Se-Fp1"/>
+                            <constraint firstItem="EIY-HN-vZq" firstAttribute="trailing" secondItem="duw-2k-cGf" secondAttribute="trailing" id="wEq-0S-HUa"/>
+                            <constraint firstItem="EIY-HN-vZq" firstAttribute="leading" secondItem="duw-2k-cGf" secondAttribute="leading" id="wb5-B2-rjp"/>
+                            <constraint firstItem="SP1-cF-zkW" firstAttribute="trailing" secondItem="duw-2k-cGf" secondAttribute="trailing" id="wlP-8Q-n1g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="duw-2k-cGf"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="0.0" height="0.0"/>
+                    <connections>
+                        <outlet property="imgViewBanner" destination="HHj-h3-DWP" id="GYu-DX-hXR"/>
+                        <outlet property="lblEventLocation" destination="cu2-nr-hVf" id="4G6-DG-eGQ"/>
+                        <outlet property="lblEventTime" destination="e9a-vz-XeX" id="Wfx-8q-mLJ"/>
+                        <outlet property="lblEventTitle" destination="cHf-GK-mFt" id="Ztj-l1-Xuc"/>
+                        <outlet property="navHeaderView" destination="SP1-cF-zkW" id="U1p-cN-MXB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nN4-ay-a7j" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1714" y="101"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="16" height="16"/>

@@ -81,9 +81,9 @@ class NavigationManager {
     }
     
     class func ticketBooking(navigationController:UINavigationController? , evntDetail : EventDetail){
-        let storyboard = UIStoryboard(name: "LeftSideMenu", bundle:  Bundle(for: TicketBookingViewController.self) )
+        let storyboard = UIStoryboard(name: "EventRegistration", bundle:  Bundle(for: TicketBookingViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "TicketBookingViewController") as? TicketBookingViewController{
-//            vcObj.eventDetail = evntDetail
+            vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }

@@ -804,10 +804,10 @@
             </objects>
             <point key="canvasLocation" x="1180" y="179"/>
         </scene>
-        <!--Ticket Booking View Controller-->
+        <!--View Controller-->
         <scene sceneID="cVf-mb-3Ql">
             <objects>
-                <viewController storyboardIdentifier="TicketBookingViewController" id="qGb-UV-Rjc" customClass="TicketBookingViewController" customModule="Hooga" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qGb-UV-Rjc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BJS-ql-sq5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

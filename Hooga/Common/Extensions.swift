@@ -495,6 +495,10 @@ extension String {
         return ""
     }
     
+    func getDateInFormate() -> String {
+        let array = self.components(separatedBy: " ")
+        return array.first!
+    }
     
     func trim() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines);
