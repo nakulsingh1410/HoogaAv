@@ -128,7 +128,9 @@ extension Service {
 //                requestCallBack(result: response.result, callback: callback);
             })
         }else{
-//            callback(ResponseDto(internetAvailable: true, message: MessageError.INTERNET_ERROR.rawValue));
+             Common.showAlert(message:  MessageError.INTERNET_ERROR.rawValue)
+            Common.hideHud()
+           
         }
     }
     

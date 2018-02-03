@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,6 +20,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ydr-US-GTr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ruc-VW-dWF" customClass="HoogaView" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlS-3a-94a">
                                 <rect key="frame" x="0.0" y="20" width="375" height="130"/>
                                 <subviews>
@@ -65,7 +68,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZiR-wZ-Deo" firstAttribute="trailing" secondItem="ydr-US-GTr" secondAttribute="trailing" id="08O-yk-n0U"/>
+                            <constraint firstItem="Ruc-VW-dWF" firstAttribute="trailing" secondItem="ydr-US-GTr" secondAttribute="trailing" id="1ar-JV-aV6"/>
+                            <constraint firstItem="Ruc-VW-dWF" firstAttribute="bottom" secondItem="ydr-US-GTr" secondAttribute="bottom" id="3GB-Ib-bNH"/>
                             <constraint firstItem="eOA-Ld-6RX" firstAttribute="leading" secondItem="ZiR-wZ-Deo" secondAttribute="leading" id="5nX-GF-sm8"/>
+                            <constraint firstItem="Ruc-VW-dWF" firstAttribute="top" secondItem="ydr-US-GTr" secondAttribute="top" id="EiW-9m-FP4"/>
                             <constraint firstItem="BlS-3a-94a" firstAttribute="leading" secondItem="ZiR-wZ-Deo" secondAttribute="leading" id="Iy3-4C-Rv2"/>
                             <constraint firstItem="ydr-US-GTr" firstAttribute="top" secondItem="QFx-9H-cGF" secondAttribute="top" id="OSQ-y0-gNP"/>
                             <constraint firstItem="BlS-3a-94a" firstAttribute="top" secondItem="ZiR-wZ-Deo" secondAttribute="top" id="Us2-XM-0mx"/>
@@ -75,6 +81,7 @@
                             <constraint firstItem="ydr-US-GTr" firstAttribute="leading" secondItem="ZiR-wZ-Deo" secondAttribute="leading" id="de6-zQ-lRe"/>
                             <constraint firstItem="BlS-3a-94a" firstAttribute="trailing" secondItem="ZiR-wZ-Deo" secondAttribute="trailing" id="dzl-Uk-tyC"/>
                             <constraint firstItem="eOA-Ld-6RX" firstAttribute="trailing" secondItem="ZiR-wZ-Deo" secondAttribute="trailing" id="gPV-dY-cO7"/>
+                            <constraint firstItem="Ruc-VW-dWF" firstAttribute="leading" secondItem="ydr-US-GTr" secondAttribute="leading" id="uZ4-oJ-z0D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZiR-wZ-Deo"/>
                     </view>

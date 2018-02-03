@@ -18,16 +18,41 @@ class NavigationManager {
 //        }
     }
     
-    class func userRegistration(navigationController:UINavigationController?){
+    class func userRegistration(navigationController:UINavigationController?,screenShown:RequestForScreen){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController{
+            vcObj.requestingScreen = screenShown
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
     
+    class func myProfile(screenShown:RequestForScreen){
+        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController{
+            vcObj.requestingScreen = screenShown
+            let nvc: UINavigationController = UINavigationController(rootViewController: vcObj)
+            UINavigationBar.appearance().tintColor = UIColor.white
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+            UINavigationBar.appearance().barTintColor = kBlueColor
+            nvc.navigationBar.isHidden = true
+            
+        }
+    }
+    
+ 
+    
     class func forgotPassword(navigationController:UINavigationController?){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "ForgotPasswordViewController") as? ForgotPasswordViewController{
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    
+    class func navigateToOTP(navigationController:UINavigationController?,screenComingFrom:ComingFromScreen){
+        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RequestOTPViewController") as? RequestOTPViewController{
+            vcObj.screenFlow = screenComingFrom
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
@@ -39,10 +64,11 @@ class NavigationManager {
         }
     }
     
-    class func eventDetail(navigationController:UINavigationController? , evnt : Events){
+    class func eventDetail(navigationController:UINavigationController? , evntId : Int,comingFrom:ComingFromScreen){
         let storyboard = UIStoryboard(name: "EventDetail", bundle:  Bundle(for: EventDetailVC.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "EventDetail") as? EventDetailVC{
-            vcObj.event = evnt
+            vcObj.eventID = evntId
+            vcObj.comingFrom = comingFrom
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
@@ -51,6 +77,40 @@ class NavigationManager {
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "EventRegisterationViewController") as? EventRegisterationViewController{
             vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    class func ticketBooking(navigationController:UINavigationController? , evntDetail : EventDetail){
+        let storyboard = UIStoryboard(name: "EventRegistration", bundle:  Bundle(for: TicketBookingViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "TicketBookingViewController") as? TicketBookingViewController{
+            vcObj.eventDetail = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    class func bookingDetail(navigationController:UINavigationController? , evntDetail : EventDetail){
+        let storyboard = UIStoryboard(name: "EventRegistration", bundle:  Bundle(for: BookingDetailVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as? BookingDetailVC{
+//            vcObj.eventDetail = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    
+    
+    class func logout(){
+        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController{
+            let nvc: UINavigationController = UINavigationController(rootViewController: vcObj)
+            UINavigationBar.appearance().tintColor = UIColor.white
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+            UINavigationBar.appearance().barTintColor = kBlueColor
+            nvc.navigationBar.isHidden = true
+            vcObj.modalTransitionStyle = .crossDissolve
+            vcObj.modalPresentationStyle = .custom
+            appDelegate.window?.rootViewController = nvc
+            appDelegate.window?.makeKeyAndVisible()
+            StorageModel.removeUserData()
         }
     }
     

@@ -12,6 +12,10 @@ protocol ShareCellDelegate {
     func faqSelected()
     func termSelected()
     func registerBttonSelected(cell:ShareCell)
+    func viewTicketDidSelected(cell:ShareCell)
+    func luckyDrawDidSelected(cell:ShareCell)
+
+    
 }
 class ShareCell: UITableViewCell {
 
@@ -19,6 +23,9 @@ class ShareCell: UITableViewCell {
     @IBOutlet weak var buttnFaceBook: SocialButton!
     @IBOutlet weak var buttonGoogle: SocialButton!
     @IBOutlet weak var buttonTwitter: SocialButton!
+    @IBOutlet weak var viewTicketView: UIView!
+    @IBOutlet weak var viewTicketViewHeightConstraint: NSLayoutConstraint!
+    
     var delegate : ShareCellDelegate?
     
     
@@ -35,6 +42,18 @@ class ShareCell: UITableViewCell {
         // Initialization code
     }
 
+    
+    func showShareCell(isComingFrom:ComingFromScreen)  {
+        if isComingFrom == ComingFromScreen.eventListing {
+            viewTicketViewHeightConstraint.constant = 0
+            buttonregister.isHidden = false
+
+        }else{
+            viewTicketViewHeightConstraint.constant = 45
+            buttonregister.isHidden = true
+        }
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -57,6 +76,14 @@ class ShareCell: UITableViewCell {
     }
     
     @IBAction func buttonRegister_didPressed(_ sender: Any) {
-        delegate?.registerBttonSelected(cell: self)
+            delegate?.registerBttonSelected(cell: self)
+    }
+    @IBAction func btnViewTicketsTapped(_ sender: Any) {
+        delegate?.viewTicketDidSelected(cell: self)
+        
+    }
+    @IBAction func btnLuckyDrawTapped(_ sender: Any) {
+        delegate?.luckyDrawDidSelected(cell: self)
+
     }
 }

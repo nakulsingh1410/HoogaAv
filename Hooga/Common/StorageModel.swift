@@ -28,4 +28,12 @@ class StorageModel {
         }
         return nil
     }
+    
+    class func removeUserData() {
+        if let _  = StorageModel.getUserData(){
+                let userDefaults = UserDefaults.standard
+            userDefaults.removeObject(forKey: kUserInfo)
+            userDefaults.set(nil, forKey: kUserInfo)
+        }
+    }
 }

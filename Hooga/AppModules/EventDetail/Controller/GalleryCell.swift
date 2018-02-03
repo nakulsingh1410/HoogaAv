@@ -60,7 +60,7 @@ class GalleryCell: UITableViewCell {
         _flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         // edit properties here
         let width = UIScreen.main.bounds.size.width - 16 // / 2.5
-         _flowLayout.itemSize = CGSize(width: width, height: 190)
+         _flowLayout.itemSize = CGSize(width: width, height: 230)
         
         return _flowLayout
     }

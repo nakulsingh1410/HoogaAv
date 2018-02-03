@@ -17,4 +17,5 @@ extension UIView {
     class func loadNib() -> Self {
         return loadNib(self)
     }
+    
 }

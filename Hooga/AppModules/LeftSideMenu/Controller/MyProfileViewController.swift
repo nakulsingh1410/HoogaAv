@@ -1,5 +1,5 @@
 //
-//  EventRegisterationViewController.swift
+//  MyProfileViewController.swift
 //  Hooga
 //
 //  Created by Nakul Singh on 1/14/18.
@@ -9,11 +9,7 @@
 import UIKit
 
 
-class EventRegisterationViewController: UIViewController {
-    
-    @IBOutlet weak var lblEventTitle: HoogaLabel!
-    @IBOutlet weak var lblEventLocation: HoogaLabel!
-    @IBOutlet weak var lblEventTime: HoogaLabel!
+class MyProfileViewController: UIViewController {
     
     @IBOutlet weak var txtFFirstName: HoogaTextField!
     @IBOutlet weak var txtFLastName: HoogaTextField!
@@ -28,17 +24,22 @@ class EventRegisterationViewController: UIViewController {
     @IBOutlet weak var txtFPostalCode: HoogaTextField!
     @IBOutlet weak var imgViewProfilePic: UIImageView!
     @IBOutlet weak var btnUpload: HoogaButton!
-    @IBOutlet weak var imgViewBanner: UIImageView!
     
-   fileprivate var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
-   fileprivate var arrCity = ["Singapore"]
-    var eventDetail:EventDetail?
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
+
+    var requestingScreen:RequestForScreen = .login
+    
+    var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
+    var arrCity = ["Singapore"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        txtFCity.text = "Select City"
-        loadDefaultValues()
+        configoreNavigationHeader()
+        txtFCity.text = "Singapore"
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         prefilledUsedData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,44 +47,15 @@ class EventRegisterationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func loadDefaultValues()  {
-        if let evetDtl = eventDetail{
-            
-                if let path = evetDtl.bannerimage {
-                    let url = kImgaeView + path
-                    imgViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){[weak self] (image, error, cacheType, url) in
-                        guard let weakSelf = self else {return}
-                        if image == nil {
-                            weakSelf.imgViewBanner.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
-                        }
-                    }
-                }else{
-                    imgViewBanner.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
-                }
-            
-            lblEventTitle.text = evetDtl.title
-            lblEventLocation.text = evetDtl.eventlocation?.trim()
-            
-            let date = getDateString(strDate:evetDtl.startdate) + " - " + getDateString(strDate:evetDtl.enddate)
-            let time = getDateString(strDate:evetDtl.starttime) + " - " + getDateString(strDate:eventDetail?.endtime)
-            lblEventTime.text =  date + " | " + time
-        }
-        prefilledUsedData()
-        
-    }
-    
-    func getDateString(strDate:String?) -> String {
-        if let string = strDate {
-            let array = string.components(separatedBy: " ")
-            return array.first!
-        }
-        return ""
-    }
-    
     /*********************************************************************************/
     // MARK: Methods
     /*********************************************************************************/
+   private func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "My Profile"
+        navHeaderView.backButtonType = .LeftMenu
     
+    }
     private func prefilledUsedData(){
         if let userData = StorageModel.getUserData(){
             txtFFirstName.text = userData.firstname
@@ -97,8 +69,8 @@ class EventRegisterationViewController: UIViewController {
             txtFCity.text = userData.city
             txtFPostalCode.text = userData.postalcode
             
-            if let bnanner = userData.profilepic {
-                let url = kImgaeView + bnanner
+            if let profilepic = userData.profilepic {
+                let url = kUserImageBaseUrl + profilepic
                 imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                     if image == nil {
                         self.btnUpload.isHidden = false
@@ -107,8 +79,9 @@ class EventRegisterationViewController: UIViewController {
                 
             }
         }
-
+        
     }
+
     private func openGenderPicker(){
         if let picker = CustomPickerView.loadPickerView(){
             picker.frame = view.frame
@@ -167,12 +140,12 @@ class EventRegisterationViewController: UIViewController {
         return (message == nil) ? (message,false):(message,true)
     }
     
-    private func registerUser()  {
+    private func updateUser()  {
         let touple =   validate()
         if touple.isEmpty == true , let errorMsg = touple.message {
             Common.showAlert(message: errorMsg)
         }else{
-            registerAPI()
+            updateProfileAPI()
         }
     }
     
@@ -191,10 +164,7 @@ class EventRegisterationViewController: UIViewController {
         let vcObj = appDelegate.window?.visibleViewController
         vcObj?.present(imageController, animated: true, completion: nil);
     }
-    
-    private func navigateToEventListing(){
-        navigationController?.popToRootViewController(animated: true)
-    }
+   
     
     /*********************************************************************************/
     // MARK: IB_Action
@@ -224,7 +194,7 @@ class EventRegisterationViewController: UIViewController {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        registerUser()
+            updateUser()
          view.endEditing(true)
         
     }
@@ -245,7 +215,7 @@ class EventRegisterationViewController: UIViewController {
 /*********************************************************************************/
 // MARK: CustomPickerView Deleagte
 /*********************************************************************************/
-extension EventRegisterationViewController:CustomPickerViewDelegate{
+extension MyProfileViewController:CustomPickerViewDelegate{
     func dismissPickerView() {
         
     }
@@ -262,7 +232,7 @@ extension EventRegisterationViewController:CustomPickerViewDelegate{
 /*********************************************************************************/
 // MARK: CustomDatePicker Deleagte
 /*********************************************************************************/
-extension EventRegisterationViewController:CustomDatePickerDelegate{
+extension MyProfileViewController:CustomDatePickerDelegate{
   
     func didSelectDate(dob: String) {
         txtFDOB.text = dob
@@ -272,11 +242,10 @@ extension EventRegisterationViewController:CustomDatePickerDelegate{
 /*********************************************************************************/
 // MARK: API
 /*********************************************************************************/
-extension EventRegisterationViewController{
+extension MyProfileViewController{
     
-    func registerAPI()  {
-        EventService.eventRegistration(eventid:(eventDetail?.eventid!)!,
-                                       firstname: txtFFirstName.text!,
+    func updateProfileAPI()  {
+        LoginService.updateMyProfile(firstname: txtFFirstName.text!,
                                      lastname: txtFLastName.text!,
                                      gender: txtFGender.text!,
                                      dateofbirth: txtFDOB.text!,
@@ -286,18 +255,13 @@ extension EventRegisterationViewController{
                                      address2: txtFAddress2.text,
                                      city: txtFCity.text,
                                      postalcode: txtFPostalCode.text,
-                                     profilePic:imgViewProfilePic.image) {[weak self]  (flag, message) in
-                                        
-                                        guard let weakSelf = self else {return}
+                                     profilePic:imgViewProfilePic.image) { (flag, message) in
                                         if flag {
-                                            weakSelf.navigateToEventListing()
-                                            Common.showAlert(message: message)
-
+                                            Common.showAlert(message: "Profile successfully updated")
                                         }else{
                                             Common.showAlert(message: message)
                                         }
         }
     }
-    
     
 }

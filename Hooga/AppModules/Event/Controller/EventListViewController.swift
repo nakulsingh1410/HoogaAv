@@ -21,8 +21,7 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     
     @IBOutlet weak var textSearchTag: UITextField!
     @IBOutlet weak var tableViewEventList : UITableView!
-    @IBOutlet weak var headerView : CustomNavHeaderView!
-    @IBOutlet weak var btnLeftMenu: LeftMenuButton!
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
     
     var categoryMenu : AMHorizontalMenu?
     
@@ -36,11 +35,8 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-//        headerView.viewController = self
-        textSearchTag.delegate = self
-        btnLeftMenu.viewController = self
+    
+        configoreNavigationHeader()
         configTableViewForEventList()
         getCategoryList()
         getEntryTypeList()
@@ -59,7 +55,14 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
         super.viewWillAppear(animated)
         // self.setNavigationBarItem()
     }
-    
+
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Events"
+        navHeaderView.backButtonType = .LeftMenu
+        textSearchTag.delegate = self
+    }
+
     func menuSelected(index: IndexPath, data: CategoryModel) {
         
         if data.categoryid != nil {
@@ -188,7 +191,7 @@ extension EventListViewController : UITableViewDataSource{
     }
     
     @objc func buttonDetail_Pressed(_ button:UIButton)  {
-        NavigationManager.eventDetail(navigationController: self.navigationController,evnt:arrEvents[button.tag])
+        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrEvents[button.tag].eventid!, comingFrom: ComingFromScreen.eventListing)
     }
 }
 //

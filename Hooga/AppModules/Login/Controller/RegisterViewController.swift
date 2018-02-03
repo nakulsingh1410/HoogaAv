@@ -11,6 +11,11 @@ import UIKit
 enum Gender:String{
     case male = "Male"
      case female = "Female"
+    case other = "Other"
+}
+enum RequestForScreen:String{
+    case login = "login"
+    case myProfile = "MyProfile"
 }
 
 class RegisterViewController: UIViewController {
@@ -29,12 +34,15 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var imgViewProfilePic: UIImageView!
     @IBOutlet weak var btnUpload: HoogaButton!
     
-    var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
+
+    var requestingScreen:RequestForScreen = .login
+    
+    var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
     var arrCity = ["Singapore"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+       // configoreNavigationHeader()
         txtFCity.text = "Singapore"
     }
     
@@ -46,7 +54,17 @@ class RegisterViewController: UIViewController {
     /*********************************************************************************/
     // MARK: Methods
     /*********************************************************************************/
-    
+   private func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+    if requestingScreen == .login {
+        navHeaderView.navBarTitle = "Registration"
+        navHeaderView.backButtonType = .Back
+    }else if requestingScreen == .myProfile {
+        navHeaderView.navBarTitle = "My Profile"
+        navHeaderView.backButtonType = .LeftMenu
+    }
+    }
+
     private func openGenderPicker(){
         if let picker = CustomPickerView.loadPickerView(){
             picker.frame = view.frame
@@ -131,11 +149,7 @@ class RegisterViewController: UIViewController {
     }
     
     private func navigateToOTP(){
-        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
-        if let vcObj = storyboard.instantiateViewController(withIdentifier: "RequestOTPViewController") as? RequestOTPViewController{
-            vcObj.screenFlow = "RegisterationFlow"
-            navigationController?.pushViewController(vcObj, animated: true)
-        }
+         NavigationManager.navigateToOTP(navigationController: navigationController, screenComingFrom: ComingFromScreen.registration)
     }
     
     /*********************************************************************************/
@@ -167,6 +181,7 @@ class RegisterViewController: UIViewController {
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
             registerUser()
+//        navigateToOTP()
          view.endEditing(true)
         
     }
@@ -193,7 +208,7 @@ extension RegisterViewController:CustomPickerViewDelegate{
     }
     func didSelectPickerValueAt(title: String, index: Int, pickerType: PickerType?) {
         if let type = pickerType , type == .gendePicker {
-            txtFGender.text = (title == Gender.male.rawValue) ? "M" : "F"
+            txtFGender.text = title
         }
         if let type = pickerType , type == .cityPicker {
             txtFCity.text = title

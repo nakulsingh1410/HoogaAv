@@ -8,10 +8,9 @@
 
 import UIKit
 
+
+
 class EventDetailVC: UIViewController{
-    
-    
-    
     @IBOutlet var tableDetail : UITableView!
     
     var eventDetail: EventDetail?
@@ -21,13 +20,14 @@ class EventDetailVC: UIViewController{
     var arrEventTermsCondition = [EventTersmNCondition]()
     var arrCellType = [Int]()
 
-    var event : Events?
+    var eventID : Int?
+    var comingFrom = ComingFromScreen.eventListing
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        getEventDetail(eventId: (event?.eventid)!)
+        getEventDetail(eventId: eventID!)
         configTableview()
         self.navigationController?.isNavigationBarHidden = false
     }
@@ -133,6 +133,12 @@ extension EventDetailVC : UITableViewDataSource{
             }
             cellShare.delegate = self
             cellShare.selectionStyle = .none
+            if let _ = eventDetail?.regid {
+                cellShare.buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
+            }else{
+                 cellShare.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
+            }
+            cellShare.showShareCell(isComingFrom: comingFrom)
             return cellShare
         }
         
@@ -154,7 +160,6 @@ extension EventDetailVC : UITableViewDataSource{
         cell.buttonInsta.isHidden = true
         cell.buttonGoogle.isHidden = true
         for item in arrEventFlatform {
-            
             if item.platform == "Facebook"{
                 cell.buttnFaceBook.url = item.url
                 cell.buttnFaceBook.isHidden = false
@@ -198,9 +203,24 @@ extension EventDetailVC : UITableViewDelegate{
 }
 
 extension EventDetailVC :ShareCellDelegate{
+    func viewTicketDidSelected(cell: ShareCell) {
+        
+        
+    }
+    
+    func luckyDrawDidSelected(cell: ShareCell) {
+        
+    }
+    
     func registerBttonSelected(cell: ShareCell) {
-        if let evntDtl = eventDetail{
+        guard let evntDtl = eventDetail else{return}
+            if let title = cell.buttonregister.titleLabel?.text ,
+                title == RegisterButtonTitle.register.rawValue
+                 {
              NavigationManager.eventRegistration(navigationController: self.navigationController, evntDetail: evntDtl)
+            }else if let title = cell.buttonregister.titleLabel?.text ,
+                title == RegisterButtonTitle.bookTickets.rawValue{
+                NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl)
         }
        
     }
@@ -237,7 +257,7 @@ extension EventDetailVC {
                 self.arrCellType.append(2)
                 self.tableDetail.reloadData()
             }
-            self.getEventAssets(eventId:(self.event?.eventid)!)
+            self.getEventAssets(eventId:(self.eventID)!)
         }
         
     }
@@ -251,7 +271,7 @@ extension EventDetailVC {
                 self.arrCellType.append(3)
                 self.tableDetail.reloadData()
             }
-            self.getEventPlatforms(eventId:(self.event?.eventid)!)
+            self.getEventPlatforms(eventId:(self.eventID)!)
         }
         
     }
@@ -267,7 +287,7 @@ extension EventDetailVC {
                 }
                 self.tableDetail.reloadData()
             }
-            self.getShowEventFAQs(eventId:(self.event?.eventid)!)
+            self.getShowEventFAQs(eventId:(self.eventID)!)
         }
         
     }
@@ -282,7 +302,7 @@ extension EventDetailVC {
                     self.arrCellType.append(4)
                 }
                 self.tableDetail.reloadData()
-                self.getShowEventTermsConditions(eventId:(self.event?.eventid)!)
+                self.getShowEventTermsConditions(eventId:(self.eventID)!)
             }
         }
         
