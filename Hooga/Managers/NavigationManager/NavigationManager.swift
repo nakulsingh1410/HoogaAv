@@ -88,6 +88,13 @@ class NavigationManager {
         }
     }
     
+    class func bookingDetail(navigationController:UINavigationController? , evntDetail : EventDetail){
+        let storyboard = UIStoryboard(name: "EventRegistration", bundle:  Bundle(for: BookingDetailVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as? BookingDetailVC{
+//            vcObj.eventDetail = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
     
     
     

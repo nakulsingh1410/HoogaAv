@@ -325,5 +325,93 @@ extension EventService{
     }
 }
 
+/***************************************************************/
+//MARK: My Ticket Booking
+/***************************************************************/
+extension EventService{
+    static func getEventType(eventid:Int,
+                             callback: @escaping (Bool,[TicketType]?) -> Void){
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.GET_EVENT_TYPE.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let arrObj = obj["TicketTypes"] as? [[String : Any]]{
+                    let array = Mapper<TicketType>().mapArray(JSONArray:arrObj )
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+    
+    static func getTicketTypeDetails(eventid:Int,
+                                     tickettypeid:Int,
+                             callback: @escaping (Bool,TicketTypeDetails?) -> Void){
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        dictParam["tickettypeid"] = tickettypeid
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_TICKET_TYPE_DETAIL.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                let eventDetail = Mapper<TicketTypeDetails>().map(JSON: obj)
+                callback(true,eventDetail);
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+    
+    static func getAvailableTicketsCount(eventid:Int,
+                                     callback: @escaping (Bool,Int?) -> Void){
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.AVAILABLE_TICKET_COUNT.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if  let availableticketscount = obj["availableticketscount"] as? Int{
+                     callback(true,availableticketscount)
+                }else{
+                     callback(false,nil)
+                }
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+    
+    static func getAvailableEarlyBirdTicketsCount(eventid:Int,
+                                                  tickettypeid:Int,
+                                         callback: @escaping (Bool,Int?) -> Void){
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        dictParam["tickettypeid"] = tickettypeid
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.AVAILABEL_EARLY_BIRD_TICKET_COUNT.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if  let availableticketscount = obj["availableearlybirdticketscount"] as? Int{
+                    callback(true,availableticketscount)
+                }else{
+                    callback(false,nil)
+                }
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+    
+}
+
 
 

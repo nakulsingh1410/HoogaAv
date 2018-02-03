@@ -69,8 +69,8 @@ class MyProfileViewController: UIViewController {
             txtFCity.text = userData.city
             txtFPostalCode.text = userData.postalcode
             
-            if let bnanner = userData.profilepic {
-                let url = kImgaeView + bnanner
+            if let profilepic = userData.profilepic {
+                let url = kUserImageBaseUrl + profilepic
                 imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                     if image == nil {
                         self.btnUpload.isHidden = false

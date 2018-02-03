@@ -67,6 +67,7 @@
 		30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C16200CDA4000386438 /* UIImage+Gif.swift */; };
 		30D77C212010891900386438 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C202010891900386438 /* EventListViewController.swift */; };
 		30DC22AE20256680006D5A05 /* TicketBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC22AD20256680006D5A05 /* TicketBookingViewController.swift */; };
+		30DC22B220260B9B006D5A05 /* TicketBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC22B120260B9B006D5A05 /* TicketBooking.swift */; };
 		30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F85201D798A009D4278 /* CustomPickerView.swift */; };
 		30EA5F88201D799C009D4278 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F87201D799C009D4278 /* CustomPickerView.xib */; };
 		30EA5F8B201D82B2009D4278 /* CustomDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */; };
@@ -212,6 +213,7 @@
 		30D77C16200CDA4000386438 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		30D77C202010891900386438 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		30DC22AD20256680006D5A05 /* TicketBookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicketBookingViewController.swift; path = Hooga/AppModules/LeftSideMenu/Controller/TicketBookingViewController.swift; sourceTree = SOURCE_ROOT; };
+		30DC22B120260B9B006D5A05 /* TicketBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBooking.swift; sourceTree = "<group>"; };
 		30EA5F85201D798A009D4278 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		30EA5F87201D799C009D4278 /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDatePicker.xib; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				7574C3C120258FCA0010A4F1 /* ModelBookingDetail */,
 				305471EA20213B200009A8EC /* Storyboard */,
 				305471EB20213B200009A8EC /* ViewController */,
+				30DC22B120260B9B006D5A05 /* TicketBooking.swift */,
 			);
 			path = EventRegistration;
 			sourceTree = "<group>";
@@ -1212,6 +1215,7 @@
 				30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */,
 				30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */,
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
+				30DC22B220260B9B006D5A05 /* TicketBooking.swift in Sources */,
 				305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */,
 				30ED06192020833100D354BE /* HoogaView.swift in Sources */,
 				754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */,

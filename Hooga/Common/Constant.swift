@@ -63,6 +63,7 @@ let kSubDomain = "api/users/";
 let kEvent     = "api/events/"
 
 let kImgaeView = "http://158.140.133.89/Hooga/HoogaFiles/Assets/"
+let kUserImageBaseUrl = "http://158.140.133.89/Hooga/HoogaFiles/users/"
 let placeHolderImageUrl = URL(string: "http://158.140.133.89/Hooga/HoogaFiles/Assets/default.png")
 
 let kServiceUrl  = kDomain + kSubDomain
@@ -104,6 +105,10 @@ public enum ServiceName:String {
     case SHOW_COMPLETED_EVENTS = "showMyCompletedEvents"
     case DISPLAY_MY_PROFILE = "displayMyProfile"
     case UPDATE_MY_PROFILE = "updateMyProfile"
+    case GET_EVENT_TYPE = "getTicketTypes"
+    case SHOW_TICKET_TYPE_DETAIL = "showTicketTypeDetails"
+    case AVAILABLE_TICKET_COUNT = "getAvailableTicketsCount"
+    case AVAILABEL_EARLY_BIRD_TICKET_COUNT = "getAvailableEarlyBirdTicketsCount"
 }
 
 
