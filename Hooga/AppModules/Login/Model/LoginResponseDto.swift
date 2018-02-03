@@ -110,6 +110,7 @@ class LoginResponseDto: NSObject,Mappable,NSCoding {
         aCoder.encode(address2, forKey: "address2")
         aCoder.encode(city, forKey: "city")
         aCoder.encode(postalcode, forKey: "postalcode")
+        aCoder.encode(profilepic, forKey: "profilepic")
         aCoder.encode(isfirsttimeuser, forKey: "isfirsttimeuser")
         aCoder.encode(status, forKey: "status")
         aCoder.encode(Message, forKey: "Message")
