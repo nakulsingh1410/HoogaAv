@@ -53,9 +53,9 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // self.setNavigationBarItem()
+        // self.setNavigationBarItem()
     }
-    
+
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
         navHeaderView.navBarTitle = "Events"
@@ -94,13 +94,13 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
         
         buttonPay.backgroundColor = Color.blue
         buttonFree.backgroundColor = Color.lightGray
-    
+        
         if arrEntryType.count > 1 {
             let type = arrEntryType[0]
             request.entryType = type.entrytype
             getEventList(catId: request.catId!  , entryType:  request.entryType!, tag:  request.tag!)
-            }
         }
+    }
     
     
     @IBAction func buttonFree_didPressed(_ sender: UIButton) {
@@ -117,7 +117,7 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     
     
     @IBAction func textChanged_OnEdit(_ sender: UITextField) {
-    
+        
     }
     
     func configCategoryMenu(item:[CategoryModel]){
@@ -170,9 +170,9 @@ extension EventListViewController : UITableViewDataSource{
         cellEvent.labelEventDate.text = event.startdate
         cellEvent.labelEventTime.text = event.starttime
         cellEvent.labelEventTitle.text = event.title
-       cellEvent.selectionStyle = .none
+        cellEvent.selectionStyle = .none
         
-      
+        
         if let bnanner = event.bannerimage {
             let url = kImgaeView + bnanner
             cellEvent.imageViewEvent.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
@@ -186,10 +186,10 @@ extension EventListViewController : UITableViewDataSource{
         cellEvent.buttonEventDetail.tag = indexPath.row
         cellEvent.buttonEventDetail.addTarget(self, action:#selector(buttonDetail_Pressed(_:)), for: .touchUpInside)
         
-       // cellEvent.viewForShadow.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
+        // cellEvent.viewForShadow.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
         return cellEvent
     }
- 
+    
     @objc func buttonDetail_Pressed(_ button:UIButton)  {
         NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrEvents[button.tag].eventid!, comingFrom: ComingFromScreen.eventListing)
     }
@@ -218,7 +218,7 @@ extension EventListViewController {
                 weakSelf.arrCategories = array
                 weakSelf.arrCategories.insert(catAll, at: 0)
                 DispatchQueue.main.async {
-                   weakSelf.configCategoryMenu(item:weakSelf.arrCategories)
+                    weakSelf.configCategoryMenu(item:weakSelf.arrCategories)
                 }
                 if (array.first?.categoryid) != nil{
                     weakSelf.getEventList(catId: 0, entryType: "", tag: "")
@@ -251,7 +251,7 @@ extension EventListViewController {
     }
     
     func getEventList(catId:Int,entryType:String,tag:String)  {
-         arrEvents = [Events]()
+        arrEvents = [Events]()
         tableViewEventList.reloadData()
         tableViewEventList.backgroundView = nil
         EventService.getEventList(categoryid: catId, entrytype: entryType, tag: tag, callback: {[weak self] (flag, events) in
@@ -268,3 +268,4 @@ extension EventListViewController {
     
     
 }
+

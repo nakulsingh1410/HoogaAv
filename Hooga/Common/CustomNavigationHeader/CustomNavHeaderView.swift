@@ -60,7 +60,7 @@ class CustomNavHeaderView: UIView {
         }
         
         titleHeader.textColor = titleColor
-    
+        lblSeperatorLine.isHidden = isBottonLineHidden
         
         if let backType = backButtonType, backType == BackButtonType.LeftMenu ,let _ = viewController {
             leftButton.setTitle(nil, for: .normal)

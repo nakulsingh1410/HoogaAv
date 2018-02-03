@@ -109,7 +109,9 @@ public enum ServiceName:String {
     case SHOW_TICKET_TYPE_DETAIL = "showTicketTypeDetails"
     case AVAILABLE_TICKET_COUNT = "getAvailableTicketsCount"
     case AVAILABEL_EARLY_BIRD_TICKET_COUNT = "getAvailableEarlyBirdTicketsCount"
+    case  SAVE_BOOKING_DETAILS = "saveBookingDetails"
 }
+
 
 
 /************************ Message ************************/

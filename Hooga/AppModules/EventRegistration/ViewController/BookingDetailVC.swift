@@ -80,15 +80,16 @@ class BookingDetailVC: UIViewController {
             message = MessageError.EMAIL_BLANK.rawValue
         }else if let value = detailView.email.text,value.isEmail == false{
             message = MessageError.EMAIL_INVALID.rawValue
-        }else if let value = detailView.address1.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-                    message = MessageError.ADDRESS1_BLANK .rawValue
-                }else if let value = detailView.address2.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-                    message = MessageError.ADDRESS2_BLANK .rawValue
-                }else if let value = detailView.city.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-                    message = MessageError.CITY_EMPTY.rawValue
-                }else if let value = detailView.postalCode.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-                    message = MessageError.POSTCODE_EMPTY.rawValue
-                }
+        }
+//        else if let value = detailView.address1.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+//                    message = MessageError.ADDRESS1_BLANK .rawValue
+//                }else if let value = detailView.address2.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+//                    message = MessageError.ADDRESS2_BLANK .rawValue
+//                }else if let value = detailView.city.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+//                    message = MessageError.CITY_EMPTY.rawValue
+//                }else if let value = detailView.postalCode.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+//                    message = MessageError.POSTCODE_EMPTY.rawValue
+//                }
          return (message == nil) ? (message,false):(message,true)
    }
     
@@ -188,3 +189,28 @@ extension BookingDetailVC:CustomDatePickerDelegate{
         detailView.dob.text = dob
     }
 }
+
+
+/*
+ 
+ Use this code on click on PAY button 
+ 
+ func saveTicketDetails()  {
+ 
+ var arrTickets = [SaveBookingDetail]()
+ arrTickets.append(SaveBookingDetail())
+ arrTickets.append(SaveBookingDetail())
+ arrTickets.append(SaveBookingDetail())
+ arrTickets.append(SaveBookingDetail())
+ 
+ TicketBookingService.saveTicketDetails(bookingDetails: arrTickets) { (flag, data) in
+ 
+ if let _ = data{
+ // navigate to payment screen
+ }
+ 
+ }
+ }
+ 
+ 
+ */
