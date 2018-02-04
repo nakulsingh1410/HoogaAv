@@ -14,7 +14,7 @@ enum PickerType:String {
     case cityPicker = "City"
     case ticketTypePicker = "Ticket Type"
     case quanityPicker = "Quantity"
-
+    
 }
 
 protocol CustomPickerViewDelegate {
@@ -62,8 +62,9 @@ class CustomPickerView:UIView,UIPickerViewDelegate,UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        customPickerViewDelegate?.didSelectPickerValueAt(title: pickerDataSource[row], index: row,pickerType:pickerType)
-        
+        if row < pickerDataSource.count{
+            customPickerViewDelegate?.didSelectPickerValueAt(title: pickerDataSource[row], index: row,pickerType:pickerType)
+        }
     }
     
     
@@ -76,8 +77,10 @@ class CustomPickerView:UIView,UIPickerViewDelegate,UIPickerViewDataSource {
         self.removeFromSuperview()
     }
     @IBAction func btnDoneTapped(_ sender: Any) {
-        let value = pickerDataSource[pickerView.selectedRow(inComponent: 0)]
-        customPickerViewDelegate?.didSelectPickerValueAt(title: value, index: 0,pickerType:pickerType)
+        if pickerDataSource.count > 0{
+            let value = pickerDataSource[pickerView.selectedRow(inComponent: 0)]
+            customPickerViewDelegate?.didSelectPickerValueAt(title: value, index: 0,pickerType:pickerType)
+        }
         self.removeFromSuperview()
     }
     

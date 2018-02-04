@@ -90,8 +90,8 @@ extension EventDetailVC : UITableViewDataSource{
             let cellTitle = tableView.dequeueReusableCell(withIdentifier: EventTitleCell.identifier) as! EventTitleCell
             //01/01/2018 - 05/01/2018 | 21:00 - 00:00
             cellTitle.labelEvntTitle.text  = self.eventDetail?.title
-            let date = getDateString(strDate:eventDetail?.startdate) + " - " + getDateString(strDate:eventDetail?.enddate)
-            let time = getDateString(strDate:eventDetail?.starttime) + " - " + getDateString(strDate:eventDetail?.endtime)
+            let date = Common.getDateString(strDate:eventDetail?.startdate) + " - " + Common.getDateString(strDate:eventDetail?.enddate)
+            let time = Common.getDateString(strDate:eventDetail?.starttime) + " - " + Common.getDateString(strDate:eventDetail?.endtime)
             cellTitle.labelDateTime.text =  date + " | " + time
             cellTitle.labelVanue.text = self.eventDetail?.eventlocation?.trim()
             var description =  ""
@@ -144,14 +144,7 @@ extension EventDetailVC : UITableViewDataSource{
         
         return UITableViewCell()
     }
-    
-    func getDateString(strDate:String?) -> String {
-        if let string = strDate {
-            let array = string.components(separatedBy: " ")
-            return array.first!
-        }
-        return ""
-    }
+
     
     func cellSharePlateForm(cell : ShareCell)  {
         

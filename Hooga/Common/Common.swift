@@ -238,6 +238,16 @@ class Common: NSObject{
         tableView.separatorStyle = .none;
     }
     
+    
+    
+    class func getDateString(strDate:String?) -> String {
+        if let string = strDate {
+            let array = string.components(separatedBy: " ")
+            return array.first!
+        }
+        return ""
+    }
+    
 }
 
 
