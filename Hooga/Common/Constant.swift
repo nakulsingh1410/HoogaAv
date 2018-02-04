@@ -105,7 +105,7 @@ public enum ServiceName:String {
     case SHOW_COMPLETED_EVENTS = "showMyCompletedEvents"
     case DISPLAY_MY_PROFILE = "displayMyProfile"
     case UPDATE_MY_PROFILE = "updateMyProfile"
-    case GET_EVENT_TYPE = "getTicketTypes"
+    case GET_TICKET_TYPE = "getTicketTypes"
     case SHOW_TICKET_TYPE_DETAIL = "showTicketTypeDetails"
     case AVAILABLE_TICKET_COUNT = "getAvailableTicketsCount"
     case AVAILABEL_EARLY_BIRD_TICKET_COUNT = "getAvailableEarlyBirdTicketsCount"
@@ -165,7 +165,10 @@ public enum MessageError: String{
     
     case PHONE_INVALID          = "Please enter correct mobile number."
     case MEDICAL_EMPTY          = "Please enter medical center name."
-    
+    case TICKET_TYPE_EMPTY       = "Please select ticket type"
+    case QUNATITY_TYPE_EMPTY     = "Please select ticket quanity"
+    case QUNATITY_CANAT_ZERO    = "Quantity can not be zero"
+
     case REGISTRATION_MSG       = "Registration successfull. Please activate your account from received email."
 }
 

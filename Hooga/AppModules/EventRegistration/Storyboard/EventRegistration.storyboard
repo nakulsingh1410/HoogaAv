@@ -937,9 +937,11 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6KM-OW-gZ7">
-                                                <rect key="frame" x="158.5" y="508" width="57" height="30"/>
-                                                <state key="normal" title="Proceed"/>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6KM-OW-gZ7" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
+                                                <rect key="frame" x="154.5" y="508" width="65" height="30"/>
+                                                <state key="normal" title=" Proceed ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="btnProceedTapped:" destination="C9A-KS-PkT" eventType="touchUpInside" id="gFh-d0-Aha"/>
                                                 </connections>
@@ -1019,6 +1021,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="0.0" height="0.0"/>
                     <connections>
+                        <outlet property="imageVewHeightConstraint" destination="Azf-UZ-aCf" id="j6n-a0-sMe"/>
                         <outlet property="imgViewBanner" destination="7ta-nZ-XpG" id="4oS-qV-wXa"/>
                         <outlet property="imgViewTicket" destination="WMq-g7-XOA" id="W5o-fE-jsm"/>
                         <outlet property="lblAvailable" destination="rkd-DX-zu4" id="Azu-Ue-vti"/>
@@ -1029,6 +1032,8 @@
                         <outlet property="lblEventTitle" destination="Qd5-xv-plg" id="hWN-G2-D3D"/>
                         <outlet property="lblRegularPrice" destination="TBf-7Z-ux9" id="dAE-8h-HKY"/>
                         <outlet property="navHeaderView" destination="WzO-Wl-QXc" id="Nmh-3t-BwW"/>
+                        <outlet property="txtFQuantity" destination="gIY-H0-8Jx" id="qzi-aN-zkL"/>
+                        <outlet property="txtFTicketType" destination="wV4-32-Qvi" id="T8e-W4-241"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7G-nk-vFm" sceneMemberID="firstResponder"/>

@@ -329,12 +329,12 @@ extension EventService{
 //MARK: My Ticket Booking
 /***************************************************************/
 extension EventService{
-    static func getEventType(eventid:Int,
+    static func getTicketType(eventid:Int,
                              callback: @escaping (Bool,[TicketType]?) -> Void){
         var dictParam = Dictionary<String,Any>()
         dictParam["eventid"] = eventid
         Common.showHud()
-        let kServerUrl = kDomain + kEvent + ServiceName.GET_EVENT_TYPE.rawValue
+        let kServerUrl = kDomain + kEvent + ServiceName.GET_TICKET_TYPE.rawValue
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
             Common.hideHud()
             if let obj = response.result.value as? [String:Any]{

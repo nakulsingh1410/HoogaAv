@@ -12,6 +12,8 @@ import UIKit
 enum PickerType:String {
     case gendePicker = "Gender"
     case cityPicker = "City"
+    case ticketTypePicker = "Ticket Type"
+    case quanityPicker = "Quantity"
 
 }
 
