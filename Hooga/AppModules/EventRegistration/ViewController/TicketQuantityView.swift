@@ -113,12 +113,12 @@ extension TicketQuantityView : UICollectionViewDelegate{
         
         if delegate != nil {
         
-            let isCompleted = delegate?.isTicketCompleted(ticketView: self, ticket: indexPath.row)
+            let isCompleted = delegate?.isTicketCompleted(ticketView: self, ticket: indexPath.row + 1)
             
             if isCompleted! {
                 indexPth = indexPath
                 collectionView.reloadData()
-                delegate?.selectedTicket(ticketView: self, ticket: indexPath.row)
+                delegate?.selectedTicket(ticketView: self, ticket: indexPath.row + 1)
             }
         }
         

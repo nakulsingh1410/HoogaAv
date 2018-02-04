@@ -17,6 +17,7 @@ class BookingDetailVC: UIViewController {
     var details = [SaveBookingDetail]()
     var detailView : BookingDetailView!
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
+    var qnty = 5
     
     var arrCity = ["Singapore"]
    
@@ -46,7 +47,7 @@ class BookingDetailVC: UIViewController {
             
             detailView = views[0] as! BookingDetailView
             detailView.frame = CGRect.init(x: 0, y: 0, width: viewBookingDetail.frame.size.width, height: viewBookingDetail.frame.size.height)
-            
+            detailView.delegate = self
             viewBookingDetail.addSubview(detailView)
         }
     
@@ -93,38 +94,92 @@ class BookingDetailVC: UIViewController {
          return (message == nil) ? (message,false):(message,true)
    }
     
-    private func addDetail()  {
+    func setDetailModel(ticket : Int) -> Bool  {
+        
         let touple =   validate()
         if touple.isEmpty == true , let errorMsg = touple.message {
             Common.showAlert(message: errorMsg)
-        }else{
-            
+            return false
         }
-    }
-    
-    func setDetailModel()  {
         let model = SaveBookingDetail()
-        
+        model.ticketId   = ticket
         model.address1 = detailView.address1.text
         model.address2 = detailView.address2.text
         model.firstname = detailView.firstName.text
         model.lastname = detailView.lastName.text
-        model.firstname = detailView.firstName.text
+        model.email = detailView.email.text
+        model.handphone = detailView.mobile.text
+        model.postalcode = detailView.postalCode.text
+        model.email = detailView.email.text
+        model.gender   = detailView.gender.text
+        model.dateofbirth = detailView.dob.text
+        model.city   = detailView.city.text
+        details.append(model)
         
+         return true
     }
     
+    func updateDetail(detail : SaveBookingDetail)  {
+    
+         detailView.address1.text = detail.address1
+         detailView.address2.text = detail.address2
+        detailView.firstName.text = detail.firstname
+        detailView.lastName.text = detail.lastname
+        detailView.email.text = detail.email
+       detailView.mobile.text =  detail.handphone
+        detailView.postalCode.text = detail.postalcode
+        detailView.email.text = detail.email
+        detailView.gender.text = detail.gender
+        detailView.dob.text = detail.dateofbirth
+        detailView.city.text =  detail.city
+    }
+    func checkDetail(tId:Int)  -> SaveBookingDetail?{
+       return details.filter { $0.ticketId == tId}.first
+    }
     
 }
-extension BookingDetailVC : TicketQuantityViewDelegate {
+extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegate{
     
     func selectedTicket(ticketView:TicketQuantityView, ticket:Int){
         
-        
+        if (checkDetail(tId: ticket) != nil) {
+            
+        }else{
+            detailView.removeFromSuperview()
+            addBookingDetailView()
+        }
     }
     
     func isTicketCompleted(ticketView:TicketQuantityView, ticket:Int) -> Bool{
         
-        return true
+        if let obj =  checkDetail(tId: ticket)  {
+             updateDetail(detail : obj)
+            return true
+        }
+        return  setDetailModel(ticket: ticket - 1)
+    }
+    func openGenderPicker(ticketView:BookingDetailView){
+        openGenderPicker()
+    }
+    
+    func openDobPicker(ticketView:BookingDetailView){
+        openDatePicker()
+        
+    }
+    
+    func openCityPicker(ticketView:BookingDetailView){
+        openCityPicker()
+    }
+    func openImagePicker(ticketView:BookingDetailView){
+        pickProfileImage()
+    }
+    func pay(ticketView:BookingDetailView){
+        
+        
+    }
+    func cancel(ticketView:BookingDetailView){
+        
+        
     }
 }
 
