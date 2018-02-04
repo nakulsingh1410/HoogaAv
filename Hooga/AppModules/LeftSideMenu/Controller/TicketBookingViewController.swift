@@ -56,6 +56,7 @@ class TicketBookingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func loadDefaultValues()  {
+        
         if let evetDtl = eventDetail{
             
             if let path = evetDtl.bannerimage {

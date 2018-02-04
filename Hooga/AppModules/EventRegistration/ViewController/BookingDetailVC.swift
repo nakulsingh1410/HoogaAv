@@ -17,7 +17,8 @@ class BookingDetailVC: UIViewController {
     var details = [SaveBookingDetail]()
     var detailView : BookingDetailView!
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
-    var qnty = 5
+    var qnty = 1
+    var eventDetail : EventDetail?
     
     var arrCity = ["Singapore"]
    
@@ -103,6 +104,9 @@ class BookingDetailVC: UIViewController {
         }
         let model = SaveBookingDetail()
         model.ticketId   = ticket
+        model.eventid =   eventDetail?.eventid
+        model.registrationid = eventDetail?.regid
+        model.status = "true"
         model.address1 = detailView.address1.text
         model.address2 = detailView.address2.text
         model.firstname = detailView.firstName.text
@@ -175,11 +179,30 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
     }
     func pay(ticketView:BookingDetailView){
         
-        
+        if details.count <= qnty {
+        saveTicketDetails(arrTicket: details)
+        }
     }
     func cancel(ticketView:BookingDetailView){
         
         
+    }
+    
+    func saveTicketDetails(arrTicket:[SaveBookingDetail])  {
+        
+      /*  var arrTickets = [SaveBookingDetail]()
+        arrTickets.append(SaveBookingDetail())
+        arrTickets.append(SaveBookingDetail())
+        arrTickets.append(SaveBookingDetail())
+        arrTickets.append(SaveBookingDetail())*/
+        
+        TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
+            
+            if let _ = data{
+                // navigate to payment screen
+            }
+            
+        }
     }
 }
 

@@ -4,7 +4,7 @@
 //
 //  Created by @mrendra on 03/02/18.
 //  Copyright © 2018 Nakul Singh. All rights reserved.
-//
+
 
 import UIKit
 protocol TicketQuantityViewDelegate {

@@ -11,7 +11,9 @@ import ObjectMapper
 
 class SaveBookingDetail: NSObject,Mappable {
     
+    //This is a  local  variable
     var ticketId  : Int?
+    
     var eventid : Int?
     var tickettypeid : Int?
     var registrationid : Int?

@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 class EventDetail: NSObject,Mappable {
+    
     var eventid : Int?
     var categoryid : Int?
     var category : String?
