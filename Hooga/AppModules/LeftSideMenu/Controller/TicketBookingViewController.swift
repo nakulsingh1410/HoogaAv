@@ -187,10 +187,10 @@ class TicketBookingViewController: UIViewController {
         openQuantityPicker()
     }
     @IBAction func btnProceedTapped(_ sender: Any) {
-         //proceed()
-        if let evnt = eventDetail{
-            NavigationManager.bookingDetail(navigationController: navigationController, evntDetail: evnt)
-        }
+         proceed()
+//        if let evnt = eventDetail{
+//            NavigationManager.bookingDetail(navigationController: navigationController, evntDetail: evnt)
+//        }
     }
     
 }
@@ -249,10 +249,13 @@ extension TicketBookingViewController{
         EventService.getAvailableTicketsCount(eventid: eventId) { [weak self] (flag, ticketCount) in
             guard let weakSelf = self else {return}
             weakSelf.arrQuantity.append("0")
-            if let ticketCount = ticketCount{
-                for index in 0 ..< ticketCount{
+            if let ticketCountInt = ticketCount,ticketCountInt>0{
+                for index in 0 ..< ticketCountInt{
                    weakSelf.arrQuantity.append(String(index))
                 }
+                
+            }else{
+                weakSelf.arrQuantity.append("1")
             }
         }
     }
