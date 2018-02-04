@@ -81,7 +81,7 @@ class TicketBookingViewController: UIViewController {
         
         
         txtFTicketType.text = "Select Ticket"
-        txtFQuantity.text = "Select"
+        txtFQuantity.text = "Select Quantity"
         hideTicketInfo()
     }
     
@@ -157,7 +157,7 @@ class TicketBookingViewController: UIViewController {
         var message : String?
         if let value = txtFTicketType.text,value == "Select Ticket"{
             message = MessageError.TICKET_TYPE_EMPTY .rawValue
-        }else if let value = txtFQuantity.text,value == "Select" {
+        }else if let value = txtFQuantity.text,value == "Select Quantity" {
             message = MessageError.QUNATITY_TYPE_EMPTY .rawValue
         }else if let value = txtFQuantity.text , value == "0"{
             message = MessageError.QUNATITY_CANAT_ZERO .rawValue
@@ -187,8 +187,10 @@ class TicketBookingViewController: UIViewController {
         openQuantityPicker()
     }
     @IBAction func btnProceedTapped(_ sender: Any) {
-         proceed()
-      
+         //proceed()
+        if let evnt = eventDetail{
+            NavigationManager.bookingDetail(navigationController: navigationController, evntDetail: evnt)
+        }
     }
     
 }
