@@ -22,14 +22,13 @@ class QcodeTicketVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    @IBOutlet weak var qrCodeImage: UIImageView!
+    @IBOutlet weak var cardImage: UIImageView!
+    @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var quantity: UILabel!
+    @IBOutlet weak var eventType: UILabel!
+    
+ 
 
 }

@@ -14,7 +14,7 @@ class BookingDetailVC: UIViewController {
      @IBOutlet var viewQuantity : UIView!
      @IBOutlet var viewBookingDetail : UIView!
     var ticketQuantityView : TicketQuantityView?
-    var details = [BookingDetail]()
+    var details = [SaveBookingDetail]()
     var detailView : BookingDetailView!
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
     
@@ -101,6 +101,19 @@ class BookingDetailVC: UIViewController {
             
         }
     }
+    
+    func setDetailModel()  {
+        let model = SaveBookingDetail()
+        
+        model.address1 = detailView.address1.text
+        model.address2 = detailView.address2.text
+        model.firstname = detailView.firstName.text
+        model.lastname = detailView.lastName.text
+        model.firstname = detailView.firstName.text
+        
+    }
+    
+    
 }
 extension BookingDetailVC : TicketQuantityViewDelegate {
     

@@ -10,7 +10,15 @@ import UIKit
 
 class PaymentConfirmationVC: UIViewController {
 
-    override func viewDidLoad() {
+    @IBOutlet weak var eventType: UILabel!
+    
+    @IBOutlet weak var referenceNo: UILabel!
+    @IBOutlet weak var cardImage: UIImageView!
+    @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var quantity: UILabel!
+    
+     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -22,14 +30,8 @@ class PaymentConfirmationVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+  
+    @IBAction func buttonViewTicket_didPressed(_ sender: Any) {
     }
-    */
-
+    
 }

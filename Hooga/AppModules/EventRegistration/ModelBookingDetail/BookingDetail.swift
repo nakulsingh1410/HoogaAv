@@ -9,40 +9,9 @@
 import UIKit
 import ObjectMapper
 
-class BookingDetail: NSObject {
-   
-    var firstName : String!
-    var lastName  : String!
-    var gender : String!
-    var  dob :String!
-    var mobile : String!
-    var email : String!
-    var profilePic : String!
-    var address1 : String!
-    var address2 : String!
-    var city : String!
-    var postalCode  : String!
-    var ticketId  : NSInteger!
-    
-    override init() {
-        super.init()
-        self.firstName = ""
-        self.lastName  = ""
-        self.gender = ""
-        self.dob = ""
-        self.email = ""
-        self.address1 = ""
-        self.address2 = ""
-        self.profilePic = ""
-        self.city = ""
-        self.postalCode = ""
-        self.mobile = ""
-        ticketId = 0
-    }
-}
-
-
 class SaveBookingDetail: NSObject,Mappable {
+    
+    var ticketId  : Int?
     var eventid : Int?
     var tickettypeid : Int?
     var registrationid : Int?
@@ -62,7 +31,25 @@ class SaveBookingDetail: NSObject,Mappable {
     var status = "false"
     
     override init() {
-      
+      super.init()
+        self.address1 = ""
+        self.address2 = ""
+        self.city =  ""
+        self.dateofbirth = ""
+        self.email    = ""
+        self.eventid = 0
+        self.firstname = ""
+        self.gender = ""
+        self.handphone = ""
+        self.postalcode = ""
+        self.profilepic = ""
+        self.registrationid = 0
+        self.ticketId = 0
+        self.tickettype = ""
+        self.tickettypeid = 0
+        self.dateofbirth = ""
+        self.isearlybird = ""
+        
     }
     
     required init?(map: Map) {
