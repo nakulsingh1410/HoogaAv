@@ -17,19 +17,21 @@ class LuckyDrawVC: UIViewController {
     @IBOutlet weak var mobile: UILabel!
     @IBOutlet weak var lastName: UILabel!
     @IBOutlet weak var firstName: UILabel!
-    
-    
-    
-    
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configoreNavigationHeader()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Lucky Draw"
+        navHeaderView.backButtonType = .Back
     }
     
 

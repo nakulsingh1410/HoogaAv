@@ -10,18 +10,6 @@ import UIKit
 
 class QcodeTicketVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     @IBOutlet weak var qrCodeImage: UIImageView!
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var totalPrice: UILabel!
@@ -29,6 +17,24 @@ class QcodeTicketVC: UIViewController {
     @IBOutlet weak var quantity: UILabel!
     @IBOutlet weak var eventType: UILabel!
     
- 
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       configoreNavigationHeader() 
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Qcode Ticket"
+        navHeaderView.backButtonType = .Back
+    }
 
 }

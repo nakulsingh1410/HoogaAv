@@ -104,6 +104,17 @@ class NavigationManager {
         }
     }
     
+    class func luckyDraw(navigationController:UINavigationController? , evntDetail : EventRecord){
+        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "LuckyDrawVC") as? LuckyDrawVC{
+            //vcObj.eventRecord = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    
+    
+    
     class func logout(){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController{

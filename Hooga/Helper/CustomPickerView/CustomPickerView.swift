@@ -78,8 +78,9 @@ class CustomPickerView:UIView,UIPickerViewDelegate,UIPickerViewDataSource {
     }
     @IBAction func btnDoneTapped(_ sender: Any) {
         if pickerDataSource.count > 0{
+            let index = pickerView.selectedRow(inComponent: 0)
             let value = pickerDataSource[pickerView.selectedRow(inComponent: 0)]
-            customPickerViewDelegate?.didSelectPickerValueAt(title: value, index: 0,pickerType:pickerType)
+            customPickerViewDelegate?.didSelectPickerValueAt(title: value, index: index,pickerType:pickerType)
         }
         self.removeFromSuperview()
     }

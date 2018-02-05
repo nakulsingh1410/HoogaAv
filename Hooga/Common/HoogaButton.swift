@@ -22,6 +22,7 @@ class HoogaButton: UIButton {
         
         cornerRadius()
         setbackgroundColor()
+        titleColor()
     }
     
     func cornerRadius() {
@@ -35,5 +36,9 @@ class HoogaButton: UIButton {
         }
     }
     
+    func titleColor()  {
+        self.setTitleColor(kButtonTitleColor, for: .normal)
+        
+    }
     
 }

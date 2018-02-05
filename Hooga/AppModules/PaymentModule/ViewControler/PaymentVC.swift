@@ -22,13 +22,13 @@ class PaymentVC: UIViewController {
     @IBOutlet weak var lastName: HoogaTextField!
     @IBOutlet weak var firstName: HoogaTextField!
     @IBOutlet weak var collectionCreditCard: UICollectionView!
-    
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
+   
     var indexLast : IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configoreNavigationHeader() 
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +36,11 @@ class PaymentVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Payment"
+        navHeaderView.backButtonType = .Back
+    }
 
     @IBAction func buttonProceedPayment_didPressed(_ sender: Any) {
     }

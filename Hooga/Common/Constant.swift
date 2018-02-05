@@ -39,6 +39,7 @@ let kUserInfo = "userInfo"
 let kBlueColor = UIColor.colorWithHexString(hex: "#0a4a7d")
 let kBackgroundColor = UIColor.colorWithHexString(hex: "#0a4a7d")
 let kButonBackgroundColor = UIColor.colorWithHexString(hex: "#0080FF")
+let kButtonTitleColor = UIColor.white
 
 
 

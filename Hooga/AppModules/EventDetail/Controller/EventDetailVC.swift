@@ -198,11 +198,12 @@ extension EventDetailVC : UITableViewDelegate{
 extension EventDetailVC :ShareCellDelegate{
     func viewTicketDidSelected(cell: ShareCell) {
         
-        
     }
     
     func luckyDrawDidSelected(cell: ShareCell) {
-        
+        let eventRecord = EventRecord()
+        eventRecord.eventDetail = eventDetail
+        NavigationManager.luckyDraw(navigationController: navigationController, evntDetail: eventRecord)
     }
     
     func registerBttonSelected(cell: ShareCell) {
