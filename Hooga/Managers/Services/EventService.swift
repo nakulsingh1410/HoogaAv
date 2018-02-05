@@ -106,6 +106,10 @@ extension EventService{
         
         var dictParam = Dictionary<String,Any>()
         dictParam["eventid"] = eventid
+        
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+        
+        dictParam["userid"] = String(userid)
 
         Common.showHud()
         let kServerUrl = kDomain + kEvent + ServiceName.SHOW_EVENT_DETAIL.rawValue

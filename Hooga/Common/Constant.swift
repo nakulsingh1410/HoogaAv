@@ -63,6 +63,8 @@ let kSubDomain = "api/users/";
 let kEvent     = "api/events/"
 
 let kImgaeView = "http://158.140.133.89/Hooga/HoogaFiles/Assets/"
+
+let kTicketUrl = "http://158.140.133.89/Hooga/HoogaFiles/TicketTypes/"
 let kUserImageBaseUrl = "http://158.140.133.89/Hooga/HoogaFiles/users/"
 let placeHolderImageUrl = URL(string: "http://158.140.133.89/Hooga/HoogaFiles/Assets/default.png")
 

@@ -9,6 +9,19 @@
 import UIKit
 import ObjectMapper
 
+class EventRecord: NSObject {
+    
+    var eventDetail:EventDetail?
+    var ticketTypeDetails:TicketTypeDetails?
+    var availableEarlyBirdTicketsCount:Int = 0
+    var selectedTicketType : TicketType?
+    
+    override init() {
+        super.init()
+        
+    }
+}
+
 class SaveBookingDetail: NSObject,Mappable {
     
     //This is a  local  variable
@@ -18,6 +31,7 @@ class SaveBookingDetail: NSObject,Mappable {
     var tickettypeid : Int?
     var registrationid : Int?
     var tickettype : String?
+    
     var firstname : String?
     var lastname : String?
     var gender : String?
@@ -29,7 +43,8 @@ class SaveBookingDetail: NSObject,Mappable {
     var city : String?
     var postalcode : String?
     var profilepic : String?
-    var isearlybird : String?
+    
+    var isearlybird : String = "false"
     var status = "false"
     
     override init() {
@@ -95,7 +110,7 @@ class BookingDetailResponse: NSObject,Mappable {
     public func mapping(map: Map) {
         eventid            <- map["eventid"]
         tickettypeid            <- map["tickettypeid"]
-        registrationid            <- map["registrationid"]
+        registrationid        <- map["registrationid"]
         isearlybird            <- map["isearlybird"]
     }
 }

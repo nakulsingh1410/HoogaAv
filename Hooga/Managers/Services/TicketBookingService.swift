@@ -19,6 +19,8 @@ class TicketBookingService{
         
         let dictParam = Mapper<SaveBookingDetail>().toJSONArray(bookingDetails)
         
+        
+        
         Common.showHud()
         let kServerUrl = kDomain + kEvent + ServiceName.SAVE_BOOKING_DETAILS.rawValue
         Service.postRequestArrayDictionary(endPoint: kServerUrl, params: dictParam)  { (response) in

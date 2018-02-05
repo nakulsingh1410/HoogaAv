@@ -18,7 +18,7 @@ class BookingDetailVC: UIViewController {
     var detailView : BookingDetailView!
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
     var qnty = 1
-    var eventDetail : EventDetail?
+    var eventRecord : EventRecord?
     
     var arrCity = ["Singapore"]
    
@@ -28,6 +28,7 @@ class BookingDetailVC: UIViewController {
         // Do any additional setup after loading the view.
         addBookingDetailView()
         addTicketBookingView()
+        setUIData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +37,27 @@ class BookingDetailVC: UIViewController {
     }
     
 
+    func setUIData() {
+        
+        if let evnt = eventRecord?.eventDetail {
+            viewTitle.headerView.labelEventTitle.text = evnt.title
+            let date = Common.getDateString(strDate:evnt.startdate) + " - " + Common.getDateString(strDate:evnt.enddate)
+            let time = Common.getDateString(strDate:evnt.starttime) + " - " + Common.getDateString(strDate:evnt.endtime)
+             viewTitle.headerView.labelDateTime.text =  date + " | " + time
+             viewTitle.headerView.labelAddress.text = evnt.eventlocation?.trim()
+        }
+        
+        if let ticket = eventRecord?.ticketTypeDetails {
+            
+            viewTitle.headerView.labelticketType.text = "TICKET TYPE: " + ticket.tickettype!
+            viewTitle.headerView.labelQuantity.text = "QUANTITY:" + String(describing: eventRecord?.availableEarlyBirdTicketsCount)
+            
+            viewTitle.headerView.labelPrice.text = "PRICE:$ " + ticket.regularprice!
+            
+            viewTitle.headerView.labelTotalPrice.text = "TOTAL:$ " + ticket.earlybirdticketslimit!
+        }
+    }
+    
     @IBAction func buttonBack_didpressed(button:UIButton){
         self.navigationController?.popViewController(animated: true)
     }
@@ -102,11 +124,18 @@ class BookingDetailVC: UIViewController {
             Common.showAlert(message: errorMsg)
             return false
         }
+        
+        
         let model = SaveBookingDetail()
         model.ticketId   = ticket
-        model.eventid =   eventDetail?.eventid
-        model.registrationid = eventDetail?.regid
-        model.status = "true"
+        
+        model.eventid =   eventRecord?.eventDetail?.eventid
+        model.registrationid = eventRecord?.eventDetail?.regid
+        model.status = "false"
+        model.tickettype = eventRecord?.ticketTypeDetails?.tickettype
+        model.tickettypeid = eventRecord?.ticketTypeDetails?.tickettypeid
+        model.isearlybird = "false"
+
         model.address1 = detailView.address1.text
         model.address2 = detailView.address2.text
         model.firstname = detailView.firstName.text
@@ -179,7 +208,7 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
     }
     func pay(ticketView:BookingDetailView){
         
-        if details.count <= qnty {
+        if details.count == qnty {
         saveTicketDetails(arrTicket: details)
         }
     }

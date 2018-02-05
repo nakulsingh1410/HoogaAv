@@ -126,7 +126,7 @@ class TicketBookingViewController: UIViewController {
         if let ticketDetail = ticketTypeDetails{
             imageVewHeightConstraint.constant = 128
             if let path = ticketDetail.ticketimage {
-                let url = kImgaeView + path
+                let url = kTicketUrl + path
                 imgViewTicket.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){[weak self] (image, error, cacheType, url) in
                     guard let weakSelf = self else {return}
                     if image == nil {
@@ -173,7 +173,13 @@ class TicketBookingViewController: UIViewController {
             Common.showAlert(message: errorMsg)
         }else{
             if let evnt = eventDetail{
-                NavigationManager.bookingDetail(navigationController: navigationController, evntDetail: evnt)
+                
+                let record = EventRecord()
+                record.eventDetail = evnt
+                record.selectedTicketType = selectedTicketType
+                record.ticketTypeDetails = ticketTypeDetails
+                record.availableEarlyBirdTicketsCount = availableEarlyBirdTicketsCount
+        NavigationManager.bookingDetail(navigationController: navigationController, evntDetail: record)
             }
         }
     }
@@ -200,6 +206,7 @@ class TicketBookingViewController: UIViewController {
 // MARK: CustomPickerView Deleagte
 /*********************************************************************************/
 extension TicketBookingViewController:CustomPickerViewDelegate{
+    
     func dismissPickerView() {
         
     }
