@@ -56,9 +56,13 @@ class BookingDetailVC: UIViewController {
                  viewTitle.headerView.labelQuantity.text = "QUANTITY:" + String(qnt)
             }
             
-            viewTitle.headerView.labelPrice.text = "PRICE:$ " + ticket.regularprice!
+//            if let price = ticket.regularprice {
+//
+//                viewTitle.headerView.labelPrice.text = "PRICE:$ " + ticket.regularprice!
+//                let total = Float(price)! * qnty
+//                viewTitle.headerView.labelTotalPrice.text = "TOTAL:$ " + String(total)
+//            }
             
-            viewTitle.headerView.labelTotalPrice.text = "TOTAL:$ " + ticket.earlybirdticketslimit!
         }
     }
     
@@ -178,7 +182,7 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
     
     func selectedTicket(ticketView:TicketQuantityView, ticket:Int){
         
-        if (checkDetail(tId: ticket) != nil) {
+        if (checkDetail(tId: ticket - 1) != nil) {
             
         }else{
             detailView.removeFromSuperview()
@@ -188,7 +192,7 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
     
     func isTicketCompleted(ticketView:TicketQuantityView, ticket:Int) -> Bool{
         
-        if let obj =  checkDetail(tId: ticket)  {
+        if let obj =  checkDetail(tId: ticket - 1)  {
              updateDetail(detail : obj)
             return true
         }
@@ -238,8 +242,11 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
        TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
             if let _ = data{
                 // navigate to payment screen
+            
+                
             }else{
                 //error
+  NavigationManager.paymentDetail(navigationController: self.navigationController, evntDetail: EventRecord())
         }
             
         }

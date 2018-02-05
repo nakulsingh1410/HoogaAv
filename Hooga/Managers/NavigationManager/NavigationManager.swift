@@ -96,7 +96,13 @@ class NavigationManager {
         }
     }
     
-    
+    class func paymentDetail(navigationController:UINavigationController? , evntDetail : EventRecord){
+        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "PaymentVC") as? PaymentVC{
+            //vcObj.eventRecord = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
     
     class func logout(){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
