@@ -19,7 +19,7 @@ class BookingDetailVC: UIViewController {
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
     var qnty = 1
     var eventRecord : EventRecord?
-    
+    var currentPage = 0
     var arrCity = ["Singapore"]
    
     override func viewDidLoad() {
@@ -82,7 +82,7 @@ class BookingDetailVC: UIViewController {
         
         ticketQuantityView = views[0] as? TicketQuantityView
         ticketQuantityView?.delegate = self
-        ticketQuantityView?.qunatity = 5
+        ticketQuantityView?.qunatity = qnty
         ticketQuantityView?.frame = CGRect.init(x: 0, y: 0, width: viewQuantity.frame.size.width, height: viewQuantity.frame.size.height)
         viewQuantity.addSubview(ticketQuantityView!)
     }
@@ -124,7 +124,6 @@ class BookingDetailVC: UIViewController {
             Common.showAlert(message: errorMsg)
             return false
         }
-        
         
         let model = SaveBookingDetail()
         model.ticketId   = ticket
@@ -189,6 +188,7 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
              updateDetail(detail : obj)
             return true
         }
+        currentPage = ticket - 1
         return  setDetailModel(ticket: ticket - 1)
     }
     func openGenderPicker(ticketView:BookingDetailView){
@@ -209,6 +209,11 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
     func pay(ticketView:BookingDetailView){
         
         if details.count == qnty {
+            
+            if (checkDetail(tId: currentPage) == nil) {
+                let isave  =  setDetailModel(ticket: currentPage)
+            }
+          
         saveTicketDetails(arrTicket: details)
         }
     }
@@ -218,14 +223,7 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
     }
     
     func saveTicketDetails(arrTicket:[SaveBookingDetail])  {
-        
-      /*  var arrTickets = [SaveBookingDetail]()
-        arrTickets.append(SaveBookingDetail())
-        arrTickets.append(SaveBookingDetail())
-        arrTickets.append(SaveBookingDetail())
-        arrTickets.append(SaveBookingDetail())*/
-        
-        TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
+       TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
             
             if let _ = data{
                 // navigate to payment screen
