@@ -14,7 +14,7 @@ import ObjectMapper
 /***************************************************************/
 class TicketBookingService{
     static func saveTicketDetails(bookingDetails:[SaveBookingDetail],
-                             callback: @escaping (Bool,BookingDetailResponse?) -> Void){
+                             callback: @escaping (Bool,[BookingDetailResponse]?) -> Void){
         
         
         let dictParam = Mapper<SaveBookingDetail>().toJSONArray(bookingDetails)
@@ -26,8 +26,8 @@ class TicketBookingService{
         Service.postRequestArrayDictionary(endPoint: kServerUrl, params: dictParam)  { (response) in
             Common.hideHud()
             if let obj = response.result.value as? [String:Any]{
-                if let responseObj = obj["BookingDetails"] as? [String : Any]{
-                    let array = Mapper<BookingDetailResponse>().map(JSON: responseObj)
+                if let responseObj = obj["BookingDetails"] as? [[String : Any]]{
+                    let array = Mapper<BookingDetailResponse>().mapArray(JSONArray: responseObj)
                     callback(true,array);
                 }else{
                     callback(false,nil);

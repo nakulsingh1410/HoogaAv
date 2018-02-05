@@ -216,10 +216,17 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
             let isave  =  setDetailModel(ticket: currentPage)
         }
         if details.count == qnty {
-         
-        saveTicketDetails(arrTicket: details)
+            
+            saveTicketDetails(arrTicket: details)
         }else{
             Common.showAlert(message: "Please fill ticket deatils")
+            
+            if (checkDetail(tId: currentPage) == nil) {
+                let isave  =  setDetailModel(ticket: currentPage)
+            }
+            
+            saveTicketDetails(arrTicket: details)
+            
         }
     }
     func cancel(ticketView:BookingDetailView){
@@ -229,10 +236,11 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
     
     func saveTicketDetails(arrTicket:[SaveBookingDetail])  {
        TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
-            
             if let _ = data{
                 // navigate to payment screen
-            }
+            }else{
+                //error
+        }
             
         }
     }

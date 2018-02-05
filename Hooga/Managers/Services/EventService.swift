@@ -104,12 +104,10 @@ extension EventService{
     static func getEventDetail(eventid:Int,
                              callback: @escaping (Bool,EventDetail?) -> Void){
         
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
         var dictParam = Dictionary<String,Any>()
         dictParam["eventid"] = eventid
-        
-        guard  let userid = StorageModel.getUserData()?.userid else {return}
-        
-        dictParam["userid"] = String(userid)
+        dictParam["userid"] = userid
 
         Common.showHud()
         let kServerUrl = kDomain + kEvent + ServiceName.SHOW_EVENT_DETAIL.rawValue
