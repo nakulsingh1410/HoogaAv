@@ -179,6 +179,11 @@ class TicketBookingViewController: UIViewController {
                 record.selectedTicketType = selectedTicketType
                 record.ticketTypeDetails = ticketTypeDetails
                 record.availableEarlyBirdTicketsCount = availableEarlyBirdTicketsCount
+                
+                if let qnt = txtFQuantity.text{
+                    record.quantityTicket = Int(qnt)!
+                }
+               
         NavigationManager.bookingDetail(navigationController: navigationController, evntDetail: record)
             }
         }

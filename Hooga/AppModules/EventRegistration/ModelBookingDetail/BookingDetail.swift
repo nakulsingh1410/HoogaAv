@@ -15,6 +15,8 @@ class EventRecord: NSObject {
     var ticketTypeDetails:TicketTypeDetails?
     var availableEarlyBirdTicketsCount:Int = 0
     var selectedTicketType : TicketType?
+    var quantityTicket = 0
+    
     
     override init() {
         super.init()

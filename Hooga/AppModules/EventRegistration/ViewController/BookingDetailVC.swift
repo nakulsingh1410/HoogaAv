@@ -26,6 +26,8 @@ class BookingDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        qnty =  (eventRecord?.quantityTicket)!
         addBookingDetailView()
         addTicketBookingView()
         setUIData()
@@ -50,7 +52,9 @@ class BookingDetailVC: UIViewController {
         if let ticket = eventRecord?.ticketTypeDetails {
             
             viewTitle.headerView.labelticketType.text = "TICKET TYPE: " + ticket.tickettype!
-            viewTitle.headerView.labelQuantity.text = "QUANTITY:" + String(describing: eventRecord?.availableEarlyBirdTicketsCount)
+            if let qnt =  eventRecord?.quantityTicket{
+                 viewTitle.headerView.labelQuantity.text = "QUANTITY:" + String(qnt)
+            }
             
             viewTitle.headerView.labelPrice.text = "PRICE:$ " + ticket.regularprice!
             
@@ -208,13 +212,14 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
     }
     func pay(ticketView:BookingDetailView){
         
+        if (checkDetail(tId: currentPage) == nil) {
+            let isave  =  setDetailModel(ticket: currentPage)
+        }
         if details.count == qnty {
-            
-            if (checkDetail(tId: currentPage) == nil) {
-                let isave  =  setDetailModel(ticket: currentPage)
-            }
-          
+         
         saveTicketDetails(arrTicket: details)
+        }else{
+            Common.showAlert(message: "Please fill ticket deatils")
         }
     }
     func cancel(ticketView:BookingDetailView){
