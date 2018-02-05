@@ -28,7 +28,7 @@ class PaymentVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configoreNavigationHeader() 
+        configoreNavigationHeader()
     }
 
     override func didReceiveMemoryWarning() {
