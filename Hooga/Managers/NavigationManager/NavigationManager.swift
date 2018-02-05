@@ -104,10 +104,10 @@ class NavigationManager {
         }
     }
     
-    class func luckyDraw(navigationController:UINavigationController? , evntDetail : EventRecord){
+    class func luckyDraw(navigationController:UINavigationController? , evntDetail : EventDetail){
         let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "LuckyDrawVC") as? LuckyDrawVC{
-            //vcObj.eventRecord = evntDetail
+            vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }

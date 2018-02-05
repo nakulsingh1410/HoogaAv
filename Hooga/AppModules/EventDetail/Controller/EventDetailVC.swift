@@ -201,9 +201,9 @@ extension EventDetailVC :ShareCellDelegate{
     }
     
     func luckyDrawDidSelected(cell: ShareCell) {
-        let eventRecord = EventRecord()
-        eventRecord.eventDetail = eventDetail
-        NavigationManager.luckyDraw(navigationController: navigationController, evntDetail: eventRecord)
+        if let eventDetailObj = eventDetail{
+            NavigationManager.luckyDraw(navigationController: navigationController, evntDetail: eventDetailObj)
+        }
     }
     
     func registerBttonSelected(cell: ShareCell) {

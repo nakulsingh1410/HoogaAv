@@ -78,9 +78,6 @@ class TicketBookingViewController: UIViewController {
             let time = Common.getDateString(strDate:evetDtl.starttime) + " - " + Common.getDateString(strDate:eventDetail?.endtime)
             lblEventTime.text =  date + " | " + time
         }
-
-        
-        
         txtFTicketType.text = "Select Ticket"
         txtFQuantity.text = "Select Quantity"
         hideTicketInfo()
