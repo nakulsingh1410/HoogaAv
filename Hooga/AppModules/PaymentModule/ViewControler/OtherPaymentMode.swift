@@ -35,9 +35,22 @@ class OtherPaymentMode: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func buttonBack_didPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func buttonSubmit_didPressed(_ sender: Any) {
         
-        
+        if checkPayment(uId: currentUser) == nil {
+            let ok =   setPayment(uId: currentUser)
+        }
+        if bookingDetail?.bookingDetails.count == otherPayments.count {
+            
+            savePaymentDetail(arrPayment: otherPayments)
+            
+        }else{
+            
+             Common.showAlert(message: "Please fill al reqiured details")
+        }
         
     }
     
@@ -54,9 +67,11 @@ class OtherPaymentMode: UIViewController {
     }
     
     func updateUser(other:SavePaymentDetail)  {
-        otherPayment.text = other.otherPayment
+        
+        otherPayment.text         = other.otherPayment
         paymentReference.text = other.payrefNumber
-        ampountPaid.text = other.amountPaid
+        ampountPaid.text          = other.amountPaid
+        
     }
     
     func setPayment(uId:Int) -> Bool {
@@ -78,8 +93,18 @@ class OtherPaymentMode: UIViewController {
         payment.otherPayment = otherPayment.text
         payment.payrefNumber = paymentReference.text
         payment.ticketid = bookingDetail?.selectedTicketType?.tickettypeid
+       payment.paidOn       = Date().dateString
+        payment.createdOn = Date().dateString
         otherPayments.append(payment)
         return true
+    }
+    
+    func updateChanges(save:SavePaymentDetail,index:Int)  {
+        save.amountPaid = ampountPaid.text
+        save.otherPayment = otherPayment.text
+        save.payrefNumber = paymentReference.text
+        
+        otherPayments[index] = save
     }
 }
 
@@ -94,22 +119,64 @@ extension OtherPaymentMode : UICollectionViewDataSource{
         
         let user = bookingDetail!.bookingDetails[indexPath.row]
         cellUser.labelName.text = user.firstname
+        //68 114 195
         
+        if indexPath.row == currentUser {
+            cellUser.backgroundColor = UIColor.init(red: 68.0/255.0, green: 114.0/255.0, blue: 195.0/255.0, alpha: 1)
+        }else{
+            cellUser.backgroundColor = UIColor.lightGray
+        }
         return cellUser
     }
-    
-    
 }
 extension OtherPaymentMode : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let obj =  checkPayment(uId: indexPath.row) {
+            currentUser = indexPath.row
             updateUser(other: obj)
            return
         }
-       // currentUser = ticket - 1
-          //setDetailModel(ticket: ticket - 1)
+        if let obj =  checkPayment(uId: currentUser) {
+            updateChanges(save: obj, index: currentUser)
+        }
+       let isDone =    setPayment(uId: indexPath.row)
+        if isDone {
+            currentUser = indexPath.row
+            collectionView.reloadData()
+        }
     }
+    
+}
+
+
+extension OtherPaymentMode {
+    
+    func savePaymentDetail(arrPayment:[SavePaymentDetail])  {
+        TicketBookingService.paymentDetails(bookingDetails: arrPayment) { (flag, data) in
+            if let _ = data{
+                // navigate to payment screen
+               
+            }else{
+                //error
+            }
+            
+        }
+    }
+}
+extension Date {
+    var ticks: UInt64 {
+        return UInt64((self.timeIntervalSince1970 + 62_135_596_800) * 10_000_000)
+    }
+    
+    var dateString : String {
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            return  dateFormatterGet.string(from: self)
+        
+    }
+    
     
 }
