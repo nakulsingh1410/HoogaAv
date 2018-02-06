@@ -9,7 +9,9 @@
 import UIKit
 
 class QcodeTicketVC: UIViewController {
-
+    @IBOutlet weak var lblEventTitle: HoogaLabel!
+    @IBOutlet weak var lblEventLocation: HoogaLabel!
+    @IBOutlet weak var lblEventTime: HoogaLabel!
    
     @IBOutlet weak var tableView: UITableView!
 
@@ -21,7 +23,11 @@ class QcodeTicketVC: UIViewController {
         super.viewDidLoad()
        configoreNavigationHeader()
         configTableView()
-        showTicketQRCodesAPI()
+         loadDefaultValues()
+        if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
+            showTicketQRCodesAPI(registrationid:regid, eventId: eventId)
+        }
+        
     }
    
     func configTableView()  {
@@ -34,6 +40,15 @@ class QcodeTicketVC: UIViewController {
         tableView.tableFooterView = UIView()
         
     }
+    func loadDefaultValues()  {
+        if let evetDtl = eventDetail{
+            let date = Common.getDateString(strDate:evetDtl.startdate) + " - " + Common.getDateString(strDate:evetDtl.enddate)
+            let time = Common.getDateString(strDate:evetDtl.starttime) + " - " + Common.getDateString(strDate:eventDetail?.endtime)
+            lblEventTime.text =  date + " | " + time
+        }
+        
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,9 +71,8 @@ extension QcodeTicketVC:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipateTableViewCell") as? ParticipateTableViewCell{
-//            cell.loadcellData(ticketDetails: arrTicketDetails[indexPath.row])
-//            cell.participateTableViewCellDelegate = self
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "QRCodeTableViewCell") as? QRCodeTableViewCell{
+            cell.loadCellData(ticketDetails: arrQRCodes[indexPath.row])
             return cell
         }
         return UITableViewCell()
@@ -73,12 +87,17 @@ extension QcodeTicketVC:UITableViewDataSource{
 
 extension QcodeTicketVC {
     
-    func showTicketQRCodesAPI()  {
-        TicketBookingService.showTicketQRCodes(arrQRTickets: []) {[weak self] (flag, array) in
+    func showTicketQRCodesAPI(registrationid:Int,eventId:Int)  {
+        tableView.backgroundView = nil
+        
+        TicketBookingService.showTicketQRCodes(registrationid: registrationid, eventID: eventId) {[weak self] (flag, array) in
             guard let weakSelf = self else{return}
             
             if let data = array{
                 weakSelf.arrQRCodes = data
+            }else{
+                Common.EmptyMessage(message: "No data available", viewController: weakSelf, tableView: weakSelf.tableView)
+            
             }
             weakSelf.tableView.reloadData()
         }

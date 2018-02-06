@@ -13,6 +13,11 @@ class QRCodeRequestModel: NSObject,Mappable {
     var ticketid : Int?
     var eventID : Int?
     
+    init(ticketId:Int,eventId:Int) {
+        ticketid = ticketId
+        eventID = eventId
+    }
+    
     required init?(map: Map) {
     }
     

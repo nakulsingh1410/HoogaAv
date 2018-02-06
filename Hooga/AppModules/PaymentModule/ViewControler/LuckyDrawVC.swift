@@ -239,7 +239,7 @@ extension LuckyDrawVC : UICollectionViewDataSource{
         cellImage.labelDescription.text = obj.prizedescription
         
         if let path = obj.prizeimage {
-            let url = kImgaeView + path
+            let url = kPrice + path
             cellImage.imageLucky.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                 if image == nil {
                     cellImage.imageLucky.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)

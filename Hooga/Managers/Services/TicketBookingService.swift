@@ -200,28 +200,44 @@ extension  TicketBookingService{
         let kServerUrl = kDomain + kEvent + ServiceName.SHOW_MY_EVENT_LUCKY_DRAW_RESULT.rawValue
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
             Common.hideHud()
-            if let obj = response.result.value as? [[String:Any]]{
-                let array = Mapper<ShowMyEventLuckyDrawResult>().mapArray(JSONArray: obj)
-                callback(true,array);
+            if let obj = response.result.value as? [String:Any]{
+                if let responseObj = obj["LuckyDrawDetails"] as? [[String:Any]]{
+                    let array = Mapper<ShowMyEventLuckyDrawResult>().mapArray(JSONArray: responseObj)
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
                 
             }else {
                 callback(false,nil);
             }
         }
+        
+        
     }
     
-    static func showTicketQRCodes(arrQRTickets:[QRCodeRequestModel],
+    static func showTicketQRCodes(registrationid:Int,
+                                  eventID:Int,
                                   callback: @escaping (Bool,[QRCodeTickets]?) -> Void){
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+
+        var dictParam = Dictionary<String,Any>()
+        dictParam["userid"] = userid
+        dictParam["registrationid"] = registrationid
+        dictParam["eventID"] = eventID
+       
         
-        let dictParam = Mapper<QRCodeRequestModel>().toJSONArray(arrQRTickets)
         Common.showHud()
         let kServerUrl = kDomain + kEvent + ServiceName.SHOW_TICKET_QR_CODES.rawValue
-        Service.postRequestArrayDictionary(endPoint: kServerUrl, params: dictParam)  { (response) in
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
             Common.hideHud()
-            if let obj = response.result.value as? [[String:Any]]{
-                let array = Mapper<QRCodeTickets>().mapArray(JSONArray: obj)
-                callback(true,array);
-                
+            if let obj = response.result.value as? [String:Any]{
+                if let responseObj = obj["TicketQRCodes"] as? [[String:Any]]{
+                    let array = Mapper<QRCodeTickets>().mapArray(JSONArray: responseObj)
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
             }else {
                 callback(false,nil);
             }

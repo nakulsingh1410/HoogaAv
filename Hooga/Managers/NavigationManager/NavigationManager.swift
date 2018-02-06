@@ -132,10 +132,18 @@ class NavigationManager {
     
     
     class func openParticipate(navigationController:UINavigationController? , evntDetail : EventDetail){
-        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
+        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: ParticipateViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "ParticipateViewController") as? ParticipateViewController{
             vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    class func openResultParticipate(navigationController:UINavigationController? , evntDetail : EventDetail){
+        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: ParticipantResultViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "ParticipantResultViewController") as? ParticipantResultViewController{
+            vcObj.eventDetail = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+            
         }
     }
     class func QRCode(navigationController:UINavigationController? , evntDetail : EventDetail){

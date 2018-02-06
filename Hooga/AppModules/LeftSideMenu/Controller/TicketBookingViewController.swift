@@ -41,6 +41,7 @@ class TicketBookingViewController: UIViewController {
         if let eventId = eventDetail?.eventid {
             getTicketTypeAPI(eventId:eventId)
         }
+        txtFQuantity.text = ""
     }
     
     func configoreNavigationHeader()  {
@@ -155,7 +156,7 @@ class TicketBookingViewController: UIViewController {
         var message : String?
         if let value = txtFTicketType.text,value == "Select Ticket"{
             message = MessageError.TICKET_TYPE_EMPTY .rawValue
-        }else if let value = txtFQuantity.text,value == "Select Quantity" {
+        } else if let value = txtFQuantity.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
             message = MessageError.QUNATITY_TYPE_EMPTY .rawValue
         }else if let value = txtFQuantity.text , value == "0"{
             message = MessageError.QUNATITY_CANAT_ZERO .rawValue
@@ -189,13 +190,16 @@ class TicketBookingViewController: UIViewController {
     
     
     @IBAction func btnTicketTypeTappped(_ sender: Any) {
+        view.endEditing(true)
         openTicketTypePicker()
     }
     
     @IBAction func btnQuantityTapped(_ sender: Any) {
+        view.endEditing(true)
         openQuantityPicker()
     }
     @IBAction func btnProceedTapped(_ sender: Any) {
+        view.endEditing(true)
          proceed()
 //        if let evnt = eventDetail{
 //            NavigationManager.bookingDetail(navigationController: navigationController, evntDetail: evnt)

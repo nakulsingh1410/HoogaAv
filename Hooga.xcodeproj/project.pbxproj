@@ -28,6 +28,9 @@
 		307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D68202A20DD00CD105B /* QRCodeModel.swift */; };
 		307A0D70202A232300CD105B /* QRCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D6E202A232300CD105B /* QRCodeTableViewCell.swift */; };
 		307A0D71202A232300CD105B /* QRCodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307A0D6F202A232300CD105B /* QRCodeTableViewCell.xib */; };
+		307A0D74202A32C500CD105B /* FilterTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D72202A32C400CD105B /* FilterTableFooterView.swift */; };
+		307A0D75202A32C500CD105B /* FilterTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307A0D73202A32C400CD105B /* FilterTableFooterView.xib */; };
+		307A0D77202A34A100CD105B /* ParticipantResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D76202A34A100CD105B /* ParticipantResultViewController.swift */; };
 		30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C33E4C2011CF45008C5826 /* Event.storyboard */; };
 		30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */; };
 		30D77B8A200B0ED400386438 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B89200B0ED400386438 /* Images.xcassets */; };
@@ -196,6 +199,9 @@
 		307A0D68202A20DD00CD105B /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
 		307A0D6E202A232300CD105B /* QRCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTableViewCell.swift; sourceTree = "<group>"; };
 		307A0D6F202A232300CD105B /* QRCodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeTableViewCell.xib; sourceTree = "<group>"; };
+		307A0D72202A32C400CD105B /* FilterTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableFooterView.swift; sourceTree = "<group>"; };
+		307A0D73202A32C400CD105B /* FilterTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableFooterView.xib; sourceTree = "<group>"; };
+		307A0D76202A34A100CD105B /* ParticipantResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantResultViewController.swift; sourceTree = "<group>"; };
 		30C33E4C2011CF45008C5826 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOTPViewController.swift; sourceTree = "<group>"; };
 		30D77B89200B0ED400386438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -900,10 +906,13 @@
 				75E2096D2029498100817905 /* LuckyDrawCell.swift */,
 				75E2096E2029498100817905 /* LuckyDrawCell.xib */,
 				3078207A202A0E3800C085C5 /* ParticipateViewController.swift */,
+				307A0D76202A34A100CD105B /* ParticipantResultViewController.swift */,
 				3078207E202A165200C085C5 /* ParticipateTableViewCell.swift */,
 				3078207F202A165200C085C5 /* ParticipateTableViewCell.xib */,
 				307A0D6E202A232300CD105B /* QRCodeTableViewCell.swift */,
 				307A0D6F202A232300CD105B /* QRCodeTableViewCell.xib */,
+				307A0D72202A32C400CD105B /* FilterTableFooterView.swift */,
+				307A0D73202A32C400CD105B /* FilterTableFooterView.xib */,
 			);
 			path = ViewControler;
 			sourceTree = "<group>";
@@ -1054,6 +1063,7 @@
 				7530D954201F888300B9BB52 /* BannerCell.xib in Resources */,
 				30D77C07200B399800386438 /* LaunchScreen.storyboard in Resources */,
 				30EA5FB6201EF1D4009D4278 /* CustomNavHeaderView.xib in Resources */,
+				307A0D75202A32C500CD105B /* FilterTableFooterView.xib in Resources */,
 				30D77C15200CD81400386438 /* loading.gif in Resources */,
 				7574C3BE20258F510010A4F1 /* TicketQuantityView.xib in Resources */,
 				7530D95B201F888300B9BB52 /* GalleryCell.xib in Resources */,
@@ -1311,6 +1321,7 @@
 				30EA5FA7201E2892009D4278 /* MenuTitleAppearance.swift in Sources */,
 				30D77C0C200B3BBA00386438 /* LoginResponseDto.swift in Sources */,
 				7530D95A201F888300B9BB52 /* GalleryCell.swift in Sources */,
+				307A0D74202A32C500CD105B /* FilterTableFooterView.swift in Sources */,
 				30EA5F96201DCFCF009D4278 /* HoogaImageView.swift in Sources */,
 				3028D894201CC9B400922752 /* EventService.swift in Sources */,
 				30D77C09200B3AFA00386438 /* LoginService.swift in Sources */,
@@ -1337,6 +1348,7 @@
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
 				305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */,
 				30ED06192020833100D354BE /* HoogaView.swift in Sources */,
+				307A0D77202A34A100CD105B /* ParticipantResultViewController.swift in Sources */,
 				754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */,
 				7530D953201F888300B9BB52 /* BannerCell.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,

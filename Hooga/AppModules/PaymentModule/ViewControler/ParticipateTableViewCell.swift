@@ -54,8 +54,34 @@ class ParticipateTableViewCell: UITableViewCell {
         }
         lblParticiapete.textAlignment = .center
     }
+  
+    func loadParticipateResultCellData(result:ShowMyEventLuckyDrawResult)  {
+        if let string = result.firstName{
+            lblParticipantName.text = string
+        }
+        if let string = result.lastName{
+            lblParticipantName.text =  lblParticipantName.text! + " " + string
+        }
+        
+        if let string = result.luckydrawsequence, string.length > 0 {
+            lblParticiapete.text = string
+            lblParticiapete.backgroundColor = UIColor.gray
+            lblParticiapete.textColor = UIColor.white
+            btnOnPaticipate.isHidden = true
+        }else{
+            lblParticiapete.text = " Participate "
+            lblParticiapete.backgroundColor = UIColor(hex: "3F81FF")
+            lblParticiapete.textColor = UIColor.white
+            btnOnPaticipate.isHidden = false
+        }
+        lblParticiapete.textAlignment = .center
+    }
+    
     @IBAction func btnParticipateTapped(_ sender: Any) {
-        participateTableViewCellDelegate?.participateButtonTapped(cell: self)
+        if let _ = ticketDetail{
+            participateTableViewCellDelegate?.participateButtonTapped(cell: self)
+
+        }
     }
     
 }

@@ -66,6 +66,11 @@ let kEvent     = "api/events/"
 let kImgaeView = "http://158.140.133.89/Hooga/HoogaFiles/Assets/"
 
 let kTicketUrl = "http://158.140.133.89/Hooga/HoogaFiles/TicketTypes/"
+let kQRCodes = "http://158.140.133.89/Hooga/HoogaFiles/Qrcodes/"
+let kPrice = "http://158.140.133.89/Hooga/HoogaFiles/LDPrizes/"
+
+
+
 let kUserImageBaseUrl = "http://158.140.133.89/Hooga/HoogaFiles/users/"
 let placeHolderImageUrl = URL(string: "http://158.140.133.89/Hooga/HoogaFiles/Assets/default.png")
 
@@ -123,7 +128,7 @@ public enum ServiceName:String {
     case SHOW_MY_TICKET_DETAILS = "showMyTicketDetails"
     case GENEARET_LUCKY_DRAW_NO = "generateLuckyDrawNumber"
     case SHOW_MY_EVENT_LUCKY_DRAW_RESULT = "showMyEventLuckyDrawResult"
-    case SHOW_TICKET_QR_CODES = "showTicketQRCodes"
+    case SHOW_TICKET_QR_CODES = "showMyTicketQRCodes"
     
 }
 
@@ -181,7 +186,7 @@ public enum MessageError: String{
     case PHONE_INVALID          = "Please enter correct mobile number."
     case MEDICAL_EMPTY          = "Please enter medical center name."
     case TICKET_TYPE_EMPTY       = "Please select ticket type"
-    case QUNATITY_TYPE_EMPTY     = "Please select ticket quanity"
+    case QUNATITY_TYPE_EMPTY     = "Please enter quantity"
     case QUNATITY_CANAT_ZERO    = "Quantity can not be zero"
 
     case REGISTRATION_MSG       = "Registration successfull. Please activate your account from received email."

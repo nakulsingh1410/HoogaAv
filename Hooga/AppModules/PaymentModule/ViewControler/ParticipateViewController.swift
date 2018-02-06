@@ -14,7 +14,6 @@ class ParticipateViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var arrTicketDetails =  [ShowMyTicketDetails]()
-    var arrMyEventluckyDrawResult = [ShowMyEventLuckyDrawResult]()
     var generatedLuckyDrawNumber:GenerateLuckyDrawNumber?
     
     var eventDetail :EventDetail?
@@ -38,6 +37,9 @@ class ParticipateViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0
         tableView.tableFooterView = UIView()
+        tableView.dataSource = self
+        
+        
         
     }
     
@@ -50,6 +52,21 @@ class ParticipateViewController: UIViewController {
         navHeaderView.viewController = self
         navHeaderView.navBarTitle = "Lucky Draw Participates"
         navHeaderView.backButtonType = .Back
+    }
+    
+    func addFooter()  {
+        let arrAllLuckyDraw =  arrTicketDetails.filter { (ticket) -> Bool in
+            return ticket.luckydrawsequence != nil
+        }
+        if arrAllLuckyDraw.count > 0, arrAllLuckyDraw.count == arrTicketDetails.count {
+            let bundle = Bundle(for: FilterTableFooterView.self)
+            let arrNib =  bundle.loadNibNamed("FilterTableFooterView", owner: self, options: nil)
+            if let filterView = arrNib?.first as? FilterTableFooterView {
+                filterView.filterTableFooterViewDelegate = self
+                tableView.tableFooterView = filterView
+                
+            }
+        }
     }
 }
 
@@ -79,12 +96,18 @@ extension ParticipateViewController:UITableViewDataSource{
 extension ParticipateViewController {
     
     func showMyTicketDetailsAPI(eventId:Int,regId:Int)  {
+        tableView.backgroundView = nil
+
         TicketBookingService.showMyTicketDetails(eventid: eventId,registrationid:regId) {[weak self] (flag, array) in
             guard let weakSelf = self else{return}
             
             if let data = array{
                 weakSelf.arrTicketDetails = data
+                weakSelf.addFooter()
+            }else{
+                Common.EmptyMessage(message: "No data available", viewController: weakSelf, tableView: weakSelf.tableView)
             }
+       
             weakSelf.tableView.reloadData()
         }
     }
@@ -95,30 +118,19 @@ extension ParticipateViewController {
             
             if let obj = luckyDrawNo{
                 weakSelf.generatedLuckyDrawNumber = obj
-               let array = weakSelf.arrTicketDetails.map({ (ticket) -> ShowMyTicketDetails in
+                let array = weakSelf.arrTicketDetails.map({ (ticket) -> ShowMyTicketDetails in
                     if let tI = ticket.ticketid ,tI == ticketId {
                         ticket.luckydrawsequence = obj.luckydrawsequence
                     }
                     return ticket
                 })
                 weakSelf.arrTicketDetails = array
+                weakSelf.addFooter()
                 weakSelf.tableView.reloadData()
             }
         }
     }
     
-    
-    
-    
-    func showMyEventLuckyDrawResultAPI(eventId:Int,regId:Int)  {
-        TicketBookingService.showMyEventLuckyDrawResult(eventid: eventId,registrationid:regId) {[weak self] (flag, array) in
-            guard let weakSelf = self else{return}
-            
-            if let data = array{
-                weakSelf.arrMyEventluckyDrawResult = data
-            }
-        }
-    }
 }
 
 
@@ -136,4 +148,23 @@ extension ParticipateViewController:ParticipateTableViewCellDelegate {
     }
     
 }
+/********************************************************************/
+//MARK: UITableViewDelegate
+/********************************************************************/
+extension ParticipateViewController:FilterTableFooterViewDelegate{
+    
+    func applyButtonDidSelected(){
+        if let eventDetailObj = eventDetail{
+              NavigationManager.openResultParticipate(navigationController: navigationController, evntDetail: eventDetailObj)
+        }
+      
+    }
+    
+}
 
+
+extension ParticipantResultViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
