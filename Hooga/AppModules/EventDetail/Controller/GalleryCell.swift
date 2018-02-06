@@ -33,7 +33,7 @@ class GalleryCell: UITableViewCell {
     }
     
     var scrolIndex = 0
-    
+   
     static var identifier: String {
         return String(describing: self)
     }

@@ -1102,12 +1102,38 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gX-c8-jCr">
+                                                <rect key="frame" x="0.0" y="111.5" width="25" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="923-kv-zvL"/>
+                                                    <constraint firstAttribute="width" constant="25" id="KV9-4b-K8l"/>
+                                                </constraints>
+                                                <state key="normal" image="left"/>
+                                                <connections>
+                                                    <action selector="buttonLeft_didPressedWithLeft:" destination="YP0-3X-WMK" eventType="touchDragOutside" id="HWB-03-5dm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeo-0H-giU">
+                                                <rect key="frame" x="305" y="112" width="25" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="lMS-FR-hyp"/>
+                                                    <constraint firstAttribute="height" constant="40" id="xkA-Hz-CmL"/>
+                                                </constraints>
+                                                <state key="normal" image="right"/>
+                                                <connections>
+                                                    <action selector="buttonRight_didPressedWithLeft:" destination="YP0-3X-WMK" eventType="touchUpInside" id="no1-L5-rR0"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94501525163650513" green="0.94515103101730347" blue="0.94498568773269653" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="eeo-0H-giU" firstAttribute="centerY" secondItem="NQa-tJ-9st" secondAttribute="centerY" id="3au-hW-IKb"/>
+                                            <constraint firstItem="3gX-c8-jCr" firstAttribute="leading" secondItem="NQa-tJ-9st" secondAttribute="leading" id="63W-s1-AHq"/>
                                             <constraint firstItem="HnA-d7-7dr" firstAttribute="leading" secondItem="NQa-tJ-9st" secondAttribute="leading" id="BEh-KV-h39"/>
+                                            <constraint firstItem="3gX-c8-jCr" firstAttribute="centerY" secondItem="NQa-tJ-9st" secondAttribute="centerY" id="DTh-6W-yaH"/>
                                             <constraint firstAttribute="height" constant="264" id="Et6-wt-Wn7"/>
                                             <constraint firstAttribute="trailing" secondItem="HnA-d7-7dr" secondAttribute="trailing" id="Ok7-uy-Cyt"/>
+                                            <constraint firstAttribute="trailing" secondItem="eeo-0H-giU" secondAttribute="trailing" constant="5" id="Tm1-ik-nTQ"/>
                                             <constraint firstItem="HnA-d7-7dr" firstAttribute="top" secondItem="NQa-tJ-9st" secondAttribute="top" id="n67-AQ-rnc"/>
                                             <constraint firstAttribute="bottom" secondItem="HnA-d7-7dr" secondAttribute="bottom" id="tob-As-vn3"/>
                                         </constraints>
@@ -1154,6 +1180,8 @@
                     </view>
                     <connections>
                         <outlet property="btnParticipate" destination="yZs-KF-phz" id="KCd-11-LBc"/>
+                        <outlet property="buttonLeft" destination="3gX-c8-jCr" id="u8J-Nw-eES"/>
+                        <outlet property="buttonRight" destination="eeo-0H-giU" id="RaU-xq-b1o"/>
                         <outlet property="collectionView" destination="HnA-d7-7dr" id="JJW-yH-Fny"/>
                         <outlet property="lblConductedBy" destination="p2Z-2x-1IW" id="XTE-Yw-G3C"/>
                         <outlet property="lblConductedOn" destination="Omd-6e-tkJ" id="tSf-ML-aTE"/>
@@ -1568,5 +1596,7 @@
     <resources>
         <image name="back" width="16" height="16"/>
         <image name="downArraow" width="30" height="30"/>
+        <image name="left" width="25" height="41"/>
+        <image name="right" width="25" height="40"/>
     </resources>
 </document>

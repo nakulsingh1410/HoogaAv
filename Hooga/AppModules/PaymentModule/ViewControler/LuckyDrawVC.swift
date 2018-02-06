@@ -11,6 +11,8 @@ import UIKit
 class LuckyDrawVC: UIViewController {
 
     
+    @IBOutlet weak var buttonLeft : UIButton!
+    @IBOutlet weak var buttonRight : UIButton!
     @IBOutlet weak var lblEventTitle: HoogaLabel!
     @IBOutlet weak var lblEventLocation: HoogaLabel!
     @IBOutlet weak var lblEventTime: HoogaLabel!
@@ -36,14 +38,19 @@ class LuckyDrawVC: UIViewController {
     var arrShowMyEventLuckyDrawPrizes = [ShowMyEventLuckyDrawPrizes]()
     var eventDetail :EventDetail?
     
+    var scrolIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonLeft.isHidden = true
+        buttonRight.isHidden = true
          btnParticipate.isHidden = true
         configoreNavigationHeader()
         loadDefaultValues()
         guard let evntdetail = eventDetail else{return}
          showMyEventLuckyDrawStatusAPI(eventId: evntdetail.eventid!)
          showMyEventLuckyDrawAPI(eventId: evntdetail.eventid!)
+        configCollectionView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -119,6 +126,11 @@ extension LuckyDrawVC {
             if let showMyEventLuckyDrawPrizes = array{
                 weakSelf.arrShowMyEventLuckyDrawPrizes = showMyEventLuckyDrawPrizes
                 // use collection view reload
+              
+                if                 weakSelf.arrShowMyEventLuckyDrawPrizes.count > 1 {
+                    weakSelf.buttonRight.isHidden = false
+                }
+                weakSelf.collectionView.reloadData()
             }
         }
     }
@@ -134,3 +146,120 @@ extension LuckyDrawVC {
     }
 }
 
+
+extension LuckyDrawVC {
+    
+    var flowLayout: UICollectionViewFlowLayout {
+        let _flowLayout = UICollectionViewFlowLayout()
+        
+        // edit properties here
+        _flowLayout.scrollDirection = .horizontal
+        
+        _flowLayout.minimumInteritemSpacing = 0;
+        _flowLayout.minimumLineSpacing        = 3;
+        _flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        // edit properties here
+        let width = UIScreen.main.bounds.size.width - 40 // / 2.5
+        _flowLayout.itemSize = CGSize(width: width, height: collectionView.frame.size.height)
+        
+        return _flowLayout
+    }
+    
+    func configCollectionView()  {
+        
+        
+        collectionView.collectionViewLayout = flowLayout
+        
+        collectionView?.register(LuckyDrawCell.nib, forCellWithReuseIdentifier: LuckyDrawCell.identifier)
+        collectionView?.showsHorizontalScrollIndicator = false
+        collectionView?.backgroundColor = UIColor.clear
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
+        collectionView?.isPagingEnabled = true
+        collectionView?.reloadData()
+        collectionView?.isScrollEnabled = false
+        ///////////////////////////////////
+        
+    }
+    
+    @IBAction func buttonLeft_didPressed(left:UIButton){
+        
+        let indxPaath = collectionView.indexPathsForVisibleItems
+        
+        if indxPaath.count < 2 {
+            let  index = indxPaath[0].row
+            scrolIndex = index - 1
+            if scrolIndex >= 0 {
+                collectionView?.isScrollEnabled = true
+                collectionView?.scrollToItem(at: IndexPath.init(row: scrolIndex, section: 0), at: .centeredHorizontally, animated: true)
+                buttonRight.isHidden = false
+                if  scrolIndex == 0 {
+                    buttonLeft.isHidden = true
+                }
+            }
+            collectionView?.isScrollEnabled = false
+        }
+        
+    }
+    
+    @IBAction func buttonRight_didPressed(left:UIButton){
+        
+        let indxPaath = collectionView.indexPathsForVisibleItems
+        if indxPaath.count < 2 {
+            let  index = indxPaath[0].row
+            scrolIndex = index + 1
+            if scrolIndex <  arrShowMyEventLuckyDrawPrizes.count {
+                collectionView?.isScrollEnabled = true
+                collectionView?.scrollToItem(at: IndexPath.init(row: scrolIndex, section: 0), at: .centeredHorizontally, animated: true)
+                self.buttonLeft.isHidden = false
+                let cnt = arrShowMyEventLuckyDrawPrizes.count - 1
+                if  scrolIndex == cnt  {
+                    self.buttonRight.isHidden = true
+                }
+            }
+        }
+        collectionView?.isScrollEnabled = false
+    }
+}
+
+
+extension LuckyDrawVC : UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrShowMyEventLuckyDrawPrizes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellImage = collectionView.dequeueReusableCell(withReuseIdentifier: LuckyDrawCell.identifier, for: indexPath) as! LuckyDrawCell
+        let obj = arrShowMyEventLuckyDrawPrizes[indexPath.row]
+        cellImage.labelPrice.text = obj.prizeworth
+        cellImage.labelTitle.text = obj.prizetitle
+        cellImage.labelDescription.text = obj.prizedescription
+        
+        if let path = obj.prizeimage {
+            let url = kImgaeView + path
+            cellImage.imageLucky.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
+                if image == nil {
+                    cellImage.imageLucky.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                }
+            }
+        }else{
+            cellImage.imageLucky.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+        }
+
+        return cellImage
+    }
+}
+
+extension LuckyDrawVC : UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+        
+        let width = UIScreen.main.bounds.size.width - 16//(collectionView.frame.size.width / 3) + 10
+        return CGSize(width:width,height:collectionView.frame.size.height)
+        
+    }
+}
