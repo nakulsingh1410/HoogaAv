@@ -118,6 +118,10 @@ public enum ServiceName:String {
     case  SHOW_EVENT_LUCKY_DRAW_PRIZES = "showMyEventLuckyDrawPrizes"
    case SHOW_MY_EVENT_LUCKY_DRAW = "showMyEventLuckyDraw"
     
+     case SAVE_OTHER_PAYMENT_DETAIL = "saveOtherPaymentDetails"
+    
+    
+    
 }
 
 

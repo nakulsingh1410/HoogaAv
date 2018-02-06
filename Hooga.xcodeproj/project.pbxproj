@@ -132,6 +132,9 @@
 		75DB799A20263D8500D4B1A6 /* CreditCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DB799920263D8500D4B1A6 /* CreditCardCell.swift */; };
 		75DB799C202641B500D4B1A6 /* QcodeTicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DB799B202641B500D4B1A6 /* QcodeTicketVC.swift */; };
 		75DB799E2026432E00D4B1A6 /* LuckyDrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DB799D2026432E00D4B1A6 /* LuckyDrawVC.swift */; };
+		75E2096420290EB600817905 /* OtherPaymentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2096320290EB600817905 /* OtherPaymentMode.swift */; };
+		75E2096620291C2B00817905 /* OtherPayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2096520291C2B00817905 /* OtherPayCell.swift */; };
+		75E2096A20292EA900817905 /* SavePaymentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2096920292EA900817905 /* SavePaymentDetail.swift */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
 /* End PBXBuildFile section */
@@ -287,6 +290,9 @@
 		75DB799920263D8500D4B1A6 /* CreditCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardCell.swift; sourceTree = "<group>"; };
 		75DB799B202641B500D4B1A6 /* QcodeTicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QcodeTicketVC.swift; sourceTree = "<group>"; };
 		75DB799D2026432E00D4B1A6 /* LuckyDrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyDrawVC.swift; sourceTree = "<group>"; };
+		75E2096320290EB600817905 /* OtherPaymentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPaymentMode.swift; sourceTree = "<group>"; };
+		75E2096520291C2B00817905 /* OtherPayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPayCell.swift; sourceTree = "<group>"; };
+		75E2096920292EA900817905 /* SavePaymentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePaymentDetail.swift; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A2B191A578EA47A70B75B6 /* Pods-HoogaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoogaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoogaTests/Pods-HoogaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -773,6 +779,7 @@
 			children = (
 				30FEA2892028C8D5001A38C4 /* ShowMyEventLuckyDraw.swift */,
 				30FEA28D2028CDF7001A38C4 /* ShowMyEventLuckyDrawPrizes.swift */,
+				75E2096920292EA900817905 /* SavePaymentDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -865,6 +872,8 @@
 				75DB799B202641B500D4B1A6 /* QcodeTicketVC.swift */,
 				75DB799D2026432E00D4B1A6 /* LuckyDrawVC.swift */,
 				75DB799920263D8500D4B1A6 /* CreditCardCell.swift */,
+				75E2096320290EB600817905 /* OtherPaymentMode.swift */,
+				75E2096520291C2B00817905 /* OtherPayCell.swift */,
 			);
 			path = ViewControler;
 			sourceTree = "<group>";
@@ -1218,6 +1227,7 @@
 				30ED061D2020866F00D354BE /* LeftMenuButton.swift in Sources */,
 				7530D958201F888300B9BB52 /* EventTitleCell.swift in Sources */,
 				7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */,
+				75E2096620291C2B00817905 /* OtherPayCell.swift in Sources */,
 				7574C3CC2025E7360010A4F1 /* QuantityCell.swift in Sources */,
 				30D77BFE200B37C400386438 /* LoginViewController.swift in Sources */,
 				7574C3C72025D8570010A4F1 /* DetailHeaderView.swift in Sources */,
@@ -1275,10 +1285,12 @@
 				30EA5FB4201EF1C5009D4278 /* CustomNavHeaderView.swift in Sources */,
 				75DB799A20263D8500D4B1A6 /* CreditCardCell.swift in Sources */,
 				75959D9E2022B0EE00DC307A /* HLFont.swift in Sources */,
+				75E2096A20292EA900817905 /* SavePaymentDetail.swift in Sources */,
 				30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */,
 				30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */,
 				30D77BE0200B361F00386438 /* Constarints.swift in Sources */,
 				30D77BD8200B361400386438 /* UIImage.swift in Sources */,
+				75E2096420290EB600817905 /* OtherPaymentMode.swift in Sources */,
 				7530D95C201F888300B9BB52 /* GalleryImageCell.swift in Sources */,
 				30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */,
 				30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */,

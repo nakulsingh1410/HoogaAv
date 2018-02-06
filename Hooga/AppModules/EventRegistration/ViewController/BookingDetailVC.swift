@@ -242,7 +242,7 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
        TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
             if let _ = data{
                 // navigate to payment screen
-                NavigationManager.paymentDetail(navigationController: self.navigationController, evntDetail: EventRecord())
+                self.eventRecord?.bookingDetails =  self.details; NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!)
             }else{
                 //error
         }
