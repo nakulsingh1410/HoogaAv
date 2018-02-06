@@ -21,6 +21,10 @@ class ThanksVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func buttonHome_didPressed(sender : UIButton){
+        
+        NavigationManager.navigateToEvent(navigationController: self.navigationController)
+    }
 
     /*
     // MARK: - Navigation

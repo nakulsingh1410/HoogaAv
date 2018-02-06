@@ -113,6 +113,14 @@ class NavigationManager {
         }
     }
     
+    class func thanksController(navigationController:UINavigationController? , evntDetail : EventRecord){
+        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "ThanksVC") as? ThanksVC{
+            //vcObj.bookingDetail = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
     class func luckyDraw(navigationController:UINavigationController? , evntDetail : EventDetail){
         let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "LuckyDrawVC") as? LuckyDrawVC{

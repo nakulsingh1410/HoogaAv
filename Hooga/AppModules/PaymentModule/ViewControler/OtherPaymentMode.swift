@@ -156,7 +156,7 @@ extension OtherPaymentMode {
     func savePaymentDetail(arrPayment:[SavePaymentDetail])  {
         TicketBookingService.paymentDetails(bookingDetails: arrPayment) { (flag, data) in
             if let _ = data{
-                // navigate to payment screen
+                NavigationManager.thanksController(navigationController: self.navigationController, evntDetail: EventRecord())
                
             }else{
                 //error

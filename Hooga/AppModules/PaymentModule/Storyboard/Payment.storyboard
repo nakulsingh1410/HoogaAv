@@ -1086,17 +1086,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="264"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yax-Fm-8yF">
-                                                    <size key="itemSize" width="50" height="50"/>
+                                                    <size key="itemSize" width="335" height="257"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2tf-kL-GLg">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="257"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="257"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </view>
                                                     </collectionViewCell>
@@ -1513,19 +1513,56 @@
             </objects>
             <point key="canvasLocation" x="2767.1999999999998" y="85.907046476761622"/>
         </scene>
-        <!--View Controller-->
+        <!--ThanksVC-->
         <scene sceneID="hRp-Qk-Qnk">
             <objects>
-                <viewController id="zgi-VC-75C" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="I9p-n6-TEE" customClass="HoogaView" customModule="Hooga" customModuleProvider="target">
+                <viewController storyboardIdentifier="ThanksVC" id="zgi-VC-75C" customClass="ThanksVC" customModule="Hooga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I9p-n6-TEE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwJ-Hm-mfp" customClass="HoogaView" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uH-Om-1hz" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="88" y="578" width="199" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="199" id="7Cz-0v-Gax"/>
+                                    <constraint firstAttribute="height" constant="49" id="FOt-1q-Z2D"/>
+                                </constraints>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="buttonHome_didPressedWithSender:" destination="zgi-VC-75C" eventType="touchUpInside" id="4wf-pU-r7N"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you,Your payment has been processed successfully." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2g-xb-yBl">
+                                <rect key="frame" x="22" y="282" width="331" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="331" id="3Bi-Xp-Afy"/>
+                                    <constraint firstAttribute="height" constant="104" id="sOk-OZ-qae"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="BwJ-Hm-mfp" firstAttribute="leading" secondItem="khY-Fm-4K7" secondAttribute="leading" id="AHW-gI-b8O"/>
+                            <constraint firstItem="khY-Fm-4K7" firstAttribute="bottom" secondItem="7uH-Om-1hz" secondAttribute="bottom" constant="40" id="WdN-E9-EgG"/>
+                            <constraint firstItem="P2g-xb-yBl" firstAttribute="centerY" secondItem="I9p-n6-TEE" secondAttribute="centerY" id="cJT-YU-uSY"/>
+                            <constraint firstItem="BwJ-Hm-mfp" firstAttribute="trailing" secondItem="khY-Fm-4K7" secondAttribute="trailing" id="d5c-LS-LFn"/>
+                            <constraint firstItem="BwJ-Hm-mfp" firstAttribute="top" secondItem="I9p-n6-TEE" secondAttribute="top" id="gM6-ER-y6D"/>
+                            <constraint firstItem="7uH-Om-1hz" firstAttribute="centerX" secondItem="I9p-n6-TEE" secondAttribute="centerX" id="nPc-bD-G3w"/>
+                            <constraint firstItem="BwJ-Hm-mfp" firstAttribute="bottom" secondItem="khY-Fm-4K7" secondAttribute="bottom" id="sae-dv-QEq"/>
+                            <constraint firstItem="P2g-xb-yBl" firstAttribute="centerX" secondItem="I9p-n6-TEE" secondAttribute="centerX" id="wTm-Nm-Jxj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="khY-Fm-4K7"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLE-hE-s1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3463" y="86"/>
+            <point key="canvasLocation" x="3463.1999999999998" y="85.907046476761622"/>
         </scene>
     </scenes>
     <resources>
