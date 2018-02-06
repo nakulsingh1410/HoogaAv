@@ -254,6 +254,7 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
 extension BookingDetailVC {
     
     private func openGenderPicker(){
+        view.endEditing(true)
         if let picker = CustomPickerView.loadPickerView(){
             picker.frame = view.frame
             picker.pickerType = .gendePicker
@@ -263,6 +264,7 @@ extension BookingDetailVC {
         }
     }
     private func openCityPicker(){
+         view.endEditing(true)
         if let picker = CustomPickerView.loadPickerView(){
             picker.frame = view.frame
             picker.pickerType = .cityPicker
@@ -272,6 +274,7 @@ extension BookingDetailVC {
         }
     }
     private func openDatePicker(){
+         view.endEditing(true)
         if let picker = CustomDatePicker.loadDatePickerView(){
             picker.frame = view.frame
             picker.customDatePickerDelegate = self
@@ -282,6 +285,7 @@ extension BookingDetailVC {
     
     
     private func pickProfileImage(){
+         view.endEditing(true)
         let imageController = OpenImagePickerViewController()
         imageController.configure {[weak self]  (flag, image) in
             guard let weakSelf = self else {return}

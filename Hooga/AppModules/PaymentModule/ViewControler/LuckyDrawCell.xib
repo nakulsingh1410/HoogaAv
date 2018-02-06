@@ -22,10 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="224" height="128"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZA-zo-5Os" customClass="GradientView" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="46" width="224" height="82"/>
+                        <rect key="frame" x="0.0" y="0.0" width="224" height="128"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvy-FY-66p">
-                                <rect key="frame" x="8" y="6" width="208" height="20"/>
+                                <rect key="frame" x="8" y="68" width="208" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="c2v-R7-qYB"/>
                                 </constraints>
@@ -33,14 +33,14 @@
                                 <color key="textColor" red="0.042710192500000001" green="0.15767458079999999" blue="0.27639275790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-iS-DOA">
-                                <rect key="frame" x="8" y="28" width="208" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-iS-DOA">
+                                <rect key="frame" x="8" y="90" width="208" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" red="0.042710192500000001" green="0.15767458079999999" blue="0.27639275790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q2-ir-xSZ">
-                                <rect key="frame" x="8" y="60" width="208" height="20"/>
+                                <rect key="frame" x="8" y="106" width="208" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="aiF-cs-dTx"/>
                                 </constraints>
@@ -56,7 +56,6 @@
                             <constraint firstAttribute="bottom" secondItem="5Q2-ir-xSZ" secondAttribute="bottom" constant="2" id="2X1-o5-dZs"/>
                             <constraint firstAttribute="bottom" secondItem="j7A-iS-DOA" secondAttribute="bottom" constant="21" id="3ca-Vy-irZ"/>
                             <constraint firstItem="yvy-FY-66p" firstAttribute="leading" secondItem="oZA-zo-5Os" secondAttribute="leading" constant="8" id="CkT-MP-RAh"/>
-                            <constraint firstItem="yvy-FY-66p" firstAttribute="top" secondItem="oZA-zo-5Os" secondAttribute="top" constant="6" id="Jty-iU-L09"/>
                             <constraint firstItem="j7A-iS-DOA" firstAttribute="top" secondItem="yvy-FY-66p" secondAttribute="bottom" constant="2" id="QUR-WG-s1I"/>
                             <constraint firstItem="j7A-iS-DOA" firstAttribute="leading" secondItem="oZA-zo-5Os" secondAttribute="leading" constant="8" id="RkU-ey-kdM"/>
                             <constraint firstItem="5Q2-ir-xSZ" firstAttribute="leading" secondItem="oZA-zo-5Os" secondAttribute="leading" constant="8" id="TCN-Kq-KdK"/>
@@ -82,7 +81,7 @@
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Z9K-Hw-VxN" secondAttribute="bottom" id="0Cb-t7-0MM"/>
-                <constraint firstItem="oZA-zo-5Os" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="46" id="1Pg-lv-HSU"/>
+                <constraint firstItem="oZA-zo-5Os" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1Pg-lv-HSU"/>
                 <constraint firstAttribute="bottom" secondItem="oZA-zo-5Os" secondAttribute="bottom" id="6cA-Sm-5ib"/>
                 <constraint firstItem="Z9K-Hw-VxN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="D8r-83-9b7"/>
                 <constraint firstAttribute="trailing" secondItem="oZA-zo-5Os" secondAttribute="trailing" id="TYH-lF-tSE"/>
