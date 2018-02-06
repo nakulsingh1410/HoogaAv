@@ -97,6 +97,9 @@ class LuckyDrawVC: UIViewController {
     
 
     @IBAction func buttonParticipat_didPressed(_ sender: Any) {
+        if let eventDetailObj = eventDetail{
+            NavigationManager.openParticipate(navigationController: navigationController, evntDetail: eventDetailObj)
+        }
     }
    
 

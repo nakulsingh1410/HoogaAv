@@ -120,7 +120,10 @@ public enum ServiceName:String {
     
      case SAVE_OTHER_PAYMENT_DETAIL = "saveOtherPaymentDetails"
     
-    
+    case SHOW_MY_TICKET_DETAILS = "showMyTicketDetails"
+    case GENEARET_LUCKY_DRAW_NO = "generateLuckyDrawNumber"
+    case SHOW_MY_EVENT_LUCKY_DRAW_RESULT = "showMyEventLuckyDrawResult"
+    case SHOW_TICKET_QR_CODES = "showTicketQRCodes"
     
 }
 

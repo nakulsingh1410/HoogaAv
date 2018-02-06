@@ -56,12 +56,11 @@ class BookingDetailVC: UIViewController {
                  viewTitle.headerView.labelQuantity.text = "QUANTITY:" + String(qnt)
             }
             
-//            if let price = ticket.regularprice {
-//
-//                viewTitle.headerView.labelPrice.text = "PRICE:$ " + ticket.regularprice!
-//                let total = Float(price)! * qnty
-//                viewTitle.headerView.labelTotalPrice.text = "TOTAL:$ " + String(total)
-//            }
+            if let price = ticket.regularprice {
+                viewTitle.headerView.labelPrice.text = "PRICE:$ " + price
+                let total = Float(price)! * Float(qnty)
+                viewTitle.headerView.labelTotalPrice.text = "TOTAL:$ " + String(total)
+            }
             
         }
     }

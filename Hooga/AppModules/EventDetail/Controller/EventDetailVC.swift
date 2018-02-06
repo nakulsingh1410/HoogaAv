@@ -197,6 +197,9 @@ extension EventDetailVC : UITableViewDelegate{
 
 extension EventDetailVC :ShareCellDelegate{
     func viewTicketDidSelected(cell: ShareCell) {
+        if let eventDetailObj = eventDetail{
+            NavigationManager.QRCode(navigationController: navigationController, evntDetail: eventDetailObj)
+        }
         
     }
     

@@ -21,6 +21,13 @@
 		305471DE202092650009A8EC /* OpenImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471DD202092650009A8EC /* OpenImagePickerViewController.swift */; };
 		305471ED20213B3B0009A8EC /* EventRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305471EC20213B3B0009A8EC /* EventRegistration.storyboard */; };
 		305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */; };
+		3078207B202A0E3800C085C5 /* ParticipateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207A202A0E3800C085C5 /* ParticipateViewController.swift */; };
+		3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207C202A110A00C085C5 /* ParticipateModel.swift */; };
+		30782080202A165200C085C5 /* ParticipateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207E202A165200C085C5 /* ParticipateTableViewCell.swift */; };
+		30782081202A165200C085C5 /* ParticipateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3078207F202A165200C085C5 /* ParticipateTableViewCell.xib */; };
+		307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D68202A20DD00CD105B /* QRCodeModel.swift */; };
+		307A0D70202A232300CD105B /* QRCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D6E202A232300CD105B /* QRCodeTableViewCell.swift */; };
+		307A0D71202A232300CD105B /* QRCodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307A0D6F202A232300CD105B /* QRCodeTableViewCell.xib */; };
 		30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C33E4C2011CF45008C5826 /* Event.storyboard */; };
 		30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */; };
 		30D77B8A200B0ED400386438 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B89200B0ED400386438 /* Images.xcassets */; };
@@ -182,6 +189,13 @@
 		305471DD202092650009A8EC /* OpenImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenImagePickerViewController.swift; sourceTree = "<group>"; };
 		305471EC20213B3B0009A8EC /* EventRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventRegistration.storyboard; sourceTree = "<group>"; };
 		305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegisterationViewController.swift; sourceTree = "<group>"; };
+		3078207A202A0E3800C085C5 /* ParticipateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateViewController.swift; sourceTree = "<group>"; };
+		3078207C202A110A00C085C5 /* ParticipateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateModel.swift; sourceTree = "<group>"; };
+		3078207E202A165200C085C5 /* ParticipateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateTableViewCell.swift; sourceTree = "<group>"; };
+		3078207F202A165200C085C5 /* ParticipateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipateTableViewCell.xib; sourceTree = "<group>"; };
+		307A0D68202A20DD00CD105B /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
+		307A0D6E202A232300CD105B /* QRCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTableViewCell.swift; sourceTree = "<group>"; };
+		307A0D6F202A232300CD105B /* QRCodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeTableViewCell.xib; sourceTree = "<group>"; };
 		30C33E4C2011CF45008C5826 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOTPViewController.swift; sourceTree = "<group>"; };
 		30D77B89200B0ED400386438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -786,6 +800,8 @@
 				30FEA2892028C8D5001A38C4 /* ShowMyEventLuckyDraw.swift */,
 				30FEA28D2028CDF7001A38C4 /* ShowMyEventLuckyDrawPrizes.swift */,
 				75E2096920292EA900817905 /* SavePaymentDetail.swift */,
+				3078207C202A110A00C085C5 /* ParticipateModel.swift */,
+				307A0D68202A20DD00CD105B /* QRCodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -883,6 +899,11 @@
 				75E2096B20293FD700817905 /* ThanksVC.swift */,
 				75E2096D2029498100817905 /* LuckyDrawCell.swift */,
 				75E2096E2029498100817905 /* LuckyDrawCell.xib */,
+				3078207A202A0E3800C085C5 /* ParticipateViewController.swift */,
+				3078207E202A165200C085C5 /* ParticipateTableViewCell.swift */,
+				3078207F202A165200C085C5 /* ParticipateTableViewCell.xib */,
+				307A0D6E202A232300CD105B /* QRCodeTableViewCell.swift */,
+				307A0D6F202A232300CD105B /* QRCodeTableViewCell.xib */,
 			);
 			path = ViewControler;
 			sourceTree = "<group>";
@@ -1019,6 +1040,7 @@
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
 				30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */,
 				7574C3D920262E080010A4F1 /* Payment.storyboard in Resources */,
+				30782081202A165200C085C5 /* ParticipateTableViewCell.xib in Resources */,
 				7574C3C52025D8350010A4F1 /* DetailHeaderView.xib in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
 				30EA5F9B201DE0AD009D4278 /* LeftSideMenu.storyboard in Resources */,
@@ -1039,6 +1061,7 @@
 				30D77BF4200B36B400386438 /* DataTableViewCell.xib in Resources */,
 				301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */,
 				30D77BF0200B36B400386438 /* SlideMenu.storyboard in Resources */,
+				307A0D71202A232300CD105B /* QRCodeTableViewCell.xib in Resources */,
 				7530D95F201F888300B9BB52 /* ShareCell.xib in Resources */,
 				30D77BDE200B361400386438 /* HudView.xib in Resources */,
 				30EA5F8B201D82B2009D4278 /* CustomDatePicker.xib in Resources */,
@@ -1239,6 +1262,7 @@
 				7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */,
 				75E2096620291C2B00817905 /* OtherPayCell.swift in Sources */,
 				7574C3CC2025E7360010A4F1 /* QuantityCell.swift in Sources */,
+				307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */,
 				30D77BFE200B37C400386438 /* LoginViewController.swift in Sources */,
 				7574C3C72025D8570010A4F1 /* DetailHeaderView.swift in Sources */,
 				30D77BF3200B36B400386438 /* DataTableViewCell.swift in Sources */,
@@ -1248,11 +1272,13 @@
 				30D77BD7200B361400386438 /* UIColor.swift in Sources */,
 				30FEA28E2028CDF7001A38C4 /* ShowMyEventLuckyDrawPrizes.swift in Sources */,
 				30D77BFD200B37C400386438 /* ForgotPasswordViewController.swift in Sources */,
+				30782080202A165200C085C5 /* ParticipateTableViewCell.swift in Sources */,
 				30D77BDD200B361400386438 /* HudView.swift in Sources */,
 				75E2096C20293FD700817905 /* ThanksVC.swift in Sources */,
 				75DB799E2026432E00D4B1A6 /* LuckyDrawVC.swift in Sources */,
 				30EA5FA6201E2892009D4278 /* GrediantView.swift in Sources */,
 				30D77BC2200B352900386438 /* Common.swift in Sources */,
+				3078207B202A0E3800C085C5 /* ParticipateViewController.swift in Sources */,
 				301B86702007452900DA7855 /* AppDelegate.swift in Sources */,
 				30D77BDB200B361400386438 /* UIView.swift in Sources */,
 				30EA5FAF201EF021009D4278 /* MyEventViewController.swift in Sources */,
@@ -1276,6 +1302,7 @@
 				7574C3BA2025788D0010A4F1 /* BookingDetailView.swift in Sources */,
 				30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */,
 				30EA5FA8201E2892009D4278 /* AMHorizontalMenu.swift in Sources */,
+				307A0D70202A232300CD105B /* QRCodeTableViewCell.swift in Sources */,
 				7574C3C32025D4C70010A4F1 /* BookingDetail.swift in Sources */,
 				30D77BD9200B361400386438 /* UIImageView.swift in Sources */,
 				30D77B9F200B2AC900386438 /* HoogaButton.swift in Sources */,
@@ -1313,6 +1340,7 @@
 				754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */,
 				7530D953201F888300B9BB52 /* BannerCell.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,
+				3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */,
 				301BF2222023888C0099ADD9 /* MyEventModel.swift in Sources */,
 				30D77C212010891900386438 /* EventListViewController.swift in Sources */,
 				30EA5F92201D9B3B009D4278 /* NavigationManager.swift in Sources */,

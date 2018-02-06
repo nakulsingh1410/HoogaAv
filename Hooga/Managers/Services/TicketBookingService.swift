@@ -14,7 +14,7 @@ import ObjectMapper
 /***************************************************************/
 class TicketBookingService{
     static func saveTicketDetails(bookingDetails:[SaveBookingDetail],
-                             callback: @escaping (Bool,[BookingDetailResponse]?) -> Void){
+                                  callback: @escaping (Bool,[BookingDetailResponse]?) -> Void){
         
         
         let dictParam = Mapper<SaveBookingDetail>().toJSONArray(bookingDetails)
@@ -40,7 +40,7 @@ class TicketBookingService{
     
     
     static func paymentDetails(bookingDetails:[SavePaymentDetail],
-                                  callback: @escaping (Bool,[SavePaymentResponse]?) -> Void){
+                               callback: @escaping (Bool,[SavePaymentResponse]?) -> Void){
         
         
         let dictParam = Mapper<SavePaymentDetail>().toJSONArray(bookingDetails)
@@ -63,14 +63,14 @@ class TicketBookingService{
             }
         }
     }
-
+    
 }
 /***************************************************************/
 //MARK: Lucky Draw
 /***************************************************************/
 extension  TicketBookingService{
     static func showMyEventLuckyDrawStatus(eventid:Int,
-                                  callback: @escaping (Bool,String?) -> Void){
+                                           callback: @escaping (Bool,String?) -> Void){
         
         
         var dictParam = Dictionary<String,Any>()
@@ -92,7 +92,7 @@ extension  TicketBookingService{
         }
     }
     static func showMyEventLuckyDrawPrizes(eventid:Int,
-                                     callback: @escaping (Bool,[ShowMyEventLuckyDrawPrizes]?) -> Void){
+                                           callback: @escaping (Bool,[ShowMyEventLuckyDrawPrizes]?) -> Void){
         
         
         var dictParam = Dictionary<String,Any>()
@@ -109,7 +109,7 @@ extension  TicketBookingService{
                 }else{
                     callback(false,nil);
                 }
-
+                
             }else {
                 callback(false,nil);
             }
@@ -128,8 +128,100 @@ extension  TicketBookingService{
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
             Common.hideHud()
             if let obj = response.result.value as? [String:Any]{
-                    let model = Mapper<ShowMyEventLuckyDraw>().map(JSON: obj)
-                    callback(true,model);
+                let model = Mapper<ShowMyEventLuckyDraw>().map(JSON: obj)
+                callback(true,model);
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+    static func showMyTicketDetails(eventid:Int,
+                                    registrationid:Int,
+                                    callback: @escaping (Bool,[ShowMyTicketDetails]?) -> Void){
+        
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventID"] = eventid
+        dictParam["registrationid"] = registrationid
+        
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_MY_TICKET_DETAILS.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let responseObj = obj["ShowTickets"] as? [[String:Any]]{
+                    let array = Mapper<ShowMyTicketDetails>().mapArray(JSONArray: responseObj)
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+    
+    static func generateLuckyDrawNumber(eventid:Int,
+                                        registrationid:Int,
+                                        ticketid:Int,
+                                        callback: @escaping (Bool,GenerateLuckyDrawNumber?) -> Void){
+        
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        dictParam["registrationid"] = eventid
+        dictParam["ticketid"] = eventid
+        
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.GENEARET_LUCKY_DRAW_NO.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                let model = Mapper<GenerateLuckyDrawNumber>().map(JSON: obj)
+                callback(true,model);
+                
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+    
+    static func showMyEventLuckyDrawResult(eventid:Int,
+                                           registrationid:Int,
+                                           callback: @escaping (Bool,[ShowMyEventLuckyDrawResult]?) -> Void){
+        
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventID"] = eventid
+        dictParam["registrationid"] = registrationid
+        
+        
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_MY_EVENT_LUCKY_DRAW_RESULT.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [[String:Any]]{
+                let array = Mapper<ShowMyEventLuckyDrawResult>().mapArray(JSONArray: obj)
+                callback(true,array);
+                
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+    
+    static func showTicketQRCodes(arrQRTickets:[QRCodeRequestModel],
+                                  callback: @escaping (Bool,[QRCodeTickets]?) -> Void){
+        
+        let dictParam = Mapper<QRCodeRequestModel>().toJSONArray(arrQRTickets)
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_TICKET_QR_CODES.rawValue
+        Service.postRequestArrayDictionary(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [[String:Any]]{
+                let array = Mapper<QRCodeTickets>().mapArray(JSONArray: obj)
+                callback(true,array);
+                
             }else {
                 callback(false,nil);
             }
@@ -138,5 +230,4 @@ extension  TicketBookingService{
     
     
     
-
 }
