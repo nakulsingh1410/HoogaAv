@@ -49,7 +49,7 @@ class OtherPaymentMode: UIViewController {
             
         }else{
             
-             Common.showAlert(message: "Please fill al reqiured details")
+             Common.showAlert(message: "Please fill all reqiured details")
         }
         
     }
@@ -77,7 +77,6 @@ class OtherPaymentMode: UIViewController {
     func setPayment(uId:Int) -> Bool {
        
         if let value = otherPayment.text,value.trimmingCharacters(in: .whitespaces).isEmpty{
-            
           Common.showAlert(message: "Please enter other payment")
             return false
         }else if let pay = paymentReference.text, pay.trimmingCharacters(in: .whitespaces).isEmpty {
