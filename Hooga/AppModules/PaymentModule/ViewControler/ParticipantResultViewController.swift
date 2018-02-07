@@ -69,6 +69,7 @@ extension ParticipantResultViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipateTableViewCell") as? ParticipateTableViewCell{
             cell.loadParticipateResultCellData(result: arrMyEventluckyDrawResult[indexPath.row])
+            cell.participateTableViewCellDelegate = self
             return cell
         }
         return UITableViewCell()
@@ -76,6 +77,12 @@ extension ParticipantResultViewController:UITableViewDataSource{
     
 }
 
+
+extension ParticipantResultViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
 
 
 /*********************************************************************************/
@@ -101,3 +108,24 @@ extension ParticipantResultViewController {
     }
 }
 
+/*********************************************************************************/
+// MARK: ParticipateTableViewCellDelegate
+/*********************************************************************************/
+
+extension ParticipantResultViewController:ParticipateTableViewCellDelegate {
+    func participateDetailButtonTapped(cell: ParticipateTableViewCell) {
+        //
+        if let result = cell.showMyEventLuckyDrawResult {
+             NavigationManager.participateDetail(navigationController: navigationController, participateDetail: result)
+        }
+        
+       
+    }
+    
+    
+    func participateButtonTapped(cell:ParticipateTableViewCell){
+        
+        //
+    }
+    
+}

@@ -78,6 +78,8 @@ class ShowMyEventLuckyDrawResult: NSObject,Mappable {
         luckydrawsequence            <- map["luckydrawsequence"]
         collectedby            <- map["collectedby"]
         collectedon            <- map["collectedon"]
+        isprizecollected  <- map["isprizecollected"]
+
     }
 }
 

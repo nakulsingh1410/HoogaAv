@@ -11,6 +11,8 @@ import UIKit
 
 protocol ParticipateTableViewCellDelegate {
    func participateButtonTapped(cell:ParticipateTableViewCell)
+    func participateDetailButtonTapped(cell:ParticipateTableViewCell)
+
 }
 
 class ParticipateTableViewCell: UITableViewCell {
@@ -18,12 +20,17 @@ class ParticipateTableViewCell: UITableViewCell {
     @IBOutlet weak var lblParticipantName: UILabel!
     @IBOutlet weak var lblParticiapete: UILabel!
     @IBOutlet weak var btnOnPaticipate: UIButton!
-
+    @IBOutlet weak var btnDetail: UIButton!
+    @IBOutlet weak var heightConstraintDetailBtn: NSLayoutConstraint!
+    
     var ticketDetail:ShowMyTicketDetails?
+   var  showMyEventLuckyDrawResult:ShowMyEventLuckyDrawResult?
     var participateTableViewCellDelegate:ParticipateTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
        selectionStyle = .none
+        heightConstraintDetailBtn.constant = 0
+        btnDetail.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -56,6 +63,7 @@ class ParticipateTableViewCell: UITableViewCell {
     }
   
     func loadParticipateResultCellData(result:ShowMyEventLuckyDrawResult)  {
+        showMyEventLuckyDrawResult = result
         if let string = result.firstName{
             lblParticipantName.text = string
         }
@@ -74,8 +82,24 @@ class ParticipateTableViewCell: UITableViewCell {
             lblParticiapete.textColor = UIColor.white
             btnOnPaticipate.isHidden = false
         }
+        
+          if let string = result.isprizewon, string == "True" {
+            heightConstraintDetailBtn.constant = 30
+            btnDetail.isHidden = false
+
+          }else{
+            heightConstraintDetailBtn.constant = 0
+            btnDetail.isHidden = true
+        }
         lblParticiapete.textAlignment = .center
+        layoutIfNeeded()
+
+        
     }
+    
+    
+    
+    
     
     @IBAction func btnParticipateTapped(_ sender: Any) {
         if let _ = ticketDetail{
@@ -84,4 +108,11 @@ class ParticipateTableViewCell: UITableViewCell {
         }
     }
     
+    
+    @IBAction func btnDetailTapped(_ sender: Any) {
+        if let _ = showMyEventLuckyDrawResult{
+            participateTableViewCellDelegate?.participateDetailButtonTapped(cell: self)
+            
+        }
+    }
 }

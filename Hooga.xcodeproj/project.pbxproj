@@ -31,6 +31,8 @@
 		307A0D74202A32C500CD105B /* FilterTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D72202A32C400CD105B /* FilterTableFooterView.swift */; };
 		307A0D75202A32C500CD105B /* FilterTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307A0D73202A32C400CD105B /* FilterTableFooterView.xib */; };
 		307A0D77202A34A100CD105B /* ParticipantResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D76202A34A100CD105B /* ParticipantResultViewController.swift */; };
+		307A0D7A202A9F0800CD105B /* ParticipateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D78202A9F0800CD105B /* ParticipateDetailViewController.swift */; };
+		307A0D7B202A9F0800CD105B /* ParticipateDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307A0D79202A9F0800CD105B /* ParticipateDetailViewController.xib */; };
 		30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C33E4C2011CF45008C5826 /* Event.storyboard */; };
 		30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */; };
 		30D77B8A200B0ED400386438 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B89200B0ED400386438 /* Images.xcassets */; };
@@ -202,6 +204,8 @@
 		307A0D72202A32C400CD105B /* FilterTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableFooterView.swift; sourceTree = "<group>"; };
 		307A0D73202A32C400CD105B /* FilterTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableFooterView.xib; sourceTree = "<group>"; };
 		307A0D76202A34A100CD105B /* ParticipantResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantResultViewController.swift; sourceTree = "<group>"; };
+		307A0D78202A9F0800CD105B /* ParticipateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateDetailViewController.swift; sourceTree = "<group>"; };
+		307A0D79202A9F0800CD105B /* ParticipateDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipateDetailViewController.xib; sourceTree = "<group>"; };
 		30C33E4C2011CF45008C5826 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOTPViewController.swift; sourceTree = "<group>"; };
 		30D77B89200B0ED400386438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -913,6 +917,8 @@
 				307A0D6F202A232300CD105B /* QRCodeTableViewCell.xib */,
 				307A0D72202A32C400CD105B /* FilterTableFooterView.swift */,
 				307A0D73202A32C400CD105B /* FilterTableFooterView.xib */,
+				307A0D78202A9F0800CD105B /* ParticipateDetailViewController.swift */,
+				307A0D79202A9F0800CD105B /* ParticipateDetailViewController.xib */,
 			);
 			path = ViewControler;
 			sourceTree = "<group>";
@@ -1063,6 +1069,7 @@
 				7530D954201F888300B9BB52 /* BannerCell.xib in Resources */,
 				30D77C07200B399800386438 /* LaunchScreen.storyboard in Resources */,
 				30EA5FB6201EF1D4009D4278 /* CustomNavHeaderView.xib in Resources */,
+				307A0D7B202A9F0800CD105B /* ParticipateDetailViewController.xib in Resources */,
 				307A0D75202A32C500CD105B /* FilterTableFooterView.xib in Resources */,
 				30D77C15200CD81400386438 /* loading.gif in Resources */,
 				7574C3BE20258F510010A4F1 /* TicketQuantityView.xib in Resources */,
@@ -1337,6 +1344,7 @@
 				75959D9E2022B0EE00DC307A /* HLFont.swift in Sources */,
 				75E2096A20292EA900817905 /* SavePaymentDetail.swift in Sources */,
 				30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */,
+				307A0D7A202A9F0800CD105B /* ParticipateDetailViewController.swift in Sources */,
 				30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */,
 				30D77BE0200B361F00386438 /* Constarints.swift in Sources */,
 				30D77BD8200B361400386438 /* UIImage.swift in Sources */,

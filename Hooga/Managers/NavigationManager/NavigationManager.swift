@@ -154,7 +154,13 @@ class NavigationManager {
         }
     }
     
-    
+    class func participateDetail(navigationController:UINavigationController? , participateDetail: ShowMyEventLuckyDrawResult){
+        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: ParticipateDetailViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "ParticipateDetailViewController") as? ParticipateDetailViewController{
+            vcObj.participateDetail = participateDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
     
     
     class func logout(){

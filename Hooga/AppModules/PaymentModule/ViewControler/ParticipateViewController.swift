@@ -140,6 +140,10 @@ extension ParticipateViewController {
 /*********************************************************************************/
 
 extension ParticipateViewController:ParticipateTableViewCellDelegate {
+    func participateDetailButtonTapped(cell: ParticipateTableViewCell) {
+        //
+    }
+    
     
     func participateButtonTapped(cell:ParticipateTableViewCell){
         if let eventId =  cell.ticketDetail?.eventid,let ticketId = cell.ticketDetail?.ticketid,let regid =  eventDetail?.regid{
@@ -163,8 +167,3 @@ extension ParticipateViewController:FilterTableFooterViewDelegate{
 }
 
 
-extension ParticipantResultViewController:UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-}
