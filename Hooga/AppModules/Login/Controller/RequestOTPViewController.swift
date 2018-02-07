@@ -32,9 +32,13 @@ class RequestOTPViewController: UIViewController {
         if let userData = StorageModel.getUserData(){
             if let email = userData.email{
                 lblEmail.text = "Email: " + email
+            }else{
+                lblEmail.text = ""
             }
             if let phone = userData.handphone{
                 lblMobile.text = "Mobile: " + phone
+            }else{
+                lblMobile.text = ""
             }
         }
     }
@@ -51,11 +55,13 @@ class RequestOTPViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func btnSubmitTapped(_ sender: Any) {
+        
         if let value = txtFOTP.text,value.trimmingCharacters(in: .whitespaces).isEmpty{
            let message = MessageError.OTP_BLANK .rawValue
             Common.showAlert(message: message)
             return
         }
+        view.endEditing(true)
         requestOTP(otp: txtFOTP.text!)
     }
     
@@ -71,7 +77,7 @@ class RequestOTPViewController: UIViewController {
 extension RequestOTPViewController{
     
     func requestOTP(otp:String)  {
-        LoginService.requestOTP(OTP: otp, OTPScreen:screenFlow.rawValue) {[weak self]  (flag, message) in
+        LoginService.requestOTP(OTP: otp, OTPScreen:screenFlow) {[weak self]  (flag, message) in
             guard let weakSelf = self else {return}
             if flag {
                 weakSelf.navigateToSetPassword()

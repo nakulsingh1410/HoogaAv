@@ -68,11 +68,24 @@ extension SetPasswordViewController{
         LoginService.setPassword(password: password) {[weak self]  (flag, message) in
             guard let weakSelf = self else {return}
             if flag {
-                weakSelf.navigateToEvent()
+                weakSelf.getMyProfile()
+               
             }else{
                 Common.showAlert(message: message)
             }
         }
+    }
+    
+    func getMyProfile(){
+        LoginService.getMyProfile(callback: {[weak self] (flag, message) in
+            guard let weakSelf = self else {return}
+            if flag {
+                 weakSelf.navigateToEvent()
+            }else{
+                Common.showAlert(message: message)
+
+            }
+        })
     }
     
 }

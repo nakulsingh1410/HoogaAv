@@ -10,9 +10,15 @@ import UIKit
 
 class BookingDetailVC: UIViewController {
     
-    @IBOutlet var viewTitle : CommonHeaderView!
+//    @IBOutlet var viewTitle : CommonHeaderView!
      @IBOutlet var viewQuantity : UIView!
      @IBOutlet var viewBookingDetail : UIView!
+    
+    @IBOutlet weak var labelticketType: UILabel!
+    @IBOutlet weak var labelPrice: UILabel!
+    @IBOutlet weak var labelQuantity: UILabel!
+    @IBOutlet weak var labelTotalPrice: UILabel!
+    
     var ticketQuantityView : TicketQuantityView?
     var details = [SaveBookingDetail]()
     var detailView : BookingDetailView!
@@ -40,28 +46,16 @@ class BookingDetailVC: UIViewController {
     
 
     func setUIData() {
-        
-        if let evnt = eventRecord?.eventDetail {
-            viewTitle.headerView.labelEventTitle.text = evnt.title
-            let date = Common.getDateString(strDate:evnt.startdate) + " - " + Common.getDateString(strDate:evnt.enddate)
-            let time = Common.getDateString(strDate:evnt.starttime) + " - " + Common.getDateString(strDate:evnt.endtime)
-             viewTitle.headerView.labelDateTime.text =  date + " | " + time
-             viewTitle.headerView.labelAddress.text = evnt.eventlocation?.trim()
-        }
-        
         if let ticket = eventRecord?.ticketTypeDetails {
-            
-            viewTitle.headerView.labelticketType.text = "TICKET TYPE: " + ticket.tickettype!
+            labelticketType.text = "TICKET TYPE: " + ticket.tickettype!
             if let qnt =  eventRecord?.quantityTicket{
-                 viewTitle.headerView.labelQuantity.text = "QUANTITY:" + String(qnt)
+                 labelQuantity.text = "QUANTITY:" + String(qnt)
             }
-            
             if let price = ticket.regularprice {
-                viewTitle.headerView.labelPrice.text = "PRICE:$ " + price
+                labelPrice.text = "PRICE:$ " + price
                 let total = Float(price)! * Float(qnty)
-                viewTitle.headerView.labelTotalPrice.text = "TOTAL:$ " + String(total)
+                labelTotalPrice.text = "TOTAL:$ " + String(total)
             }
-            
         }
     }
     

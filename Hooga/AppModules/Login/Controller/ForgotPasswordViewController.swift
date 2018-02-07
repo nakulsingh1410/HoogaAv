@@ -13,8 +13,7 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var txtFEmail: HoogaTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+//        txtFEmail.text = "98580860"
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,18 +25,20 @@ class ForgotPasswordViewController: UIViewController {
     /*********************************************************************************/
     
     private func forgotPassword()  {
-        var message : String?
-        if let userName = txtFEmail.text,userName.trimmingCharacters(in: .whitespaces).isEmpty{
-            message = MessageError.USER_NAME_BLANK .rawValue
-        }else if let value = txtFEmail.text,value.isEmail == false{
-            message = MessageError.EMAIL_INVALID.rawValue
+        
+        guard let userName  = txtFEmail.text,(userName.trimmingCharacters(in: .whitespaces).isEmpty != true) else  {
+           Common.showAlert(message: MessageError.USER_NAME_BLANK .rawValue)
+            return
         }
         
-        if let errorMsg = message {
-            Common.showAlert(message: errorMsg)
-        }else{
+        if userName.isNumber() == true{
+             setForgotPasswordAPI(password: txtFEmail.text!)
+        }else if userName.isEmail == true{
             setForgotPasswordAPI(password: txtFEmail.text!)
+        }else{
+            Common.showAlert(message: MessageError.VALID_USER_NAME .rawValue)
         }
+     
     }
     
     private func navigateToOTP(){

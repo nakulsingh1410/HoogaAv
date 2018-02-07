@@ -154,6 +154,7 @@ public enum MessageError: String{
     case ADDRESS1_BLANK             = "Please enter address1."
     case ADDRESS2_BLANK             = "Please enter address2."
     case OTP_BLANK                  = "Please enter otp."
+    case VALID_USER_NAME                  = "Please enter valid user name."
 
     
     case PASSWORD_EMPTY    = "Please enter password."
