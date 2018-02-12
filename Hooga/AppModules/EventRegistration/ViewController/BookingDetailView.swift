@@ -15,7 +15,7 @@ protocol BookingDetailViewDelegate {
     func openCityPicker(ticketView:BookingDetailView)
     func openImagePicker(ticketView:BookingDetailView)
     func submit(ticketView:BookingDetailView)
-    func save(ticketView:BookingDetailView)
+    func cancel(ticketView:BookingDetailView)
 }
 
 class BookingDetailView: UIView {
@@ -57,7 +57,7 @@ class BookingDetailView: UIView {
     @IBAction func buttonCancel_didPressed(_ sender: Any) {
         if delegate != nil {
             
-            delegate?.save(ticketView: self)
+            delegate?.cancel(ticketView: self)
         }
     }
     

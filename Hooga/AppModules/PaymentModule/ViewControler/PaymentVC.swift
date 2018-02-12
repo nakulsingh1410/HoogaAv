@@ -26,9 +26,13 @@ class PaymentVC: UIViewController {
    
     var indexLast : IndexPath?
     
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configoreNavigationHeader()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +45,9 @@ class PaymentVC: UIViewController {
         navHeaderView.navBarTitle = "Payment"
         navHeaderView.backButtonType = .Back
     }
+
+    
+    
 
     @IBAction func buttonProceedPayment_didPressed(_ sender: Any) {
     }

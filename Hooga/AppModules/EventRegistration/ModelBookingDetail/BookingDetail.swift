@@ -61,6 +61,7 @@ class SaveBookingDetail: NSObject,Mappable {
         self.email    = ""
         self.eventid = 0
         self.firstname = ""
+        self.lastname = ""
         self.gender = ""
         self.handphone = ""
         self.postalcode = ""
@@ -69,7 +70,7 @@ class SaveBookingDetail: NSObject,Mappable {
         self.ticketId = -1
         self.tickettype = ""
         self.tickettypeid = 0
-        self.dateofbirth = ""
+        self.dateofbirth = "__/ __/ __"
         self.isearlybird = ""
         
     }
@@ -108,15 +109,21 @@ class BookingDetailResponse: NSObject,Mappable {
             var eventid : Int?
             var registrationid : Int?
             var isearlybird: String?
-    
+            var firstname : String?
+            var lastname : String?
+
     required init?(map: Map) {
     }
     
     public func mapping(map: Map) {
+        ticketid  <- map["ticketid"]
         eventid            <- map["eventid"]
         tickettypeid            <- map["tickettypeid"]
         registrationid        <- map["registrationid"]
         isearlybird            <- map["isearlybird"]
+        firstname <- map["firstname"]
+        lastname <- map["lastname"]
+
     }
 }
 

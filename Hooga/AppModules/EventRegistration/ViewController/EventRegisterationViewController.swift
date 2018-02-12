@@ -97,7 +97,6 @@ class EventRegisterationViewController: UIViewController {
                         self.btnUpload.isHidden = false
                     }
                 }
-                
             }
         }
 

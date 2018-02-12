@@ -129,6 +129,7 @@ public enum ServiceName:String {
     case GENEARET_LUCKY_DRAW_NO = "generateLuckyDrawNumber"
     case SHOW_MY_EVENT_LUCKY_DRAW_RESULT = "showMyEventLuckyDrawResult"
     case SHOW_TICKET_QR_CODES = "showMyTicketQRCodes"
+    case IS_TICKETS_BOOKED = "isticketsbooked"
     
 }
 

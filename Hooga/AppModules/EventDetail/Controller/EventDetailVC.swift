@@ -28,6 +28,7 @@ class EventDetailVC: UIViewController{
         
         // Do any additional setup after loading the view.
         getEventDetail(eventId: eventID!)
+//        isTicketBooked(eventId: eventID!, registrationid: <#T##Int#>)
         configTableview()
         self.navigationController?.isNavigationBarHidden = false
     }
@@ -320,4 +321,19 @@ extension EventDetailVC {
         }
         
     }
+    
+    func isTicketBooked(eventId:Int,registrationid:Int)  {
+        
+        EventService.isTicketBooked(eventid: eventId, registrationid: registrationid) { (flag, status) in
+            
+            if let message = status , message == "No"{
+                
+            }
+        }
+
+        
+    }
+    
+    
+    
 }

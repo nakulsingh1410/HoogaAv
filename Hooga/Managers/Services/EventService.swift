@@ -220,7 +220,37 @@ extension EventService{
         }
     }
     
+    static func isTicketBooked(eventid:Int,
+                                        registrationid:Int,
+                                        callback: @escaping (Bool,String?) -> Void){
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+
+        var dictParam = Dictionary<String,Any>()
+        dictParam["userid"] = userid
+        dictParam["registrationid"] = registrationid
+        dictParam["eventid"] = eventid
+
+
+        
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.IS_TICKETS_BOOKED.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let status = obj["Status"] as? String{
+                    callback(true,status);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+            
+        }
+    }
  
+    
+    
 }
 
 /***************************************************************/

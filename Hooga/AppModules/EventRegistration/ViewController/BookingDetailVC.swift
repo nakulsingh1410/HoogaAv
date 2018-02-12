@@ -44,7 +44,6 @@ class BookingDetailVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     func setUIData() {
         if let ticket = eventRecord?.ticketTypeDetails {
             labelticketType.text = "Ticket Type: " + ticket.tickettype!
@@ -57,7 +56,6 @@ class BookingDetailVC: UIViewController {
                 labelTotalPrice.text = "Total:$ " + String(total)
             }
         }
-        
         if qnty == 1 {
             ticketQuantityHeightConstraint.constant = 0
         }else{
@@ -165,7 +163,6 @@ class BookingDetailVC: UIViewController {
         detailView.email.text = detail.email
         detailView.mobile.text =  detail.handphone
         detailView.postalCode.text = detail.postalcode
-        detailView.email.text = detail.email
         detailView.gender.text = detail.gender
         detailView.dob.text = detail.dateofbirth
         detailView.city.text =  detail.city
@@ -178,13 +175,7 @@ class BookingDetailVC: UIViewController {
 }
 extension BookingDetailVC{
     
-    func saveTicketDetailInModel(ticketId:Int) ->Bool  {
-        
-        let touple =   validate()
-        if touple.isEmpty == true , let errorMsg = touple.message {
-            Common.showAlert(message: errorMsg)
-            return false
-        }
+    func saveTicketDetailInModel(ticketId:Int)  {
         
         let model = SaveBookingDetail()
         model.ticketId = ticketId
@@ -207,9 +198,27 @@ extension BookingDetailVC{
         model.dateofbirth = detailView.dob.text
         model.city   = detailView.city.text
         arrBookingDetails[ticketId] = model
-//        previousIndex = ticketId
 
-        return true
+        let touple =   validate()
+        if touple.isEmpty == true , let _ = touple.message {
+            model.ticketId = -1
+        }
+        
+    }
+    
+    func clearCurrentTicketDetail()  {
+        arrBookingDetails[presentedViewIndex] = SaveBookingDetail()
+        updateDetail(detail: arrBookingDetails[presentedViewIndex])
+//        detailView.address1.text = detail.address1
+//        detailView.address2.text = detail.address2
+//        detailView.firstName.text = detail.firstname
+//        detailView.lastName.text = detail.lastname
+//        detailView.email.text = detail.email
+//        detailView.mobile.text =  detail.handphone
+//        detailView.postalCode.text = detail.postalcode
+//        detailView.gender.text = detail.gender
+//        detailView.dob.text = detail.dateofbirth
+//        detailView.city.text =  detail.city
     }
     
 }
@@ -219,6 +228,11 @@ extension BookingDetailVC{
 /**********************************************************************/
 extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegate{
     func didSelectRowAt(indexpath: IndexPath,ticektQuantityView:TicketQuantityView) {
+        
+        if presentedViewIndex == indexpath.row {
+            return
+        }
+        let _ = saveTicketDetailInModel(ticketId: presentedViewIndex)
         if let ticket = getTicketForTicketId(ticketId: indexpath.row){
             detailView.removeFromSuperview()
             addBookingDetailView(tabIndex: indexpath.row)
@@ -228,30 +242,11 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
             return
         }
         
-        if presentedViewIndex < indexpath.row {
-            for i in presentedViewIndex ..< indexpath.row{
-                if let _ = getTicketForTicketId(ticketId: i){
-                    continue
-                }else{
-                    Common.showAlert(message: "Please fill \(i+1) ticket detail")
-                    return
-                }
-            }
-        }
-        if validate().isEmpty == true {
-            Common.showAlert(message: validate().message!)
-            return
-        }else{
-            let _ = saveTicketDetailInModel(ticketId: presentedViewIndex)
-        }
-        if let ticket = getTicketForTicketId(ticketId: indexpath.row){
-            updateDetail(detail: ticket)
-        }else{
-            detailView.removeFromSuperview()
-            addBookingDetailView(tabIndex: indexpath.row)
-            ticektQuantityView.indexPth = indexpath
-            ticektQuantityView.collectionQuantity.reloadData()
-        }
+        detailView.removeFromSuperview()
+        addBookingDetailView(tabIndex: indexpath.row)
+        updateDetail(detail: arrBookingDetails[indexpath.row])
+        ticektQuantityView.indexPth = indexpath
+        ticektQuantityView.collectionQuantity.reloadData()
 
     }
 
@@ -271,58 +266,36 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
         pickProfileImage()
     }
     func submit(ticketView:BookingDetailView){
-
+        
         if validate().isEmpty == true {
             Common.showAlert(message: validate().message!)
             return
         }else{
-            if saveTicketDetailInModel(ticketId: presentedViewIndex) {
-               let unFilledTickets = arrBookingDetails.filter({ (bookingDetail) -> Bool in
-                    return bookingDetail.ticketId == -1
-                })
-                if unFilledTickets.count > 0{
-                    Common.showAlert(message: "Please fill All ticket info")
-                }else{
-//                    showAlert()
-                    self.saveTicketDetailsAPI(arrTicket: self.arrBookingDetails)
-                }
+            let _ = saveTicketDetailInModel(ticketId: presentedViewIndex)
+
+            let unFilledTickets = arrBookingDetails.filter({ (bookingDetail) -> Bool in
+                return bookingDetail.ticketId == -1
+            })
+            if unFilledTickets.count > 0{
+                Common.showAlert(message: "Please fill ALL ticket info completly")
+            }else{
+                self.saveTicketDetailsAPI(arrTicket: self.arrBookingDetails)
             }
+            
         }
     }
     
-//    func showAlert(){
-//        let message = "Do you want to pay for \(arrBookingDetails.count) ticket"
-//        let alertController = UIAlertController(title: kProjectName, message: message, preferredStyle: .alert)
-//        let action1 = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
-//            if let type = self.eventRecord?.eventDetail?.entrytype?.trim(), type == EventType.paid.rawValue{
-//                   self.saveTicketDetailsAPI(arrTicket: self.arrBookingDetails)
-//            }else{
-//                //proceedToFreeEntry()
-//            }
-//        }
-//        let action2 = UIAlertAction(title: "Cancel", style: .default) { (action:UIAlertAction) in
-//            print("You've pressed cancel");
-//        }
-//        alertController.addAction(action1)
-//        alertController.addAction(action2)
-//        self.present(alertController, animated: true, completion: nil)
-//    }
-    
-    func save(ticketView:BookingDetailView){
-        if validate().isEmpty == true {
-            Common.showAlert(message: validate().message!)
-            return
-        }else{
-            if saveTicketDetailInModel(ticketId: presentedViewIndex) {
-                 Common.showAlert(message: "\(presentedViewIndex+1) ticket detail Saved! ")
-            }
-        }
+    func cancel(ticketView:BookingDetailView){
+        
+        clearCurrentTicketDetail()
+
     }
     func saveTicketDetailsAPI(arrTicket:[SaveBookingDetail])  {
         TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
-            if let _ = data{
+            if let reponseArray = data{
                 // navigate to payment screen
-                self.eventRecord?.bookingDetails =  self.arrBookingDetails; NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!)
+                self.eventRecord?.bookingDetails =  self.arrBookingDetails;
+                NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!, savedTicketDetail: reponseArray)
             }else{
                 //error
             }

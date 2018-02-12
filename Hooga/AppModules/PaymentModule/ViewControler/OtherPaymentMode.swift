@@ -9,27 +9,41 @@
 import UIKit
 
 class OtherPaymentMode: UIViewController {
-
-    @IBOutlet weak var collectionViewUser: UICollectionView!
     
-    @IBOutlet weak var ampountPaid: HoogaTextField!
-    @IBOutlet weak var paymentReference: HoogaTextField!
-    @IBOutlet weak var otherPayment: HoogaTextField!
+    @IBOutlet weak var collectionViewUser: UICollectionView!
+    @IBOutlet weak  var otherPaymentView : UIView!
+
     
     var bookingDetail : EventRecord?
-    
-    var otherPayments = [SavePaymentDetail]()
-    
+
+    var arrOtherPayments = [SavePaymentDetail]()
+    var savedTicketDetail : [BookingDetailResponse]?
     var  currentUser = 0
-    
+    var presentedViewIndex = 0
+
+    var otherPayment : OtherPaymentView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
+        addPaymentView()
+        configureData()
         configCollectionView()
     }
-
+    
+    
+    func configureData()  {
+        if let savedTickets = savedTicketDetail{
+            for index in 0 ..< savedTickets.count {
+                let payment = SavePaymentDetail()
+                if let paymentId = savedTickets[index].ticketid{
+                    payment.ticketid = paymentId
+                }
+                arrOtherPayments.append(payment)
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,22 +52,7 @@ class OtherPaymentMode: UIViewController {
     @IBAction func buttonBack_didPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func buttonSubmit_didPressed(_ sender: Any) {
-        
-        if checkPayment(uId: currentUser) == nil {
-            let ok =   setPayment(uId: currentUser)
-        }
-        if bookingDetail?.bookingDetails.count == otherPayments.count {
-            
-            savePaymentDetail(arrPayment: otherPayments)
-            
-        }else{
-            
-             Common.showAlert(message: "Please fill all reqiured details")
-        }
-        
-    }
-    
+
     func configCollectionView()  {
         
         //collectionViewUser.register(OtherPayCell.self, forCellWithReuseIdentifier: "OtherPayCellid")
@@ -63,48 +62,44 @@ class OtherPaymentMode: UIViewController {
     }
     
     func checkPayment(uId:Int)  -> SavePaymentDetail?{
-        return otherPayments.filter { $0.userId == uId}.first
+        return arrOtherPayments.filter { $0.userId == uId}.first
     }
     
-    func updateUser(other:SavePaymentDetail)  {
-        
-        otherPayment.text         = other.otherPayment
-        paymentReference.text = other.payrefNumber
-        ampountPaid.text          = other.amountPaid
-        
+    func addPaymentView(tabIndex:Int = 0)  {
+        let nib = UINib.init(nibName: "OtherPaymentView", bundle: nil)
+        let views = nib.instantiate(withOwner: self, options: nil)
+        otherPayment = views[0] as! OtherPaymentView
+        otherPayment.frame = CGRect.init(x: 0, y: 0, width: otherPaymentView.frame.size.width, height: otherPaymentView.frame.size.height)
+        otherPayment.delegate = self
+        otherPaymentView.addSubview(otherPayment)
+        presentedViewIndex = tabIndex
     }
     
-    func setPayment(uId:Int) -> Bool {
-       
-        if let value = otherPayment.text,value.trimmingCharacters(in: .whitespaces).isEmpty{
-          Common.showAlert(message: "Please enter other payment")
-            return false
-        }else if let pay = paymentReference.text, pay.trimmingCharacters(in: .whitespaces).isEmpty {
-                Common.showAlert(message: "Please enter  payment reference")
-            return false
-        }else if let paid = ampountPaid.text, paid.trimmingCharacters(in: .whitespaces).isEmpty {
-                Common.showAlert(message: "Please enter paid payment")
-            return false
+    func getPaymentForTicketId(paymentId:Int)  -> SavePaymentDetail?{
+        return arrOtherPayments.filter { $0.paymentId == paymentId}.first
+    }
+    
+    func saveOtherPaymentDetailInModel(paymentId:Int)  {
+       var payment = arrOtherPayments[presentedViewIndex]
+
+        payment.amountPaid = otherPayment.ampountPaid.text
+        payment.otherPayment = otherPayment.otherPayment.text
+        payment.payrefNumber = otherPayment.paymentReference.text
+        payment.paymentId = paymentId
+        //        payment.ticketid = bookingDetail?.selectedTicketType?.tickettypeid
+        payment.paidOn       = Date().dateString
+        payment.createdOn = Date().dateString
+        
+        
+        let touple =   otherPayment.validate()
+        if touple.isEmpty == true , let _ = touple.message {
+            payment.paymentId = -1
         }
         
-        let payment = SavePaymentDetail()
-        payment.amountPaid = ampountPaid.text
-        payment.otherPayment = otherPayment.text
-        payment.payrefNumber = paymentReference.text
-        payment.ticketid = bookingDetail?.selectedTicketType?.tickettypeid
-       payment.paidOn       = Date().dateString
-        payment.createdOn = Date().dateString
-        otherPayments.append(payment)
-        return true
+       arrOtherPayments[presentedViewIndex] = payment
+        
     }
     
-    func updateChanges(save:SavePaymentDetail,index:Int)  {
-        save.amountPaid = ampountPaid.text
-        save.otherPayment = otherPayment.text
-        save.payrefNumber = paymentReference.text
-        
-        otherPayments[index] = save
-    }
 }
 
 extension OtherPaymentMode : UICollectionViewDataSource{
@@ -118,7 +113,6 @@ extension OtherPaymentMode : UICollectionViewDataSource{
         
         let user = bookingDetail!.bookingDetails[indexPath.row]
         cellUser.labelName.text = user.firstname
-        //68 114 195
         
         if indexPath.row == currentUser {
             cellUser.backgroundColor = UIColor.init(red: 68.0/255.0, green: 114.0/255.0, blue: 195.0/255.0, alpha: 1)
@@ -132,19 +126,26 @@ extension OtherPaymentMode : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let obj =  checkPayment(uId: indexPath.row) {
-            currentUser = indexPath.row
-            updateUser(other: obj)
-           return
+        
+        if presentedViewIndex == indexPath.row {
+            return
         }
-        if let obj =  checkPayment(uId: currentUser) {
-            updateChanges(save: obj, index: currentUser)
-        }
-       let isDone =    setPayment(uId: indexPath.row)
-        if isDone {
+        saveOtherPaymentDetailInModel(paymentId: presentedViewIndex)
+        
+        if let ticket = getPaymentForTicketId(paymentId: indexPath.row){
+            otherPayment.removeFromSuperview()
+            addPaymentView(tabIndex: indexPath.row)
+            otherPayment.updateDetail(other: ticket)
             currentUser = indexPath.row
             collectionView.reloadData()
+            return
         }
+        
+        otherPayment.removeFromSuperview()
+        addPaymentView(tabIndex: indexPath.row)
+        otherPayment.updateDetail(other: arrOtherPayments[indexPath.row])
+        currentUser = indexPath.row
+        collectionView.reloadData()
     }
     
 }
@@ -156,7 +157,6 @@ extension OtherPaymentMode {
         TicketBookingService.paymentDetails(bookingDetails: arrPayment) { (flag, data) in
             if let _ = data{
                 NavigationManager.thanksController(navigationController: self.navigationController, evntDetail: EventRecord())
-               
             }else{
                 //error
             }
@@ -168,13 +168,35 @@ extension Date {
     var ticks: UInt64 {
         return UInt64((self.timeIntervalSince1970 + 62_135_596_800) * 10_000_000)
     }
-    
     var dateString : String {
-        
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-            return  dateFormatterGet.string(from: self)
+        return  dateFormatterGet.string(from: self)
+    }
+}
+
+
+extension OtherPaymentMode:OtherPaymentViewDelegate{
+    func submitButtonDidTapped(otherPaymentView: OtherPaymentView) {
+   
+            saveOtherPaymentDetailInModel(paymentId: presentedViewIndex)
         
+            let unFilledTickets = arrOtherPayments.filter({ (bookingDetail) -> Bool in
+                return bookingDetail.paymentId == -1
+            })
+            if unFilledTickets.count > 0{
+                Common.showAlert(message: "Please fill ALL Payment info completly")
+            }else{
+                self.savePaymentDetail(arrPayment: self.arrOtherPayments)
+            }
+            
+        
+    }
+    
+    func cancelButtonDidTapped(otherPaymentView: OtherPaymentView) {
+        arrOtherPayments[presentedViewIndex] = SavePaymentDetail()
+        otherPayment.updateDetail(other: arrOtherPayments[presentedViewIndex])
+
     }
     
     

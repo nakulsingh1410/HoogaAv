@@ -105,10 +105,11 @@ class NavigationManager {
     }
     
     
-    class func otherPaymentDetail(navigationController:UINavigationController? , evntDetail : EventRecord){
+    class func otherPaymentDetail(navigationController:UINavigationController? , evntDetail : EventRecord,savedTicketDetail:[BookingDetailResponse]){
         let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "OtherPaymentMode") as? OtherPaymentMode{
             vcObj.bookingDetail = evntDetail
+            vcObj.savedTicketDetail = savedTicketDetail
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }

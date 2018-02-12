@@ -23,6 +23,7 @@ class SavePaymentDetail: NSObject,Mappable {
     var isPaymentApproved : String?
     var createdOn : String?
     var status = "false"
+    var paymentId = -1
 
     override init() {
         

@@ -33,6 +33,8 @@
 		307A0D77202A34A100CD105B /* ParticipantResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D76202A34A100CD105B /* ParticipantResultViewController.swift */; };
 		307A0D7A202A9F0800CD105B /* ParticipateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D78202A9F0800CD105B /* ParticipateDetailViewController.swift */; };
 		307A0D7B202A9F0800CD105B /* ParticipateDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307A0D79202A9F0800CD105B /* ParticipateDetailViewController.xib */; };
+		30908C292031ACC100FD7501 /* OtherPaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30908C282031ACC100FD7501 /* OtherPaymentView.xib */; };
+		30908C2B2031ADEC00FD7501 /* OtherPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30908C2A2031ADEC00FD7501 /* OtherPaymentView.swift */; };
 		30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C33E4C2011CF45008C5826 /* Event.storyboard */; };
 		30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */; };
 		30D77B8A200B0ED400386438 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B89200B0ED400386438 /* Images.xcassets */; };
@@ -206,6 +208,8 @@
 		307A0D76202A34A100CD105B /* ParticipantResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantResultViewController.swift; sourceTree = "<group>"; };
 		307A0D78202A9F0800CD105B /* ParticipateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateDetailViewController.swift; sourceTree = "<group>"; };
 		307A0D79202A9F0800CD105B /* ParticipateDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipateDetailViewController.xib; sourceTree = "<group>"; };
+		30908C282031ACC100FD7501 /* OtherPaymentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPaymentView.xib; sourceTree = "<group>"; };
+		30908C2A2031ADEC00FD7501 /* OtherPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPaymentView.swift; sourceTree = "<group>"; };
 		30C33E4C2011CF45008C5826 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOTPViewController.swift; sourceTree = "<group>"; };
 		30D77B89200B0ED400386438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -919,6 +923,8 @@
 				307A0D73202A32C400CD105B /* FilterTableFooterView.xib */,
 				307A0D78202A9F0800CD105B /* ParticipateDetailViewController.swift */,
 				307A0D79202A9F0800CD105B /* ParticipateDetailViewController.xib */,
+				30908C282031ACC100FD7501 /* OtherPaymentView.xib */,
+				30908C2A2031ADEC00FD7501 /* OtherPaymentView.swift */,
 			);
 			path = ViewControler;
 			sourceTree = "<group>";
@@ -1057,6 +1063,7 @@
 				7574C3D920262E080010A4F1 /* Payment.storyboard in Resources */,
 				30782081202A165200C085C5 /* ParticipateTableViewCell.xib in Resources */,
 				7574C3C52025D8350010A4F1 /* DetailHeaderView.xib in Resources */,
+				30908C292031ACC100FD7501 /* OtherPaymentView.xib in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
 				30EA5F9B201DE0AD009D4278 /* LeftSideMenu.storyboard in Resources */,
 				75E209702029498100817905 /* LuckyDrawCell.xib in Resources */,
@@ -1318,6 +1325,7 @@
 				30EA5FAB201E2892009D4278 /* EventCell.swift in Sources */,
 				7574C3BA2025788D0010A4F1 /* BookingDetailView.swift in Sources */,
 				30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */,
+				30908C2B2031ADEC00FD7501 /* OtherPaymentView.swift in Sources */,
 				30EA5FA8201E2892009D4278 /* AMHorizontalMenu.swift in Sources */,
 				307A0D70202A232300CD105B /* QRCodeTableViewCell.swift in Sources */,
 				7574C3C32025D4C70010A4F1 /* BookingDetail.swift in Sources */,
