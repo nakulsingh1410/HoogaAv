@@ -40,11 +40,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MzE-Nq-gbF">
                                         <rect key="frame" x="0.0" y="0.0" width="305" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="EMAIL / HAND PHONE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGN-VN-yhH" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="HAND PHONE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGN-VN-yhH" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="48" y="0.0" width="256" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="username" translatesAutoresizingMaskIntoConstraints="NO" id="vLy-fg-6hp">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -419,7 +419,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -637,7 +637,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSY-pC-DOt" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="57" y="0.0" width="70" height="35"/>
+                                                <rect key="frame" x="77" y="0.0" width="70" height="35"/>
                                                 <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="SUBMIT">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -647,7 +647,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhW-Mb-BVf" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="208" y="0.0" width="70" height="35"/>
+                                                <rect key="frame" x="188" y="0.0" width="70" height="35"/>
                                                 <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="2h4-UF-srD"/>
@@ -671,8 +671,8 @@
                                             <constraint firstItem="gPN-cL-Zj4" firstAttribute="top" secondItem="S20-Xe-C6g" secondAttribute="top" id="dff-2r-rKQ"/>
                                             <constraint firstItem="UhW-Mb-BVf" firstAttribute="top" secondItem="S20-Xe-C6g" secondAttribute="top" id="dwy-qb-Brm"/>
                                             <constraint firstItem="UhW-Mb-BVf" firstAttribute="height" secondItem="eSY-pC-DOt" secondAttribute="height" id="feS-d5-3Lv"/>
-                                            <constraint firstItem="UhW-Mb-BVf" firstAttribute="leading" secondItem="gPN-cL-Zj4" secondAttribute="trailing" constant="40" id="gOH-zv-vWJ"/>
-                                            <constraint firstItem="gPN-cL-Zj4" firstAttribute="leading" secondItem="eSY-pC-DOt" secondAttribute="trailing" constant="40" id="qvc-qx-Jjv"/>
+                                            <constraint firstItem="UhW-Mb-BVf" firstAttribute="leading" secondItem="gPN-cL-Zj4" secondAttribute="trailing" constant="20" id="gOH-zv-vWJ"/>
+                                            <constraint firstItem="gPN-cL-Zj4" firstAttribute="leading" secondItem="eSY-pC-DOt" secondAttribute="trailing" constant="20" id="qvc-qx-Jjv"/>
                                             <constraint firstAttribute="height" constant="35" id="vAX-85-hrx"/>
                                         </constraints>
                                     </view>
@@ -826,7 +826,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xci-1h-2qG" userLabel="Email">
-                                <rect key="frame" x="20" y="95" width="335" height="30"/>
+                                <rect key="frame" x="20" y="77" width="335" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL:Testing@test.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jws-6v-Fnr" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="4.5" width="335" height="21"/>
@@ -844,7 +844,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dg4-he-orA" userLabel="Mobile">
-                                <rect key="frame" x="20" y="132" width="335" height="30"/>
+                                <rect key="frame" x="20" y="114" width="335" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILE:+65123456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5Y-Au-2Fu" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="4.5" width="335" height="21"/>
@@ -862,7 +862,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1t-13-rTz" userLabel="OTP">
-                                <rect key="frame" x="20" y="172" width="335" height="35"/>
+                                <rect key="frame" x="20" y="154" width="335" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60u-z4-YGj" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="7" width="70" height="21"/>
@@ -893,7 +893,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-9U-6ZC">
-                                <rect key="frame" x="20" y="237" width="335" height="35"/>
+                                <rect key="frame" x="20" y="219" width="335" height="35"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdC-9i-PUv">
                                         <rect key="frame" x="167" y="0.0" width="1" height="35"/>
@@ -903,7 +903,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0d-7p-6sM" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="17" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="37" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="SUBMIT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -913,7 +913,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4U-Cd-DRL" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="208" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="188" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="irw-bq-sp3"/>
@@ -929,7 +929,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="S0d-7p-6sM" firstAttribute="top" secondItem="ggG-9U-6ZC" secondAttribute="top" id="7Fz-2C-HbZ"/>
-                                    <constraint firstItem="J4U-Cd-DRL" firstAttribute="leading" secondItem="tdC-9i-PUv" secondAttribute="trailing" constant="40" id="DUx-6V-hjI"/>
+                                    <constraint firstItem="J4U-Cd-DRL" firstAttribute="leading" secondItem="tdC-9i-PUv" secondAttribute="trailing" constant="20" id="DUx-6V-hjI"/>
                                     <constraint firstItem="J4U-Cd-DRL" firstAttribute="top" secondItem="ggG-9U-6ZC" secondAttribute="top" id="Ien-PS-iOd"/>
                                     <constraint firstItem="J4U-Cd-DRL" firstAttribute="width" secondItem="S0d-7p-6sM" secondAttribute="width" id="OHa-fu-Eq3"/>
                                     <constraint firstItem="J4U-Cd-DRL" firstAttribute="height" secondItem="S0d-7p-6sM" secondAttribute="height" id="YRC-W9-hME"/>
@@ -938,7 +938,7 @@
                                     <constraint firstAttribute="bottom" secondItem="J4U-Cd-DRL" secondAttribute="bottom" id="hKz-EK-Udn"/>
                                     <constraint firstItem="tdC-9i-PUv" firstAttribute="centerX" secondItem="ggG-9U-6ZC" secondAttribute="centerX" id="mML-Ef-qjY"/>
                                     <constraint firstAttribute="height" constant="35" id="q0l-85-XjX"/>
-                                    <constraint firstItem="tdC-9i-PUv" firstAttribute="leading" secondItem="S0d-7p-6sM" secondAttribute="trailing" constant="40" id="tMf-eC-3Zu"/>
+                                    <constraint firstItem="tdC-9i-PUv" firstAttribute="leading" secondItem="S0d-7p-6sM" secondAttribute="trailing" constant="20" id="tMf-eC-3Zu"/>
                                     <constraint firstAttribute="bottom" secondItem="S0d-7p-6sM" secondAttribute="bottom" id="x3T-mi-8So"/>
                                 </constraints>
                             </view>
@@ -962,7 +962,7 @@
                             <constraint firstItem="HDG-Mc-nvZ" firstAttribute="trailing" secondItem="u0n-qU-KjF" secondAttribute="trailing" id="pzs-aJ-nvT"/>
                             <constraint firstItem="dg4-he-orA" firstAttribute="top" secondItem="xci-1h-2qG" secondAttribute="bottom" constant="7" id="rga-Zt-Fxg"/>
                             <constraint firstItem="ggG-9U-6ZC" firstAttribute="trailing" secondItem="xci-1h-2qG" secondAttribute="trailing" id="sjN-Jr-Qxm"/>
-                            <constraint firstItem="xci-1h-2qG" firstAttribute="top" secondItem="HCt-uF-vLx" secondAttribute="bottom" constant="28" id="vLO-dd-bAt"/>
+                            <constraint firstItem="xci-1h-2qG" firstAttribute="top" secondItem="HCt-uF-vLx" secondAttribute="bottom" constant="10" id="vLO-dd-bAt"/>
                             <constraint firstItem="xci-1h-2qG" firstAttribute="leading" secondItem="u0n-qU-KjF" secondAttribute="leading" constant="20" id="wse-Rl-hLW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="u0n-qU-KjF"/>
@@ -989,21 +989,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.74901960779999999" blue="1" alpha="0.97163842430000003" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER YOUR  EMAIL / MOBILE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yv7-Gd-v6k" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="126" y="107" width="124" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER YOUR MOBILE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yv7-Gd-v6k" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="103.5" y="107" width="169" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i18-Kr-xDo" userLabel="OTP">
-                                <rect key="frame" x="20" y="168" width="335" height="35"/>
+                                <rect key="frame" x="20" y="147.5" width="335" height="35"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rqa-v3-A00" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1016,7 +1016,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98N-CO-bvX">
-                                <rect key="frame" x="20" y="238" width="335" height="35"/>
+                                <rect key="frame" x="20" y="217.5" width="335" height="35"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IN8-NQ-ojB">
                                         <rect key="frame" x="167" y="0.0" width="1" height="35"/>
@@ -1026,7 +1026,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R74-PF-UXK" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="17" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="37" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="SUBMIT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1036,7 +1036,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-wC-zH2" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="208" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="188" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="qry-e3-Kpp"/>
@@ -1051,7 +1051,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="wbK-wC-zH2" firstAttribute="leading" secondItem="IN8-NQ-ojB" secondAttribute="trailing" constant="40" id="09A-56-NdB"/>
+                                    <constraint firstItem="wbK-wC-zH2" firstAttribute="leading" secondItem="IN8-NQ-ojB" secondAttribute="trailing" constant="20" id="09A-56-NdB"/>
                                     <constraint firstAttribute="height" constant="35" id="0QV-Gr-Q8G"/>
                                     <constraint firstItem="wbK-wC-zH2" firstAttribute="width" secondItem="R74-PF-UXK" secondAttribute="width" id="1U9-lY-gYM"/>
                                     <constraint firstAttribute="bottom" secondItem="R74-PF-UXK" secondAttribute="bottom" id="D51-fw-QoZ"/>
@@ -1061,7 +1061,7 @@
                                     <constraint firstAttribute="bottom" secondItem="wbK-wC-zH2" secondAttribute="bottom" id="Zzw-id-uNK"/>
                                     <constraint firstAttribute="bottom" secondItem="IN8-NQ-ojB" secondAttribute="bottom" id="gjH-gC-Lgk"/>
                                     <constraint firstItem="IN8-NQ-ojB" firstAttribute="centerX" secondItem="98N-CO-bvX" secondAttribute="centerX" id="oQV-6b-rUs"/>
-                                    <constraint firstItem="IN8-NQ-ojB" firstAttribute="leading" secondItem="R74-PF-UXK" secondAttribute="trailing" constant="40" id="q6A-ty-e7j"/>
+                                    <constraint firstItem="IN8-NQ-ojB" firstAttribute="leading" secondItem="R74-PF-UXK" secondAttribute="trailing" constant="20" id="q6A-ty-e7j"/>
                                     <constraint firstItem="wbK-wC-zH2" firstAttribute="height" secondItem="R74-PF-UXK" secondAttribute="height" id="uEB-b2-7AU"/>
                                 </constraints>
                             </view>
@@ -1244,7 +1244,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMO-Nt-hHX" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="17" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="37" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="SUBMIT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1254,7 +1254,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-aV-Kkz" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="208" y="0.0" width="110" height="35"/>
+                                        <rect key="frame" x="188" y="0.0" width="110" height="35"/>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="Mn6-eS-Acz"/>
@@ -1276,10 +1276,10 @@
                                     <constraint firstAttribute="height" constant="35" id="KMi-Uc-4Ob"/>
                                     <constraint firstItem="ePY-aV-Kkz" firstAttribute="top" secondItem="dZ4-SX-QGL" secondAttribute="top" id="Tks-4p-Niy"/>
                                     <constraint firstAttribute="bottom" secondItem="PMO-Nt-hHX" secondAttribute="bottom" id="Uaa-JL-jiD"/>
-                                    <constraint firstItem="ePY-aV-Kkz" firstAttribute="leading" secondItem="PWY-Pm-Eoz" secondAttribute="trailing" constant="40" id="apf-m2-FcI"/>
+                                    <constraint firstItem="ePY-aV-Kkz" firstAttribute="leading" secondItem="PWY-Pm-Eoz" secondAttribute="trailing" constant="20" id="apf-m2-FcI"/>
                                     <constraint firstItem="PWY-Pm-Eoz" firstAttribute="top" secondItem="dZ4-SX-QGL" secondAttribute="top" id="bk3-s9-t69"/>
                                     <constraint firstAttribute="bottom" secondItem="ePY-aV-Kkz" secondAttribute="bottom" id="euj-Lb-PdT"/>
-                                    <constraint firstItem="PWY-Pm-Eoz" firstAttribute="leading" secondItem="PMO-Nt-hHX" secondAttribute="trailing" constant="40" id="gbE-Xu-yUe"/>
+                                    <constraint firstItem="PWY-Pm-Eoz" firstAttribute="leading" secondItem="PMO-Nt-hHX" secondAttribute="trailing" constant="20" id="gbE-Xu-yUe"/>
                                     <constraint firstAttribute="bottom" secondItem="PWY-Pm-Eoz" secondAttribute="bottom" id="ijL-Xy-cq0"/>
                                 </constraints>
                             </view>

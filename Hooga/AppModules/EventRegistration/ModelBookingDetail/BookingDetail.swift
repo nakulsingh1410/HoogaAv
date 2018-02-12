@@ -50,6 +50,8 @@ class SaveBookingDetail: NSObject,Mappable {
     var isearlybird : String = "false"
     var status = "false"
     
+    var isBookingDetailFilled = false
+    
     override init() {
       super.init()
         self.address1 = ""
@@ -64,7 +66,7 @@ class SaveBookingDetail: NSObject,Mappable {
         self.postalcode = ""
         self.profilepic = ""
         self.registrationid = 0
-        self.ticketId = 0
+        self.ticketId = -1
         self.tickettype = ""
         self.tickettypeid = 0
         self.dateofbirth = ""

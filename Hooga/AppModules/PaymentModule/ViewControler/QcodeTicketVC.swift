@@ -42,8 +42,8 @@ class QcodeTicketVC: UIViewController {
     }
     func loadDefaultValues()  {
         if let evetDtl = eventDetail{
-            let date = Common.getDateString(strDate:evetDtl.startdate) + " - " + Common.getDateString(strDate:evetDtl.enddate)
-            let time = Common.getDateString(strDate:evetDtl.starttime) + " - " + Common.getDateString(strDate:eventDetail?.endtime)
+            let date = Common.getDateString(strDate:evetDtl.startdate) //+ " - " + Common.getDateString(strDate:evetDtl.enddate)
+            let time = Common.getDateString(strDate:evetDtl.starttime) //+ " - " + Common.getDateString(strDate:eventDetail?.endtime)
             lblEventTime.text =  date + " | " + time
         }
         

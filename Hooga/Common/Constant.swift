@@ -146,7 +146,7 @@ public enum MessageError: String{
     case USER_FIRST_NAME_BLANK      = "Please enter first name."
     case USER_LAST_NAME_BLANK       = "Please enter last name."
     
-    case USER_NAME_BLANK            = "Please enter email / hand phone."
+    case USER_NAME_BLANK            = "Please enter hand phone."
     case EMAIL_BLANK                = "Please enter email address."
     case EMAIL_INVALID              = "Please enter valid email address."
     case USER_GENDER_BLANK          = "Please select gender."
@@ -188,6 +188,8 @@ public enum MessageError: String{
     case MEDICAL_EMPTY          = "Please enter medical center name."
     case TICKET_TYPE_EMPTY       = "Please select ticket type"
     case QUNATITY_TYPE_EMPTY     = "Please enter quantity"
+    case SELECT_QUNATITY        = "Please select Quantity"
+
     case QUNATITY_CANAT_ZERO    = "Quantity can not be zero"
 
     case REGISTRATION_MSG       = "Registration successfull. Please activate your account from received email."
@@ -196,7 +198,7 @@ public enum MessageError: String{
 
 enum RegisterButtonTitle:String{
     case register = " Register "
-    case bookTickets = " Book Tickets "
+    case bookTickets = " Book Ticket(s) "
 }
 
 enum ComingFromScreen:String{

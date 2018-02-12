@@ -64,8 +64,8 @@ class EventRegisterationViewController: UIViewController {
             lblEventTitle.text = evetDtl.title
             lblEventLocation.text = evetDtl.eventlocation?.trim()
             
-            let date = Common.getDateString(strDate:evetDtl.startdate) + " - " + Common.getDateString(strDate:evetDtl.enddate)
-            let time = Common.getDateString(strDate:evetDtl.starttime) + " - " + Common.getDateString(strDate:eventDetail?.endtime)
+            let date = Common.getDateString(strDate:evetDtl.startdate) //+ " - " + Common.getDateString(strDate:evetDtl.enddate)
+            let time = Common.getDateString(strDate:evetDtl.starttime) //+ " - " + Common.getDateString(strDate:eventDetail?.endtime)
             lblEventTime.text =  date + " | " + time
         }
         prefilledUsedData()

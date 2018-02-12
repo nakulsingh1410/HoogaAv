@@ -10,77 +10,120 @@ import UIKit
 
 class BookingDetailVC: UIViewController {
     
-//    @IBOutlet var viewTitle : CommonHeaderView!
-     @IBOutlet var viewQuantity : UIView!
-     @IBOutlet var viewBookingDetail : UIView!
+    @IBOutlet var viewQuantity : UIView!
+    @IBOutlet var viewBookingDetail : UIView!
     
     @IBOutlet weak var labelticketType: UILabel!
     @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var labelQuantity: UILabel!
     @IBOutlet weak var labelTotalPrice: UILabel!
+    @IBOutlet weak var ticketQuantityHeightConstraint: NSLayoutConstraint!
     
     var ticketQuantityView : TicketQuantityView?
-    var details = [SaveBookingDetail]()
+    var arrBookingDetails = [SaveBookingDetail]()
     var detailView : BookingDetailView!
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
     var qnty = 1
     var eventRecord : EventRecord?
     var currentPage = 0
+    var presentedViewIndex = 0
     var arrCity = ["Singapore"]
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         qnty =  (eventRecord?.quantityTicket)!
         addBookingDetailView()
         addTicketBookingView()
         setUIData()
+        configureData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     func setUIData() {
         if let ticket = eventRecord?.ticketTypeDetails {
-            labelticketType.text = "TICKET TYPE: " + ticket.tickettype!
+            labelticketType.text = "Ticket Type: " + ticket.tickettype!
             if let qnt =  eventRecord?.quantityTicket{
-                 labelQuantity.text = "QUANTITY:" + String(qnt)
+                labelQuantity.text = "Qty:" + String(qnt)
             }
             if let price = ticket.regularprice {
-                labelPrice.text = "PRICE:$ " + price
+                labelPrice.text = "Price:$ " + price
                 let total = Float(price)! * Float(qnty)
-                labelTotalPrice.text = "TOTAL:$ " + String(total)
+                labelTotalPrice.text = "Total:$ " + String(total)
             }
         }
+        
+        if qnty == 1 {
+            ticketQuantityHeightConstraint.constant = 0
+        }else{
+            ticketQuantityHeightConstraint.constant = 50
+        }
+       
     }
+    
+    
+    func configureData()  {
+        arrBookingDetails.append(loadFirstTicketData())
+        for _ in 1 ..< qnty {
+            arrBookingDetails.append(SaveBookingDetail())
+        }
+        if let first = arrBookingDetails.first {
+            updateDetail(detail: first)
+        }
+    }
+    
+    func loadFirstTicketData()->SaveBookingDetail  {
+        let bookingModel = SaveBookingDetail()
+        if let userData = StorageModel.getUserData(){
+            bookingModel.firstname = userData.firstname
+            bookingModel.lastname = userData.lastname
+            bookingModel.gender = userData.gender
+            bookingModel.handphone = userData.handphone
+            bookingModel.dateofbirth = userData.dateofbirth
+            bookingModel.email = userData.email
+            bookingModel.address1 = userData.address1
+            bookingModel.address2 = userData.address2
+            bookingModel.city = userData.city
+            bookingModel.postalcode = userData.postalcode
+            bookingModel.isBookingDetailFilled = true
+            bookingModel.ticketId = 0
+            if let bnanner = userData.profilepic {
+//                let url = kImgaeView + bnanner
+//                imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
+//                    if image == nil {
+//                        self.btnUpload.isHidden = false
+//                    }
+//                }
+            }
+        }
+        return bookingModel
+    }
+    
     
     @IBAction func buttonBack_didpressed(button:UIButton){
         self.navigationController?.popViewController(animated: true)
     }
     
-   
-        func addBookingDetailView()  {
-            let nib = UINib.init(nibName: "BookingDetailView", bundle: nil)
-            
-            let views = nib.instantiate(withOwner: self, options: nil)
-            
-            detailView = views[0] as! BookingDetailView
-            detailView.frame = CGRect.init(x: 0, y: 0, width: viewBookingDetail.frame.size.width, height: viewBookingDetail.frame.size.height)
-            detailView.delegate = self
-            viewBookingDetail.addSubview(detailView)
-        }
+    
+    func addBookingDetailView(tabIndex:Int = 0)  {
+        let nib = UINib.init(nibName: "BookingDetailView", bundle: nil)
+        let views = nib.instantiate(withOwner: self, options: nil)
+        detailView = views[0] as! BookingDetailView
+        detailView.frame = CGRect.init(x: 0, y: 0, width: viewBookingDetail.frame.size.width, height: viewBookingDetail.frame.size.height)
+        detailView.delegate = self
+        viewBookingDetail.addSubview(detailView)
+        presentedViewIndex = tabIndex
+    }
     
     func addTicketBookingView()  {
         
         let nib = UINib.init(nibName: "TicketQuantityView", bundle: nil)
-        
         let views = nib.instantiate(withOwner: self, options: nil)
-        
         ticketQuantityView = views[0] as? TicketQuantityView
         ticketQuantityView?.delegate = self
         ticketQuantityView?.qunatity = qnty
@@ -101,24 +144,41 @@ class BookingDetailVC: UIViewController {
             message = MessageError.USER_DOB_BLANK .rawValue
         }else if let value = detailView.mobile.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
             message = MessageError.PHONE_EMPTY .rawValue
-        }else if let value = detailView.email.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-            message = MessageError.EMAIL_BLANK.rawValue
-        }else if let value = detailView.email.text,value.isEmail == false{
-            message = MessageError.EMAIL_INVALID.rawValue
+        }else if let value = detailView.mobile.text,!value.isPhoneValid(){
+            message = MessageError.PHONE_INVALID .rawValue
         }
-//        else if let value = detailView.address1.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-//                    message = MessageError.ADDRESS1_BLANK .rawValue
-//                }else if let value = detailView.address2.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-//                    message = MessageError.ADDRESS2_BLANK .rawValue
-//                }else if let value = detailView.city.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-//                    message = MessageError.CITY_EMPTY.rawValue
-//                }else if let value = detailView.postalCode.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-//                    message = MessageError.POSTCODE_EMPTY.rawValue
-//                }
-         return (message == nil) ? (message,false):(message,true)
-   }
+//        else if let value = detailView.email.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+//            message = MessageError.EMAIL_BLANK.rawValue
+//        }else if let value = detailView.email.text,value.isEmail == false{
+//            message = MessageError.EMAIL_INVALID.rawValue
+//        }
+
+        return (message == nil) ? (message,false):(message,true)
+    }
     
-    func setDetailModel(ticket : Int) -> Bool  {
+    func updateDetail(detail : SaveBookingDetail)  {
+        
+        detailView.address1.text = detail.address1
+        detailView.address2.text = detail.address2
+        detailView.firstName.text = detail.firstname
+        detailView.lastName.text = detail.lastname
+        detailView.email.text = detail.email
+        detailView.mobile.text =  detail.handphone
+        detailView.postalCode.text = detail.postalcode
+        detailView.email.text = detail.email
+        detailView.gender.text = detail.gender
+        detailView.dob.text = detail.dateofbirth
+        detailView.city.text =  detail.city
+    }
+    func getTicketForTicketId(ticketId:Int)  -> SaveBookingDetail?{
+        return arrBookingDetails.filter { $0.ticketId == ticketId}.first
+    }
+    
+    
+}
+extension BookingDetailVC{
+    
+    func saveTicketDetailInModel(ticketId:Int) ->Bool  {
         
         let touple =   validate()
         if touple.isEmpty == true , let errorMsg = touple.message {
@@ -127,15 +187,14 @@ class BookingDetailVC: UIViewController {
         }
         
         let model = SaveBookingDetail()
-        model.ticketId   = ticket
-        
+        model.ticketId = ticketId
         model.eventid =   eventRecord?.eventDetail?.eventid
         model.registrationid = eventRecord?.eventDetail?.regid
         model.status = "false"
         model.tickettype = eventRecord?.ticketTypeDetails?.tickettype
         model.tickettypeid = eventRecord?.ticketTypeDetails?.tickettypeid
         model.isearlybird = "false"
-
+        
         model.address1 = detailView.address1.text
         model.address2 = detailView.address2.text
         model.firstname = detailView.firstName.text
@@ -147,51 +206,55 @@ class BookingDetailVC: UIViewController {
         model.gender   = detailView.gender.text
         model.dateofbirth = detailView.dob.text
         model.city   = detailView.city.text
-        details.append(model)
-        
-         return true
-    }
-    
-    func updateDetail(detail : SaveBookingDetail)  {
-    
-         detailView.address1.text = detail.address1
-         detailView.address2.text = detail.address2
-        detailView.firstName.text = detail.firstname
-        detailView.lastName.text = detail.lastname
-        detailView.email.text = detail.email
-       detailView.mobile.text =  detail.handphone
-        detailView.postalCode.text = detail.postalcode
-        detailView.email.text = detail.email
-        detailView.gender.text = detail.gender
-        detailView.dob.text = detail.dateofbirth
-        detailView.city.text =  detail.city
-    }
-    func checkDetail(tId:Int)  -> SaveBookingDetail?{
-       return details.filter { $0.ticketId == tId}.first
+        arrBookingDetails[ticketId] = model
+//        previousIndex = ticketId
+
+        return true
     }
     
 }
+
+/****************************************************************/
+// MARK: TicketQuantityView Delegate
+/**********************************************************************/
 extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegate{
-    
-    func selectedTicket(ticketView:TicketQuantityView, ticket:Int){
+    func didSelectRowAt(indexpath: IndexPath,ticektQuantityView:TicketQuantityView) {
+        if let ticket = getTicketForTicketId(ticketId: indexpath.row){
+            detailView.removeFromSuperview()
+            addBookingDetailView(tabIndex: indexpath.row)
+            updateDetail(detail: ticket)
+            ticektQuantityView.indexPth = indexpath
+            ticektQuantityView.collectionQuantity.reloadData()
+            return
+        }
         
-        if (checkDetail(tId: ticket - 1) != nil) {
-            
+        if presentedViewIndex < indexpath.row {
+            for i in presentedViewIndex ..< indexpath.row{
+                if let _ = getTicketForTicketId(ticketId: i){
+                    continue
+                }else{
+                    Common.showAlert(message: "Please fill \(i+1) ticket detail")
+                    return
+                }
+            }
+        }
+        if validate().isEmpty == true {
+            Common.showAlert(message: validate().message!)
+            return
+        }else{
+            let _ = saveTicketDetailInModel(ticketId: presentedViewIndex)
+        }
+        if let ticket = getTicketForTicketId(ticketId: indexpath.row){
+            updateDetail(detail: ticket)
         }else{
             detailView.removeFromSuperview()
-            addBookingDetailView()
+            addBookingDetailView(tabIndex: indexpath.row)
+            ticektQuantityView.indexPth = indexpath
+            ticektQuantityView.collectionQuantity.reloadData()
         }
+
     }
-    
-    func isTicketCompleted(ticketView:TicketQuantityView, ticket:Int) -> Bool{
-        
-        if let obj =  checkDetail(tId: ticket - 1)  {
-             updateDetail(detail : obj)
-            return true
-        }
-        currentPage = ticket - 1
-        return  setDetailModel(ticket: ticket - 1)
-    }
+
     func openGenderPicker(ticketView:BookingDetailView){
         openGenderPicker()
     }
@@ -207,42 +270,70 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
     func openImagePicker(ticketView:BookingDetailView){
         pickProfileImage()
     }
-    func pay(ticketView:BookingDetailView){
-        
-        if (checkDetail(tId: currentPage) == nil) {
-            let isave  =  setDetailModel(ticket: currentPage)
-        }
-        if details.count == qnty {
-            
-            saveTicketDetails(arrTicket: details)
+    func submit(ticketView:BookingDetailView){
+
+        if validate().isEmpty == true {
+            Common.showAlert(message: validate().message!)
+            return
         }else{
-            Common.showAlert(message: "Please fill ticket deatils")
-            
-            if (checkDetail(tId: currentPage) == nil) {
-                let isave  =  setDetailModel(ticket: currentPage)
+            if saveTicketDetailInModel(ticketId: presentedViewIndex) {
+               let unFilledTickets = arrBookingDetails.filter({ (bookingDetail) -> Bool in
+                    return bookingDetail.ticketId == -1
+                })
+                if unFilledTickets.count > 0{
+                    Common.showAlert(message: "Please fill All ticket info")
+                }else{
+//                    showAlert()
+                    self.saveTicketDetailsAPI(arrTicket: self.arrBookingDetails)
+                }
             }
-            
-            saveTicketDetails(arrTicket: details)
-            
         }
-    }
-    func cancel(ticketView:BookingDetailView){
-        
-        
     }
     
-    func saveTicketDetails(arrTicket:[SaveBookingDetail])  {
-       TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
+//    func showAlert(){
+//        let message = "Do you want to pay for \(arrBookingDetails.count) ticket"
+//        let alertController = UIAlertController(title: kProjectName, message: message, preferredStyle: .alert)
+//        let action1 = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
+//            if let type = self.eventRecord?.eventDetail?.entrytype?.trim(), type == EventType.paid.rawValue{
+//                   self.saveTicketDetailsAPI(arrTicket: self.arrBookingDetails)
+//            }else{
+//                //proceedToFreeEntry()
+//            }
+//        }
+//        let action2 = UIAlertAction(title: "Cancel", style: .default) { (action:UIAlertAction) in
+//            print("You've pressed cancel");
+//        }
+//        alertController.addAction(action1)
+//        alertController.addAction(action2)
+//        self.present(alertController, animated: true, completion: nil)
+//    }
+    
+    func save(ticketView:BookingDetailView){
+        if validate().isEmpty == true {
+            Common.showAlert(message: validate().message!)
+            return
+        }else{
+            if saveTicketDetailInModel(ticketId: presentedViewIndex) {
+                 Common.showAlert(message: "\(presentedViewIndex+1) ticket detail Saved! ")
+            }
+        }
+    }
+    func saveTicketDetailsAPI(arrTicket:[SaveBookingDetail])  {
+        TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
             if let _ = data{
                 // navigate to payment screen
-                self.eventRecord?.bookingDetails =  self.details; NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!)
+                self.eventRecord?.bookingDetails =  self.arrBookingDetails; NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!)
             }else{
                 //error
-        }
+            }
             
         }
     }
 }
+
+/****************************************************************/
+// MARK: Open picker
+/**********************************************************************/
 
 extension BookingDetailVC {
     
@@ -257,7 +348,7 @@ extension BookingDetailVC {
         }
     }
     private func openCityPicker(){
-         view.endEditing(true)
+        view.endEditing(true)
         if let picker = CustomPickerView.loadPickerView(){
             picker.frame = view.frame
             picker.pickerType = .cityPicker
@@ -267,7 +358,7 @@ extension BookingDetailVC {
         }
     }
     private func openDatePicker(){
-         view.endEditing(true)
+        view.endEditing(true)
         if let picker = CustomDatePicker.loadDatePickerView(){
             picker.frame = view.frame
             picker.customDatePickerDelegate = self
@@ -278,13 +369,13 @@ extension BookingDetailVC {
     
     
     private func pickProfileImage(){
-         view.endEditing(true)
+        view.endEditing(true)
         let imageController = OpenImagePickerViewController()
         imageController.configure {[weak self]  (flag, image) in
             guard let weakSelf = self else {return}
             if flag {
-//                weakSelf.imgViewProfilePic.image = image
-//                weakSelf.btnUpload.isHidden = true
+                //                weakSelf.imgViewProfilePic.image = image
+                //                weakSelf.btnUpload.isHidden = true
             }
             else{
                 
@@ -296,9 +387,9 @@ extension BookingDetailVC {
 }
 
 
-/******************************************/
+/****************************************************************/
 // MARK: CustomPickerView Deleagte
-/*********************************************************************************/
+/**********************************************************************/
 extension BookingDetailVC:CustomPickerViewDelegate{
     func dismissPickerView() {
         

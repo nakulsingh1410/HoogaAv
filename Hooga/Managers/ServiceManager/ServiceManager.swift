@@ -158,7 +158,7 @@ extension Service {
                             }
                             callback(response)
                         case .success(let responseObject):
-                            print(responseObject)
+                           // print(responseObject)
                             print(response.result.value ?? String(data: response.data!, encoding: .utf8) ?? kNoResponse)
                             callback(response)
                         }

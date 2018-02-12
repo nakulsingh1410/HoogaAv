@@ -133,7 +133,7 @@ extension EventDetailVC : UITableViewDataSource{
             }
             cellShare.delegate = self
             cellShare.selectionStyle = .none
-            if let _ = eventDetail?.regid {
+            if let regId = eventDetail?.regid , regId > 0{
                 cellShare.buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
             }else{
                  cellShare.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)

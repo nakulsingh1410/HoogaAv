@@ -9,13 +9,14 @@
 import UIKit
 protocol TicketQuantityViewDelegate {
     
-    func selectedTicket(ticketView:TicketQuantityView, ticket:Int)
-    
-func isTicketCompleted(ticketView:TicketQuantityView, ticket:Int) -> Bool
+//    func selectedTicket(ticketView:TicketQuantityView, ticket:Int)
+//    func isTicketCompleted(ticketView:TicketQuantityView, ticket:Int) -> Bool
+    func didSelectRowAt(indexpath:IndexPath,ticektQuantityView:TicketQuantityView)
+
     
 }
 class TicketQuantityView: UIView {
-   
+    
     @IBOutlet var collectionQuantity : UICollectionView!
     
     var  delegate  : TicketQuantityViewDelegate?
@@ -35,7 +36,7 @@ class TicketQuantityView: UIView {
         
         configQuantityCollection()
     }
-
+    
     func configQuantityCollection()  {
         
         collectionQuantity.register(QuantityCell.nib, forCellWithReuseIdentifier: QuantityCell.identifier)
@@ -51,7 +52,7 @@ class TicketQuantityView: UIView {
             layout.minimumLineSpacing        = 0;
             layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         }
-      }
+    }
 }
 
 extension TicketQuantityView : UICollectionViewDataSource {
@@ -77,7 +78,7 @@ extension TicketQuantityView : UICollectionViewDataSource {
             
             cellQuantity.viewBg.isHidden = true
             cellQuantity.labelQuantity.backgroundColor = UIColor.lightGray
-             cellQuantity.labelQuantity.textColor = UIColor.white
+            cellQuantity.labelQuantity.textColor = UIColor.white
         }
         addLayer(labelQuantity:cellQuantity.labelQuantity , frame:cellQuantity.frame)
         return cellQuantity
@@ -85,7 +86,7 @@ extension TicketQuantityView : UICollectionViewDataSource {
     
     func addLayer(labelQuantity:UILabel,frame : CGRect)   {
         let frameNew = labelQuantity.frame //Frame of label
-    
+        
         // Bottom Layer
         let leftLayer = CALayer()
         leftLayer.frame = CGRect(x: 0, y: 0, width: 1, height: 50)
@@ -110,18 +111,19 @@ extension TicketQuantityView : UICollectionViewDataSource {
 extension TicketQuantityView : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if delegate != nil {
-        
-            let isCompleted = delegate?.isTicketCompleted(ticketView: self, ticket: indexPath.row + 1)
-            
-            if isCompleted! {
-                indexPth = indexPath
-                collectionView.reloadData()
-                delegate?.selectedTicket(ticketView: self, ticket: indexPath.row + 1)
-            }
-        }
-        
+        delegate?.didSelectRowAt(indexpath: indexPath,ticektQuantityView:self)
+
+//        if delegate != nil {
+//
+//            let isCompleted = delegate?.isTicketCompleted(ticketView: self, ticket: indexPath.row + 1)
+//
+//            if isCompleted! {
+//                indexPth = indexPath
+//                collectionView.reloadData()
+//                delegate?.selectedTicket(ticketView: self, ticket: indexPath.row + 1)
+//            }
+//        }
+//
     }
-  
+    
 }

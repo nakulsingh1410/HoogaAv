@@ -30,15 +30,12 @@ class ForgotPasswordViewController: UIViewController {
            Common.showAlert(message: MessageError.USER_NAME_BLANK .rawValue)
             return
         }
-        
-        if userName.isNumber() == true{
-             setForgotPasswordAPI(password: txtFEmail.text!)
-        }else if userName.isEmail == true{
+         if !userName.isPhoneValid() {
+            Common.showAlert(message: MessageError.PHONE_INVALID .rawValue)
+
+         }else{
             setForgotPasswordAPI(password: txtFEmail.text!)
-        }else{
-            Common.showAlert(message: MessageError.VALID_USER_NAME .rawValue)
         }
-     
     }
     
     private func navigateToOTP(){

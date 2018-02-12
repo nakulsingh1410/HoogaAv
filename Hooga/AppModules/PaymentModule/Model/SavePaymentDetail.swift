@@ -65,6 +65,6 @@ class SavePaymentResponse: NSObject,Mappable {
     
     public func mapping(map: Map) {
         ticketID            <- map["ticketID"]
-        payRefNumber            <- map["payRefNumber"]
+        payRefNumber        <- map["payRefNumber"]
     }
 }

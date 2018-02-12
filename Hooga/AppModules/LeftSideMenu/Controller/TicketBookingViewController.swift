@@ -12,6 +12,7 @@ class TicketBookingViewController: UIViewController {
     @IBOutlet weak var navHeaderView: CustomNavHeaderView!
     @IBOutlet weak var imgViewBanner: UIImageView!
     
+    @IBOutlet weak var lblMaxTicketPerReg: HoogaLabel!
     @IBOutlet weak var lblEventTitle: HoogaLabel!
     @IBOutlet weak var lblEventLocation: HoogaLabel!
     @IBOutlet weak var lblEventTime: HoogaLabel!
@@ -30,6 +31,7 @@ class TicketBookingViewController: UIViewController {
     var eventDetail:EventDetail?
     var arrTicketType = [TicketType]()
     var arrQuantity = [String]()
+    var availabletTicketsCount : Int = 0
     var ticketTypeDetails:TicketTypeDetails?
     var availableEarlyBirdTicketsCount:Int = 0
     var selectedTicketType : TicketType?
@@ -41,7 +43,7 @@ class TicketBookingViewController: UIViewController {
         if let eventId = eventDetail?.eventid {
             getTicketTypeAPI(eventId:eventId)
         }
-        txtFQuantity.text = ""
+//        txtFQuantity.text = ""
     }
     
     func configoreNavigationHeader()  {
@@ -75,15 +77,26 @@ class TicketBookingViewController: UIViewController {
             lblEventTitle.text = evetDtl.title
             lblEventLocation.text = evetDtl.eventlocation?.trim()
             
-            let date = Common.getDateString(strDate:evetDtl.startdate) + " - " + Common.getDateString(strDate:evetDtl.enddate)
-            let time = Common.getDateString(strDate:evetDtl.starttime) + " - " + Common.getDateString(strDate:eventDetail?.endtime)
+            let date = Common.getDateString(strDate:evetDtl.startdate) //+ " - " + Common.getDateString(strDate:evetDtl.enddate)
+            let time = Common.getDateString(strDate:evetDtl.starttime) //+ " - " + Common.getDateString(strDate:eventDetail?.endtime)
             lblEventTime.text =  date + " | " + time
         }
         txtFTicketType.text = "Select Ticket"
         txtFQuantity.text = "Select Quantity"
+        
+       
+        
         hideTicketInfo()
+        loadQuantity()
     }
     
+    func loadQuantity()  {
+        if availabletTicketsCount > 0{
+            for index in 1 ..< availabletTicketsCount {
+                arrQuantity.append("\(index)")
+            }
+        }
+    }
     
     private func openTicketTypePicker(){
         if let picker = CustomPickerView.loadPickerView(){
@@ -113,6 +126,7 @@ class TicketBookingViewController: UIViewController {
     
     fileprivate func hideTicketInfo(){
         imageVewHeightConstraint.constant = 0
+        lblMaxTicketPerReg.text = ""
         lblDescription.text = ""
         lblAvailable.text = ""
         lblRegularPrice.text = ""
@@ -123,6 +137,11 @@ class TicketBookingViewController: UIViewController {
         
         if let ticketDetail = ticketTypeDetails{
             imageVewHeightConstraint.constant = 128
+            
+            if let string = ticketDetail.maxticketslimit{
+                lblMaxTicketPerReg.text = "*Max Ticket :" +  string + "/ Register"
+            }
+            
             if let path = ticketDetail.ticketimage {
                 let url = kTicketUrl + path
                 imgViewTicket.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){[weak self] (image, error, cacheType, url) in
@@ -138,10 +157,10 @@ class TicketBookingViewController: UIViewController {
                 lblDescription.text = decsiption
                 
             }
-            if let string = ticketDetail.maxticketslimit{
-                lblAvailable.text = "Available: " + string
+//            if let string = ticketDetail.maxticketslimit{
+                lblAvailable.text = "Available: " + "\(availabletTicketsCount)"
                 
-            }
+//            }
             if let string = ticketDetail.regularprice{
                 lblRegularPrice.text =  "Regular Price: " + string
                 
@@ -149,6 +168,9 @@ class TicketBookingViewController: UIViewController {
             if let string = ticketDetail.earlybirdticketslimit{
                 lblEarlyBird.text = "Early Bird Price: " +  string
             }
+          
+            
+            
         }
     }
     private func validate()->(message:String?,isEmpty:Bool){
@@ -156,10 +178,10 @@ class TicketBookingViewController: UIViewController {
         var message : String?
         if let value = txtFTicketType.text,value == "Select Ticket"{
             message = MessageError.TICKET_TYPE_EMPTY .rawValue
-        } else if let value = txtFQuantity.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+        }else if let value = txtFQuantity.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
             message = MessageError.QUNATITY_TYPE_EMPTY .rawValue
-        }else if let value = txtFQuantity.text , value == "0"{
-            message = MessageError.QUNATITY_CANAT_ZERO .rawValue
+        }else if let value = txtFQuantity.text , value == "Select Quantity"{
+            message = MessageError.SELECT_QUNATITY.rawValue
         }
 
         return (message == nil) ? (message,false):(message,true)
@@ -186,7 +208,7 @@ class TicketBookingViewController: UIViewController {
             }
         }
     }
-    
+
     
     
     @IBAction func btnTicketTypeTappped(_ sender: Any) {
@@ -200,7 +222,10 @@ class TicketBookingViewController: UIViewController {
     }
     @IBAction func btnProceedTapped(_ sender: Any) {
         view.endEditing(true)
-         proceed()
+        proceed()
+        
+
+        
 //        if let evnt = eventDetail{
 //            NavigationManager.bookingDetail(navigationController: navigationController, evntDetail: evnt)
 //        }
@@ -221,10 +246,10 @@ extension TicketBookingViewController:CustomPickerViewDelegate{
             txtFTicketType.text = title
             selectedTicketType = arrTicketType[index]
             getTicketTypeDetailsAPI(eventId: (eventDetail?.eventid!)!, tickettypeid: (selectedTicketType!.tickettypeid!))
+            getAvailableEarlyBirdTicketsCountAPI(eventId: (eventDetail?.eventid!)!, tickettypeid: (selectedTicketType!.tickettypeid!))
         }
         if let type = pickerType , type == .quanityPicker {
             txtFQuantity.text = title
-            getAvailableEarlyBirdTicketsCountAPI(eventId: (eventDetail?.eventid!)!, tickettypeid: (selectedTicketType!.tickettypeid!))
         }
     }
 }
@@ -250,27 +275,23 @@ extension TicketBookingViewController{
             guard let weakSelf = self else {return}
             if let obj = data{
                 weakSelf.ticketTypeDetails = obj
-                weakSelf.getAvailableTicketsCountAPI(eventId: eventId)
-                weakSelf.showTicketInfo()
+//                weakSelf.showTicketInfo()
+                weakSelf.getAvailableTicketsCountAPI(eventId: eventId, tickettypeid: tickettypeid)
+
             }
         }
     }
     
     
     
-    func getAvailableTicketsCountAPI(eventId:Int)  {
-        arrQuantity.removeAll()
-        EventService.getAvailableTicketsCount(eventid: eventId) { [weak self] (flag, ticketCount) in
+    func getAvailableTicketsCountAPI(eventId:Int,tickettypeid:Int)  {
+        EventService.getAvailableTicketsCount(eventid: eventId, tickettypeid: tickettypeid) { [weak self] (flag, ticketCount) in
             guard let weakSelf = self else {return}
-            weakSelf.arrQuantity.append("0")
-            if let ticketCountInt = ticketCount,ticketCountInt>0{
-                for index in 0 ..< ticketCountInt{
-                   weakSelf.arrQuantity.append(String(index))
-                }
-                
-            }else{
-                weakSelf.arrQuantity.append("1")
+            if let ticketCountInt = ticketCount{
+                weakSelf.availabletTicketsCount = ticketCountInt
+                weakSelf.loadQuantity()
             }
+            weakSelf.showTicketInfo()
         }
     }
     

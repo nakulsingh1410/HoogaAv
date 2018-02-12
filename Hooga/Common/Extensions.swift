@@ -556,6 +556,14 @@ extension String {
         let numberCharacters = NSCharacterSet.decimalDigits.inverted
         return !self.isEmpty && self.rangeOfCharacter(from: numberCharacters) == nil
     }
+    func isPhoneValid() -> Bool {
+        if isNumber() {
+            if self.trim().count == 8 || self.trim().count == 10 {
+                return true
+            }
+        }
+        return false
+    }
     
     mutating func ucfirst() -> String {
         if self == nil{

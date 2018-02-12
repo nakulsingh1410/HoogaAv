@@ -272,7 +272,7 @@ extension EventService{
             if let obj = response.result.value as? [String:Any]{
                 var msg = ""
                 if let regNo = obj["registrationnumber"] as? String{
-                     msg = "Registered successfully your registration number is \(regNo)"
+                     msg = "Event registered successfully."
                 }else{
                     if let message = obj["message"] as? String{
                          msg = message
@@ -372,9 +372,11 @@ extension EventService{
     }
     
     static func getAvailableTicketsCount(eventid:Int,
+                                         tickettypeid:Int,
                                      callback: @escaping (Bool,Int?) -> Void){
         var dictParam = Dictionary<String,Any>()
         dictParam["eventid"] = eventid
+        dictParam["tickettypeid"] = tickettypeid
         Common.showHud()
         let kServerUrl = kDomain + kEvent + ServiceName.AVAILABLE_TICKET_COUNT.rawValue
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
