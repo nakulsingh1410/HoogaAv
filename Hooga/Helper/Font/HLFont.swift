@@ -12,16 +12,19 @@ import UIKit
 struct Font  {
     
   static  let fontGillSans       = "GillSans"
-    
+    static  let fontGillSansLight       = "GillSans"
+
   static  let fontGotham           = "Gotham-Book"
     
    static  let fontLobster        = "Lobster-Regular"
     
     static  func gillSans(size : CGFloat)  -> UIFont {
-    
         let name = loadFont(name: fontGillSans, type: "ttc")
         return UIFont(name:name, size:size)!
-    
+    }
+    static  func gillSansLight(size : CGFloat)  -> UIFont {
+        let name = loadFont(name: fontGillSans, type: "ttc")
+        return UIFont(name:name, size:size)!
     }
     
     static  func gotham(size : CGFloat)  -> UIFont {

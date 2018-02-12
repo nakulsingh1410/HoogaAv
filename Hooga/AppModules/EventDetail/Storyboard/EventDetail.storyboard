@@ -183,7 +183,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgf-HI-O3F" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="83" y="30" width="247" height="21"/>
+                                        <rect key="frame" x="187.5" y="30" width="0.0" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="OvZ-o0-dNk"/>
                                         </constraints>
@@ -197,12 +197,11 @@
                                     <constraint firstItem="sgC-ho-BCd" firstAttribute="top" secondItem="vgf-HI-O3F" secondAttribute="bottom" constant="12" id="GNK-Vr-BcT"/>
                                     <constraint firstItem="3jN-7s-DIe" firstAttribute="leading" secondItem="sLV-FP-gPb" secondAttribute="leading" constant="5" id="H4X-Bq-0Ws"/>
                                     <constraint firstItem="sgC-ho-BCd" firstAttribute="top" secondItem="3jN-7s-DIe" secondAttribute="bottom" constant="5" id="M6q-Mb-sX6"/>
-                                    <constraint firstAttribute="trailing" secondItem="vgf-HI-O3F" secondAttribute="trailing" constant="45" id="TWv-4d-pxf"/>
                                     <constraint firstAttribute="trailing" secondItem="sgC-ho-BCd" secondAttribute="trailing" constant="5" id="aoJ-ut-L39"/>
                                     <constraint firstAttribute="bottom" secondItem="sgC-ho-BCd" secondAttribute="bottom" id="cpe-DP-8ch"/>
                                     <constraint firstItem="sgC-ho-BCd" firstAttribute="leading" secondItem="sLV-FP-gPb" secondAttribute="leading" constant="5" id="gne-65-pbU"/>
+                                    <constraint firstItem="vgf-HI-O3F" firstAttribute="centerX" secondItem="sLV-FP-gPb" secondAttribute="centerX" id="i1e-ej-rCk"/>
                                     <constraint firstAttribute="height" constant="64" id="jyz-36-FTA"/>
-                                    <constraint firstItem="vgf-HI-O3F" firstAttribute="leading" secondItem="3jN-7s-DIe" secondAttribute="trailing" constant="8" id="llM-z8-UfS"/>
                                 </constraints>
                             </view>
                         </subviews>

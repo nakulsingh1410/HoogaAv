@@ -209,16 +209,7 @@ extension BookingDetailVC{
     func clearCurrentTicketDetail()  {
         arrBookingDetails[presentedViewIndex] = SaveBookingDetail()
         updateDetail(detail: arrBookingDetails[presentedViewIndex])
-//        detailView.address1.text = detail.address1
-//        detailView.address2.text = detail.address2
-//        detailView.firstName.text = detail.firstname
-//        detailView.lastName.text = detail.lastname
-//        detailView.email.text = detail.email
-//        detailView.mobile.text =  detail.handphone
-//        detailView.postalCode.text = detail.postalcode
-//        detailView.gender.text = detail.gender
-//        detailView.dob.text = detail.dateofbirth
-//        detailView.city.text =  detail.city
+
     }
     
 }
@@ -294,8 +285,13 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
         TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
             if let reponseArray = data{
                 // navigate to payment screen
-                self.eventRecord?.bookingDetails =  self.arrBookingDetails;
-                NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!, savedTicketDetail: reponseArray)
+                if let type = self.eventRecord?.eventDetail?.entrytype?.trim() , type == EventType.paid.rawValue{
+                    self.eventRecord?.bookingDetails =  self.arrBookingDetails;
+                    NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!, savedTicketDetail: reponseArray)
+                }else{
+                    NavigationManager.thanksController(navigationController: self.navigationController, evntDetail: EventRecord())
+                }
+              
             }else{
                 //error
             }

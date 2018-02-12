@@ -20,10 +20,14 @@ class HoogaTextField: UITextField {
     override func awakeFromNib() {
         setLeftPadding()
        // self.font = Font.lobster(size: 14.0)
+        if let size = self.font?.pointSize{
+            self.font = Font.gillSansLight(size: size)
+        }
     }
     
     func setLeftPadding()  {
        self.addLeftMargin(leftMargin: 8)
+       
     }
 }
 

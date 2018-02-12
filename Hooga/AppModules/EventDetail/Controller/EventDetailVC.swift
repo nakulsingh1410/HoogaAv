@@ -89,22 +89,31 @@ extension EventDetailVC : UITableViewDataSource{
             
         }else if cellType == 1 {
             let cellTitle = tableView.dequeueReusableCell(withIdentifier: EventTitleCell.identifier) as! EventTitleCell
-            //01/01/2018 - 05/01/2018 | 21:00 - 00:00
+          
             cellTitle.labelEvntTitle.text  = self.eventDetail?.title
             let date = Common.getDateString(strDate:eventDetail?.startdate) + " - " + Common.getDateString(strDate:eventDetail?.enddate)
             let time = Common.getDateString(strDate:eventDetail?.starttime) + " - " + Common.getDateString(strDate:eventDetail?.endtime)
             cellTitle.labelDateTime.text =  date + " | " + time
             cellTitle.labelVanue.text = self.eventDetail?.eventlocation?.trim()
-            var description =  ""
             
+            var categoryString = ""
+            if let category =  self.eventDetail?.category{
+                categoryString = category
+            }
+            if let entrytype =  self.eventDetail?.entrytype{
+                categoryString = categoryString + " | " + entrytype
+            }
+            cellTitle.lblCategory.text = categoryString
+            
+            var description =  ""
             if let short = eventDetail?.shortdescription?.trim(){
                 description += short
             }
             if let long = eventDetail?.longdescription?.trim(){
                 description += long
             }
-            
             cellTitle.labelDescription.text = description
+            
             if !description.isBlank ,cellTitle.labelDescription.intrinsicContentSize.height > 29{
                 cellTitle.btnReadMore.isHidden = false
                 cellTitle.readMoreBtnConstraint.constant = 30

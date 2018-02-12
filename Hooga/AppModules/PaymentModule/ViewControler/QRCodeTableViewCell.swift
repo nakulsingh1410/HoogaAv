@@ -17,7 +17,7 @@ class QRCodeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -39,7 +39,6 @@ class QRCodeTableViewCell: UITableViewCell {
         }else{
             lblTicketType.text = ""
         }
-        
         
         if let bnanner = ticketDetails.qrCodeImage {
             let url = kQRCodes + bnanner

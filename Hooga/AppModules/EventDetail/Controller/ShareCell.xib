@@ -84,10 +84,10 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sp-We-vka" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="240" y="62.5" width="70" height="32"/>
+                        <rect key="frame" x="240" y="60" width="70" height="37"/>
                         <color key="backgroundColor" red="0.24198424816131592" green="0.49645906686782837" blue="0.98203366994857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="32" id="W1W-nN-KIb"/>
+                            <constraint firstAttribute="height" constant="37" id="W1W-nN-KIb"/>
                         </constraints>
                         <state key="normal" title="REGISTER">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

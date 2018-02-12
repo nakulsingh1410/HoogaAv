@@ -92,9 +92,16 @@ extension MyEventViewController : UITableViewDataSource{
         
         let event = arrMyEvent[indexPath.row]
         
-        cellEvent.labelEventCode.text =  event.eventcode
-        cellEvent.labelEventDate.text = event.startdate
-        cellEvent.labelEventTime.text = event.starttime
+//        cellEvent.labelEventCode.text =  event.eventcode
+        var dateStirng = ""
+        if let startDate = event.startdate{
+            dateStirng = startDate
+        }
+        if let starttime = event.starttime{
+            dateStirng = dateStirng + " | " + starttime
+        }
+        cellEvent.labelEventDate.text = dateStirng
+//        cellEvent.labelEventTime.text = event.starttime
         cellEvent.labelEventTitle.text = event.title
         cellEvent.selectionStyle = .none
         
@@ -109,8 +116,8 @@ extension MyEventViewController : UITableViewDataSource{
             
         }
         
-        cellEvent.buttonEventDetail.tag = indexPath.row
-        cellEvent.buttonEventDetail.addTarget(self, action:#selector(buttonDetail_Pressed(_:)), for: .touchUpInside)
+//        cellEvent.buttonEventDetail.tag = indexPath.row
+//        cellEvent.buttonEventDetail.addTarget(self, action:#selector(buttonDetail_Pressed(_:)), for: .touchUpInside)
         
         // cellEvent.viewForShadow.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
         return cellEvent
@@ -126,6 +133,10 @@ extension MyEventViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension;
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        buttonDetail_Pressed(UIButton())
     }
 }
 

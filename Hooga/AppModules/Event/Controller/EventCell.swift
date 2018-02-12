@@ -10,10 +10,10 @@ import UIKit
 
 class EventCell: UITableViewCell {
 
-    @IBOutlet weak var buttonEventDetail: UIButton!
-    @IBOutlet weak var labelEventTime: UILabel!
+//    @IBOutlet weak var buttonEventDetail: UIButton!
+//    @IBOutlet weak var labelEventTime: UILabel!
     @IBOutlet weak var labelEventDate: UILabel!
-    @IBOutlet weak var labelEventCode: UILabel!
+//    @IBOutlet weak var labelEventCode: UILabel!
     @IBOutlet weak var labelEventTitle: UILabel!
     @IBOutlet weak var imageViewEvent: UIImageView!
     @IBOutlet weak var viewForShadow: UIView!
