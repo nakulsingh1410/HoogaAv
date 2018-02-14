@@ -240,6 +240,82 @@ extension  TicketBookingService{
         }
     }
     
+}
+
+// for free event
+extension TicketBookingService{
+    static func showRegistrationDetails(eventid:Int,
+                                        registrationid:Int,
+                                           callback: @escaping (Bool,String?) -> Void){
+        
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        dictParam["registrationid"] = registrationid
+
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_REGISTRATION_DETAIL.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let responseObj = obj["Isluckydraw"] as? String{
+                    callback(true,responseObj);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+
+    static func generateFreeLuckyDrawNumber(eventid:Int,
+                                           registrationid:Int,
+                                           callback: @escaping (Bool,[ShowMyEventLuckyDrawPrizes]?) -> Void){
+        
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        dictParam["registrationid"] = registrationid
+
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.GENERATE_FREE_LUCKY_DRAW_NO.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let responseObj = obj["LuckyDrawPrizes"] as? [[String:Any]]{
+                    let array = Mapper<ShowMyEventLuckyDrawPrizes>().mapArray(JSONArray: responseObj)
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+                
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
     
-    
+    static func showMyFreeEventLuckyDrawResult(eventid:Int,
+                                     registrationid:Int,
+                                     callback: @escaping (Bool,ShowMyEventLuckyDraw?) -> Void){
+        
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventid
+        dictParam["registrationid"] = registrationid
+
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.SHOW_MY_FREE_LUCKY_DRAW_RESULT.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                let model = Mapper<ShowMyEventLuckyDraw>().map(JSON: obj)
+                callback(true,model);
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+   
 }

@@ -14,6 +14,7 @@ protocol ShareCellDelegate {
     func registerBttonSelected(cell:ShareCell)
     func viewTicketDidSelected(cell:ShareCell)
     func luckyDrawDidSelected(cell:ShareCell)
+    func bookMoreDidSelected(cell:ShareCell)
 
     
 }
@@ -23,6 +24,10 @@ class ShareCell: UITableViewCell {
     @IBOutlet weak var buttnFaceBook: SocialButton!
     @IBOutlet weak var buttonGoogle: SocialButton!
     @IBOutlet weak var buttonTwitter: SocialButton!
+    @IBOutlet weak var btnViewTicket: HoogaButton!
+    @IBOutlet weak var btnLuckyTicket: HoogaButton!
+    @IBOutlet weak var btnBookMore: HoogaButton!
+
     @IBOutlet weak var viewTicketView: UIView!
     @IBOutlet weak var viewTicketViewHeightConstraint: NSLayoutConstraint!
     
@@ -43,7 +48,7 @@ class ShareCell: UITableViewCell {
     }
 
     
-    func showShareCell(isComingFrom:ComingFromScreen)  {
+    func showShareCell(isComingFrom:ComingFromScreen,isTicketBooked :Bool)  {
         if isComingFrom == ComingFromScreen.eventListing {
             viewTicketViewHeightConstraint.constant = 0
             buttonregister.isHidden = false
@@ -51,6 +56,16 @@ class ShareCell: UITableViewCell {
         }else{
             viewTicketViewHeightConstraint.constant = 45
             buttonregister.isHidden = true
+        }
+        if isTicketBooked{
+            btnViewTicket.isHidden = false
+            btnLuckyTicket.isHidden = false
+            btnBookMore.setTitle(" Book More ", for: .normal)
+
+        }else{
+            btnViewTicket.isHidden = true
+            btnLuckyTicket.isHidden = true
+            btnBookMore.setTitle(" Book Ticket(s) ", for: .normal)
         }
         
     }
@@ -85,5 +100,8 @@ class ShareCell: UITableViewCell {
     @IBAction func btnLuckyDrawTapped(_ sender: Any) {
         delegate?.luckyDrawDidSelected(cell: self)
 
+    }
+    @IBAction func btnBookMoreTapped(_ sender: Any) {
+        delegate?.bookMoreDidSelected(cell: self)
     }
 }

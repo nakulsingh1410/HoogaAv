@@ -229,8 +229,6 @@ extension EventService{
         dictParam["userid"] = userid
         dictParam["registrationid"] = registrationid
         dictParam["eventid"] = eventid
-
-
         
         Common.showHud()
         let kServerUrl = kDomain + kEvent + ServiceName.IS_TICKETS_BOOKED.rawValue
@@ -245,10 +243,31 @@ extension EventService{
             }else {
                 callback(false,nil);
             }
-            
         }
     }
  
+    static func getRegistrationId(eventid:Int,callback: @escaping (Bool,Int?) -> Void){
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["userid"] = userid
+        dictParam["eventid"] = eventid
+
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.GET_REG_ID.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let regId = obj["RegistrationID"] as? Int,regId>0{
+                    callback(true,regId);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
     
     
 }
@@ -270,7 +289,7 @@ extension EventService{
                                 city:String?,
                                 postalcode:String?,
                                 profilePic:UIImage?,
-                                callback: @escaping (Bool,String) -> Void)  {
+                                callback: @escaping (Bool,[String:Any]?) -> Void)  {
         
         guard  let userid = StorageModel.getUserData()?.userid else {return}
 
@@ -300,19 +319,19 @@ extension EventService{
             Common.hideHud()
             
             if let obj = response.result.value as? [String:Any]{
-                var msg = ""
-                if let regNo = obj["registrationnumber"] as? String{
-                     msg = "Event registered successfully."
-                }else{
-                    if let message = obj["message"] as? String{
-                         msg = message
-                    }
-                }
-                callback(true,msg);
+//                var msg = ""
+//                if let regNo = obj["registrationnumber"] as? String{
+//                     msg = "Event registered successfully."
+//                }else{
+//                    if let message = obj["message"] as? String{
+//                         msg = message
+//                    }
+//                }
+                callback(true,obj);
 
                
             } else {
-                callback(false,"Error");
+                callback(false,nil);
             }
             
         }

@@ -12,10 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="170" id="KGk-i7-Jjw" customClass="ShareCell" customModule="Hooga" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSj-ys-B1e">
@@ -84,11 +84,12 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sp-We-vka" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="232" y="60" width="78" height="37"/>
+                        <rect key="frame" x="291" y="60" width="74" height="37"/>
                         <color key="backgroundColor" red="0.24198424816131592" green="0.49645906686782837" blue="0.98203366994857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="37" id="W1W-nN-KIb"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title=" REGISTER ">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
@@ -102,11 +103,12 @@
                         </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFd-QX-0TI">
-                        <rect key="frame" x="0.0" y="104.5" width="320" height="45"/>
+                        <rect key="frame" x="0.0" y="104.5" width="375" height="45"/>
                         <subviews>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYB-0S-8yU" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="-0.5" width="106" height="37.5"/>
+                                <rect key="frame" x="10" y="0.0" width="100" height="37"/>
                                 <color key="backgroundColor" red="0.2419842482" green="0.49645906690000002" blue="0.98203366989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title=" View Ticket(s) ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -120,9 +122,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQV-FQ-Qjs" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="222" y="0.0" width="88" height="37"/>
+                                <rect key="frame" x="266" y="0.0" width="99" height="37"/>
                                 <color key="backgroundColor" red="0.2419842482" green="0.49645906690000002" blue="0.98203366989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title=" Lucky Draw ">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="   Lucky Draw   ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -135,12 +138,23 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAM-wN-0nW">
-                                <rect key="frame" x="159.5" y="0.0" width="1" height="45"/>
+                                <rect key="frame" x="187" y="0.0" width="1" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="QWz-Mw-b5g"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQ7-mj-dQ7" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="147" y="0.0" width="81" height="37"/>
+                                <color key="backgroundColor" red="0.24651351569999999" green="0.50405985119999996" blue="0.99807041880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title=" Book More  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnBookMoreTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vQf-o4-zfM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -148,16 +162,19 @@
                             <constraint firstItem="gQV-FQ-Qjs" firstAttribute="bottom" secondItem="qYB-0S-8yU" secondAttribute="bottom" id="6TI-LI-imb"/>
                             <constraint firstAttribute="bottom" secondItem="dAM-wN-0nW" secondAttribute="bottom" id="6Uf-d8-oVP"/>
                             <constraint firstAttribute="trailing" secondItem="gQV-FQ-Qjs" secondAttribute="trailing" constant="10" id="C6G-jw-zYT"/>
-                            <constraint firstItem="qYB-0S-8yU" firstAttribute="top" secondItem="UFd-QX-0TI" secondAttribute="top" id="GFE-Ul-maH"/>
+                            <constraint firstItem="bQ7-mj-dQ7" firstAttribute="centerX" secondItem="UFd-QX-0TI" secondAttribute="centerX" id="Cir-EK-T20"/>
+                            <constraint firstItem="bQ7-mj-dQ7" firstAttribute="top" secondItem="UFd-QX-0TI" secondAttribute="top" id="FLw-1r-hDM"/>
                             <constraint firstItem="dAM-wN-0nW" firstAttribute="centerX" secondItem="UFd-QX-0TI" secondAttribute="centerX" id="JBH-fH-rXe"/>
                             <constraint firstItem="dAM-wN-0nW" firstAttribute="top" secondItem="UFd-QX-0TI" secondAttribute="top" id="YpB-ws-T9J"/>
                             <constraint firstAttribute="bottom" secondItem="qYB-0S-8yU" secondAttribute="bottom" constant="8" id="bSL-Lo-AcW"/>
                             <constraint firstAttribute="height" constant="45" id="dFt-Dw-AWt"/>
+                            <constraint firstItem="qYB-0S-8yU" firstAttribute="top" secondItem="UFd-QX-0TI" secondAttribute="top" id="fFo-fx-psa"/>
+                            <constraint firstAttribute="bottom" secondItem="bQ7-mj-dQ7" secondAttribute="bottom" constant="8" id="ok3-aH-4Dh"/>
                             <constraint firstItem="qYB-0S-8yU" firstAttribute="leading" secondItem="UFd-QX-0TI" secondAttribute="leading" constant="10" id="wmS-WZ-Vm6"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6s3-gc-cbL">
-                        <rect key="frame" x="157" y="8" width="153" height="25"/>
+                        <rect key="frame" x="212" y="8" width="153" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="O45-Mg-4uQ"/>
                         </constraints>
@@ -189,6 +206,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnBookMore" destination="bQ7-mj-dQ7" id="T36-Ab-L23"/>
+                <outlet property="btnLuckyTicket" destination="gQV-FQ-Qjs" id="jzu-5G-XRP"/>
+                <outlet property="btnViewTicket" destination="qYB-0S-8yU" id="T3Z-Kj-ex4"/>
                 <outlet property="buttnFaceBook" destination="8iQ-b2-tRU" id="2le-z8-1x0"/>
                 <outlet property="buttonGoogle" destination="viQ-jY-vDb" id="9kE-Of-bzj"/>
                 <outlet property="buttonInsta" destination="aqv-Gf-lfY" id="v5A-zI-vvm"/>

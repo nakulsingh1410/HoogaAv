@@ -22,13 +22,13 @@ class EventDetailVC: UIViewController{
 
     var eventID : Int?
     var comingFrom = ComingFromScreen.eventListing
-    
+    var isTicketBooked = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        getEventDetail(eventId: eventID!)
-//        isTicketBooked(eventId: eventID!, registrationid: <#T##Int#>)
+        getRegistrionId(eventId: eventID!)
+     
         configTableview()
         self.navigationController?.isNavigationBarHidden = false
     }
@@ -148,7 +148,7 @@ extension EventDetailVC : UITableViewDataSource{
             }else{
                  cellShare.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
             }
-            cellShare.showShareCell(isComingFrom: comingFrom)
+            cellShare.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked)
             return cellShare
         }
         
@@ -206,6 +206,11 @@ extension EventDetailVC : UITableViewDelegate{
 }
 
 extension EventDetailVC :ShareCellDelegate{
+    func bookMoreDidSelected(cell: ShareCell) {
+        guard let evntDtl = eventDetail else{return}
+        NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl)
+    }
+    
     func viewTicketDidSelected(cell: ShareCell) {
         if let eventDetailObj = eventDetail{
             NavigationManager.QRCode(navigationController: navigationController, evntDetail: eventDetailObj)
@@ -331,13 +336,29 @@ extension EventDetailVC {
         
     }
     
+    ///
+    func getRegistrionId(eventId:Int)  {
+        
+        EventService.getRegistrationId(eventid: eventId) { (flag, regId) in
+            if let regID = regId{
+                self.isTicketBooked(eventId: eventId, registrationid: regID)
+            }else{
+                self.getEventDetail(eventId: eventId)
+            }
+        }
+        
+    }
+    
+    ///
     func isTicketBooked(eventId:Int,registrationid:Int)  {
         
         EventService.isTicketBooked(eventid: eventId, registrationid: registrationid) { (flag, status) in
-            
-            if let message = status , message == "No"{
-                
+            if let message = status , message == "Yes"{
+                self.isTicketBooked = true
+            }else{
+                self.isTicketBooked = false
             }
+            self.getEventDetail(eventId: eventId)
         }
 
         

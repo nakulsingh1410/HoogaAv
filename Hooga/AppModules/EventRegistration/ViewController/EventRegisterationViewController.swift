@@ -192,6 +192,14 @@ class EventRegisterationViewController: UIViewController {
 
     }
     
+    func showAlert()  {
+        let alertController = UIAlertController(title: kProjectName, message: "Event registered successfully.", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
+            self.navigateToTicketBooking()
+        }
+        alertController.addAction(action1)
+        self.present(alertController, animated: true, completion: nil)
+    }
     /*********************************************************************************/
     // MARK: IB_Action
     /*********************************************************************************/
@@ -282,18 +290,18 @@ extension EventRegisterationViewController{
                                      address2: txtFAddress2.text,
                                      city: txtFCity.text,
                                      postalcode: txtFPostalCode.text,
-                                     profilePic:imgViewProfilePic.image) {[weak self]  (flag, message) in
+                                     profilePic:imgViewProfilePic.image) {[weak self]  (flag, dict) in
                                         
                                         guard let weakSelf = self else {return}
-                                        if flag {
-                                            weakSelf.navigateToTicketBooking()
-                                            Common.showAlert(message: message)
+                                        if let dictionary = dict {
+                                            self?.eventDetail?.regid = dictionary["regid"] as? Int
+                                            weakSelf.showAlert()
 
                                         }else{
-                                            Common.showAlert(message: message)
+                                            Common.showAlert(message: "Some Error Occured!")
                                         }
         }
     }
     
-    
+
 }

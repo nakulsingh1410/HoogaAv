@@ -107,7 +107,7 @@ public enum ServiceName:String {
     case SHOW_EVENT_Platform = "showEventPlatforms"
     case SHOW_EVENT_FAQs = "showEventFAQs"
     case SHOW_EVENT_TERSM_CONDITION = "showEventTermsConditions"
-
+    
     case REGISTER_EVENT = "registerEvent"
     case SHOW_ONGOING_EVENTS = "showMyOngoingEvents"
     case SHOW_COMPLETED_EVENTS = "showMyCompletedEvents"
@@ -121,16 +121,22 @@ public enum ServiceName:String {
     case  SHOW_MY_EVENT_LUCKY_DRAW_STATUS = "showMyEventLuckyDrawStatus"
     
     case  SHOW_EVENT_LUCKY_DRAW_PRIZES = "showMyEventLuckyDrawPrizes"
-   case SHOW_MY_EVENT_LUCKY_DRAW = "showMyEventLuckyDraw"
+    case SHOW_MY_EVENT_LUCKY_DRAW = "showMyEventLuckyDraw"
     
-     case SAVE_OTHER_PAYMENT_DETAIL = "saveOtherPaymentDetails"
+    case SAVE_OTHER_PAYMENT_DETAIL = "saveOtherPaymentDetails"
     
     case SHOW_MY_TICKET_DETAILS = "showMyTicketDetails"
     case GENEARET_LUCKY_DRAW_NO = "generateLuckyDrawNumber"
     case SHOW_MY_EVENT_LUCKY_DRAW_RESULT = "showMyEventLuckyDrawResult"
     case SHOW_TICKET_QR_CODES = "showMyTicketQRCodes"
     case IS_TICKETS_BOOKED = "isticketsbooked"
-    case CHECK_USER = "checkUser"    
+    case CHECK_USER = "checkUser"
+    case GET_REG_ID = "getregid"
+    case SHOW_REGISTRATION_DETAIL = "showRegistrationDetails"
+    case GENERATE_FREE_LUCKY_DRAW_NO = "generateFreeLuckyDrawNumber"
+    case SHOW_MY_FREE_LUCKY_DRAW_RESULT = "showMyFreeEventLuckyDrawResult"
+
+    
 }
 
 
