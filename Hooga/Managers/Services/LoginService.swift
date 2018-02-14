@@ -51,6 +51,31 @@ class LoginService{
     }
     
     
+    
+    
+    static func isUserExist(callback: @escaping (Bool,String) -> Void)  {
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+    
+        var dictParam = Dictionary<String,Any>()
+        dictParam["userid"] = userid
+        
+       // Common.showHud()
+        Service.postRequestWithJsonResponse(endPoint: kServiceUrl+ServiceName.CHECK_USER.rawValue,params: dictParam) { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let message = obj["Status"] as? String,message == "Yes"{
+                    callback(true,"");
+                    
+                }else{
+                    callback(false,"");
+                }
+            } else {
+                callback(false,"");
+            }
+            
+        }
+    }
+    
     static func appRegisterUser(firstname:String,
                                 lastname:String,
                                 gender:String,

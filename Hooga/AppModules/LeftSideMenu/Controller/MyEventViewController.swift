@@ -15,6 +15,7 @@ class MyEventViewController: UIViewController {
     
     @IBOutlet weak var btnCompletedEvents: UIButton!
     @IBOutlet weak var btnOnGoingEvents: UIButton!
+    var screenShown : ComingFromScreen?
     
     var arrMyEvent = [MyEventModel]()
     override func viewDidLoad() {

@@ -130,7 +130,7 @@ public enum ServiceName:String {
     case SHOW_MY_EVENT_LUCKY_DRAW_RESULT = "showMyEventLuckyDrawResult"
     case SHOW_TICKET_QR_CODES = "showMyTicketQRCodes"
     case IS_TICKETS_BOOKED = "isticketsbooked"
-    
+    case CHECK_USER = "checkUser"    
 }
 
 
@@ -207,4 +207,5 @@ enum ComingFromScreen:String{
     case myEvent = "My Events"
     case registration = "Registration"
     case forgotPassword = "Forgot Password"
+    case thankYou = "ThanksVC"
 }

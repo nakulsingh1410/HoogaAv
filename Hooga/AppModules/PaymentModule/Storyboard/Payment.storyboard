@@ -1313,11 +1313,11 @@
                                 <color key="backgroundColor" red="0.0" green="0.45098039220000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uH-Om-1hz" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="161" y="161.5" width="53" height="35"/>
+                                <rect key="frame" x="148" y="161.5" width="79" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="hQo-zF-Pe1"/>
                                 </constraints>
-                                <state key="normal" title=" Home  ">
+                                <state key="normal" title=" My Events ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

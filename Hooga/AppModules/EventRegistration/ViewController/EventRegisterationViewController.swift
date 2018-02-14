@@ -184,8 +184,12 @@ class EventRegisterationViewController: UIViewController {
         vcObj?.present(imageController, animated: true, completion: nil);
     }
     
-    private func navigateToEventListing(){
-        navigationController?.popToRootViewController(animated: true)
+    private func navigateToTicketBooking(){
+//        navigationController?.popToRootViewController(animated: true)
+        if let evetDtl = eventDetail{
+            NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evetDtl)
+        }
+
     }
     
     /*********************************************************************************/
@@ -282,7 +286,7 @@ extension EventRegisterationViewController{
                                         
                                         guard let weakSelf = self else {return}
                                         if flag {
-                                            weakSelf.navigateToEventListing()
+                                            weakSelf.navigateToTicketBooking()
                                             Common.showAlert(message: message)
 
                                         }else{

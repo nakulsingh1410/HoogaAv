@@ -14,6 +14,8 @@
 		301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301BF2142022001D0099ADD9 /* Assets.xcassets */; };
 		301BF2222023888C0099ADD9 /* MyEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301BF2212023888C0099ADD9 /* MyEventModel.swift */; };
 		301BF22A20241C990099ADD9 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301BF22920241C990099ADD9 /* MyProfileViewController.swift */; };
+		3026790920347361005B4442 /* CustomSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3026790820347361005B4442 /* CustomSplash.storyboard */; };
+		3026790B20347396005B4442 /* CustomSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026790A20347396005B4442 /* CustomSplashViewController.swift */; };
 		3028D894201CC9B400922752 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3028D893201CC9B400922752 /* EventService.swift */; };
 		302D1312202638D000AB10DD /* TicketBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D1311202638D000AB10DD /* TicketBookingService.swift */; };
 		30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */; };
@@ -189,6 +191,8 @@
 		301BF2142022001D0099ADD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		301BF2212023888C0099ADD9 /* MyEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventModel.swift; sourceTree = "<group>"; };
 		301BF22920241C990099ADD9 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		3026790820347361005B4442 /* CustomSplash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomSplash.storyboard; sourceTree = "<group>"; };
+		3026790A20347396005B4442 /* CustomSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSplashViewController.swift; sourceTree = "<group>"; };
 		3028D893201CC9B400922752 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		302D1311202638D000AB10DD /* TicketBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBookingService.swift; sourceTree = "<group>"; };
 		30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingModel.swift; sourceTree = "<group>"; };
@@ -699,6 +703,8 @@
 			isa = PBXGroup;
 			children = (
 				30D77C06200B399800386438 /* LaunchScreen.storyboard */,
+				3026790820347361005B4442 /* CustomSplash.storyboard */,
+				3026790A20347396005B4442 /* CustomSplashViewController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -1058,6 +1064,7 @@
 				30D77B9B200B217E00386438 /* GillSans.ttc in Resources */,
 				7530D956201F888300B9BB52 /* ContactCell.xib in Resources */,
 				7574C3CD2025E7360010A4F1 /* QuantityCell.xib in Resources */,
+				3026790920347361005B4442 /* CustomSplash.storyboard in Resources */,
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
 				30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */,
 				7574C3D920262E080010A4F1 /* Payment.storyboard in Resources */,
@@ -1313,6 +1320,7 @@
 				305471DE202092650009A8EC /* OpenImagePickerViewController.swift in Sources */,
 				7574C3D720262D390010A4F1 /* PaymentConfirmationVC.swift in Sources */,
 				7530D964201FECA100B9BB52 /* FaqVC.swift in Sources */,
+				3026790B20347396005B4442 /* CustomSplashViewController.swift in Sources */,
 				7530D95E201F888300B9BB52 /* ShareCell.swift in Sources */,
 				30D77BC6200B359D00386438 /* Extensions.swift in Sources */,
 				30EA5FB8201EFE62009D4278 /* EventDetailModel.swift in Sources */,

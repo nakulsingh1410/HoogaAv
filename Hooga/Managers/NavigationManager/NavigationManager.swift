@@ -10,6 +10,14 @@ import UIKit
 
 class NavigationManager {
     
+    class func navigateToLogin(navigationController:UINavigationController?) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController{
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
     class func navigateToEvent(navigationController:UINavigationController?){
         NavigationManager.setUpSlideMenu()
 //        let storyboard = UIStoryboard(name: "Event", bundle:  Bundle(for: LoginViewController.self) )
@@ -17,6 +25,15 @@ class NavigationManager {
 //            navigationController?.pushViewController(vcObj, animated: true)
 //        }
     }
+    
+    class func navigateToMyEvent(navigationController:UINavigationController?,screenShown:ComingFromScreen){
+        let storyboard = UIStoryboard(name: "LeftSideMenu", bundle:  Bundle(for: MyEventViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "MyEventViewController") as? MyEventViewController{
+            vcObj.screenShown = screenShown
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
     
     class func userRegistration(navigationController:UINavigationController?,screenShown:RequestForScreen){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )

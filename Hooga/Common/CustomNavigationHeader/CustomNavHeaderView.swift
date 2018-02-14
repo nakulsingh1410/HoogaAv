@@ -11,7 +11,9 @@ enum BackButtonType:String{
     case Back = "back";
     case LeftMenu = "leftMenu"
 }
-
+protocol CustomNavHeaderViewDelegate {
+    
+}
 class CustomNavHeaderView: UIView {
     
     @IBOutlet weak var leftButton: UIButton!
@@ -22,6 +24,7 @@ class CustomNavHeaderView: UIView {
     var viewController:UIViewController?
     var navBarTitle:String?
     var backButtonType : BackButtonType?
+    var customNavHeaderViewDelegate:CustomNavHeaderViewDelegate?
     var titleColor =  UIColor.white
     var isBottonLineHidden = true {
         didSet{

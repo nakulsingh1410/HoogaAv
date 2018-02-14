@@ -22,8 +22,8 @@ class ThanksVC: UIViewController {
     }
     
     @IBAction func buttonHome_didPressed(sender : UIButton){
-        
-        NavigationManager.navigateToEvent(navigationController: self.navigationController)
+        NavigationManager.navigateToMyEvent(navigationController: navigationController, screenShown: ComingFromScreen.thankYou)
+//        NavigationManager.navigateToEvent(navigationController: self.navigationController)
     }
 
     /*
