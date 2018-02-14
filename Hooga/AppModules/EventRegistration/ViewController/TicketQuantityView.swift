@@ -19,31 +19,53 @@ class TicketQuantityView: UIView {
     
     @IBOutlet var collectionQuantity : UICollectionView!
     
+    @IBOutlet var widthColl : NSLayoutConstraint!
+     @IBOutlet var heightColl : NSLayoutConstraint!
+    
     var  delegate  : TicketQuantityViewDelegate?
     
     var qunatity = 0 {
         didSet{
+            setWidth()
             collectionQuantity.reloadData()
         }
     }
     
     var indexPth : IndexPath!
-    
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
         configQuantityCollection()
     }
-    
+    func setWidth()  {
+        
+        let wdith = UIScreen.main.bounds.width - 40
+        if wdith > CGFloat((80 * qunatity)){
+           
+            if qunatity == 1{
+                
+              let  wdth =  CGFloat(80 * qunatity) + 20.0
+                widthColl.constant = wdth
+                heightColl.constant = 50.0
+                
+            }else{
+                
+                 widthColl.constant = CGFloat(80 * qunatity)
+            }
+            
+        }else{
+            widthColl.constant = wdith
+        }
+    }
     func configQuantityCollection()  {
+
         
         collectionQuantity.register(QuantityCell.nib, forCellWithReuseIdentifier: QuantityCell.identifier)
         indexPth = IndexPath.init(row: 0, section: 0)
         collectionQuantity.delegate     = self
         collectionQuantity.dataSource = self
-        
+
         if let layout = collectionQuantity.collectionViewLayout as? UICollectionViewFlowLayout {
             
             layout.scrollDirection = .horizontal
@@ -74,20 +96,23 @@ extension TicketQuantityView : UICollectionViewDataSource {
             cellQuantity.labelQuantity.backgroundColor = UIColor.white
             
             cellQuantity.labelQuantity.textColor = UIColor.black
+            cellQuantity.labelLine.isHidden = true
         }else{
             
             cellQuantity.viewBg.isHidden = true
+            cellQuantity.labelLine.isHidden = false
             cellQuantity.labelQuantity.backgroundColor = UIColor.lightGray
             cellQuantity.labelQuantity.textColor = UIColor.white
+           // cellQuantity.backgroundColor = UIColor.lightGray
         }
         addLayer(labelQuantity:cellQuantity.labelQuantity , frame:cellQuantity.frame)
         return cellQuantity
     }
     
     func addLayer(labelQuantity:UILabel,frame : CGRect)   {
-        let frameNew = labelQuantity.frame //Frame of label
-        
-        // Bottom Layer
+       var frameNew = labelQuantity.frame //Frame of label
+        frameNew = CGRect(x: frameNew.origin.x, y: frameNew.origin.y, width: frame.width - 3, height: 52)
+        // left Layer
         let leftLayer = CALayer()
         leftLayer.frame = CGRect(x: 0, y: 0, width: 1, height: 50)
         leftLayer.backgroundColor = UIColor.black.cgColor
@@ -95,14 +120,14 @@ extension TicketQuantityView : UICollectionViewDataSource {
         
         // Top Layer
         let topLayer = CALayer()
-        topLayer.frame = CGRect(x: 0, y: 0, width: frame.width, height: 1)
+        topLayer.frame = CGRect(x: 0, y: 0, width: frameNew.width, height: 1)
         topLayer.backgroundColor = UIColor.black.cgColor
         labelQuantity.layer.addSublayer(topLayer)
         
         // right
         // Top Layer
         let rightLayer = CALayer()
-        rightLayer.frame = CGRect(x: frame.width - 8, y: 0, width: 1, height: 50)
+        rightLayer.frame = CGRect(x: frameNew.width  , y: 0, width: 1, height: 50)
         rightLayer.backgroundColor = UIColor.black.cgColor
         labelQuantity.layer.addSublayer(rightLayer)
     }
@@ -111,6 +136,7 @@ extension TicketQuantityView : UICollectionViewDataSource {
 extension TicketQuantityView : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         delegate?.didSelectRowAt(indexpath: indexPath,ticektQuantityView:self)
 
 //        if delegate != nil {
