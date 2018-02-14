@@ -137,7 +137,7 @@ extension  TicketBookingService{
         
         
         var dictParam = Dictionary<String,Any>()
-        dictParam["eventID"] = eventid
+        dictParam["eventid"] = eventid
         dictParam["registrationid"] = registrationid
         
         Common.showHud()
@@ -165,8 +165,8 @@ extension  TicketBookingService{
         
         var dictParam = Dictionary<String,Any>()
         dictParam["eventid"] = eventid
-        dictParam["registrationid"] = eventid
-        dictParam["ticketid"] = eventid
+        dictParam["registrationid"] = registrationid
+        dictParam["ticketid"] = ticketid
         
         Common.showHud()
         let kServerUrl = kDomain + kEvent + ServiceName.GENEARET_LUCKY_DRAW_NO.rawValue
@@ -188,7 +188,7 @@ extension  TicketBookingService{
         
         
         var dictParam = Dictionary<String,Any>()
-        dictParam["eventID"] = eventid
+        dictParam["eventid"] = eventid
         dictParam["registrationid"] = registrationid
         
         
@@ -220,7 +220,7 @@ extension  TicketBookingService{
         var dictParam = Dictionary<String,Any>()
         dictParam["userid"] = userid
         dictParam["registrationid"] = registrationid
-        dictParam["eventID"] = eventID
+        dictParam["eventid"] = eventID
        
         
         Common.showHud()

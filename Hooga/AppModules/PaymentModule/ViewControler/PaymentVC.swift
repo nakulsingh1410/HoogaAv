@@ -25,10 +25,7 @@ class PaymentVC: UIViewController {
     @IBOutlet weak var navHeaderView : CustomNavHeaderView!
    
     var indexLast : IndexPath?
-    
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configoreNavigationHeader()

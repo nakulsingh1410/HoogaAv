@@ -57,9 +57,10 @@ class NavigationManager {
         }
     }
     
-    class func navigateToSetPassword(navigationController:UINavigationController?){
+    class func navigateToSetPassword(navigationController:UINavigationController?,screenFlow:ComingFromScreen){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: RequestOTPViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "SetPasswordViewController") as? SetPasswordViewController{
+            vcObj.screenFlow = screenFlow
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }

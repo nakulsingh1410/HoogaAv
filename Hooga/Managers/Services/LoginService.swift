@@ -37,9 +37,9 @@ class LoginService{
             if response.isSuccess(),let obj = response.data{
                 //                let json = JSON(response.data!)
                 let login = LoginResponseDto(map: obj)
-                if let dob = login?.dateofbirth{
-                 login?.dateofbirth = dob.getDateString()
-                }
+//                if let dob = login?.dateofbirth{
+//                 login?.dateofbirth = dob.getDateString()
+//                }
                 StorageModel.saveUserData(model: login!)
                 let data = StorageModel.getUserData()
                 callback(true,Common.getString(text:response.message));
@@ -218,9 +218,9 @@ class LoginService{
             Common.hideHud()
             if response.isSuccess(),let obj = response.data{
                 let login = LoginResponseDto(map: obj)
-                if let dob = login?.dateofbirth{
-                    login?.dateofbirth = dob.getDateString()
-                }
+//                if let dob = login?.dateofbirth{
+//                    login?.dateofbirth = dob.getDateString()
+//                }
                 StorageModel.saveUserData(model: login!)
                 callback(true,Common.getString(text:response.message));
             } else {

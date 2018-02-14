@@ -58,15 +58,12 @@ class ParticipateDetailViewController: UIViewController {
                 lblPriceCollectedBy.text =   string
             }
             if let string = data.collectedon {
-                lblCollectedOn.text = string
+                lblCollectedOn.text = string.components(separatedBy: " ").first
             }
             if let string = data.isprizecollected {
                 lblIsPriceCollected.text = string
             }
-            
-            
         }
-      
     }
     
     override func didReceiveMemoryWarning() {

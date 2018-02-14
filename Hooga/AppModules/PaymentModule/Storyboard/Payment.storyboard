@@ -1313,19 +1313,19 @@
                                 <color key="backgroundColor" red="0.0" green="0.45098039220000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uH-Om-1hz" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="137" y="176.5" width="101" height="35"/>
+                                <rect key="frame" x="161" y="161.5" width="53" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="hQo-zF-Pe1"/>
                                 </constraints>
-                                <state key="normal" title="  Go To Home  ">
+                                <state key="normal" title=" Home  ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonHome_didPressedWithSender:" destination="zgi-VC-75C" eventType="touchUpInside" id="4wf-pU-r7N"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You, Your Tickets generated Successfully!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2g-xb-yBl">
-                                <rect key="frame" x="20" y="115" width="335" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Successful, Please check Tickets from My Events." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2g-xb-yBl">
+                                <rect key="frame" x="20" y="100" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1335,7 +1335,7 @@
                             <constraint firstItem="khY-Fm-4K7" firstAttribute="trailing" secondItem="P2g-xb-yBl" secondAttribute="trailing" constant="20" id="0ND-Ah-jaT"/>
                             <constraint firstItem="BwJ-Hm-mfp" firstAttribute="leading" secondItem="khY-Fm-4K7" secondAttribute="leading" id="AHW-gI-b8O"/>
                             <constraint firstItem="P2g-xb-yBl" firstAttribute="leading" secondItem="khY-Fm-4K7" secondAttribute="leading" constant="20" id="HSF-Hg-fhH"/>
-                            <constraint firstItem="P2g-xb-yBl" firstAttribute="top" secondItem="khY-Fm-4K7" secondAttribute="top" constant="95" id="Qut-dQ-qC9"/>
+                            <constraint firstItem="P2g-xb-yBl" firstAttribute="top" secondItem="khY-Fm-4K7" secondAttribute="top" constant="80" id="Qut-dQ-qC9"/>
                             <constraint firstItem="7uH-Om-1hz" firstAttribute="top" secondItem="P2g-xb-yBl" secondAttribute="bottom" constant="41" id="Y0D-ds-BWE"/>
                             <constraint firstItem="BwJ-Hm-mfp" firstAttribute="trailing" secondItem="khY-Fm-4K7" secondAttribute="trailing" id="d5c-LS-LFn"/>
                             <constraint firstItem="BwJ-Hm-mfp" firstAttribute="top" secondItem="I9p-n6-TEE" secondAttribute="top" id="gM6-ER-y6D"/>
@@ -1410,77 +1410,74 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrq-Y6-pPf" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="94" width="115" height="17"/>
+                                <rect key="frame" x="10" y="94" width="88" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYD-iy-bce" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="135" y="92.5" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="108" y="93.5" width="42" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LuckyDraw  Sequence #" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STY-3A-vOU" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="121" width="115" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lucky Draw #" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STY-3A-vOU" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="10" y="121" width="88" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLH-w7-18q" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="135" y="127" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="108" y="121" width="42" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu3-L9-Cvd" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="164.5" width="115" height="17"/>
+                                <rect key="frame" x="10" y="148" width="88" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIJ-Uu-30H" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="135" y="163" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="108" y="147.5" width="42" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Price Collected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqe-CD-tcK" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="191.5" width="115" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="e8G-Wb-59w"/>
-                                </constraints>
+                                <rect key="frame" x="10" y="175" width="113" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhU-wE-tFD" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="135" y="189" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="131" y="174.5" width="42" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGB-Xf-fdx" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="218.5" width="115" height="17"/>
+                                <rect key="frame" x="10" y="202" width="88" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBP-1p-Ki4" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="135" y="216" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="108" y="201.5" width="42" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8e-SL-s9L" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="245.5" width="115" height="17"/>
+                                <rect key="frame" x="10" y="229" width="88" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3e-NF-b2Q" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="135" y="243" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="108" y="228.5" width="42" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1492,16 +1489,15 @@
                             <constraint firstItem="qqe-CD-tcK" firstAttribute="top" secondItem="fu3-L9-Cvd" secondAttribute="bottom" constant="10" id="DGm-Ga-CIb"/>
                             <constraint firstItem="K3e-NF-b2Q" firstAttribute="centerY" secondItem="G8e-SL-s9L" secondAttribute="centerY" id="FX8-i5-QaY"/>
                             <constraint firstItem="JLH-w7-18q" firstAttribute="leading" secondItem="SYD-iy-bce" secondAttribute="leading" id="GvS-b6-0tC"/>
-                            <constraint firstItem="EhU-wE-tFD" firstAttribute="leading" secondItem="SYD-iy-bce" secondAttribute="leading" id="JlJ-n6-u7J"/>
                             <constraint firstItem="STY-3A-vOU" firstAttribute="width" secondItem="Wrq-Y6-pPf" secondAttribute="width" id="Ly4-PS-QWQ"/>
                             <constraint firstItem="sBP-1p-Ki4" firstAttribute="centerY" secondItem="PGB-Xf-fdx" secondAttribute="centerY" id="Q5I-YB-9Af"/>
                             <constraint firstItem="qqe-CD-tcK" firstAttribute="leading" secondItem="Wrq-Y6-pPf" secondAttribute="leading" id="SZo-Q7-6Xi"/>
                             <constraint firstItem="fu3-L9-Cvd" firstAttribute="leading" secondItem="Wrq-Y6-pPf" secondAttribute="leading" id="TZ1-kA-YUQ"/>
+                            <constraint firstItem="EhU-wE-tFD" firstAttribute="leading" secondItem="qqe-CD-tcK" secondAttribute="trailing" constant="8" id="Ta7-mK-wuU"/>
                             <constraint firstItem="G8e-SL-s9L" firstAttribute="leading" secondItem="Wrq-Y6-pPf" secondAttribute="leading" id="Un2-d1-RVD"/>
                             <constraint firstItem="SYD-iy-bce" firstAttribute="leading" secondItem="Wrq-Y6-pPf" secondAttribute="trailing" constant="10" id="Vfg-q9-Lhy"/>
                             <constraint firstItem="Wrq-Y6-pPf" firstAttribute="top" secondItem="i2s-3b-x14" secondAttribute="bottom" constant="30" id="WNb-pK-ahX"/>
                             <constraint firstItem="G8e-SL-s9L" firstAttribute="top" secondItem="PGB-Xf-fdx" secondAttribute="bottom" constant="10" id="X9P-pp-gbW"/>
-                            <constraint firstItem="qqe-CD-tcK" firstAttribute="width" secondItem="Wrq-Y6-pPf" secondAttribute="width" id="YNw-Hg-5sc"/>
                             <constraint firstItem="i2s-3b-x14" firstAttribute="trailing" secondItem="OS9-vx-Y1C" secondAttribute="trailing" id="gAG-ef-bsk"/>
                             <constraint firstItem="Wrq-Y6-pPf" firstAttribute="leading" secondItem="OS9-vx-Y1C" secondAttribute="leading" constant="10" id="gyy-XT-1sX"/>
                             <constraint firstItem="PGB-Xf-fdx" firstAttribute="width" secondItem="Wrq-Y6-pPf" secondAttribute="width" id="h25-2x-qcV"/>

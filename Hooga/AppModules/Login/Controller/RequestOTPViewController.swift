@@ -44,7 +44,7 @@ class RequestOTPViewController: UIViewController {
     }
     
     private func navigateToSetPassword(){
-        NavigationManager.navigateToSetPassword(navigationController: self.navigationController)
+        NavigationManager.navigateToSetPassword(navigationController: self.navigationController, screenFlow: screenFlow)
     }
   
 

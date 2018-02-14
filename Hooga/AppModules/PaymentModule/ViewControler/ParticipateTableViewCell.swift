@@ -21,7 +21,7 @@ class ParticipateTableViewCell: UITableViewCell {
     @IBOutlet weak var lblParticiapete: UILabel!
     @IBOutlet weak var btnOnPaticipate: UIButton!
     @IBOutlet weak var btnDetail: UIButton!
-    @IBOutlet weak var heightConstraintDetailBtn: NSLayoutConstraint!
+    @IBOutlet weak var widthConstraintDetailBtn: NSLayoutConstraint!
     
     var ticketDetail:ShowMyTicketDetails?
    var  showMyEventLuckyDrawResult:ShowMyEventLuckyDrawResult?
@@ -29,7 +29,7 @@ class ParticipateTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
        selectionStyle = .none
-        heightConstraintDetailBtn.constant = 0
+        widthConstraintDetailBtn.constant = 0
         btnDetail.isHidden = true
     }
 
@@ -71,25 +71,31 @@ class ParticipateTableViewCell: UITableViewCell {
             lblParticipantName.text =  lblParticipantName.text! + " " + string
         }
         
+        var isParticipate = false
         if let string = result.luckydrawsequence, string.length > 0 {
             lblParticiapete.text = string
             lblParticiapete.backgroundColor = UIColor.gray
             lblParticiapete.textColor = UIColor.white
             btnOnPaticipate.isHidden = true
         }else{
+            isParticipate = true
             lblParticiapete.text = " Participate "
             lblParticiapete.backgroundColor = UIColor(hex: "3F81FF")
             lblParticiapete.textColor = UIColor.white
             btnOnPaticipate.isHidden = false
         }
         
-          if let string = result.isprizewon, string == "True" {
-            heightConstraintDetailBtn.constant = 30
-            btnDetail.isHidden = false
-
-          }else{
-            heightConstraintDetailBtn.constant = 0
-            btnDetail.isHidden = true
+        if isParticipate == false {
+            if let string = result.isprizewon, string == "True" {
+                widthConstraintDetailBtn.constant = 60
+                btnDetail.isHidden = false
+                lblParticiapete.backgroundColor = UIColor(hex: "5CA430")
+                
+            }else{
+                widthConstraintDetailBtn.constant = 0
+                btnDetail.isHidden = true
+                lblParticiapete.backgroundColor = UIColor(hex: "F00000")
+            }
         }
         lblParticiapete.textAlignment = .center
         layoutIfNeeded()

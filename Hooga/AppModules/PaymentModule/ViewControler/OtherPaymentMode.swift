@@ -26,7 +26,6 @@ class OtherPaymentMode: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         addPaymentView()
         configureData()
         configCollectionView()
@@ -80,8 +79,7 @@ class OtherPaymentMode: UIViewController {
     }
     
     func saveOtherPaymentDetailInModel(paymentId:Int)  {
-       var payment = arrOtherPayments[presentedViewIndex]
-
+        var payment = arrOtherPayments[presentedViewIndex]
         payment.amountPaid = otherPayment.ampountPaid.text
         payment.otherPayment = otherPayment.otherPayment.text
         payment.payrefNumber = otherPayment.paymentReference.text
@@ -90,13 +88,11 @@ class OtherPaymentMode: UIViewController {
         payment.paidOn       = Date().dateString
         payment.createdOn = Date().dateString
         
-        
         let touple =   otherPayment.validate()
         if touple.isEmpty == true , let _ = touple.message {
             payment.paymentId = -1
         }
-        
-       arrOtherPayments[presentedViewIndex] = payment
+        arrOtherPayments[presentedViewIndex] = payment
         
     }
     
@@ -170,7 +166,7 @@ extension Date {
     }
     var dateString : String {
         let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatterGet.dateFormat = "dd-MM-yyyy"
         return  dateFormatterGet.string(from: self)
     }
 }

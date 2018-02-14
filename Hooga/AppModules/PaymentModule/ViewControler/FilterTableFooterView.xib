@@ -22,7 +22,7 @@
                         <constraint firstAttribute="height" constant="40" id="6eb-KL-yQR"/>
                         <constraint firstAttribute="width" constant="149" id="awL-ph-oZJ"/>
                     </constraints>
-                    <state key="normal" title="view results">
+                    <state key="normal" title="View Results">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>

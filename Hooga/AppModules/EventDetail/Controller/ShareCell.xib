@@ -84,12 +84,12 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sp-We-vka" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="240" y="60" width="70" height="37"/>
+                        <rect key="frame" x="232" y="60" width="78" height="37"/>
                         <color key="backgroundColor" red="0.24198424816131592" green="0.49645906686782837" blue="0.98203366994857788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="37" id="W1W-nN-KIb"/>
                         </constraints>
-                        <state key="normal" title="REGISTER">
+                        <state key="normal" title=" REGISTER ">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <userDefinedRuntimeAttributes>
@@ -105,9 +105,9 @@
                         <rect key="frame" x="0.0" y="104.5" width="320" height="45"/>
                         <subviews>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYB-0S-8yU" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="-0.5" width="95" height="37.5"/>
+                                <rect key="frame" x="10" y="-0.5" width="106" height="37.5"/>
                                 <color key="backgroundColor" red="0.2419842482" green="0.49645906690000002" blue="0.98203366989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title=" View Tickets ">
+                                <state key="normal" title=" View Ticket(s) ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

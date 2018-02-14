@@ -22,13 +22,17 @@ class MyEventViewController: UIViewController {
 
         configoreNavigationHeader()
         configTableViewForEventList()
-        isOngoingSelected(isOngoing: true)
-        getOngoingEvents(isOnGoingEvents: true)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        isOngoingSelected(isOngoing: true)
+        getOngoingEvents(isOnGoingEvents: true)
     }
     
 
@@ -123,8 +127,8 @@ extension MyEventViewController : UITableViewDataSource{
         return cellEvent
     }
     
-    @objc func buttonDetail_Pressed(_ button:UIButton)  {
-        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrMyEvent[button.tag].eventid!, comingFrom: ComingFromScreen.myEvent)
+   func buttonDetail_Pressed(index:Int) {
+        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrMyEvent[index].eventid!, comingFrom: ComingFromScreen.myEvent)
     }
     
 }
@@ -136,7 +140,7 @@ extension MyEventViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        buttonDetail_Pressed(UIButton())
+        buttonDetail_Pressed(index: indexPath.row)
     }
 }
 

@@ -198,9 +198,11 @@ extension EventListViewController : UITableViewDataSource{
         return cellEvent
     }
     
-    @objc func buttonDetail_Pressed(_ button:UIButton)  {
-        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrEvents[button.tag].eventid!, comingFrom: ComingFromScreen.eventListing)
+     func buttonDetail_Pressed(index:Int)  {
+        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrEvents[index].eventid!, comingFrom: ComingFromScreen.eventListing)
     }
+    
+    
 }
 //
 extension EventListViewController : UITableViewDelegate{
@@ -209,7 +211,7 @@ extension EventListViewController : UITableViewDelegate{
         return UITableViewAutomaticDimension;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        buttonDetail_Pressed(UIButton())
+        buttonDetail_Pressed(index: indexPath.row)
     }
 }
 

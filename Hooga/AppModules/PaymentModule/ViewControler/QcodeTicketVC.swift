@@ -42,6 +42,8 @@ class QcodeTicketVC: UIViewController {
     }
     func loadDefaultValues()  {
         if let evetDtl = eventDetail{
+            lblEventTitle.text = evetDtl.title
+            lblEventLocation.text = evetDtl.eventlocation?.trim()
             let date = Common.getDateString(strDate:evetDtl.startdate) //+ " - " + Common.getDateString(strDate:evetDtl.enddate)
             let time = Common.getDateString(strDate:evetDtl.starttime) //+ " - " + Common.getDateString(strDate:eventDetail?.endtime)
             lblEventTime.text =  date + " | " + time
@@ -57,7 +59,7 @@ class QcodeTicketVC: UIViewController {
 
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
-        navHeaderView.navBarTitle = "Qcode Ticket"
+        navHeaderView.navBarTitle = "QR Code(s)"
         navHeaderView.backButtonType = .Back
     }
 

@@ -48,7 +48,7 @@ class TicketBookingViewController: UIViewController {
     
     func configoreNavigationHeader()  {
             navHeaderView.viewController = self
-            navHeaderView.navBarTitle = "Ticket Booking"
+            navHeaderView.navBarTitle = "Ticket Booking" 
             navHeaderView.backButtonType = .Back
             navHeaderView.isBottonLineHidden = false
         

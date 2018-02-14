@@ -15,10 +15,25 @@ class SetPasswordViewController: UIViewController {
     
     @IBOutlet weak var txtFPassword: HoogaTextField!
     @IBOutlet weak var txtFConfirmPassword: HoogaTextField!
+    @IBOutlet weak var navHeaderView: CustomNavHeaderView!
+
+    var screenFlow = ComingFromScreen.registration
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
+        configoreNavigationHeader()
+    }
+    
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        if screenFlow == ComingFromScreen.registration{
+            navHeaderView.navBarTitle = "Set Password"
+        }else if screenFlow == ComingFromScreen.forgotPassword{
+            navHeaderView.navBarTitle = "Reset Password"
+        }
+        navHeaderView.backButtonType = .Back
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,9 +49,9 @@ class SetPasswordViewController: UIViewController {
     /*********************************************************************************/
     // MARK: IB_Action
     /*********************************************************************************/
-    @IBAction func btnBackTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func btnBackTapped(_ sender: Any) {
+//        navigationController?.popViewController(animated: true)
+//    }
     @IBAction func btnSubmitTapped(_ sender: Any) {
         var message : String?
         if let value = txtFPassword.text,value.trimmingCharacters(in: .whitespaces).isEmpty{

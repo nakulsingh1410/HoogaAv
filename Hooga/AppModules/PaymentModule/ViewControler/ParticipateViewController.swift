@@ -20,7 +20,6 @@ class ParticipateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         configoreNavigationHeader()
         configTableView()
         
@@ -31,16 +30,12 @@ class ParticipateViewController: UIViewController {
     }
     func configTableView()  {
         
-        
         let nib =  UINib(nibName: "ParticipateTableViewCell", bundle: Bundle(for: ParticipateTableViewCell.self))
         tableView.register(nib, forCellReuseIdentifier: "ParticipateTableViewCell")
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {

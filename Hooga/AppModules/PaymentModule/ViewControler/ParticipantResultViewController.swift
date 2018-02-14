@@ -42,17 +42,6 @@ class ParticipantResultViewController: UIViewController {
         tableView.tableFooterView = UIView()
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 /*********************************************************************************/
@@ -90,8 +79,6 @@ extension ParticipantResultViewController:UITableViewDelegate{
 /*********************************************************************************/
 
 extension ParticipantResultViewController {
-
-    
     func showMyEventLuckyDrawResultAPI(eventId:Int,regId:Int)  {
         tableView.backgroundView = nil
 
@@ -118,13 +105,8 @@ extension ParticipantResultViewController:ParticipateTableViewCellDelegate {
         if let result = cell.showMyEventLuckyDrawResult {
              NavigationManager.participateDetail(navigationController: navigationController, participateDetail: result)
         }
-        
-       
     }
-    
-    
     func participateButtonTapped(cell:ParticipateTableViewCell){
-        
         //
     }
     
