@@ -25,6 +25,10 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="glu-re-SNI">
                     <rect key="frame" x="20" y="0.0" width="335" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="WhZ-3j-R7m"/>
+                        <constraint firstAttribute="width" constant="335" id="mem-Wm-Qbc"/>
+                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TkP-0g-0jN">
                         <size key="itemSize" width="80" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -33,20 +37,19 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="glu-re-SNI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="2Q6-wa-T0i"/>
                 <constraint firstItem="iud-EY-8AZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9vj-Eq-iHK"/>
-                <constraint firstItem="glu-re-SNI" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="EOx-m2-8My"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="glu-re-SNI" secondAttribute="trailing" constant="20" id="VGx-5m-Aop"/>
                 <constraint firstAttribute="trailing" secondItem="iud-EY-8AZ" secondAttribute="trailing" id="cf2-ni-OEt"/>
-                <constraint firstItem="glu-re-SNI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uil-df-O1F"/>
+                <constraint firstItem="glu-re-SNI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="drK-HN-E5i"/>
                 <constraint firstItem="iud-EY-8AZ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="xaS-0i-UoM"/>
-                <constraint firstItem="glu-re-SNI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="zpd-qb-RmS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="collectionQuantity" destination="glu-re-SNI" id="oYR-YF-1tg"/>
+                <outlet property="heightColl" destination="WhZ-3j-R7m" id="pyH-OL-IBi"/>
+                <outlet property="widthColl" destination="mem-Wm-Qbc" id="FdU-EM-HnU"/>
             </connections>
             <point key="canvasLocation" x="22.5" y="159"/>
         </view>

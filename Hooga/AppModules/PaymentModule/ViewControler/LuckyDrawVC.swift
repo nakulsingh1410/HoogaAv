@@ -181,8 +181,7 @@ extension LuckyDrawVC {
         collectionView?.isPagingEnabled = true
         collectionView?.reloadData()
         collectionView?.isScrollEnabled = false
-        ///////////////////////////////////
-        
+      
     }
     
     @IBAction func buttonLeft_didPressed(left:UIButton){
@@ -202,7 +201,6 @@ extension LuckyDrawVC {
             }
             collectionView?.isScrollEnabled = false
         }
-        
     }
     
     @IBAction func buttonRight_didPressed(left:UIButton){
