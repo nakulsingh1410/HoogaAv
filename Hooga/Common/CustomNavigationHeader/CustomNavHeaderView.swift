@@ -11,8 +11,8 @@ enum BackButtonType:String{
     case Back = "back";
     case LeftMenu = "leftMenu"
 }
-protocol CustomNavHeaderViewDelegate {
-    
+@objc protocol CustomNavHeaderViewDelegate {
+    @objc optional func backButtonPressed()
 }
 class CustomNavHeaderView: UIView {
     
@@ -23,6 +23,7 @@ class CustomNavHeaderView: UIView {
     private var nibView:UIView!
     var viewController:UIViewController?
     var navBarTitle:String?
+    var isBackHandledInController = false
     var backButtonType : BackButtonType?
     var customNavHeaderViewDelegate:CustomNavHeaderViewDelegate?
     var titleColor =  UIColor.white
@@ -83,7 +84,11 @@ class CustomNavHeaderView: UIView {
         if let backType = backButtonType, backType == BackButtonType.LeftMenu {
             vcObj.setLeftMenuButtonForCustomeHeader()
         }else  if let backType = backButtonType, backType == BackButtonType.Back {
-            vcObj.navigationController?.popViewController(animated: true)
+            if isBackHandledInController{
+                customNavHeaderViewDelegate?.backButtonPressed?()
+            }else{
+                vcObj.navigationController?.popViewController(animated: true)
+            }
         }
     }
     

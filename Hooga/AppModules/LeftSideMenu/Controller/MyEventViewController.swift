@@ -40,7 +40,14 @@ class MyEventViewController: UIViewController {
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
         navHeaderView.navBarTitle = "My Events"
-        navHeaderView.backButtonType = .LeftMenu
+        if screenShown == ComingFromScreen.thankYou {
+            navHeaderView.backButtonType = .Back
+            navHeaderView.isBackHandledInController = true
+            navHeaderView.customNavHeaderViewDelegate = self
+        }else{
+            navHeaderView.backButtonType = .LeftMenu
+            navHeaderView.isBackHandledInController = false
+        }
     }
     func configTableViewForEventList()  {
         tableViewEventList.register(EventCell.nib, forCellReuseIdentifier: EventCell.identifier)
@@ -164,5 +171,13 @@ extension MyEventViewController {
             }
             weakSelf.tableViewEventList.reloadData()
         }
+    }
+}
+/*********************************************************************************/
+// MARK: CustomNavHeaderViewDelegate
+/*********************************************************************************/
+extension MyEventViewController:CustomNavHeaderViewDelegate{
+    func backButtonPressed() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
