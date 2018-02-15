@@ -22,12 +22,24 @@ class ParticipateViewController: UIViewController {
         
         configoreNavigationHeader()
         configTableView()
+        initializeCalls()
         
-        if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
-            showMyTicketDetailsAPI(eventId: eventId, regId: regid)
-        }
         
     }
+    
+    func initializeCalls()  {
+        guard let evntdetail = eventDetail else{return}
+        if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{
+            if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
+                showMyTicketDetailsAPI(eventId: eventId, regId: regid)
+            }
+        }else{
+            // need to do for free event type
+            showRegistrationDetailsAPI(eventId:evntdetail.eventid!,registrationId:evntdetail.regid!)
+        }
+
+    }
+    
     func configTableView()  {
         
         let nib =  UINib(nibName: "ParticipateTableViewCell", bundle: Bundle(for: ParticipateTableViewCell.self))
@@ -128,6 +140,50 @@ extension ParticipateViewController {
     
 }
 
+/////////////////FREE Entry////////////////
+
+extension ParticipateViewController{
+    
+    func showRegistrationDetailsAPI(eventId:Int,registrationId:Int)  {
+        TicketBookingService.showRegistrationDetails(eventid: eventId,registrationid:registrationId) {[weak self] (flag, array) in
+            guard let weakSelf = self else{return}
+            
+            if let data = array{
+                weakSelf.arrTicketDetails = data
+                weakSelf.addFooter()
+            }else{
+                Common.EmptyMessage(message: "No data available", viewController: weakSelf, tableView: weakSelf.tableView)
+            }
+            
+            weakSelf.tableView.reloadData()
+            
+        }
+    }
+    
+    func generateFreeLuckyDrawNumberAPI(eventId:Int,regId:Int)    {
+        TicketBookingService.generateFreeLuckyDrawNumber(eventid: eventId,registrationid:regId) {[weak self] (flag, luckyDrawNo) in
+            guard let weakSelf = self else{return}
+            
+            
+            if let obj = luckyDrawNo{
+                weakSelf.generatedLuckyDrawNumber = obj
+                let array = weakSelf.arrTicketDetails.map({ (ticket) -> ShowMyTicketDetails in
+                    if let registrationid = ticket.registrationid ,registrationid == regId {
+                        ticket.luckydrawsequence = obj.luckydrawsequence
+                    }
+                    return ticket
+                })
+                weakSelf.arrTicketDetails = array
+                weakSelf.addFooter()
+                weakSelf.tableView.reloadData()
+            }
+        }
+    }
+    
+
+}
+///////////////// xxxxx ////////////////
+
 
 
 /*********************************************************************************/
@@ -141,9 +197,19 @@ extension ParticipateViewController:ParticipateTableViewCellDelegate {
     
     
     func participateButtonTapped(cell:ParticipateTableViewCell){
-        if let eventId =  cell.ticketDetail?.eventid,let ticketId = cell.ticketDetail?.ticketid,let regid =  eventDetail?.regid{
-            generateLuckyDrawNumberAPI(eventId: eventId, regId: regid, ticketId: ticketId)
+       
+        guard let evntdetail = eventDetail else{return}
+        if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{
+            if let eventId =  cell.ticketDetail?.eventid,let ticketId = cell.ticketDetail?.ticketid,let regid =  eventDetail?.regid{
+                generateLuckyDrawNumberAPI(eventId: eventId, regId: regid, ticketId: ticketId)
+            }
+        }else{
+            // need to do for free event type
+            if let eventId =  cell.ticketDetail?.eventid,let regid = cell.ticketDetail?.registrationid{
+                generateFreeLuckyDrawNumberAPI(eventId: eventId, regId: regid)
+            }
         }
+        
     }
     
 }

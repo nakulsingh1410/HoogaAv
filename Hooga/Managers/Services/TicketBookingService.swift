@@ -246,7 +246,7 @@ extension  TicketBookingService{
 extension TicketBookingService{
     static func showRegistrationDetails(eventid:Int,
                                         registrationid:Int,
-                                           callback: @escaping (Bool,String?) -> Void){
+                                           callback: @escaping (Bool,[ShowMyTicketDetails]?) -> Void){
         
         
         var dictParam = Dictionary<String,Any>()
@@ -258,8 +258,9 @@ extension TicketBookingService{
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
             Common.hideHud()
             if let obj = response.result.value as? [String:Any]{
-                if let responseObj = obj["Isluckydraw"] as? String{
-                    callback(true,responseObj);
+                if let responseObj = obj["ShowTickets"] as? [[String:Any]]{
+                    let array = Mapper<ShowMyTicketDetails>().mapArray(JSONArray: responseObj)
+                    callback(true,array);
                 }else{
                     callback(false,nil);
                 }
@@ -271,7 +272,7 @@ extension TicketBookingService{
 
     static func generateFreeLuckyDrawNumber(eventid:Int,
                                            registrationid:Int,
-                                           callback: @escaping (Bool,[ShowMyEventLuckyDrawPrizes]?) -> Void){
+                                           callback: @escaping (Bool,GenerateLuckyDrawNumber?) -> Void){
         
         
         var dictParam = Dictionary<String,Any>()
@@ -283,12 +284,8 @@ extension TicketBookingService{
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
             Common.hideHud()
             if let obj = response.result.value as? [String:Any]{
-                if let responseObj = obj["LuckyDrawPrizes"] as? [[String:Any]]{
-                    let array = Mapper<ShowMyEventLuckyDrawPrizes>().mapArray(JSONArray: responseObj)
-                    callback(true,array);
-                }else{
-                    callback(false,nil);
-                }
+                let model = Mapper<GenerateLuckyDrawNumber>().map(JSON: obj)
+                callback(true,model);
                 
             }else {
                 callback(false,nil);
@@ -298,7 +295,7 @@ extension TicketBookingService{
     
     static func showMyFreeEventLuckyDrawResult(eventid:Int,
                                      registrationid:Int,
-                                     callback: @escaping (Bool,ShowMyEventLuckyDraw?) -> Void){
+                                     callback: @escaping (Bool,[ShowMyEventLuckyDrawResult]?) -> Void){
         
         
         var dictParam = Dictionary<String,Any>()
@@ -310,8 +307,13 @@ extension TicketBookingService{
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
             Common.hideHud()
             if let obj = response.result.value as? [String:Any]{
-                let model = Mapper<ShowMyEventLuckyDraw>().map(JSON: obj)
-                callback(true,model);
+                if let responseObj = obj["LuckyDrawDetails"] as? [[String:Any]]{
+                    let array = Mapper<ShowMyEventLuckyDrawResult>().mapArray(JSONArray: responseObj)
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+                
             }else {
                 callback(false,nil);
             }

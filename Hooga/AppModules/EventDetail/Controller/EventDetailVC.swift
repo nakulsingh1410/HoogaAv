@@ -77,7 +77,7 @@ extension EventDetailVC : UITableViewDataSource{
             //"ORGANIZED BY: " +
             cellBanner.labelOrganizedBY.text =  (self.eventDetail?.organizer)!.uppercased()
             if let bnanner = self.eventDetail?.bannerimage {
-                let url = kImgaeView + bnanner
+                let url = kAssets + bnanner
                 cellBanner.imageViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                     if image == nil {
                         cellBanner.imageViewBanner.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)

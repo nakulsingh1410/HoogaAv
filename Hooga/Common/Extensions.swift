@@ -452,6 +452,12 @@ extension Date {
         return dateWithHoursAdded
     }
     
+    var dateString : String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "dd-MM-yyyy"
+        return  dateFormatterGet.string(from: self)
+    }
+    
 }
 /*******end*******/
 
@@ -488,7 +494,7 @@ extension String {
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         if let date = dateFormatterGet.date(from: self){
           return  dateFormatter.string(from: date)
         }

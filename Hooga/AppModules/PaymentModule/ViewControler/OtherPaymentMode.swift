@@ -79,7 +79,7 @@ class OtherPaymentMode: UIViewController {
     }
     
     func saveOtherPaymentDetailInModel(paymentId:Int)  {
-        var payment = arrOtherPayments[presentedViewIndex]
+        let payment = arrOtherPayments[presentedViewIndex]
         payment.amountPaid = otherPayment.ampountPaid.text
         payment.otherPayment = otherPayment.otherPayment.text
         payment.payrefNumber = otherPayment.paymentReference.text
@@ -152,23 +152,13 @@ extension OtherPaymentMode {
     func savePaymentDetail(arrPayment:[SavePaymentDetail])  {
         TicketBookingService.paymentDetails(bookingDetails: arrPayment) { (flag, data) in
             if let _ = data{
-//                NavigationManager.thanksController(navigationController: self.navigationController, evntDetail: EventRecord())
+//   NavigationManager.thanksController(navigationController: self.navigationController, evntDetail: EventRecord())
                 NavigationManager.navigateToMyEvent(navigationController: self.navigationController, screenShown: ComingFromScreen.thankYou)
             }else{
                 //error
             }
             
         }
-    }
-}
-extension Date {
-    var ticks: UInt64 {
-        return UInt64((self.timeIntervalSince1970 + 62_135_596_800) * 10_000_000)
-    }
-    var dateString : String {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "dd-MM-yyyy"
-        return  dateFormatterGet.string(from: self)
     }
 }
 
@@ -182,7 +172,7 @@ extension OtherPaymentMode:OtherPaymentViewDelegate{
                 return bookingDetail.paymentId == -1
             })
             if unFilledTickets.count > 0{
-                Common.showAlert(message: "Please fill ALL Payment info completly")
+                Common.showAlert(message: "Please Fill ALL Payment Info Completly")
             }else{
                 self.savePaymentDetail(arrPayment: self.arrOtherPayments)
             }

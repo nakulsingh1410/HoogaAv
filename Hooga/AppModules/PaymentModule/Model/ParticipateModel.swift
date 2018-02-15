@@ -13,6 +13,7 @@ class ShowMyTicketDetails: NSObject,Mappable {
     
     var ticketid : Int?
     var eventid : Int?
+    var registrationid :Int?
     var firstName : String?
     var lastName : String?
     var tickettype : String?
@@ -25,6 +26,7 @@ class ShowMyTicketDetails: NSObject,Mappable {
     public func mapping(map: Map) {
         ticketid            <- map["ticketid"]
         eventid            <- map["eventid"]
+        registrationid  <- map["registrationid"]
         firstName            <- map["firstName"]
         lastName            <- map["lastName"]
         tickettype            <- map["tickettype"]
@@ -38,6 +40,7 @@ class ShowMyTicketDetails: NSObject,Mappable {
 class GenerateLuckyDrawNumber: NSObject,Mappable {
     
     var ticketid : Int?
+    var registrationid : Int?
     var luckydrawsequence : String?
     
     required init?(map: Map) {
@@ -45,6 +48,7 @@ class GenerateLuckyDrawNumber: NSObject,Mappable {
     
     public func mapping(map: Map) {
         ticketid            <- map["ticketid"]
+        registrationid            <- map["registrationid"]
         luckydrawsequence            <- map["luckydrawsequence"]
     }
 }

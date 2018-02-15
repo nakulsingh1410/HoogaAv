@@ -19,12 +19,24 @@ class ParticipantResultViewController: UIViewController {
         super.viewDidLoad()
         configoreNavigationHeader()
        configTableView()
-
-        if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
-            showMyEventLuckyDrawResultAPI(eventId: eventId, regId: regid)
-        }
+        initializeCalls()
+      
     }
-
+    func initializeCalls()  {
+        guard let evntdetail = eventDetail else{return}
+        if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{
+            if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
+                showMyEventLuckyDrawResultAPI(eventId: eventId, regId: regid)
+            }
+        }else{
+            // need to do for free event type
+            if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
+                showMyFreeEventLuckyDrawResultAPI(eventId: eventId, regId: regid)
+            }
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -93,6 +105,20 @@ extension ParticipantResultViewController {
             }
         }
     }
+    
+    func showMyFreeEventLuckyDrawResultAPI(eventId:Int,regId:Int)  {
+        TicketBookingService.showMyFreeEventLuckyDrawResult(eventid: eventId,registrationid:regId) {[weak self] (flag, array) in
+            guard let weakSelf = self else{return}
+            
+            if let data = array{
+                weakSelf.arrMyEventluckyDrawResult = data
+                weakSelf.tableView.reloadData()
+            }else{
+                Common.EmptyMessage(message: "No data available", viewController: weakSelf, tableView: weakSelf.tableView)
+            }
+        }
+    }
+    
 }
 
 /*********************************************************************************/

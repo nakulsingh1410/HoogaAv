@@ -182,7 +182,7 @@ extension EventListViewController : UITableViewDataSource{
         
         
         if let bnanner = event.bannerimage {
-            let url = kImgaeView + bnanner
+            let url = kAssets + bnanner
             cellEvent.imageViewEvent.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                 if image == nil {
                     cellEvent.imageViewEvent.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)

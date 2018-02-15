@@ -63,8 +63,7 @@ let kDomain    = "http://158.140.133.89/HoogaAPI/";
 let kSubDomain = "api/users/";
 let kEvent     = "api/events/"
 
-let kImgaeView = "http://158.140.133.89/Hooga/HoogaFiles/Assets/"
-
+let kAssets = "http://158.140.133.89/Hooga/HoogaFiles/Assets/"
 let kTicketUrl = "http://158.140.133.89/Hooga/HoogaFiles/TicketTypes/"
 let kQRCodes = "http://158.140.133.89/Hooga/HoogaFiles/Qrcodes/"
 let kPrice = "http://158.140.133.89/Hooga/HoogaFiles/LDPrizes/"

@@ -50,7 +50,7 @@ class EventRegisterationViewController: UIViewController {
         if let evetDtl = eventDetail{
             
                 if let path = evetDtl.bannerimage {
-                    let url = kImgaeView + path
+                    let url = kAssets + path
                     imgViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){[weak self] (image, error, cacheType, url) in
                         guard let weakSelf = self else {return}
                         if image == nil {
@@ -91,7 +91,7 @@ class EventRegisterationViewController: UIViewController {
             txtFPostalCode.text = userData.postalcode
             
             if let bnanner = userData.profilepic {
-                let url = kImgaeView + bnanner
+                let url = kAssets + bnanner
                 imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                     if image == nil {
                         self.btnUpload.isHidden = false

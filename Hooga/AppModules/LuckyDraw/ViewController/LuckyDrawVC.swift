@@ -53,12 +53,9 @@ class LuckyDrawVC: UIViewController {
 
     func initialCalls()  {
         guard let evntdetail = eventDetail else{return}
-        if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{
-            showMyEventLuckyDrawStatusAPI(eventId: evntdetail.eventid!)
-            showMyEventLuckyDrawAPI(eventId: evntdetail.eventid!)
-        }else{
-            // need to do for free event type
-        }
+        showMyEventLuckyDrawStatusAPI(eventId: evntdetail.eventid!)
+        showMyEventLuckyDrawAPI(eventId: evntdetail.eventid!)
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -159,49 +156,6 @@ extension LuckyDrawVC {
     
   
 }
-/////////////////FREE Entry////////////////
-
-extension LuckyDrawVC{
-    
-    func showRegistrationDetailsAPI(eventId:Int,registrationId:Int)  {
-        TicketBookingService.showRegistrationDetails(eventid: eventId,registrationid:registrationId) {[weak self] (flag, status) in
-            guard let weakSelf = self else{return}
-            
-            if let statusFlag = status, statusFlag == "True" {
-                weakSelf.btnParticipate.isHidden = false
-            }
-            weakSelf.showMyEventLuckyDrawPrizesAPI(eventId: eventId)
-        }
-    }
-    
-    func generateFreeLuckyDrawNumberAPI(eventId:Int,registrationId:Int)    {
-        TicketBookingService.generateFreeLuckyDrawNumber(eventid: eventId,registrationid:registrationId) {[weak self] (flag, array) in
-            guard let weakSelf = self else{return}
-            
-            if let showMyEventLuckyDrawPrizes = array{
-                weakSelf.arrShowMyEventLuckyDrawPrizes = showMyEventLuckyDrawPrizes
-                // use collection view reload
-                
-                if                 weakSelf.arrShowMyEventLuckyDrawPrizes.count > 1 {
-                    weakSelf.buttonRight.isHidden = false
-                }
-                weakSelf.collectionView.reloadData()
-            }
-        }
-    }
-    
-    func showMyFreeEventLuckyDrawResultAPI(eventId:Int,registrationId:Int)  {
-        TicketBookingService.showMyFreeEventLuckyDrawResult(eventid: eventId,registrationid:registrationId) {[weak self] (flag, showMyEventLuckyDraw) in
-            guard let weakSelf = self else{return}
-            if let obj = showMyEventLuckyDraw {
-                weakSelf.showMyEventLuckyDraw = obj
-                weakSelf.showLuckyDrawData()
-            }
-        }
-    }
-    
-}
-///////////////// xxxxx ////////////////
 
 
 extension LuckyDrawVC {
