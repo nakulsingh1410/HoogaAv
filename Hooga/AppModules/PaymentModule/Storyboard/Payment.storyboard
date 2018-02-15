@@ -940,19 +940,19 @@
                                 <color key="backgroundColor" red="0.0" green="0.45098039220000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uH-Om-1hz" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="148" y="161.5" width="79" height="35"/>
+                                <rect key="frame" x="144" y="181.5" width="87" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="hQo-zF-Pe1"/>
+                                    <constraint firstAttribute="height" constant="40" id="hQo-zF-Pe1"/>
                                 </constraints>
-                                <state key="normal" title=" My Events ">
+                                <state key="normal" title="  My Events  ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonHome_didPressedWithSender:" destination="zgi-VC-75C" eventType="touchUpInside" id="4wf-pU-r7N"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket Booking Successful, Please check Tickets from My Events." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2g-xb-yBl">
-                                <rect key="frame" x="20" y="100" width="335" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket Booked Successfully, Please check Tickets from My Events." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2g-xb-yBl">
+                                <rect key="frame" x="20" y="120" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -962,7 +962,7 @@
                             <constraint firstItem="khY-Fm-4K7" firstAttribute="trailing" secondItem="P2g-xb-yBl" secondAttribute="trailing" constant="20" id="0ND-Ah-jaT"/>
                             <constraint firstItem="BwJ-Hm-mfp" firstAttribute="leading" secondItem="khY-Fm-4K7" secondAttribute="leading" id="AHW-gI-b8O"/>
                             <constraint firstItem="P2g-xb-yBl" firstAttribute="leading" secondItem="khY-Fm-4K7" secondAttribute="leading" constant="20" id="HSF-Hg-fhH"/>
-                            <constraint firstItem="P2g-xb-yBl" firstAttribute="top" secondItem="khY-Fm-4K7" secondAttribute="top" constant="80" id="Qut-dQ-qC9"/>
+                            <constraint firstItem="P2g-xb-yBl" firstAttribute="top" secondItem="khY-Fm-4K7" secondAttribute="top" constant="100" id="Qut-dQ-qC9"/>
                             <constraint firstItem="7uH-Om-1hz" firstAttribute="top" secondItem="P2g-xb-yBl" secondAttribute="bottom" constant="41" id="Y0D-ds-BWE"/>
                             <constraint firstItem="BwJ-Hm-mfp" firstAttribute="trailing" secondItem="khY-Fm-4K7" secondAttribute="trailing" id="d5c-LS-LFn"/>
                             <constraint firstItem="BwJ-Hm-mfp" firstAttribute="top" secondItem="I9p-n6-TEE" secondAttribute="top" id="gM6-ER-y6D"/>
