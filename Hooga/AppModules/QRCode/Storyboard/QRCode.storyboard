@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Qcode TicketVC-->
+        <scene sceneID="0FY-Kc-Fsk">
+            <objects>
+                <viewController storyboardIdentifier="QcodeTicketVC" id="Sfr-hr-klh" customClass="QcodeTicketVC" customModule="Hooga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BFz-TK-WJa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-ty-27S" userLabel="Header" customClass="CustomNavHeaderView" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" red="0.24651351569999999" green="0.50405985119999996" blue="0.99807041880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Rzd-rf-Oq3"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jPd-Im-Xvd">
+                                <rect key="frame" x="0.0" y="139" width="375" height="528"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sfr-hr-klh" id="tOW-4L-AGr"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sg-cY-s2E" userLabel="EventDetail">
+                                <rect key="frame" x="20" y="74" width="335" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENTTITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJC-v1-LJI" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENT LOACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uep-4H-t6i" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="19" width="335" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENT TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8x9-d8-4EQ" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="38" width="335" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Uep-4H-t6i" secondAttribute="trailing" id="1XT-eN-8Ij"/>
+                                    <constraint firstAttribute="trailing" secondItem="8x9-d8-4EQ" secondAttribute="trailing" id="47j-sk-CvI"/>
+                                    <constraint firstItem="aJC-v1-LJI" firstAttribute="top" secondItem="2Sg-cY-s2E" secondAttribute="top" id="6bk-8b-ijs"/>
+                                    <constraint firstItem="aJC-v1-LJI" firstAttribute="leading" secondItem="2Sg-cY-s2E" secondAttribute="leading" id="Ara-P2-xK6"/>
+                                    <constraint firstItem="Uep-4H-t6i" firstAttribute="top" secondItem="aJC-v1-LJI" secondAttribute="bottom" constant="1" id="JSi-hD-vCC"/>
+                                    <constraint firstAttribute="height" constant="65" id="KwM-QB-ucH"/>
+                                    <constraint firstItem="8x9-d8-4EQ" firstAttribute="top" secondItem="Uep-4H-t6i" secondAttribute="bottom" constant="1" id="ZX9-yi-YBk"/>
+                                    <constraint firstItem="8x9-d8-4EQ" firstAttribute="leading" secondItem="2Sg-cY-s2E" secondAttribute="leading" id="cfE-6J-t7I"/>
+                                    <constraint firstAttribute="trailing" secondItem="aJC-v1-LJI" secondAttribute="trailing" id="pNW-6S-wS5"/>
+                                    <constraint firstItem="Uep-4H-t6i" firstAttribute="leading" secondItem="2Sg-cY-s2E" secondAttribute="leading" id="vfS-XT-A0V"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jPd-Im-Xvd" firstAttribute="leading" secondItem="WbZ-33-mor" secondAttribute="leading" id="0uq-82-Wrp"/>
+                            <constraint firstItem="2Sg-cY-s2E" firstAttribute="top" secondItem="ymT-ty-27S" secondAttribute="bottom" constant="10" id="IeR-0l-I64"/>
+                            <constraint firstItem="ymT-ty-27S" firstAttribute="top" secondItem="BFz-TK-WJa" secondAttribute="top" id="Ih5-Rn-MaS"/>
+                            <constraint firstItem="ymT-ty-27S" firstAttribute="leading" secondItem="WbZ-33-mor" secondAttribute="leading" id="Tt5-OZ-Oka"/>
+                            <constraint firstItem="ymT-ty-27S" firstAttribute="trailing" secondItem="WbZ-33-mor" secondAttribute="trailing" id="Uqt-WV-BjT"/>
+                            <constraint firstItem="jPd-Im-Xvd" firstAttribute="top" secondItem="2Sg-cY-s2E" secondAttribute="bottom" id="Vkn-vy-rna"/>
+                            <constraint firstItem="WbZ-33-mor" firstAttribute="trailing" secondItem="jPd-Im-Xvd" secondAttribute="trailing" id="emQ-EI-IsW"/>
+                            <constraint firstItem="2Sg-cY-s2E" firstAttribute="leading" secondItem="WbZ-33-mor" secondAttribute="leading" constant="20" id="gIX-7x-dZ6"/>
+                            <constraint firstItem="WbZ-33-mor" firstAttribute="trailing" secondItem="2Sg-cY-s2E" secondAttribute="trailing" constant="20" id="lFf-1C-naU"/>
+                            <constraint firstItem="WbZ-33-mor" firstAttribute="bottom" secondItem="jPd-Im-Xvd" secondAttribute="bottom" id="nwu-0V-l0i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WbZ-33-mor"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblEventLocation" destination="Uep-4H-t6i" id="bUo-kk-q1e"/>
+                        <outlet property="lblEventTime" destination="8x9-d8-4EQ" id="T9b-OR-cIr"/>
+                        <outlet property="lblEventTitle" destination="aJC-v1-LJI" id="x0V-an-qUK"/>
+                        <outlet property="navHeaderView" destination="ymT-ty-27S" id="7e2-8d-hP5"/>
+                        <outlet property="tableView" destination="jPd-Im-Xvd" id="w7S-gw-MQJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uuW-bG-xmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1367.2" y="77.811094452773617"/>
+        </scene>
+    </scenes>
+</document>

@@ -187,7 +187,7 @@ class EventRegisterationViewController: UIViewController {
     private func navigateToTicketBooking(){
 //        navigationController?.popToRootViewController(animated: true)
         if let evetDtl = eventDetail{
-            NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evetDtl)
+            NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evetDtl, comingFrom: ComingFromScreen.eventRegistration)
         }
 
     }

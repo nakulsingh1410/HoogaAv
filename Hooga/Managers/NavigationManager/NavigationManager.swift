@@ -98,16 +98,17 @@ class NavigationManager {
         }
     }
     
-    class func ticketBooking(navigationController:UINavigationController? , evntDetail : EventDetail){
-        let storyboard = UIStoryboard(name: "EventRegistration", bundle:  Bundle(for: TicketBookingViewController.self) )
+    class func ticketBooking(navigationController:UINavigationController? , evntDetail : EventDetail,comingFrom:ComingFromScreen){
+        let storyboard = UIStoryboard(name: "TicketBooking", bundle:  Bundle(for: TicketBookingViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "TicketBookingViewController") as? TicketBookingViewController{
             vcObj.eventDetail = evntDetail
+            vcObj.comingFrom = comingFrom
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
     
     class func bookingDetail(navigationController:UINavigationController? , evntDetail : EventRecord){
-        let storyboard = UIStoryboard(name: "EventRegistration", bundle:  Bundle(for: BookingDetailVC.self) )
+        let storyboard = UIStoryboard(name: "TicketBooking", bundle:  Bundle(for: BookingDetailVC.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as? BookingDetailVC{
             vcObj.eventRecord = evntDetail
            navigationController?.pushViewController(vcObj, animated: true)
@@ -141,7 +142,7 @@ class NavigationManager {
     }
     
     class func luckyDraw(navigationController:UINavigationController? , evntDetail : EventDetail){
-        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
+        let storyboard = UIStoryboard(name: "LuckyDraw", bundle:  Bundle(for: LuckyDrawVC.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "LuckyDrawVC") as? LuckyDrawVC{
             vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
@@ -151,14 +152,14 @@ class NavigationManager {
     
     
     class func openParticipate(navigationController:UINavigationController? , evntDetail : EventDetail){
-        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: ParticipateViewController.self) )
+        let storyboard = UIStoryboard(name: "LuckyDraw", bundle:  Bundle(for: ParticipateViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "ParticipateViewController") as? ParticipateViewController{
             vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
     class func openResultParticipate(navigationController:UINavigationController? , evntDetail : EventDetail){
-        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: ParticipantResultViewController.self) )
+        let storyboard = UIStoryboard(name: "LuckyDraw", bundle:  Bundle(for: ParticipantResultViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "ParticipantResultViewController") as? ParticipantResultViewController{
             vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
@@ -166,7 +167,7 @@ class NavigationManager {
         }
     }
     class func QRCode(navigationController:UINavigationController? , evntDetail : EventDetail){
-        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: QcodeTicketVC.self) )
+        let storyboard = UIStoryboard(name: "QRCode", bundle:  Bundle(for: QcodeTicketVC.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "QcodeTicketVC") as? QcodeTicketVC{
             vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
@@ -174,7 +175,7 @@ class NavigationManager {
     }
     
     class func participateDetail(navigationController:UINavigationController? , participateDetail: ShowMyEventLuckyDrawResult){
-        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: ParticipateDetailViewController.self) )
+        let storyboard = UIStoryboard(name: "LuckyDraw", bundle:  Bundle(for: ParticipateDetailViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "ParticipateDetailViewController") as? ParticipateDetailViewController{
             vcObj.participateDetail = participateDetail
             navigationController?.pushViewController(vcObj, animated: true)

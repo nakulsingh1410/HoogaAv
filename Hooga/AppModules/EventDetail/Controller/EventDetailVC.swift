@@ -208,7 +208,7 @@ extension EventDetailVC : UITableViewDelegate{
 extension EventDetailVC :ShareCellDelegate{
     func bookMoreDidSelected(cell: ShareCell) {
         guard let evntDtl = eventDetail else{return}
-        NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl)
+        NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl, comingFrom: ComingFromScreen.eventDetail)
     }
     
     func viewTicketDidSelected(cell: ShareCell) {
@@ -232,7 +232,7 @@ extension EventDetailVC :ShareCellDelegate{
              NavigationManager.eventRegistration(navigationController: self.navigationController, evntDetail: evntDtl)
             }else if let title = cell.buttonregister.titleLabel?.text ,
                 title == RegisterButtonTitle.bookTickets.rawValue{
-                NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl)
+                NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl, comingFrom: ComingFromScreen.eventDetail)
         }
        
     }

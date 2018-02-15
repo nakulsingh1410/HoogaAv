@@ -16,6 +16,34 @@
 		301BF22A20241C990099ADD9 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301BF22920241C990099ADD9 /* MyProfileViewController.swift */; };
 		3026790920347361005B4442 /* CustomSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3026790820347361005B4442 /* CustomSplash.storyboard */; };
 		3026790B20347396005B4442 /* CustomSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026790A20347396005B4442 /* CustomSplashViewController.swift */; };
+		3026794E20356628005B4442 /* TicketBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026794D20356628005B4442 /* TicketBookingViewController.swift */; };
+		302679502035663C005B4442 /* TicketBooking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3026794F2035663C005B4442 /* TicketBooking.storyboard */; };
+		3026795B2035671B005B4442 /* LuckyDraw.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3026795A2035671B005B4442 /* LuckyDraw.storyboard */; };
+		3026798520356800005B4442 /* LuckyDrawCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026797C203567FF005B4442 /* LuckyDrawCell.swift */; };
+		3026798620356800005B4442 /* LuckyDrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026797D203567FF005B4442 /* LuckyDrawVC.swift */; };
+		3026798720356800005B4442 /* ParticipantResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026797E203567FF005B4442 /* ParticipantResultViewController.swift */; };
+		3026798820356800005B4442 /* ParticipateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026797F203567FF005B4442 /* ParticipateTableViewCell.swift */; };
+		3026798920356800005B4442 /* ParticipateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30267980203567FF005B4442 /* ParticipateDetailViewController.swift */; };
+		3026798A20356800005B4442 /* ParticipateDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30267981203567FF005B4442 /* ParticipateDetailViewController.xib */; };
+		3026798B20356800005B4442 /* ParticipateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3026798220356800005B4442 /* ParticipateTableViewCell.xib */; };
+		3026798C20356800005B4442 /* LuckyDrawCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3026798320356800005B4442 /* LuckyDrawCell.xib */; };
+		3026798D20356800005B4442 /* ParticipateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026798420356800005B4442 /* ParticipateViewController.swift */; };
+		30267990203568B1005B4442 /* FilterTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3026798E203568B1005B4442 /* FilterTableFooterView.xib */; };
+		30267991203568B1005B4442 /* FilterTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026798F203568B1005B4442 /* FilterTableFooterView.swift */; };
+		30267995203568E6005B4442 /* QRCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30267992203568E5005B4442 /* QRCodeTableViewCell.swift */; };
+		30267996203568E6005B4442 /* QcodeTicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30267993203568E5005B4442 /* QcodeTicketVC.swift */; };
+		30267997203568E6005B4442 /* QRCodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30267994203568E5005B4442 /* QRCodeTableViewCell.xib */; };
+		30267999203568F3005B4442 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30267998203568F3005B4442 /* QRCode.storyboard */; };
+		302679A420356FD5005B4442 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026799A20356FD3005B4442 /* DetailHeaderView.swift */; };
+		302679A520356FD5005B4442 /* TicketQuantityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3026799B20356FD4005B4442 /* TicketQuantityView.xib */; };
+		302679A620356FD5005B4442 /* BookingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026799C20356FD4005B4442 /* BookingDetailView.swift */; };
+		302679A720356FD5005B4442 /* TicketQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026799D20356FD4005B4442 /* TicketQuantityView.swift */; };
+		302679A820356FD5005B4442 /* CommonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026799E20356FD4005B4442 /* CommonHeaderView.swift */; };
+		302679A920356FD5005B4442 /* DetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3026799F20356FD4005B4442 /* DetailHeaderView.xib */; };
+		302679AA20356FD5005B4442 /* QuantityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302679A020356FD4005B4442 /* QuantityCell.xib */; };
+		302679AB20356FD5005B4442 /* BookingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302679A120356FD4005B4442 /* BookingDetailVC.swift */; };
+		302679AC20356FD5005B4442 /* BookingDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302679A220356FD4005B4442 /* BookingDetailView.xib */; };
+		302679AD20356FD5005B4442 /* QuantityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302679A320356FD4005B4442 /* QuantityCell.swift */; };
 		3028D894201CC9B400922752 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3028D893201CC9B400922752 /* EventService.swift */; };
 		302D1312202638D000AB10DD /* TicketBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D1311202638D000AB10DD /* TicketBookingService.swift */; };
 		30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */; };
@@ -23,18 +51,8 @@
 		305471DE202092650009A8EC /* OpenImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471DD202092650009A8EC /* OpenImagePickerViewController.swift */; };
 		305471ED20213B3B0009A8EC /* EventRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305471EC20213B3B0009A8EC /* EventRegistration.storyboard */; };
 		305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */; };
-		3078207B202A0E3800C085C5 /* ParticipateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207A202A0E3800C085C5 /* ParticipateViewController.swift */; };
 		3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207C202A110A00C085C5 /* ParticipateModel.swift */; };
-		30782080202A165200C085C5 /* ParticipateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207E202A165200C085C5 /* ParticipateTableViewCell.swift */; };
-		30782081202A165200C085C5 /* ParticipateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3078207F202A165200C085C5 /* ParticipateTableViewCell.xib */; };
 		307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D68202A20DD00CD105B /* QRCodeModel.swift */; };
-		307A0D70202A232300CD105B /* QRCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D6E202A232300CD105B /* QRCodeTableViewCell.swift */; };
-		307A0D71202A232300CD105B /* QRCodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307A0D6F202A232300CD105B /* QRCodeTableViewCell.xib */; };
-		307A0D74202A32C500CD105B /* FilterTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D72202A32C400CD105B /* FilterTableFooterView.swift */; };
-		307A0D75202A32C500CD105B /* FilterTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307A0D73202A32C400CD105B /* FilterTableFooterView.xib */; };
-		307A0D77202A34A100CD105B /* ParticipantResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D76202A34A100CD105B /* ParticipantResultViewController.swift */; };
-		307A0D7A202A9F0800CD105B /* ParticipateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D78202A9F0800CD105B /* ParticipateDetailViewController.swift */; };
-		307A0D7B202A9F0800CD105B /* ParticipateDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 307A0D79202A9F0800CD105B /* ParticipateDetailViewController.xib */; };
 		30908C292031ACC100FD7501 /* OtherPaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30908C282031ACC100FD7501 /* OtherPaymentView.xib */; };
 		30908C2B2031ADEC00FD7501 /* OtherPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30908C2A2031ADEC00FD7501 /* OtherPaymentView.swift */; };
 		30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C33E4C2011CF45008C5826 /* Event.storyboard */; };
@@ -83,7 +101,6 @@
 		30D77C15200CD81400386438 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 30D77C14200CD81400386438 /* loading.gif */; };
 		30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C16200CDA4000386438 /* UIImage+Gif.swift */; };
 		30D77C212010891900386438 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C202010891900386438 /* EventListViewController.swift */; };
-		30DC22AE20256680006D5A05 /* TicketBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DC22AD20256680006D5A05 /* TicketBookingViewController.swift */; };
 		30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F85201D798A009D4278 /* CustomPickerView.swift */; };
 		30EA5F88201D799C009D4278 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F87201D799C009D4278 /* CustomPickerView.xib */; };
 		30EA5F8B201D82B2009D4278 /* CustomDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */; };
@@ -129,31 +146,17 @@
 		7530D964201FECA100B9BB52 /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D963201FECA100B9BB52 /* FaqVC.swift */; };
 		7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D965201FECF100B9BB52 /* FaqCell.swift */; };
 		754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E26B0202149DE00129381 /* TagSearchVC.swift */; };
-		7574C3BA2025788D0010A4F1 /* BookingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3B92025788D0010A4F1 /* BookingDetailView.swift */; };
-		7574C3BC202578A00010A4F1 /* BookingDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7574C3BB202578A00010A4F1 /* BookingDetailView.xib */; };
-		7574C3BE20258F510010A4F1 /* TicketQuantityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7574C3BD20258F510010A4F1 /* TicketQuantityView.xib */; };
-		7574C3C020258F610010A4F1 /* TicketQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3BF20258F610010A4F1 /* TicketQuantityView.swift */; };
 		7574C3C32025D4C70010A4F1 /* BookingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3C22025D4C70010A4F1 /* BookingDetail.swift */; };
-		7574C3C52025D8350010A4F1 /* DetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7574C3C42025D8350010A4F1 /* DetailHeaderView.xib */; };
-		7574C3C72025D8570010A4F1 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3C62025D8570010A4F1 /* DetailHeaderView.swift */; };
-		7574C3C92025E3700010A4F1 /* CommonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3C82025E3700010A4F1 /* CommonHeaderView.swift */; };
-		7574C3CC2025E7360010A4F1 /* QuantityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3CA2025E7360010A4F1 /* QuantityCell.swift */; };
-		7574C3CD2025E7360010A4F1 /* QuantityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7574C3CB2025E7360010A4F1 /* QuantityCell.xib */; };
-		7574C3CF2025EA3E0010A4F1 /* BookingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3CE2025EA3E0010A4F1 /* BookingDetailVC.swift */; };
 		7574C3D520262D260010A4F1 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3D420262D260010A4F1 /* PaymentVC.swift */; };
 		7574C3D720262D390010A4F1 /* PaymentConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3D620262D390010A4F1 /* PaymentConfirmationVC.swift */; };
 		7574C3D920262E080010A4F1 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7574C3D820262E080010A4F1 /* Payment.storyboard */; };
 		75959D9C2022AA3700DC307A /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75959D9B2022AA3700DC307A /* AVKit.framework */; };
 		75959D9E2022B0EE00DC307A /* HLFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75959D9D2022B0EE00DC307A /* HLFont.swift */; };
 		75DB799A20263D8500D4B1A6 /* CreditCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DB799920263D8500D4B1A6 /* CreditCardCell.swift */; };
-		75DB799C202641B500D4B1A6 /* QcodeTicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DB799B202641B500D4B1A6 /* QcodeTicketVC.swift */; };
-		75DB799E2026432E00D4B1A6 /* LuckyDrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DB799D2026432E00D4B1A6 /* LuckyDrawVC.swift */; };
 		75E2096420290EB600817905 /* OtherPaymentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2096320290EB600817905 /* OtherPaymentMode.swift */; };
 		75E2096620291C2B00817905 /* OtherPayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2096520291C2B00817905 /* OtherPayCell.swift */; };
 		75E2096A20292EA900817905 /* SavePaymentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2096920292EA900817905 /* SavePaymentDetail.swift */; };
 		75E2096C20293FD700817905 /* ThanksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2096B20293FD700817905 /* ThanksVC.swift */; };
-		75E2096F2029498100817905 /* LuckyDrawCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2096D2029498100817905 /* LuckyDrawCell.swift */; };
-		75E209702029498100817905 /* LuckyDrawCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E2096E2029498100817905 /* LuckyDrawCell.xib */; };
 		A6F71ECF50490DD64EFEB284 /* Pods_HoogaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */; };
 		EAC5CBC5EC4E790CE672E692 /* Pods_HoogaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */; };
 /* End PBXBuildFile section */
@@ -193,6 +196,34 @@
 		301BF22920241C990099ADD9 /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		3026790820347361005B4442 /* CustomSplash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomSplash.storyboard; sourceTree = "<group>"; };
 		3026790A20347396005B4442 /* CustomSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSplashViewController.swift; sourceTree = "<group>"; };
+		3026794D20356628005B4442 /* TicketBookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketBookingViewController.swift; sourceTree = "<group>"; };
+		3026794F2035663C005B4442 /* TicketBooking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TicketBooking.storyboard; sourceTree = "<group>"; };
+		3026795A2035671B005B4442 /* LuckyDraw.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LuckyDraw.storyboard; sourceTree = "<group>"; };
+		3026797C203567FF005B4442 /* LuckyDrawCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuckyDrawCell.swift; sourceTree = "<group>"; };
+		3026797D203567FF005B4442 /* LuckyDrawVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuckyDrawVC.swift; sourceTree = "<group>"; };
+		3026797E203567FF005B4442 /* ParticipantResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantResultViewController.swift; sourceTree = "<group>"; };
+		3026797F203567FF005B4442 /* ParticipateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipateTableViewCell.swift; sourceTree = "<group>"; };
+		30267980203567FF005B4442 /* ParticipateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipateDetailViewController.swift; sourceTree = "<group>"; };
+		30267981203567FF005B4442 /* ParticipateDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipateDetailViewController.xib; sourceTree = "<group>"; };
+		3026798220356800005B4442 /* ParticipateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipateTableViewCell.xib; sourceTree = "<group>"; };
+		3026798320356800005B4442 /* LuckyDrawCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LuckyDrawCell.xib; sourceTree = "<group>"; };
+		3026798420356800005B4442 /* ParticipateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipateViewController.swift; sourceTree = "<group>"; };
+		3026798E203568B1005B4442 /* FilterTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableFooterView.xib; sourceTree = "<group>"; };
+		3026798F203568B1005B4442 /* FilterTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableFooterView.swift; sourceTree = "<group>"; };
+		30267992203568E5005B4442 /* QRCodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeTableViewCell.swift; sourceTree = "<group>"; };
+		30267993203568E5005B4442 /* QcodeTicketVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QcodeTicketVC.swift; sourceTree = "<group>"; };
+		30267994203568E5005B4442 /* QRCodeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeTableViewCell.xib; sourceTree = "<group>"; };
+		30267998203568F3005B4442 /* QRCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		3026799A20356FD3005B4442 /* DetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		3026799B20356FD4005B4442 /* TicketQuantityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketQuantityView.xib; sourceTree = "<group>"; };
+		3026799C20356FD4005B4442 /* BookingDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailView.swift; sourceTree = "<group>"; };
+		3026799D20356FD4005B4442 /* TicketQuantityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketQuantityView.swift; sourceTree = "<group>"; };
+		3026799E20356FD4005B4442 /* CommonHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHeaderView.swift; sourceTree = "<group>"; };
+		3026799F20356FD4005B4442 /* DetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHeaderView.xib; sourceTree = "<group>"; };
+		302679A020356FD4005B4442 /* QuantityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuantityCell.xib; sourceTree = "<group>"; };
+		302679A120356FD4005B4442 /* BookingDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetailVC.swift; sourceTree = "<group>"; };
+		302679A220356FD4005B4442 /* BookingDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookingDetailView.xib; sourceTree = "<group>"; };
+		302679A320356FD4005B4442 /* QuantityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuantityCell.swift; sourceTree = "<group>"; };
 		3028D893201CC9B400922752 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		302D1311202638D000AB10DD /* TicketBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBookingService.swift; sourceTree = "<group>"; };
 		30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingModel.swift; sourceTree = "<group>"; };
@@ -200,18 +231,8 @@
 		305471DD202092650009A8EC /* OpenImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenImagePickerViewController.swift; sourceTree = "<group>"; };
 		305471EC20213B3B0009A8EC /* EventRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventRegistration.storyboard; sourceTree = "<group>"; };
 		305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegisterationViewController.swift; sourceTree = "<group>"; };
-		3078207A202A0E3800C085C5 /* ParticipateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateViewController.swift; sourceTree = "<group>"; };
 		3078207C202A110A00C085C5 /* ParticipateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateModel.swift; sourceTree = "<group>"; };
-		3078207E202A165200C085C5 /* ParticipateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateTableViewCell.swift; sourceTree = "<group>"; };
-		3078207F202A165200C085C5 /* ParticipateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipateTableViewCell.xib; sourceTree = "<group>"; };
 		307A0D68202A20DD00CD105B /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
-		307A0D6E202A232300CD105B /* QRCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTableViewCell.swift; sourceTree = "<group>"; };
-		307A0D6F202A232300CD105B /* QRCodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeTableViewCell.xib; sourceTree = "<group>"; };
-		307A0D72202A32C400CD105B /* FilterTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableFooterView.swift; sourceTree = "<group>"; };
-		307A0D73202A32C400CD105B /* FilterTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableFooterView.xib; sourceTree = "<group>"; };
-		307A0D76202A34A100CD105B /* ParticipantResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantResultViewController.swift; sourceTree = "<group>"; };
-		307A0D78202A9F0800CD105B /* ParticipateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateDetailViewController.swift; sourceTree = "<group>"; };
-		307A0D79202A9F0800CD105B /* ParticipateDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipateDetailViewController.xib; sourceTree = "<group>"; };
 		30908C282031ACC100FD7501 /* OtherPaymentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPaymentView.xib; sourceTree = "<group>"; };
 		30908C2A2031ADEC00FD7501 /* OtherPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPaymentView.swift; sourceTree = "<group>"; };
 		30C33E4C2011CF45008C5826 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
@@ -260,7 +281,6 @@
 		30D77C14200CD81400386438 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		30D77C16200CDA4000386438 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		30D77C202010891900386438 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
-		30DC22AD20256680006D5A05 /* TicketBookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicketBookingViewController.swift; path = Hooga/AppModules/LeftSideMenu/Controller/TicketBookingViewController.swift; sourceTree = SOURCE_ROOT; };
 		30EA5F85201D798A009D4278 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		30EA5F87201D799C009D4278 /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDatePicker.xib; sourceTree = "<group>"; };
@@ -306,31 +326,17 @@
 		7530D963201FECA100B9BB52 /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
 		7530D965201FECF100B9BB52 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
 		754E26B0202149DE00129381 /* TagSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchVC.swift; sourceTree = "<group>"; };
-		7574C3B92025788D0010A4F1 /* BookingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailView.swift; sourceTree = "<group>"; };
-		7574C3BB202578A00010A4F1 /* BookingDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingDetailView.xib; sourceTree = "<group>"; };
-		7574C3BD20258F510010A4F1 /* TicketQuantityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketQuantityView.xib; sourceTree = "<group>"; };
-		7574C3BF20258F610010A4F1 /* TicketQuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketQuantityView.swift; sourceTree = "<group>"; };
 		7574C3C22025D4C70010A4F1 /* BookingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetail.swift; sourceTree = "<group>"; };
-		7574C3C42025D8350010A4F1 /* DetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailHeaderView.xib; sourceTree = "<group>"; };
-		7574C3C62025D8570010A4F1 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
-		7574C3C82025E3700010A4F1 /* CommonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHeaderView.swift; sourceTree = "<group>"; };
-		7574C3CA2025E7360010A4F1 /* QuantityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityCell.swift; sourceTree = "<group>"; };
-		7574C3CB2025E7360010A4F1 /* QuantityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuantityCell.xib; sourceTree = "<group>"; };
-		7574C3CE2025EA3E0010A4F1 /* BookingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailVC.swift; sourceTree = "<group>"; };
 		7574C3D420262D260010A4F1 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 		7574C3D620262D390010A4F1 /* PaymentConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationVC.swift; sourceTree = "<group>"; };
 		7574C3D820262E080010A4F1 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
 		75959D9B2022AA3700DC307A /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		75959D9D2022B0EE00DC307A /* HLFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLFont.swift; sourceTree = "<group>"; };
 		75DB799920263D8500D4B1A6 /* CreditCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardCell.swift; sourceTree = "<group>"; };
-		75DB799B202641B500D4B1A6 /* QcodeTicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QcodeTicketVC.swift; sourceTree = "<group>"; };
-		75DB799D2026432E00D4B1A6 /* LuckyDrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyDrawVC.swift; sourceTree = "<group>"; };
 		75E2096320290EB600817905 /* OtherPaymentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPaymentMode.swift; sourceTree = "<group>"; };
 		75E2096520291C2B00817905 /* OtherPayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPayCell.swift; sourceTree = "<group>"; };
 		75E2096920292EA900817905 /* SavePaymentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePaymentDetail.swift; sourceTree = "<group>"; };
 		75E2096B20293FD700817905 /* ThanksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksVC.swift; sourceTree = "<group>"; };
-		75E2096D2029498100817905 /* LuckyDrawCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyDrawCell.swift; sourceTree = "<group>"; };
-		75E2096E2029498100817905 /* LuckyDrawCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LuckyDrawCell.xib; sourceTree = "<group>"; };
 		7CE2A8973C543B2547DD8819 /* Pods_HoogaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE578049D367BF402BDDB22 /* Pods_HoogaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoogaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A2B191A578EA47A70B75B6 /* Pods-HoogaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoogaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoogaTests/Pods-HoogaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -504,6 +510,127 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		302679442035658A005B4442 /* LuckyDraw */ = {
+			isa = PBXGroup;
+			children = (
+				30267951203566FD005B4442 /* Model */,
+				30267952203566FD005B4442 /* Storyboard */,
+				30267953203566FD005B4442 /* ViewController */,
+			);
+			path = LuckyDraw;
+			sourceTree = "<group>";
+		};
+		302679452035658A005B4442 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				302679462035658A005B4442 /* Model */,
+				302679472035658A005B4442 /* Storyboard */,
+				302679482035658A005B4442 /* ViewController */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		302679462035658A005B4442 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		302679472035658A005B4442 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				30267998203568F3005B4442 /* QRCode.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		302679482035658A005B4442 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				30267993203568E5005B4442 /* QcodeTicketVC.swift */,
+				30267992203568E5005B4442 /* QRCodeTableViewCell.swift */,
+				30267994203568E5005B4442 /* QRCodeTableViewCell.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		302679492035658A005B4442 /* TicketBooking */ = {
+			isa = PBXGroup;
+			children = (
+				3026794A2035658A005B4442 /* Model */,
+				3026794B2035658A005B4442 /* Storyboard */,
+				3026794C2035658A005B4442 /* ViewController */,
+			);
+			path = TicketBooking;
+			sourceTree = "<group>";
+		};
+		3026794A2035658A005B4442 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3026794B2035658A005B4442 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3026794F2035663C005B4442 /* TicketBooking.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		3026794C2035658A005B4442 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				302679A120356FD4005B4442 /* BookingDetailVC.swift */,
+				3026799C20356FD4005B4442 /* BookingDetailView.swift */,
+				302679A220356FD4005B4442 /* BookingDetailView.xib */,
+				3026799E20356FD4005B4442 /* CommonHeaderView.swift */,
+				3026799A20356FD3005B4442 /* DetailHeaderView.swift */,
+				3026799F20356FD4005B4442 /* DetailHeaderView.xib */,
+				302679A320356FD4005B4442 /* QuantityCell.swift */,
+				302679A020356FD4005B4442 /* QuantityCell.xib */,
+				3026799D20356FD4005B4442 /* TicketQuantityView.swift */,
+				3026799B20356FD4005B4442 /* TicketQuantityView.xib */,
+				3026794D20356628005B4442 /* TicketBookingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		30267951203566FD005B4442 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30267952203566FD005B4442 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3026795A2035671B005B4442 /* LuckyDraw.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		30267953203566FD005B4442 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3026797C203567FF005B4442 /* LuckyDrawCell.swift */,
+				3026798320356800005B4442 /* LuckyDrawCell.xib */,
+				3026797D203567FF005B4442 /* LuckyDrawVC.swift */,
+				3026797E203567FF005B4442 /* ParticipantResultViewController.swift */,
+				30267980203567FF005B4442 /* ParticipateDetailViewController.swift */,
+				30267981203567FF005B4442 /* ParticipateDetailViewController.xib */,
+				3026797F203567FF005B4442 /* ParticipateTableViewCell.swift */,
+				3026798220356800005B4442 /* ParticipateTableViewCell.xib */,
+				3026798420356800005B4442 /* ParticipateViewController.swift */,
+				3026798F203568B1005B4442 /* FilterTableFooterView.swift */,
+				3026798E203568B1005B4442 /* FilterTableFooterView.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		305471DC2020925B0009A8EC /* ImagePickByDevice */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,18 +660,7 @@
 		305471EB20213B200009A8EC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				30DC22AD20256680006D5A05 /* TicketBookingViewController.swift */,
 				305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */,
-				7574C3CE2025EA3E0010A4F1 /* BookingDetailVC.swift */,
-				7574C3B92025788D0010A4F1 /* BookingDetailView.swift */,
-				7574C3BB202578A00010A4F1 /* BookingDetailView.xib */,
-				7574C3BF20258F610010A4F1 /* TicketQuantityView.swift */,
-				7574C3BD20258F510010A4F1 /* TicketQuantityView.xib */,
-				7574C3CA2025E7360010A4F1 /* QuantityCell.swift */,
-				7574C3CB2025E7360010A4F1 /* QuantityCell.xib */,
-				7574C3C62025D8570010A4F1 /* DetailHeaderView.swift */,
-				7574C3C42025D8350010A4F1 /* DetailHeaderView.xib */,
-				7574C3C82025E3700010A4F1 /* CommonHeaderView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -581,6 +697,9 @@
 		30D77BAE200B306900386438 /* AppModules */ = {
 			isa = PBXGroup;
 			children = (
+				302679442035658A005B4442 /* LuckyDraw */,
+				302679452035658A005B4442 /* QRCode */,
+				302679492035658A005B4442 /* TicketBooking */,
 				7574C3D020262CAC0010A4F1 /* PaymentModule */,
 				305471E920213B200009A8EC /* EventRegistration */,
 				7530D941201F888300B9BB52 /* EventDetail */,
@@ -911,24 +1030,10 @@
 			children = (
 				7574C3D420262D260010A4F1 /* PaymentVC.swift */,
 				7574C3D620262D390010A4F1 /* PaymentConfirmationVC.swift */,
-				75DB799B202641B500D4B1A6 /* QcodeTicketVC.swift */,
-				75DB799D2026432E00D4B1A6 /* LuckyDrawVC.swift */,
 				75DB799920263D8500D4B1A6 /* CreditCardCell.swift */,
 				75E2096320290EB600817905 /* OtherPaymentMode.swift */,
 				75E2096520291C2B00817905 /* OtherPayCell.swift */,
 				75E2096B20293FD700817905 /* ThanksVC.swift */,
-				75E2096D2029498100817905 /* LuckyDrawCell.swift */,
-				75E2096E2029498100817905 /* LuckyDrawCell.xib */,
-				3078207A202A0E3800C085C5 /* ParticipateViewController.swift */,
-				307A0D76202A34A100CD105B /* ParticipantResultViewController.swift */,
-				3078207E202A165200C085C5 /* ParticipateTableViewCell.swift */,
-				3078207F202A165200C085C5 /* ParticipateTableViewCell.xib */,
-				307A0D6E202A232300CD105B /* QRCodeTableViewCell.swift */,
-				307A0D6F202A232300CD105B /* QRCodeTableViewCell.xib */,
-				307A0D72202A32C400CD105B /* FilterTableFooterView.swift */,
-				307A0D73202A32C400CD105B /* FilterTableFooterView.xib */,
-				307A0D78202A9F0800CD105B /* ParticipateDetailViewController.swift */,
-				307A0D79202A9F0800CD105B /* ParticipateDetailViewController.xib */,
 				30908C282031ACC100FD7501 /* OtherPaymentView.xib */,
 				30908C2A2031ADEC00FD7501 /* OtherPaymentView.swift */,
 			);
@@ -1063,41 +1168,44 @@
 				30EA5F88201D799C009D4278 /* CustomPickerView.xib in Resources */,
 				30D77B9B200B217E00386438 /* GillSans.ttc in Resources */,
 				7530D956201F888300B9BB52 /* ContactCell.xib in Resources */,
-				7574C3CD2025E7360010A4F1 /* QuantityCell.xib in Resources */,
+				30267990203568B1005B4442 /* FilterTableFooterView.xib in Resources */,
 				3026790920347361005B4442 /* CustomSplash.storyboard in Resources */,
+				3026798C20356800005B4442 /* LuckyDrawCell.xib in Resources */,
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
 				30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */,
 				7574C3D920262E080010A4F1 /* Payment.storyboard in Resources */,
-				30782081202A165200C085C5 /* ParticipateTableViewCell.xib in Resources */,
-				7574C3C52025D8350010A4F1 /* DetailHeaderView.xib in Resources */,
 				30908C292031ACC100FD7501 /* OtherPaymentView.xib in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
 				30EA5F9B201DE0AD009D4278 /* LeftSideMenu.storyboard in Resources */,
-				75E209702029498100817905 /* LuckyDrawCell.xib in Resources */,
+				3026795B2035671B005B4442 /* LuckyDraw.storyboard in Resources */,
 				30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */,
-				7574C3BC202578A00010A4F1 /* BookingDetailView.xib in Resources */,
 				7530D95D201F888300B9BB52 /* GalleryImageCell.xib in Resources */,
 				30D77C00200B37C400386438 /* Main.storyboard in Resources */,
+				302679A520356FD5005B4442 /* TicketQuantityView.xib in Resources */,
 				30D77B9C200B217E00386438 /* Gotham-Book.otf in Resources */,
 				305471ED20213B3B0009A8EC /* EventRegistration.storyboard in Resources */,
+				30267999203568F3005B4442 /* QRCode.storyboard in Resources */,
 				7530D954201F888300B9BB52 /* BannerCell.xib in Resources */,
 				30D77C07200B399800386438 /* LaunchScreen.storyboard in Resources */,
+				302679AC20356FD5005B4442 /* BookingDetailView.xib in Resources */,
 				30EA5FB6201EF1D4009D4278 /* CustomNavHeaderView.xib in Resources */,
-				307A0D7B202A9F0800CD105B /* ParticipateDetailViewController.xib in Resources */,
-				307A0D75202A32C500CD105B /* FilterTableFooterView.xib in Resources */,
 				30D77C15200CD81400386438 /* loading.gif in Resources */,
-				7574C3BE20258F510010A4F1 /* TicketQuantityView.xib in Resources */,
 				7530D95B201F888300B9BB52 /* GalleryCell.xib in Resources */,
+				30267997203568E6005B4442 /* QRCodeTableViewCell.xib in Resources */,
 				30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */,
+				3026798B20356800005B4442 /* ParticipateTableViewCell.xib in Resources */,
 				30D77BF4200B36B400386438 /* DataTableViewCell.xib in Resources */,
 				301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */,
 				30D77BF0200B36B400386438 /* SlideMenu.storyboard in Resources */,
-				307A0D71202A232300CD105B /* QRCodeTableViewCell.xib in Resources */,
 				7530D95F201F888300B9BB52 /* ShareCell.xib in Resources */,
 				30D77BDE200B361400386438 /* HudView.xib in Resources */,
+				302679502035663C005B4442 /* TicketBooking.storyboard in Resources */,
 				30EA5F8B201D82B2009D4278 /* CustomDatePicker.xib in Resources */,
+				302679A920356FD5005B4442 /* DetailHeaderView.xib in Resources */,
 				7530D960201F888300B9BB52 /* EventDetail.storyboard in Resources */,
+				302679AA20356FD5005B4442 /* QuantityCell.xib in Resources */,
 				7530D959201F888300B9BB52 /* EventTitleCell.xib in Resources */,
+				3026798A20356800005B4442 /* ParticipateDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1282,74 +1390,68 @@
 			files = (
 				30D77BD6200B361400386438 /* UIApplication.swift in Sources */,
 				30D77BEF200B36B400386438 /* RightViewController.swift in Sources */,
-				30DC22AE20256680006D5A05 /* TicketBookingViewController.swift in Sources */,
 				30EA5F9D201E283E009D4278 /* RequestEvent.swift in Sources */,
 				30D77BC8200B35AF00386438 /* Reachability.swift in Sources */,
 				30D77BE2200B366C00386438 /* ResponseDto.swift in Sources */,
 				30D77B8C200B203300386438 /* HoogaTextField.swift in Sources */,
 				30EA5F8D201D82C6009D4278 /* CustomDatePicker.swift in Sources */,
+				30267991203568B1005B4442 /* FilterTableFooterView.swift in Sources */,
 				30ED061D2020866F00D354BE /* LeftMenuButton.swift in Sources */,
 				7530D958201F888300B9BB52 /* EventTitleCell.swift in Sources */,
 				7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */,
 				75E2096620291C2B00817905 /* OtherPayCell.swift in Sources */,
-				7574C3CC2025E7360010A4F1 /* QuantityCell.swift in Sources */,
+				302679AD20356FD5005B4442 /* QuantityCell.swift in Sources */,
 				307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */,
 				30D77BFE200B37C400386438 /* LoginViewController.swift in Sources */,
-				7574C3C72025D8570010A4F1 /* DetailHeaderView.swift in Sources */,
 				30D77BF3200B36B400386438 /* DataTableViewCell.swift in Sources */,
-				7574C3C92025E3700010A4F1 /* CommonHeaderView.swift in Sources */,
 				7530D955201F888300B9BB52 /* ContactCell.swift in Sources */,
 				30D77B8E200B206400386438 /* HoogaLabel.swift in Sources */,
 				30D77BD7200B361400386438 /* UIColor.swift in Sources */,
 				30FEA28E2028CDF7001A38C4 /* ShowMyEventLuckyDrawPrizes.swift in Sources */,
 				30D77BFD200B37C400386438 /* ForgotPasswordViewController.swift in Sources */,
-				30782080202A165200C085C5 /* ParticipateTableViewCell.swift in Sources */,
 				30D77BDD200B361400386438 /* HudView.swift in Sources */,
 				75E2096C20293FD700817905 /* ThanksVC.swift in Sources */,
-				75DB799E2026432E00D4B1A6 /* LuckyDrawVC.swift in Sources */,
 				30EA5FA6201E2892009D4278 /* GrediantView.swift in Sources */,
+				3026798920356800005B4442 /* ParticipateDetailViewController.swift in Sources */,
 				30D77BC2200B352900386438 /* Common.swift in Sources */,
-				3078207B202A0E3800C085C5 /* ParticipateViewController.swift in Sources */,
 				301B86702007452900DA7855 /* AppDelegate.swift in Sources */,
 				30D77BDB200B361400386438 /* UIView.swift in Sources */,
 				30EA5FAF201EF021009D4278 /* MyEventViewController.swift in Sources */,
+				3026794E20356628005B4442 /* TicketBookingViewController.swift in Sources */,
 				30EA5FAD201E29BB009D4278 /* Color.swift in Sources */,
 				30FEA28A2028C8D5001A38C4 /* ShowMyEventLuckyDraw.swift in Sources */,
+				302679AB20356FD5005B4442 /* BookingDetailVC.swift in Sources */,
 				30D77BF1200B36B400386438 /* SlideMenuController.swift in Sources */,
 				30D77BDA200B361400386438 /* UITableViewExtension.swift in Sources */,
 				305471DE202092650009A8EC /* OpenImagePickerViewController.swift in Sources */,
 				7574C3D720262D390010A4F1 /* PaymentConfirmationVC.swift in Sources */,
 				7530D964201FECA100B9BB52 /* FaqVC.swift in Sources */,
 				3026790B20347396005B4442 /* CustomSplashViewController.swift in Sources */,
+				302679A620356FD5005B4442 /* BookingDetailView.swift in Sources */,
 				7530D95E201F888300B9BB52 /* ShareCell.swift in Sources */,
 				30D77BC6200B359D00386438 /* Extensions.swift in Sources */,
 				30EA5FB8201EFE62009D4278 /* EventDetailModel.swift in Sources */,
 				301BF22A20241C990099ADD9 /* MyProfileViewController.swift in Sources */,
 				30D77BDC200B361400386438 /* UIViewController.swift in Sources */,
-				75DB799C202641B500D4B1A6 /* QcodeTicketVC.swift in Sources */,
 				30D77BED200B36B400386438 /* ExSlideMenuController.swift in Sources */,
-				7574C3CF2025EA3E0010A4F1 /* BookingDetailVC.swift in Sources */,
 				302D1312202638D000AB10DD /* TicketBookingService.swift in Sources */,
 				30EA5FAB201E2892009D4278 /* EventCell.swift in Sources */,
-				7574C3BA2025788D0010A4F1 /* BookingDetailView.swift in Sources */,
 				30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */,
 				30908C2B2031ADEC00FD7501 /* OtherPaymentView.swift in Sources */,
 				30EA5FA8201E2892009D4278 /* AMHorizontalMenu.swift in Sources */,
-				307A0D70202A232300CD105B /* QRCodeTableViewCell.swift in Sources */,
 				7574C3C32025D4C70010A4F1 /* BookingDetail.swift in Sources */,
 				30D77BD9200B361400386438 /* UIImageView.swift in Sources */,
 				30D77B9F200B2AC900386438 /* HoogaButton.swift in Sources */,
 				30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */,
+				30267995203568E6005B4442 /* QRCodeTableViewCell.swift in Sources */,
+				3026798620356800005B4442 /* LuckyDrawVC.swift in Sources */,
 				30D77BFF200B37C400386438 /* RegisterViewController.swift in Sources */,
 				30EA5FA7201E2892009D4278 /* MenuTitleAppearance.swift in Sources */,
 				30D77C0C200B3BBA00386438 /* LoginResponseDto.swift in Sources */,
 				7530D95A201F888300B9BB52 /* GalleryCell.swift in Sources */,
-				307A0D74202A32C500CD105B /* FilterTableFooterView.swift in Sources */,
 				30EA5F96201DCFCF009D4278 /* HoogaImageView.swift in Sources */,
 				3028D894201CC9B400922752 /* EventService.swift in Sources */,
 				30D77C09200B3AFA00386438 /* LoginService.swift in Sources */,
-				7574C3C020258F610010A4F1 /* TicketQuantityView.swift in Sources */,
-				75E2096F2029498100817905 /* LuckyDrawCell.swift in Sources */,
 				7530D957201F888300B9BB52 /* EventDetailVC.swift in Sources */,
 				30FEA28C2028CB8F001A38C4 /* TicketBooking.swift in Sources */,
 				301B863520073F2C00DA7855 /* Hooga.xcdatamodeld in Sources */,
@@ -1359,23 +1461,28 @@
 				75DB799A20263D8500D4B1A6 /* CreditCardCell.swift in Sources */,
 				75959D9E2022B0EE00DC307A /* HLFont.swift in Sources */,
 				75E2096A20292EA900817905 /* SavePaymentDetail.swift in Sources */,
+				3026798D20356800005B4442 /* ParticipateViewController.swift in Sources */,
 				30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */,
-				307A0D7A202A9F0800CD105B /* ParticipateDetailViewController.swift in Sources */,
 				30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */,
+				302679A820356FD5005B4442 /* CommonHeaderView.swift in Sources */,
 				30D77BE0200B361F00386438 /* Constarints.swift in Sources */,
 				30D77BD8200B361400386438 /* UIImage.swift in Sources */,
+				302679A720356FD5005B4442 /* TicketQuantityView.swift in Sources */,
 				75E2096420290EB600817905 /* OtherPaymentMode.swift in Sources */,
+				3026798720356800005B4442 /* ParticipantResultViewController.swift in Sources */,
+				3026798520356800005B4442 /* LuckyDrawCell.swift in Sources */,
 				7530D95C201F888300B9BB52 /* GalleryImageCell.swift in Sources */,
 				30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */,
 				30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */,
 				7574C3D520262D260010A4F1 /* PaymentVC.swift in Sources */,
+				3026798820356800005B4442 /* ParticipateTableViewCell.swift in Sources */,
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
 				305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */,
 				30ED06192020833100D354BE /* HoogaView.swift in Sources */,
-				307A0D77202A34A100CD105B /* ParticipantResultViewController.swift in Sources */,
 				754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */,
 				7530D953201F888300B9BB52 /* BannerCell.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,
+				302679A420356FD5005B4442 /* DetailHeaderView.swift in Sources */,
 				3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */,
 				301BF2222023888C0099ADD9 /* MyEventModel.swift in Sources */,
 				30D77C212010891900386438 /* EventListViewController.swift in Sources */,
@@ -1384,6 +1491,7 @@
 				30D77BF2200B36B400386438 /* BaseTableViewCell.swift in Sources */,
 				30D77BC4200B355500386438 /* Constant.swift in Sources */,
 				7530D962201FE3DF00B9BB52 /* SocialButton.swift in Sources */,
+				30267996203568E6005B4442 /* QcodeTicketVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

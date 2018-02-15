@@ -29,6 +29,7 @@ class TicketBookingViewController: UIViewController {
     @IBOutlet weak var imageVewHeightConstraint: NSLayoutConstraint!
     
     var eventDetail:EventDetail?
+    var comingFrom:ComingFromScreen?
     var arrTicketType = [TicketType]()
     var arrQuantity = [String]()
     var availabletTicketsCount : Int = 0
@@ -48,9 +49,13 @@ class TicketBookingViewController: UIViewController {
     
     func configoreNavigationHeader()  {
             navHeaderView.viewController = self
-            navHeaderView.navBarTitle = "Ticket Booking" 
-            navHeaderView.backButtonType = .Back
-            navHeaderView.isBottonLineHidden = false
+            navHeaderView.navBarTitle = "Ticket Booking"
+        if comingFrom == ComingFromScreen.eventRegistration{
+            navHeaderView.isBackHandledInController = true
+            navHeaderView.customNavHeaderViewDelegate = self
+        }
+        navHeaderView.backButtonType = .Back
+        navHeaderView.isBottonLineHidden = false
         
     }
 
@@ -253,7 +258,11 @@ extension TicketBookingViewController:CustomPickerViewDelegate{
         }
     }
 }
-
+extension TicketBookingViewController:CustomNavHeaderViewDelegate{
+    func backButtonPressed() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+}
 
 /*********************************************************************************/
 // MARK: API

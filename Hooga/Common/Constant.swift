@@ -210,6 +210,9 @@ enum RegisterButtonTitle:String{
 
 enum ComingFromScreen:String{
     case eventListing = "Event Listing"
+    case eventDetail = "Event Detail"
+    case eventRegistration = "Event Registration"
+
     case myEvent = "My Events"
     case registration = "Registration"
     case forgotPassword = "Forgot Password"
