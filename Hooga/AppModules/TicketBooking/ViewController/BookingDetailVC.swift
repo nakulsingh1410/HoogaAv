@@ -289,7 +289,8 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
                     self.eventRecord?.bookingDetails =  self.arrBookingDetails;
                     NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!, savedTicketDetail: reponseArray)
                 }else{
-                    NavigationManager.thanksController(navigationController: self.navigationController, evntDetail: EventRecord())
+//                    NavigationManager.thanksController(navigationController: self.navigationController, evntDetail: EventRecord())
+                     NavigationManager.navigateToMyEvent(navigationController: self.navigationController, screenShown: ComingFromScreen.thankYou)
                 }
               
             }else{
