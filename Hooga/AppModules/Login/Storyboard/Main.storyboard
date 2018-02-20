@@ -477,10 +477,12 @@
                                                     <constraint firstAttribute="width" constant="100" id="02V-dn-9k2"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFE-Lu-8jn" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="189" y="35" width="82" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFE-Lu-8jn" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
+                                                <rect key="frame" x="190" y="35" width="80" height="30"/>
                                                 <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="bOa-v9-y8H"/>
+                                                </constraints>
                                                 <state key="normal" title="UPLOAD">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -492,11 +494,13 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="0TO-J5-vNm"/>
+                                            <constraint firstItem="dFE-Lu-8jn" firstAttribute="centerY" secondItem="udn-mw-xmB" secondAttribute="centerY" id="4z9-gx-6Uk"/>
                                             <constraint firstItem="udn-mw-xmB" firstAttribute="top" secondItem="anK-4D-AMz" secondAttribute="top" id="FCh-7f-nNR"/>
                                             <constraint firstItem="udn-mw-xmB" firstAttribute="leading" secondItem="Yzz-Nj-yJ6" secondAttribute="trailing" constant="40" id="RAe-l9-mXY"/>
                                             <constraint firstItem="Yzz-Nj-yJ6" firstAttribute="centerY" secondItem="anK-4D-AMz" secondAttribute="centerY" id="VPZ-CI-y1d"/>
                                             <constraint firstItem="Yzz-Nj-yJ6" firstAttribute="leading" secondItem="anK-4D-AMz" secondAttribute="leading" id="g31-8g-mB8"/>
                                             <constraint firstAttribute="bottom" secondItem="udn-mw-xmB" secondAttribute="bottom" id="vzu-Pz-B0l"/>
+                                            <constraint firstItem="dFE-Lu-8jn" firstAttribute="centerX" secondItem="udn-mw-xmB" secondAttribute="centerX" id="yUy-bZ-N5O"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3S-lJ-1Jw" userLabel="Address1">
