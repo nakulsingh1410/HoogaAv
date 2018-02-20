@@ -16,5 +16,7 @@ class AMMenuCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        title.font = Font.gillSansSemiBold(size: 14)
     }
 }

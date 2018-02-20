@@ -28,12 +28,28 @@ struct Font  {
         let font = UIFont(name: "GillSans-Light", size: size)
         return font
     }
+    static  func gillSansSemiBold(size : CGFloat)  -> UIFont? {
+        let font = UIFont(name: "GillSans-SemiBold", size: size)
+        return font
+    }
+    static  func gillSansBold(size : CGFloat)  -> UIFont? {
+        let font = UIFont(name: "GillSans-Bold", size: size)
+        return font
+    }
+    
+    
+    static  func gillSansUltraSemiBold(size : CGFloat)  -> UIFont? {
+        let font = UIFont(name: "GillSans-UltraBold", size: size)
+        return font
+    }
+    
+    
     static  func gillSansRegular(size : CGFloat)  -> UIFont? {
         let font = UIFont(name: "GillSans", size: size)
         return font
     }
     
-    static  func gotham(size : CGFloat)  -> UIFont {
+    static  func gothamBook(size : CGFloat)  -> UIFont {
         let name = loadFont(name: fontGotham, type: "otf")
         return UIFont(name: name, size:size)!
     }

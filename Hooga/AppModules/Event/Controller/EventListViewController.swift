@@ -36,6 +36,7 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        textSearchTag.delegate = self
         configoreNavigationHeader()
         configTableViewForEventList()
         getCategoryList()
@@ -60,7 +61,7 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
         navHeaderView.viewController = self
         navHeaderView.navBarTitle = "Events"
         navHeaderView.backButtonType = .LeftMenu
-        textSearchTag.delegate = self
+        navHeaderView.isNavBarTransparent = true
     }
 
     func menuSelected(index: IndexPath, data: CategoryModel) {
@@ -77,11 +78,8 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     func configTableViewForEventList()  {
         
         tableViewEventList.register(EventCell.nib, forCellReuseIdentifier: EventCell.identifier)
-        
         tableViewEventList.separatorStyle = .none
-        
         tableViewEventList.rowHeight = 300
-        
         tableViewEventList.estimatedRowHeight = UITableViewAutomaticDimension
         tableViewEventList.tableFooterView = UIView()
         tableViewEventList.delegate     = self

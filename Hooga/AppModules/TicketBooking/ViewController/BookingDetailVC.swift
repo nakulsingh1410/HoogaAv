@@ -18,7 +18,8 @@ class BookingDetailVC: UIViewController {
     @IBOutlet weak var labelQuantity: UILabel!
     @IBOutlet weak var labelTotalPrice: UILabel!
     @IBOutlet weak var ticketQuantityHeightConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var navHeaderView: CustomNavHeaderView!
+
     var ticketQuantityView : TicketQuantityView?
     var arrBookingDetails = [SaveBookingDetail]()
     var detailView : BookingDetailView!
@@ -33,12 +34,20 @@ class BookingDetailVC: UIViewController {
         super.viewDidLoad()
         
         qnty =  (eventRecord?.quantityTicket)!
+        configoreNavigationHeader()
         addBookingDetailView()
         addTicketBookingView()
         setUIData()
         configureData()
     }
-    
+
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Booking Details"
+        navHeaderView.backButtonType = .Back
+        navHeaderView.isBottonLineHidden = false
+        navHeaderView.isNavBarTransparent = false
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

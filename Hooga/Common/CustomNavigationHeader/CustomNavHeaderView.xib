@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomNavHeaderView" customModule="Hooga" customModuleProvider="target">
             <connections>
+                <outlet property="imgViewNavBar" destination="mT0-Sa-Rdg" id="KsD-9D-9KU"/>
                 <outlet property="lblSeperatorLine" destination="Tm9-bc-iFT" id="BOP-Eq-qTn"/>
                 <outlet property="leftButton" destination="tpL-ve-gHl" id="IFW-bS-RKx"/>
                 <outlet property="titleHeader" destination="38V-9R-Jd1" id="yHc-dc-TIM"/>
@@ -21,6 +22,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavigationHeaderImg" translatesAutoresizingMaskIntoConstraints="NO" id="mT0-Sa-Rdg">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38V-9R-Jd1">
                     <rect key="frame" x="166" y="22" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -33,7 +37,9 @@
                         <constraint firstAttribute="width" constant="34" id="bYn-yO-ilh"/>
                         <constraint firstAttribute="height" constant="30" id="i7O-iw-L3I"/>
                     </constraints>
-                    <state key="normal" title="Back"/>
+                    <state key="normal" title="Back">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="btnLeftTapped:" destination="-1" eventType="touchUpInside" id="biv-QC-76r"/>
                     </connections>
@@ -55,13 +61,20 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tm9-bc-iFT" secondAttribute="trailing" id="9Af-dc-oC7"/>
                 <constraint firstItem="38V-9R-Jd1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GTT-T5-wbg"/>
                 <constraint firstItem="tpL-ve-gHl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="TGv-Ni-iwY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mT0-Sa-Rdg" secondAttribute="trailing" id="Wjn-6D-XFK"/>
+                <constraint firstItem="mT0-Sa-Rdg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aU4-H4-qCb"/>
                 <constraint firstItem="38V-9R-Jd1" firstAttribute="centerY" secondItem="tpL-ve-gHl" secondAttribute="centerY" id="fiD-Tl-46x"/>
                 <constraint firstItem="Tm9-bc-iFT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="hDF-qM-uwO"/>
                 <constraint firstItem="Tm9-bc-iFT" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="jme-qm-gU3"/>
+                <constraint firstAttribute="bottom" secondItem="mT0-Sa-Rdg" secondAttribute="bottom" id="lla-oa-LZQ"/>
+                <constraint firstItem="mT0-Sa-Rdg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uAu-EF-zLF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="34.5" y="-226"/>
         </view>
     </objects>
+    <resources>
+        <image name="NavigationHeaderImg" width="320" height="64"/>
+    </resources>
 </document>

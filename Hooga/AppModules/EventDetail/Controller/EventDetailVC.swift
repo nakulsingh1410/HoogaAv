@@ -12,7 +12,8 @@ import UIKit
 
 class EventDetailVC: UIViewController{
     @IBOutlet var tableDetail : UITableView!
-    
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
+
     var eventDetail: EventDetail?
     var arrEventAssets = [EventAssets]()
     var arrEventFlatform = [EventPlatform]()
@@ -30,9 +31,15 @@ class EventDetailVC: UIViewController{
         getRegistrionId(eventId: eventID!)
      
         configTableview()
+        configoreNavigationHeader()
         self.navigationController?.isNavigationBarHidden = false
     }
-    
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Event Detail"
+        navHeaderView.backButtonType = .Back
+        navHeaderView.isNavBarTransparent = false
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

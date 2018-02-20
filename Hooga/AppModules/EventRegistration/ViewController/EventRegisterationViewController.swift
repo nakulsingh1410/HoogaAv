@@ -29,7 +29,8 @@ class EventRegisterationViewController: UIViewController {
     @IBOutlet weak var imgViewProfilePic: UIImageView!
     @IBOutlet weak var btnUpload: HoogaButton!
     @IBOutlet weak var imgViewBanner: UIImageView!
-    
+    @IBOutlet weak var navHeaderView: CustomNavHeaderView!
+
    fileprivate var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
    fileprivate var arrCity = ["Singapore"]
     var eventDetail:EventDetail?
@@ -38,7 +39,17 @@ class EventRegisterationViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         txtFCity.text = "Select City"
+        configoreNavigationHeader()
         loadDefaultValues()
+    }
+
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Event Registration"
+        navHeaderView.backButtonType = .Back
+        navHeaderView.isBottonLineHidden = false
+        navHeaderView.isNavBarTransparent = false
+        
     }
     
     override func didReceiveMemoryWarning() {

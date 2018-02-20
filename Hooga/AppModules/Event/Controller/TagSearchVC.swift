@@ -14,12 +14,14 @@ protocol TagSearchDelegate {
 
 class TagSearchVC: UIViewController ,UISearchResultsUpdating{
     
-    
-       var arrTags                      = [Tags]()
-       var arrTagsFilter             = [Tags]()
-       var delegate : TagSearchDelegate?
+
     
     @IBOutlet weak var tableTagSearch : UITableView!
+
+    
+    var arrTags           = [Tags]()
+    var arrTagsFilter     = [Tags]()
+    var delegate         : TagSearchDelegate?
     let searchController = UISearchController(searchResultsController: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +81,7 @@ extension TagSearchVC : UITableViewDataSource{
         let tag = arrTagsFilter[indexPath.row]
         cellSearch?.textLabel?.text = tag.tag
         cellSearch?.selectionStyle = .none
+        cellSearch?.textLabel?.font = Font.gillSansLight(size: 17)
         return cellSearch!
     }
 }

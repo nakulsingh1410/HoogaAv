@@ -20,37 +20,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1oG-Gh-Nih">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-m8-bLb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.81291263199999997" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urk-hi-nbh" customClass="GradientView" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="vni-0p-HxX"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                        <color key="value" red="0.14639642829999999" green="0.13929361100000001" blue="0.68096595999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                        <color key="value" red="0.19443514940000001" green="0.41664087770000002" blue="0.81364452840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
-                                        <real key="value" value="0.40000000000000002"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
-                                        <real key="value" value="0.59999999999999998"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6o-cm-bat" customClass="CustomNavHeaderView" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.45098039220000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="gHu-1H-jS9"/>
+                                    <constraint firstAttribute="height" constant="64" id="gHu-1H-jS9"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISg-ZO-3wZ">
@@ -236,7 +210,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.81475572183098588" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="aQR-Vv-NAc" firstAttribute="trailing" secondItem="acc-fB-hpf" secondAttribute="trailing" id="3UV-Pm-V5N"/>
                                             <constraint firstItem="rNf-Jw-VgT" firstAttribute="top" secondItem="N3k-cr-fYk" secondAttribute="bottom" constant="20" id="45y-7O-iXA"/>
@@ -283,23 +257,16 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Urk-hi-nbh" firstAttribute="leading" secondItem="rnX-PN-v3D" secondAttribute="leading" id="2lJ-fN-PiG"/>
                             <constraint firstItem="1oG-Gh-Nih" firstAttribute="trailing" secondItem="JEs-CT-RjR" secondAttribute="trailing" id="5QH-aT-uVS"/>
-                            <constraint firstItem="rnX-PN-v3D" firstAttribute="trailing" secondItem="hS1-m8-bLb" secondAttribute="trailing" id="5d8-vM-uAF"/>
                             <constraint firstItem="1oG-Gh-Nih" firstAttribute="leading" secondItem="rnX-PN-v3D" secondAttribute="leading" id="Cnr-jb-gqN"/>
-                            <constraint firstItem="Urk-hi-nbh" firstAttribute="trailing" secondItem="rnX-PN-v3D" secondAttribute="trailing" id="HEj-bL-qDA"/>
                             <constraint firstItem="e6o-cm-bat" firstAttribute="leading" secondItem="rnX-PN-v3D" secondAttribute="leading" id="HNT-rW-UpA"/>
                             <constraint firstItem="ISg-ZO-3wZ" firstAttribute="leading" secondItem="rnX-PN-v3D" secondAttribute="leading" id="NwX-go-qPP"/>
                             <constraint firstItem="ISg-ZO-3wZ" firstAttribute="bottom" secondItem="JEs-CT-RjR" secondAttribute="bottom" id="OVT-Kx-qss"/>
-                            <constraint firstItem="hS1-m8-bLb" firstAttribute="leading" secondItem="JEs-CT-RjR" secondAttribute="leading" id="SZH-22-STm"/>
-                            <constraint firstItem="Urk-hi-nbh" firstAttribute="top" secondItem="JEs-CT-RjR" secondAttribute="top" id="WiI-9W-7eW"/>
                             <constraint firstItem="e6o-cm-bat" firstAttribute="trailing" secondItem="rnX-PN-v3D" secondAttribute="trailing" id="cdm-GO-Zm1"/>
                             <constraint firstItem="ISg-ZO-3wZ" firstAttribute="top" secondItem="e6o-cm-bat" secondAttribute="bottom" id="dWi-OS-UNA"/>
                             <constraint firstAttribute="bottom" secondItem="1oG-Gh-Nih" secondAttribute="bottom" id="fjF-3y-5w2"/>
                             <constraint firstItem="1oG-Gh-Nih" firstAttribute="top" secondItem="e6o-cm-bat" secondAttribute="bottom" id="jNl-b4-3cc"/>
-                            <constraint firstItem="e6o-cm-bat" firstAttribute="top" secondItem="JEs-CT-RjR" secondAttribute="top" constant="20" id="qos-oX-96A"/>
-                            <constraint firstItem="hS1-m8-bLb" firstAttribute="top" secondItem="JEs-CT-RjR" secondAttribute="top" id="r6u-i8-egs"/>
-                            <constraint firstItem="hS1-m8-bLb" firstAttribute="bottom" secondItem="JEs-CT-RjR" secondAttribute="bottom" id="u24-GW-UgX"/>
+                            <constraint firstItem="e6o-cm-bat" firstAttribute="top" secondItem="JEs-CT-RjR" secondAttribute="top" id="qos-oX-96A"/>
                             <constraint firstItem="ISg-ZO-3wZ" firstAttribute="trailing" secondItem="rnX-PN-v3D" secondAttribute="trailing" id="yFn-ei-YOb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rnX-PN-v3D"/>
@@ -335,23 +302,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y83-ps-6xD" userLabel="Header">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y83-ps-6xD" userLabel="Header" customClass="CustomNavHeaderView" customModule="Hooga" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFJ-D3-Jeu">
-                                        <rect key="frame" x="5" y="21" width="70" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="A3g-3z-nil"/>
-                                            <constraint firstAttribute="width" constant="70" id="jUM-Ue-iUE"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="back">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonBack_didpressedWithButton:" destination="Zid-E3-UGl" eventType="touchUpInside" id="uQe-oN-8nV"/>
-                                        </connections>
-                                    </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzk-Jw-33y">
                                         <rect key="frame" x="5" y="63" width="365" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -360,23 +313,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17R-fc-j7i" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="83" y="28" width="219" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="yGp-TU-iiA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.24651351569999999" green="0.50405985119999996" blue="0.99807041880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.45098039220000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="17R-fc-j7i" firstAttribute="top" secondItem="Y83-ps-6xD" secondAttribute="top" constant="28" id="5jQ-S5-0OE"/>
-                                    <constraint firstItem="bFJ-D3-Jeu" firstAttribute="leading" secondItem="Y83-ps-6xD" secondAttribute="leading" constant="5" id="GXD-9B-qlt"/>
-                                    <constraint firstItem="bFJ-D3-Jeu" firstAttribute="top" secondItem="Y83-ps-6xD" secondAttribute="top" constant="21" id="dGW-fg-3Az"/>
-                                    <constraint firstAttribute="trailing" secondItem="17R-fc-j7i" secondAttribute="trailing" constant="73" id="tIX-Wy-qHR"/>
-                                    <constraint firstItem="17R-fc-j7i" firstAttribute="leading" secondItem="bFJ-D3-Jeu" secondAttribute="trailing" constant="8" id="wb8-gx-A9R"/>
                                     <constraint firstAttribute="height" constant="64" id="wqu-cr-BtU"/>
                                 </constraints>
                             </view>
@@ -480,6 +419,7 @@
                         <outlet property="labelQuantity" destination="0Gr-8R-91c" id="ohy-TN-nYQ"/>
                         <outlet property="labelTotalPrice" destination="1jq-Up-wfG" id="Dcr-CV-XXG"/>
                         <outlet property="labelticketType" destination="Jt0-if-waD" id="X8U-Up-12a"/>
+                        <outlet property="navHeaderView" destination="Y83-ps-6xD" id="ht5-oT-N6o"/>
                         <outlet property="ticketQuantityHeightConstraint" destination="vdG-iw-gBq" id="gq2-fz-vvt"/>
                         <outlet property="viewBookingDetail" destination="dJX-dh-ZNU" id="vGQ-DX-ZEg"/>
                         <outlet property="viewQuantity" destination="5VW-IB-sFh" id="Wwh-P6-bGc"/>
@@ -491,7 +431,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="16" height="16"/>
         <image name="downArraow" width="30" height="30"/>
         <image name="placeHolderImage" width="320" height="200"/>
     </resources>
