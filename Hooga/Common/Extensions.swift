@@ -221,10 +221,14 @@ extension UIStoryboard
 
 //MARK:- UITextfield
 extension UITextField{
-//    func  changePlaceholder(plName : String , color : UIColor){
-//        self.attributedPlaceholder = NSAttributedString(string:plName,
-//                                                        attributes:[NSAttributedStringKey.foregroundColor: color])
-//    }
+    func  changePlaceholder(placeHolderText : String? , color : UIColor){
+        if let placeHolder = placeHolderText{
+            self.attributedPlaceholder = NSAttributedString(string:placeHolder,
+                                                            attributes:[NSAttributedStringKey.foregroundColor: color])
+        }
+    }
+
+    
     func addLeftMargin(leftMargin:CGFloat){
         let paddingView = UIView(frame: CGRect(x:0, y:0, width:leftMargin, height:self.frame.height))
         self.leftView = paddingView
@@ -248,27 +252,21 @@ extension UITextField{
         guard let text = self.text, !text.isEmpty else {
             if self.attributedPlaceholder != nil {
                 self.attributedPlaceholder  =   NSAttributedString(string: self.placeholder!, attributes: nil)
-                
             }
             else {
-                
             }
             AnimationShakeTextField(textField: self)
             return true
         }
-        
         return false
     }
     
     
     
     func isZeroOrLessValue()->Bool{
-        
         if (self.text?.characters.count)!>0{
             let isNumber:Bool =  (self.text?.isNumber())!
-            
             if isNumber == true{
-                
                 if  Int(self.text!)! <= 0{
                     // txtResult.text = ""
                     return true
@@ -286,6 +284,22 @@ extension UITextField{
         return isNumber
         
     }
+    
+     func addCharacterSpacing(value: CGFloat) {
+        if let labelText = text, labelText.count > 0 {
+            let attributedString = NSMutableAttributedString(string: labelText)
+            attributedString.addAttribute(NSAttributedStringKey.kern, value: value, range: NSRange(location: 0, length: attributedString.length - 1))
+            attributedText = attributedString
+        }
+        
+//        if let placeholderText = placeholder, placeholderText.count > 0 {
+//            let attributedString = NSMutableAttributedString(string: placeholderText)
+//            attributedString.addAttribute(NSAttributedStringKey.kern, value: value, range: NSRange(location: 0, length: attributedString.length - 1))
+//            placeholder = attributedString
+//        }
+//        
+    }
+    
 }
 
 //MARK:- Array
@@ -704,3 +718,25 @@ public extension UIWindow {
     }
 }
 
+extension UILabel {
+    
+    func addCharacterSpacing(value: CGFloat) {
+        if let labelText = text, labelText.count > 0 {
+            let attributedString = NSMutableAttributedString(string: labelText)
+            attributedString.addAttribute(NSAttributedStringKey.kern, value: value, range: NSRange(location: 0, length: attributedString.length - 1))
+            attributedText = attributedString
+        }
+    }
+    
+    func setLineSpacingAndCharacterSpacing(characterSpacing:CGFloat = 0.0, lineSpacing: CGFloat = 0.0, lineHeightMultiple: CGFloat = 0.0, text: String) {
+        let attrString = NSMutableAttributedString(string: text)
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = lineSpacing
+        style.lineHeightMultiple = lineHeightMultiple
+        style.alignment = self.textAlignment
+        attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value: style, range: NSRange(location: 0, length: text.count))
+        attrString.addAttribute(NSAttributedStringKey.kern, value: characterSpacing, range: NSRange(location: 0, length: attrString.length - 1))
+        self.attributedText = attrString
+    }
+    
+}

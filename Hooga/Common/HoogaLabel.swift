@@ -17,5 +17,10 @@ class HoogaLabel: UILabel {
         // Drawing code
     }
     */
+    override func awakeFromNib() {
+        if let size = self.font?.pointSize{
+            self.font = Font.gillSansRegular(size: size)
+        }
+    }
 
 }
