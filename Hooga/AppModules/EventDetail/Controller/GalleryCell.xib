@@ -12,17 +12,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="213" id="KGk-i7-Jjw" customClass="GalleryCell" customModule="Hooga" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="238.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="209.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="X4q-sf-kge">
-                        <rect key="frame" x="8" y="8" width="304" height="230"/>
+                        <rect key="frame" x="8" y="8" width="304" height="200"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="230" id="MCW-4b-6a2"/>
+                            <constraint firstAttribute="height" constant="200" id="MCW-4b-6a2"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fiv-4J-Vx4">
                             <size key="itemSize" width="50" height="50"/>
@@ -32,14 +32,14 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qc2-HC-2ZB">
-                        <rect key="frame" x="11" y="102.5" width="25" height="41"/>
+                        <rect key="frame" x="11" y="87.5" width="25" height="41"/>
                         <state key="normal" image="left"/>
                         <connections>
                             <action selector="buttonLeft_didPressedWithLeft:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QtB-vV-sYf"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TmK-Ta-2on">
-                        <rect key="frame" x="284" y="103" width="25" height="40"/>
+                        <rect key="frame" x="284" y="88" width="25" height="40"/>
                         <state key="normal" image="right"/>
                         <connections>
                             <action selector="buttonRight_didPressedWithLeft:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dUG-f8-pEk"/>
@@ -54,7 +54,7 @@
                     <constraint firstAttribute="trailing" secondItem="X4q-sf-kge" secondAttribute="trailing" constant="8" id="VO6-uX-07T"/>
                     <constraint firstItem="Qc2-HC-2ZB" firstAttribute="leading" secondItem="X4q-sf-kge" secondAttribute="leading" constant="3" id="fDc-ba-22m"/>
                     <constraint firstItem="TmK-Ta-2on" firstAttribute="trailing" secondItem="X4q-sf-kge" secondAttribute="trailing" constant="-3" id="jPY-xv-Yy1"/>
-                    <constraint firstAttribute="bottom" secondItem="X4q-sf-kge" secondAttribute="bottom" constant="0.5" id="vij-uN-oN4"/>
+                    <constraint firstAttribute="bottom" secondItem="X4q-sf-kge" secondAttribute="bottom" constant="1.5" id="u9S-LS-Owm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

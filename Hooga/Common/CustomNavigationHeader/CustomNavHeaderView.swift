@@ -11,18 +11,24 @@ enum BackButtonType:String{
     case Back = "back";
     case LeftMenu = "leftMenu"
 }
-
+@objc protocol CustomNavHeaderViewDelegate {
+    @objc optional func backButtonPressed()
+}
 class CustomNavHeaderView: UIView {
     
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var titleHeader: UILabel!
     @IBOutlet weak var lblSeperatorLine: UILabel!
+    @IBOutlet weak var imgViewNavBar: UIImageView!
     
     private var nibView:UIView!
     var viewController:UIViewController?
     var navBarTitle:String?
+    var isBackHandledInController = false
     var backButtonType : BackButtonType?
+    var customNavHeaderViewDelegate:CustomNavHeaderViewDelegate?
     var titleColor =  UIColor.white
+    var isNavBarTransparent = false
     var isBottonLineHidden = true {
         didSet{
             lblSeperatorLine.isHidden = isBottonLineHidden
@@ -58,10 +64,17 @@ class CustomNavHeaderView: UIView {
         }else{
             titleHeader.text = ""
         }
+        titleHeader.font = Font.gillSansSemiBold(size: 18)
         
         titleHeader.textColor = titleColor
         lblSeperatorLine.isHidden = isBottonLineHidden
-        
+        if isNavBarTransparent{
+            self.backgroundColor = UIColor.clear
+            imgViewNavBar.isHidden = true
+        }else{
+            self.backgroundColor = UIColor.white
+            imgViewNavBar.isHidden = false
+        }
         if let backType = backButtonType, backType == BackButtonType.LeftMenu ,let _ = viewController {
             leftButton.setTitle(nil, for: .normal)
             let  image = UIImage(named:"ic_menu_black_24dp")?.withRenderingMode(.alwaysTemplate)
@@ -72,6 +85,8 @@ class CustomNavHeaderView: UIView {
             let  image = UIImage(named:"back")?.withRenderingMode(.alwaysTemplate)
             leftButton.setImage(image, for: .normal)
             leftButton.tintColor = UIColor.white
+            leftButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: -30, bottom: 0, right: 0)
+
         }
     }
     
@@ -80,7 +95,11 @@ class CustomNavHeaderView: UIView {
         if let backType = backButtonType, backType == BackButtonType.LeftMenu {
             vcObj.setLeftMenuButtonForCustomeHeader()
         }else  if let backType = backButtonType, backType == BackButtonType.Back {
-            vcObj.navigationController?.popViewController(animated: true)
+            if isBackHandledInController{
+                customNavHeaderViewDelegate?.backButtonPressed?()
+            }else{
+                vcObj.navigationController?.popViewController(animated: true)
+            }
         }
     }
     

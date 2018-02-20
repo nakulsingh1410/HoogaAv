@@ -40,7 +40,7 @@ class ResponseDto:  Mappable {
     
     func mapping(map: Map) {
         status <- map["status"]
-        message <- map["message"]
+        message <- map["Message"]
         data = map
     }
     let transform = TransformOf<Bool, String>(fromJSON: { (value: String?) -> Bool? in

@@ -10,10 +10,26 @@ import UIKit
 
 class PaymentVC: UIViewController {
 
+    
+    @IBOutlet weak var month: HoogaTextField!
+    
+    @IBOutlet weak var referenceNo: HoogaTextField!
+    @IBOutlet weak var others: UIView!
+    @IBOutlet weak var cvv: HoogaTextField!
+    @IBOutlet weak var year: HoogaTextField!
+    
+    @IBOutlet weak var creditCard: HoogaTextField!
+    @IBOutlet weak var lastName: HoogaTextField!
+    @IBOutlet weak var firstName: HoogaTextField!
+    @IBOutlet weak var collectionCreditCard: UICollectionView!
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
+   
+    var indexLast : IndexPath?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configoreNavigationHeader()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +37,53 @@ class PaymentVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Payment"
+        navHeaderView.backButtonType = .Back
     }
-    */
 
+    
+    
+
+    @IBAction func buttonProceedPayment_didPressed(_ sender: Any) {
+    }
+    
+    @IBAction func buttonCancel_didPressed(_ sender: Any) {
+    }
+}
+
+extension PaymentVC : UICollectionViewDataSource{
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cellCard = collectionView.dequeueReusableCell(withReuseIdentifier: "CreditCardCell", for: indexPath) as! CreditCardCell
+        
+        if indexLast != nil {
+            
+            if indexLast == indexPath{
+                
+            }else{
+                
+            }
+        }else{
+            
+        }
+        
+        return cellCard
+    }
+
+}
+
+extension PaymentVC : UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        indexLast = indexPath
+        collectionView.reloadData()
+    }
 }

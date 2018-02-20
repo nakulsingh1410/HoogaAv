@@ -103,7 +103,11 @@ class RegisterViewController: UIViewController {
             message = MessageError.USER_GENDER_BLANK .rawValue
         }else if let value = txtFPhoneNumber.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
             message = MessageError.PHONE_EMPTY .rawValue
-        }else if let value = txtFDOB.text,value == "__/ __/ __" {
+        }
+        else if let value = txtFPhoneNumber.text?.trim(),!value.isPhoneValid() {
+            message = MessageError.PHONE_INVALID.rawValue
+        }
+        else if let value = txtFDOB.text,value == "__/ __/ __" {
             message = MessageError.USER_DOB_BLANK .rawValue
         }else if let value = txtFEmail.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
             message = MessageError.EMAIL_BLANK.rawValue

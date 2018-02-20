@@ -12,7 +12,8 @@ import UIKit
 
 class EventDetailVC: UIViewController{
     @IBOutlet var tableDetail : UITableView!
-    
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
+
     var eventDetail: EventDetail?
     var arrEventAssets = [EventAssets]()
     var arrEventFlatform = [EventPlatform]()
@@ -22,16 +23,23 @@ class EventDetailVC: UIViewController{
 
     var eventID : Int?
     var comingFrom = ComingFromScreen.eventListing
-    
+    var isTicketBooked = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        getEventDetail(eventId: eventID!)
+        getRegistrionId(eventId: eventID!)
+     
         configTableview()
+        configoreNavigationHeader()
         self.navigationController?.isNavigationBarHidden = false
     }
-    
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Event Detail"
+        navHeaderView.backButtonType = .Back
+        navHeaderView.isNavBarTransparent = false
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -76,7 +84,7 @@ extension EventDetailVC : UITableViewDataSource{
             //"ORGANIZED BY: " +
             cellBanner.labelOrganizedBY.text =  (self.eventDetail?.organizer)!.uppercased()
             if let bnanner = self.eventDetail?.bannerimage {
-                let url = kImgaeView + bnanner
+                let url = kAssets + bnanner
                 cellBanner.imageViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                     if image == nil {
                         cellBanner.imageViewBanner.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
@@ -88,22 +96,31 @@ extension EventDetailVC : UITableViewDataSource{
             
         }else if cellType == 1 {
             let cellTitle = tableView.dequeueReusableCell(withIdentifier: EventTitleCell.identifier) as! EventTitleCell
-            //01/01/2018 - 05/01/2018 | 21:00 - 00:00
+          
             cellTitle.labelEvntTitle.text  = self.eventDetail?.title
-            let date = getDateString(strDate:eventDetail?.startdate) + " - " + getDateString(strDate:eventDetail?.enddate)
-            let time = getDateString(strDate:eventDetail?.starttime) + " - " + getDateString(strDate:eventDetail?.endtime)
+            let date = Common.getDateString(strDate:eventDetail?.startdate) + " - " + Common.getDateString(strDate:eventDetail?.enddate)
+            let time = Common.getDateString(strDate:eventDetail?.starttime) + " - " + Common.getDateString(strDate:eventDetail?.endtime)
             cellTitle.labelDateTime.text =  date + " | " + time
             cellTitle.labelVanue.text = self.eventDetail?.eventlocation?.trim()
-            var description =  ""
             
+            var categoryString = ""
+            if let category =  self.eventDetail?.category{
+                categoryString = category
+            }
+            if let entrytype =  self.eventDetail?.entrytype{
+                categoryString = categoryString + " | " + entrytype
+            }
+            cellTitle.lblCategory.text = categoryString
+            
+            var description =  ""
             if let short = eventDetail?.shortdescription?.trim(){
                 description += short
             }
             if let long = eventDetail?.longdescription?.trim(){
                 description += long
             }
-            
             cellTitle.labelDescription.text = description
+            
             if !description.isBlank ,cellTitle.labelDescription.intrinsicContentSize.height > 29{
                 cellTitle.btnReadMore.isHidden = false
                 cellTitle.readMoreBtnConstraint.constant = 30
@@ -133,25 +150,18 @@ extension EventDetailVC : UITableViewDataSource{
             }
             cellShare.delegate = self
             cellShare.selectionStyle = .none
-            if let _ = eventDetail?.regid {
+            if let regId = eventDetail?.regid , regId > 0{
                 cellShare.buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
             }else{
                  cellShare.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
             }
-            cellShare.showShareCell(isComingFrom: comingFrom)
+            cellShare.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked)
             return cellShare
         }
         
         return UITableViewCell()
     }
-    
-    func getDateString(strDate:String?) -> String {
-        if let string = strDate {
-            let array = string.components(separatedBy: " ")
-            return array.first!
-        }
-        return ""
-    }
+
     
     func cellSharePlateForm(cell : ShareCell)  {
         
@@ -203,13 +213,22 @@ extension EventDetailVC : UITableViewDelegate{
 }
 
 extension EventDetailVC :ShareCellDelegate{
+    func bookMoreDidSelected(cell: ShareCell) {
+        guard let evntDtl = eventDetail else{return}
+        NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl, comingFrom: ComingFromScreen.eventDetail)
+    }
+    
     func viewTicketDidSelected(cell: ShareCell) {
-        
+        if let eventDetailObj = eventDetail{
+            NavigationManager.QRCode(navigationController: navigationController, evntDetail: eventDetailObj)
+        }
         
     }
     
     func luckyDrawDidSelected(cell: ShareCell) {
-        
+        if let eventDetailObj = eventDetail{
+            NavigationManager.luckyDraw(navigationController: navigationController, evntDetail: eventDetailObj)
+        }
     }
     
     func registerBttonSelected(cell: ShareCell) {
@@ -220,7 +239,7 @@ extension EventDetailVC :ShareCellDelegate{
              NavigationManager.eventRegistration(navigationController: self.navigationController, evntDetail: evntDtl)
             }else if let title = cell.buttonregister.titleLabel?.text ,
                 title == RegisterButtonTitle.bookTickets.rawValue{
-                NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl)
+                NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl, comingFrom: ComingFromScreen.eventDetail)
         }
        
     }
@@ -323,4 +342,35 @@ extension EventDetailVC {
         }
         
     }
+    
+    ///
+    func getRegistrionId(eventId:Int)  {
+        
+        EventService.getRegistrationId(eventid: eventId) { (flag, regId) in
+            if let regID = regId{
+                self.isTicketBooked(eventId: eventId, registrationid: regID)
+            }else{
+                self.getEventDetail(eventId: eventId)
+            }
+        }
+        
+    }
+    
+    ///
+    func isTicketBooked(eventId:Int,registrationid:Int)  {
+        
+        EventService.isTicketBooked(eventid: eventId, registrationid: registrationid) { (flag, status) in
+            if let message = status , message == "Yes"{
+                self.isTicketBooked = true
+            }else{
+                self.isTicketBooked = false
+            }
+            self.getEventDetail(eventId: eventId)
+        }
+
+        
+    }
+    
+    
+    
 }

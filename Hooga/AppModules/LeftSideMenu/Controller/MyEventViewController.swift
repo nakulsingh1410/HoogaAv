@@ -15,6 +15,7 @@ class MyEventViewController: UIViewController {
     
     @IBOutlet weak var btnCompletedEvents: UIButton!
     @IBOutlet weak var btnOnGoingEvents: UIButton!
+    var screenShown : ComingFromScreen?
     
     var arrMyEvent = [MyEventModel]()
     override func viewDidLoad() {
@@ -22,8 +23,7 @@ class MyEventViewController: UIViewController {
 
         configoreNavigationHeader()
         configTableViewForEventList()
-        isOngoingSelected(isOngoing: true)
-        getOngoingEvents(isOnGoingEvents: true)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,11 +31,23 @@ class MyEventViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        isOngoingSelected(isOngoing: true)
+        getOngoingEvents(isOnGoingEvents: true)
+    }
+    
 
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
         navHeaderView.navBarTitle = "My Events"
-        navHeaderView.backButtonType = .LeftMenu
+        if screenShown == ComingFromScreen.thankYou {
+            navHeaderView.backButtonType = .Back
+            navHeaderView.isBackHandledInController = true
+            navHeaderView.customNavHeaderViewDelegate = self
+        }else{
+            navHeaderView.backButtonType = .LeftMenu
+            navHeaderView.isBackHandledInController = false
+        }
     }
     func configTableViewForEventList()  {
         tableViewEventList.register(EventCell.nib, forCellReuseIdentifier: EventCell.identifier)
@@ -92,15 +104,22 @@ extension MyEventViewController : UITableViewDataSource{
         
         let event = arrMyEvent[indexPath.row]
         
-        cellEvent.labelEventCode.text =  event.eventcode
-        cellEvent.labelEventDate.text = event.startdate
-        cellEvent.labelEventTime.text = event.starttime
+//        cellEvent.labelEventCode.text =  event.eventcode
+        var dateStirng = ""
+        if let startDate = event.startdate{
+            dateStirng = startDate
+        }
+        if let starttime = event.starttime{
+            dateStirng = dateStirng + " | " + starttime
+        }
+        cellEvent.labelEventDate.text = dateStirng
+//        cellEvent.labelEventTime.text = event.starttime
         cellEvent.labelEventTitle.text = event.title
         cellEvent.selectionStyle = .none
         
         
         if let bnanner = event.bannerimage {
-            let url = kImgaeView + bnanner
+            let url = kAssets + bnanner
             cellEvent.imageViewEvent.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                 if image == nil {
                     cellEvent.imageViewEvent.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
@@ -109,15 +128,15 @@ extension MyEventViewController : UITableViewDataSource{
             
         }
         
-        cellEvent.buttonEventDetail.tag = indexPath.row
-        cellEvent.buttonEventDetail.addTarget(self, action:#selector(buttonDetail_Pressed(_:)), for: .touchUpInside)
+//        cellEvent.buttonEventDetail.tag = indexPath.row
+//        cellEvent.buttonEventDetail.addTarget(self, action:#selector(buttonDetail_Pressed(_:)), for: .touchUpInside)
         
         // cellEvent.viewForShadow.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
         return cellEvent
     }
     
-    @objc func buttonDetail_Pressed(_ button:UIButton)  {
-        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrMyEvent[button.tag].eventid!, comingFrom: ComingFromScreen.myEvent)
+   func buttonDetail_Pressed(index:Int) {
+        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrMyEvent[index].eventid!, comingFrom: ComingFromScreen.myEvent)
     }
     
 }
@@ -126,6 +145,10 @@ extension MyEventViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension;
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        buttonDetail_Pressed(index: indexPath.row)
     }
 }
 
@@ -148,5 +171,13 @@ extension MyEventViewController {
             }
             weakSelf.tableViewEventList.reloadData()
         }
+    }
+}
+/*********************************************************************************/
+// MARK: CustomNavHeaderViewDelegate
+/*********************************************************************************/
+extension MyEventViewController:CustomNavHeaderViewDelegate{
+    func backButtonPressed() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }

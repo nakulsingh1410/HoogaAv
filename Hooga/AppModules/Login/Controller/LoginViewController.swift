@@ -22,8 +22,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtFEmail.text = "marca@gmail.com"
-        txtFPassword.text = "1234"
+//        txtFEmail.text = "9772216627"
+//        txtFPassword.text = "1234"
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,8 +38,10 @@ class LoginViewController: UIViewController {
         var message : String?
         if let userName = txtFEmail.text,userName.trimmingCharacters(in: .whitespaces).isEmpty{
             message = MessageError.USER_NAME_BLANK .rawValue
+        }else if let userName = txtFEmail.text?.trim(),!userName.isPhoneValid() {
+            message = MessageError.PHONE_INVALID.rawValue
         }else if let password = txtFPassword.text,password.trimmingCharacters(in: .whitespaces).isEmpty {
-                       message = MessageError.PASSWORD_EMPTY.rawValue
+             message = MessageError.PASSWORD_EMPTY.rawValue
         }
         if let errorMsg = message {
             Common.showAlert(message: errorMsg)

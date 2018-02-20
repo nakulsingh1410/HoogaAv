@@ -134,4 +134,45 @@ extension Service {
         }
     }
     
+    static func postRequestArrayDictionary(endPoint: String, params: [[String : Any]], callback: @escaping (DataResponse<Any>) -> Void) {
+        //  let _params = getDefaultParams(params: params)
+        print(params)
+        print(endPoint)
+        if Common.isConnectedToNetwork(){
+            
+            if let url = URL(string:endPoint){
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+                request.httpBody = try! JSONSerialization.data(withJSONObject: params)
+                
+                Alamofire.request(request)
+                    .responseJSON { response in
+                        // do whatever you want here
+                        switch response.result {
+                        case .failure(let error):
+                            print(error)
+                            if let data = response.data, let responseString = String(data: data, encoding: .utf8) {
+                                print(responseString)
+                            }
+                            callback(response)
+                        case .success(let responseObject):
+                           // print(responseObject)
+                            print(response.result.value ?? String(data: response.data!, encoding: .utf8) ?? kNoResponse)
+                            callback(response)
+                        }
+                }
+                
+            }else{
+                Common.showAlert(message:  "Wrong request")
+
+            }
+        }else{
+            Common.showAlert(message:  MessageError.INTERNET_ERROR.rawValue)
+            Common.hideHud()
+            
+        }
+    }
+    
 }

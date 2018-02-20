@@ -22,6 +22,12 @@ class HoogaButton: UIButton {
         
         cornerRadius()
         setbackgroundColor()
+        titleColor()
+//        self.titleLabel?.text =  self.titleLabel?.text?.uppercased()
+        self.setTitle(self.titleLabel?.text?.uppercased(), for: .normal)
+        if let size = self.titleLabel?.font.pointSize{
+            self.titleLabel?.font = Font.gillSansRegular(size: size)
+        }
     }
     
     func cornerRadius() {
@@ -35,5 +41,9 @@ class HoogaButton: UIButton {
         }
     }
     
+    func titleColor()  {
+        self.setTitleColor(kButtonTitleColor, for: .normal)
+        
+    }
     
 }

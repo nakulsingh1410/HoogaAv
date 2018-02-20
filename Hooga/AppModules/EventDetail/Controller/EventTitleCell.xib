@@ -19,10 +19,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORY | ENTRY TYPE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYo-3j-2Mh">
-                        <rect key="frame" x="149" y="4" width="163" height="21"/>
+                        <rect key="frame" x="153.5" y="4" width="158.5" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="42u-4D-8Kl"/>
-                            <constraint firstAttribute="width" constant="163" id="8E0-w5-D9x"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
@@ -89,6 +88,7 @@
                 <outlet property="labelDescription" destination="2tf-jh-xeU" id="SsC-59-5EI"/>
                 <outlet property="labelEvntTitle" destination="rad-zj-8fq" id="KmB-Ww-wsp"/>
                 <outlet property="labelVanue" destination="e9h-H4-ACQ" id="lD0-kk-DVR"/>
+                <outlet property="lblCategory" destination="uYo-3j-2Mh" id="J1H-0u-pky"/>
                 <outlet property="readMoreBtnConstraint" destination="OSJ-Yl-0Na" id="YJa-DO-ccW"/>
             </connections>
             <point key="canvasLocation" x="53" y="121"/>

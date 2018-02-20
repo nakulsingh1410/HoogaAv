@@ -10,6 +10,14 @@ import UIKit
 
 class NavigationManager {
     
+    class func navigateToLogin(navigationController:UINavigationController?) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController{
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
     class func navigateToEvent(navigationController:UINavigationController?){
         NavigationManager.setUpSlideMenu()
 //        let storyboard = UIStoryboard(name: "Event", bundle:  Bundle(for: LoginViewController.self) )
@@ -17,6 +25,15 @@ class NavigationManager {
 //            navigationController?.pushViewController(vcObj, animated: true)
 //        }
     }
+    
+    class func navigateToMyEvent(navigationController:UINavigationController?,screenShown:ComingFromScreen){
+        let storyboard = UIStoryboard(name: "LeftSideMenu", bundle:  Bundle(for: MyEventViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "MyEventViewController") as? MyEventViewController{
+            vcObj.screenShown = screenShown
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
     
     class func userRegistration(navigationController:UINavigationController?,screenShown:RequestForScreen){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: LoginViewController.self) )
@@ -57,9 +74,10 @@ class NavigationManager {
         }
     }
     
-    class func navigateToSetPassword(navigationController:UINavigationController?){
+    class func navigateToSetPassword(navigationController:UINavigationController?,screenFlow:ComingFromScreen){
         let storyboard = UIStoryboard(name: "Main", bundle:  Bundle(for: RequestOTPViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "SetPasswordViewController") as? SetPasswordViewController{
+            vcObj.screenFlow = screenFlow
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
@@ -80,22 +98,89 @@ class NavigationManager {
         }
     }
     
-    class func ticketBooking(navigationController:UINavigationController? , evntDetail : EventDetail){
-        let storyboard = UIStoryboard(name: "EventRegistration", bundle:  Bundle(for: TicketBookingViewController.self) )
+    class func ticketBooking(navigationController:UINavigationController? , evntDetail : EventDetail,comingFrom:ComingFromScreen){
+        let storyboard = UIStoryboard(name: "TicketBooking", bundle:  Bundle(for: TicketBookingViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "TicketBookingViewController") as? TicketBookingViewController{
+            vcObj.eventDetail = evntDetail
+            vcObj.comingFrom = comingFrom
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    class func bookingDetail(navigationController:UINavigationController? , evntDetail : EventRecord){
+        let storyboard = UIStoryboard(name: "TicketBooking", bundle:  Bundle(for: BookingDetailVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as? BookingDetailVC{
+            vcObj.eventRecord = evntDetail
+           navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    class func paymentDetail(navigationController:UINavigationController? , evntDetail : EventRecord){
+        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "PaymentVC") as? PaymentVC{
+            //vcObj.eventRecord = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    
+    class func otherPaymentDetail(navigationController:UINavigationController? , evntDetail : EventRecord,savedTicketDetail:[BookingDetailResponse]){
+        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "OtherPaymentMode") as? OtherPaymentMode{
+            vcObj.bookingDetail = evntDetail
+            vcObj.savedTicketDetail = savedTicketDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    class func thanksController(navigationController:UINavigationController? , evntDetail : EventRecord){
+        let storyboard = UIStoryboard(name: "Payment", bundle:  Bundle(for: BookingDetailVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "ThanksVC") as? ThanksVC{
+            //vcObj.bookingDetail = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    class func luckyDraw(navigationController:UINavigationController? , evntDetail : EventDetail){
+        let storyboard = UIStoryboard(name: "LuckyDraw", bundle:  Bundle(for: LuckyDrawVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "LuckyDrawVC") as? LuckyDrawVC{
             vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
     
-    class func bookingDetail(navigationController:UINavigationController? , evntDetail : EventDetail){
-        let storyboard = UIStoryboard(name: "EventRegistration", bundle:  Bundle(for: BookingDetailVC.self) )
-        if let vcObj = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as? BookingDetailVC{
-//            vcObj.eventDetail = evntDetail
+    
+    
+    class func openParticipate(navigationController:UINavigationController? , evntDetail : EventDetail){
+        let storyboard = UIStoryboard(name: "LuckyDraw", bundle:  Bundle(for: ParticipateViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "ParticipateViewController") as? ParticipateViewController{
+            vcObj.eventDetail = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    class func openResultParticipate(navigationController:UINavigationController? , evntDetail : EventDetail){
+        let storyboard = UIStoryboard(name: "LuckyDraw", bundle:  Bundle(for: ParticipantResultViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "ParticipantResultViewController") as? ParticipantResultViewController{
+            vcObj.eventDetail = evntDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+            
+        }
+    }
+    class func QRCode(navigationController:UINavigationController? , evntDetail : EventDetail){
+        let storyboard = UIStoryboard(name: "QRCode", bundle:  Bundle(for: QcodeTicketVC.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "QcodeTicketVC") as? QcodeTicketVC{
+            vcObj.eventDetail = evntDetail
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
     
+    class func participateDetail(navigationController:UINavigationController? , participateDetail: ShowMyEventLuckyDrawResult){
+        let storyboard = UIStoryboard(name: "LuckyDraw", bundle:  Bundle(for: ParticipateDetailViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "ParticipateDetailViewController") as? ParticipateDetailViewController{
+            vcObj.participateDetail = participateDetail
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
     
     
     class func logout(){

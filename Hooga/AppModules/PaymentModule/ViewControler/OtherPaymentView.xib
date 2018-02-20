@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OtherPaymentView" customModule="Hooga" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXk-y1-Xim" userLabel="Other Payment">
+                    <rect key="frame" x="0.0" y="10" width="375" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQV-fD-3eb" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="5" width="115" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="UOl-WZ-U3S"/>
+                                <constraint firstAttribute="width" constant="115" id="WK0-pC-sHX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i55-sn-1dt" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="117" y="0.0" width="258" height="29.5"/>
+                            <color key="backgroundColor" red="0.94109398129999999" green="0.94122928380000004" blue="0.9410645366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="wQV-fD-3eb" firstAttribute="leading" secondItem="kXk-y1-Xim" secondAttribute="leading" id="2GF-iH-wTm"/>
+                        <constraint firstItem="i55-sn-1dt" firstAttribute="leading" secondItem="wQV-fD-3eb" secondAttribute="trailing" constant="2" id="3Pf-Dv-zLn"/>
+                        <constraint firstAttribute="trailing" secondItem="i55-sn-1dt" secondAttribute="trailing" id="8jp-tj-0Xe"/>
+                        <constraint firstItem="wQV-fD-3eb" firstAttribute="centerY" secondItem="kXk-y1-Xim" secondAttribute="centerY" id="aav-HP-Vub"/>
+                        <constraint firstItem="i55-sn-1dt" firstAttribute="top" secondItem="kXk-y1-Xim" secondAttribute="top" id="eMA-wM-4G6"/>
+                        <constraint firstAttribute="height" constant="30" id="nbH-Kz-bgt"/>
+                        <constraint firstAttribute="bottom" secondItem="i55-sn-1dt" secondAttribute="bottom" constant="0.5" id="ytL-FT-cUe"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHZ-VM-DDO" userLabel="Payment ref">
+                    <rect key="frame" x="0.0" y="49.5" width="375" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paymnt Ref#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0L-J9-4Mn" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="5" width="115" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="115" id="8Jm-FA-JhL"/>
+                                <constraint firstAttribute="height" constant="21" id="ra1-om-tJ7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7vL-44-vQx" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="117" y="0.0" width="258" height="29.5"/>
+                            <color key="backgroundColor" red="0.94109398129999999" green="0.94122928380000004" blue="0.9410645366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="7vL-44-vQx" secondAttribute="bottom" constant="0.5" id="0Gh-RI-tPV"/>
+                        <constraint firstItem="R0L-J9-4Mn" firstAttribute="leading" secondItem="cHZ-VM-DDO" secondAttribute="leading" id="AbV-YH-VWM"/>
+                        <constraint firstAttribute="trailing" secondItem="7vL-44-vQx" secondAttribute="trailing" id="Pt8-1C-zN9"/>
+                        <constraint firstAttribute="height" constant="30" id="Vlk-Yz-5W3"/>
+                        <constraint firstItem="7vL-44-vQx" firstAttribute="top" secondItem="cHZ-VM-DDO" secondAttribute="top" id="WPi-Nf-xeE"/>
+                        <constraint firstItem="7vL-44-vQx" firstAttribute="leading" secondItem="R0L-J9-4Mn" secondAttribute="trailing" constant="2" id="XqM-HE-yr0"/>
+                        <constraint firstItem="R0L-J9-4Mn" firstAttribute="centerY" secondItem="cHZ-VM-DDO" secondAttribute="centerY" id="pBc-6i-EUu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ypD-o1-dbJ" userLabel="Amount Paid">
+                    <rect key="frame" x="0.0" y="89.5" width="375" height="30.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Paid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hS-lr-f4D" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="5" width="115" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="115" id="XYe-lX-yXQ"/>
+                                <constraint firstAttribute="height" constant="21" id="sQN-3e-FZ2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0rs-o0-03p" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="117" y="0.0" width="258" height="30"/>
+                            <color key="backgroundColor" red="0.94109398129999999" green="0.94122928380000004" blue="0.9410645366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="7hS-lr-f4D" firstAttribute="leading" secondItem="ypD-o1-dbJ" secondAttribute="leading" id="7eG-hA-WoH"/>
+                        <constraint firstAttribute="trailing" secondItem="0rs-o0-03p" secondAttribute="trailing" id="Kcn-pY-375"/>
+                        <constraint firstItem="0rs-o0-03p" firstAttribute="top" secondItem="ypD-o1-dbJ" secondAttribute="top" id="Q9z-9a-hcV"/>
+                        <constraint firstAttribute="bottom" secondItem="0rs-o0-03p" secondAttribute="bottom" constant="0.5" id="khP-cG-JSp"/>
+                        <constraint firstAttribute="height" constant="30.5" id="ukO-ZQ-ZXm"/>
+                        <constraint firstItem="7hS-lr-f4D" firstAttribute="centerY" secondItem="ypD-o1-dbJ" secondAttribute="centerY" id="zC7-NG-4o7"/>
+                        <constraint firstItem="0rs-o0-03p" firstAttribute="leading" secondItem="7hS-lr-f4D" secondAttribute="trailing" constant="2" id="zXg-1n-QTi"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3YI-V4-ytq">
+                    <rect key="frame" x="0.0" y="136" width="375" height="38"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fQ-mp-SH4">
+                            <rect key="frame" x="187" y="0.0" width="1" height="35"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="Kqf-S8-Xvc"/>
+                                <constraint firstAttribute="height" constant="35" id="UNF-yY-b6j"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXL-a4-4wg" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="97" y="0.0" width="70" height="38"/>
+                            <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="O3S-iw-6Vd"/>
+                            </constraints>
+                            <state key="normal" title="Submit">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnSubmitTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="7KU-z8-sxy"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBg-IJ-vno" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="208" y="0.0" width="64" height="38"/>
+                            <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="  Cancel  ">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnCancelTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="id9-OD-G1m"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="0x6-gc-Hxs"/>
+                        <constraint firstItem="6fQ-mp-SH4" firstAttribute="leading" secondItem="oXL-a4-4wg" secondAttribute="trailing" constant="20" id="1g4-jb-Zn7"/>
+                        <constraint firstItem="ZBg-IJ-vno" firstAttribute="top" secondItem="3YI-V4-ytq" secondAttribute="top" id="KB5-DH-w2d"/>
+                        <constraint firstAttribute="bottom" secondItem="oXL-a4-4wg" secondAttribute="bottom" id="cod-EM-4nc"/>
+                        <constraint firstItem="oXL-a4-4wg" firstAttribute="top" secondItem="3YI-V4-ytq" secondAttribute="top" id="gJ3-f9-GsY"/>
+                        <constraint firstItem="6fQ-mp-SH4" firstAttribute="centerX" secondItem="3YI-V4-ytq" secondAttribute="centerX" id="o0A-Lh-X76"/>
+                        <constraint firstItem="6fQ-mp-SH4" firstAttribute="top" secondItem="3YI-V4-ytq" secondAttribute="top" id="uBk-iV-b3X"/>
+                        <constraint firstItem="ZBg-IJ-vno" firstAttribute="leading" secondItem="6fQ-mp-SH4" secondAttribute="trailing" constant="20" id="wVH-81-4TM"/>
+                        <constraint firstItem="ZBg-IJ-vno" firstAttribute="height" secondItem="oXL-a4-4wg" secondAttribute="height" id="xjP-CN-Mbi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="3YI-V4-ytq" firstAttribute="top" secondItem="ypD-o1-dbJ" secondAttribute="bottom" constant="16" id="3Da-ec-JBg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cHZ-VM-DDO" secondAttribute="trailing" id="6tQ-3K-8To"/>
+                <constraint firstItem="kXk-y1-Xim" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="BRc-Iq-6Mb"/>
+                <constraint firstItem="kXk-y1-Xim" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ecd-5H-f09"/>
+                <constraint firstItem="ypD-o1-dbJ" firstAttribute="top" secondItem="cHZ-VM-DDO" secondAttribute="bottom" constant="10" id="KDX-wl-89X"/>
+                <constraint firstItem="cHZ-VM-DDO" firstAttribute="top" secondItem="kXk-y1-Xim" secondAttribute="bottom" constant="10" id="UGi-1N-P3O"/>
+                <constraint firstItem="ypD-o1-dbJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bCy-HE-7UZ"/>
+                <constraint firstItem="cHZ-VM-DDO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="dQs-LW-w4Y"/>
+                <constraint firstItem="3YI-V4-ytq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fIJ-tL-MmE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3YI-V4-ytq" secondAttribute="trailing" id="msG-ft-3Hl"/>
+                <constraint firstItem="cHZ-VM-DDO" firstAttribute="top" secondItem="kXk-y1-Xim" secondAttribute="bottom" constant="10" id="u3T-3a-w3t"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ypD-o1-dbJ" secondAttribute="trailing" id="uA8-J6-CyH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kXk-y1-Xim" secondAttribute="trailing" id="uWi-m9-nwt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="ampountPaid" destination="0rs-o0-03p" id="rGB-zB-Jl1"/>
+                <outlet property="otherPayment" destination="i55-sn-1dt" id="64T-U2-PqQ"/>
+                <outlet property="paymentReference" destination="7vL-44-vQx" id="BfV-ng-r7I"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="-182"/>
+        </view>
+    </objects>
+</document>

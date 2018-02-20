@@ -9,7 +9,13 @@
 import Foundation
 import ObjectMapper
 
+enum EventType:String {
+    case paid = "Paid"
+    case free = "Free"
+}
+
 class EventDetail: NSObject,Mappable {
+    
     var eventid : Int?
     var categoryid : Int?
     var category : String?

@@ -15,6 +15,7 @@ class EventTitleCell: UITableViewCell {
     
     @IBOutlet weak var labelDateTime: UILabel!
     
+    @IBOutlet weak var lblCategory: UILabel!
     @IBOutlet weak var labelDescription: UILabel!
     @IBOutlet weak var labelVanue: UILabel!
     @IBOutlet weak var readMoreBtnConstraint: NSLayoutConstraint!

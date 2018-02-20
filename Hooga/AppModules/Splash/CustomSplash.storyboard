@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TgZ-06-itH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Splash View Controller-->
+        <scene sceneID="aZf-58-erA">
+            <objects>
+                <viewController id="LVI-zT-cC9" customClass="CustomSplashViewController" customModule="Hooga" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="57W-ZV-JXm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="f6C-wd-agE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="HMW-4m-Mdh">
+                                <rect key="frame" x="127.5" y="273.5" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="FXK-oM-uv3"/>
+                                    <constraint firstAttribute="height" constant="120" id="GuJ-pC-ohF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f6C-wd-agE" firstAttribute="bottom" secondItem="wLQ-uv-zFJ" secondAttribute="bottom" id="92z-kk-PKH"/>
+                            <constraint firstItem="HMW-4m-Mdh" firstAttribute="centerX" secondItem="57W-ZV-JXm" secondAttribute="centerX" id="cbn-as-kTJ"/>
+                            <constraint firstItem="f6C-wd-agE" firstAttribute="trailing" secondItem="wLQ-uv-zFJ" secondAttribute="trailing" id="fX1-CP-inG"/>
+                            <constraint firstItem="f6C-wd-agE" firstAttribute="leading" secondItem="wLQ-uv-zFJ" secondAttribute="leading" id="k4q-Jd-TbG"/>
+                            <constraint firstItem="HMW-4m-Mdh" firstAttribute="centerY" secondItem="57W-ZV-JXm" secondAttribute="centerY" id="kS1-6D-Dff"/>
+                            <constraint firstItem="f6C-wd-agE" firstAttribute="top" secondItem="57W-ZV-JXm" secondAttribute="top" id="oaW-3P-BKw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wLQ-uv-zFJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hF8-vU-7TC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="drM-Pb-7M8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="391.19999999999999" y="374.66266866566718"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZwY-NH-B1n">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TgZ-06-itH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lyB-ZK-aDG">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LVI-zT-cC9" kind="relationship" relationship="rootViewController" id="2qt-AN-nWS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyr-7P-Qad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-911" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="256" height="256"/>
+        <image name="background" width="375" height="666"/>
+    </resources>
+</document>

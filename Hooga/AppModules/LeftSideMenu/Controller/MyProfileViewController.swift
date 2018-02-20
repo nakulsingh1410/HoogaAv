@@ -257,7 +257,8 @@ extension MyProfileViewController{
                                      postalcode: txtFPostalCode.text,
                                      profilePic:imgViewProfilePic.image) { (flag, message) in
                                         if flag {
-                                            Common.showAlert(message: "Profile successfully updated")
+                                            //Common.showAlert(message: "Profile successfully updated")
+                                            NavigationManager.navigateToEvent(navigationController: self.navigationController)
                                         }else{
                                             Common.showAlert(message: message)
                                         }

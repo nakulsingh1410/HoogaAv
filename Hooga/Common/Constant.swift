@@ -39,6 +39,8 @@ let kUserInfo = "userInfo"
 let kBlueColor = UIColor.colorWithHexString(hex: "#0a4a7d")
 let kBackgroundColor = UIColor.colorWithHexString(hex: "#0a4a7d")
 let kButonBackgroundColor = UIColor.colorWithHexString(hex: "#0080FF")
+let kButtonTitleColor = UIColor.white
+let kPlaceHolderColor = UIColor.gray
 
 
 
@@ -62,7 +64,13 @@ let kDomain    = "http://158.140.133.89/HoogaAPI/";
 let kSubDomain = "api/users/";
 let kEvent     = "api/events/"
 
-let kImgaeView = "http://158.140.133.89/Hooga/HoogaFiles/Assets/"
+let kAssets = "http://158.140.133.89/Hooga/HoogaFiles/Assets/"
+let kTicketUrl = "http://158.140.133.89/Hooga/HoogaFiles/TicketTypes/"
+let kQRCodes = "http://158.140.133.89/Hooga/HoogaFiles/Qrcodes/"
+let kPrice = "http://158.140.133.89/Hooga/HoogaFiles/LDPrizes/"
+
+
+
 let kUserImageBaseUrl = "http://158.140.133.89/Hooga/HoogaFiles/users/"
 let placeHolderImageUrl = URL(string: "http://158.140.133.89/Hooga/HoogaFiles/Assets/default.png")
 
@@ -99,17 +107,38 @@ public enum ServiceName:String {
     case SHOW_EVENT_Platform = "showEventPlatforms"
     case SHOW_EVENT_FAQs = "showEventFAQs"
     case SHOW_EVENT_TERSM_CONDITION = "showEventTermsConditions"
-
+    
     case REGISTER_EVENT = "registerEvent"
     case SHOW_ONGOING_EVENTS = "showMyOngoingEvents"
     case SHOW_COMPLETED_EVENTS = "showMyCompletedEvents"
     case DISPLAY_MY_PROFILE = "displayMyProfile"
     case UPDATE_MY_PROFILE = "updateMyProfile"
-    case GET_EVENT_TYPE = "getTicketTypes"
+    case GET_TICKET_TYPE = "getTicketTypes"
     case SHOW_TICKET_TYPE_DETAIL = "showTicketTypeDetails"
     case AVAILABLE_TICKET_COUNT = "getAvailableTicketsCount"
     case AVAILABEL_EARLY_BIRD_TICKET_COUNT = "getAvailableEarlyBirdTicketsCount"
+    case  SAVE_BOOKING_DETAILS = "saveBookingDetails"
+    case  SHOW_MY_EVENT_LUCKY_DRAW_STATUS = "showMyEventLuckyDrawStatus"
+    
+    case  SHOW_EVENT_LUCKY_DRAW_PRIZES = "showMyEventLuckyDrawPrizes"
+    case SHOW_MY_EVENT_LUCKY_DRAW = "showMyEventLuckyDraw"
+    
+    case SAVE_OTHER_PAYMENT_DETAIL = "saveOtherPaymentDetails"
+    
+    case SHOW_MY_TICKET_DETAILS = "showMyTicketDetails"
+    case GENEARET_LUCKY_DRAW_NO = "generateLuckyDrawNumber"
+    case SHOW_MY_EVENT_LUCKY_DRAW_RESULT = "showMyEventLuckyDrawResult"
+    case SHOW_TICKET_QR_CODES = "showMyTicketQRCodes"
+    case IS_TICKETS_BOOKED = "isticketsbooked"
+    case CHECK_USER = "checkUser"
+    case GET_REG_ID = "getregid"
+    case SHOW_REGISTRATION_DETAIL = "showRegistrationDetails"
+    case GENERATE_FREE_LUCKY_DRAW_NO = "generateFreeLuckyDrawNumber"
+    case SHOW_MY_FREE_LUCKY_DRAW_RESULT = "showMyFreeEventLuckyDrawResult"
+
+    
 }
+
 
 
 /************************ Message ************************/
@@ -124,7 +153,7 @@ public enum MessageError: String{
     case USER_FIRST_NAME_BLANK      = "Please enter first name."
     case USER_LAST_NAME_BLANK       = "Please enter last name."
     
-    case USER_NAME_BLANK            = "Please enter email / hand phone."
+    case USER_NAME_BLANK            = "Please enter hand phone."
     case EMAIL_BLANK                = "Please enter email address."
     case EMAIL_INVALID              = "Please enter valid email address."
     case USER_GENDER_BLANK          = "Please select gender."
@@ -132,6 +161,7 @@ public enum MessageError: String{
     case ADDRESS1_BLANK             = "Please enter address1."
     case ADDRESS2_BLANK             = "Please enter address2."
     case OTP_BLANK                  = "Please enter otp."
+    case VALID_USER_NAME                  = "Please enter valid user name."
 
     
     case PASSWORD_EMPTY    = "Please enter password."
@@ -163,19 +193,28 @@ public enum MessageError: String{
     
     case PHONE_INVALID          = "Please enter correct mobile number."
     case MEDICAL_EMPTY          = "Please enter medical center name."
-    
+    case TICKET_TYPE_EMPTY       = "Please select ticket type"
+    case QUNATITY_TYPE_EMPTY     = "Please enter quantity"
+    case SELECT_QUNATITY        = "Please select Quantity"
+
+    case QUNATITY_CANAT_ZERO    = "Quantity can not be zero"
+
     case REGISTRATION_MSG       = "Registration successfull. Please activate your account from received email."
 }
 
 
 enum RegisterButtonTitle:String{
     case register = " Register "
-    case bookTickets = " Book Tickets "
+    case bookTickets = " Book Ticket(s) "
 }
 
 enum ComingFromScreen:String{
     case eventListing = "Event Listing"
+    case eventDetail = "Event Detail"
+    case eventRegistration = "Event Registration"
+
     case myEvent = "My Events"
     case registration = "Registration"
     case forgotPassword = "Forgot Password"
+    case thankYou = "ThanksVC"
 }

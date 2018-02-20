@@ -26,6 +26,9 @@ class DataTableViewCell : UITableViewCell {
     override func awakeFromNib() {
 //        self.dataText?.font = UIFont.italicSystemFont(ofSize: 16)
 //        self.dataText?.textColor = UIColor(hex: "9E9E9E")
+        if let size = dataText.font?.pointSize{
+            dataText.font = Font.gillSansRegular(size: size)
+        }
         selectionStyle = .none
     }
     
@@ -36,10 +39,13 @@ class DataTableViewCell : UITableViewCell {
         dataText.textColor = UIColor.white
         if let menuText = data.title{
             dataText.text = menuText
+            dataText.text = dataText.text?.uppercased()
+
         }
         if let imageName = data.icon{
             dataImage.image = UIImage(named: imageName)
         }
+        
     }
     
     override open func setHighlighted(_ highlighted: Bool, animated: Bool) {

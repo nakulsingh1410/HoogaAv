@@ -29,7 +29,8 @@ class EventRegisterationViewController: UIViewController {
     @IBOutlet weak var imgViewProfilePic: UIImageView!
     @IBOutlet weak var btnUpload: HoogaButton!
     @IBOutlet weak var imgViewBanner: UIImageView!
-    
+    @IBOutlet weak var navHeaderView: CustomNavHeaderView!
+
    fileprivate var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
    fileprivate var arrCity = ["Singapore"]
     var eventDetail:EventDetail?
@@ -38,7 +39,17 @@ class EventRegisterationViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         txtFCity.text = "Select City"
+        configoreNavigationHeader()
         loadDefaultValues()
+    }
+
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Event Registration"
+        navHeaderView.backButtonType = .Back
+        navHeaderView.isBottonLineHidden = false
+        navHeaderView.isNavBarTransparent = false
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,7 +61,7 @@ class EventRegisterationViewController: UIViewController {
         if let evetDtl = eventDetail{
             
                 if let path = evetDtl.bannerimage {
-                    let url = kImgaeView + path
+                    let url = kAssets + path
                     imgViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){[weak self] (image, error, cacheType, url) in
                         guard let weakSelf = self else {return}
                         if image == nil {
@@ -64,21 +75,14 @@ class EventRegisterationViewController: UIViewController {
             lblEventTitle.text = evetDtl.title
             lblEventLocation.text = evetDtl.eventlocation?.trim()
             
-            let date = getDateString(strDate:evetDtl.startdate) + " - " + getDateString(strDate:evetDtl.enddate)
-            let time = getDateString(strDate:evetDtl.starttime) + " - " + getDateString(strDate:eventDetail?.endtime)
+            let date = Common.getDateString(strDate:evetDtl.startdate) //+ " - " + Common.getDateString(strDate:evetDtl.enddate)
+            let time = Common.getDateString(strDate:evetDtl.starttime) //+ " - " + Common.getDateString(strDate:eventDetail?.endtime)
             lblEventTime.text =  date + " | " + time
         }
         prefilledUsedData()
         
     }
-    
-    func getDateString(strDate:String?) -> String {
-        if let string = strDate {
-            let array = string.components(separatedBy: " ")
-            return array.first!
-        }
-        return ""
-    }
+
     
     /*********************************************************************************/
     // MARK: Methods
@@ -98,13 +102,12 @@ class EventRegisterationViewController: UIViewController {
             txtFPostalCode.text = userData.postalcode
             
             if let bnanner = userData.profilepic {
-                let url = kImgaeView + bnanner
+                let url = kAssets + bnanner
                 imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                     if image == nil {
                         self.btnUpload.isHidden = false
                     }
                 }
-                
             }
         }
 
@@ -192,10 +195,22 @@ class EventRegisterationViewController: UIViewController {
         vcObj?.present(imageController, animated: true, completion: nil);
     }
     
-    private func navigateToEventListing(){
-        navigationController?.popToRootViewController(animated: true)
+    private func navigateToTicketBooking(){
+//        navigationController?.popToRootViewController(animated: true)
+        if let evetDtl = eventDetail{
+            NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evetDtl, comingFrom: ComingFromScreen.eventRegistration)
+        }
+
     }
     
+    func showAlert()  {
+        let alertController = UIAlertController(title: kProjectName, message: "Event registered successfully.", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
+            self.navigateToTicketBooking()
+        }
+        alertController.addAction(action1)
+        self.present(alertController, animated: true, completion: nil)
+    }
     /*********************************************************************************/
     // MARK: IB_Action
     /*********************************************************************************/
@@ -286,18 +301,18 @@ extension EventRegisterationViewController{
                                      address2: txtFAddress2.text,
                                      city: txtFCity.text,
                                      postalcode: txtFPostalCode.text,
-                                     profilePic:imgViewProfilePic.image) {[weak self]  (flag, message) in
+                                     profilePic:imgViewProfilePic.image) {[weak self]  (flag, dict) in
                                         
                                         guard let weakSelf = self else {return}
-                                        if flag {
-                                            weakSelf.navigateToEventListing()
-                                            Common.showAlert(message: message)
+                                        if let dictionary = dict {
+                                            self?.eventDetail?.regid = dictionary["regid"] as? Int
+                                            weakSelf.showAlert()
 
                                         }else{
-                                            Common.showAlert(message: message)
+                                            Common.showAlert(message: "Some Error Occured!")
                                         }
         }
     }
     
-    
+
 }

@@ -7,35 +7,124 @@
 //
 
 import UIKit
+import ObjectMapper
 
-class BookingDetail: NSObject {
-   
-    var firstName : String!
-    var lastName  : String!
-    var gender : String!
-    var  dob :String!
-    var mobile : String!
-    var email : String!
-    var profilePic : String!
-    var address1 : String!
-    var address2 : String!
-    var city : String!
-    var postalCode  : String!
-    var ticketId  : NSInteger!
+class EventRecord: NSObject {
+    
+    var eventDetail:EventDetail?
+    var ticketTypeDetails:TicketTypeDetails?
+    var availableEarlyBirdTicketsCount:Int = 0
+    var selectedTicketType : TicketType?
+    var quantityTicket = 0
+    var bookingDetails = [SaveBookingDetail]()
+    
     
     override init() {
         super.init()
-        self.firstName = ""
-        self.lastName  = ""
-        self.gender = ""
-        self.dob = ""
-        self.email = ""
-        self.address1 = ""
-        self.address2 = ""
-        self.profilePic = ""
-        self.city = ""
-        self.postalCode = ""
-        self.mobile = ""
-        ticketId = 0
+        
     }
 }
+
+class SaveBookingDetail: NSObject,Mappable {
+    
+    //This is a  local  variable
+    var ticketId  : Int?
+    
+    var eventid : Int?
+    var tickettypeid : Int?
+    var registrationid : Int?
+    var tickettype : String?
+    
+    var firstname : String?
+    var lastname : String?
+    var gender : String?
+    var dateofbirth : String?
+    var handphone : String?
+    var email : String?
+    var address1 : String?
+    var address2 : String?
+    var city : String?
+    var postalcode : String?
+    var profilepic : String?
+    
+    var isearlybird : String = "false"
+    var status = "false"
+    
+    var isBookingDetailFilled = false
+    
+    override init() {
+      super.init()
+        self.address1 = ""
+        self.address2 = ""
+        self.city =  ""
+        self.dateofbirth = ""
+        self.email    = ""
+        self.eventid = 0
+        self.firstname = ""
+        self.lastname = ""
+        self.gender = ""
+        self.handphone = ""
+        self.postalcode = ""
+        self.profilepic = ""
+        self.registrationid = 0
+        self.ticketId = -1
+        self.tickettype = ""
+        self.tickettypeid = 0
+        self.dateofbirth = "__/ __/ __"
+        self.isearlybird = ""
+        
+    }
+    
+    required init?(map: Map) {
+ 
+    }
+    
+    public func mapping(map: Map) {
+        eventid            <- map["eventid"]
+        tickettypeid            <- map["tickettypeid"]
+        registrationid            <- map["registrationid"]
+        tickettype            <- map["tickettype"]
+        firstname            <- map["firstname"]
+        lastname            <- map["lastname"]
+        gender            <- map["gender"]
+        dateofbirth            <- map["dateofbirth"]
+        handphone            <- map["handphone"]
+        email            <- map["email"]
+        address1            <- map["address1"]
+        address2            <- map["address2"]
+        city            <- map["city"]
+        postalcode            <- map["postalcode"]
+        profilepic            <- map["profilepic"]
+        isearlybird            <- map["isearlybird"]
+        status            <- map["status"]
+        
+    }
+    
+}
+
+class BookingDetailResponse: NSObject,Mappable {
+    
+            var ticketid : Int?
+            var tickettypeid : Int?
+            var eventid : Int?
+            var registrationid : Int?
+            var isearlybird: String?
+            var firstname : String?
+            var lastname : String?
+
+    required init?(map: Map) {
+    }
+    
+    public func mapping(map: Map) {
+        ticketid  <- map["ticketid"]
+        eventid            <- map["eventid"]
+        tickettypeid            <- map["tickettypeid"]
+        registrationid        <- map["registrationid"]
+        isearlybird            <- map["isearlybird"]
+        firstname <- map["firstname"]
+        lastname <- map["lastname"]
+
+    }
+}
+
+

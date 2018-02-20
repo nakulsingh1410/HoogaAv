@@ -21,23 +21,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qq0-uC-gW1" userLabel="Header">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qq0-uC-gW1" userLabel="Header" customClass="CustomNavHeaderView" customModule="Hooga" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1e-qf-Usy">
-                                        <rect key="frame" x="5" y="21" width="70" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="YFG-we-KgR"/>
-                                            <constraint firstAttribute="height" constant="35" id="ZI8-iC-yga"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="back">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonBack_didpressedWithButton:" destination="YO1-kG-D6u" eventType="touchUpInside" id="z9d-dg-Tow"/>
-                                        </connections>
-                                    </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUm-Os-LUx">
                                         <rect key="frame" x="5" y="63" width="365" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,25 +34,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puT-Wm-209" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="83" y="28" width="219" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="mtm-j5-Eux"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hUm-Os-LUx" secondAttribute="trailing" constant="5" id="3eZ-m1-Y5e"/>
-                                    <constraint firstItem="puT-Wm-209" firstAttribute="leading" secondItem="I1e-qf-Usy" secondAttribute="trailing" constant="8" id="6Tc-ND-lcS"/>
-                                    <constraint firstAttribute="trailing" secondItem="puT-Wm-209" secondAttribute="trailing" constant="73" id="GjV-cu-Ziq"/>
-                                    <constraint firstItem="I1e-qf-Usy" firstAttribute="leading" secondItem="qq0-uC-gW1" secondAttribute="leading" constant="5" id="Imk-Yq-TfQ"/>
-                                    <constraint firstItem="hUm-Os-LUx" firstAttribute="top" secondItem="I1e-qf-Usy" secondAttribute="bottom" constant="7" id="Snn-3j-w7B"/>
                                     <constraint firstItem="hUm-Os-LUx" firstAttribute="leading" secondItem="qq0-uC-gW1" secondAttribute="leading" constant="5" id="VsS-Ar-kH0"/>
-                                    <constraint firstItem="hUm-Os-LUx" firstAttribute="top" secondItem="puT-Wm-209" secondAttribute="bottom" constant="14" id="XaB-dE-9gP"/>
                                     <constraint firstAttribute="height" constant="64" id="d2n-4Z-VeT"/>
                                     <constraint firstAttribute="bottom" secondItem="hUm-Os-LUx" secondAttribute="bottom" id="pq2-Lr-iul"/>
                                 </constraints>
@@ -94,6 +66,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="UgG-Wr-vyD"/>
                     <connections>
+                        <outlet property="navHeaderView" destination="qq0-uC-gW1" id="WFs-la-80U"/>
                         <outlet property="tableDetail" destination="Ozp-Wr-7jd" id="J02-2S-5GK"/>
                     </connections>
                 </viewController>
@@ -183,7 +156,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgf-HI-O3F" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="83" y="30" width="247" height="21"/>
+                                        <rect key="frame" x="187.5" y="30" width="0.0" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="OvZ-o0-dNk"/>
                                         </constraints>
@@ -197,12 +170,11 @@
                                     <constraint firstItem="sgC-ho-BCd" firstAttribute="top" secondItem="vgf-HI-O3F" secondAttribute="bottom" constant="12" id="GNK-Vr-BcT"/>
                                     <constraint firstItem="3jN-7s-DIe" firstAttribute="leading" secondItem="sLV-FP-gPb" secondAttribute="leading" constant="5" id="H4X-Bq-0Ws"/>
                                     <constraint firstItem="sgC-ho-BCd" firstAttribute="top" secondItem="3jN-7s-DIe" secondAttribute="bottom" constant="5" id="M6q-Mb-sX6"/>
-                                    <constraint firstAttribute="trailing" secondItem="vgf-HI-O3F" secondAttribute="trailing" constant="45" id="TWv-4d-pxf"/>
                                     <constraint firstAttribute="trailing" secondItem="sgC-ho-BCd" secondAttribute="trailing" constant="5" id="aoJ-ut-L39"/>
                                     <constraint firstAttribute="bottom" secondItem="sgC-ho-BCd" secondAttribute="bottom" id="cpe-DP-8ch"/>
                                     <constraint firstItem="sgC-ho-BCd" firstAttribute="leading" secondItem="sLV-FP-gPb" secondAttribute="leading" constant="5" id="gne-65-pbU"/>
+                                    <constraint firstItem="vgf-HI-O3F" firstAttribute="centerX" secondItem="sLV-FP-gPb" secondAttribute="centerX" id="i1e-ej-rCk"/>
                                     <constraint firstAttribute="height" constant="64" id="jyz-36-FTA"/>
-                                    <constraint firstItem="vgf-HI-O3F" firstAttribute="leading" secondItem="3jN-7s-DIe" secondAttribute="trailing" constant="8" id="llM-z8-UfS"/>
                                 </constraints>
                             </view>
                         </subviews>

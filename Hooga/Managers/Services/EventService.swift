@@ -104,8 +104,10 @@ extension EventService{
     static func getEventDetail(eventid:Int,
                              callback: @escaping (Bool,EventDetail?) -> Void){
         
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
         var dictParam = Dictionary<String,Any>()
         dictParam["eventid"] = eventid
+        dictParam["userid"] = userid
 
         Common.showHud()
         let kServerUrl = kDomain + kEvent + ServiceName.SHOW_EVENT_DETAIL.rawValue
@@ -218,7 +220,56 @@ extension EventService{
         }
     }
     
+    static func isTicketBooked(eventid:Int,
+                                        registrationid:Int,
+                                        callback: @escaping (Bool,String?) -> Void){
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+
+        var dictParam = Dictionary<String,Any>()
+        dictParam["userid"] = userid
+        dictParam["registrationid"] = registrationid
+        dictParam["eventid"] = eventid
+        
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.IS_TICKETS_BOOKED.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let status = obj["Status"] as? String{
+                    callback(true,status);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
  
+    static func getRegistrationId(eventid:Int,callback: @escaping (Bool,Int?) -> Void){
+        guard  let userid = StorageModel.getUserData()?.userid else {return}
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["userid"] = userid
+        dictParam["eventid"] = eventid
+
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.GET_REG_ID.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let regId = obj["RegistrationID"] as? Int,regId>0{
+                    callback(true,regId);
+                }else{
+                    callback(false,nil);
+                }
+            }else {
+                callback(false,nil);
+            }
+        }
+    }
+    
+    
 }
 
 /***************************************************************/
@@ -238,7 +289,7 @@ extension EventService{
                                 city:String?,
                                 postalcode:String?,
                                 profilePic:UIImage?,
-                                callback: @escaping (Bool,String) -> Void)  {
+                                callback: @escaping (Bool,[String:Any]?) -> Void)  {
         
         guard  let userid = StorageModel.getUserData()?.userid else {return}
 
@@ -268,19 +319,19 @@ extension EventService{
             Common.hideHud()
             
             if let obj = response.result.value as? [String:Any]{
-                var msg = ""
-                if let regNo = obj["registrationnumber"] as? String{
-                     msg = "Registered successfully your registration number is \(regNo)"
-                }else{
-                    if let message = obj["message"] as? String{
-                         msg = message
-                    }
-                }
-                callback(true,msg);
+//                var msg = ""
+//                if let regNo = obj["registrationnumber"] as? String{
+//                     msg = "Event registered successfully."
+//                }else{
+//                    if let message = obj["message"] as? String{
+//                         msg = message
+//                    }
+//                }
+                callback(true,obj);
 
                
             } else {
-                callback(false,"Error");
+                callback(false,nil);
             }
             
         }
@@ -329,12 +380,12 @@ extension EventService{
 //MARK: My Ticket Booking
 /***************************************************************/
 extension EventService{
-    static func getEventType(eventid:Int,
+    static func getTicketType(eventid:Int,
                              callback: @escaping (Bool,[TicketType]?) -> Void){
         var dictParam = Dictionary<String,Any>()
         dictParam["eventid"] = eventid
         Common.showHud()
-        let kServerUrl = kDomain + kEvent + ServiceName.GET_EVENT_TYPE.rawValue
+        let kServerUrl = kDomain + kEvent + ServiceName.GET_TICKET_TYPE.rawValue
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
             Common.hideHud()
             if let obj = response.result.value as? [String:Any]{
@@ -370,9 +421,11 @@ extension EventService{
     }
     
     static func getAvailableTicketsCount(eventid:Int,
+                                         tickettypeid:Int,
                                      callback: @escaping (Bool,Int?) -> Void){
         var dictParam = Dictionary<String,Any>()
         dictParam["eventid"] = eventid
+        dictParam["tickettypeid"] = tickettypeid
         Common.showHud()
         let kServerUrl = kDomain + kEvent + ServiceName.AVAILABLE_TICKET_COUNT.rawValue
         Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in

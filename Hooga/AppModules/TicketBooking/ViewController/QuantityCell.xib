@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,6 +18,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="31"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7l-dz-lJj">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="31"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrb-mY-Twj">
+                        <rect key="frame" x="1" y="8" width="48" height="23"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWR-QQ-HHh">
                         <rect key="frame" x="0.0" y="30" width="50" height="1"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,30 +39,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7l-dz-lJj">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="31"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrb-mY-Twj">
-                        <rect key="frame" x="5" y="8" width="40" height="21.5"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="vrb-mY-Twj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="2sT-h0-tu6"/>
                 <constraint firstAttribute="trailing" secondItem="t7l-dz-lJj" secondAttribute="trailing" id="3XS-TI-T5W"/>
-                <constraint firstItem="uWR-QQ-HHh" firstAttribute="top" secondItem="vrb-mY-Twj" secondAttribute="bottom" constant="0.5" id="CKE-J2-XHg"/>
+                <constraint firstItem="vrb-mY-Twj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="GBN-DH-BAB"/>
                 <constraint firstAttribute="trailing" secondItem="uWR-QQ-HHh" secondAttribute="trailing" id="QQ8-9a-MAI"/>
-                <constraint firstItem="vrb-mY-Twj" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="35:50" id="VcZ-3U-VRO"/>
+                <constraint firstAttribute="trailing" secondItem="vrb-mY-Twj" secondAttribute="trailing" constant="1" id="TMn-Nw-F4l"/>
                 <constraint firstAttribute="bottom" secondItem="t7l-dz-lJj" secondAttribute="bottom" id="Xz8-4W-cVZ"/>
-                <constraint firstItem="vrb-mY-Twj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Zdg-c7-Jgp"/>
                 <constraint firstItem="t7l-dz-lJj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cNm-wU-fdx"/>
                 <constraint firstItem="uWR-QQ-HHh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ePq-tU-57O"/>
                 <constraint firstItem="t7l-dz-lJj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fRf-99-xYx"/>
-                <constraint firstAttribute="trailing" secondItem="vrb-mY-Twj" secondAttribute="trailing" constant="5" id="fXJ-pY-kZP"/>
+                <constraint firstItem="uWR-QQ-HHh" firstAttribute="top" secondItem="vrb-mY-Twj" secondAttribute="bottom" constant="-1" id="kHf-SE-KN5"/>
                 <constraint firstAttribute="bottom" secondItem="uWR-QQ-HHh" secondAttribute="bottom" id="zwV-T0-Mxf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

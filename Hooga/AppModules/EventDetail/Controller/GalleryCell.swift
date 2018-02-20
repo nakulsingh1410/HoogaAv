@@ -33,7 +33,7 @@ class GalleryCell: UITableViewCell {
     }
     
     var scrolIndex = 0
-    
+   
     static var identifier: String {
         return String(describing: self)
     }
@@ -60,7 +60,7 @@ class GalleryCell: UITableViewCell {
         _flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         // edit properties here
         let width = UIScreen.main.bounds.size.width - 16 // / 2.5
-         _flowLayout.itemSize = CGSize(width: width, height: 230)
+         _flowLayout.itemSize = CGSize(width: width, height: 200)
         
         return _flowLayout
     }
@@ -138,7 +138,7 @@ extension GalleryCell : UICollectionViewDataSource{
         }
         if  cellImage.buttonPlay.isHidden == true{
             if let path = assest.path {
-                let url = kImgaeView + path
+                let url = kAssets + path
                 cellImage.image.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                     if image == nil {
                         cellImage.image.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
@@ -155,7 +155,7 @@ extension GalleryCell : UICollectionViewDataSource{
     
     func playVideo(rul :String)  {
         
-        let url = kImgaeView + rul
+        let url = kAssets + rul
         let videoURL = URL(string: url)
         let player = AVPlayer(url: videoURL!)
         let playerViewController = AVPlayerViewController()

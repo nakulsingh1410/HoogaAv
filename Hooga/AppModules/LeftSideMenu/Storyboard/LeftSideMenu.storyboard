@@ -91,19 +91,15 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1P-OZ-te4" customClass="HoogaView" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="161" width="375" height="506"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLE-eS-EbM" customClass="CustomNavHeaderView" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.74901960779999999" blue="1" alpha="0.97163842430000003" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="klB-7m-THI"/>
+                                    <constraint firstAttribute="height" constant="64" id="klB-7m-THI"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-hY-nWA" customClass="GradientView" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="74" width="375" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-hY-nWA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNu-6d-phJ" customClass="GradientView" customModule="Hooga" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
@@ -111,7 +107,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5O-5h-vhg">
                                                 <rect key="frame" x="1" y="1" width="373" height="38"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbx-Vi-dOV">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbx-Vi-dOV" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="1" width="185" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="twT-Gr-t8S"/>
@@ -123,7 +119,7 @@
                                                             <action selector="btnCompletedEventsTapped:" destination="V4Z-Gv-Igz" eventType="touchUpInside" id="zhu-ZZ-saC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46g-3I-8VY">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46g-3I-8VY" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
                                                         <rect key="frame" x="188" y="1" width="185" height="36"/>
                                                         <state key="normal" title="Completed Events"/>
                                                         <connections>
@@ -199,7 +195,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QUO-r2-SLB">
-                                <rect key="frame" x="0.0" y="115" width="375" height="550"/>
+                                <rect key="frame" x="0.0" y="105" width="375" height="560"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="V4Z-Gv-Igz" id="vYU-Ae-ykL"/>
@@ -211,21 +207,17 @@
                         <constraints>
                             <constraint firstItem="QUO-r2-SLB" firstAttribute="trailing" secondItem="ZyG-RE-OHx" secondAttribute="trailing" id="3Tu-RL-lQV"/>
                             <constraint firstItem="sLE-eS-EbM" firstAttribute="leading" secondItem="ZyG-RE-OHx" secondAttribute="leading" id="6cj-lZ-XA6"/>
-                            <constraint firstItem="n1P-OZ-te4" firstAttribute="top" secondItem="eaz-aa-XQ2" secondAttribute="top" constant="161" id="Bfk-27-n4j"/>
                             <constraint firstItem="QUO-r2-SLB" firstAttribute="bottom" secondItem="ZyG-RE-OHx" secondAttribute="bottom" constant="-2" id="F6Q-ar-nd5"/>
                             <constraint firstItem="IsA-hY-nWA" firstAttribute="leading" secondItem="ZyG-RE-OHx" secondAttribute="leading" id="HSJ-VD-quX"/>
                             <constraint firstItem="8jh-Xt-hGJ" firstAttribute="leading" secondItem="ZyG-RE-OHx" secondAttribute="leading" id="HTN-Gn-5xl"/>
-                            <constraint firstAttribute="bottom" secondItem="n1P-OZ-te4" secondAttribute="bottom" id="PN9-2i-ah9"/>
                             <constraint firstItem="QUO-r2-SLB" firstAttribute="leading" secondItem="ZyG-RE-OHx" secondAttribute="leading" id="QRa-ue-cjS"/>
-                            <constraint firstItem="n1P-OZ-te4" firstAttribute="leading" secondItem="ZyG-RE-OHx" secondAttribute="leading" id="TPw-WP-bH0"/>
-                            <constraint firstItem="ZyG-RE-OHx" firstAttribute="trailing" secondItem="n1P-OZ-te4" secondAttribute="trailing" id="eQJ-gm-icJ"/>
                             <constraint firstItem="IsA-hY-nWA" firstAttribute="trailing" secondItem="ZyG-RE-OHx" secondAttribute="trailing" id="fR7-OS-XcN"/>
                             <constraint firstItem="QUO-r2-SLB" firstAttribute="top" secondItem="IsA-hY-nWA" secondAttribute="bottom" constant="1" id="fYI-Yf-yeK"/>
-                            <constraint firstItem="IsA-hY-nWA" firstAttribute="top" secondItem="sLE-eS-EbM" secondAttribute="bottom" constant="10" id="gRK-GT-AWt"/>
+                            <constraint firstItem="IsA-hY-nWA" firstAttribute="top" secondItem="sLE-eS-EbM" secondAttribute="bottom" id="gRK-GT-AWt"/>
                             <constraint firstItem="8jh-Xt-hGJ" firstAttribute="top" secondItem="eaz-aa-XQ2" secondAttribute="top" id="lPe-LC-GVF"/>
                             <constraint firstItem="8jh-Xt-hGJ" firstAttribute="trailing" secondItem="ZyG-RE-OHx" secondAttribute="trailing" id="miU-rK-WFy"/>
                             <constraint firstItem="ZyG-RE-OHx" firstAttribute="trailing" secondItem="sLE-eS-EbM" secondAttribute="trailing" id="rAO-ed-Pcw"/>
-                            <constraint firstItem="sLE-eS-EbM" firstAttribute="top" secondItem="ZyG-RE-OHx" secondAttribute="top" id="sKV-SQ-Joq"/>
+                            <constraint firstItem="sLE-eS-EbM" firstAttribute="top" secondItem="eaz-aa-XQ2" secondAttribute="top" id="sKV-SQ-Joq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZyG-RE-OHx"/>
                     </view>
@@ -276,14 +268,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d04-CJ-yeE" customClass="CustomNavHeaderView" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="QX5-0m-o72"/>
+                                    <constraint firstAttribute="height" constant="64" id="QX5-0m-o72"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8O-tc-zi2">
-                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MV-gR-4hO">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
@@ -766,7 +758,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="d04-CJ-yeE" firstAttribute="trailing" secondItem="lOA-VS-z1p" secondAttribute="trailing" id="4ce-rn-fOO"/>
-                            <constraint firstItem="d04-CJ-yeE" firstAttribute="top" secondItem="ZCd-ep-aKX" secondAttribute="top" constant="20" id="CNK-YT-tp8"/>
+                            <constraint firstItem="d04-CJ-yeE" firstAttribute="top" secondItem="ZCd-ep-aKX" secondAttribute="top" id="CNK-YT-tp8"/>
                             <constraint firstItem="Q8O-tc-zi2" firstAttribute="trailing" secondItem="lOA-VS-z1p" secondAttribute="trailing" id="CzO-EO-ZAc"/>
                             <constraint firstItem="oOA-kR-EUR" firstAttribute="leading" secondItem="lOA-VS-z1p" secondAttribute="leading" id="KtO-U6-dHp"/>
                             <constraint firstItem="6u6-1s-jf3" firstAttribute="top" secondItem="ZCd-ep-aKX" secondAttribute="top" id="Lac-qY-QTg"/>
@@ -778,7 +770,7 @@
                             <constraint firstItem="6u6-1s-jf3" firstAttribute="leading" secondItem="lOA-VS-z1p" secondAttribute="leading" id="gON-2k-uIq"/>
                             <constraint firstItem="Q8O-tc-zi2" firstAttribute="bottom" secondItem="lOA-VS-z1p" secondAttribute="bottom" id="u2I-Hp-Hr7"/>
                             <constraint firstItem="Q8O-tc-zi2" firstAttribute="leading" secondItem="lOA-VS-z1p" secondAttribute="leading" id="va0-ca-zNF"/>
-                            <constraint firstItem="Q8O-tc-zi2" firstAttribute="top" secondItem="d04-CJ-yeE" secondAttribute="bottom" constant="3" id="yqn-2Q-0aS"/>
+                            <constraint firstItem="Q8O-tc-zi2" firstAttribute="top" secondItem="d04-CJ-yeE" secondAttribute="bottom" id="yqn-2Q-0aS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lOA-VS-z1p"/>
                     </view>

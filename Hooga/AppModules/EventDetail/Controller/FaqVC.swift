@@ -31,9 +31,9 @@ class FaqVC: UIViewController {
        
         if arrFaq.count != 0 {
             
-             labelTitle.text = "FAQ"
+             labelTitle.text = "FAQs"
         }else{
-            labelTitle.text = "Terms And Conditions"
+            labelTitle.text = "Terms & Conditions"
         }
        // tableFaq.register(FaqCell.self, forCellReuseIdentifier: FaqCell.identifier)
         tableFaq.rowHeight = 300

@@ -10,10 +10,10 @@ import UIKit
 
 class EventCell: UITableViewCell {
 
-    @IBOutlet weak var buttonEventDetail: UIButton!
-    @IBOutlet weak var labelEventTime: UILabel!
+//    @IBOutlet weak var buttonEventDetail: UIButton!
+//    @IBOutlet weak var labelEventTime: UILabel!
     @IBOutlet weak var labelEventDate: UILabel!
-    @IBOutlet weak var labelEventCode: UILabel!
+//    @IBOutlet weak var labelEventCode: UILabel!
     @IBOutlet weak var labelEventTitle: UILabel!
     @IBOutlet weak var imageViewEvent: UIImageView!
     @IBOutlet weak var viewForShadow: UIView!
@@ -29,6 +29,8 @@ class EventCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        labelEventTitle.font = Font.gillSansBold(size: 25)
+        labelEventDate.font = Font.gothamBook(size: 17)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -36,6 +36,7 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        textSearchTag.delegate = self
         configoreNavigationHeader()
         configTableViewForEventList()
         getCategoryList()
@@ -60,7 +61,7 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
         navHeaderView.viewController = self
         navHeaderView.navBarTitle = "Events"
         navHeaderView.backButtonType = .LeftMenu
-        textSearchTag.delegate = self
+        navHeaderView.isNavBarTransparent = true
     }
 
     func menuSelected(index: IndexPath, data: CategoryModel) {
@@ -77,11 +78,8 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
     func configTableViewForEventList()  {
         
         tableViewEventList.register(EventCell.nib, forCellReuseIdentifier: EventCell.identifier)
-        
         tableViewEventList.separatorStyle = .none
-        
         tableViewEventList.rowHeight = 300
-        
         tableViewEventList.estimatedRowHeight = UITableViewAutomaticDimension
         tableViewEventList.tableFooterView = UIView()
         tableViewEventList.delegate     = self
@@ -166,15 +164,23 @@ extension EventListViewController : UITableViewDataSource{
         
         let event = arrEvents[indexPath.row]
         
-        cellEvent.labelEventCode.text =  event.eventcode
-        cellEvent.labelEventDate.text = event.startdate
-        cellEvent.labelEventTime.text = event.starttime
+//        cellEvent.labelEventCode.text =  event.eventcode
+//        cellEvent.labelEventDate.text = event.startdate
+        var dateStirng = ""
+        if let startDate = event.startdate{
+            dateStirng = startDate
+        }
+        if let starttime = event.starttime{
+            dateStirng = dateStirng + " | " + starttime
+        }
+        cellEvent.labelEventDate.text = dateStirng
+//        cellEvent.labelEventTime.text = event.starttime
         cellEvent.labelEventTitle.text = event.title
         cellEvent.selectionStyle = .none
         
         
         if let bnanner = event.bannerimage {
-            let url = kImgaeView + bnanner
+            let url = kAssets + bnanner
             cellEvent.imageViewEvent.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                 if image == nil {
                     cellEvent.imageViewEvent.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
@@ -183,22 +189,27 @@ extension EventListViewController : UITableViewDataSource{
             
         }
         
-        cellEvent.buttonEventDetail.tag = indexPath.row
-        cellEvent.buttonEventDetail.addTarget(self, action:#selector(buttonDetail_Pressed(_:)), for: .touchUpInside)
-        
+//        cellEvent.buttonEventDetail.tag = indexPath.row
+//        cellEvent.buttonEventDetail.addTarget(self, action:#selector(buttonDetail_Pressed(_:)), for: .touchUpInside)
+//
         // cellEvent.viewForShadow.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
         return cellEvent
     }
     
-    @objc func buttonDetail_Pressed(_ button:UIButton)  {
-        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrEvents[button.tag].eventid!, comingFrom: ComingFromScreen.eventListing)
+     func buttonDetail_Pressed(index:Int)  {
+        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrEvents[index].eventid!, comingFrom: ComingFromScreen.eventListing)
     }
+    
+    
 }
 //
 extension EventListViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension;
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        buttonDetail_Pressed(index: indexPath.row)
     }
 }
 
