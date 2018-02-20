@@ -19,6 +19,7 @@ class ParticipateDetailViewController: UIViewController {
     @IBOutlet weak var lblCollectedOn: HoogaLabel!
     
     var  participateDetail: ShowMyEventLuckyDrawResult?
+    let fontSize:CGFloat = 17
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +41,13 @@ class ParticipateDetailViewController: UIViewController {
         lblPriceCollectedBy.text =   ""
         lblCollectedOn.text = ""
         lblIsPriceCollected.text = ""
+        
+        lblParticipateName.font = Font.gillSansSemiBold(size: fontSize)
+        lblLuckyDrawSequence.font = Font.gillSansSemiBold(size: fontSize)
+        lblLuckyDrawPrice.font = Font.gillSansSemiBold(size: fontSize)
+        lblPriceCollectedBy.font = Font.gillSansSemiBold(size: fontSize)
+        lblCollectedOn.font = Font.gillSansSemiBold(size: fontSize)
+        lblIsPriceCollected.font = Font.gillSansSemiBold(size: fontSize)
 
         if let data = participateDetail{
             if let string = data.firstName {

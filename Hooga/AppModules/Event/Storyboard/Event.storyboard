@@ -243,7 +243,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavigationHeaderImg" translatesAutoresizingMaskIntoConstraints="NO" id="exz-L0-hAj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-eo-29p">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uR7-eo-29p" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
                                         <rect key="frame" x="5" y="21" width="70" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="LXq-Bm-ig2"/>

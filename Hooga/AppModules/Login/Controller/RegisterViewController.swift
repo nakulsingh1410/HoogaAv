@@ -55,14 +55,14 @@ class RegisterViewController: UIViewController {
     // MARK: Methods
     /*********************************************************************************/
    private func configoreNavigationHeader()  {
-        navHeaderView.viewController = self
-    if requestingScreen == .login {
-        navHeaderView.navBarTitle = "Registration"
-        navHeaderView.backButtonType = .Back
-    }else if requestingScreen == .myProfile {
-        navHeaderView.navBarTitle = "My Profile"
-        navHeaderView.backButtonType = .LeftMenu
-    }
+//        navHeaderView.viewController = self
+//    if requestingScreen == .login {
+//        navHeaderView.navBarTitle = "Registration"
+//        navHeaderView.backButtonType = .Back
+//    }else if requestingScreen == .myProfile {
+//        navHeaderView.navBarTitle = "My Profile"
+//        navHeaderView.backButtonType = .LeftMenu
+//    }
     }
 
     private func openGenderPicker(){

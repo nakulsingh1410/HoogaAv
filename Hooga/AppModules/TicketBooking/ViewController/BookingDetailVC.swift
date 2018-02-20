@@ -57,12 +57,12 @@ class BookingDetailVC: UIViewController {
         if let ticket = eventRecord?.ticketTypeDetails {
             labelticketType.text = "Ticket Type: " + ticket.tickettype!
             if let qnt =  eventRecord?.quantityTicket{
-                labelQuantity.text = "Qty:" + String(qnt)
+                labelQuantity.text = "Qty: " + String(qnt)
             }
             if let price = ticket.regularprice {
-                labelPrice.text = "Price:$ " + price
+                labelPrice.text = "Price: $" + price
                 let total = Float(price)! * Float(qnty)
-                labelTotalPrice.text = "Total:$ " + String(total)
+                labelTotalPrice.text = "Total: $" + String(total)
             }
         }
         if qnty == 1 {

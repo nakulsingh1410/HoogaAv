@@ -48,6 +48,8 @@ class MyEventViewController: UIViewController {
             navHeaderView.backButtonType = .LeftMenu
             navHeaderView.isBackHandledInController = false
         }
+//        navHeaderView.isBottonLineHidden = false
+
     }
     func configTableViewForEventList()  {
         tableViewEventList.register(EventCell.nib, forCellReuseIdentifier: EventCell.identifier)

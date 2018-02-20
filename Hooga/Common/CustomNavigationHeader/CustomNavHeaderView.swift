@@ -34,6 +34,11 @@ class CustomNavHeaderView: UIView {
             lblSeperatorLine.isHidden = isBottonLineHidden
         }
     }
+    var isBackButtonHidden = false {
+        didSet{
+            leftButton.isHidden = isBackButtonHidden
+        }
+    }
     /******************************************************/
     //MARK: Function
     /******************************************************/
@@ -64,7 +69,7 @@ class CustomNavHeaderView: UIView {
         }else{
             titleHeader.text = ""
         }
-        titleHeader.font = Font.gillSansSemiBold(size: 18)
+        titleHeader.font = Font.gillSansSemiBold(size: 19)
         
         titleHeader.textColor = titleColor
         lblSeperatorLine.isHidden = isBottonLineHidden

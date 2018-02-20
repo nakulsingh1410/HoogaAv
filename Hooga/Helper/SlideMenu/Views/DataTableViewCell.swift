@@ -39,7 +39,7 @@ class DataTableViewCell : UITableViewCell {
         dataText.textColor = UIColor.white
         if let menuText = data.title{
             dataText.text = menuText
-            dataText.text = dataText.text?.uppercased()
+            dataText.text = dataText.text?.capitalized
 
         }
         if let imageName = data.icon{

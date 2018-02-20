@@ -48,7 +48,8 @@ class QcodeTicketVC: UIViewController {
             let time = Common.getDateString(strDate:evetDtl.starttime) //+ " - " + Common.getDateString(strDate:eventDetail?.endtime)
             lblEventTime.text =  date + " | " + time
         }
-        
+        lblEventTitle.font = Font.gillSansBold(size: 17)
+
     }
 
     override func didReceiveMemoryWarning() {

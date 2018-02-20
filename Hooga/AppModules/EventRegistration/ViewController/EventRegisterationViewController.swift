@@ -81,6 +81,8 @@ class EventRegisterationViewController: UIViewController {
         }
         prefilledUsedData()
         
+        lblEventTitle.font = Font.gillSansBold(size: 17)
+
     }
 
     

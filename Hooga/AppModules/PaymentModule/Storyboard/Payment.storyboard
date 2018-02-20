@@ -770,54 +770,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBS-1A-vew" userLabel="Header">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBS-1A-vew" customClass="CustomNavHeaderView" customModule="Hooga" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ng0-JH-CTn">
-                                        <rect key="frame" x="5" y="21" width="70" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="TvU-3Q-BLe"/>
-                                            <constraint firstAttribute="height" constant="35" id="Z9S-QW-g7l"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" image="back">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonBack_didPressed:" destination="20A-Bk-PSo" eventType="touchUpInside" id="uxa-Jx-eII"/>
-                                        </connections>
-                                    </button>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JX-UQ-cgh">
-                                        <rect key="frame" x="5" y="63" width="365" height="1"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="hQ7-E8-Ovg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Payment Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GH-Fc-0fR" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="83" y="28" width="219" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="w6T-fs-Kmf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" red="0.24651351569999999" green="0.50405985119999996" blue="0.99807041880000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="2JX-UQ-cgh" secondAttribute="bottom" id="DCq-jB-AYb"/>
-                                    <constraint firstAttribute="trailing" secondItem="6GH-Fc-0fR" secondAttribute="trailing" constant="73" id="G0r-gM-prS"/>
-                                    <constraint firstItem="6GH-Fc-0fR" firstAttribute="leading" secondItem="Ng0-JH-CTn" secondAttribute="trailing" constant="8" id="HDT-Og-48G"/>
-                                    <constraint firstAttribute="trailing" secondItem="2JX-UQ-cgh" secondAttribute="trailing" constant="5" id="L0j-pJ-ZSO"/>
-                                    <constraint firstItem="2JX-UQ-cgh" firstAttribute="leading" secondItem="iBS-1A-vew" secondAttribute="leading" constant="5" id="OL3-1A-bDx"/>
                                     <constraint firstAttribute="height" constant="64" id="U5P-48-OHn"/>
-                                    <constraint firstItem="2JX-UQ-cgh" firstAttribute="top" secondItem="6GH-Fc-0fR" secondAttribute="bottom" constant="14" id="fI2-Lt-eX3"/>
-                                    <constraint firstItem="2JX-UQ-cgh" firstAttribute="top" secondItem="Ng0-JH-CTn" secondAttribute="bottom" constant="7" id="kKE-su-VLM"/>
-                                    <constraint firstItem="Ng0-JH-CTn" firstAttribute="leading" secondItem="iBS-1A-vew" secondAttribute="leading" constant="5" id="z3K-K6-8H3"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="du6-sb-PL7">
@@ -920,6 +877,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionViewUser" destination="RBG-Cb-AOK" id="xzY-27-TcF"/>
+                        <outlet property="navHeaderView" destination="iBS-1A-vew" id="F8d-qt-JWz"/>
                         <outlet property="otherPaymentView" destination="vEg-zz-kou" id="t9Y-ny-JIN"/>
                     </connections>
                 </viewController>

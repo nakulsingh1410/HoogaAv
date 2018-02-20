@@ -12,6 +12,7 @@ class OtherPaymentMode: UIViewController {
     
     @IBOutlet weak var collectionViewUser: UICollectionView!
     @IBOutlet weak  var otherPaymentView : UIView!
+    @IBOutlet weak var navHeaderView : CustomNavHeaderView!
 
     
     var bookingDetail : EventRecord?
@@ -26,11 +27,18 @@ class OtherPaymentMode: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configoreNavigationHeader()
         addPaymentView()
         configureData()
         configCollectionView()
     }
     
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Other Payment Mode"
+        navHeaderView.backButtonType = .Back
+        navHeaderView.isBackButtonHidden = true
+    }
     
     func configureData()  {
         if let savedTickets = savedTicketDetail{

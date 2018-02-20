@@ -73,11 +73,12 @@ class LuckyDrawVC: UIViewController {
 
             lblEventTitle.text = evetDtl.title
             lblEventLocation.text = evetDtl.eventlocation?.trim()
-            
+                        
             let date = Common.getDateString(strDate:evetDtl.startdate) //+ " - " + Common.getDateString(strDate:evetDtl.enddate)
             let time = Common.getDateString(strDate:evetDtl.starttime) //+ " - " + Common.getDateString(strDate:eventDetail?.endtime)
             lblEventTime.text =  date + " | " + time
         }
+        lblEventTitle.font = Font.gillSansBold(size: 17)
 
     }
     

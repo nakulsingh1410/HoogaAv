@@ -24,7 +24,6 @@
 		3026798720356800005B4442 /* ParticipantResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026797E203567FF005B4442 /* ParticipantResultViewController.swift */; };
 		3026798820356800005B4442 /* ParticipateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026797F203567FF005B4442 /* ParticipateTableViewCell.swift */; };
 		3026798920356800005B4442 /* ParticipateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30267980203567FF005B4442 /* ParticipateDetailViewController.swift */; };
-		3026798A20356800005B4442 /* ParticipateDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30267981203567FF005B4442 /* ParticipateDetailViewController.xib */; };
 		3026798B20356800005B4442 /* ParticipateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3026798220356800005B4442 /* ParticipateTableViewCell.xib */; };
 		3026798C20356800005B4442 /* LuckyDrawCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3026798320356800005B4442 /* LuckyDrawCell.xib */; };
 		3026798D20356800005B4442 /* ParticipateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026798420356800005B4442 /* ParticipateViewController.swift */; };
@@ -204,7 +203,6 @@
 		3026797E203567FF005B4442 /* ParticipantResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantResultViewController.swift; sourceTree = "<group>"; };
 		3026797F203567FF005B4442 /* ParticipateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipateTableViewCell.swift; sourceTree = "<group>"; };
 		30267980203567FF005B4442 /* ParticipateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipateDetailViewController.swift; sourceTree = "<group>"; };
-		30267981203567FF005B4442 /* ParticipateDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipateDetailViewController.xib; sourceTree = "<group>"; };
 		3026798220356800005B4442 /* ParticipateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipateTableViewCell.xib; sourceTree = "<group>"; };
 		3026798320356800005B4442 /* LuckyDrawCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LuckyDrawCell.xib; sourceTree = "<group>"; };
 		3026798420356800005B4442 /* ParticipateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipateViewController.swift; sourceTree = "<group>"; };
@@ -621,7 +619,6 @@
 				3026797D203567FF005B4442 /* LuckyDrawVC.swift */,
 				3026797E203567FF005B4442 /* ParticipantResultViewController.swift */,
 				30267980203567FF005B4442 /* ParticipateDetailViewController.swift */,
-				30267981203567FF005B4442 /* ParticipateDetailViewController.xib */,
 				3026797F203567FF005B4442 /* ParticipateTableViewCell.swift */,
 				3026798220356800005B4442 /* ParticipateTableViewCell.xib */,
 				3026798420356800005B4442 /* ParticipateViewController.swift */,
@@ -1205,7 +1202,6 @@
 				7530D960201F888300B9BB52 /* EventDetail.storyboard in Resources */,
 				302679AA20356FD5005B4442 /* QuantityCell.xib in Resources */,
 				7530D959201F888300B9BB52 /* EventTitleCell.xib in Resources */,
-				3026798A20356800005B4442 /* ParticipateDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

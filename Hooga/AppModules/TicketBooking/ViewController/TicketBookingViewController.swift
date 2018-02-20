@@ -89,7 +89,8 @@ class TicketBookingViewController: UIViewController {
         txtFTicketType.text = "Select Ticket"
         txtFQuantity.text = "Select Quantity"
         
-       
+        lblEventTitle.font = Font.gillSansBold(size: 17)
+
         
         hideTicketInfo()
         loadQuantity()

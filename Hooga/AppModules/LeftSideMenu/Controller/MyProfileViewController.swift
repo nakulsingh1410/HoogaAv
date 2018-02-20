@@ -54,6 +54,7 @@ class MyProfileViewController: UIViewController {
         navHeaderView.viewController = self
         navHeaderView.navBarTitle = "My Profile"
         navHeaderView.backButtonType = .LeftMenu
+        navHeaderView.isBottonLineHidden = false
     
     }
     private func prefilledUsedData(){

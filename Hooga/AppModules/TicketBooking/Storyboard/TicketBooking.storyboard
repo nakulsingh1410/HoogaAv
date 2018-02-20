@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKe-n4-Idd">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acc-fB-hpf" userLabel="EventDetail">
                                                 <rect key="frame" x="20" y="10" width="335" height="65"/>
@@ -214,7 +214,7 @@
                                         <constraints>
                                             <constraint firstItem="aQR-Vv-NAc" firstAttribute="trailing" secondItem="acc-fB-hpf" secondAttribute="trailing" id="3UV-Pm-V5N"/>
                                             <constraint firstItem="rNf-Jw-VgT" firstAttribute="top" secondItem="N3k-cr-fYk" secondAttribute="bottom" constant="20" id="45y-7O-iXA"/>
-                                            <constraint firstAttribute="height" constant="600" id="9go-yh-vbJ"/>
+                                            <constraint firstAttribute="height" constant="603" id="9go-yh-vbJ"/>
                                             <constraint firstItem="nYs-dE-se9" firstAttribute="top" secondItem="SGT-yc-wIS" secondAttribute="bottom" constant="20" id="Aba-OL-HSM"/>
                                             <constraint firstItem="LXA-hP-F4I" firstAttribute="trailing" secondItem="acc-fB-hpf" secondAttribute="trailing" id="Bao-K9-p9o"/>
                                             <constraint firstItem="lnh-Og-hqU" firstAttribute="top" secondItem="acc-fB-hpf" secondAttribute="bottom" constant="10" id="CNW-OO-CNL"/>
@@ -251,7 +251,6 @@
                                     <constraint firstAttribute="bottom" secondItem="rKe-n4-Idd" secondAttribute="bottom" id="ZYp-MT-Fbh"/>
                                     <constraint firstItem="rKe-n4-Idd" firstAttribute="centerX" secondItem="ISg-ZO-3wZ" secondAttribute="centerX" id="ghe-75-DIe"/>
                                     <constraint firstItem="rKe-n4-Idd" firstAttribute="top" secondItem="ISg-ZO-3wZ" secondAttribute="top" id="qh1-ka-4qC"/>
-                                    <constraint firstAttribute="bottom" secondItem="rKe-n4-Idd" secondAttribute="bottom" id="ruQ-9x-n3n"/>
                                     <constraint firstItem="rKe-n4-Idd" firstAttribute="leading" secondItem="ISg-ZO-3wZ" secondAttribute="leading" id="vmv-gt-Jeq"/>
                                 </constraints>
                             </scrollView>
@@ -325,7 +324,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTH-lc-Ssg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TICKET TYPE: VIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jt0-if-waD">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TICKET TYPE: VIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jt0-if-waD" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="8" width="242" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="naB-Z3-WUA"/>
@@ -333,7 +332,7 @@
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUANTITY:5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gr-8R-91c">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUANTITY:5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gr-8R-91c" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="250" y="8" width="120" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="PED-HG-QXg"/>
@@ -342,7 +341,7 @@
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE:$ 200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boo-4r-hJZ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE:$ 200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boo-4r-hJZ" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="31.5" width="242" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="ugH-Tg-dOP"/>
@@ -350,7 +349,7 @@
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL:$ 1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jq-Up-wfG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL:$ 1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jq-Up-wfG" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="250" y="31.5" width="120" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="r2U-sN-F0e"/>

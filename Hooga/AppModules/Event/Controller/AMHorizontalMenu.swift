@@ -151,7 +151,7 @@ extension AMHorizontalMenu : UICollectionViewDataSource{
         
         let cellMenu = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AMMenuCell
         
-        cellMenu.title.text = menuItems[indexPath.row].category?.uppercased()
+        cellMenu.title.text = menuItems[indexPath.row].category
         
         if selectedIndexPath != nil {
             if selectedIndexPath == indexPath{
@@ -185,7 +185,7 @@ extension AMHorizontalMenu : UICollectionViewDelegate , UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        let str = menuItems[indexPath.row].category?.uppercased()
+        let str = menuItems[indexPath.row].category
         let width = textWidth(text: str!, font: UIFont.systemFont(ofSize: 14, weight: .medium)) + 12.0
         return CGSize(width:width,height:40)
         

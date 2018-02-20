@@ -82,7 +82,7 @@ extension EventDetailVC : UITableViewDataSource{
             let cellBanner = tableView.dequeueReusableCell(withIdentifier: BannerCell.identifier) as! BannerCell
             cellBanner.selectionStyle = .none
             //"ORGANIZED BY: " +
-            cellBanner.labelOrganizedBY.text =  (self.eventDetail?.organizer)!.uppercased()
+            cellBanner.labelOrganizedBY.text =  (self.eventDetail?.organizer)
             if let bnanner = self.eventDetail?.bannerimage {
                 let url = kAssets + bnanner
                 cellBanner.imageViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in

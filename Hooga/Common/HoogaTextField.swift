@@ -24,8 +24,9 @@ class HoogaTextField: UITextField {
         self.changePlaceholder(placeHolderText: self.placeholder, color: kPlaceHolderColor)
         ///self.addCharacterSpacing(value: 1.2)
         if let size = self.font?.pointSize{
-            self.font = Font.gillSansLight(size: size)
+            self.font = Font.gillSansLight(size: 16)
         }
+        
     }
     
     func setLeftPadding()  {
