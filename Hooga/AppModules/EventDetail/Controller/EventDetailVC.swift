@@ -238,7 +238,7 @@ extension EventDetailVC :ShareCellDelegate{
                  {
              NavigationManager.eventRegistration(navigationController: self.navigationController, evntDetail: evntDtl)
             }else if let title = cell.buttonregister.titleLabel?.text ,
-                title == RegisterButtonTitle.bookTickets.rawValue{
+                title == RegisterButtonTitle.bookTickets.rawValue || title == RegisterButtonTitle.bookMore.rawValue{
                 NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl, comingFrom: ComingFromScreen.eventDetail)
         }
        

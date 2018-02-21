@@ -15,19 +15,18 @@ protocol ShareCellDelegate {
     func viewTicketDidSelected(cell:ShareCell)
     func luckyDrawDidSelected(cell:ShareCell)
     func bookMoreDidSelected(cell:ShareCell)
-
     
 }
 class ShareCell: UITableViewCell {
-
+    
     @IBOutlet weak var buttonInsta: SocialButton!
     @IBOutlet weak var buttnFaceBook: SocialButton!
     @IBOutlet weak var buttonGoogle: SocialButton!
     @IBOutlet weak var buttonTwitter: SocialButton!
     @IBOutlet weak var btnViewTicket: HoogaButton!
     @IBOutlet weak var btnLuckyTicket: HoogaButton!
-    @IBOutlet weak var btnBookMore: HoogaButton!
-
+    //    @IBOutlet weak var btnBookMore: HoogaButton!
+    
     @IBOutlet weak var viewTicketView: UIView!
     @IBOutlet weak var viewTicketViewHeightConstraint: NSLayoutConstraint!
     
@@ -46,32 +45,31 @@ class ShareCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     
     func showShareCell(isComingFrom:ComingFromScreen,isTicketBooked :Bool)  {
         if isComingFrom == ComingFromScreen.eventListing {
             viewTicketViewHeightConstraint.constant = 0
-            buttonregister.isHidden = false
-
+            //            buttonregister.isHidden = false
         }else{
             viewTicketViewHeightConstraint.constant = 45
-            buttonregister.isHidden = true
+            //            buttonregister.isHidden = true
+            if isTicketBooked{
+                btnViewTicket.isHidden = false
+                btnLuckyTicket.isHidden = false
+                //            btnBookMore.setTitle(" Book More ", for: .normal)
+                buttonregister.setTitle(RegisterButtonTitle.bookMore.rawValue, for: .normal)
+            }else{
+                btnViewTicket.isHidden = true
+                btnLuckyTicket.isHidden = true
+                //            btnBookMore.setTitle(" Book Ticket(s) ", for: .normal)
+                buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
+            }
         }
-        if isTicketBooked{
-            btnViewTicket.isHidden = false
-            btnLuckyTicket.isHidden = false
-            btnBookMore.setTitle(" Book More ", for: .normal)
-
-        }else{
-            btnViewTicket.isHidden = true
-            btnLuckyTicket.isHidden = true
-            btnBookMore.setTitle(" Book Ticket(s) ", for: .normal)
-        }
-        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -91,7 +89,7 @@ class ShareCell: UITableViewCell {
     }
     
     @IBAction func buttonRegister_didPressed(_ sender: Any) {
-            delegate?.registerBttonSelected(cell: self)
+        delegate?.registerBttonSelected(cell: self)
     }
     @IBAction func btnViewTicketsTapped(_ sender: Any) {
         delegate?.viewTicketDidSelected(cell: self)
@@ -99,7 +97,7 @@ class ShareCell: UITableViewCell {
     }
     @IBAction func btnLuckyDrawTapped(_ sender: Any) {
         delegate?.luckyDrawDidSelected(cell: self)
-
+        
     }
     @IBAction func btnBookMoreTapped(_ sender: Any) {
         delegate?.bookMoreDidSelected(cell: self)

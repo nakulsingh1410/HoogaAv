@@ -204,8 +204,9 @@ public enum MessageError: String{
 
 
 enum RegisterButtonTitle:String{
-    case register = " Register "
-    case bookTickets = " Book Ticket(s) "
+    case register = "  Register  "
+    case bookTickets = "  Book Ticket(s)  "
+    case bookMore = "  Book More  "
 }
 
 enum ComingFromScreen:String{

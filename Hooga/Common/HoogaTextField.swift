@@ -20,7 +20,7 @@ class HoogaTextField: UITextField {
     override func awakeFromNib() {
         setLeftPadding()
        // self.font = Font.lobster(size: 14.0)
-        self.placeholder = self.placeholder?.uppercased()
+        self.placeholder = self.placeholder?.capitalized
         self.changePlaceholder(placeHolderText: self.placeholder, color: kPlaceHolderColor)
         ///self.addCharacterSpacing(value: 1.2)
         if let size = self.font?.pointSize{

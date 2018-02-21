@@ -43,7 +43,7 @@ class ParticipantResultViewController: UIViewController {
     }
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
-        navHeaderView.navBarTitle = "Participates Results"
+        navHeaderView.navBarTitle = "Lucky Draw Results"
         navHeaderView.backButtonType = .Back
     }
     func configTableView()  {

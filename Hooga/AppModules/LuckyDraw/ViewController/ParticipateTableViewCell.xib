@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GillSans.ttc">
+            <string>GillSans</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,19 +24,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujM-Gl-7ej" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="16" y="12" width="191" height="18.5"/>
+                        <rect key="frame" x="16" y="12" width="187" height="18.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBx-fl-pwl" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="212" y="11" width="42" height="21"/>
+                        <rect key="frame" x="208" y="11" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXV-Ie-kJG">
-                        <rect key="frame" x="212" y="4.5" width="42" height="35"/>
+                        <rect key="frame" x="208" y="4.5" width="46" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="pkQ-od-Zq5"/>
                         </constraints>
@@ -49,11 +54,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUo-ng-2mr" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="254" y="7" width="50" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUo-ng-2mr">
+                        <rect key="frame" x="254" y="6" width="50" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="qpe-5b-QKU"/>
                         </constraints>
+                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                         <state key="normal" title="Detail"/>
                         <connections>
                             <action selector="btnDetailTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wh7-ZP-pWn"/>
@@ -73,7 +79,7 @@
                     <constraint firstItem="tUo-ng-2mr" firstAttribute="leading" secondItem="MXV-Ie-kJG" secondAttribute="trailing" id="lDy-3a-0gx"/>
                     <constraint firstItem="mBx-fl-pwl" firstAttribute="leading" secondItem="MXV-Ie-kJG" secondAttribute="leading" id="npe-Q8-sMt"/>
                     <constraint firstItem="knh-i9-XJa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="raS-pn-QBm"/>
-                    <constraint firstItem="tUo-ng-2mr" firstAttribute="leading" secondItem="mBx-fl-pwl" secondAttribute="trailing" id="y3V-2x-IDm"/>
+                    <constraint firstItem="tUo-ng-2mr" firstAttribute="leading" secondItem="mBx-fl-pwl" secondAttribute="trailing" constant="4" id="y3V-2x-IDm"/>
                     <constraint firstItem="mBx-fl-pwl" firstAttribute="leading" secondItem="ujM-Gl-7ej" secondAttribute="trailing" constant="5" id="zux-dH-vrr"/>
                 </constraints>
             </tableViewCellContentView>

@@ -277,37 +277,37 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPS-cw-4kj" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="94" width="104.5" height="20"/>
+                                <rect key="frame" x="10" y="94" width="133.5" height="20"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZe-My-IDm" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="124.5" y="94" width="45" height="20.5"/>
+                                <rect key="frame" x="151.5" y="94" width="45" height="20.5"/>
                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lucky Draw #" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBf-np-aAl" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="124" width="104.5" height="20.5"/>
+                                <rect key="frame" x="10" y="124" width="133.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2H-lD-57x" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="124.5" y="126" width="42" height="18"/>
+                                <rect key="frame" x="151.5" y="126" width="42" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQb-gm-fKI" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="154.5" width="104.5" height="20.5"/>
+                                <rect key="frame" x="10" y="154.5" width="133.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XJ-Uk-CXA" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="124.5" y="156" width="42" height="18"/>
+                                <rect key="frame" x="151.5" y="156" width="42" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -325,25 +325,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtC-PW-6rp" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="215.5" width="104.5" height="20.5"/>
+                                <rect key="frame" x="10" y="215.5" width="133.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRZ-LM-4EK" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="124.5" y="217" width="42" height="18"/>
+                                <rect key="frame" x="151.5" y="217" width="42" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtF-au-FbB" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="10" y="246" width="104.5" height="20.5"/>
+                                <rect key="frame" x="10" y="246" width="133.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQn-e9-PbQ" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="124.5" y="247.5" width="42" height="18"/>
+                                <rect key="frame" x="151.5" y="247.5" width="42" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -358,6 +358,8 @@
                             <constraint firstItem="qQb-gm-fKI" firstAttribute="leading" secondItem="wPS-cw-4kj" secondAttribute="leading" id="Arg-3z-4Hw"/>
                             <constraint firstItem="24y-xV-wDw" firstAttribute="trailing" secondItem="0Wv-Tr-1pj" secondAttribute="trailing" id="Bs8-AE-doS"/>
                             <constraint firstItem="y2H-lD-57x" firstAttribute="centerY" secondItem="YBf-np-aAl" secondAttribute="centerY" id="Gh7-TD-N8d"/>
+                            <constraint firstItem="dmq-wf-fxB" firstAttribute="width" secondItem="wPS-cw-4kj" secondAttribute="width" id="LCb-uE-759"/>
+                            <constraint firstItem="fbE-ST-Gg7" firstAttribute="leading" secondItem="sZe-My-IDm" secondAttribute="leading" id="Nps-UY-ecs"/>
                             <constraint firstItem="qQb-gm-fKI" firstAttribute="width" secondItem="wPS-cw-4kj" secondAttribute="width" id="OdK-VY-Jby"/>
                             <constraint firstItem="24y-xV-wDw" firstAttribute="top" secondItem="dTl-cY-OE8" secondAttribute="top" id="PFR-ku-LKj"/>
                             <constraint firstItem="YBf-np-aAl" firstAttribute="width" secondItem="wPS-cw-4kj" secondAttribute="width" id="PPk-WP-7vQ"/>
@@ -375,7 +377,6 @@
                             <constraint firstItem="fbE-ST-Gg7" firstAttribute="centerY" secondItem="dmq-wf-fxB" secondAttribute="centerY" id="epx-NI-rMt"/>
                             <constraint firstItem="YBf-np-aAl" firstAttribute="top" secondItem="wPS-cw-4kj" secondAttribute="bottom" constant="10" id="gF3-TL-9RB"/>
                             <constraint firstItem="DtC-PW-6rp" firstAttribute="top" secondItem="dmq-wf-fxB" secondAttribute="bottom" constant="10" id="kgb-GB-EIi"/>
-                            <constraint firstItem="sZe-My-IDm" firstAttribute="leading" secondItem="wPS-cw-4kj" secondAttribute="trailing" constant="10" id="lMc-5O-Wxc"/>
                             <constraint firstItem="TRZ-LM-4EK" firstAttribute="leading" secondItem="sZe-My-IDm" secondAttribute="leading" id="oja-Eq-ac9"/>
                             <constraint firstItem="24y-xV-wDw" firstAttribute="leading" secondItem="0Wv-Tr-1pj" secondAttribute="leading" id="qbB-ks-9Y5"/>
                             <constraint firstItem="dmq-wf-fxB" firstAttribute="leading" secondItem="wPS-cw-4kj" secondAttribute="leading" id="sTr-p5-zWu"/>
