@@ -32,7 +32,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dBl-Ae-CPy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1ZH-Lt-IsT"/>
-                            <constraint firstItem="AMC-Kp-c8a" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7KL-D9-Tj5"/>
+                            <constraint firstItem="AMC-Kp-c8a" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="7KL-D9-Tj5"/>
                             <constraint firstItem="dBl-Ae-CPy" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9xg-dc-bf6"/>
                             <constraint firstItem="AMC-Kp-c8a" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="CO9-QI-SBJ"/>
                             <constraint firstItem="AMC-Kp-c8a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mgx-4E-rMV"/>

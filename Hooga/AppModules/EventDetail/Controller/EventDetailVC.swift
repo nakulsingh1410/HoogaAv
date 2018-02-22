@@ -38,7 +38,8 @@ class EventDetailVC: UIViewController{
         navHeaderView.viewController = self
         navHeaderView.navBarTitle = "Event Detail"
         navHeaderView.backButtonType = .Back
-        navHeaderView.isNavBarTransparent = false
+        navHeaderView.isNavBarTransparent = true
+        navHeaderView.setLeftMenu()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
