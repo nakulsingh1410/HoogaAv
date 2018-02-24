@@ -27,7 +27,7 @@ class HoogaButton: UIButton {
         self.setTitle(self.titleLabel?.text?.capitalized, for: .normal)
 
         if let size = self.titleLabel?.font.pointSize{
-            self.titleLabel?.font = Font.gillSansRegular(size: 17)
+            self.titleLabel?.font = Font.gillSansSemiBold(size: 17)
         }
     }
     

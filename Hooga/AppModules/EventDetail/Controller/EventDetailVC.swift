@@ -9,18 +9,27 @@
 import UIKit
 
 
+enum EventDetailScreenCell:String{
+    case BannerCell = "BannerCell"
+    case ContactCell = "ContactCell"
+    case EventTitleCell = "EventTitleCell"
+    case GalleryCell = "GalleryCell"
+    case GalleryImageCell = "GalleryImageCell"
+    case ShareCell = "ShareCell"
+    case FaqCell = "FaqCell"
+}
 
 class EventDetailVC: UIViewController{
     @IBOutlet var tableDetail : UITableView!
     @IBOutlet weak var navHeaderView : CustomNavHeaderView!
-
+    
     var eventDetail: EventDetail?
     var arrEventAssets = [EventAssets]()
     var arrEventFlatform = [EventPlatform]()
     var arrEventFaq = [EventFAQ]()
     var arrEventTermsCondition = [EventTersmNCondition]()
-    var arrCellType = [Int]()
-
+    var arrCellType = [EventDetailScreenCell]()
+    
     var eventID : Int?
     var comingFrom = ComingFromScreen.eventListing
     var isTicketBooked = false
@@ -29,14 +38,14 @@ class EventDetailVC: UIViewController{
         
         // Do any additional setup after loading the view.
         getRegistrionId(eventId: eventID!)
-     
+        
         configTableview()
         configoreNavigationHeader()
         self.navigationController?.isNavigationBarHidden = false
     }
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
-        navHeaderView.navBarTitle = "Event Detail"
+        navHeaderView.navBarTitle = "Event Details"
         navHeaderView.backButtonType = .Back
         navHeaderView.isNavBarTransparent = true
         navHeaderView.setLeftMenu()
@@ -55,7 +64,7 @@ class EventDetailVC: UIViewController{
         tableDetail.separatorStyle = .none
         tableDetail.rowHeight = UITableViewAutomaticDimension
         
-        tableDetail.estimatedRowHeight  = 40
+        tableDetail.estimatedRowHeight  = 44
         tableDetail.tableFooterView     = UIView()
         tableDetail.delegate            = self
         tableDetail.dataSource          = self
@@ -69,100 +78,105 @@ class EventDetailVC: UIViewController{
 
 extension EventDetailVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.arrCellType.count
+        return arrCellType.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cellType = -1
-        if self.arrCellType.count > indexPath.row {
-            
-            cellType = self.arrCellType[indexPath.row]
-        }
         
-        if cellType == 0 {
-            let cellBanner = tableView.dequeueReusableCell(withIdentifier: BannerCell.identifier) as! BannerCell
-            cellBanner.selectionStyle = .none
-            //"ORGANIZED BY: " +
-            cellBanner.labelOrganizedBY.text =  (self.eventDetail?.organizer)
-            if let bnanner = self.eventDetail?.bannerimage {
-                let url = kAssets + bnanner
-                cellBanner.imageViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
-                    if image == nil {
-                        cellBanner.imageViewBanner.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
-                    }
-                }
-                
-            }
-            return cellBanner
-            
-        }else if cellType == 1 {
-            let cellTitle = tableView.dequeueReusableCell(withIdentifier: EventTitleCell.identifier) as! EventTitleCell
-          
-            cellTitle.labelEvntTitle.text  = self.eventDetail?.title
-            let date = Common.getDateString(strDate:eventDetail?.startdate) + " - " + Common.getDateString(strDate:eventDetail?.enddate)
-            let time = Common.getDateString(strDate:eventDetail?.starttime) + " - " + Common.getDateString(strDate:eventDetail?.endtime)
-            cellTitle.labelDateTime.text =  date + " | " + time
-            cellTitle.labelVanue.text = self.eventDetail?.eventlocation?.trim()
-            
-            var categoryString = ""
-            if let category =  self.eventDetail?.category{
-                categoryString = category
-            }
-            if let entrytype =  self.eventDetail?.entrytype{
-                categoryString = categoryString + " | " + entrytype
-            }
-            cellTitle.lblCategory.text = categoryString
-            
-            var description =  ""
-            if let short = eventDetail?.shortdescription?.trim(){
-                description += short
-            }
-            if let long = eventDetail?.longdescription?.trim(){
-                description += long
-            }
-            cellTitle.labelDescription.text = description
-            
-            if !description.isBlank ,cellTitle.labelDescription.intrinsicContentSize.height > 29{
-                cellTitle.btnReadMore.isHidden = false
-                cellTitle.readMoreBtnConstraint.constant = 30
-            }else{
-                cellTitle.btnReadMore.isHidden = true
-                cellTitle.readMoreBtnConstraint.constant = 0
-            }
-            cellTitle.selectionStyle = .none
-            return cellTitle
-        }else if cellType == 2 {
-            let cellContact = tableView.dequeueReusableCell(withIdentifier: ContactCell.identifier) as! ContactCell
-            
-            cellContact.labelPhoneNumber.text = eventDetail?.organizerphone
-            cellContact.labelEmailAddress.text = eventDetail?.organizeremail
-            cellContact.selectionStyle = .none
-            return cellContact
-        }else if cellType == 3 {
-            let cellGallery = tableView.dequeueReusableCell(withIdentifier: GalleryCell.identifier) as! GalleryCell
-            cellGallery.selectionStyle = .none
-            cellGallery.arrImageAssets = arrEventAssets
-            return cellGallery
-        }else if cellType == 4{
-            
-            let cellShare = tableView.dequeueReusableCell(withIdentifier: ShareCell.identifier) as! ShareCell
-            if arrEventFlatform.count > 0{
-                cellSharePlateForm(cell: cellShare)
-            }
-            cellShare.delegate = self
-            cellShare.selectionStyle = .none
-            if let regId = eventDetail?.regid , regId > 0{
-                cellShare.buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
-            }else{
-                 cellShare.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
-            }
-            cellShare.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked)
-            return cellShare
+        let cellType = arrCellType[indexPath.row]
+        switch cellType {
+        case .BannerCell:
+            return getBannerCell()
+        case .EventTitleCell:
+            return getEventTitleCell()
+        case .ContactCell:
+            return getContactCell()
+        case .GalleryCell:
+            return getGalleryCell()
+        case .ShareCell:
+            return getShareCell()
+        default:
+            return UITableViewCell()
         }
-        
+    }
+}
+extension EventDetailVC : UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+}
+
+//Get Table view cells
+extension EventDetailVC{
+    
+    func getBannerCell() -> UITableViewCell {
+        if let cell = tableDetail.dequeueReusableCell(withIdentifier: BannerCell.identifier) as? BannerCell {
+            if let eventDetail = eventDetail{
+                cell.loadCellData(eventDetail: eventDetail)
+            }
+            return cell
+        }
         return UITableViewCell()
     }
+    
+    
+    
+    func getEventTitleCell() -> UITableViewCell {
+        if let cell = tableDetail.dequeueReusableCell(withIdentifier: EventTitleCell.identifier) as? EventTitleCell {
+            if let eventDetail = eventDetail{
+                cell.loadCellData(eventDetail: eventDetail)
+            }
+            cell.eventTitleCellDelegate = self
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func getContactCell() -> UITableViewCell {
+        if let cell = tableDetail.dequeueReusableCell(withIdentifier: ContactCell.identifier) as? ContactCell {
+            if let eventDetail = eventDetail{
+                cell.loadCellData(eventDetail: eventDetail)
+            }
+            return cell
+        }
+        return UITableViewCell()
+    }
+    func getGalleryCell() -> UITableViewCell {
+        if let cell = tableDetail.dequeueReusableCell(withIdentifier: GalleryCell.identifier) as? GalleryCell {
+            cell.arrImageAssets = arrEventAssets
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func getShareCell() -> UITableViewCell {
+        if let cell = tableDetail.dequeueReusableCell(withIdentifier: ShareCell.identifier) as? ShareCell {
+            if arrEventFlatform.count > 0{
+                cellSharePlateForm(cell: cell)
+            }
+            cell.delegate = self
+            cell.selectionStyle = .none
+            if let regId = eventDetail?.regid , regId > 0{
+                cell.buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
+            }else{
+                cell.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
+            }
+            cell.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked)
+            cell.btnTermsNCondition.isHidden = true
+            cell.btnFAQs.isHidden = true
 
+            if arrEventFaq.count > 0 {
+                cell.btnFAQs.isHidden = false
+            }
+            if arrEventTermsCondition.count > 0 {
+                cell.btnTermsNCondition.isHidden = false
+            }
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
     
     func cellSharePlateForm(cell : ShareCell)  {
         
@@ -186,31 +200,19 @@ extension EventDetailVC : UITableViewDataSource{
             }
         }
     }
+    
+    
 }
 
-extension EventDetailVC : UITableViewDelegate{
+extension EventDetailVC:EventTitleCellDelegate{
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        var cellType = -1
-        if self.arrCellType.count > indexPath.row {
-            cellType = self.arrCellType[indexPath.row]
+    func readMoreTapped(cell: EventTitleCell) {
+        var longDescription =  ""
+        if let long = eventDetail?.longdescription?.trim(){
+            longDescription += long
         }
-        if cellType == 0 {
-            return UITableViewAutomaticDimension;
-        }else if cellType == 1 {
-            return UITableViewAutomaticDimension;
-        }else if cellType == 2 {
-            return 65
-        }else if cellType == 3 {
-            return UITableViewAutomaticDimension
-        }else if cellType == 4{
-            return UITableViewAutomaticDimension
-        }
-        return 0
+        NavigationManager.navigateToLongDescription(navigationController: navigationController, longDescription: longDescription)
     }
-    
-    
 }
 
 extension EventDetailVC :ShareCellDelegate{
@@ -234,15 +236,14 @@ extension EventDetailVC :ShareCellDelegate{
     
     func registerBttonSelected(cell: ShareCell) {
         guard let evntDtl = eventDetail else{return}
-            if let title = cell.buttonregister.titleLabel?.text ,
-                title == RegisterButtonTitle.register.rawValue
-                 {
-             NavigationManager.eventRegistration(navigationController: self.navigationController, evntDetail: evntDtl)
-            }else if let title = cell.buttonregister.titleLabel?.text ,
-                title == RegisterButtonTitle.bookTickets.rawValue || title == RegisterButtonTitle.bookMore.rawValue{
-                NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl, comingFrom: ComingFromScreen.eventDetail)
+        if let title = cell.buttonregister.titleLabel?.text ,
+            title == RegisterButtonTitle.register.rawValue
+        {
+            NavigationManager.eventRegistration(navigationController: self.navigationController, evntDetail: evntDtl)
+        }else if let title = cell.buttonregister.titleLabel?.text ,
+            title == RegisterButtonTitle.bookTickets.rawValue || title == RegisterButtonTitle.bookMore.rawValue{
+            NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl, comingFrom: ComingFromScreen.eventDetail)
         }
-       
     }
     
     func faqSelected() {
@@ -272,38 +273,39 @@ extension EventDetailVC {
             if let detail = eventdetail {
                 // usee detail
                 self.eventDetail =  detail
-                self.arrCellType.append(0)
-                self.arrCellType.append(1)
-                self.arrCellType.append(2)
+                self.arrCellType.append(EventDetailScreenCell.BannerCell)
+                self.arrCellType.append(EventDetailScreenCell.EventTitleCell)
+                self.arrCellType.append(EventDetailScreenCell.ContactCell)
                 self.tableDetail.reloadData()
             }
             self.getEventAssets(eventId:(self.eventID)!)
         }
         
     }
-    ///////
+
     func getEventAssets(eventId:Int)  {
         
         EventService.getEventAssets(eventid: eventId) { (flag, assestList) in
             if let arrAssets = assestList {
                 // usee arrAssets
                 self.arrEventAssets = arrAssets
-                self.arrCellType.append(3)
+                self.arrCellType.append(EventDetailScreenCell.GalleryCell)
+                //                self.arrCellType.append(3)
                 self.tableDetail.reloadData()
             }
             self.getEventPlatforms(eventId:(self.eventID)!)
         }
         
     }
-    ///////
+
     func getEventPlatforms(eventId:Int)  {
         
         EventService.getEventPlatform(eventid: eventId) { (flag, platformList) in
             if let arrPlatforms = platformList {
                 // usee arrAssets
                 self.arrEventFlatform = arrPlatforms
-                if !self.arrCellType.contains(4){
-                    self.arrCellType.append(4)
+                if !self.arrCellType.contains(EventDetailScreenCell.ShareCell){
+                    self.arrCellType.append(EventDetailScreenCell.ShareCell)
                 }
                 self.tableDetail.reloadData()
             }
@@ -311,31 +313,34 @@ extension EventDetailVC {
         }
         
     }
-    ///////
+
     func getShowEventFAQs(eventId:Int)  {
         
         EventService.getEventFAQ(eventid: eventId) { (flag, faqs) in
             if let arrFAQs = faqs {
                 // usee arrFAQs
                 self.arrEventFaq = arrFAQs
-                if !self.arrCellType.contains(4){
-                    self.arrCellType.append(4)
+                if !self.arrCellType.contains(EventDetailScreenCell.ShareCell){
+                    self.arrCellType.append(EventDetailScreenCell.ShareCell)
                 }
-                self.tableDetail.reloadData()
-                self.getShowEventTermsConditions(eventId:(self.eventID)!)
+                
             }
+            //                self.tableDetail.reloadData()
+            
+            self.getShowEventTermsConditions(eventId:(self.eventID)!)
+            
         }
         
     }
-    ///////
+
     func getShowEventTermsConditions(eventId:Int)  {
         
         EventService.getEventTermsConditions(eventid: eventId) { (flag, tersNConditions) in
             if let arrTerms = tersNConditions {
                 //usee arrTerms
                 self.arrEventTermsCondition = arrTerms
-                if !self.arrCellType.contains(4){
-                    self.arrCellType.append(4)
+                if !self.arrCellType.contains(EventDetailScreenCell.ShareCell){
+                    self.arrCellType.append(EventDetailScreenCell.ShareCell)
                 }
                 
                 self.tableDetail.reloadData()
@@ -344,7 +349,6 @@ extension EventDetailVC {
         
     }
     
-    ///
     func getRegistrionId(eventId:Int)  {
         
         EventService.getRegistrationId(eventid: eventId) { (flag, regId) in
@@ -357,7 +361,6 @@ extension EventDetailVC {
         
     }
     
-    ///
     func isTicketBooked(eventId:Int,registrationid:Int)  {
         
         EventService.isTicketBooked(eventid: eventId, registrationid: registrationid) { (flag, status) in
@@ -368,10 +371,7 @@ extension EventDetailVC {
             }
             self.getEventDetail(eventId: eventId)
         }
-
+        
         
     }
-    
-    
-    
 }

@@ -67,7 +67,9 @@ class ShowMyEventLuckyDrawResult: NSObject,Mappable {
     var isprizecollected : String?
     var collectedby : String?
     var collectedon : String?
-    
+    var prizedescription : String?
+    var prizeworth:String?
+    var prizeimage:String?
     required init?(map: Map) {
     }
     
@@ -83,6 +85,9 @@ class ShowMyEventLuckyDrawResult: NSObject,Mappable {
         collectedby            <- map["collectedby"]
         collectedon            <- map["collectedon"]
         isprizecollected  <- map["isprizecollected"]
+          prizedescription  <- map["prizedescription"]
+          prizeworth  <- map["prizeworth"]
+        prizeimage  <- map["prizeimage"]
 
     }
 }

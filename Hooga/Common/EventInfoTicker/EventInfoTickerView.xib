@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventInfoTickerView" customModule="Hooga" customModuleProvider="target">
+            <connections>
+                <outlet property="lblEventLocation" destination="NES-bb-1ZE" id="Iv1-An-kHz"/>
+                <outlet property="lblEventTime" destination="8RM-zs-9ni" id="Bzy-lA-aEw"/>
+                <outlet property="lblEventTitle" destination="w6V-aj-YaJ" id="hqA-Np-1Kn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="XHh-Wt-E3z">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpU-rO-V5R" userLabel="EventDetail">
+                    <rect key="frame" x="20" y="6" width="335" height="65"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENTTITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6V-aj-YaJ" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENT LOACTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NES-bb-1ZE" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="19" width="335" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENT TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RM-zs-9ni" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="38" width="335" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="8RM-zs-9ni" firstAttribute="leading" secondItem="HpU-rO-V5R" secondAttribute="leading" id="8zA-3b-Xq7"/>
+                        <constraint firstItem="8RM-zs-9ni" firstAttribute="top" secondItem="NES-bb-1ZE" secondAttribute="bottom" constant="1" id="9kl-FW-DDG"/>
+                        <constraint firstAttribute="trailing" secondItem="w6V-aj-YaJ" secondAttribute="trailing" id="FHj-7J-MDK"/>
+                        <constraint firstItem="NES-bb-1ZE" firstAttribute="top" secondItem="w6V-aj-YaJ" secondAttribute="bottom" constant="1" id="IT7-bb-Ysh"/>
+                        <constraint firstAttribute="trailing" secondItem="NES-bb-1ZE" secondAttribute="trailing" id="MXu-7n-IAB"/>
+                        <constraint firstAttribute="height" constant="65" id="ROf-LM-Agn"/>
+                        <constraint firstItem="w6V-aj-YaJ" firstAttribute="top" secondItem="HpU-rO-V5R" secondAttribute="top" id="S2H-Zi-qF3"/>
+                        <constraint firstAttribute="trailing" secondItem="8RM-zs-9ni" secondAttribute="trailing" id="rq7-PQ-54X"/>
+                        <constraint firstItem="NES-bb-1ZE" firstAttribute="leading" secondItem="HpU-rO-V5R" secondAttribute="leading" id="twY-BR-K6q"/>
+                        <constraint firstItem="w6V-aj-YaJ" firstAttribute="leading" secondItem="HpU-rO-V5R" secondAttribute="leading" id="zbN-jF-hhD"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOR-6M-VyJ">
+                    <rect key="frame" x="0.0" y="79" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="bxp-Jm-jh6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.45098039220000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="eOR-6M-VyJ" firstAttribute="leading" secondItem="XHh-Wt-E3z" secondAttribute="leading" id="F6q-iV-ZWw"/>
+                <constraint firstItem="HpU-rO-V5R" firstAttribute="top" secondItem="pX8-rh-IOC" secondAttribute="top" constant="6" id="Hyx-el-oAU"/>
+                <constraint firstItem="HpU-rO-V5R" firstAttribute="leading" secondItem="pX8-rh-IOC" secondAttribute="leading" constant="20" id="KiA-Vn-tiH"/>
+                <constraint firstAttribute="bottom" secondItem="eOR-6M-VyJ" secondAttribute="bottom" id="aCd-aA-U1L"/>
+                <constraint firstItem="pX8-rh-IOC" firstAttribute="trailing" secondItem="eOR-6M-VyJ" secondAttribute="trailing" id="abx-pe-tWZ"/>
+                <constraint firstItem="pX8-rh-IOC" firstAttribute="trailing" secondItem="HpU-rO-V5R" secondAttribute="trailing" constant="20" id="tAy-Tg-DcR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="pX8-rh-IOC"/>
+            <point key="canvasLocation" x="24.5" y="-107"/>
+        </view>
+    </objects>
+</document>

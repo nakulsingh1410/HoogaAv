@@ -268,9 +268,17 @@ class LoginService{
                                 callback: @escaping (Bool,String) -> Void)  {
         
         
-        var profilePicData: Data?
+//        var profilePicData: Data?
+//        if let image = profilePic{
+//            profilePicData = UIImageJPEGRepresentation(image, 1.0)!
+//        }
+//
+        
+        var strBase64: String?
         if let image = profilePic{
-            profilePicData = UIImageJPEGRepresentation(image, 1.0)!
+            let imageData = UIImageJPEGRepresentation(image, 1.0)!
+            strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+            // print(strBase64)
         }
         
         guard  let userid = StorageModel.getUserData()?.userid else {return}
@@ -290,7 +298,7 @@ class LoginService{
         dictParam["address2"] = address2
         dictParam["city"] = city
         dictParam["postalcode"] = postalcode
-        dictParam["profilepic"] = profilePicData
+        dictParam["profilepic"] = strBase64
         dictParam["deviceid"] = "123"
         dictParam["gsmid"] = "123"
         

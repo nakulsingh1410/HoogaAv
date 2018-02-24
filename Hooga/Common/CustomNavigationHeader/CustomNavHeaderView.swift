@@ -19,7 +19,7 @@ class CustomNavHeaderView: UIView {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var titleHeader: UILabel!
     @IBOutlet weak var lblSeperatorLine: UILabel!
-    @IBOutlet weak var imgViewNavBar: UIImageView!
+//    @IBOutlet weak var imgViewNavBar: UIImageView!
     
     private var nibView:UIView!
     var viewController:UIViewController?
@@ -28,7 +28,7 @@ class CustomNavHeaderView: UIView {
     var backButtonType : BackButtonType?
     var customNavHeaderViewDelegate:CustomNavHeaderViewDelegate?
     var titleColor =  UIColor.white
-    var isNavBarTransparent = false
+    var isNavBarTransparent = true
     var isBottonLineHidden = true {
         didSet{
             lblSeperatorLine.isHidden = isBottonLineHidden
@@ -63,7 +63,7 @@ class CustomNavHeaderView: UIView {
         }
     }
     
-    private func setLeftMenu() {
+     func setLeftMenu() {
         if let title = navBarTitle{
             titleHeader.text = title
         }else{
@@ -75,11 +75,13 @@ class CustomNavHeaderView: UIView {
         lblSeperatorLine.isHidden = isBottonLineHidden
         if isNavBarTransparent{
             self.backgroundColor = UIColor.clear
-            imgViewNavBar.isHidden = true
+//            imgViewNavBar.isHidden = true
         }else{
-            self.backgroundColor = UIColor.white
-            imgViewNavBar.isHidden = false
+//            self.backgroundColor = UIColor.white
+//            imgViewNavBar.isHidden = false
         }
+        self.backgroundColor = UIColor.clear
+
         if let backType = backButtonType, backType == BackButtonType.LeftMenu ,let _ = viewController {
             leftButton.setTitle(nil, for: .normal)
             let  image = UIImage(named:"ic_menu_black_24dp")?.withRenderingMode(.alwaysTemplate)

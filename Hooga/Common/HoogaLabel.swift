@@ -20,9 +20,18 @@ class HoogaLabel: UILabel {
     override func awakeFromNib() {
         
         if let size = self.font?.pointSize{
-            self.font = Font.gillSansRegular(size: size)
+            if self.tag == 10 {
+                self.font = Font.gillSansSemiBold(size: size)
+            }else{
+                self.font = Font.gillSansRegular(size: size)
+            }
         }
-        self.text = self.text?.capitalized
+        
+        if let txt = text , txt != "DOB"{
+            self.text = self.text?.capitalized
+        }
+        
+       
     }
 
 }

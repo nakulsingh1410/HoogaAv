@@ -22,6 +22,22 @@ class BannerCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        selectionStyle = .none
+
+    }
+    
+    func loadCellData(eventDetail:EventDetail)  {
+        //"ORGANIZED BY: " +
+        labelOrganizedBY.text =  (eventDetail.organizer)
+        if let bnanner = eventDetail.bannerimage {
+            let url = kAssets + bnanner
+            imageViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
+                if image == nil {
+                    self.imageViewBanner.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                }
+            }
+            
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

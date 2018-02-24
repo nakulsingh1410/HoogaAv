@@ -11,6 +11,7 @@ import UIKit
 class ParticipateViewController: UIViewController {
     @IBOutlet weak var navHeaderView : CustomNavHeaderView!
     
+    @IBOutlet weak var eventTicketInfoView: EventInfoTickerView!
     @IBOutlet weak var tableView: UITableView!
     
     var arrTicketDetails =  [ShowMyTicketDetails]()
@@ -29,6 +30,7 @@ class ParticipateViewController: UIViewController {
     
     func initializeCalls()  {
         guard let evntdetail = eventDetail else{return}
+        eventTicketInfoView.loadTicketInfo(eventDetail: evntdetail, textColor: UIColor.black)
         if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{
             if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
                 showMyTicketDetailsAPI(eventId: eventId, regId: regid)
@@ -38,12 +40,18 @@ class ParticipateViewController: UIViewController {
             showRegistrationDetailsAPI(eventId:evntdetail.eventid!,registrationId:evntdetail.regid!)
         }
 
+
     }
     
     func configTableView()  {
         
-        let nib =  UINib(nibName: "ParticipateTableViewCell", bundle: Bundle(for: ParticipateTableViewCell.self))
-        tableView.register(nib, forCellReuseIdentifier: "ParticipateTableViewCell")
+//        let nib =  UINib(nibName: "ParticipateTableViewCell", bundle: Bundle(for: ParticipateTableViewCell.self))
+//        tableView.register(nib, forCellReuseIdentifier: "ParticipateTableViewCell")
+        
+        let nib =  UINib(nibName: "ParticipationTableViewCell", bundle: Bundle(for: ParticipationTableViewCell.self))
+        tableView.register(nib, forCellReuseIdentifier: "ParticipationTableViewCell")
+        
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0
         tableView.tableFooterView = UIView()
@@ -57,7 +65,7 @@ class ParticipateViewController: UIViewController {
     
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
-        navHeaderView.navBarTitle = "Lucky Draw Participates"
+        navHeaderView.navBarTitle = "Participation"
         navHeaderView.backButtonType = .Back
     }
     
@@ -86,9 +94,9 @@ extension ParticipateViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipateTableViewCell") as? ParticipateTableViewCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipationTableViewCell") as? ParticipationTableViewCell{
             cell.loadcellData(ticketDetails: arrTicketDetails[indexPath.row])
-            cell.participateTableViewCellDelegate = self
+            cell.participationCellDelegate = self
             return cell
         }
         return UITableViewCell()
@@ -190,13 +198,13 @@ extension ParticipateViewController{
 // MARK: ParticipateTableViewCellDelegate
 /*********************************************************************************/
 
-extension ParticipateViewController:ParticipateTableViewCellDelegate {
-    func participateDetailButtonTapped(cell: ParticipateTableViewCell) {
+extension ParticipateViewController:ParticipationTableViewCellDelegate {
+    func participateDetailButtonTapped(cell: ParticipationTableViewCell) {
         //
     }
     
     
-    func participateButtonTapped(cell:ParticipateTableViewCell){
+    func participateButtonTapped(cell:ParticipationTableViewCell){
        
         guard let evntdetail = eventDetail else{return}
         if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{

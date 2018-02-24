@@ -10,21 +10,28 @@ import UIKit
 
 class ParticipateDetailViewController: UIViewController {
     @IBOutlet weak var navHeaderView : CustomNavHeaderView!
-    
+    @IBOutlet weak var eventTicketInfoView: EventInfoTickerView!
+
     @IBOutlet weak var lblParticipateName: HoogaLabel!
-    @IBOutlet weak var lblLuckyDrawSequence: HoogaLabel!
-    @IBOutlet weak var lblLuckyDrawPrice: HoogaLabel!
-    @IBOutlet weak var lblIsPriceCollected: HoogaLabel!
+    @IBOutlet weak var lblLuckyDrawSequence: UILabel!
+    @IBOutlet weak var lblLuckyDrawPriceNWon: HoogaLabel!
+    @IBOutlet weak var lblPrizeDescription: HoogaLabel!
     @IBOutlet weak var lblPriceCollectedBy: HoogaLabel!
     @IBOutlet weak var lblCollectedOn: HoogaLabel!
+    @IBOutlet weak var imgViewPrize: UIImageView!
     
     var  participateDetail: ShowMyEventLuckyDrawResult?
+    var eventDetail : EventDetail?
     let fontSize:CGFloat = 17
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configoreNavigationHeader()
          loadParticiapteData()
+        
+        if let eventDetail =  eventDetail {
+            eventTicketInfoView.loadTicketInfo(eventDetail: eventDetail, textColor: UIColor.black)
+        }
         
     }
     func configoreNavigationHeader()  {
@@ -37,17 +44,19 @@ class ParticipateDetailViewController: UIViewController {
     func loadParticiapteData()  {
         lblParticipateName.text = ""
         lblLuckyDrawSequence.text =  ""
-        lblLuckyDrawPrice.text =    ""
+        lblLuckyDrawPriceNWon.text =    ""
         lblPriceCollectedBy.text =   ""
         lblCollectedOn.text = ""
-        lblIsPriceCollected.text = ""
-        
-        lblParticipateName.font = Font.gillSansSemiBold(size: fontSize)
-        lblLuckyDrawSequence.font = Font.gillSansSemiBold(size: fontSize)
-        lblLuckyDrawPrice.font = Font.gillSansSemiBold(size: fontSize)
-        lblPriceCollectedBy.font = Font.gillSansSemiBold(size: fontSize)
-        lblCollectedOn.font = Font.gillSansSemiBold(size: fontSize)
-        lblIsPriceCollected.font = Font.gillSansSemiBold(size: fontSize)
+        lblPrizeDescription.text = ""
+        lblLuckyDrawSequence.font = Font.gillSansSemiBold(size: 30)
+        lblLuckyDrawSequence.layer.cornerRadius = 5.0
+        lblLuckyDrawSequence.clipsToBounds = true
+//        lblParticipateName.font = Font.gillSansSemiBold(size: fontSize)
+//        lblLuckyDrawSequence.font = Font.gillSansSemiBold(size: fontSize)
+//        lblLuckyDrawPriceNWon.font = Font.gillSansSemiBold(size: fontSize)
+//        lblPriceCollectedBy.font = Font.gillSansSemiBold(size: fontSize)
+//        lblCollectedOn.font = Font.gillSansSemiBold(size: fontSize)
+//        lblPrizeDescription.font = Font.gillSansSemiBold(size: fontSize)
 
         if let data = participateDetail{
             if let string = data.firstName {
@@ -59,19 +68,39 @@ class ParticipateDetailViewController: UIViewController {
             if let string = data.luckydrawsequence {
                 lblLuckyDrawSequence.text =  string
             }
+            var strPriceWorth = ""
             if let string = data.luckydrawprize {
-                lblLuckyDrawPrice.text =    string
+                strPriceWorth =    string
             }
+            if let string = data.prizeworth {
+                strPriceWorth = strPriceWorth + " - " + string
+            }
+            lblLuckyDrawPriceNWon.text = strPriceWorth
+            
             if let string = data.collectedby {
                 lblPriceCollectedBy.text =   string
             }
             if let string = data.collectedon {
                 lblCollectedOn.text = string.components(separatedBy: " ").first
             }
-            if let string = data.isprizecollected {
-                lblIsPriceCollected.text = string
+            if let string = data.prizedescription {
+                lblPrizeDescription.text = string
             }
-        }
+            
+         
+                if let path = data.prizeimage {
+                    let url = kAssets + path
+                    imgViewPrize.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){[weak self] (image, error, cacheType, url) in
+                        guard let weakSelf = self else {return}
+                        if image == nil {
+                            weakSelf.imgViewPrize.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                        }
+                    }
+                }else{
+                    imgViewPrize.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                }
+            }
+        
     }
     
     override func didReceiveMemoryWarning() {

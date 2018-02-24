@@ -33,6 +33,15 @@ class NavigationManager {
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
+    class func navigateToLongDescription(navigationController:UINavigationController?,longDescription:String){
+        let storyboard = UIStoryboard(name: "EventDetail", bundle:  Bundle(for: MyEventViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "LongDescriptionViewController") as? LongDescriptionViewController{
+            vcObj.longDescription = longDescription
+            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    
+    
     
     
     class func userRegistration(navigationController:UINavigationController?,screenShown:RequestForScreen){
@@ -174,10 +183,11 @@ class NavigationManager {
         }
     }
     
-    class func participateDetail(navigationController:UINavigationController? , participateDetail: ShowMyEventLuckyDrawResult){
+    class func participateDetail(navigationController:UINavigationController? , participateDetail: ShowMyEventLuckyDrawResult,eventDetail:EventDetail){
         let storyboard = UIStoryboard(name: "LuckyDraw", bundle:  Bundle(for: ParticipateDetailViewController.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "ParticipateDetailViewController") as? ParticipateDetailViewController{
             vcObj.participateDetail = participateDetail
+            vcObj.eventDetail = eventDetail
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }

@@ -19,6 +19,8 @@ protocol ShareCellDelegate {
 }
 class ShareCell: UITableViewCell {
     
+    @IBOutlet weak var btnFAQs: UIButton!
+    @IBOutlet weak var btnTermsNCondition: UIButton!
     @IBOutlet weak var buttonInsta: SocialButton!
     @IBOutlet weak var buttnFaceBook: SocialButton!
     @IBOutlet weak var buttonGoogle: SocialButton!
@@ -47,12 +49,30 @@ class ShareCell: UITableViewCell {
     }
     
     
+//    func loadCellData()  {
+//        
+//        let cellShare = tableView.dequeueReusableCell(withIdentifier: ShareCell.identifier) as! ShareCell
+//        if arrEventFlatform.count > 0{
+//            cellSharePlateForm(cell: cellShare)
+//        }
+//        cellShare.delegate = self
+//        cellShare.selectionStyle = .none
+//        if let regId = eventDetail?.regid , regId > 0{
+//            cellShare.buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
+//        }else{
+//            cellShare.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
+//        }
+//        cellShare.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked)
+//        
+//    }
+    
+    
     func showShareCell(isComingFrom:ComingFromScreen,isTicketBooked :Bool)  {
         if isComingFrom == ComingFromScreen.eventListing {
             viewTicketViewHeightConstraint.constant = 0
             //            buttonregister.isHidden = false
         }else{
-            viewTicketViewHeightConstraint.constant = 45
+            viewTicketViewHeightConstraint.constant = 112
             //            buttonregister.isHidden = true
             if isTicketBooked{
                 btnViewTicket.isHidden = false

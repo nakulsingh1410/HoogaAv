@@ -70,10 +70,8 @@ class LuckyDrawVC: UIViewController {
     func loadDefaultValues()  {
         
         if let evetDtl = eventDetail{
-
             lblEventTitle.text = evetDtl.title
             lblEventLocation.text = evetDtl.eventlocation?.trim()
-                        
             let date = Common.getDateString(strDate:evetDtl.startdate) //+ " - " + Common.getDateString(strDate:evetDtl.enddate)
             let time = Common.getDateString(strDate:evetDtl.starttime) //+ " - " + Common.getDateString(strDate:eventDetail?.endtime)
             lblEventTime.text =  date + " | " + time
@@ -84,18 +82,23 @@ class LuckyDrawVC: UIViewController {
     
     
     func showLuckyDrawData()  {
+        lblDeadLine.text = ""
+        lblLocation.text = ""
+        lblConductedOn.text = ""
+        lblConductedBy.text =  ""
+
         if let data = showMyEventLuckyDraw{
             
-            if let string = data.entrydeadline{
+            if let string = data.entrydeadline?.trim(),string.length > 0{
                 lblDeadLine.text = "Deadline: " + string
             }
-            if let string = data.location{
+            if let string = data.location?.trim(),string.length > 0{
                 lblLocation.text = "Location: "  + string
             }
-            if let string = data.heldon{
+            if let string = data.heldon?.trim(),string.length > 0{
                 lblConductedOn.text = "Conducted On: " + string
             }
-            if let string = data.conductedby{
+            if let string = data.conductedby?.trim(),string.length > 0{
                 lblConductedBy.text =  "Conducted By: " + string
             }
         }

@@ -9,9 +9,9 @@
 import UIKit
 
 class ContactCell: UITableViewCell {
+    @IBOutlet weak var labelContactInfoLabel: UILabel!
 
     @IBOutlet weak var labelPhoneNumber: UILabel!
-    
     @IBOutlet weak var labelEmailAddress: UILabel!
     
     
@@ -25,7 +25,26 @@ class ContactCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        selectionStyle = .none
     }
+    
+    func loadCellData(eventDetail:EventDetail)  {
+        labelPhoneNumber.text = ""
+        labelEmailAddress.text = ""
+        var flag = true
+        if let organizerphone = eventDetail.organizerphone {
+            labelPhoneNumber.text = organizerphone
+            flag = false
+        }
+        if let organizeremail = eventDetail.organizeremail {
+            labelEmailAddress.text = organizeremail
+            flag = false
+        }
+        if flag {
+            labelContactInfoLabel.text = ""
+        }
+    }
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

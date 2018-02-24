@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -434,23 +435,11 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0E-r8-rR7">
-                            <rect key="frame" x="20" y="241.5" width="335" height="35"/>
+                            <rect key="frame" x="20" y="241.5" width="335" height="40"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WzB-zW-W36">
-                                    <rect key="frame" x="167" y="0.0" width="1" height="35"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="1" id="59A-D2-gkS"/>
-                                        <constraint firstAttribute="height" constant="35" id="X8c-LR-jnk"/>
-                                    </constraints>
-                                </view>
                                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28A-P4-uks" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                    <rect key="frame" x="57" y="0.0" width="70" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
                                     <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="ctM-0s-G9W"/>
-                                        <constraint firstAttribute="width" constant="70" id="wus-xt-bpG"/>
-                                    </constraints>
                                     <state key="normal" title="Submit">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -458,28 +447,13 @@
                                         <action selector="buttonSubmit_didPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bec-jH-sDP"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYJ-7C-ie4" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                    <rect key="frame" x="208" y="0.0" width="64" height="35"/>
-                                    <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="dgG-yY-7Ie"/>
-                                    </constraints>
-                                    <state key="normal" title="  Cancel  ">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="buttonCancel_didPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="f4P-pF-AFo"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="WzB-zW-W36" firstAttribute="top" secondItem="e0E-r8-rR7" secondAttribute="top" id="87R-ka-g9m"/>
-                                <constraint firstItem="WzB-zW-W36" firstAttribute="leading" secondItem="28A-P4-uks" secondAttribute="trailing" constant="40" id="EfZ-Fv-WMi"/>
-                                <constraint firstItem="WzB-zW-W36" firstAttribute="centerX" secondItem="e0E-r8-rR7" secondAttribute="centerX" id="POr-J9-OjL"/>
-                                <constraint firstItem="TYJ-7C-ie4" firstAttribute="leading" secondItem="WzB-zW-W36" secondAttribute="trailing" constant="40" id="fkF-8C-w4y"/>
-                                <constraint firstItem="TYJ-7C-ie4" firstAttribute="top" secondItem="e0E-r8-rR7" secondAttribute="top" id="hMI-fo-Ec4"/>
-                                <constraint firstAttribute="height" constant="35" id="nSf-F0-wei"/>
+                                <constraint firstItem="28A-P4-uks" firstAttribute="leading" secondItem="e0E-r8-rR7" secondAttribute="leading" id="G8D-ou-lQE"/>
+                                <constraint firstAttribute="trailing" secondItem="28A-P4-uks" secondAttribute="trailing" id="MHk-pT-xdQ"/>
+                                <constraint firstAttribute="bottom" secondItem="28A-P4-uks" secondAttribute="bottom" id="lyo-Jt-uqp"/>
+                                <constraint firstAttribute="height" constant="40" id="nSf-F0-wei"/>
                                 <constraint firstItem="28A-P4-uks" firstAttribute="top" secondItem="e0E-r8-rR7" secondAttribute="top" id="w5P-zL-51a"/>
                             </constraints>
                         </view>

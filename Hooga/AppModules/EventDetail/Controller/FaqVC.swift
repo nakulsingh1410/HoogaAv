@@ -36,8 +36,8 @@ class FaqVC: UIViewController {
             labelTitle.text = "Terms & Conditions"
         }
        // tableFaq.register(FaqCell.self, forCellReuseIdentifier: FaqCell.identifier)
-        tableFaq.rowHeight = 300
-        tableFaq.estimatedRowHeight = UITableViewAutomaticDimension
+        tableFaq.rowHeight = UITableViewAutomaticDimension
+        tableFaq.estimatedRowHeight = 44
         tableFaq.tableFooterView = UIView()
         tableFaq.delegate     = self
         tableFaq.dataSource = self

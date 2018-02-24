@@ -10,7 +10,8 @@ import UIKit
 
 class ParticipantResultViewController: UIViewController {
     @IBOutlet weak var navHeaderView : CustomNavHeaderView!
-    
+    @IBOutlet weak var eventTicketInfoView: EventInfoTickerView!
+
     @IBOutlet weak var tableView: UITableView!
     var arrMyEventluckyDrawResult = [ShowMyEventLuckyDrawResult]()
     var eventDetail :EventDetail?
@@ -24,6 +25,8 @@ class ParticipantResultViewController: UIViewController {
     }
     func initializeCalls()  {
         guard let evntdetail = eventDetail else{return}
+        eventTicketInfoView.loadTicketInfo(eventDetail: evntdetail, textColor: UIColor.black)
+
         if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{
             if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
                 showMyEventLuckyDrawResultAPI(eventId: eventId, regId: regid)
@@ -47,8 +50,8 @@ class ParticipantResultViewController: UIViewController {
         navHeaderView.backButtonType = .Back
     }
     func configTableView()  {
-        let nib =  UINib(nibName: "ParticipateTableViewCell", bundle: Bundle(for: ParticipateTableViewCell.self))
-        tableView.register(nib, forCellReuseIdentifier: "ParticipateTableViewCell")
+        let nib =  UINib(nibName: "ParticipationTableViewCell", bundle: Bundle(for: ParticipationTableViewCell.self))
+        tableView.register(nib, forCellReuseIdentifier: "ParticipationTableViewCell")
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44.0
         tableView.tableFooterView = UIView()
@@ -68,9 +71,9 @@ extension ParticipantResultViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipateTableViewCell") as? ParticipateTableViewCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipationTableViewCell") as? ParticipationTableViewCell{
             cell.loadParticipateResultCellData(result: arrMyEventluckyDrawResult[indexPath.row])
-            cell.participateTableViewCellDelegate = self
+            cell.participationCellDelegate = self
             return cell
         }
         return UITableViewCell()
@@ -125,14 +128,14 @@ extension ParticipantResultViewController {
 // MARK: ParticipateTableViewCellDelegate
 /*********************************************************************************/
 
-extension ParticipantResultViewController:ParticipateTableViewCellDelegate {
-    func participateDetailButtonTapped(cell: ParticipateTableViewCell) {
+extension ParticipantResultViewController:ParticipationTableViewCellDelegate {
+    func participateDetailButtonTapped(cell: ParticipationTableViewCell) {
         //
         if let result = cell.showMyEventLuckyDrawResult {
-             NavigationManager.participateDetail(navigationController: navigationController, participateDetail: result)
+            NavigationManager.participateDetail(navigationController: navigationController, participateDetail: result,eventDetail:eventDetail!)
         }
     }
-    func participateButtonTapped(cell:ParticipateTableViewCell){
+    func participateButtonTapped(cell:ParticipationTableViewCell){
         //
     }
     

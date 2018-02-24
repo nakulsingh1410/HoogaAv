@@ -50,6 +50,11 @@
 		305471DE202092650009A8EC /* OpenImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471DD202092650009A8EC /* OpenImagePickerViewController.swift */; };
 		305471ED20213B3B0009A8EC /* EventRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305471EC20213B3B0009A8EC /* EventRegistration.storyboard */; };
 		305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */; };
+		306E699620419DCA00A4298A /* LongDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E699520419DCA00A4298A /* LongDescriptionViewController.swift */; };
+		306E69992041E02E00A4298A /* EventInfoTickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306E69982041E02E00A4298A /* EventInfoTickerView.xib */; };
+		306E699B2041E05100A4298A /* EventInfoTickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E699A2041E05100A4298A /* EventInfoTickerView.swift */; };
+		306E699E2041E7E400A4298A /* ParticipationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E699C2041E7E400A4298A /* ParticipationTableViewCell.swift */; };
+		306E699F2041E7E400A4298A /* ParticipationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306E699D2041E7E400A4298A /* ParticipationTableViewCell.xib */; };
 		3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207C202A110A00C085C5 /* ParticipateModel.swift */; };
 		307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D68202A20DD00CD105B /* QRCodeModel.swift */; };
 		30908C292031ACC100FD7501 /* OtherPaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30908C282031ACC100FD7501 /* OtherPaymentView.xib */; };
@@ -229,6 +234,11 @@
 		305471DD202092650009A8EC /* OpenImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenImagePickerViewController.swift; sourceTree = "<group>"; };
 		305471EC20213B3B0009A8EC /* EventRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventRegistration.storyboard; sourceTree = "<group>"; };
 		305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegisterationViewController.swift; sourceTree = "<group>"; };
+		306E699520419DCA00A4298A /* LongDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongDescriptionViewController.swift; sourceTree = "<group>"; };
+		306E69982041E02E00A4298A /* EventInfoTickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventInfoTickerView.xib; sourceTree = "<group>"; };
+		306E699A2041E05100A4298A /* EventInfoTickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoTickerView.swift; sourceTree = "<group>"; };
+		306E699C2041E7E400A4298A /* ParticipationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationTableViewCell.swift; sourceTree = "<group>"; };
+		306E699D2041E7E400A4298A /* ParticipationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipationTableViewCell.xib; sourceTree = "<group>"; };
 		3078207C202A110A00C085C5 /* ParticipateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateModel.swift; sourceTree = "<group>"; };
 		307A0D68202A20DD00CD105B /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
 		30908C282031ACC100FD7501 /* OtherPaymentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPaymentView.xib; sourceTree = "<group>"; };
@@ -451,6 +461,7 @@
 		301B86632007452900DA7855 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				306E69972041DFEC00A4298A /* EventInfoTicker */,
 				30EA5FB0201EF19D009D4278 /* CustomNavigationHeader */,
 				30EA5FAC201E29BB009D4278 /* Color.swift */,
 				30D77BDF200B361F00386438 /* Constarints.swift */,
@@ -624,6 +635,8 @@
 				3026798420356800005B4442 /* ParticipateViewController.swift */,
 				3026798F203568B1005B4442 /* FilterTableFooterView.swift */,
 				3026798E203568B1005B4442 /* FilterTableFooterView.xib */,
+				306E699C2041E7E400A4298A /* ParticipationTableViewCell.swift */,
+				306E699D2041E7E400A4298A /* ParticipationTableViewCell.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -660,6 +673,15 @@
 				305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		306E69972041DFEC00A4298A /* EventInfoTicker */ = {
+			isa = PBXGroup;
+			children = (
+				306E69982041E02E00A4298A /* EventInfoTickerView.xib */,
+				306E699A2041E05100A4298A /* EventInfoTickerView.swift */,
+			);
+			path = EventInfoTicker;
 			sourceTree = "<group>";
 		};
 		30C33E4A2011CF45008C5826 /* Model */ = {
@@ -984,6 +1006,7 @@
 				7530D961201FE3DF00B9BB52 /* SocialButton.swift */,
 				7530D963201FECA100B9BB52 /* FaqVC.swift */,
 				7530D965201FECF100B9BB52 /* FaqCell.swift */,
+				306E699520419DCA00A4298A /* LongDescriptionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1164,6 +1187,7 @@
 				30348FFC201CF8EC00A2CDA1 /* loader2.gif in Resources */,
 				30EA5F88201D799C009D4278 /* CustomPickerView.xib in Resources */,
 				30D77B9B200B217E00386438 /* GillSans.ttc in Resources */,
+				306E69992041E02E00A4298A /* EventInfoTickerView.xib in Resources */,
 				7530D956201F888300B9BB52 /* ContactCell.xib in Resources */,
 				30267990203568B1005B4442 /* FilterTableFooterView.xib in Resources */,
 				3026790920347361005B4442 /* CustomSplash.storyboard in Resources */,
@@ -1192,6 +1216,7 @@
 				30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */,
 				3026798B20356800005B4442 /* ParticipateTableViewCell.xib in Resources */,
 				30D77BF4200B36B400386438 /* DataTableViewCell.xib in Resources */,
+				306E699F2041E7E400A4298A /* ParticipationTableViewCell.xib in Resources */,
 				301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */,
 				30D77BF0200B36B400386438 /* SlideMenu.storyboard in Resources */,
 				7530D95F201F888300B9BB52 /* ShareCell.xib in Resources */,
@@ -1456,6 +1481,7 @@
 				30EA5FB4201EF1C5009D4278 /* CustomNavHeaderView.swift in Sources */,
 				75DB799A20263D8500D4B1A6 /* CreditCardCell.swift in Sources */,
 				75959D9E2022B0EE00DC307A /* HLFont.swift in Sources */,
+				306E699620419DCA00A4298A /* LongDescriptionViewController.swift in Sources */,
 				75E2096A20292EA900817905 /* SavePaymentDetail.swift in Sources */,
 				3026798D20356800005B4442 /* ParticipateViewController.swift in Sources */,
 				30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */,
@@ -1477,9 +1503,11 @@
 				30ED06192020833100D354BE /* HoogaView.swift in Sources */,
 				754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */,
 				7530D953201F888300B9BB52 /* BannerCell.swift in Sources */,
+				306E699E2041E7E400A4298A /* ParticipationTableViewCell.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,
 				302679A420356FD5005B4442 /* DetailHeaderView.swift in Sources */,
 				3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */,
+				306E699B2041E05100A4298A /* EventInfoTickerView.swift in Sources */,
 				301BF2222023888C0099ADD9 /* MyEventModel.swift in Sources */,
 				30D77C212010891900386438 /* EventListViewController.swift in Sources */,
 				30EA5F92201D9B3B009D4278 /* NavigationManager.swift in Sources */,
@@ -1574,7 +1602,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2aa9f45c-2306-421b-b3dd-52c97b47afe0";
+				PROVISIONING_PROFILE = "04bbe3ee-f263-49b2-8281-eef4ee32adf4";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1611,7 +1639,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Mind Master Solutions Pte Ltd (U8E7VTBHLX)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mind Master Solutions Pte Ltd (T3PHT66QH7)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1626,7 +1654,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "2aa9f45c-2306-421b-b3dd-52c97b47afe0";
+				PROVISIONING_PROFILE = "ef355335-e32a-477d-a7e6-a034e4e71df4";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
@@ -1640,6 +1668,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mind Master Solutions Pte Ltd (U8E7VTBHLX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T3PHT66QH7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1651,15 +1680,15 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
 				);
 				INFOPLIST_FILE = Hooga/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mindmaster.hooga;
+				PRODUCT_BUNDLE_IDENTIFIER = plus.mindmaster.hooga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a40de6f3-8eec-471f-be9e-b85cfe38ddd3";
-				PROVISIONING_PROFILE_SPECIFIER = HoogaDeveloper30Jan18;
+				PROVISIONING_PROFILE = "04bbe3ee-f263-49b2-8281-eef4ee32adf4";
+				PROVISIONING_PROFILE_SPECIFIER = HoogaPlus22Feb;
 				SWIFT_VERSION = 4.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1668,7 +1697,8 @@
 			baseConfigurationReference = 6D665E74FE8F852E0924AC9A /* Pods-Hooga.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Mind Master Solutions Pte Ltd (U8E7VTBHLX)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mind Master Solutions Pte Ltd (T3PHT66QH7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T3PHT66QH7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1680,15 +1710,15 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
 				);
 				INFOPLIST_FILE = Hooga/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mindmaster.hooga;
+				PRODUCT_BUNDLE_IDENTIFIER = plus.mindmaster.hooga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a40de6f3-8eec-471f-be9e-b85cfe38ddd3";
-				PROVISIONING_PROFILE_SPECIFIER = HoogaDeveloper30Jan18;
+				PROVISIONING_PROFILE = "ef355335-e32a-477d-a7e6-a034e4e71df4";
+				PROVISIONING_PROFILE_SPECIFIER = Hooga;
 				SWIFT_VERSION = 4.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
