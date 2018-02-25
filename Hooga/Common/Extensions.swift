@@ -409,6 +409,9 @@ extension Data {
             string + String(format: "%02X", byte)
         }
     }
+    var bytes : [UInt8]{
+        return [UInt8](self)
+    }
 }
 
 //MARK:- Mappable

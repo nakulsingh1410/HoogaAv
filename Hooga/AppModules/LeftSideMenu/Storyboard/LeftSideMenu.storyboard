@@ -435,22 +435,42 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFm-BL-NyH" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="125" y="0.0" width="210" height="30"/>
+                                                <rect key="frame" x="180" y="0.0" width="155" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GnN-kk-mAP" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                                                <rect key="frame" x="125" y="0.0" width="45" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="0hX-u2-UtF"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajw-io-yYd">
+                                                <rect key="frame" x="123" y="0.0" width="45" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="btnCountryCodeTapped:" destination="Ez6-Na-RmD" eventType="touchUpInside" id="TuH-CG-srZ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="jFm-BL-NyH" firstAttribute="leading" secondItem="FB7-3o-1bt" secondAttribute="trailing" constant="10" id="3Tn-tg-J9h"/>
+                                            <constraint firstItem="GnN-kk-mAP" firstAttribute="top" secondItem="izc-dZ-YvD" secondAttribute="top" id="Dt3-1n-xjc"/>
                                             <constraint firstItem="FB7-3o-1bt" firstAttribute="leading" secondItem="izc-dZ-YvD" secondAttribute="leading" id="YJR-BY-1zN"/>
                                             <constraint firstItem="FB7-3o-1bt" firstAttribute="centerY" secondItem="izc-dZ-YvD" secondAttribute="centerY" id="ZGm-Dh-p2j"/>
                                             <constraint firstAttribute="bottom" secondItem="jFm-BL-NyH" secondAttribute="bottom" id="aH1-V0-scf"/>
                                             <constraint firstAttribute="height" constant="30" id="b7W-ym-N5k"/>
+                                            <constraint firstItem="GnN-kk-mAP" firstAttribute="leading" secondItem="FB7-3o-1bt" secondAttribute="trailing" constant="10" id="gC3-ET-ddI"/>
                                             <constraint firstAttribute="trailing" secondItem="jFm-BL-NyH" secondAttribute="trailing" id="lSP-WY-ccs"/>
+                                            <constraint firstItem="jFm-BL-NyH" firstAttribute="leading" secondItem="GnN-kk-mAP" secondAttribute="trailing" constant="10" id="wb3-Bx-VcZ"/>
                                             <constraint firstItem="jFm-BL-NyH" firstAttribute="top" secondItem="izc-dZ-YvD" secondAttribute="top" id="xzY-HD-vuZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="GnN-kk-mAP" secondAttribute="bottom" id="zls-H6-Syn"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW4-dj-yyR" userLabel="Email">
@@ -490,7 +510,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImg" translatesAutoresizingMaskIntoConstraints="NO" id="Li4-Um-O4k">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImg" translatesAutoresizingMaskIntoConstraints="NO" id="Li4-Um-O4k">
                                                 <rect key="frame" x="180" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -510,17 +530,27 @@
                                                     <action selector="btnUploadTapped:" destination="Ez6-Na-RmD" eventType="touchUpInside" id="Fih-n7-t3O"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNt-SS-X7e">
+                                                <rect key="frame" x="180" y="0.0" width="100" height="100"/>
+                                                <connections>
+                                                    <action selector="btnUploadTapped:" destination="Ez6-Na-RmD" eventType="touchUpInside" id="ZMG-LG-sbm"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="QNt-SS-X7e" firstAttribute="bottom" secondItem="Li4-Um-O4k" secondAttribute="bottom" id="5K3-i5-6Jl"/>
+                                            <constraint firstItem="QNt-SS-X7e" firstAttribute="trailing" secondItem="Li4-Um-O4k" secondAttribute="trailing" id="GJA-rB-xL4"/>
                                             <constraint firstItem="1Wv-xZ-F5E" firstAttribute="centerY" secondItem="Li4-Um-O4k" secondAttribute="centerY" id="GTb-XZ-67H"/>
                                             <constraint firstItem="Li4-Um-O4k" firstAttribute="top" secondItem="Ajo-u4-aza" secondAttribute="top" id="MoR-el-Fl5"/>
                                             <constraint firstAttribute="height" constant="100" id="NjR-Jg-pNH"/>
                                             <constraint firstItem="1Wv-xZ-F5E" firstAttribute="centerX" secondItem="Li4-Um-O4k" secondAttribute="centerX" id="RS9-Wp-IwR"/>
+                                            <constraint firstItem="QNt-SS-X7e" firstAttribute="top" secondItem="Li4-Um-O4k" secondAttribute="top" id="buJ-e2-W2u"/>
                                             <constraint firstAttribute="bottom" secondItem="Li4-Um-O4k" secondAttribute="bottom" id="dYA-MN-ttI"/>
                                             <constraint firstItem="Li4-Um-O4k" firstAttribute="leading" secondItem="x3r-1l-vO8" secondAttribute="trailing" constant="40" id="iiD-fg-Bjs"/>
                                             <constraint firstItem="x3r-1l-vO8" firstAttribute="leading" secondItem="Ajo-u4-aza" secondAttribute="leading" id="qpV-YQ-C14"/>
                                             <constraint firstItem="x3r-1l-vO8" firstAttribute="centerY" secondItem="Ajo-u4-aza" secondAttribute="centerY" id="yIo-Zi-8p1"/>
+                                            <constraint firstItem="QNt-SS-X7e" firstAttribute="leading" secondItem="Li4-Um-O4k" secondAttribute="leading" id="ynK-CG-Jd9"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLG-fg-nbH" userLabel="Address1">
@@ -747,6 +777,7 @@
                         <outlet property="txtFAddress1" destination="Cfk-tN-QyV" id="8ar-GT-skB"/>
                         <outlet property="txtFAddress2" destination="8nc-Py-k6u" id="pW9-rm-Ctu"/>
                         <outlet property="txtFCity" destination="h4a-L6-HgG" id="AoC-G5-4AE"/>
+                        <outlet property="txtFCountryCode" destination="GnN-kk-mAP" id="dQ8-Ds-tFW"/>
                         <outlet property="txtFDOB" destination="qWJ-cK-XVM" id="abV-az-0k9"/>
                         <outlet property="txtFEmail" destination="fad-4U-geB" id="bzZ-A4-59q"/>
                         <outlet property="txtFFirstName" destination="N16-OI-4oe" id="rF3-Qc-Icw"/>

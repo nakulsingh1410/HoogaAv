@@ -30,6 +30,7 @@ class LoginResponseDto: NSObject,Mappable,NSCoding {
         var isfirsttimeuser : String?
         var status : String?
         var Message : String?
+        var countrycode:String?
     
     override init() {
         
@@ -53,6 +54,7 @@ class LoginResponseDto: NSObject,Mappable,NSCoding {
         isfirsttimeuser     <- map["isfirsttimeuser"]
         status              <- map["status"]
         Message             <- map["Message"]
+        countrycode <- map["countrycode"]
     }
     
     public func mapping(map: Map) {
@@ -74,6 +76,8 @@ class LoginResponseDto: NSObject,Mappable,NSCoding {
         isfirsttimeuser     <- map["isfirsttimeuser"]
         status              <- map["status"]
         Message             <- map["Message"]
+        countrycode <- map["countrycode"]
+
     }
     
     
@@ -94,6 +98,8 @@ class LoginResponseDto: NSObject,Mappable,NSCoding {
         isfirsttimeuser =  aDecoder.decodeObject(forKey: "isfirsttimeuser") as? String
         status =  aDecoder.decodeObject(forKey: "status") as? String
         Message =  aDecoder.decodeObject(forKey: "Message") as? String
+        countrycode =  aDecoder.decodeObject(forKey: "countrycode") as? String
+
     }
     
     func encode(with aCoder: NSCoder) {
@@ -114,6 +120,8 @@ class LoginResponseDto: NSObject,Mappable,NSCoding {
         aCoder.encode(isfirsttimeuser, forKey: "isfirsttimeuser")
         aCoder.encode(status, forKey: "status")
         aCoder.encode(Message, forKey: "Message")
+        aCoder.encode(countrycode, forKey: "countrycode")
+
         
     }
 }

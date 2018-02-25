@@ -15,7 +15,8 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var txtFLastName: HoogaTextField!
     @IBOutlet weak var txtFGender: HoogaTextField!
     @IBOutlet weak var txtFPhoneNumber: HoogaTextField!
-    
+    @IBOutlet weak var txtFCountryCode: HoogaTextField!
+
     @IBOutlet weak var txtFDOB: HoogaTextField!
     @IBOutlet weak var txtFEmail: HoogaTextField!
     @IBOutlet weak var txtFAddress1: HoogaTextField!
@@ -31,6 +32,8 @@ class MyProfileViewController: UIViewController {
     
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
     var arrCity = ["Singapore"]
+    var arrCountryCode = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configoreNavigationHeader()
@@ -69,18 +72,32 @@ class MyProfileViewController: UIViewController {
             txtFAddress2.text = userData.address2
             txtFCity.text = userData.city
             txtFPostalCode.text = userData.postalcode
+            if let countryCode =  userData.countrycode{
+                txtFCountryCode.text = countryCode
+            }else{
+                txtFCountryCode.text = "65"
+            }
             
             if let profilepic = userData.profilepic {
                 let url = kUserImageBaseUrl + profilepic
                 imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                     if image == nil {
                         self.btnUpload.isHidden = false
+                    }else{
+                        self.btnUpload.isHidden = true
                     }
                 }
-                
             }
         }
-        
+        loadCountryData()
+    }
+    
+    private func loadCountryData(){
+        if let codes = appDelegate.arrCountryCode {
+            arrCountryCode = codes.map({$0.Code! + " - " +  $0.Country! })
+        }else{
+            getCountryCodeAPI()
+        }
     }
 
     private func openGenderPicker(){
@@ -106,6 +123,16 @@ class MyProfileViewController: UIViewController {
             picker.frame = view.frame
             picker.customDatePickerDelegate = self
             
+            view.addSubview(picker)
+        }
+    }
+    
+    private func openCountryCodePicker(){
+        if let picker = CustomPickerView.loadPickerView(){
+            picker.frame = view.frame
+            picker.pickerType = .countryCode
+            picker.pickerDataSource = arrCountryCode
+            picker.customPickerViewDelegate = self
             view.addSubview(picker)
         }
     }
@@ -199,6 +226,12 @@ class MyProfileViewController: UIViewController {
          view.endEditing(true)
         
     }
+    @IBAction func btnCountryCodeTapped(_ sender: Any) {
+        view.endEditing(true)
+        if arrCountryCode.count > 0{
+            openCountryCodePicker()
+        }
+    }
     @IBAction func btnCancelTapped(_ sender: Any) {
          view.endEditing(true)
         txtFFirstName.text = ""
@@ -227,6 +260,11 @@ extension MyProfileViewController:CustomPickerViewDelegate{
         if let type = pickerType , type == .cityPicker {
             txtFCity.text = title
         }
+        if let type = pickerType , type == .countryCode {
+            if let code = appDelegate.arrCountryCode?[index].Code{
+                txtFCountryCode.text = code
+            }
+        }      
     }
 }
 
@@ -251,6 +289,7 @@ extension MyProfileViewController{
                                      gender: txtFGender.text!,
                                      dateofbirth: txtFDOB.text!,
                                      handphone: txtFPhoneNumber.text!,
+                                     countrycode:txtFCountryCode.text!,
                                      email: txtFEmail.text!,
                                      address1: txtFAddress1.text,
                                      address2: txtFAddress2.text,
@@ -265,5 +304,19 @@ extension MyProfileViewController{
                                         }
         }
     }
+    
+    func getCountryCodeAPI()  {
+        LoginService.getCountryCode { [weak self](flag, arraCountryCode) in
+            guard let weakSelf = self else {return}
+            if let countryCodes = arraCountryCode {
+                appDelegate.arrCountryCode = countryCodes
+                weakSelf.loadCountryData()
+            }else{
+                //  Common.showAlert(message: message)
+            }
+        }
+        
+    }
+    
     
 }

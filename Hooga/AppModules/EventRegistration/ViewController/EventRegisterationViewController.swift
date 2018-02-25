@@ -19,7 +19,8 @@ class EventRegisterationViewController: UIViewController {
     @IBOutlet weak var txtFLastName: HoogaTextField!
     @IBOutlet weak var txtFGender: HoogaTextField!
     @IBOutlet weak var txtFPhoneNumber: HoogaTextField!
-    
+    @IBOutlet weak var txtFCountryCode: HoogaTextField!
+
     @IBOutlet weak var txtFDOB: HoogaTextField!
     @IBOutlet weak var txtFEmail: HoogaTextField!
     @IBOutlet weak var txtFAddress1: HoogaTextField!
@@ -34,6 +35,8 @@ class EventRegisterationViewController: UIViewController {
    fileprivate var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
    fileprivate var arrCity = ["Singapore"]
     var eventDetail:EventDetail?
+    var arrCountryCode = [String]()
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,9 +85,18 @@ class EventRegisterationViewController: UIViewController {
         prefilledUsedData()
         
         lblEventTitle.font = Font.gillSansBold(size: 17)
-
+        
+       loadCountryData()
     }
 
+    
+    private func loadCountryData(){
+        if let codes = appDelegate.arrCountryCode {
+            arrCountryCode = codes.map({$0.Code! + " - " +  $0.Country! })
+        }else{
+            getCountryCodeAPI()
+        }
+    }
     
     /*********************************************************************************/
     // MARK: Methods
@@ -102,7 +114,12 @@ class EventRegisterationViewController: UIViewController {
             txtFAddress2.text = userData.address2
             txtFCity.text = userData.city
             txtFPostalCode.text = userData.postalcode
-            
+            if let countryCode =  userData.countrycode{
+                txtFCountryCode.text = countryCode
+            }else{
+                txtFCountryCode.text = "65"
+            }
+
             if let bnanner = userData.profilepic {
                 let url = kAssets + bnanner
                 imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
@@ -137,6 +154,15 @@ class EventRegisterationViewController: UIViewController {
             picker.frame = view.frame
             picker.customDatePickerDelegate = self
             
+            view.addSubview(picker)
+        }
+    }
+    private func openCountryCodePicker(){
+        if let picker = CustomPickerView.loadPickerView(){
+            picker.frame = view.frame
+            picker.pickerType = .countryCode
+            picker.pickerDataSource = arrCountryCode
+            picker.customPickerViewDelegate = self
             view.addSubview(picker)
         }
     }
@@ -248,6 +274,12 @@ class EventRegisterationViewController: UIViewController {
          view.endEditing(true)
         
     }
+    @IBAction func btnCountryCodeTapped(_ sender: Any) {
+        view.endEditing(true)
+        if arrCountryCode.count > 0{
+            openCountryCodePicker()
+        }
+    }
     @IBAction func btnCancelTapped(_ sender: Any) {
          view.endEditing(true)
         txtFFirstName.text = ""
@@ -276,6 +308,11 @@ extension EventRegisterationViewController:CustomPickerViewDelegate{
         if let type = pickerType , type == .cityPicker {
             txtFCity.text = title
         }
+        if let type = pickerType , type == .countryCode {
+            if let code = appDelegate.arrCountryCode?[index].Code{
+                txtFCountryCode.text = code
+            }
+        }      
     }
 }
 
@@ -301,6 +338,7 @@ extension EventRegisterationViewController{
                                      gender: txtFGender.text!,
                                      dateofbirth: txtFDOB.text!,
                                      handphone: txtFPhoneNumber.text!,
+                                     countrycode:txtFCountryCode.text!,
                                      email: txtFEmail.text!,
                                      address1: txtFAddress1.text,
                                      address2: txtFAddress2.text,
@@ -317,6 +355,18 @@ extension EventRegisterationViewController{
                                             Common.showAlert(message: "Some Error Occured!")
                                         }
         }
+    }
+    func getCountryCodeAPI()  {
+        LoginService.getCountryCode { [weak self](flag, arraCountryCode) in
+            guard let weakSelf = self else {return}
+            if let countryCodes = arraCountryCode {
+                appDelegate.arrCountryCode = countryCodes
+                weakSelf.loadCountryData()
+            }else{
+                //  Common.showAlert(message: message)
+            }
+        }
+        
     }
     
 

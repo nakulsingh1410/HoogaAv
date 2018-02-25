@@ -63,6 +63,7 @@ let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let kDomain    = "http://158.140.133.89/HoogaAPI/";
 let kSubDomain = "api/users/";
 let kEvent     = "api/events/"
+let kGeneral     = "api/general/"
 
 let kAssets = "http://158.140.133.89/Hooga/HoogaFiles/Assets/"
 let kTicketUrl = "http://158.140.133.89/Hooga/HoogaFiles/TicketTypes/"
@@ -73,6 +74,7 @@ let kPrice = "http://158.140.133.89/Hooga/HoogaFiles/LDPrizes/"
 
 let kUserImageBaseUrl = "http://158.140.133.89/Hooga/HoogaFiles/users/"
 let placeHolderImageUrl = URL(string: "http://158.140.133.89/Hooga/HoogaFiles/Assets/default.png")
+
 
 let kServiceUrl  = kDomain + kSubDomain
 
@@ -136,7 +138,11 @@ public enum ServiceName:String {
     case GENERATE_FREE_LUCKY_DRAW_NO = "generateFreeLuckyDrawNumber"
     case SHOW_MY_FREE_LUCKY_DRAW_RESULT = "showMyFreeEventLuckyDrawResult"
 
+    case GET_COUNTRY_CODE = "getcountrycodes"
+
     
+    
+
 }
 
 

@@ -57,6 +57,7 @@
 		306E699F2041E7E400A4298A /* ParticipationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306E699D2041E7E400A4298A /* ParticipationTableViewCell.xib */; };
 		306E69A12042B8B500A4298A /* AddParticipateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E69A02042B8B500A4298A /* AddParticipateViewController.swift */; };
 		306E69A32042E53E00A4298A /* ParticipantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E69A22042E53E00A4298A /* ParticipantDetailsViewController.swift */; };
+		306E69A52042F7CC00A4298A /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E69A42042F7CC00A4298A /* CountryCode.swift */; };
 		3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207C202A110A00C085C5 /* ParticipateModel.swift */; };
 		307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D68202A20DD00CD105B /* QRCodeModel.swift */; };
 		30908C292031ACC100FD7501 /* OtherPaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30908C282031ACC100FD7501 /* OtherPaymentView.xib */; };
@@ -243,6 +244,7 @@
 		306E699D2041E7E400A4298A /* ParticipationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipationTableViewCell.xib; sourceTree = "<group>"; };
 		306E69A02042B8B500A4298A /* AddParticipateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParticipateViewController.swift; sourceTree = "<group>"; };
 		306E69A22042E53E00A4298A /* ParticipantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDetailsViewController.swift; sourceTree = "<group>"; };
+		306E69A42042F7CC00A4298A /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
 		3078207C202A110A00C085C5 /* ParticipateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateModel.swift; sourceTree = "<group>"; };
 		307A0D68202A20DD00CD105B /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
 		30908C282031ACC100FD7501 /* OtherPaymentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPaymentView.xib; sourceTree = "<group>"; };
@@ -857,6 +859,7 @@
 			isa = PBXGroup;
 			children = (
 				30D77C0B200B3BBA00386438 /* LoginResponseDto.swift */,
+				306E69A42042F7CC00A4298A /* CountryCode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1448,6 +1451,7 @@
 				30EA5FAD201E29BB009D4278 /* Color.swift in Sources */,
 				30FEA28A2028C8D5001A38C4 /* ShowMyEventLuckyDraw.swift in Sources */,
 				302679AB20356FD5005B4442 /* BookingDetailVC.swift in Sources */,
+				306E69A52042F7CC00A4298A /* CountryCode.swift in Sources */,
 				30D77BF1200B36B400386438 /* SlideMenuController.swift in Sources */,
 				30D77BDA200B361400386438 /* UITableViewExtension.swift in Sources */,
 				305471DE202092650009A8EC /* OpenImagePickerViewController.swift in Sources */,

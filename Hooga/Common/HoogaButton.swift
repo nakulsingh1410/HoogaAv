@@ -24,7 +24,12 @@ class HoogaButton: UIButton {
         setbackgroundColor()
         titleColor()
 //        self.setTitle(self.titleLabel?.text?.uppercased(), for: .normal)
-        self.setTitle(self.titleLabel?.text?.capitalized, for: .normal)
+        
+        if let txt = titleLabel?.text , !txt.contains("OTP"){
+            self.setTitle(self.titleLabel?.text?.capitalized, for: .normal)
+
+        }
+        
 
         if let size = self.titleLabel?.font.pointSize{
             self.titleLabel?.font = Font.gillSansSemiBold(size: 17)
@@ -40,6 +45,8 @@ class HoogaButton: UIButton {
         if self.titleLabel?.text != "Back"{
             self.backgroundColor = kButonBackgroundColor
         }
+        
+        
     }
     
     func titleColor()  {

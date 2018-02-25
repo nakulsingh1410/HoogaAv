@@ -14,6 +14,8 @@ enum PickerType:String {
     case cityPicker = "City"
     case ticketTypePicker = "Ticket Type"
     case quanityPicker = "Quantity"
+    case countryCode = "CountryCode"
+
     
 }
 

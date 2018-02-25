@@ -23,6 +23,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtFFirstName: HoogaTextField!
     @IBOutlet weak var txtFLastName: HoogaTextField!
     @IBOutlet weak var txtFGender: HoogaTextField!
+    @IBOutlet weak var txtFCountryCode: HoogaTextField!
+
     @IBOutlet weak var txtFPhoneNumber: HoogaTextField!
     
     @IBOutlet weak var txtFDOB: HoogaTextField!
@@ -40,12 +42,24 @@ class RegisterViewController: UIViewController {
     
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
     var arrCity = ["Singapore"]
+    var arrCountryCode = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
        // configoreNavigationHeader()
         txtFCity.text = "Singapore"
+        txtFCountryCode.text = "65"
+        
+        loadCountryData()
     }
     
+    
+    func loadCountryData(){
+        if let codes = appDelegate.arrCountryCode {
+            arrCountryCode = codes.map({$0.Code! + " - " +  $0.Country! })
+        }else{
+            getCountryCodeAPI()
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -91,6 +105,16 @@ class RegisterViewController: UIViewController {
             view.addSubview(picker)
         }
     }
+    private func openCountryCodePicker(){
+        if let picker = CustomPickerView.loadPickerView(){
+            picker.frame = view.frame
+            picker.pickerType = .countryCode
+            picker.pickerDataSource = arrCountryCode
+            picker.customPickerViewDelegate = self
+            view.addSubview(picker)
+        }
+    }
+    
     
     private func validate()->(message:String?,isEmpty:Bool){
         
@@ -151,7 +175,7 @@ class RegisterViewController: UIViewController {
         let vcObj = appDelegate.window?.visibleViewController
         vcObj?.present(imageController, animated: true, completion: nil);
     }
-    
+  
     private func navigateToOTP(){
          NavigationManager.navigateToOTP(navigationController: navigationController, screenComingFrom: ComingFromScreen.registration)
     }
@@ -184,11 +208,19 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
+        view.endEditing(true)
             registerUser()
 //        navigateToOTP()
-         view.endEditing(true)
         
     }
+    @IBAction func btnCountryCodeTapped(_ sender: Any) {
+        view.endEditing(true)
+        if arrCountryCode.count > 0{
+            openCountryCodePicker()
+        }
+    }
+    
+    
     @IBAction func btnCancelTapped(_ sender: Any) {
          view.endEditing(true)
         txtFFirstName.text = ""
@@ -217,6 +249,11 @@ extension RegisterViewController:CustomPickerViewDelegate{
         if let type = pickerType , type == .cityPicker {
             txtFCity.text = title
         }
+        if let type = pickerType , type == .countryCode {
+            if let code = appDelegate.arrCountryCode?[index].Code{
+                txtFCountryCode.text = code
+            }
+        }        
     }
 }
 
@@ -241,6 +278,7 @@ extension RegisterViewController{
                                      gender: txtFGender.text!,
                                      dateofbirth: txtFDOB.text!,
                                      handphone: txtFPhoneNumber.text!,
+                                     countrycode:txtFCountryCode.text!,
                                      email: txtFEmail.text!,
                                      address1: txtFAddress1.text,
                                      address2: txtFAddress2.text,
@@ -255,6 +293,18 @@ extension RegisterViewController{
                                             Common.showAlert(message: message)
                                         }
         }
+    }
+    func getCountryCodeAPI()  {
+        LoginService.getCountryCode { [weak self](flag, arraCountryCode) in
+            guard let weakSelf = self else {return}
+            if let countryCodes = arraCountryCode {
+                appDelegate.arrCountryCode = countryCodes
+                weakSelf.loadCountryData()
+            }else{
+                //  Common.showAlert(message: message)
+            }
+        }
+        
     }
     
 }

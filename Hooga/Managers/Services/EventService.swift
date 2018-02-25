@@ -283,6 +283,7 @@ extension EventService{
                                 gender:String,
                                 dateofbirth:String,
                                 handphone:String,
+                                countrycode:String,
                                 email:String,
                                 address1:String?,
                                 address2:String?,
@@ -293,10 +294,12 @@ extension EventService{
         
         guard  let userid = StorageModel.getUserData()?.userid else {return}
 
-        var profilePicData: Data?
+        var profilePicData: [UInt8]?
         if let image = profilePic{
-            profilePicData = UIImageJPEGRepresentation(image, 1.0)!
+            let PicData = UIImageJPEGRepresentation(image, 1.0)!
+            profilePicData = PicData.bytes
         }
+        
         
         Common.showHud()
         var dictParam = Dictionary<String,Any>()

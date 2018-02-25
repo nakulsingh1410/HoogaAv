@@ -81,6 +81,7 @@ class LoginService{
                                 gender:String,
                                 dateofbirth:String,
                                 handphone:String,
+                                countrycode:String,
                                 email:String,
                                 address1:String?,
                                 address2:String?,
@@ -90,9 +91,10 @@ class LoginService{
                                 callback: @escaping (Bool,String) -> Void)  {
         
         
-        var profilePicData: Data?
+        var profilePicData: [UInt8]?
         if let image = profilePic{
-            profilePicData = UIImageJPEGRepresentation(image, 1.0)!
+            let PicData = UIImageJPEGRepresentation(image, 1.0)!
+            profilePicData = PicData.bytes
         }
         
         Common.showHud()
@@ -103,6 +105,7 @@ class LoginService{
         dictParam["gender"] = gender
         dictParam["dateofbirth"] = dateofbirth
         dictParam["handphone"] = handphone
+        dictParam["countrycode"] = countrycode
         dictParam["email"] = email
         dictParam["address1"] = address1
         dictParam["address2"] = address2
@@ -259,6 +262,7 @@ class LoginService{
                                 gender:String,
                                 dateofbirth:String,
                                 handphone:String,
+                                countrycode:String,
                                 email:String,
                                 address1:String?,
                                 address2:String?,
@@ -268,9 +272,10 @@ class LoginService{
                                 callback: @escaping (Bool,String) -> Void)  {
         
         
-        var profilePicData: Data?
+        var profilePicData: [UInt8]?
         if let image = profilePic{
-            profilePicData = UIImageJPEGRepresentation(image, 1.0)!
+           let PicData = UIImageJPEGRepresentation(image, 1.0)!
+            profilePicData = PicData.bytes
         }
         
         guard  let userid = StorageModel.getUserData()?.userid else {return}
@@ -285,6 +290,7 @@ class LoginService{
         dictParam["gender"] = gender
         dictParam["dateofbirth"] = dateofbirth
         dictParam["handphone"] = handphone
+        dictParam["countrycode"] = countrycode
         dictParam["email"] = email
         dictParam["address1"] = address1
         dictParam["address2"] = address2
@@ -317,30 +323,25 @@ class LoginService{
             
         }
     }
-    
-   /* func getArrayOfBytesFromImage(imageData:NSData) -> NSMutableArray
-    {
-        
-        // the number of elements:
-        let count = imageData.length / sizeof(UInt8)
-        
-        // create array of appropriate length:
-        var bytes = [UInt8](count: count, repeatedValue: 0)
-        
-        // copy bytes into array
-        imageData.getBytes(&bytes, length:count * sizeof(UInt8))
-        
-        var byteArray:NSMutableArray = NSMutableArray()
-        
-        for (var i = 0; i < count; i++) {
-            byteArray.addObject(NSNumber(unsignedChar: bytes[i]))
+    static func getCountryCode(callback: @escaping (Bool,[CountryCode]?) -> Void)  {
+ 
+        Common.showHud()
+        let serviceName = kDomain+kGeneral+ServiceName.GET_COUNTRY_CODE.rawValue
+        Service.postRequestWithJsonResponse(endPoint: serviceName,params:[:]) { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let arrObj = obj["CountryCodes"]  as? [[String:Any]]{
+                    let array = Mapper<CountryCode>().mapArray(JSONArray:arrObj)
+                    callback(true,array);
+                }else{
+                    callback(false,nil);
+                }
+            } else {
+                callback(false,nil);
+            }
+            
         }
-        
-        return byteArray
-        
-        
-    }
-    */
-    
-    
+}
+
+
 }

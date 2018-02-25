@@ -27,7 +27,7 @@ class HoogaLabel: UILabel {
             }
         }
         
-        if let txt = text , txt != "DOB"{
+        if let txt = text , txt != "DOB" ,!txt.contains("OTP"){
             self.text = self.text?.capitalized
         }
         
