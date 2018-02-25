@@ -116,11 +116,20 @@ class NavigationManager {
         }
     }
     
-    class func bookingDetail(navigationController:UINavigationController? , evntDetail : EventRecord){
+    class func bookingDetail(navigationController:UINavigationController? , evntDetail : EventRecord,comingFrom:ComingFromScreen){
         let storyboard = UIStoryboard(name: "TicketBooking", bundle:  Bundle(for: BookingDetailVC.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "BookingDetailVC") as? BookingDetailVC{
             vcObj.eventRecord = evntDetail
+            vcObj.comingFrom = comingFrom
            navigationController?.pushViewController(vcObj, animated: true)
+        }
+    }
+    class func navigateToAddParticipate(navigationController:UINavigationController? , evntDetail : EventDetail,comingFrom:ComingFromScreen){
+        let storyboard = UIStoryboard(name: "TicketBooking", bundle:  Bundle(for: AddParticipateViewController.self) )
+        if let vcObj = storyboard.instantiateViewController(withIdentifier: "AddParticipateViewController") as? AddParticipateViewController{
+            vcObj.eventDetail = evntDetail
+            vcObj.comingFrom = comingFrom
+            navigationController?.pushViewController(vcObj, animated: true)
         }
     }
     
@@ -191,6 +200,8 @@ class NavigationManager {
             navigationController?.pushViewController(vcObj, animated: true)
         }
     }
+    
+    
     
     
     class func logout(){

@@ -67,23 +67,33 @@ class ShareCell: UITableViewCell {
 //    }
     
     
-    func showShareCell(isComingFrom:ComingFromScreen,isTicketBooked :Bool)  {
+    func showShareCell(isComingFrom:ComingFromScreen,isTicketBooked :Bool,eventType:String?)  {
         if isComingFrom == ComingFromScreen.eventListing {
             viewTicketViewHeightConstraint.constant = 0
-            //            buttonregister.isHidden = false
         }else{
             viewTicketViewHeightConstraint.constant = 112
-            //            buttonregister.isHidden = true
             if isTicketBooked{
                 btnViewTicket.isHidden = false
                 btnLuckyTicket.isHidden = false
-                //            btnBookMore.setTitle(" Book More ", for: .normal)
-                buttonregister.setTitle(RegisterButtonTitle.bookMore.rawValue, for: .normal)
+                
+                if let eventType = eventType?.trim(), eventType == EventType.paid.rawValue{
+                    buttonregister.setTitle(RegisterButtonTitle.bookMore.rawValue, for: .normal)
+                    
+                }else{
+                    buttonregister.setTitle(RegisterButtonTitle.addMoreParticipants.rawValue, for: .normal)                    
+                }
+                
             }else{
                 btnViewTicket.isHidden = true
                 btnLuckyTicket.isHidden = true
-                //            btnBookMore.setTitle(" Book Ticket(s) ", for: .normal)
-                buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
+                viewTicketViewHeightConstraint.constant = 0
+                
+                if let eventType = eventType?.trim(), eventType == EventType.paid.rawValue{
+                    buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
+                }else{
+                    buttonregister.setTitle(RegisterButtonTitle.addParticipants.rawValue, for: .normal)
+                    
+                }
             }
         }
     }
@@ -119,7 +129,7 @@ class ShareCell: UITableViewCell {
         delegate?.luckyDrawDidSelected(cell: self)
         
     }
-    @IBAction func btnBookMoreTapped(_ sender: Any) {
-        delegate?.bookMoreDidSelected(cell: self)
-    }
+//    @IBAction func btnBookMoreTapped(_ sender: Any) {
+//        delegate?.bookMoreDidSelected(cell: self)
+//    }
 }

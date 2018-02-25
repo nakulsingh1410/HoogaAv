@@ -25,7 +25,7 @@ class ParticipantResultViewController: UIViewController {
     }
     func initializeCalls()  {
         guard let evntdetail = eventDetail else{return}
-        eventTicketInfoView.loadTicketInfo(eventDetail: evntdetail, textColor: UIColor.black)
+        eventTicketInfoView.loadTicketInfo(eventDetail: evntdetail, textColor: UIColor.black, backGroundColor: .white)
 
         if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{
             if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{

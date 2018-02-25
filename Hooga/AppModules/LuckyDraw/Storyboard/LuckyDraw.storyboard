@@ -293,7 +293,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyk-eJ-ZyV">
-                                <rect key="frame" x="20" y="164" width="335" height="494"/>
+                                <rect key="frame" x="20" y="149" width="335" height="509"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCA-tR-4yl" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                         <rect key="frame" x="20" y="8" width="295" height="20.5"/>
@@ -395,7 +395,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6V-c6-yTi">
-                                        <rect key="frame" x="20" y="366" width="295" height="50"/>
+                                        <rect key="frame" x="20" y="381" width="295" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGs-kP-Zaf" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="21"/>
@@ -423,7 +423,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2R-Ja-eWm">
-                                        <rect key="frame" x="20" y="424" width="295" height="50"/>
+                                        <rect key="frame" x="20" y="439" width="295" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collected On" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v8-WU-IfG" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="21"/>
@@ -451,7 +451,7 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HVx-jB-z51">
-                                        <rect key="frame" x="20" y="251" width="295" height="110"/>
+                                        <rect key="frame" x="20" y="251" width="295" height="125"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -495,7 +495,7 @@
                             <constraint firstItem="gum-0v-hVb" firstAttribute="top" secondItem="dTl-cY-OE8" secondAttribute="top" id="mCX-PR-ymm"/>
                             <constraint firstItem="WJc-kG-AVj" firstAttribute="top" secondItem="gum-0v-hVb" secondAttribute="bottom" id="nTD-Dh-LqN"/>
                             <constraint firstItem="24y-xV-wDw" firstAttribute="bottom" secondItem="gum-0v-hVb" secondAttribute="bottom" id="o1Y-lt-BIc"/>
-                            <constraint firstItem="Xyk-eJ-ZyV" firstAttribute="top" secondItem="WJc-kG-AVj" secondAttribute="bottom" constant="20" id="pcb-39-4kV"/>
+                            <constraint firstItem="Xyk-eJ-ZyV" firstAttribute="top" secondItem="WJc-kG-AVj" secondAttribute="bottom" constant="5" id="pcb-39-4kV"/>
                             <constraint firstItem="24y-xV-wDw" firstAttribute="leading" secondItem="0Wv-Tr-1pj" secondAttribute="leading" id="qbB-ks-9Y5"/>
                             <constraint firstItem="0Wv-Tr-1pj" firstAttribute="bottom" secondItem="Xyk-eJ-ZyV" secondAttribute="bottom" constant="9" id="qoQ-lR-1pk"/>
                             <constraint firstItem="WJc-kG-AVj" firstAttribute="leading" secondItem="0Wv-Tr-1pj" secondAttribute="leading" id="rNe-Ql-m0o"/>

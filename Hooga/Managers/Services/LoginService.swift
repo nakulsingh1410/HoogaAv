@@ -268,17 +268,9 @@ class LoginService{
                                 callback: @escaping (Bool,String) -> Void)  {
         
         
-//        var profilePicData: Data?
-//        if let image = profilePic{
-//            profilePicData = UIImageJPEGRepresentation(image, 1.0)!
-//        }
-//
-        
-        var strBase64: String?
+        var profilePicData: Data?
         if let image = profilePic{
-            let imageData = UIImageJPEGRepresentation(image, 1.0)!
-            strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
-            // print(strBase64)
+            profilePicData = UIImageJPEGRepresentation(image, 1.0)!
         }
         
         guard  let userid = StorageModel.getUserData()?.userid else {return}
@@ -298,7 +290,7 @@ class LoginService{
         dictParam["address2"] = address2
         dictParam["city"] = city
         dictParam["postalcode"] = postalcode
-        dictParam["profilepic"] = strBase64
+        dictParam["profilepic"] = profilePicData
         dictParam["deviceid"] = "123"
         dictParam["gsmid"] = "123"
         
@@ -326,6 +318,29 @@ class LoginService{
         }
     }
     
+   /* func getArrayOfBytesFromImage(imageData:NSData) -> NSMutableArray
+    {
+        
+        // the number of elements:
+        let count = imageData.length / sizeof(UInt8)
+        
+        // create array of appropriate length:
+        var bytes = [UInt8](count: count, repeatedValue: 0)
+        
+        // copy bytes into array
+        imageData.getBytes(&bytes, length:count * sizeof(UInt8))
+        
+        var byteArray:NSMutableArray = NSMutableArray()
+        
+        for (var i = 0; i < count; i++) {
+            byteArray.addObject(NSNumber(unsignedChar: bytes[i]))
+        }
+        
+        return byteArray
+        
+        
+    }
+    */
     
     
 }

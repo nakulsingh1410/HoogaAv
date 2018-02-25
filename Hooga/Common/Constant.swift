@@ -207,6 +207,8 @@ enum RegisterButtonTitle:String{
     case register = "  Register  "
     case bookTickets = "  Book Ticket(s)  "
     case bookMore = "  Book More  "
+    case addParticipants = "Add Participants"
+    case addMoreParticipants = "Add more Participants"
 }
 
 enum ComingFromScreen:String{
@@ -218,4 +220,8 @@ enum ComingFromScreen:String{
     case registration = "Registration"
     case forgotPassword = "Forgot Password"
     case thankYou = "ThanksVC"
+    case ticketBooking = "TicketBooking"
+    case addParticipant = "AddParticipant"
+
+
 }

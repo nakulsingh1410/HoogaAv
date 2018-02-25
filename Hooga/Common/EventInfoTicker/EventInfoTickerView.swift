@@ -39,7 +39,7 @@ class EventInfoTickerView: UIView {
         }
     }
     
-    func loadTicketInfo(eventDetail:EventDetail,textColor:UIColor)  {
+    func loadTicketInfo(eventDetail:EventDetail,textColor:UIColor,backGroundColor:UIColor)  {
         lblEventTitle.text = eventDetail.title
         lblEventLocation.text = eventDetail.eventlocation?.trim()
         
@@ -47,17 +47,15 @@ class EventInfoTickerView: UIView {
         let time = Common.getDateString(strDate:eventDetail.starttime) //+ " - " + Common.getDateString(strDate:eventDetail?.endtime)
         lblEventTime.text =  date + " | " + time
         lblEventTitle.font = Font.gillSansBold(size: 17)
-        labelTextColors(color: textColor)
+        labelTextColors(color: textColor,backGroundColor:backGroundColor)
     }
     
     
-    private func labelTextColors(color:UIColor)  {
+    private func labelTextColors(color:UIColor,backGroundColor:UIColor)  {
         lblEventTitle.textColor = color
         lblEventTime.textColor = color
         lblEventLocation.textColor = color
-        if color == .black {
-            self.backgroundColor = .white
-            nibView.backgroundColor = .white
-        }
+        self.backgroundColor = backGroundColor
+        nibView.backgroundColor = backgroundColor
     }
 }

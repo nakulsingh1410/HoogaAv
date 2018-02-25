@@ -210,7 +210,7 @@ class TicketBookingViewController: UIViewController {
                     record.quantityTicket = Int(qnt)!
                 }
                
-        NavigationManager.bookingDetail(navigationController: navigationController, evntDetail: record)
+                NavigationManager.bookingDetail(navigationController: navigationController, evntDetail: record, comingFrom: ComingFromScreen.ticketBooking)
             }
         }
     }

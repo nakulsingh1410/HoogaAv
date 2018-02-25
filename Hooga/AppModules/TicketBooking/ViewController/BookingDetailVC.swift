@@ -19,6 +19,8 @@ class BookingDetailVC: UIViewController {
     @IBOutlet weak var labelTotalPrice: UILabel!
     @IBOutlet weak var ticketQuantityHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var navHeaderView: CustomNavHeaderView!
+    @IBOutlet weak var eventTicketInfoView: EventInfoTickerView!
+    @IBOutlet weak var ticketDetailView: UIView!
 
     var ticketQuantityView : TicketQuantityView?
     var arrBookingDetails = [SaveBookingDetail]()
@@ -26,6 +28,7 @@ class BookingDetailVC: UIViewController {
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
     var qnty = 1
     var eventRecord : EventRecord?
+    var comingFrom: ComingFromScreen?
     var currentPage = 0
     var presentedViewIndex = 0
     var arrCity = ["Singapore"]
@@ -37,13 +40,19 @@ class BookingDetailVC: UIViewController {
         configoreNavigationHeader()
         addBookingDetailView()
         addTicketBookingView()
-        setUIData()
+        loadDefaultData()
         configureData()
+        
     }
 
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
-        navHeaderView.navBarTitle = "Booking Details"
+        if let comingScreen = comingFrom,comingScreen == .ticketBooking{
+              navHeaderView.navBarTitle = "Booking Details"
+        }else  if let comingScreen = comingFrom,comingScreen == .addParticipant{
+            navHeaderView.navBarTitle = "Participant(s) Details"
+
+        }
         navHeaderView.backButtonType = .Back
         navHeaderView.isBottonLineHidden = false
         navHeaderView.isNavBarTransparent = false
@@ -53,25 +62,44 @@ class BookingDetailVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setUIData() {
-        if let ticket = eventRecord?.ticketTypeDetails {
-            labelticketType.text = "Ticket Type: " + ticket.tickettype!
-            if let qnt =  eventRecord?.quantityTicket{
-                labelQuantity.text = "Qty: " + String(qnt)
+    
+    
+    func loadDefaultData() {
+
+        if let comingScreen = comingFrom,comingScreen == .ticketBooking{
+            ticketDetailView.isHidden = false
+            eventTicketInfoView.isHidden = true
+            if let ticket = eventRecord?.ticketTypeDetails {
+                labelticketType.text = "Ticket Type: " + ticket.tickettype!
+                if let qnt =  eventRecord?.quantityTicket{
+                    labelQuantity.text = "Qty: " + String(qnt)
+                }
+                if let price = ticket.regularprice {
+                    labelPrice.text = "Price: $" + price
+                    let total = Float(price)! * Float(qnty)
+                    labelTotalPrice.text = "Total: $" + String(total)
+                }
             }
-            if let price = ticket.regularprice {
-                labelPrice.text = "Price: $" + price
-                let total = Float(price)! * Float(qnty)
-                labelTotalPrice.text = "Total: $" + String(total)
+        }else  if let comingScreen = comingFrom,comingScreen == .addParticipant{
+            ticketDetailView.isHidden = true
+            eventTicketInfoView.isHidden = false
+            if let eventDetail = eventRecord?.eventDetail {
+                eventTicketInfoView.loadTicketInfo(eventDetail: eventDetail, textColor: UIColor.black,backGroundColor: UIColor.clear)
             }
         }
+        
+        
         if qnty == 1 {
             ticketQuantityHeightConstraint.constant = 0
         }else{
             ticketQuantityHeightConstraint.constant = 50
         }
        
+        
+       
     }
+    
+    
     
     
     func configureData()  {
@@ -298,7 +326,6 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
                     self.eventRecord?.bookingDetails =  self.arrBookingDetails;
                     NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!, savedTicketDetail: reponseArray)
                 }else{
-//                    NavigationManager.thanksController(navigationController: self.navigationController, evntDetail: EventRecord())
                      NavigationManager.navigateToMyEvent(navigationController: self.navigationController, screenShown: ComingFromScreen.thankYou)
                 }
               

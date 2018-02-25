@@ -162,7 +162,7 @@ extension EventDetailVC{
             }else{
                 cell.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
             }
-            cell.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked)
+            cell.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked, eventType: eventDetail?.entrytype)
             cell.btnTermsNCondition.isHidden = true
             cell.btnFAQs.isHidden = true
 
@@ -237,12 +237,14 @@ extension EventDetailVC :ShareCellDelegate{
     func registerBttonSelected(cell: ShareCell) {
         guard let evntDtl = eventDetail else{return}
         if let title = cell.buttonregister.titleLabel?.text ,
-            title == RegisterButtonTitle.register.rawValue
-        {
+            title == RegisterButtonTitle.register.rawValue{
             NavigationManager.eventRegistration(navigationController: self.navigationController, evntDetail: evntDtl)
         }else if let title = cell.buttonregister.titleLabel?.text ,
             title == RegisterButtonTitle.bookTickets.rawValue || title == RegisterButtonTitle.bookMore.rawValue{
             NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl, comingFrom: ComingFromScreen.eventDetail)
+        }else if let title = cell.buttonregister.titleLabel?.text ,
+            title == RegisterButtonTitle.addParticipants.rawValue || title == RegisterButtonTitle.addMoreParticipants.rawValue{
+            NavigationManager.navigateToAddParticipate(navigationController: navigationController, evntDetail: evntDtl, comingFrom: ComingFromScreen.eventDetail)
         }
     }
     

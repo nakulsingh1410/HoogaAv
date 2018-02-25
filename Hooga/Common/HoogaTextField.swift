@@ -24,7 +24,11 @@ class HoogaTextField: UITextField {
         self.changePlaceholder(placeHolderText: self.placeholder, color: kPlaceHolderColor)
         ///self.addCharacterSpacing(value: 1.2)
         if let size = self.font?.pointSize{
-            self.font = Font.gillSansLight(size: 16)
+            if self.tag == 10 {
+                self.font = Font.gillSansSemiBold(size: size)
+            }else{
+                self.font = Font.gillSansLight(size: 16)
+            }
         }
         
     }

@@ -30,7 +30,7 @@ class ParticipateDetailViewController: UIViewController {
          loadParticiapteData()
         
         if let eventDetail =  eventDetail {
-            eventTicketInfoView.loadTicketInfo(eventDetail: eventDetail, textColor: UIColor.black)
+            eventTicketInfoView.loadTicketInfo(eventDetail: eventDetail, textColor: UIColor.black, backGroundColor: .white)
         }
         
     }

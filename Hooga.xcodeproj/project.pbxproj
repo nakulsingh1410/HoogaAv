@@ -55,6 +55,8 @@
 		306E699B2041E05100A4298A /* EventInfoTickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E699A2041E05100A4298A /* EventInfoTickerView.swift */; };
 		306E699E2041E7E400A4298A /* ParticipationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E699C2041E7E400A4298A /* ParticipationTableViewCell.swift */; };
 		306E699F2041E7E400A4298A /* ParticipationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306E699D2041E7E400A4298A /* ParticipationTableViewCell.xib */; };
+		306E69A12042B8B500A4298A /* AddParticipateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E69A02042B8B500A4298A /* AddParticipateViewController.swift */; };
+		306E69A32042E53E00A4298A /* ParticipantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E69A22042E53E00A4298A /* ParticipantDetailsViewController.swift */; };
 		3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207C202A110A00C085C5 /* ParticipateModel.swift */; };
 		307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D68202A20DD00CD105B /* QRCodeModel.swift */; };
 		30908C292031ACC100FD7501 /* OtherPaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30908C282031ACC100FD7501 /* OtherPaymentView.xib */; };
@@ -239,6 +241,8 @@
 		306E699A2041E05100A4298A /* EventInfoTickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoTickerView.swift; sourceTree = "<group>"; };
 		306E699C2041E7E400A4298A /* ParticipationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipationTableViewCell.swift; sourceTree = "<group>"; };
 		306E699D2041E7E400A4298A /* ParticipationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipationTableViewCell.xib; sourceTree = "<group>"; };
+		306E69A02042B8B500A4298A /* AddParticipateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParticipateViewController.swift; sourceTree = "<group>"; };
+		306E69A22042E53E00A4298A /* ParticipantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDetailsViewController.swift; sourceTree = "<group>"; };
 		3078207C202A110A00C085C5 /* ParticipateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateModel.swift; sourceTree = "<group>"; };
 		307A0D68202A20DD00CD105B /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
 		30908C282031ACC100FD7501 /* OtherPaymentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPaymentView.xib; sourceTree = "<group>"; };
@@ -603,6 +607,8 @@
 				3026799D20356FD4005B4442 /* TicketQuantityView.swift */,
 				3026799B20356FD4005B4442 /* TicketQuantityView.xib */,
 				3026794D20356628005B4442 /* TicketBookingViewController.swift */,
+				306E69A02042B8B500A4298A /* AddParticipateViewController.swift */,
+				306E69A22042E53E00A4298A /* ParticipantDetailsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1462,12 +1468,14 @@
 				30EA5FA8201E2892009D4278 /* AMHorizontalMenu.swift in Sources */,
 				7574C3C32025D4C70010A4F1 /* BookingDetail.swift in Sources */,
 				30D77BD9200B361400386438 /* UIImageView.swift in Sources */,
+				306E69A32042E53E00A4298A /* ParticipantDetailsViewController.swift in Sources */,
 				30D77B9F200B2AC900386438 /* HoogaButton.swift in Sources */,
 				30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */,
 				30267995203568E6005B4442 /* QRCodeTableViewCell.swift in Sources */,
 				3026798620356800005B4442 /* LuckyDrawVC.swift in Sources */,
 				30D77BFF200B37C400386438 /* RegisterViewController.swift in Sources */,
 				30EA5FA7201E2892009D4278 /* MenuTitleAppearance.swift in Sources */,
+				306E69A12042B8B500A4298A /* AddParticipateViewController.swift in Sources */,
 				30D77C0C200B3BBA00386438 /* LoginResponseDto.swift in Sources */,
 				7530D95A201F888300B9BB52 /* GalleryCell.swift in Sources */,
 				30EA5F96201DCFCF009D4278 /* HoogaImageView.swift in Sources */,
