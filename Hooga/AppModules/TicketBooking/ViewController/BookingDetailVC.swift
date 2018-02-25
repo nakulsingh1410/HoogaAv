@@ -32,7 +32,8 @@ class BookingDetailVC: UIViewController {
     var currentPage = 0
     var presentedViewIndex = 0
     var arrCity = ["Singapore"]
-    
+    var arrCountryCode = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,12 +95,19 @@ class BookingDetailVC: UIViewController {
         }else{
             ticketQuantityHeightConstraint.constant = 50
         }
-       
+       loadCountryData()
         
        
     }
     
-    
+    private func loadCountryData(){
+        if let codes = appDelegate.arrCountryCode {
+            arrCountryCode = codes.map({$0.Code! + " - " +  $0.Country! })
+        }else{
+            getCountryCodeAPI()
+        }
+    }
+
     
     
     func configureData()  {
@@ -177,11 +185,13 @@ class BookingDetailVC: UIViewController {
             message = MessageError.USER_GENDER_BLANK .rawValue
         }else if let value = detailView.dob.text,value == "__/ __/ __" {
             message = MessageError.USER_DOB_BLANK .rawValue
-        }else if let value = detailView.mobile.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-            message = MessageError.PHONE_EMPTY .rawValue
-        }else if let value = detailView.mobile.text,!value.isPhoneValid(){
-            message = MessageError.PHONE_INVALID .rawValue
         }
+//        else if let value = detailView.mobile.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+//            message = MessageError.PHONE_EMPTY .rawValue
+//        }
+//        else if let value = detailView.mobile.text,!value.isPhoneValid(){
+//            message = MessageError.PHONE_INVALID .rawValue
+//        }
 //        else if let value = detailView.email.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
 //            message = MessageError.EMAIL_BLANK.rawValue
 //        }else if let value = detailView.email.text,value.isEmail == false{
@@ -229,6 +239,7 @@ extension BookingDetailVC{
         model.lastname = detailView.lastName.text
         model.email = detailView.email.text
         model.handphone = detailView.mobile.text
+        model.countrycode = detailView.txtFCountryCode.text
         model.postalcode = detailView.postalCode.text
         model.email = detailView.email.text
         model.gender   = detailView.gender.text
@@ -255,6 +266,13 @@ extension BookingDetailVC{
 // MARK: TicketQuantityView Delegate
 /**********************************************************************/
 extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegate{
+    func countryCodeTapped(ticketView: BookingDetailView) {
+        view.endEditing(true)
+        if arrCountryCode.count > 0{
+            openCountryCodePicker()
+        }
+    }
+    
     func didSelectRowAt(indexpath: IndexPath,ticektQuantityView:TicketQuantityView) {
         
         if presentedViewIndex == indexpath.row {
@@ -318,6 +336,12 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
         clearCurrentTicketDetail()
 
     }
+  
+}
+/****************************************************************/
+// MARK: API
+/**********************************************************************/
+extension BookingDetailVC{
     func saveTicketDetailsAPI(arrTicket:[SaveBookingDetail])  {
         TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
             if let reponseArray = data{
@@ -326,14 +350,27 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
                     self.eventRecord?.bookingDetails =  self.arrBookingDetails;
                     NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!, savedTicketDetail: reponseArray)
                 }else{
-                     NavigationManager.navigateToMyEvent(navigationController: self.navigationController, screenShown: ComingFromScreen.thankYou)
+                    NavigationManager.navigateToMyEvent(navigationController: self.navigationController, screenShown: ComingFromScreen.thankYou)
                 }
-              
+                
             }else{
                 //error
             }
             
         }
+    }
+    
+    func getCountryCodeAPI()  {
+        LoginService.getCountryCode { [weak self](flag, arraCountryCode) in
+            guard let weakSelf = self else {return}
+            if let countryCodes = arraCountryCode {
+                appDelegate.arrCountryCode = countryCodes
+                weakSelf.loadCountryData()
+            }else{
+                //  Common.showAlert(message: message)
+            }
+        }
+        
     }
 }
 
@@ -363,6 +400,17 @@ extension BookingDetailVC {
             view.addSubview(picker)
         }
     }
+    
+    private func openCountryCodePicker(){
+        if let picker = CustomPickerView.loadPickerView(){
+            picker.frame = view.frame
+            picker.pickerType = .countryCode
+            picker.pickerDataSource = arrCountryCode
+            picker.customPickerViewDelegate = self
+            view.addSubview(picker)
+        }
+    }
+    
     private func openDatePicker(){
         view.endEditing(true)
         if let picker = CustomDatePicker.loadDatePickerView(){
@@ -406,6 +454,12 @@ extension BookingDetailVC:CustomPickerViewDelegate{
         }
         if let type = pickerType , type == .cityPicker {
             detailView.city.text = title
+        }
+        
+        if let type = pickerType , type == .countryCode {
+            if let code = appDelegate.arrCountryCode?[index].Code{
+                detailView.txtFCountryCode.text = code
+            }
         }
     }
 }

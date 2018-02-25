@@ -16,6 +16,8 @@ protocol BookingDetailViewDelegate {
     func openImagePicker(ticketView:BookingDetailView)
     func submit(ticketView:BookingDetailView)
     func cancel(ticketView:BookingDetailView)
+    func countryCodeTapped(ticketView:BookingDetailView)
+
 }
 
 class BookingDetailView: UIView {
@@ -23,6 +25,7 @@ class BookingDetailView: UIView {
     @IBOutlet weak var firstName: HoogaTextField!
     @IBOutlet weak var lastName: HoogaTextField!
     @IBOutlet weak var mobile: HoogaTextField!
+    @IBOutlet weak var txtFCountryCode: HoogaTextField!
     @IBOutlet weak var email: HoogaTextField!
     @IBOutlet weak var dob: HoogaTextField!
     @IBOutlet weak var gender: HoogaTextField!
@@ -75,5 +78,24 @@ class BookingDetailView: UIView {
             delegate?.openDobPicker(ticketView: self)
         }
     }
-    
+    @IBAction func btnCountryCodeTapped(_ sender: Any) {
+        delegate?.countryCodeTapped(ticketView: self)
+      
+    }
 }
+
+//
+//extension BookingDetailView:CustomPickerViewDelegate{
+//    func dismissPickerView() {
+//        
+//    }
+//    func didSelectPickerValueAt(title: String, index: Int, pickerType: PickerType?) {
+//        
+//        if let type = pickerType , type == .countryCode {
+//            if let code = appDelegate.arrCountryCode?[index].Code{
+//                txtFCountryCode.text = code
+//            }
+//        }
+//    }
+//}
+

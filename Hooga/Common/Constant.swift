@@ -171,9 +171,9 @@ public enum MessageError: String{
 
     
     case PASSWORD_EMPTY    = "Please enter password."
-    case PASSWORD_MATCH    = "Password and Confirm Password should be same."
+    case PASSWORD_MATCH    = "Password and Re-Enter Password should be same."
     case PASSWORD_LENGTH   = "Password should be minimum 6 characters"
-    case CNFRMPASSWORD_EMPTY    = "Please enter confirm password."
+    case CNFRMPASSWORD_EMPTY    = "Re-Enter password."
     case OLD_PASSWORD_EMPTY     = "Please enter old password."
     case NEW_PASSWORD_EMPTY     = "Please enter new password."
     
@@ -215,6 +215,10 @@ enum RegisterButtonTitle:String{
     case bookMore = "  Book More  "
     case addParticipants = "Add Participants"
     case addMoreParticipants = "Add more Participants"
+    case viewQRCodes = "View QR Code(s)"
+    case viewTickets = "View Ticket(s)"
+
+    
 }
 
 enum ComingFromScreen:String{

@@ -11,9 +11,11 @@ import UIKit
 class ForgotPasswordViewController: UIViewController {
     
     @IBOutlet weak var txtFEmail: HoogaTextField!
+     @IBOutlet weak var countryCodeView: CountryCodeView!
     override func viewDidLoad() {
         super.viewDidLoad()
 //        txtFEmail.text = "98580860"
+        loadCountryPickerView() 
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,6 +26,19 @@ class ForgotPasswordViewController: UIViewController {
     // MARK: Function
     /*********************************************************************************/
     
+    func loadCountryPickerView()  {
+        var arrCountryCode = [String]()
+        if let array = appDelegate.arrCountryCode {
+            arrCountryCode = array.map({$0.Code! + " - " +  $0.Country! })
+            
+        }
+        countryCodeView.viewController = self
+        countryCodeView.arrCountryCode  = arrCountryCode
+        countryCodeView.txtFCountryCode.text = "65"
+        countryCodeView.countryCodeViewDelegate = self
+        
+    }
+
     private func forgotPassword()  {
         
         guard let userName  = txtFEmail.text,(userName.trimmingCharacters(in: .whitespaces).isEmpty != true) else  {
@@ -56,6 +71,16 @@ class ForgotPasswordViewController: UIViewController {
     @IBAction func btnCancelTapped(_ sender: Any) {
         txtFEmail.text = ""
     }
+}
+
+extension ForgotPasswordViewController:CountryCodeViewDelegate{
+    
+    func countryCodeSelected(code:String,index:Int){
+        if let code = appDelegate.arrCountryCode?[index].Code{
+            countryCodeView.txtFCountryCode.text = code
+        }
+    }
+    
 }
 
 /*********************************************************************************/

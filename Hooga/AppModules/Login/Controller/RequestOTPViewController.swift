@@ -13,6 +13,7 @@ class RequestOTPViewController: UIViewController {
     @IBOutlet weak var lblEmail: HoogaLabel!
     @IBOutlet weak var lblMobile: HoogaLabel!
     @IBOutlet weak var txtFOTP: HoogaTextField!
+   
     
     var screenFlow = ComingFromScreen.registration
     override func viewDidLoad() {
@@ -41,7 +42,9 @@ class RequestOTPViewController: UIViewController {
                 lblMobile.text = ""
             }
         }
+        
     }
+ 
     
     private func navigateToSetPassword(){
         NavigationManager.navigateToSetPassword(navigationController: self.navigationController, screenFlow: screenFlow)
@@ -69,6 +72,7 @@ class RequestOTPViewController: UIViewController {
 
     }
 }
+
 
 
 /*********************************************************************************/

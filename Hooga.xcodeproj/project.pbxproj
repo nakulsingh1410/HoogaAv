@@ -58,6 +58,8 @@
 		306E69A12042B8B500A4298A /* AddParticipateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E69A02042B8B500A4298A /* AddParticipateViewController.swift */; };
 		306E69A32042E53E00A4298A /* ParticipantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E69A22042E53E00A4298A /* ParticipantDetailsViewController.swift */; };
 		306E69A52042F7CC00A4298A /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E69A42042F7CC00A4298A /* CountryCode.swift */; };
+		306E69A820431FBA00A4298A /* CountryCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E69A720431FBA00A4298A /* CountryCodeView.swift */; };
+		306E69AA20431FC500A4298A /* CountryCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306E69A920431FC500A4298A /* CountryCodeView.xib */; };
 		3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207C202A110A00C085C5 /* ParticipateModel.swift */; };
 		307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D68202A20DD00CD105B /* QRCodeModel.swift */; };
 		30908C292031ACC100FD7501 /* OtherPaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30908C282031ACC100FD7501 /* OtherPaymentView.xib */; };
@@ -245,6 +247,8 @@
 		306E69A02042B8B500A4298A /* AddParticipateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParticipateViewController.swift; sourceTree = "<group>"; };
 		306E69A22042E53E00A4298A /* ParticipantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDetailsViewController.swift; sourceTree = "<group>"; };
 		306E69A42042F7CC00A4298A /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
+		306E69A720431FBA00A4298A /* CountryCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeView.swift; sourceTree = "<group>"; };
+		306E69A920431FC500A4298A /* CountryCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCodeView.xib; sourceTree = "<group>"; };
 		3078207C202A110A00C085C5 /* ParticipateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateModel.swift; sourceTree = "<group>"; };
 		307A0D68202A20DD00CD105B /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
 		30908C282031ACC100FD7501 /* OtherPaymentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPaymentView.xib; sourceTree = "<group>"; };
@@ -467,6 +471,7 @@
 		301B86632007452900DA7855 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				306E69A620431FA400A4298A /* CountryCode */,
 				306E69972041DFEC00A4298A /* EventInfoTicker */,
 				30EA5FB0201EF19D009D4278 /* CustomNavigationHeader */,
 				30EA5FAC201E29BB009D4278 /* Color.swift */,
@@ -690,6 +695,15 @@
 				306E699A2041E05100A4298A /* EventInfoTickerView.swift */,
 			);
 			path = EventInfoTicker;
+			sourceTree = "<group>";
+		};
+		306E69A620431FA400A4298A /* CountryCode */ = {
+			isa = PBXGroup;
+			children = (
+				306E69A720431FBA00A4298A /* CountryCodeView.swift */,
+				306E69A920431FC500A4298A /* CountryCodeView.xib */,
+			);
+			path = CountryCode;
 			sourceTree = "<group>";
 		};
 		30C33E4A2011CF45008C5826 /* Model */ = {
@@ -1231,6 +1245,7 @@
 				7530D95F201F888300B9BB52 /* ShareCell.xib in Resources */,
 				30D77BDE200B361400386438 /* HudView.xib in Resources */,
 				302679502035663C005B4442 /* TicketBooking.storyboard in Resources */,
+				306E69AA20431FC500A4298A /* CountryCodeView.xib in Resources */,
 				30EA5F8B201D82B2009D4278 /* CustomDatePicker.xib in Resources */,
 				302679A920356FD5005B4442 /* DetailHeaderView.xib in Resources */,
 				7530D960201F888300B9BB52 /* EventDetail.storyboard in Resources */,
@@ -1510,6 +1525,7 @@
 				30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */,
 				7574C3D520262D260010A4F1 /* PaymentVC.swift in Sources */,
 				3026798820356800005B4442 /* ParticipateTableViewCell.swift in Sources */,
+				306E69A820431FBA00A4298A /* CountryCodeView.swift in Sources */,
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
 				305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */,
 				30ED06192020833100D354BE /* HoogaView.swift in Sources */,

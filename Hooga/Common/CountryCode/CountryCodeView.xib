@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryCodeView" customModule="Hooga" customModuleProvider="target">
+            <connections>
+                <outlet property="txtFCountryCode" destination="fRf-9d-AjD" id="mT2-tG-icd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fRf-9d-AjD" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-sw-bDo">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <connections>
+                        <action selector="btnCountryCodeTapped:" destination="-1" eventType="touchUpInside" id="Yzh-ZO-bub"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7sa-sw-bDo" firstAttribute="bottom" secondItem="fRf-9d-AjD" secondAttribute="bottom" id="9cB-nY-tWn"/>
+                <constraint firstItem="fRf-9d-AjD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Ay6-x8-ErI"/>
+                <constraint firstItem="fRf-9d-AjD" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="BeE-Fb-5zR"/>
+                <constraint firstItem="7sa-sw-bDo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="DVR-Sy-AwR"/>
+                <constraint firstItem="7sa-sw-bDo" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="EKq-oE-xZM"/>
+                <constraint firstItem="fRf-9d-AjD" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Gh9-lo-WaQ"/>
+                <constraint firstItem="fRf-9d-AjD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IpM-xh-75h"/>
+                <constraint firstItem="7sa-sw-bDo" firstAttribute="trailing" secondItem="fRf-9d-AjD" secondAttribute="trailing" id="bBF-tw-Xl7"/>
+                <constraint firstItem="7sa-sw-bDo" firstAttribute="top" secondItem="fRf-9d-AjD" secondAttribute="top" id="dM7-6B-14S"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7sa-sw-bDo" secondAttribute="bottom" id="hkH-Ih-uD5"/>
+                <constraint firstItem="7sa-sw-bDo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m0y-2a-OmD"/>
+                <constraint firstItem="7sa-sw-bDo" firstAttribute="leading" secondItem="fRf-9d-AjD" secondAttribute="leading" id="tcT-s9-TMr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

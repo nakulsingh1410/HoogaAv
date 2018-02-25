@@ -78,16 +78,17 @@ class ShareCell: UITableViewCell {
                 
                 if let eventType = eventType?.trim(), eventType == EventType.paid.rawValue{
                     buttonregister.setTitle(RegisterButtonTitle.bookMore.rawValue, for: .normal)
-                    
+                    btnViewTicket.setTitle(RegisterButtonTitle.viewTickets.rawValue, for: .normal)
+
                 }else{
-                    buttonregister.setTitle(RegisterButtonTitle.addMoreParticipants.rawValue, for: .normal)                    
+                    buttonregister.setTitle(RegisterButtonTitle.addMoreParticipants.rawValue, for: .normal)
+                    btnViewTicket.setTitle(RegisterButtonTitle.viewQRCodes.rawValue, for: .normal)
                 }
                 
             }else{
                 btnViewTicket.isHidden = true
                 btnLuckyTicket.isHidden = true
                 viewTicketViewHeightConstraint.constant = 0
-                
                 if let eventType = eventType?.trim(), eventType == EventType.paid.rawValue{
                     buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
                 }else{

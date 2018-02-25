@@ -58,11 +58,11 @@ class ParticipationTableViewCell: UITableViewCell {
             lblLuckyDrawNo.backgroundColor = UIColor.gray
             lblLuckyDrawNo.textColor = UIColor.white
             //            btnParticipateHeighConstraint.isHidden = true
-            lblLuckyDrawNo.font = Font.gillSansSemiBold(size: 30)
+            lblLuckyDrawNo.font = Font.gillSansSemiBold(size: 40)
             lblLuckyDrawNo.layer.cornerRadius = 5.0
             lblLuckyDrawNo.clipsToBounds = true
             btnParticipateHeighConstraint.constant = 0
-            viewLuckyDraeNoHeightConstraint.constant = 65
+            viewLuckyDraeNoHeightConstraint.constant = 75
             
         }else{
             btnParticipate.setTitle(ParticipationButtonTitle.Participate.rawValue, for: .normal)
@@ -92,12 +92,12 @@ class ParticipationTableViewCell: UITableViewCell {
             lblLuckyDrawNo.text = string
             lblLuckyDrawNo.backgroundColor = UIColor.gray
             lblLuckyDrawNo.textColor = UIColor.white
-            lblLuckyDrawNo.font = Font.gillSansSemiBold(size: 30)
+            lblLuckyDrawNo.font = Font.gillSansSemiBold(size: 40)
             lblLuckyDrawNo.layer.cornerRadius = 5.0
             lblLuckyDrawNo.clipsToBounds = true
 //            btnParticipateHeighConstraint.isHidden = true
             btnParticipateHeighConstraint.constant = 0
-            viewLuckyDraeNoHeightConstraint.constant = 65
+            viewLuckyDraeNoHeightConstraint.constant = 75
         }else{
             isParticipate = true
             btnParticipateHeighConstraint.constant = 35
@@ -107,13 +107,13 @@ class ParticipationTableViewCell: UITableViewCell {
         if isParticipate == false {
             if let string = result.isprizewon, string == "True" {
                 btnParticipateHeighConstraint.constant = 35
-                viewLuckyDraeNoHeightConstraint.constant = 65
+                viewLuckyDraeNoHeightConstraint.constant = 75
                 btnParticipate.setTitle(ParticipationButtonTitle.ViewPrizeDetails.rawValue, for: .normal)
                 lblLuckyDrawNo.backgroundColor = UIColor(hex: "5CA430")
 
             }else{
                 btnParticipateHeighConstraint.constant = 0
-                viewLuckyDraeNoHeightConstraint.constant = 65
+                viewLuckyDraeNoHeightConstraint.constant = 75
 
                 lblLuckyDrawNo.backgroundColor = UIColor(hex: "F00000")
             }

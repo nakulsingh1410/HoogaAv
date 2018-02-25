@@ -24,9 +24,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 //        txtFEmail.text = "9772216627"
 //        txtFPassword.text = "1234"
-        if appDelegate.arrCountryCode == nil{
-            getCountryCodeAPI()
-        }
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,21 +99,6 @@ extension LoginViewController{
             }
         }
     }
-    
-    func getCountryCodeAPI()  {
-        LoginService.getCountryCode { [weak self](flag, arraCountryCode) in
-            guard let weakSelf = self else {return}
-            if let countryCodes = arraCountryCode {
-               appDelegate.arrCountryCode = countryCodes
-                
-            }else{
-              //  Common.showAlert(message: message)
-            }
-        }
-       
-    }
-    
-     
 }
 
 

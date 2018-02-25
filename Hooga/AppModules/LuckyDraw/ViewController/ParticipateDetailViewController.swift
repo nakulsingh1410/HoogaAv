@@ -48,7 +48,7 @@ class ParticipateDetailViewController: UIViewController {
         lblPriceCollectedBy.text =   ""
         lblCollectedOn.text = ""
         lblPrizeDescription.text = ""
-        lblLuckyDrawSequence.font = Font.gillSansSemiBold(size: 30)
+        lblLuckyDrawSequence.font = Font.gillSansSemiBold(size: 40)
         lblLuckyDrawSequence.layer.cornerRadius = 5.0
         lblLuckyDrawSequence.clipsToBounds = true
 //        lblParticipateName.font = Font.gillSansSemiBold(size: fontSize)
@@ -87,8 +87,7 @@ class ParticipateDetailViewController: UIViewController {
                 lblPrizeDescription.text = string
             }
             
-         
-                if let path = data.prizeimage {
+            if let path = data.prizeimage {
                     let url = kAssets + path
                     imgViewPrize.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){[weak self] (image, error, cacheType, url) in
                         guard let weakSelf = self else {return}
@@ -118,5 +117,8 @@ class ParticipateDetailViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    @IBAction func btnHomeDidTapped(_ sender: Any) {
+        NavigationManager.navigateToEvent(navigationController: navigationController)
+    }
     
 }

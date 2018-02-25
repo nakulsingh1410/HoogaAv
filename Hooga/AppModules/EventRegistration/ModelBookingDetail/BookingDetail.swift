@@ -46,6 +46,7 @@ class SaveBookingDetail: NSObject,Mappable {
     var city : String?
     var postalcode : String?
     var profilepic : String?
+    var countrycode : String?
     
     var isearlybird : String = "false"
     var status = "false"
@@ -72,6 +73,7 @@ class SaveBookingDetail: NSObject,Mappable {
         self.tickettypeid = 0
         self.dateofbirth = "__/ __/ __"
         self.isearlybird = ""
+        self.countrycode = ""
         
     }
     
@@ -97,6 +99,9 @@ class SaveBookingDetail: NSObject,Mappable {
         profilepic            <- map["profilepic"]
         isearlybird            <- map["isearlybird"]
         status            <- map["status"]
+        countrycode            <- map["countrycode"]
+
+        
         
     }
     

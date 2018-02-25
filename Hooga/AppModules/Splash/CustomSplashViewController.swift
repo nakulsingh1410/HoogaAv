@@ -12,6 +12,17 @@ class CustomSplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
+        if appDelegate.arrCountryCode == nil{
+            getCountryCodeAPI()
+        }else{
+            navigationToFirstScreen()
+        }
+    }
+    
+    
+    func navigationToFirstScreen()  {
         if let _ = StorageModel.getUserData()?.userid {
             LoginService.isUserExist { (flag, message) in
                 if flag {
@@ -23,10 +34,8 @@ class CustomSplashViewController: UIViewController {
         }else{
             NavigationManager.navigateToLogin(navigationController: self.navigationController)
         }
+        
     }
-    
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,14 +43,18 @@ class CustomSplashViewController: UIViewController {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func getCountryCodeAPI()  {
+        LoginService.getCountryCode { [weak self](flag, arraCountryCode) in
+            guard let weakSelf = self else {return}
+            if let countryCodes = arraCountryCode {
+                appDelegate.arrCountryCode = countryCodes
+                weakSelf.navigationToFirstScreen()
+                
+            }else{
+                //  Common.showAlert(message: message)
+            }
+        }
+        
+    }
     
 }

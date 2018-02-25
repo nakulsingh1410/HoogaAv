@@ -42,6 +42,9 @@ class EventListViewController: UIViewController,AMMenuDelegate,TagSearchDelegate
         getCategoryList()
         getEntryTypeList()
         getTagList()
+        
+        buttonPay.backgroundColor = Color.lightGray
+        buttonFree.backgroundColor = Color.lightGray
     }
     
     override func didReceiveMemoryWarning() {

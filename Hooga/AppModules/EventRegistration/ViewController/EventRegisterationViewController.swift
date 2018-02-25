@@ -121,10 +121,12 @@ class EventRegisterationViewController: UIViewController {
             }
 
             if let bnanner = userData.profilepic {
-                let url = kAssets + bnanner
+                let url = kUserImageBaseUrl + bnanner
                 imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
                     if image == nil {
                         self.btnUpload.isHidden = false
+                    }else{
+                        self.btnUpload.isHidden = true
                     }
                 }
             }

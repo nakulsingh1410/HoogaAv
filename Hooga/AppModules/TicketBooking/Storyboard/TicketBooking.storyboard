@@ -592,11 +592,11 @@
                             <constraint firstItem="vuS-nl-dlK" firstAttribute="top" secondItem="oJx-x6-iuO" secondAttribute="bottom" id="JCQ-qg-Eca"/>
                             <constraint firstItem="dPf-bp-QFM" firstAttribute="leading" secondItem="wWU-Ql-MBE" secondAttribute="leading" constant="20" id="JEU-Hu-WQe"/>
                             <constraint firstItem="wWU-Ql-MBE" firstAttribute="trailing" secondItem="qmr-RQ-QbD" secondAttribute="trailing" constant="20" id="Ll1-Hb-zVP"/>
+                            <constraint firstItem="oJx-x6-iuO" firstAttribute="bottom" secondItem="glx-1F-2Bb" secondAttribute="bottom" id="Pvh-XX-4aP"/>
                             <constraint firstItem="wWU-Ql-MBE" firstAttribute="trailing" secondItem="dPf-bp-QFM" secondAttribute="trailing" constant="20" id="Rn3-TQ-YLc"/>
                             <constraint firstItem="oJx-x6-iuO" firstAttribute="leading" secondItem="wWU-Ql-MBE" secondAttribute="leading" id="V2P-oL-Bae"/>
                             <constraint firstItem="oJx-x6-iuO" firstAttribute="top" secondItem="wWU-Ql-MBE" secondAttribute="top" id="WW8-ad-ZmO"/>
                             <constraint firstItem="glx-1F-2Bb" firstAttribute="trailing" secondItem="wWU-Ql-MBE" secondAttribute="trailing" id="Ztz-vV-ZgB"/>
-                            <constraint firstAttribute="bottom" secondItem="glx-1F-2Bb" secondAttribute="bottom" constant="603" id="bhh-Ek-DMJ"/>
                             <constraint firstItem="C15-mh-9Is" firstAttribute="leading" secondItem="wWU-Ql-MBE" secondAttribute="leading" constant="20" id="gbU-dm-2w1"/>
                             <constraint firstItem="qmr-RQ-QbD" firstAttribute="leading" secondItem="wWU-Ql-MBE" secondAttribute="leading" constant="20" id="qty-LB-HsJ"/>
                             <constraint firstItem="qmr-RQ-QbD" firstAttribute="top" secondItem="vuS-nl-dlK" secondAttribute="bottom" constant="30" id="sns-ic-dfU"/>

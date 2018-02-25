@@ -41,6 +41,7 @@ class AddParticipateViewController: UIViewController {
         }
         navHeaderView.backButtonType = .Back
         navHeaderView.isBottonLineHidden = false
+//        navHeaderView.backgroundColor = 
         
     }
     
