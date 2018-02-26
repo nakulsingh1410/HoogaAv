@@ -249,16 +249,16 @@
                                                 <rect key="frame" x="20" y="121" width="335" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTI-Qe-gOl" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="4.5" width="150" height="21"/>
+                                                        <rect key="frame" x="0.0" y="4.5" width="120" height="21"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="150" id="dAL-Ok-Tfq"/>
+                                                            <constraint firstAttribute="width" constant="120" id="dAL-Ok-Tfq"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHA-eP-ayQ" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
-                                                        <rect key="frame" x="160" y="0.0" width="145" height="30"/>
+                                                        <rect key="frame" x="130" y="0.0" width="175" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -295,16 +295,16 @@
                                                 <rect key="frame" x="20" y="156" width="335" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quanitity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nad-Vr-Rp1" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="4.5" width="150" height="21"/>
+                                                        <rect key="frame" x="0.0" y="4.5" width="120" height="21"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="150" id="kML-vV-86a"/>
+                                                            <constraint firstAttribute="width" constant="120" id="kML-vV-86a"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DKE-m6-4nO" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
-                                                        <rect key="frame" x="160" y="0.0" width="145" height="30"/>
+                                                        <rect key="frame" x="130" y="0.0" width="175" height="30"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

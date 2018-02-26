@@ -32,12 +32,12 @@ class ContactCell: UITableViewCell {
         labelPhoneNumber.text = ""
         labelEmailAddress.text = ""
         var flag = true
-        if let organizerphone = eventDetail.organizerphone {
+        if let organizerphone = eventDetail.organizerphone?.trim() {
             labelPhoneNumber.text = organizerphone
             flag = false
         }
-        if let organizeremail = eventDetail.organizeremail {
-            labelEmailAddress.text = organizeremail
+        if let organizeremail = eventDetail.organizeremail?.trim() {
+            labelEmailAddress.text = "|" + organizeremail
             flag = false
         }
         if flag {

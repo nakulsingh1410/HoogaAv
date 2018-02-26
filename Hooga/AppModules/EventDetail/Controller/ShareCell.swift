@@ -33,7 +33,7 @@ class ShareCell: UITableViewCell {
     @IBOutlet weak var viewTicketViewHeightConstraint: NSLayoutConstraint!
     
     var delegate : ShareCellDelegate?
-    
+    var eventDetailObj : EventDetail?
     
     @IBOutlet weak var buttonregister: UIButton!
     static var nib:UINib {
@@ -45,64 +45,124 @@ class ShareCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
+
     }
     
     
-//    func loadCellData()  {
-//        
-//        let cellShare = tableView.dequeueReusableCell(withIdentifier: ShareCell.identifier) as! ShareCell
-//        if arrEventFlatform.count > 0{
-//            cellSharePlateForm(cell: cellShare)
-//        }
-//        cellShare.delegate = self
-//        cellShare.selectionStyle = .none
-//        if let regId = eventDetail?.regid , regId > 0{
-//            cellShare.buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
-//        }else{
-//            cellShare.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
-//        }
-//        cellShare.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked)
-//        
-//    }
+    func loadCellDataForPaidEvent(arrEventFlatform:[EventPlatform],eventDetail:EventDetail?,isComingFrom: ComingFromScreen,isTicketBooked:Bool)  {
+        eventDetailObj = eventDetail
+        if arrEventFlatform.count > 0{
+            cellSharePlateForm(arrEventFlatform:arrEventFlatform)
+        }
+        if let eventType = eventDetail?.entrytype?.trim(), eventType == EventType.paid.rawValue{
+            showShareCellForPaidEvent(isComingFrom: isComingFrom, isTicketBooked: isTicketBooked)
+        }else{
+            showShareCellForFreeEvent(isComingFrom: isComingFrom, isTicketBooked: isTicketBooked)
+
+        }
+//        showShareCell(isComingFrom: isComingFrom,isTicketBooked:isTicketBooked, eventType: eventDetail?.entrytype)
+      
+        
+    }
+    
+    func cellSharePlateForm(arrEventFlatform:[EventPlatform])  {
+        
+        buttnFaceBook.isHidden = true
+        buttonTwitter.isHidden = true
+        buttonInsta.isHidden = true
+        buttonGoogle.isHidden = true
+        for item in arrEventFlatform {
+            if item.platform == "Facebook"{
+                buttnFaceBook.url = item.url
+                buttnFaceBook.isHidden = false
+            }else if item.platform ==  "Twitter"{
+                buttonTwitter.url = item.url
+                buttonTwitter.isHidden = false
+            }else if item.platform ==  "Instagram"{
+                buttonInsta.url = item.url
+                buttonInsta.isHidden = false
+            }else if item.platform ==  "Goggle"{
+                buttonGoogle.url = item.url
+                buttonGoogle.isHidden = false
+            }
+        }
+    }
     
     
-    func showShareCell(isComingFrom:ComingFromScreen,isTicketBooked :Bool,eventType:String?)  {
+    func showShareCellForPaidEvent(isComingFrom:ComingFromScreen,isTicketBooked :Bool)  {
+       
         if isComingFrom == ComingFromScreen.eventListing {
             viewTicketViewHeightConstraint.constant = 0
+            if isTicketBooked{
+                if let regId = eventDetailObj?.regid , regId > 0{
+                    buttonregister.setTitle(RegisterButtonTitle.bookMoreTicket.rawValue, for: .normal)
+                }else{
+                    buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
+                }
+            }else{
+                if let regId = eventDetailObj?.regid , regId > 0{
+                    buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
+                }else{
+                    buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
+                }
+            }
+          
         }else{
             viewTicketViewHeightConstraint.constant = 112
             if isTicketBooked{
                 btnViewTicket.isHidden = false
                 btnLuckyTicket.isHidden = false
                 
-                if let eventType = eventType?.trim(), eventType == EventType.paid.rawValue{
-                    buttonregister.setTitle(RegisterButtonTitle.bookMore.rawValue, for: .normal)
-                    btnViewTicket.setTitle(RegisterButtonTitle.viewTickets.rawValue, for: .normal)
-
-                }else{
+                buttonregister.setTitle(RegisterButtonTitle.bookMoreTicket.rawValue, for: .normal)
+                btnViewTicket.setTitle(RegisterButtonTitle.viewTickets.rawValue, for: .normal)
+            }else{
+                btnViewTicket.isHidden = true
+                btnLuckyTicket.isHidden = true
+                viewTicketViewHeightConstraint.constant = 0
+                
+                buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
+                
+            }
+            
+        }
+    }
+    func showShareCellForFreeEvent(isComingFrom:ComingFromScreen,isTicketBooked :Bool)  {
+        
+        if isComingFrom == ComingFromScreen.eventListing {
+            viewTicketViewHeightConstraint.constant = 0
+             if isTicketBooked{
+                if let regId = eventDetailObj?.regid , regId > 0{
                     buttonregister.setTitle(RegisterButtonTitle.addMoreParticipants.rawValue, for: .normal)
-                    btnViewTicket.setTitle(RegisterButtonTitle.viewQRCodes.rawValue, for: .normal)
+                }else{
+                    buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
                 }
+            }else{
+                if let regId = eventDetailObj?.regid , regId > 0{
+                    buttonregister.setTitle(RegisterButtonTitle.addParticipants.rawValue, for: .normal)
+                }else{
+                    buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
+                }
+            }
+        }else{
+            viewTicketViewHeightConstraint.constant = 112
+            if isTicketBooked{
+                btnViewTicket.isHidden = false
+                btnLuckyTicket.isHidden = false
+                
+                buttonregister.setTitle(RegisterButtonTitle.addMoreParticipants.rawValue, for: .normal)
+                btnViewTicket.setTitle(RegisterButtonTitle.viewQRCodes.rawValue, for: .normal)
                 
             }else{
                 btnViewTicket.isHidden = true
                 btnLuckyTicket.isHidden = true
                 viewTicketViewHeightConstraint.constant = 0
-                if let eventType = eventType?.trim(), eventType == EventType.paid.rawValue{
-                    buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
-                }else{
-                    buttonregister.setTitle(RegisterButtonTitle.addParticipants.rawValue, for: .normal)
-                    
-                }
+                
+                buttonregister.setTitle(RegisterButtonTitle.addParticipants.rawValue, for: .normal)
             }
         }
     }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
+    
     
     @IBAction func buttonTermCondition_didPressed(_ sender: Any) {
         

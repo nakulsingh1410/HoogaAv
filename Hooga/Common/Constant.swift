@@ -212,9 +212,9 @@ public enum MessageError: String{
 enum RegisterButtonTitle:String{
     case register = "  Register  "
     case bookTickets = "  Book Ticket(s)  "
-    case bookMore = "  Book More  "
+    case bookMoreTicket = "  Book More Ticket(s) "
     case addParticipants = "Add Participants"
-    case addMoreParticipants = "Add more Participants"
+    case addMoreParticipants = "Add More Participants"
     case viewQRCodes = "View QR Code(s)"
     case viewTickets = "View Ticket(s)"
 

@@ -152,26 +152,37 @@ extension EventDetailVC{
     
     func getShareCell() -> UITableViewCell {
         if let cell = tableDetail.dequeueReusableCell(withIdentifier: ShareCell.identifier) as? ShareCell {
-            if arrEventFlatform.count > 0{
-                cellSharePlateForm(cell: cell)
-            }
-            cell.delegate = self
-            cell.selectionStyle = .none
-            if let regId = eventDetail?.regid , regId > 0{
-                cell.buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
-            }else{
-                cell.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
-            }
-            cell.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked, eventType: eventDetail?.entrytype)
+//            if arrEventFlatform.count > 0{
+//                cellSharePlateForm(cell: cell)
+//            }
+//            cell.delegate = self
+//            cell.selectionStyle = .none
+//            if let regId = eventDetail?.regid , regId > 0{
+//                cell.buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
+//            }else{
+//                cell.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
+//            }
+//            cell.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked, eventType: eventDetail?.entrytype)
+//            cell.btnTermsNCondition.isHidden = true
+//            cell.btnFAQs.isHidden = true
+//
+//            if arrEventFaq.count > 0 {
+//                cell.btnFAQs.isHidden = false
+//            }
+//            if arrEventTermsCondition.count > 0 {
+//                cell.btnTermsNCondition.isHidden = false
+//            }
+            cell.loadCellDataForPaidEvent(arrEventFlatform: arrEventFlatform, eventDetail: eventDetail, isComingFrom: comingFrom, isTicketBooked: isTicketBooked)
             cell.btnTermsNCondition.isHidden = true
             cell.btnFAQs.isHidden = true
-
+            
             if arrEventFaq.count > 0 {
                 cell.btnFAQs.isHidden = false
             }
             if arrEventTermsCondition.count > 0 {
                 cell.btnTermsNCondition.isHidden = false
             }
+            cell.delegate = self
             return cell
         }
         return UITableViewCell()
@@ -240,7 +251,7 @@ extension EventDetailVC :ShareCellDelegate{
             title == RegisterButtonTitle.register.rawValue{
             NavigationManager.eventRegistration(navigationController: self.navigationController, evntDetail: evntDtl)
         }else if let title = cell.buttonregister.titleLabel?.text ,
-            title == RegisterButtonTitle.bookTickets.rawValue || title == RegisterButtonTitle.bookMore.rawValue{
+            title == RegisterButtonTitle.bookTickets.rawValue || title == RegisterButtonTitle.bookMoreTicket.rawValue{
             NavigationManager.ticketBooking(navigationController: navigationController, evntDetail: evntDtl, comingFrom: ComingFromScreen.eventDetail)
         }else if let title = cell.buttonregister.titleLabel?.text ,
             title == RegisterButtonTitle.addParticipants.rawValue || title == RegisterButtonTitle.addMoreParticipants.rawValue{

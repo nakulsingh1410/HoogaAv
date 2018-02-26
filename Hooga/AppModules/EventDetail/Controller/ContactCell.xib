@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="test@test.com.sg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld2-j6-rRG" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="110" y="18" width="202" height="21"/>
+                        <rect key="frame" x="108" y="18" width="204" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="EZF-s7-pwR"/>
                         </constraints>
@@ -46,7 +46,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="ld2-j6-rRG" secondAttribute="trailing" constant="8" id="3YI-Rm-Hh2"/>
-                    <constraint firstItem="ld2-j6-rRG" firstAttribute="leading" secondItem="ir1-V4-POO" secondAttribute="trailing" constant="2" id="3oz-XE-9XR"/>
+                    <constraint firstItem="ld2-j6-rRG" firstAttribute="leading" secondItem="ir1-V4-POO" secondAttribute="trailing" id="3oz-XE-9XR"/>
                     <constraint firstItem="Dl0-hB-vr5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="K4b-0r-mEq"/>
                     <constraint firstItem="ir1-V4-POO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="SYM-5B-TQG"/>
                     <constraint firstAttribute="trailing" secondItem="Dl0-hB-vr5" secondAttribute="trailing" constant="8" id="Ug6-E7-3Ie"/>
