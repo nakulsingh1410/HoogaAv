@@ -25,7 +25,7 @@ let kIntTransform = TransformOf<String, Any>(fromJSON: { (value: Any?) -> String
     
 })
 
-let kProjectName = "Hooga"
+let kProjectName = "Hooga+"
 
 let kCloseNotification = NSNotification.Name(rawValue: "eventClosed")
 
