@@ -16,6 +16,7 @@ class ParticipantResultViewController: UIViewController {
     var arrMyEventluckyDrawResult = [ShowMyEventLuckyDrawResult]()
     var eventDetail :EventDetail?
 
+    var heldon:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         configoreNavigationHeader()
@@ -26,6 +27,8 @@ class ParticipantResultViewController: UIViewController {
     func initializeCalls()  {
         guard let evntdetail = eventDetail else{return}
         eventTicketInfoView.loadTicketInfo(eventDetail: evntdetail, textColor: UIColor.black, backGroundColor: .white)
+        showMyEventLuckyDrawAPI(eventId: evntdetail.eventid!)
+
 
         if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{
             if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
@@ -72,7 +75,7 @@ extension ParticipantResultViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipationTableViewCell") as? ParticipationTableViewCell{
-            cell.loadParticipateResultCellData(result: arrMyEventluckyDrawResult[indexPath.row])
+            cell.loadParticipateResultCellData(result: arrMyEventluckyDrawResult[indexPath.row], heldOn: heldon)
             cell.participationCellDelegate = self
             return cell
         }
@@ -122,6 +125,19 @@ extension ParticipantResultViewController {
         }
     }
     
+    
+    func showMyEventLuckyDrawAPI(eventId:Int)  {
+        TicketBookingService.showMyEventLuckyDraw(eventid: eventId) {[weak self] (flag, showMyEventLuckyDraw) in
+            guard let weakSelf = self else{return}
+            if let obj = showMyEventLuckyDraw {
+                weakSelf.heldon = obj.heldon
+//                weakSelf.showMyEventLuckyDraw = obj
+                //weakSelf.showLuckyDrawData()
+            }
+        }
+    }
+
+    
 }
 
 /*********************************************************************************/
@@ -138,5 +154,8 @@ extension ParticipantResultViewController:ParticipationTableViewCellDelegate {
     func participateButtonTapped(cell:ParticipationTableViewCell){
         //
     }
+    
+    
+    
     
 }

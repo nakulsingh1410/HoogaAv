@@ -22,9 +22,7 @@
 		3026798520356800005B4442 /* LuckyDrawCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026797C203567FF005B4442 /* LuckyDrawCell.swift */; };
 		3026798620356800005B4442 /* LuckyDrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026797D203567FF005B4442 /* LuckyDrawVC.swift */; };
 		3026798720356800005B4442 /* ParticipantResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026797E203567FF005B4442 /* ParticipantResultViewController.swift */; };
-		3026798820356800005B4442 /* ParticipateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026797F203567FF005B4442 /* ParticipateTableViewCell.swift */; };
 		3026798920356800005B4442 /* ParticipateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30267980203567FF005B4442 /* ParticipateDetailViewController.swift */; };
-		3026798B20356800005B4442 /* ParticipateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3026798220356800005B4442 /* ParticipateTableViewCell.xib */; };
 		3026798C20356800005B4442 /* LuckyDrawCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3026798320356800005B4442 /* LuckyDrawCell.xib */; };
 		3026798D20356800005B4442 /* ParticipateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3026798420356800005B4442 /* ParticipateViewController.swift */; };
 		30267990203568B1005B4442 /* FilterTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3026798E203568B1005B4442 /* FilterTableFooterView.xib */; };
@@ -50,6 +48,7 @@
 		305471DE202092650009A8EC /* OpenImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471DD202092650009A8EC /* OpenImagePickerViewController.swift */; };
 		305471ED20213B3B0009A8EC /* EventRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305471EC20213B3B0009A8EC /* EventRegistration.storyboard */; };
 		305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */; };
+		306D9CC72045D0B1003EF797 /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306D9CC62045D0B1003EF797 /* HomeButton.swift */; };
 		306E699620419DCA00A4298A /* LongDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E699520419DCA00A4298A /* LongDescriptionViewController.swift */; };
 		306E69992041E02E00A4298A /* EventInfoTickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306E69982041E02E00A4298A /* EventInfoTickerView.xib */; };
 		306E699B2041E05100A4298A /* EventInfoTickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E699A2041E05100A4298A /* EventInfoTickerView.swift */; };
@@ -211,9 +210,7 @@
 		3026797C203567FF005B4442 /* LuckyDrawCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuckyDrawCell.swift; sourceTree = "<group>"; };
 		3026797D203567FF005B4442 /* LuckyDrawVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuckyDrawVC.swift; sourceTree = "<group>"; };
 		3026797E203567FF005B4442 /* ParticipantResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantResultViewController.swift; sourceTree = "<group>"; };
-		3026797F203567FF005B4442 /* ParticipateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipateTableViewCell.swift; sourceTree = "<group>"; };
 		30267980203567FF005B4442 /* ParticipateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipateDetailViewController.swift; sourceTree = "<group>"; };
-		3026798220356800005B4442 /* ParticipateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipateTableViewCell.xib; sourceTree = "<group>"; };
 		3026798320356800005B4442 /* LuckyDrawCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LuckyDrawCell.xib; sourceTree = "<group>"; };
 		3026798420356800005B4442 /* ParticipateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipateViewController.swift; sourceTree = "<group>"; };
 		3026798E203568B1005B4442 /* FilterTableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableFooterView.xib; sourceTree = "<group>"; };
@@ -239,6 +236,7 @@
 		305471DD202092650009A8EC /* OpenImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenImagePickerViewController.swift; sourceTree = "<group>"; };
 		305471EC20213B3B0009A8EC /* EventRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventRegistration.storyboard; sourceTree = "<group>"; };
 		305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRegisterationViewController.swift; sourceTree = "<group>"; };
+		306D9CC62045D0B1003EF797 /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
 		306E699520419DCA00A4298A /* LongDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongDescriptionViewController.swift; sourceTree = "<group>"; };
 		306E69982041E02E00A4298A /* EventInfoTickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventInfoTickerView.xib; sourceTree = "<group>"; };
 		306E699A2041E05100A4298A /* EventInfoTickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoTickerView.swift; sourceTree = "<group>"; };
@@ -471,6 +469,7 @@
 		301B86632007452900DA7855 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				306D9CC52045D09B003EF797 /* HomeButton */,
 				306E69A620431FA400A4298A /* CountryCode */,
 				306E69972041DFEC00A4298A /* EventInfoTicker */,
 				30EA5FB0201EF19D009D4278 /* CustomNavigationHeader */,
@@ -643,8 +642,6 @@
 				3026797D203567FF005B4442 /* LuckyDrawVC.swift */,
 				3026797E203567FF005B4442 /* ParticipantResultViewController.swift */,
 				30267980203567FF005B4442 /* ParticipateDetailViewController.swift */,
-				3026797F203567FF005B4442 /* ParticipateTableViewCell.swift */,
-				3026798220356800005B4442 /* ParticipateTableViewCell.xib */,
 				3026798420356800005B4442 /* ParticipateViewController.swift */,
 				3026798F203568B1005B4442 /* FilterTableFooterView.swift */,
 				3026798E203568B1005B4442 /* FilterTableFooterView.xib */,
@@ -686,6 +683,14 @@
 				305471EE20213B6E0009A8EC /* EventRegisterationViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		306D9CC52045D09B003EF797 /* HomeButton */ = {
+			isa = PBXGroup;
+			children = (
+				306D9CC62045D0B1003EF797 /* HomeButton.swift */,
+			);
+			path = HomeButton;
 			sourceTree = "<group>";
 		};
 		306E69972041DFEC00A4298A /* EventInfoTicker */ = {
@@ -1237,7 +1242,6 @@
 				7530D95B201F888300B9BB52 /* GalleryCell.xib in Resources */,
 				30267997203568E6005B4442 /* QRCodeTableViewCell.xib in Resources */,
 				30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */,
-				3026798B20356800005B4442 /* ParticipateTableViewCell.xib in Resources */,
 				30D77BF4200B36B400386438 /* DataTableViewCell.xib in Resources */,
 				306E699F2041E7E400A4298A /* ParticipationTableViewCell.xib in Resources */,
 				301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */,
@@ -1482,6 +1486,7 @@
 				30D77BED200B36B400386438 /* ExSlideMenuController.swift in Sources */,
 				302D1312202638D000AB10DD /* TicketBookingService.swift in Sources */,
 				30EA5FAB201E2892009D4278 /* EventCell.swift in Sources */,
+				306D9CC72045D0B1003EF797 /* HomeButton.swift in Sources */,
 				30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */,
 				30908C2B2031ADEC00FD7501 /* OtherPaymentView.swift in Sources */,
 				30EA5FA8201E2892009D4278 /* AMHorizontalMenu.swift in Sources */,
@@ -1524,7 +1529,6 @@
 				30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */,
 				30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */,
 				7574C3D520262D260010A4F1 /* PaymentVC.swift in Sources */,
-				3026798820356800005B4442 /* ParticipateTableViewCell.swift in Sources */,
 				306E69A820431FBA00A4298A /* CountryCodeView.swift in Sources */,
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
 				305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */,

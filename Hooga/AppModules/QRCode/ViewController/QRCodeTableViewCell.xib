@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,43 +12,37 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QRCodeTableViewCell" rowHeight="246" id="KGk-i7-Jjw" customClass="QRCodeTableViewCell" customModule="Hooga" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="386" height="246"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QRCodeTableViewCell" rowHeight="234" id="KGk-i7-Jjw" customClass="QRCodeTableViewCell" customModule="Hooga" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="210"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="386" height="245.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="386" height="209.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haC-tb-Tdo">
-                        <rect key="frame" x="0.0" y="0.0" width="386" height="245.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="209.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TICKET TYPE:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWp-br-nAx">
-                                <rect key="frame" x="20" y="16" width="346" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="TBw-j8-4tn"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TICKET TYPE:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWp-br-nAx" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="20" y="10" width="346" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wT4-Xm-Y4Q">
-                                <rect key="frame" x="118" y="75" width="150" height="150"/>
+                                <rect key="frame" x="128" y="57" width="130" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="5xG-aO-EJ5"/>
-                                    <constraint firstAttribute="width" constant="150" id="rs9-6D-uVd"/>
+                                    <constraint firstAttribute="height" constant="120" id="5xG-aO-EJ5"/>
+                                    <constraint firstAttribute="width" constant="130" id="rs9-6D-uVd"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TICKET TYPE:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVH-3a-Zsm">
-                                <rect key="frame" x="20" y="39" width="346" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="5Q2-pE-US2"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TICKET TYPE:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVH-3a-Zsm" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="20" y="31" width="346" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GD-wc-5YT">
-                                <rect key="frame" x="0.0" y="244" width="386" height="1"/>
+                                <rect key="frame" x="0.0" y="208" width="386" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Mrc-wh-xe6"/>
@@ -56,21 +51,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TICKET TYPE:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIL-AI-UAs" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="20" y="182" width="346" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="LIL-AI-UAs" firstAttribute="top" secondItem="wT4-Xm-Y4Q" secondAttribute="bottom" constant="5" id="Abo-WO-yen"/>
                             <constraint firstAttribute="trailing" secondItem="KWp-br-nAx" secondAttribute="trailing" constant="20" id="BwY-L6-wPN"/>
-                            <constraint firstItem="wT4-Xm-Y4Q" firstAttribute="top" secondItem="xVH-3a-Zsm" secondAttribute="bottom" constant="15" id="J7x-lv-Tik"/>
+                            <constraint firstItem="wT4-Xm-Y4Q" firstAttribute="top" secondItem="xVH-3a-Zsm" secondAttribute="bottom" constant="5" id="J7x-lv-Tik"/>
+                            <constraint firstItem="LIL-AI-UAs" firstAttribute="leading" secondItem="haC-tb-Tdo" secondAttribute="leading" constant="20" id="KMY-vZ-YT0"/>
                             <constraint firstAttribute="trailing" secondItem="xVH-3a-Zsm" secondAttribute="trailing" constant="20" id="QDM-Fc-pLW"/>
+                            <constraint firstAttribute="trailing" secondItem="LIL-AI-UAs" secondAttribute="trailing" constant="20" id="QlR-On-JXk"/>
                             <constraint firstAttribute="trailing" secondItem="4GD-wc-5YT" secondAttribute="trailing" id="RuP-7e-QGb"/>
                             <constraint firstItem="wT4-Xm-Y4Q" firstAttribute="centerX" secondItem="haC-tb-Tdo" secondAttribute="centerX" id="bcE-1Y-7gi"/>
+                            <constraint firstItem="4GD-wc-5YT" firstAttribute="top" secondItem="LIL-AI-UAs" secondAttribute="bottom" constant="5" id="boz-wB-Pd2"/>
                             <constraint firstAttribute="bottom" secondItem="4GD-wc-5YT" secondAttribute="bottom" id="gN7-h1-bPj"/>
-                            <constraint firstItem="4GD-wc-5YT" firstAttribute="top" secondItem="wT4-Xm-Y4Q" secondAttribute="bottom" constant="19" id="kwV-Rk-kkU"/>
                             <constraint firstItem="4GD-wc-5YT" firstAttribute="leading" secondItem="haC-tb-Tdo" secondAttribute="leading" id="q87-Uf-sTZ"/>
                             <constraint firstItem="xVH-3a-Zsm" firstAttribute="leading" secondItem="haC-tb-Tdo" secondAttribute="leading" constant="20" id="s0c-aw-uoy"/>
-                            <constraint firstItem="xVH-3a-Zsm" firstAttribute="top" secondItem="KWp-br-nAx" secondAttribute="bottom" constant="2" id="tiK-d1-sml"/>
+                            <constraint firstItem="xVH-3a-Zsm" firstAttribute="top" secondItem="KWp-br-nAx" secondAttribute="bottom" id="tiK-d1-sml"/>
                             <constraint firstItem="KWp-br-nAx" firstAttribute="leading" secondItem="haC-tb-Tdo" secondAttribute="leading" constant="20" id="u8l-OW-YCO"/>
-                            <constraint firstItem="KWp-br-nAx" firstAttribute="top" secondItem="haC-tb-Tdo" secondAttribute="top" constant="16" id="zOd-34-NyD"/>
+                            <constraint firstItem="KWp-br-nAx" firstAttribute="top" secondItem="haC-tb-Tdo" secondAttribute="top" constant="10" id="zOd-34-NyD"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -85,9 +89,10 @@
             <connections>
                 <outlet property="cardImage" destination="wT4-Xm-Y4Q" id="r49-jd-BuD"/>
                 <outlet property="lblName" destination="KWp-br-nAx" id="Wgs-Lx-NiA"/>
+                <outlet property="lblQrCode" destination="LIL-AI-UAs" id="mey-ij-uqO"/>
                 <outlet property="lblTicketType" destination="xVH-3a-Zsm" id="bgG-Kj-Jx7"/>
             </connections>
-            <point key="canvasLocation" x="67" y="55"/>
+            <point key="canvasLocation" x="67" y="49"/>
         </tableViewCell>
     </objects>
 </document>

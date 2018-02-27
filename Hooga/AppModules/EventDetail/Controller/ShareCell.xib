@@ -163,12 +163,12 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6s3-gc-cbL">
-                        <rect key="frame" x="209" y="8" width="156" height="25"/>
+                        <rect key="frame" x="242" y="8" width="123" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="O45-Mg-4uQ"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
-                        <state key="normal" title="TERMS &amp; CONDITIONS">
+                        <state key="normal" title="Terms &amp; Conditions">
                             <color key="titleColor" red="0.23137254900000001" green="0.0039215686269999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>

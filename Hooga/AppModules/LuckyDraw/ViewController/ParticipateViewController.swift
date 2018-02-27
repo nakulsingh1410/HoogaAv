@@ -25,7 +25,6 @@ class ParticipateViewController: UIViewController {
         configTableView()
         initializeCalls()
         
-        
     }
     
     func initializeCalls()  {

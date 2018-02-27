@@ -68,18 +68,20 @@ class EventTitleCell: UITableViewCell {
         }
         labelDescription.text = shortDescription
         
-        var longDescription =  ""
         if let long = eventDetail.longdescription?.trim(){
-            longDescription += long
+            labelDescription.text = labelDescription.text! + "\n" + long
         }
         
-        if longDescription.length > 0{
-            btnReadMore.isHidden = false
-            readMoreBtnConstraint.constant = 30
-        }else{
-            btnReadMore.isHidden = true
-            readMoreBtnConstraint.constant = 0
-        }
+        
+//        if longDescription.length > 0{
+//            btnReadMore.isHidden = false
+//            readMoreBtnConstraint.constant = 30
+//        }else{
+//            btnReadMore.isHidden = true
+//            readMoreBtnConstraint.constant = 0
+//        }
+        btnReadMore.isHidden = true
+        readMoreBtnConstraint.constant = 0
     }
     
     @IBAction func btnReadMoreTapped(_ sender: Any) {

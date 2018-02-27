@@ -88,7 +88,7 @@ class ParticipateDetailViewController: UIViewController {
             }
             
             if let path = data.prizeimage {
-                    let url = kAssets + path
+                    let url = kPrice + path
                     imgViewPrize.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){[weak self] (image, error, cacheType, url) in
                         guard let weakSelf = self else {return}
                         if image == nil {

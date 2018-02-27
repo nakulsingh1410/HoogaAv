@@ -24,6 +24,9 @@ class ParticipationTableViewCell: UITableViewCell {
     @IBOutlet weak var lblLuckyDrawNo: UILabel!
     @IBOutlet weak var btnParticipate: HoogaButton!
     
+    @IBOutlet weak var lblHeldOnLabel: HoogaLabel!
+    @IBOutlet weak var lblHeldOn: HoogaLabel! // for particiapte result
+    
     @IBOutlet weak var btnParticipateHeighConstraint: NSLayoutConstraint!
     @IBOutlet weak var viewLuckyDraeNoHeightConstraint: NSLayoutConstraint!
     var ticketDetail:ShowMyTicketDetails?
@@ -34,6 +37,8 @@ class ParticipationTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        lblHeldOnLabel.text = ""
+        lblHeldOn.text = ""
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -77,7 +82,7 @@ class ParticipationTableViewCell: UITableViewCell {
         lblLuckyDrawNo.textAlignment = .center
     }
     
-    func loadParticipateResultCellData(result:ShowMyEventLuckyDrawResult)  {
+    func loadParticipateResultCellData(result:ShowMyEventLuckyDrawResult,heldOn:String?)  {
         showMyEventLuckyDrawResult = result
         lblName.text = ""
         if let string = result.firstName{
@@ -86,6 +91,12 @@ class ParticipationTableViewCell: UITableViewCell {
         if let string = result.lastName{
             lblName.text =  lblName.text! + " " + string
         }
+        if let string = heldOn{
+            lblHeldOnLabel.text = "Held On"
+            lblHeldOn.text = string
+        }
+        
+        
         
         var isParticipate = false
         if let string = result.luckydrawsequence, string.length > 0 {

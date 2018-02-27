@@ -30,6 +30,7 @@ class QRCodeRequestModel: NSObject,Mappable {
 class QRCodeTickets: NSObject,Mappable {
     
     var qrCodeID : Int?
+    var qrCode : String?
     var qrCodeImage : String?
     var eventid : Int?
     var title : String?
@@ -50,6 +51,7 @@ class QRCodeTickets: NSObject,Mappable {
     
     public func mapping(map: Map) {
         qrCodeID            <- map["qrCodeID"]
+        qrCode              <- map["qrCode"]
         qrCodeImage            <- map["qrCodeImage"]
          title            <- map["title"]
          startdate            <- map["startdate"]

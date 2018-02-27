@@ -37,7 +37,7 @@ class ContactCell: UITableViewCell {
             flag = false
         }
         if let organizeremail = eventDetail.organizeremail?.trim() {
-            labelEmailAddress.text = "|" + organizeremail
+            labelEmailAddress.text = " | " + organizeremail
             flag = false
         }
         if flag {

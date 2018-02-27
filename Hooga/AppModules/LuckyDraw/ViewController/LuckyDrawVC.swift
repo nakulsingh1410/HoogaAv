@@ -55,6 +55,15 @@ class LuckyDrawVC: UIViewController {
         guard let evntdetail = eventDetail else{return}
         showMyEventLuckyDrawStatusAPI(eventId: evntdetail.eventid!)
         showMyEventLuckyDrawAPI(eventId: evntdetail.eventid!)
+        
+        if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{
+            if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
+               // showMyTicketDetailsAPI(eventId: eventId, regId: regid)
+            }
+        }else{
+            // need to do for free event type
+            showRegistrationDetailsAPI(eventId:evntdetail.eventid!,registrationId:evntdetail.regid!)
+        }
        
     }
     
@@ -140,7 +149,7 @@ extension LuckyDrawVC {
                 weakSelf.arrShowMyEventLuckyDrawPrizes = showMyEventLuckyDrawPrizes
                 // use collection view reload
               
-                if                 weakSelf.arrShowMyEventLuckyDrawPrizes.count > 1 {
+                if weakSelf.arrShowMyEventLuckyDrawPrizes.count > 1 {
                     weakSelf.buttonRight.isHidden = false
                 }
                 weakSelf.collectionView.reloadData()
@@ -158,6 +167,18 @@ extension LuckyDrawVC {
         }
     }
     
+    func showRegistrationDetailsAPI(eventId:Int,registrationId:Int)  {
+        TicketBookingService.showRegistrationDetails(eventid: eventId,registrationid:registrationId) {[weak self] (flag, array) in
+            guard let weakSelf = self else{return}
+            weakSelf.btnParticipate.setTitle(ButtonTitle.participate.rawValue, for: .normal)
+            if let data = array{
+                if let luckydrawsequence = data.first?.luckydrawsequence?.trim(), luckydrawsequence.length > 0 {
+                    weakSelf.btnParticipate.setTitle(luckydrawsequence, for: .normal)
+                }else{
+                }
+            }
+        }
+    }
   
 }
 

@@ -14,7 +14,8 @@ class QRCodeTableViewCell: UITableViewCell {
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblTicketType: UILabel!
-    
+    @IBOutlet weak var lblQrCode: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -39,6 +40,14 @@ class QRCodeTableViewCell: UITableViewCell {
         }else{
             lblTicketType.text = ""
         }
+        
+        if let string = ticketDetails.qrCode {
+            lblQrCode.text =   string
+        }else{
+            lblQrCode.text = ""
+        }
+        
+        
         
         if let bnanner = ticketDetails.qrCodeImage {
             let url = kQRCodes + bnanner
