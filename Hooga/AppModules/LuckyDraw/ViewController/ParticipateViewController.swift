@@ -198,6 +198,10 @@ extension ParticipateViewController{
 /*********************************************************************************/
 
 extension ParticipateViewController:ParticipationTableViewCellDelegate {
+    func refershResultlButtonTapped(cell: ParticipationTableViewCell) {
+        //
+    }
+    
     func participateDetailButtonTapped(cell: ParticipationTableViewCell) {
         //
     }

@@ -223,6 +223,7 @@ enum RegisterButtonTitle:String{
 enum ButtonTitle:String{
     
     case participate = "Participate"
+    case  showLuckyDrawNumber = "Show Lucky Draw #"
 
 }
 

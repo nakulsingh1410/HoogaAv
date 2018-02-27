@@ -10,7 +10,8 @@ import UIKit
 protocol ParticipationTableViewCellDelegate {
     func participateButtonTapped(cell:ParticipationTableViewCell)
     func participateDetailButtonTapped(cell:ParticipationTableViewCell)
-    
+    func refershResultlButtonTapped(cell:ParticipationTableViewCell)
+
 }
 
 enum ParticipationButtonTitle:String{
@@ -23,12 +24,17 @@ class ParticipationTableViewCell: UITableViewCell {
     @IBOutlet weak var lblName: HoogaLabel!
     @IBOutlet weak var lblLuckyDrawNo: UILabel!
     @IBOutlet weak var btnParticipate: HoogaButton!
+    @IBOutlet weak var btnRefresh: HoogaButton!
     
     @IBOutlet weak var lblHeldOnLabel: HoogaLabel!
     @IBOutlet weak var lblHeldOn: HoogaLabel! // for particiapte result
     
     @IBOutlet weak var btnParticipateHeighConstraint: NSLayoutConstraint!
     @IBOutlet weak var viewLuckyDraeNoHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var btnRefreshHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var btnParticipateTopConstraint: NSLayoutConstraint!
+    
+    
     var ticketDetail:ShowMyTicketDetails?
     var  showMyEventLuckyDrawResult:ShowMyEventLuckyDrawResult?
 
@@ -39,6 +45,8 @@ class ParticipationTableViewCell: UITableViewCell {
         selectionStyle = .none
         lblHeldOnLabel.text = ""
         lblHeldOn.text = ""
+        btnRefreshHeightConstraint.constant = 0.0
+        btnParticipateTopConstraint.constant = 0.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -92,7 +100,7 @@ class ParticipationTableViewCell: UITableViewCell {
             lblName.text =  lblName.text! + " " + string
         }
         if let string = heldOn{
-            lblHeldOnLabel.text = "Held On"
+            lblHeldOnLabel.text = "Draw Held On"
             lblHeldOn.text = string
         }
         
@@ -119,6 +127,8 @@ class ParticipationTableViewCell: UITableViewCell {
             if let string = result.isprizewon, string == "True" {
                 btnParticipateHeighConstraint.constant = 35
                 viewLuckyDraeNoHeightConstraint.constant = 75
+                btnRefreshHeightConstraint.constant = 40.0
+                btnParticipateTopConstraint.constant = 15.0
                 btnParticipate.setTitle(ParticipationButtonTitle.ViewPrizeDetails.rawValue, for: .normal)
                 lblLuckyDrawNo.backgroundColor = UIColor(hex: "5CA430")
 
@@ -142,6 +152,9 @@ class ParticipationTableViewCell: UITableViewCell {
             participationCellDelegate?.participateButtonTapped(cell: self)
 
         }
+    }
+    @IBAction func btnRefreshTapped(_ sender: Any) {
+        participationCellDelegate?.refershResultlButtonTapped(cell: self)
     }
     
 }

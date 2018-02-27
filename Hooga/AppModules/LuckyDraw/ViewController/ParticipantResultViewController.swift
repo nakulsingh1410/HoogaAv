@@ -145,6 +145,10 @@ extension ParticipantResultViewController {
 /*********************************************************************************/
 
 extension ParticipantResultViewController:ParticipationTableViewCellDelegate {
+    func refershResultlButtonTapped(cell: ParticipationTableViewCell) {
+        initializeCalls()
+    }
+    
     func participateDetailButtonTapped(cell: ParticipationTableViewCell) {
         //
         if let result = cell.showMyEventLuckyDrawResult {

@@ -58,7 +58,7 @@ class LuckyDrawVC: UIViewController {
         
         if let entrytype = evntdetail.entrytype?.trim() ,entrytype == EventType.paid.rawValue{
             if let eventId =  eventDetail?.eventid,let regid =  eventDetail?.regid{
-               // showMyTicketDetailsAPI(eventId: eventId, regId: regid)
+                showMyTicketDetailsAPI(eventId: eventId, regId: regid)
             }
         }else{
             // need to do for free event type
@@ -173,10 +173,35 @@ extension LuckyDrawVC {
             weakSelf.btnParticipate.setTitle(ButtonTitle.participate.rawValue, for: .normal)
             if let data = array{
                 if let luckydrawsequence = data.first?.luckydrawsequence?.trim(), luckydrawsequence.length > 0 {
-                    weakSelf.btnParticipate.setTitle(luckydrawsequence, for: .normal)
+                    weakSelf.btnParticipate.setTitle(ButtonTitle.showLuckyDrawNumber.rawValue, for: .normal)
                 }else{
                 }
             }
+        }
+    }
+    
+    func showMyTicketDetailsAPI(eventId:Int,regId:Int)  {
+        
+        TicketBookingService.showMyTicketDetails(eventid: eventId,registrationid:regId) {[weak self] (flag, array) in
+            guard let weakSelf = self else{return}
+            weakSelf.btnParticipate.setTitle(ButtonTitle.participate.rawValue, for: .normal)
+
+            if let data = array{
+                var luckydrawNo : String?
+                for ticket in data{
+                    if let luckydrawsequence = ticket.luckydrawsequence,luckydrawsequence.length > 0{
+                        luckydrawNo  = luckydrawsequence
+                        break
+                    }
+                }
+                if let _ = luckydrawNo{
+                    weakSelf.btnParticipate.setTitle(ButtonTitle.showLuckyDrawNumber.rawValue, for: .normal)
+                }
+                
+            }else{
+         
+            }
+        
         }
     }
   
