@@ -26,10 +26,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSj-ys-B1e">
-                        <rect key="frame" x="8" y="8" width="100" height="25"/>
+                        <rect key="frame" x="8" y="8" width="100" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="Yps-Ef-hWx"/>
-                            <constraint firstAttribute="height" constant="25" id="jim-oU-n8u"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                         <state key="normal" title="FAQs">
@@ -40,10 +39,9 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLw-Uq-ux4" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="8" y="38" width="82" height="21"/>
+                        <rect key="frame" x="8" y="43" width="82" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="82" id="Vql-LU-lnB"/>
-                            <constraint firstAttribute="height" constant="21" id="WJn-fQ-eaP"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
@@ -163,10 +161,7 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6s3-gc-cbL">
-                        <rect key="frame" x="242" y="8" width="123" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="25" id="O45-Mg-4uQ"/>
-                        </constraints>
+                        <rect key="frame" x="242" y="8" width="123" height="30"/>
                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                         <state key="normal" title="Terms &amp; Conditions">
                             <color key="titleColor" red="0.23137254900000001" green="0.0039215686269999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -205,6 +200,8 @@
                 <outlet property="buttonInsta" destination="aqv-Gf-lfY" id="v5A-zI-vvm"/>
                 <outlet property="buttonTwitter" destination="Itc-rP-Vn0" id="WcA-NB-MRY"/>
                 <outlet property="buttonregister" destination="7sp-We-vka" id="0yk-7I-z4C"/>
+                <outlet property="lblShareLabel" destination="PLw-Uq-ux4" id="nb4-Ql-jtQ"/>
+                <outlet property="socialPlatformStackviewHeightConstraint" destination="CQu-4t-PlB" id="EZ6-P9-cZW"/>
                 <outlet property="viewTicketView" destination="UFd-QX-0TI" id="u12-UI-uU4"/>
                 <outlet property="viewTicketViewHeightConstraint" destination="wrQ-w7-v7K" id="LKS-Ch-MJt"/>
             </connections>

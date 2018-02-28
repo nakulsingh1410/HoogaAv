@@ -164,11 +164,7 @@ extension EventListViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellEvent = tableView.dequeueReusableCell(withIdentifier: EventCell.identifier) as! EventCell
-        
         let event = arrEvents[indexPath.row]
-        
-//        cellEvent.labelEventCode.text =  event.eventcode
-//        cellEvent.labelEventDate.text = event.startdate
         var dateStirng = ""
         if let startDate = event.startdate{
             dateStirng = startDate
@@ -177,10 +173,8 @@ extension EventListViewController : UITableViewDataSource{
             dateStirng = dateStirng + " | " + starttime
         }
         cellEvent.labelEventDate.text = dateStirng
-//        cellEvent.labelEventTime.text = event.starttime
         cellEvent.labelEventTitle.text = event.title
         cellEvent.selectionStyle = .none
-        
         
         if let bnanner = event.bannerimage {
             let url = kAssets + bnanner
@@ -191,18 +185,10 @@ extension EventListViewController : UITableViewDataSource{
             }
             
         }
-        
-//        cellEvent.buttonEventDetail.tag = indexPath.row
-//        cellEvent.buttonEventDetail.addTarget(self, action:#selector(buttonDetail_Pressed(_:)), for: .touchUpInside)
-//
-        // cellEvent.viewForShadow.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
         return cellEvent
     }
     
-     func buttonDetail_Pressed(index:Int)  {
-        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrEvents[index].eventid!, comingFrom: ComingFromScreen.eventListing)
-    }
-    
+
     
 }
 //
@@ -211,8 +197,9 @@ extension EventListViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension;
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        buttonDetail_Pressed(index: indexPath.row)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        guard let eventId = arrEvents[indexPath.row].eventid else{return}
+        getRegistrionId(eventId: eventId)
     }
 }
 
@@ -275,11 +262,21 @@ extension EventListViewController {
                 weakSelf.tableViewEventList.reloadData()
             }else{
 //                Common.showAlert(message: "No data available")
-                Common.EmptyMessage(message: "No data available", viewController: weakSelf, tableView: weakSelf.tableViewEventList)
+                Common.EmptyMessage(message: MessageError.No_DATA_AVAILABE.rawValue, viewController: weakSelf, tableView: weakSelf.tableViewEventList)
             }
         })
     }
     
+    func getRegistrionId(eventId:Int)  {
+        EventService.getRegistrationId(eventid: eventId) {[weak self] (flag, regId) in
+            guard let weakSelf = self else {return}
+            if let regID = regId, regID > 0{
+                NavigationManager.navigateToEventDetail(navigationController: weakSelf.navigationController,evntId:eventId, comingFrom: ComingFromScreen.myEvent)
+            }else{
+                 NavigationManager.navigateToEventDetail(navigationController: weakSelf.navigationController,evntId:eventId, comingFrom: ComingFromScreen.eventListing)
+            }
+        }
+    }
     
 }
 

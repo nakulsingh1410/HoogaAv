@@ -19,6 +19,7 @@ protocol ShareCellDelegate {
 }
 class ShareCell: UITableViewCell {
     
+    @IBOutlet weak var lblShareLabel: HoogaLabel!
     @IBOutlet weak var btnFAQs: UIButton!
     @IBOutlet weak var btnTermsNCondition: UIButton!
     @IBOutlet weak var buttonInsta: SocialButton!
@@ -32,6 +33,7 @@ class ShareCell: UITableViewCell {
     @IBOutlet weak var viewTicketView: UIView!
     @IBOutlet weak var viewTicketViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var socialPlatformStackviewHeightConstraint: NSLayoutConstraint!
     var delegate : ShareCellDelegate?
     var eventDetailObj : EventDetail?
     
@@ -50,11 +52,9 @@ class ShareCell: UITableViewCell {
     }
     
     
-    func loadCellDataForPaidEvent(arrEventFlatform:[EventPlatform],eventDetail:EventDetail?,isComingFrom: ComingFromScreen,isTicketBooked:Bool)  {
+    func loadCellData(arrEventFlatform:[EventPlatform],eventDetail:EventDetail?,isComingFrom: ComingFromScreen,isTicketBooked:Bool)  {
         eventDetailObj = eventDetail
-        if arrEventFlatform.count > 0{
-            cellSharePlateForm(arrEventFlatform:arrEventFlatform)
-        }
+        cellSharePlateForm(arrEventFlatform:arrEventFlatform)
         if let eventType = eventDetail?.entrytype?.trim(), eventType == EventType.paid.rawValue{
             showShareCellForPaidEvent(isComingFrom: isComingFrom, isTicketBooked: isTicketBooked)
         }else{
@@ -72,20 +72,28 @@ class ShareCell: UITableViewCell {
         buttonTwitter.isHidden = true
         buttonInsta.isHidden = true
         buttonGoogle.isHidden = true
-        for item in arrEventFlatform {
-            if item.platform == "Facebook"{
-                buttnFaceBook.url = item.url
-                buttnFaceBook.isHidden = false
-            }else if item.platform ==  "Twitter"{
-                buttonTwitter.url = item.url
-                buttonTwitter.isHidden = false
-            }else if item.platform ==  "Instagram"{
-                buttonInsta.url = item.url
-                buttonInsta.isHidden = false
-            }else if item.platform ==  "Goggle"{
-                buttonGoogle.url = item.url
-                buttonGoogle.isHidden = false
+        if arrEventFlatform.count >  0{
+            socialPlatformStackviewHeightConstraint.constant = 35
+            lblShareLabel.text = "Share:"
+            for item in arrEventFlatform {
+                if item.platform == "Facebook"{
+                    buttnFaceBook.url = item.url
+                    buttnFaceBook.isHidden = false
+                }else if item.platform ==  "Twitter"{
+                    buttonTwitter.url = item.url
+                    buttonTwitter.isHidden = false
+                }else if item.platform ==  "Instagram"{
+                    buttonInsta.url = item.url
+                    buttonInsta.isHidden = false
+                }else if item.platform ==  "Goggle"{
+                    buttonGoogle.url = item.url
+                    buttonGoogle.isHidden = false
+                }
             }
+        }else{
+            socialPlatformStackviewHeightConstraint.constant = 0
+            lblShareLabel.text = ""
+            
         }
     }
     

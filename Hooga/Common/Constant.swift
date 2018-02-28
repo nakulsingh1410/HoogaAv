@@ -206,6 +206,8 @@ public enum MessageError: String{
     case QUNATITY_CANAT_ZERO    = "Quantity can not be zero"
 
     case REGISTRATION_MSG       = "Registration successfull. Please activate your account from received email."
+    
+    case No_DATA_AVAILABE =     "No data available"
 }
 
 
@@ -234,10 +236,13 @@ enum ComingFromScreen:String{
 
     case myEvent = "My Events"
     case registration = "Registration"
+    case bookingDetail = "Booking Detail"
+
     case forgotPassword = "Forgot Password"
     case thankYou = "ThanksVC"
     case ticketBooking = "TicketBooking"
     case addParticipant = "AddParticipant"
+    case otherPayment = "OtherPayment"
 
 
 }

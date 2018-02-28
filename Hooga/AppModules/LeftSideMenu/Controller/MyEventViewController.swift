@@ -40,10 +40,14 @@ class MyEventViewController: UIViewController {
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
         navHeaderView.navBarTitle = "My Events"
-        if screenShown == ComingFromScreen.thankYou {
+        if screenShown == ComingFromScreen.otherPayment {
             navHeaderView.backButtonType = .Back
             navHeaderView.isBackHandledInController = true
             navHeaderView.customNavHeaderViewDelegate = self
+        }else if screenShown == ComingFromScreen.eventDetail {
+            navHeaderView.backButtonType = .LeftMenu
+            navHeaderView.isBackHandledInController = false
+            
         }else{
             navHeaderView.backButtonType = .LeftMenu
             navHeaderView.isBackHandledInController = false
@@ -136,10 +140,7 @@ extension MyEventViewController : UITableViewDataSource{
         // cellEvent.viewForShadow.backgroundColor = UIColorFromRGB(rgbValue: 0x209624)
         return cellEvent
     }
-    
-   func buttonDetail_Pressed(index:Int) {
-        NavigationManager.eventDetail(navigationController: self.navigationController,evntId:arrMyEvent[index].eventid!, comingFrom: ComingFromScreen.myEvent)
-    }
+
     
 }
 //
@@ -150,7 +151,7 @@ extension MyEventViewController : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        buttonDetail_Pressed(index: indexPath.row)
+         NavigationManager.navigateToEventDetail(navigationController: self.navigationController,evntId:arrMyEvent[indexPath.row].eventid!, comingFrom: ComingFromScreen.myEvent)
     }
 }
 

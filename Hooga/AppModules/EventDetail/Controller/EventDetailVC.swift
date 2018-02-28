@@ -45,7 +45,20 @@ class EventDetailVC: UIViewController{
     }
     func configoreNavigationHeader()  {
         navHeaderView.viewController = self
-        navHeaderView.navBarTitle = "Event Details"
+        
+        if comingFrom == .eventListing {
+            navHeaderView.navBarTitle = "Event Details"
+
+        }else if comingFrom == .bookingDetail || comingFrom == .otherPayment {
+            navHeaderView.isBackHandledInController = true
+            navHeaderView.customNavHeaderViewDelegate = self
+            navHeaderView.navBarTitle = "My Event Details" // My Event Detail
+
+        }else  if comingFrom == .myEvent{
+            navHeaderView.navBarTitle = "My Event Details" // My Event Detail
+        }else{
+            navHeaderView.navBarTitle = "Event Details"
+        }
         navHeaderView.backButtonType = .Back
         navHeaderView.isNavBarTransparent = true
         navHeaderView.setLeftMenu()
@@ -107,7 +120,7 @@ extension EventDetailVC : UITableViewDelegate{
     }
 }
 
-//Get Table view cells
+//MARK: Get Table view cells
 extension EventDetailVC{
     
     func getBannerCell() -> UITableViewCell {
@@ -152,27 +165,8 @@ extension EventDetailVC{
     
     func getShareCell() -> UITableViewCell {
         if let cell = tableDetail.dequeueReusableCell(withIdentifier: ShareCell.identifier) as? ShareCell {
-//            if arrEventFlatform.count > 0{
-//                cellSharePlateForm(cell: cell)
-//            }
-//            cell.delegate = self
-//            cell.selectionStyle = .none
-//            if let regId = eventDetail?.regid , regId > 0{
-//                cell.buttonregister.setTitle(RegisterButtonTitle.bookTickets.rawValue, for: .normal)
-//            }else{
-//                cell.buttonregister.setTitle(RegisterButtonTitle.register.rawValue, for: .normal)
-//            }
-//            cell.showShareCell(isComingFrom: comingFrom,isTicketBooked:isTicketBooked, eventType: eventDetail?.entrytype)
-//            cell.btnTermsNCondition.isHidden = true
-//            cell.btnFAQs.isHidden = true
-//
-//            if arrEventFaq.count > 0 {
-//                cell.btnFAQs.isHidden = false
-//            }
-//            if arrEventTermsCondition.count > 0 {
-//                cell.btnTermsNCondition.isHidden = false
-//            }
-            cell.loadCellDataForPaidEvent(arrEventFlatform: arrEventFlatform, eventDetail: eventDetail, isComingFrom: comingFrom, isTicketBooked: isTicketBooked)
+
+            cell.loadCellData(arrEventFlatform: arrEventFlatform, eventDetail: eventDetail, isComingFrom: comingFrom, isTicketBooked: isTicketBooked)
             cell.btnTermsNCondition.isHidden = true
             cell.btnFAQs.isHidden = true
             
@@ -352,14 +346,12 @@ extension EventDetailVC {
             if let arrTerms = tersNConditions {
                 //usee arrTerms
                 self.arrEventTermsCondition = arrTerms
-                if !self.arrCellType.contains(EventDetailScreenCell.ShareCell){
-                    self.arrCellType.append(EventDetailScreenCell.ShareCell)
-                }
-                
-                self.tableDetail.reloadData()
             }
+            if !self.arrCellType.contains(EventDetailScreenCell.ShareCell){
+                self.arrCellType.append(EventDetailScreenCell.ShareCell)
+            }
+            self.tableDetail.reloadData()
         }
-        
     }
     
     func getRegistrionId(eventId:Int)  {
@@ -386,5 +378,16 @@ extension EventDetailVC {
         }
         
         
+    }
+}
+/*********************************************************************************/
+// MARK: CustomNavHeaderViewDelegate
+/*********************************************************************************/
+extension EventDetailVC:CustomNavHeaderViewDelegate{
+    func backButtonPressed() {
+        navigationController?.popToRootViewController(animated: true)
+//        if comingFrom == .bookingDetail || comingFrom == .otherPayment {
+//            NavigationManager.navigateToMyEvent(navigationController: navigationController, screenShown: .bookingDetail)
+//        }
     }
 }

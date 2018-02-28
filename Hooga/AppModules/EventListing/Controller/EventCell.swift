@@ -29,8 +29,8 @@ class EventCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        labelEventTitle.font = Font.gillSansBold(size: 25)
-        labelEventDate.font = Font.gothamBook(size: 17)
+        labelEventTitle.font = Font.gillSansBold(size: 20)
+        labelEventDate.font = Font.gothamBook(size: 15)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

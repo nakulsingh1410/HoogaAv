@@ -122,6 +122,8 @@
 		30DD67282046C912006A16E4 /* EventListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD671A2046C912006A16E4 /* EventListingModel.swift */; };
 		30DD67292046C912006A16E4 /* RequestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD671B2046C912006A16E4 /* RequestEvent.swift */; };
 		30DD672A2046C912006A16E4 /* EventListing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30DD671D2046C912006A16E4 /* EventListing.storyboard */; };
+		30DD672C20472E9E006A16E4 /* ErrorBookingDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD672B20472E9E006A16E4 /* ErrorBookingDetails.swift */; };
+		30DD672E204730D5006A16E4 /* NumberOfTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD672D204730D5006A16E4 /* NumberOfTabModel.swift */; };
 		30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F85201D798A009D4278 /* CustomPickerView.swift */; };
 		30EA5F88201D799C009D4278 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F87201D799C009D4278 /* CustomPickerView.xib */; };
 		30EA5F8B201D82B2009D4278 /* CustomDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */; };
@@ -310,6 +312,8 @@
 		30DD671A2046C912006A16E4 /* EventListingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListingModel.swift; sourceTree = "<group>"; };
 		30DD671B2046C912006A16E4 /* RequestEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEvent.swift; sourceTree = "<group>"; };
 		30DD671D2046C912006A16E4 /* EventListing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventListing.storyboard; sourceTree = "<group>"; };
+		30DD672B20472E9E006A16E4 /* ErrorBookingDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorBookingDetails.swift; sourceTree = "<group>"; };
+		30DD672D204730D5006A16E4 /* NumberOfTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfTabModel.swift; sourceTree = "<group>"; };
 		30EA5F85201D798A009D4278 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		30EA5F87201D799C009D4278 /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDatePicker.xib; sourceTree = "<group>"; };
@@ -589,6 +593,8 @@
 			isa = PBXGroup;
 			children = (
 				30DD670B2046C81B006A16E4 /* BookingDetail.swift */,
+				30DD672B20472E9E006A16E4 /* ErrorBookingDetails.swift */,
+				30DD672D204730D5006A16E4 /* NumberOfTabModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1469,6 +1475,7 @@
 				30EA5FAF201EF021009D4278 /* MyEventViewController.swift in Sources */,
 				3026794E20356628005B4442 /* TicketBookingViewController.swift in Sources */,
 				30DD67072046C777006A16E4 /* ShowMyEventLuckyDrawPrizes.swift in Sources */,
+				30DD672E204730D5006A16E4 /* NumberOfTabModel.swift in Sources */,
 				30EA5FAD201E29BB009D4278 /* Color.swift in Sources */,
 				302679AB20356FD5005B4442 /* BookingDetailVC.swift in Sources */,
 				30DD671E2046C912006A16E4 /* AMHorizontalMenu.swift in Sources */,
@@ -1546,6 +1553,7 @@
 				30D77BC0200B350800386438 /* ServiceManager.swift in Sources */,
 				30D77BF2200B36B400386438 /* BaseTableViewCell.swift in Sources */,
 				30D77BC4200B355500386438 /* Constant.swift in Sources */,
+				30DD672C20472E9E006A16E4 /* ErrorBookingDetails.swift in Sources */,
 				7530D962201FE3DF00B9BB52 /* SocialButton.swift in Sources */,
 				30267996203568E6005B4442 /* QcodeTicketVC.swift in Sources */,
 			);

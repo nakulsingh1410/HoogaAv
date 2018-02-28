@@ -14,7 +14,7 @@ import ObjectMapper
 /***************************************************************/
 class TicketBookingService{
     static func saveTicketDetails(bookingDetails:[SaveBookingDetail],
-                                  callback: @escaping (Bool,[BookingDetailResponse]?) -> Void){
+                                  callback: @escaping (Bool,[BookingDetailResponse]?,[ErrorBookingDetails]?,String?) -> Void){
         
         let dictParam = Mapper<SaveBookingDetail>().toJSONArray(bookingDetails)
         Common.showHud()
@@ -24,12 +24,15 @@ class TicketBookingService{
             if let obj = response.result.value as? [String:Any]{
                 if let responseObj = obj["BookingDetails"] as? [[String : Any]]{
                     let array = Mapper<BookingDetailResponse>().mapArray(JSONArray: responseObj)
-                    callback(true,array);
+                    callback(true,array,nil,nil);
+                }else if let responseObj = obj["ErrorBookingDetails"] as? [[String : Any]]{
+                    let errorArray = Mapper<ErrorBookingDetails>().mapArray(JSONArray: responseObj)
+                    callback(true,nil,errorArray,nil);
                 }else{
-                    callback(false,nil);
+                    callback(false,nil,nil,Common.getString(text: obj["message"] as? String));
                 }
             }else {
-                callback(false,nil);
+                callback(false,nil,nil,"Error occured");
             }
         }
     }

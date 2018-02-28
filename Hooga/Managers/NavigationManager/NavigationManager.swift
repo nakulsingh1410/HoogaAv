@@ -106,7 +106,7 @@ class NavigationManager {
         }
     }
     
-    class func eventDetail(navigationController:UINavigationController? , evntId : Int,comingFrom:ComingFromScreen){
+    class func navigateToEventDetail(navigationController:UINavigationController? , evntId : Int,comingFrom:ComingFromScreen){
         let storyboard = UIStoryboard(name: StoryboardName.EventDetail.rawValue, bundle:  Bundle(for: EventDetailVC.self) )
         if let vcObj = storyboard.instantiateViewController(withIdentifier: "EventDetail") as? EventDetailVC{
             vcObj.eventID = evntId

@@ -12,6 +12,7 @@
     <customFonts key="customFonts">
         <array key="GillSans.ttc">
             <string>GillSans</string>
+            <string>GillSans-SemiBold</string>
         </array>
     </customFonts>
     <objects>
@@ -28,29 +29,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="224" height="128"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZA-zo-5Os" customClass="GradientView" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="58" width="224" height="70"/>
+                        <rect key="frame" x="0.0" y="78.5" width="224" height="49.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvy-FY-66p">
                                 <rect key="frame" x="8" y="7" width="208" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="c2v-R7-qYB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="16"/>
                                 <color key="textColor" red="0.042710192500000001" green="0.15767458079999999" blue="0.27639275790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-iS-DOA" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="8" y="29" width="208" height="20"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-iS-DOA" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="8" y="27" width="172" height="17.5"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                 <color key="textColor" red="0.042710192500000001" green="0.15767458079999999" blue="0.27639275790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q2-ir-xSZ" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="8" y="48" width="208" height="20"/>
+                                <rect key="frame" x="185" y="27" width="31" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="aiF-cs-dTx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                 <color key="textColor" red="0.042710192500000001" green="0.15767458079999999" blue="0.27639275790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -59,14 +60,14 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5Q2-ir-xSZ" secondAttribute="trailing" constant="8" id="0Cd-9V-b3r"/>
                             <constraint firstAttribute="trailing" secondItem="yvy-FY-66p" secondAttribute="trailing" constant="8" id="1OH-Ai-vTp"/>
-                            <constraint firstAttribute="bottom" secondItem="5Q2-ir-xSZ" secondAttribute="bottom" constant="2" id="2X1-o5-dZs"/>
-                            <constraint firstAttribute="bottom" secondItem="j7A-iS-DOA" secondAttribute="bottom" constant="21" id="3ca-Vy-irZ"/>
+                            <constraint firstAttribute="bottom" secondItem="j7A-iS-DOA" secondAttribute="bottom" constant="5" id="3ca-Vy-irZ"/>
+                            <constraint firstItem="5Q2-ir-xSZ" firstAttribute="leading" secondItem="j7A-iS-DOA" secondAttribute="trailing" constant="5" id="7Fo-6D-oMR"/>
                             <constraint firstItem="yvy-FY-66p" firstAttribute="leading" secondItem="oZA-zo-5Os" secondAttribute="leading" constant="8" id="CkT-MP-RAh"/>
-                            <constraint firstItem="j7A-iS-DOA" firstAttribute="top" secondItem="yvy-FY-66p" secondAttribute="bottom" constant="2" id="QUR-WG-s1I"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5Q2-ir-xSZ" secondAttribute="bottom" constant="2.5" id="HJ2-LO-2yT"/>
+                            <constraint firstItem="5Q2-ir-xSZ" firstAttribute="top" secondItem="yvy-FY-66p" secondAttribute="bottom" id="Moq-d0-QdJ"/>
+                            <constraint firstItem="j7A-iS-DOA" firstAttribute="top" secondItem="yvy-FY-66p" secondAttribute="bottom" id="QUR-WG-s1I"/>
                             <constraint firstItem="j7A-iS-DOA" firstAttribute="leading" secondItem="oZA-zo-5Os" secondAttribute="leading" constant="8" id="RkU-ey-kdM"/>
-                            <constraint firstItem="5Q2-ir-xSZ" firstAttribute="leading" secondItem="oZA-zo-5Os" secondAttribute="leading" constant="8" id="TCN-Kq-KdK"/>
                             <constraint firstItem="yvy-FY-66p" firstAttribute="top" secondItem="oZA-zo-5Os" secondAttribute="top" constant="7" id="W9x-8m-v7h"/>
-                            <constraint firstAttribute="trailing" secondItem="j7A-iS-DOA" secondAttribute="trailing" constant="8" id="iJY-VU-8vW"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>

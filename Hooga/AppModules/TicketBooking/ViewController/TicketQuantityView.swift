@@ -24,7 +24,7 @@ class TicketQuantityView: UIView {
     
     var  delegate  : TicketQuantityViewDelegate?
     
-    var qunatity = 0 {
+    var arrQunatity = [NumberOfTabModel]() {
         didSet{
             setWidth()
             collectionQuantity.reloadData()
@@ -41,17 +41,17 @@ class TicketQuantityView: UIView {
     func setWidth()  {
         
         let wdith = UIScreen.main.bounds.width - 40
-        if wdith > CGFloat((80 * qunatity)){
+        if wdith > CGFloat((80 * arrQunatity.count)){
            
-            if qunatity == 1{
+            if arrQunatity.count == 1{
                 
-              let  wdth =  CGFloat(80 * qunatity) + 20.0
+              let  wdth =  CGFloat(80 * arrQunatity.count) + 20.0
                 widthColl.constant = wdth
                 heightColl.constant = 50.0
                 
             }else{
                 
-                 widthColl.constant = CGFloat(80 * qunatity)
+                 widthColl.constant = CGFloat(80 * arrQunatity.count)
             }
             
         }else{
@@ -83,15 +83,21 @@ extension TicketQuantityView : UICollectionViewDataSource {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return qunatity
+        return arrQunatity.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellQuantity = collectionView.dequeueReusableCell(withReuseIdentifier: QuantityCell.identifier, for: indexPath) as! QuantityCell
+        let model = arrQunatity[indexPath.row]
+        cellQuantity.labelQuantity.text = String(model.index)
         
-        cellQuantity.labelQuantity.text = String(indexPath.row + 1)
+        if model.isError {
+            cellQuantity.labelQuantity.backgroundColor = .red
+            cellQuantity.labelQuantity.textColor = UIColor.white
+            return cellQuantity
+        }
         
-        if indexPth == indexPath {
+        if model.isSelected {
             cellQuantity.viewBg.isHidden = false
             cellQuantity.labelQuantity.backgroundColor = UIColor.white
             
@@ -136,7 +142,15 @@ extension TicketQuantityView : UICollectionViewDataSource {
 extension TicketQuantityView : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let tempArray = arrQunatity.map { (tab) -> NumberOfTabModel in
+            tab.isSelected = false
+            return tab
+        }
+        arrQunatity = tempArray
+        let tab =  arrQunatity[indexPath.row]
+        tab.isSelected = true
+        tab.isError = false
+        arrQunatity[indexPath.row] = tab
         delegate?.didSelectRowAt(indexpath: indexPath,ticektQuantityView:self)
 
 //        if delegate != nil {

@@ -193,7 +193,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QUO-r2-SLB">
-                                <rect key="frame" x="0.0" y="105" width="375" height="560"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="561"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="V4Z-Gv-Igz" id="vYU-Ae-ykL"/>
@@ -210,7 +210,7 @@
                             <constraint firstItem="8jh-Xt-hGJ" firstAttribute="leading" secondItem="ZyG-RE-OHx" secondAttribute="leading" id="HTN-Gn-5xl"/>
                             <constraint firstItem="QUO-r2-SLB" firstAttribute="leading" secondItem="ZyG-RE-OHx" secondAttribute="leading" id="QRa-ue-cjS"/>
                             <constraint firstItem="IsA-hY-nWA" firstAttribute="trailing" secondItem="ZyG-RE-OHx" secondAttribute="trailing" id="fR7-OS-XcN"/>
-                            <constraint firstItem="QUO-r2-SLB" firstAttribute="top" secondItem="IsA-hY-nWA" secondAttribute="bottom" constant="1" id="fYI-Yf-yeK"/>
+                            <constraint firstItem="QUO-r2-SLB" firstAttribute="top" secondItem="IsA-hY-nWA" secondAttribute="bottom" id="fYI-Yf-yeK"/>
                             <constraint firstItem="IsA-hY-nWA" firstAttribute="top" secondItem="sLE-eS-EbM" secondAttribute="bottom" id="gRK-GT-AWt"/>
                             <constraint firstItem="8jh-Xt-hGJ" firstAttribute="top" secondItem="eaz-aa-XQ2" secondAttribute="top" id="lPe-LC-GVF"/>
                             <constraint firstItem="8jh-Xt-hGJ" firstAttribute="trailing" secondItem="ZyG-RE-OHx" secondAttribute="trailing" id="miU-rK-WFy"/>

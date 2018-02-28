@@ -160,8 +160,12 @@ extension OtherPaymentMode {
     func savePaymentDetail(arrPayment:[SavePaymentDetail])  {
         TicketBookingService.paymentDetails(bookingDetails: arrPayment) { (flag, data) in
             if let _ = data{
-//   NavigationManager.thanksController(navigationController: self.navigationController, evntDetail: EventRecord())
-                NavigationManager.navigateToMyEvent(navigationController: self.navigationController, screenShown: ComingFromScreen.thankYou)
+
+//                NavigationManager.navigateToMyEvent(navigationController: self.navigationController, screenShown: ComingFromScreen.thankYou)
+                if let eventId =  self.bookingDetail?.bookingDetails.first?.eventid{
+                     NavigationManager.navigateToEventDetail(navigationController: self.navigationController, evntId: eventId, comingFrom: .otherPayment)
+                }
+               
             }else{
                 //error
             }

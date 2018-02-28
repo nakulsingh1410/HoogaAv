@@ -21,10 +21,7 @@ class SocialButton: UIButton {
 
     @objc func buttonSocialMedia_didPressed(button : UIButton) {
         
-        guard let Url = URL(string: url!) else {
-            return //be safe
-        }
-        
+        guard let strUrl = url, let Url = URL(string: strUrl) else { return }
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(Url, options: [:], completionHandler: nil)
         } else {

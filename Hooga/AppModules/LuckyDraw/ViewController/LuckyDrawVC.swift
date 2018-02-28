@@ -290,7 +290,11 @@ extension LuckyDrawVC : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellImage = collectionView.dequeueReusableCell(withReuseIdentifier: LuckyDrawCell.identifier, for: indexPath) as! LuckyDrawCell
         let obj = arrShowMyEventLuckyDrawPrizes[indexPath.row]
-        cellImage.labelPrice.text = obj.prizeworth
+        if let price = obj.prizeworth{
+            cellImage.labelPrice.text =  "$" + price
+        }else{
+            cellImage.labelPrice.text = ""
+        }
         cellImage.labelTitle.text = obj.prizetitle
         cellImage.labelDescription.text = obj.prizedescription
         

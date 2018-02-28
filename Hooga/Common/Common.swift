@@ -232,7 +232,7 @@ class Common: NSObject{
         messageLabel.textColor = UIColor.black
         messageLabel.numberOfLines = 0;
         messageLabel.textAlignment = .center;
-//        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
+        messageLabel.font = Font.gillSansRegular(size: 17)
         messageLabel.sizeToFit()
         tableView.backgroundView = messageLabel;
         tableView.separatorStyle = .none;

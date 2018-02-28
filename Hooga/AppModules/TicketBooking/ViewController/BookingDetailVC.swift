@@ -26,18 +26,32 @@ class BookingDetailVC: UIViewController {
     var arrBookingDetails = [SaveBookingDetail]()
     var detailView : BookingDetailView!
     var arrGender = [Gender.male.rawValue,Gender.female.rawValue,Gender.other.rawValue]
-    var qnty = 1
+//    var qnty = 1
     var eventRecord : EventRecord?
     var comingFrom: ComingFromScreen?
     var currentPage = 0
     var presentedViewIndex = 0
     var arrCity = ["Singapore"]
     var arrCountryCode = [String]()
+    var arrQuantity = [NumberOfTabModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        qnty =  (eventRecord?.quantityTicket)!
+        if let qty =  eventRecord?.quantityTicket{
+            for index in 0 ..< qty {
+                let numberOfTabModel = NumberOfTabModel()
+                numberOfTabModel.index = index + 1
+                arrQuantity.append(numberOfTabModel)
+            }
+            let firstIndex = arrQuantity[0]
+            firstIndex.isSelected = true
+            arrQuantity[0] = firstIndex
+            
+        }
+      
+        
+//        qnty =  (eventRecord?.quantityTicket)!
         configoreNavigationHeader()
         addBookingDetailView()
         addTicketBookingView()
@@ -52,7 +66,6 @@ class BookingDetailVC: UIViewController {
               navHeaderView.navBarTitle = "Booking Details"
         }else  if let comingScreen = comingFrom,comingScreen == .addParticipant{
             navHeaderView.navBarTitle = "Participant(s) Details"
-
         }
         navHeaderView.backButtonType = .Back
         navHeaderView.isBottonLineHidden = false
@@ -77,7 +90,7 @@ class BookingDetailVC: UIViewController {
                 }
                 if let price = ticket.regularprice {
                     labelPrice.text = "Price: $" + price
-                    let total = Float(price)! * Float(qnty)
+                    let total = Float(price)! * Float(arrQuantity.count)
                     labelTotalPrice.text = "Total: $" + String(total)
                 }
             }
@@ -88,29 +101,16 @@ class BookingDetailVC: UIViewController {
                 eventTicketInfoView.loadTicketInfo(eventDetail: eventDetail, textColor: UIColor.black,backGroundColor: UIColor.clear)
             }
         }
-        if qnty == 1 {
+        if arrQuantity.count == 1 {
             ticketQuantityHeightConstraint.constant = 0
         }else{
             ticketQuantityHeightConstraint.constant = 50
         }
-       loadCountryData()
-        
-       
-    }
-    
-    private func loadCountryData(){
-        if let codes = appDelegate.arrCountryCode {
-            arrCountryCode = codes.map({$0.Code! + " - " +  $0.Country! })
-        }else{
-            getCountryCodeAPI()
-        }
     }
 
-    
-    
     func configureData()  {
         arrBookingDetails.append(loadFirstTicketData())
-        for _ in 1 ..< qnty {
+        for _ in 1 ..< arrQuantity.count {
             arrBookingDetails.append(SaveBookingDetail())
         }
         if let first = arrBookingDetails.first {
@@ -134,14 +134,6 @@ class BookingDetailVC: UIViewController {
             bookingModel.postalcode = userData.postalcode
             bookingModel.isBookingDetailFilled = true
             bookingModel.ticketId = 0
-            if let bnanner = userData.profilepic {
-//                let url = kImgaeView + bnanner
-//                imgViewProfilePic.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
-//                    if image == nil {
-//                        self.btnUpload.isHidden = false
-//                    }
-//                }
-            }
         }
         return bookingModel
     }
@@ -168,7 +160,7 @@ class BookingDetailVC: UIViewController {
         let views = nib.instantiate(withOwner: self, options: nil)
         ticketQuantityView = views[0] as? TicketQuantityView
         ticketQuantityView?.delegate = self
-        ticketQuantityView?.qunatity = qnty
+        ticketQuantityView?.arrQunatity = arrQuantity
         ticketQuantityView?.frame = CGRect.init(x: 0, y: 0, width: viewQuantity.frame.size.width, height: viewQuantity.frame.size.height)
         viewQuantity.addSubview(ticketQuantityView!)
     }
@@ -185,18 +177,6 @@ class BookingDetailVC: UIViewController {
         }else if let value = detailView.dob.text,value == "__/ __/ __" {
             message = MessageError.USER_DOB_BLANK .rawValue
         }
-//        else if let value = detailView.mobile.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-//            message = MessageError.PHONE_EMPTY .rawValue
-//        }
-//        else if let value = detailView.mobile.text,!value.isPhoneValid(){
-//            message = MessageError.PHONE_INVALID .rawValue
-//        }
-//        else if let value = detailView.email.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-//            message = MessageError.EMAIL_BLANK.rawValue
-//        }else if let value = detailView.email.text,value.isEmail == false{
-//            message = MessageError.EMAIL_INVALID.rawValue
-//        }
-
         return (message == nil) ? (message,false):(message,true)
     }
     
@@ -266,13 +246,6 @@ extension BookingDetailVC{
 // MARK: TicketQuantityView Delegate
 /**********************************************************************/
 extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegate{
-//    func countryCodeTapped(ticketView: BookingDetailView) {
-//        view.endEditing(true)
-//        if arrCountryCode.count > 0{
-//            openCountryCodePicker()
-//        }
-//    }
-    
     func didSelectRowAt(indexpath: IndexPath,ticektQuantityView:TicketQuantityView) {
         
         if presentedViewIndex == indexpath.row {
@@ -344,35 +317,50 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
 /**********************************************************************/
 extension BookingDetailVC{
     func saveTicketDetailsAPI(arrTicket:[SaveBookingDetail])  {
-        TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, data) in
-            if let reponseArray = data{
+        TicketBookingService.saveTicketDetails(bookingDetails: arrTicket) { (flag, bookingData,errorData,message)  in
+            if let responseArray = bookingData,responseArray.count > 0{
                 // navigate to payment screen
                 if let type = self.eventRecord?.eventDetail?.entrytype?.trim() , type == EventType.paid.rawValue{
                     self.eventRecord?.bookingDetails =  self.arrBookingDetails;
-                    NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!, savedTicketDetail: reponseArray)
+                    NavigationManager.otherPaymentDetail(navigationController: self.navigationController, evntDetail: self.eventRecord!, savedTicketDetail: responseArray)
                 }else{
-                    NavigationManager.navigateToMyEvent(navigationController: self.navigationController, screenShown: ComingFromScreen.thankYou)
+                    if let eventId = responseArray.first?.eventid{
+                        NavigationManager.navigateToEventDetail(navigationController: self.navigationController, evntId: eventId, comingFrom: .bookingDetail)
+                    }
+                  
                 }
-                
+            }else if let errorArray = errorData,errorArray.count > 0{
+                self.showErrorTabs(errors: errorArray)
             }else{
-                //error
+                if let msg = message{
+                    Common.showAlert(message: msg)
+                }
             }
             
         }
     }
     
-    func getCountryCodeAPI()  {
-        LoginService.getCountryCode { [weak self](flag, arraCountryCode) in
-            guard let weakSelf = self else {return}
-            if let countryCodes = arraCountryCode {
-                appDelegate.arrCountryCode = countryCodes
-                weakSelf.loadCountryData()
+    
+    func showErrorTabs(errors:[ErrorBookingDetails]) {
+        var isErrorOccured = false
+        for index in 0 ..< errors.count{
+            let tab = arrQuantity[index]
+            if let errorMessage = errors[index].ErrorMessage,errorMessage.length > 0{
+                tab.isError = true
+                isErrorOccured = true
             }else{
-                //  Common.showAlert(message: message)
+                 tab.isError = false
             }
+            arrQuantity[index] = tab
+            ticketQuantityView?.collectionQuantity.reloadData()
         }
-        
+        if errors.count > 1 ,isErrorOccured == true{
+            Common.showAlert(message: "Participant's Tab(s) denoted in Red background has already registered for the event. Please make sure you provide different Names before submitting.")
+        }else  if errors.count == 1 ,isErrorOccured == true{
+               Common.showAlert(message: "Participant has already registered for the event. Please make sure you provide different Names before submitting.")
+        }
     }
+
 }
 
 /****************************************************************/
@@ -469,27 +457,3 @@ extension BookingDetailVC:CustomDatePickerDelegate{
     }
 }
 
-
-/*
- 
- Use this code on click on PAY button 
- 
- func saveTicketDetails()  {
- 
- var arrTickets = [SaveBookingDetail]()
- arrTickets.append(SaveBookingDetail())
- arrTickets.append(SaveBookingDetail())
- arrTickets.append(SaveBookingDetail())
- arrTickets.append(SaveBookingDetail())
- 
- TicketBookingService.saveTicketDetails(bookingDetails: arrTickets) { (flag, data) in
- 
- if let _ = data{
- // navigate to payment screen
- }
- 
- }
- }
- 
- 
- */
