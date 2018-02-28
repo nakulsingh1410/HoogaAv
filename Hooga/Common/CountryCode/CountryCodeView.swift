@@ -38,8 +38,9 @@ class CountryCodeView: UIView {
     
     private func loadNib() {
         let bundle = Bundle(for: CountryCodeView.self)
-        if let arrNib = bundle.loadNibNamed("CountryCodeView", owner: self, options: nil)?.first as? UIView {
-            self.nibView = arrNib
+        if let nib = bundle.loadNibNamed("CountryCodeView", owner: self, options: nil)?.first as? UIView {
+            nibView = nib
+            nibView.backgroundColor = .clear
         }
     }
     private func openCountryCodePicker(){

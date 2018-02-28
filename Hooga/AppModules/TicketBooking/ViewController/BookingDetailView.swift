@@ -16,7 +16,6 @@ protocol BookingDetailViewDelegate {
     func openImagePicker(ticketView:BookingDetailView)
     func submit(ticketView:BookingDetailView)
     func cancel(ticketView:BookingDetailView)
-    func countryCodeTapped(ticketView:BookingDetailView)
 
 }
 
@@ -25,7 +24,6 @@ class BookingDetailView: UIView {
     @IBOutlet weak var firstName: HoogaTextField!
     @IBOutlet weak var lastName: HoogaTextField!
     @IBOutlet weak var mobile: HoogaTextField!
-    @IBOutlet weak var txtFCountryCode: HoogaTextField!
     @IBOutlet weak var email: HoogaTextField!
     @IBOutlet weak var dob: HoogaTextField!
     @IBOutlet weak var gender: HoogaTextField!
@@ -34,7 +32,27 @@ class BookingDetailView: UIView {
     @IBOutlet weak var address1: HoogaTextField!
     @IBOutlet weak var postalCode: HoogaTextField!
     
+    @IBOutlet weak var countryCodeView: CountryCodeView!
+
+    
     var delegate : BookingDetailViewDelegate?
+    
+    override func awakeFromNib() {
+        loadCountryPickerView() 
+    }
+    
+    func loadCountryPickerView()  {
+        var arrCountryCode = [String]()
+        if let array = appDelegate.arrCountryCode {
+            arrCountryCode = array.map({$0.Code! + " - " +  $0.Country! })
+            
+        }
+        countryCodeView.viewController = appDelegate.window?.visibleViewController
+        countryCodeView.arrCountryCode  = arrCountryCode
+        countryCodeView.txtFCountryCode.text = "65"
+        countryCodeView.countryCodeViewDelegate = self
+        
+    }
     
     @IBAction func buttonUpload_didPressed(_ sender: Any) {
         if delegate != nil {
@@ -78,10 +96,16 @@ class BookingDetailView: UIView {
             delegate?.openDobPicker(ticketView: self)
         }
     }
-    @IBAction func btnCountryCodeTapped(_ sender: Any) {
-        delegate?.countryCodeTapped(ticketView: self)
-      
+}
+
+extension BookingDetailView:CountryCodeViewDelegate{
+    
+    func countryCodeSelected(code:String,index:Int){
+        if let code = appDelegate.arrCountryCode?[index].Code{
+            countryCodeView.txtFCountryCode.text = code
+        }
     }
+    
 }
 
 //

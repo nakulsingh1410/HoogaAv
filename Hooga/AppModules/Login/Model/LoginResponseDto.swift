@@ -54,7 +54,7 @@ class LoginResponseDto: NSObject,Mappable,NSCoding {
         isfirsttimeuser     <- map["isfirsttimeuser"]
         status              <- map["status"]
         Message             <- map["Message"]
-        countrycode <- map["countrycode"]
+        countrycode         <- map["countrycode"]
     }
     
     public func mapping(map: Map) {

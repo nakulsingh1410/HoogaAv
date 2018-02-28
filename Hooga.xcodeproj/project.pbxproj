@@ -43,7 +43,6 @@
 		302679AD20356FD5005B4442 /* QuantityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302679A320356FD4005B4442 /* QuantityCell.swift */; };
 		3028D894201CC9B400922752 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3028D893201CC9B400922752 /* EventService.swift */; };
 		302D1312202638D000AB10DD /* TicketBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D1311202638D000AB10DD /* TicketBookingService.swift */; };
-		30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */; };
 		30348FFC201CF8EC00A2CDA1 /* loader2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 30348FFB201CF8EC00A2CDA1 /* loader2.gif */; };
 		305471DE202092650009A8EC /* OpenImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305471DD202092650009A8EC /* OpenImagePickerViewController.swift */; };
 		305471ED20213B3B0009A8EC /* EventRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305471EC20213B3B0009A8EC /* EventRegistration.storyboard */; };
@@ -60,10 +59,8 @@
 		306E69A820431FBA00A4298A /* CountryCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E69A720431FBA00A4298A /* CountryCodeView.swift */; };
 		306E69AA20431FC500A4298A /* CountryCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 306E69A920431FC500A4298A /* CountryCodeView.xib */; };
 		3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3078207C202A110A00C085C5 /* ParticipateModel.swift */; };
-		307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A0D68202A20DD00CD105B /* QRCodeModel.swift */; };
 		30908C292031ACC100FD7501 /* OtherPaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30908C282031ACC100FD7501 /* OtherPaymentView.xib */; };
 		30908C2B2031ADEC00FD7501 /* OtherPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30908C2A2031ADEC00FD7501 /* OtherPaymentView.swift */; };
-		30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C33E4C2011CF45008C5826 /* Event.storyboard */; };
 		30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */; };
 		30D77B8A200B0ED400386438 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D77B89200B0ED400386438 /* Images.xcassets */; };
 		30D77B8C200B203300386438 /* HoogaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77B8B200B203300386438 /* HoogaTextField.swift */; };
@@ -108,7 +105,23 @@
 		30D77C10200B504F00386438 /* StorageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C0F200B504F00386438 /* StorageModel.swift */; };
 		30D77C15200CD81400386438 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 30D77C14200CD81400386438 /* loading.gif */; };
 		30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C16200CDA4000386438 /* UIImage+Gif.swift */; };
-		30D77C212010891900386438 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D77C202010891900386438 /* EventListViewController.swift */; };
+		30DD67072046C777006A16E4 /* ShowMyEventLuckyDrawPrizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD67052046C777006A16E4 /* ShowMyEventLuckyDrawPrizes.swift */; };
+		30DD67082046C777006A16E4 /* ShowMyEventLuckyDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD67062046C777006A16E4 /* ShowMyEventLuckyDraw.swift */; };
+		30DD670A2046C796006A16E4 /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD67092046C796006A16E4 /* QRCodeModel.swift */; };
+		30DD670C2046C81B006A16E4 /* BookingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD670B2046C81B006A16E4 /* BookingDetail.swift */; };
+		30DD671E2046C912006A16E4 /* AMHorizontalMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD670F2046C912006A16E4 /* AMHorizontalMenu.swift */; };
+		30DD671F2046C912006A16E4 /* AMMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD67102046C912006A16E4 /* AMMenuCell.swift */; };
+		30DD67202046C912006A16E4 /* AMMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30DD67112046C912006A16E4 /* AMMenuCell.xib */; };
+		30DD67212046C912006A16E4 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD67122046C912006A16E4 /* EventCell.swift */; };
+		30DD67222046C912006A16E4 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30DD67132046C912006A16E4 /* EventCell.xib */; };
+		30DD67232046C912006A16E4 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD67142046C912006A16E4 /* EventListViewController.swift */; };
+		30DD67242046C912006A16E4 /* GrediantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD67152046C912006A16E4 /* GrediantView.swift */; };
+		30DD67252046C912006A16E4 /* MenuTitleAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD67162046C912006A16E4 /* MenuTitleAppearance.swift */; };
+		30DD67262046C912006A16E4 /* TagSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD67172046C912006A16E4 /* TagSearchVC.swift */; };
+		30DD67272046C912006A16E4 /* EventDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD67192046C912006A16E4 /* EventDetailModel.swift */; };
+		30DD67282046C912006A16E4 /* EventListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD671A2046C912006A16E4 /* EventListingModel.swift */; };
+		30DD67292046C912006A16E4 /* RequestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD671B2046C912006A16E4 /* RequestEvent.swift */; };
+		30DD672A2046C912006A16E4 /* EventListing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30DD671D2046C912006A16E4 /* EventListing.storyboard */; };
 		30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F85201D798A009D4278 /* CustomPickerView.swift */; };
 		30EA5F88201D799C009D4278 /* CustomPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F87201D799C009D4278 /* CustomPickerView.xib */; };
 		30EA5F8B201D82B2009D4278 /* CustomDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */; };
@@ -117,24 +130,13 @@
 		30EA5F92201D9B3B009D4278 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F91201D9B3B009D4278 /* NavigationManager.swift */; };
 		30EA5F96201DCFCF009D4278 /* HoogaImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F95201DCFCF009D4278 /* HoogaImageView.swift */; };
 		30EA5F9B201DE0AD009D4278 /* LeftSideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F9A201DE0AD009D4278 /* LeftSideMenu.storyboard */; };
-		30EA5F9D201E283E009D4278 /* RequestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F9C201E283E009D4278 /* RequestEvent.swift */; };
-		30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5F9E201E2892009D4278 /* AMMenuCell.xib */; };
-		30EA5FA6201E2892009D4278 /* GrediantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5F9F201E2892009D4278 /* GrediantView.swift */; };
-		30EA5FA7201E2892009D4278 /* MenuTitleAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FA0201E2892009D4278 /* MenuTitleAppearance.swift */; };
-		30EA5FA8201E2892009D4278 /* AMHorizontalMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FA1201E2892009D4278 /* AMHorizontalMenu.swift */; };
-		30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5FA2201E2892009D4278 /* EventCell.xib */; };
-		30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FA3201E2892009D4278 /* AMMenuCell.swift */; };
-		30EA5FAB201E2892009D4278 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FA4201E2892009D4278 /* EventCell.swift */; };
 		30EA5FAD201E29BB009D4278 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FAC201E29BB009D4278 /* Color.swift */; };
 		30EA5FAF201EF021009D4278 /* MyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FAE201EF021009D4278 /* MyEventViewController.swift */; };
 		30EA5FB4201EF1C5009D4278 /* CustomNavHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FB3201EF1C5009D4278 /* CustomNavHeaderView.swift */; };
 		30EA5FB6201EF1D4009D4278 /* CustomNavHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA5FB5201EF1D4009D4278 /* CustomNavHeaderView.xib */; };
-		30EA5FB8201EFE62009D4278 /* EventDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA5FB7201EFE62009D4278 /* EventDetailModel.swift */; };
 		30ED06192020833100D354BE /* HoogaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED06182020833100D354BE /* HoogaView.swift */; };
 		30ED061D2020866F00D354BE /* LeftMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ED061C2020866F00D354BE /* LeftMenuButton.swift */; };
-		30FEA28A2028C8D5001A38C4 /* ShowMyEventLuckyDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEA2892028C8D5001A38C4 /* ShowMyEventLuckyDraw.swift */; };
 		30FEA28C2028CB8F001A38C4 /* TicketBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEA28B2028CB8F001A38C4 /* TicketBooking.swift */; };
-		30FEA28E2028CDF7001A38C4 /* ShowMyEventLuckyDrawPrizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FEA28D2028CDF7001A38C4 /* ShowMyEventLuckyDrawPrizes.swift */; };
 		737D16CEEF1F2D5BEB869FDB /* Pods_Hooga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4DDC9C7D5ED88786B8A3C9 /* Pods_Hooga.framework */; };
 		7530D953201F888300B9BB52 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D943201F888300B9BB52 /* BannerCell.swift */; };
 		7530D954201F888300B9BB52 /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7530D944201F888300B9BB52 /* BannerCell.xib */; };
@@ -153,8 +155,6 @@
 		7530D962201FE3DF00B9BB52 /* SocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D961201FE3DF00B9BB52 /* SocialButton.swift */; };
 		7530D964201FECA100B9BB52 /* FaqVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D963201FECA100B9BB52 /* FaqVC.swift */; };
 		7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530D965201FECF100B9BB52 /* FaqCell.swift */; };
-		754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754E26B0202149DE00129381 /* TagSearchVC.swift */; };
-		7574C3C32025D4C70010A4F1 /* BookingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3C22025D4C70010A4F1 /* BookingDetail.swift */; };
 		7574C3D520262D260010A4F1 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3D420262D260010A4F1 /* PaymentVC.swift */; };
 		7574C3D720262D390010A4F1 /* PaymentConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574C3D620262D390010A4F1 /* PaymentConfirmationVC.swift */; };
 		7574C3D920262E080010A4F1 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7574C3D820262E080010A4F1 /* Payment.storyboard */; };
@@ -231,7 +231,6 @@
 		302679A320356FD4005B4442 /* QuantityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuantityCell.swift; sourceTree = "<group>"; };
 		3028D893201CC9B400922752 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		302D1311202638D000AB10DD /* TicketBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBookingService.swift; sourceTree = "<group>"; };
-		30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListingModel.swift; sourceTree = "<group>"; };
 		30348FFB201CF8EC00A2CDA1 /* loader2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader2.gif; sourceTree = "<group>"; };
 		305471DD202092650009A8EC /* OpenImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenImagePickerViewController.swift; sourceTree = "<group>"; };
 		305471EC20213B3B0009A8EC /* EventRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventRegistration.storyboard; sourceTree = "<group>"; };
@@ -248,10 +247,8 @@
 		306E69A720431FBA00A4298A /* CountryCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeView.swift; sourceTree = "<group>"; };
 		306E69A920431FC500A4298A /* CountryCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCodeView.xib; sourceTree = "<group>"; };
 		3078207C202A110A00C085C5 /* ParticipateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateModel.swift; sourceTree = "<group>"; };
-		307A0D68202A20DD00CD105B /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
 		30908C282031ACC100FD7501 /* OtherPaymentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherPaymentView.xib; sourceTree = "<group>"; };
 		30908C2A2031ADEC00FD7501 /* OtherPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPaymentView.swift; sourceTree = "<group>"; };
-		30C33E4C2011CF45008C5826 /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		30C33E4E2011DE3C008C5826 /* RequestOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOTPViewController.swift; sourceTree = "<group>"; };
 		30D77B89200B0ED400386438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		30D77B8B200B203300386438 /* HoogaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaTextField.swift; sourceTree = "<group>"; };
@@ -296,7 +293,23 @@
 		30D77C0F200B504F00386438 /* StorageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageModel.swift; sourceTree = "<group>"; };
 		30D77C14200CD81400386438 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		30D77C16200CDA4000386438 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
-		30D77C202010891900386438 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		30DD67052046C777006A16E4 /* ShowMyEventLuckyDrawPrizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMyEventLuckyDrawPrizes.swift; sourceTree = "<group>"; };
+		30DD67062046C777006A16E4 /* ShowMyEventLuckyDraw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMyEventLuckyDraw.swift; sourceTree = "<group>"; };
+		30DD67092046C796006A16E4 /* QRCodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
+		30DD670B2046C81B006A16E4 /* BookingDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDetail.swift; sourceTree = "<group>"; };
+		30DD670F2046C912006A16E4 /* AMHorizontalMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMHorizontalMenu.swift; sourceTree = "<group>"; };
+		30DD67102046C912006A16E4 /* AMMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMMenuCell.swift; sourceTree = "<group>"; };
+		30DD67112046C912006A16E4 /* AMMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMenuCell.xib; sourceTree = "<group>"; };
+		30DD67122046C912006A16E4 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		30DD67132046C912006A16E4 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		30DD67142046C912006A16E4 /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		30DD67152046C912006A16E4 /* GrediantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrediantView.swift; sourceTree = "<group>"; };
+		30DD67162046C912006A16E4 /* MenuTitleAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTitleAppearance.swift; sourceTree = "<group>"; };
+		30DD67172046C912006A16E4 /* TagSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSearchVC.swift; sourceTree = "<group>"; };
+		30DD67192046C912006A16E4 /* EventDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailModel.swift; sourceTree = "<group>"; };
+		30DD671A2046C912006A16E4 /* EventListingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListingModel.swift; sourceTree = "<group>"; };
+		30DD671B2046C912006A16E4 /* RequestEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEvent.swift; sourceTree = "<group>"; };
+		30DD671D2046C912006A16E4 /* EventListing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventListing.storyboard; sourceTree = "<group>"; };
 		30EA5F85201D798A009D4278 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		30EA5F87201D799C009D4278 /* CustomPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPickerView.xib; sourceTree = "<group>"; };
 		30EA5F8A201D82B2009D4278 /* CustomDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDatePicker.xib; sourceTree = "<group>"; };
@@ -305,24 +318,13 @@
 		30EA5F91201D9B3B009D4278 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		30EA5F95201DCFCF009D4278 /* HoogaImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaImageView.swift; sourceTree = "<group>"; };
 		30EA5F9A201DE0AD009D4278 /* LeftSideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LeftSideMenu.storyboard; sourceTree = "<group>"; };
-		30EA5F9C201E283E009D4278 /* RequestEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEvent.swift; sourceTree = "<group>"; };
-		30EA5F9E201E2892009D4278 /* AMMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMMenuCell.xib; sourceTree = "<group>"; };
-		30EA5F9F201E2892009D4278 /* GrediantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrediantView.swift; sourceTree = "<group>"; };
-		30EA5FA0201E2892009D4278 /* MenuTitleAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTitleAppearance.swift; sourceTree = "<group>"; };
-		30EA5FA1201E2892009D4278 /* AMHorizontalMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMHorizontalMenu.swift; sourceTree = "<group>"; };
-		30EA5FA2201E2892009D4278 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
-		30EA5FA3201E2892009D4278 /* AMMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMMenuCell.swift; sourceTree = "<group>"; };
-		30EA5FA4201E2892009D4278 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		30EA5FAC201E29BB009D4278 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		30EA5FAE201EF021009D4278 /* MyEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventViewController.swift; sourceTree = "<group>"; };
 		30EA5FB3201EF1C5009D4278 /* CustomNavHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavHeaderView.swift; sourceTree = "<group>"; };
 		30EA5FB5201EF1D4009D4278 /* CustomNavHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavHeaderView.xib; sourceTree = "<group>"; };
-		30EA5FB7201EFE62009D4278 /* EventDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailModel.swift; sourceTree = "<group>"; };
 		30ED06182020833100D354BE /* HoogaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoogaView.swift; sourceTree = "<group>"; };
 		30ED061C2020866F00D354BE /* LeftMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuButton.swift; sourceTree = "<group>"; };
-		30FEA2892028C8D5001A38C4 /* ShowMyEventLuckyDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMyEventLuckyDraw.swift; sourceTree = "<group>"; };
 		30FEA28B2028CB8F001A38C4 /* TicketBooking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketBooking.swift; sourceTree = "<group>"; };
-		30FEA28D2028CDF7001A38C4 /* ShowMyEventLuckyDrawPrizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMyEventLuckyDrawPrizes.swift; sourceTree = "<group>"; };
 		6D665E74FE8F852E0924AC9A /* Pods-Hooga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hooga.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hooga/Pods-Hooga.release.xcconfig"; sourceTree = "<group>"; };
 		7530D943201F888300B9BB52 /* BannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		7530D944201F888300B9BB52 /* BannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BannerCell.xib; sourceTree = "<group>"; };
@@ -341,8 +343,6 @@
 		7530D961201FE3DF00B9BB52 /* SocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButton.swift; sourceTree = "<group>"; };
 		7530D963201FECA100B9BB52 /* FaqVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqVC.swift; sourceTree = "<group>"; };
 		7530D965201FECF100B9BB52 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
-		754E26B0202149DE00129381 /* TagSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSearchVC.swift; sourceTree = "<group>"; };
-		7574C3C22025D4C70010A4F1 /* BookingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetail.swift; sourceTree = "<group>"; };
 		7574C3D420262D260010A4F1 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 		7574C3D620262D390010A4F1 /* PaymentConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfirmationVC.swift; sourceTree = "<group>"; };
 		7574C3D820262E080010A4F1 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
@@ -552,6 +552,7 @@
 		302679462035658A005B4442 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30DD67092046C796006A16E4 /* QRCodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -587,6 +588,7 @@
 		3026794A2035658A005B4442 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30DD670B2046C81B006A16E4 /* BookingDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -622,6 +624,8 @@
 		30267951203566FD005B4442 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30DD67062046C777006A16E4 /* ShowMyEventLuckyDraw.swift */,
+				30DD67052046C777006A16E4 /* ShowMyEventLuckyDrawPrizes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -711,24 +715,6 @@
 			path = CountryCode;
 			sourceTree = "<group>";
 		};
-		30C33E4A2011CF45008C5826 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				30348FF9201CF18C00A2CDA1 /* EventListingModel.swift */,
-				30EA5F9C201E283E009D4278 /* RequestEvent.swift */,
-				30EA5FB7201EFE62009D4278 /* EventDetailModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		30C33E4B2011CF45008C5826 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				30C33E4C2011CF45008C5826 /* Event.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		30D77B8F200B217E00386438 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,6 +729,7 @@
 		30D77BAE200B306900386438 /* AppModules */ = {
 			isa = PBXGroup;
 			children = (
+				30DD670D2046C912006A16E4 /* EventListing */,
 				302679442035658A005B4442 /* LuckyDraw */,
 				302679452035658A005B4442 /* QRCode */,
 				302679492035658A005B4442 /* TicketBooking */,
@@ -750,7 +737,6 @@
 				305471E920213B200009A8EC /* EventRegistration */,
 				7530D941201F888300B9BB52 /* EventDetail */,
 				30EA5F97201DE086009D4278 /* LeftSideMenu */,
-				30D77C18201088B400386438 /* Event */,
 				30D77C05200B399800386438 /* Splash */,
 				30D77BF5200B37C400386438 /* Login */,
 			);
@@ -892,30 +878,48 @@
 			path = Gif;
 			sourceTree = "<group>";
 		};
-		30D77C18201088B400386438 /* Event */ = {
+		30DD670D2046C912006A16E4 /* EventListing */ = {
 			isa = PBXGroup;
 			children = (
-				30C33E4A2011CF45008C5826 /* Model */,
-				30C33E4B2011CF45008C5826 /* Storyboard */,
-				30D77C19201088B400386438 /* Controller */,
+				30DD670E2046C912006A16E4 /* Controller */,
+				30DD67182046C912006A16E4 /* Model */,
+				30DD671C2046C912006A16E4 /* Storyboard */,
 			);
-			path = Event;
+			path = EventListing;
 			sourceTree = "<group>";
 		};
-		30D77C19201088B400386438 /* Controller */ = {
+		30DD670E2046C912006A16E4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				30EA5FA1201E2892009D4278 /* AMHorizontalMenu.swift */,
-				30EA5FA3201E2892009D4278 /* AMMenuCell.swift */,
-				30EA5F9E201E2892009D4278 /* AMMenuCell.xib */,
-				30EA5FA4201E2892009D4278 /* EventCell.swift */,
-				30EA5FA2201E2892009D4278 /* EventCell.xib */,
-				30EA5F9F201E2892009D4278 /* GrediantView.swift */,
-				30EA5FA0201E2892009D4278 /* MenuTitleAppearance.swift */,
-				30D77C202010891900386438 /* EventListViewController.swift */,
-				754E26B0202149DE00129381 /* TagSearchVC.swift */,
+				30DD670F2046C912006A16E4 /* AMHorizontalMenu.swift */,
+				30DD67102046C912006A16E4 /* AMMenuCell.swift */,
+				30DD67112046C912006A16E4 /* AMMenuCell.xib */,
+				30DD67122046C912006A16E4 /* EventCell.swift */,
+				30DD67132046C912006A16E4 /* EventCell.xib */,
+				30DD67142046C912006A16E4 /* EventListViewController.swift */,
+				30DD67152046C912006A16E4 /* GrediantView.swift */,
+				30DD67162046C912006A16E4 /* MenuTitleAppearance.swift */,
+				30DD67172046C912006A16E4 /* TagSearchVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		30DD67182046C912006A16E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30DD67192046C912006A16E4 /* EventDetailModel.swift */,
+				30DD671A2046C912006A16E4 /* EventListingModel.swift */,
+				30DD671B2046C912006A16E4 /* RequestEvent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30DD671C2046C912006A16E4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				30DD671D2046C912006A16E4 /* EventListing.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		30EA5F84201D796A009D4278 /* CustomPickerView */ = {
@@ -983,11 +987,8 @@
 		30FEA2882028C8BE001A38C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				30FEA2892028C8D5001A38C4 /* ShowMyEventLuckyDraw.swift */,
-				30FEA28D2028CDF7001A38C4 /* ShowMyEventLuckyDrawPrizes.swift */,
 				75E2096920292EA900817905 /* SavePaymentDetail.swift */,
 				3078207C202A110A00C085C5 /* ParticipateModel.swift */,
-				307A0D68202A20DD00CD105B /* QRCodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1058,7 +1059,6 @@
 			isa = PBXGroup;
 			children = (
 				30FEA28B2028CB8F001A38C4 /* TicketBooking.swift */,
-				7574C3C22025D4C70010A4F1 /* BookingDetail.swift */,
 			);
 			path = ModelBookingDetail;
 			sourceTree = "<group>";
@@ -1221,13 +1221,11 @@
 				3026790920347361005B4442 /* CustomSplash.storyboard in Resources */,
 				3026798C20356800005B4442 /* LuckyDrawCell.xib in Resources */,
 				30D77B9D200B217E00386438 /* Lobster-Regular.ttf in Resources */,
-				30EA5FA5201E2892009D4278 /* AMMenuCell.xib in Resources */,
 				7574C3D920262E080010A4F1 /* Payment.storyboard in Resources */,
 				30908C292031ACC100FD7501 /* OtherPaymentView.xib in Resources */,
 				30D77B8A200B0ED400386438 /* Images.xcassets in Resources */,
 				30EA5F9B201DE0AD009D4278 /* LeftSideMenu.storyboard in Resources */,
 				3026795B2035671B005B4442 /* LuckyDraw.storyboard in Resources */,
-				30C33E4D2011CF45008C5826 /* Event.storyboard in Resources */,
 				7530D95D201F888300B9BB52 /* GalleryImageCell.xib in Resources */,
 				30D77C00200B37C400386438 /* Main.storyboard in Resources */,
 				302679A520356FD5005B4442 /* TicketQuantityView.xib in Resources */,
@@ -1238,16 +1236,18 @@
 				30D77C07200B399800386438 /* LaunchScreen.storyboard in Resources */,
 				302679AC20356FD5005B4442 /* BookingDetailView.xib in Resources */,
 				30EA5FB6201EF1D4009D4278 /* CustomNavHeaderView.xib in Resources */,
+				30DD672A2046C912006A16E4 /* EventListing.storyboard in Resources */,
 				30D77C15200CD81400386438 /* loading.gif in Resources */,
+				30DD67202046C912006A16E4 /* AMMenuCell.xib in Resources */,
 				7530D95B201F888300B9BB52 /* GalleryCell.xib in Resources */,
 				30267997203568E6005B4442 /* QRCodeTableViewCell.xib in Resources */,
-				30EA5FA9201E2892009D4278 /* EventCell.xib in Resources */,
 				30D77BF4200B36B400386438 /* DataTableViewCell.xib in Resources */,
 				306E699F2041E7E400A4298A /* ParticipationTableViewCell.xib in Resources */,
 				301BF2152022001D0099ADD9 /* Assets.xcassets in Resources */,
 				30D77BF0200B36B400386438 /* SlideMenu.storyboard in Resources */,
 				7530D95F201F888300B9BB52 /* ShareCell.xib in Resources */,
 				30D77BDE200B361400386438 /* HudView.xib in Resources */,
+				30DD67222046C912006A16E4 /* EventCell.xib in Resources */,
 				302679502035663C005B4442 /* TicketBooking.storyboard in Resources */,
 				306E69AA20431FC500A4298A /* CountryCodeView.xib in Resources */,
 				30EA5F8B201D82B2009D4278 /* CustomDatePicker.xib in Resources */,
@@ -1438,8 +1438,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				30D77BD6200B361400386438 /* UIApplication.swift in Sources */,
+				30DD67282046C912006A16E4 /* EventListingModel.swift in Sources */,
 				30D77BEF200B36B400386438 /* RightViewController.swift in Sources */,
-				30EA5F9D201E283E009D4278 /* RequestEvent.swift in Sources */,
 				30D77BC8200B35AF00386438 /* Reachability.swift in Sources */,
 				30D77BE2200B366C00386438 /* ResponseDto.swift in Sources */,
 				30D77B8C200B203300386438 /* HoogaTextField.swift in Sources */,
@@ -1450,26 +1450,28 @@
 				7530D966201FECF100B9BB52 /* FaqCell.swift in Sources */,
 				75E2096620291C2B00817905 /* OtherPayCell.swift in Sources */,
 				302679AD20356FD5005B4442 /* QuantityCell.swift in Sources */,
-				307A0D69202A20DD00CD105B /* QRCodeModel.swift in Sources */,
 				30D77BFE200B37C400386438 /* LoginViewController.swift in Sources */,
 				30D77BF3200B36B400386438 /* DataTableViewCell.swift in Sources */,
 				7530D955201F888300B9BB52 /* ContactCell.swift in Sources */,
 				30D77B8E200B206400386438 /* HoogaLabel.swift in Sources */,
 				30D77BD7200B361400386438 /* UIColor.swift in Sources */,
-				30FEA28E2028CDF7001A38C4 /* ShowMyEventLuckyDrawPrizes.swift in Sources */,
 				30D77BFD200B37C400386438 /* ForgotPasswordViewController.swift in Sources */,
 				30D77BDD200B361400386438 /* HudView.swift in Sources */,
 				75E2096C20293FD700817905 /* ThanksVC.swift in Sources */,
-				30EA5FA6201E2892009D4278 /* GrediantView.swift in Sources */,
+				30DD67212046C912006A16E4 /* EventCell.swift in Sources */,
 				3026798920356800005B4442 /* ParticipateDetailViewController.swift in Sources */,
 				30D77BC2200B352900386438 /* Common.swift in Sources */,
 				301B86702007452900DA7855 /* AppDelegate.swift in Sources */,
 				30D77BDB200B361400386438 /* UIView.swift in Sources */,
+				30DD67272046C912006A16E4 /* EventDetailModel.swift in Sources */,
+				30DD671F2046C912006A16E4 /* AMMenuCell.swift in Sources */,
+				30DD670A2046C796006A16E4 /* QRCodeModel.swift in Sources */,
 				30EA5FAF201EF021009D4278 /* MyEventViewController.swift in Sources */,
 				3026794E20356628005B4442 /* TicketBookingViewController.swift in Sources */,
+				30DD67072046C777006A16E4 /* ShowMyEventLuckyDrawPrizes.swift in Sources */,
 				30EA5FAD201E29BB009D4278 /* Color.swift in Sources */,
-				30FEA28A2028C8D5001A38C4 /* ShowMyEventLuckyDraw.swift in Sources */,
 				302679AB20356FD5005B4442 /* BookingDetailVC.swift in Sources */,
+				30DD671E2046C912006A16E4 /* AMHorizontalMenu.swift in Sources */,
 				306E69A52042F7CC00A4298A /* CountryCode.swift in Sources */,
 				30D77BF1200B36B400386438 /* SlideMenuController.swift in Sources */,
 				30D77BDA200B361400386438 /* UITableViewExtension.swift in Sources */,
@@ -1480,29 +1482,28 @@
 				302679A620356FD5005B4442 /* BookingDetailView.swift in Sources */,
 				7530D95E201F888300B9BB52 /* ShareCell.swift in Sources */,
 				30D77BC6200B359D00386438 /* Extensions.swift in Sources */,
-				30EA5FB8201EFE62009D4278 /* EventDetailModel.swift in Sources */,
 				301BF22A20241C990099ADD9 /* MyProfileViewController.swift in Sources */,
 				30D77BDC200B361400386438 /* UIViewController.swift in Sources */,
 				30D77BED200B36B400386438 /* ExSlideMenuController.swift in Sources */,
 				302D1312202638D000AB10DD /* TicketBookingService.swift in Sources */,
-				30EA5FAB201E2892009D4278 /* EventCell.swift in Sources */,
 				306D9CC72045D0B1003EF797 /* HomeButton.swift in Sources */,
+				30DD67252046C912006A16E4 /* MenuTitleAppearance.swift in Sources */,
 				30EA5F8F201D92E9009D4278 /* SetPasswordViewController.swift in Sources */,
 				30908C2B2031ADEC00FD7501 /* OtherPaymentView.swift in Sources */,
-				30EA5FA8201E2892009D4278 /* AMHorizontalMenu.swift in Sources */,
-				7574C3C32025D4C70010A4F1 /* BookingDetail.swift in Sources */,
 				30D77BD9200B361400386438 /* UIImageView.swift in Sources */,
 				306E69A32042E53E00A4298A /* ParticipantDetailsViewController.swift in Sources */,
 				30D77B9F200B2AC900386438 /* HoogaButton.swift in Sources */,
 				30EA5F86201D798A009D4278 /* CustomPickerView.swift in Sources */,
 				30267995203568E6005B4442 /* QRCodeTableViewCell.swift in Sources */,
+				30DD670C2046C81B006A16E4 /* BookingDetail.swift in Sources */,
 				3026798620356800005B4442 /* LuckyDrawVC.swift in Sources */,
 				30D77BFF200B37C400386438 /* RegisterViewController.swift in Sources */,
-				30EA5FA7201E2892009D4278 /* MenuTitleAppearance.swift in Sources */,
 				306E69A12042B8B500A4298A /* AddParticipateViewController.swift in Sources */,
+				30DD67292046C912006A16E4 /* RequestEvent.swift in Sources */,
 				30D77C0C200B3BBA00386438 /* LoginResponseDto.swift in Sources */,
 				7530D95A201F888300B9BB52 /* GalleryCell.swift in Sources */,
 				30EA5F96201DCFCF009D4278 /* HoogaImageView.swift in Sources */,
+				30DD67262046C912006A16E4 /* TagSearchVC.swift in Sources */,
 				3028D894201CC9B400922752 /* EventService.swift in Sources */,
 				30D77C09200B3AFA00386438 /* LoginService.swift in Sources */,
 				7530D957201F888300B9BB52 /* EventDetailVC.swift in Sources */,
@@ -1517,7 +1518,7 @@
 				75E2096A20292EA900817905 /* SavePaymentDetail.swift in Sources */,
 				3026798D20356800005B4442 /* ParticipateViewController.swift in Sources */,
 				30C33E4F2011DE3C008C5826 /* RequestOTPViewController.swift in Sources */,
-				30348FFA201CF18C00A2CDA1 /* EventListingModel.swift in Sources */,
+				30DD67082046C777006A16E4 /* ShowMyEventLuckyDraw.swift in Sources */,
 				302679A820356FD5005B4442 /* CommonHeaderView.swift in Sources */,
 				30D77BE0200B361F00386438 /* Constarints.swift in Sources */,
 				30D77BD8200B361400386438 /* UIImage.swift in Sources */,
@@ -1526,14 +1527,14 @@
 				3026798720356800005B4442 /* ParticipantResultViewController.swift in Sources */,
 				3026798520356800005B4442 /* LuckyDrawCell.swift in Sources */,
 				7530D95C201F888300B9BB52 /* GalleryImageCell.swift in Sources */,
+				30DD67232046C912006A16E4 /* EventListViewController.swift in Sources */,
 				30D77C17200CDA4000386438 /* UIImage+Gif.swift in Sources */,
-				30EA5FAA201E2892009D4278 /* AMMenuCell.swift in Sources */,
 				7574C3D520262D260010A4F1 /* PaymentVC.swift in Sources */,
+				30DD67242046C912006A16E4 /* GrediantView.swift in Sources */,
 				306E69A820431FBA00A4298A /* CountryCodeView.swift in Sources */,
 				30D77C10200B504F00386438 /* StorageModel.swift in Sources */,
 				305471EF20213B6E0009A8EC /* EventRegisterationViewController.swift in Sources */,
 				30ED06192020833100D354BE /* HoogaView.swift in Sources */,
-				754E26B1202149DE00129381 /* TagSearchVC.swift in Sources */,
 				7530D953201F888300B9BB52 /* BannerCell.swift in Sources */,
 				306E699E2041E7E400A4298A /* ParticipationTableViewCell.swift in Sources */,
 				30D77BEE200B36B400386438 /* LeftViewController.swift in Sources */,
@@ -1541,7 +1542,6 @@
 				3078207D202A110A00C085C5 /* ParticipateModel.swift in Sources */,
 				306E699B2041E05100A4298A /* EventInfoTickerView.swift in Sources */,
 				301BF2222023888C0099ADD9 /* MyEventModel.swift in Sources */,
-				30D77C212010891900386438 /* EventListViewController.swift in Sources */,
 				30EA5F92201D9B3B009D4278 /* NavigationManager.swift in Sources */,
 				30D77BC0200B350800386438 /* ServiceManager.swift in Sources */,
 				30D77BF2200B36B400386438 /* BaseTableViewCell.swift in Sources */,

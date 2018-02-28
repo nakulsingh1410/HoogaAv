@@ -88,8 +88,6 @@ class BookingDetailVC: UIViewController {
                 eventTicketInfoView.loadTicketInfo(eventDetail: eventDetail, textColor: UIColor.black,backGroundColor: UIColor.clear)
             }
         }
-        
-        
         if qnty == 1 {
             ticketQuantityHeightConstraint.constant = 0
         }else{
@@ -127,6 +125,7 @@ class BookingDetailVC: UIViewController {
             bookingModel.lastname = userData.lastname
             bookingModel.gender = userData.gender
             bookingModel.handphone = userData.handphone
+            bookingModel.countrycode = userData.countrycode
             bookingModel.dateofbirth = userData.dateofbirth
             bookingModel.email = userData.email
             bookingModel.address1 = userData.address1
@@ -209,6 +208,7 @@ class BookingDetailVC: UIViewController {
         detailView.lastName.text = detail.lastname
         detailView.email.text = detail.email
         detailView.mobile.text =  detail.handphone
+        detailView.countryCodeView.txtFCountryCode.text = detail.countrycode
         detailView.postalCode.text = detail.postalcode
         detailView.gender.text = detail.gender
         detailView.dob.text = detail.dateofbirth
@@ -239,7 +239,7 @@ extension BookingDetailVC{
         model.lastname = detailView.lastName.text
         model.email = detailView.email.text
         model.handphone = detailView.mobile.text
-        model.countrycode = detailView.txtFCountryCode.text
+        model.countrycode = detailView.countryCodeView.txtFCountryCode.text
         model.postalcode = detailView.postalCode.text
         model.email = detailView.email.text
         model.gender   = detailView.gender.text
@@ -266,12 +266,12 @@ extension BookingDetailVC{
 // MARK: TicketQuantityView Delegate
 /**********************************************************************/
 extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegate{
-    func countryCodeTapped(ticketView: BookingDetailView) {
-        view.endEditing(true)
-        if arrCountryCode.count > 0{
-            openCountryCodePicker()
-        }
-    }
+//    func countryCodeTapped(ticketView: BookingDetailView) {
+//        view.endEditing(true)
+//        if arrCountryCode.count > 0{
+//            openCountryCodePicker()
+//        }
+//    }
     
     func didSelectRowAt(indexpath: IndexPath,ticektQuantityView:TicketQuantityView) {
         
@@ -282,6 +282,7 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
         if let ticket = getTicketForTicketId(ticketId: indexpath.row){
             detailView.removeFromSuperview()
             addBookingDetailView(tabIndex: indexpath.row)
+            detailView.countryCodeView.txtFCountryCode.text = ticket.countrycode
             updateDetail(detail: ticket)
             ticektQuantityView.indexPth = indexpath
             ticektQuantityView.collectionQuantity.reloadData()
@@ -323,7 +324,7 @@ extension BookingDetailVC : TicketQuantityViewDelegate ,BookingDetailViewDelegat
                 return bookingDetail.ticketId == -1
             })
             if unFilledTickets.count > 0{
-                Common.showAlert(message: "Please fill ALL ticket info completly")
+                Common.showAlert(message: "Please fill ALL ticket info completely")
             }else{
                 self.saveTicketDetailsAPI(arrTicket: self.arrBookingDetails)
             }
@@ -454,12 +455,6 @@ extension BookingDetailVC:CustomPickerViewDelegate{
         }
         if let type = pickerType , type == .cityPicker {
             detailView.city.text = title
-        }
-        
-        if let type = pickerType , type == .countryCode {
-            if let code = appDelegate.arrCountryCode?[index].Code{
-                detailView.txtFCountryCode.text = code
-            }
         }
     }
 }

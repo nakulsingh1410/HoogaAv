@@ -28,10 +28,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="224" height="128"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZA-zo-5Os" customClass="GradientView" customModule="Hooga" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="224" height="128"/>
+                        <rect key="frame" x="0.0" y="58" width="224" height="70"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvy-FY-66p">
-                                <rect key="frame" x="8" y="65" width="208" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvy-FY-66p">
+                                <rect key="frame" x="8" y="7" width="208" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="c2v-R7-qYB"/>
                                 </constraints>
@@ -39,14 +39,14 @@
                                 <color key="textColor" red="0.042710192500000001" green="0.15767458079999999" blue="0.27639275790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-iS-DOA" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="8" y="87" width="208" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-iS-DOA" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                <rect key="frame" x="8" y="29" width="208" height="20"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" red="0.042710192500000001" green="0.15767458079999999" blue="0.27639275790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q2-ir-xSZ" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="8" y="106" width="208" height="20"/>
+                                <rect key="frame" x="8" y="48" width="208" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="aiF-cs-dTx"/>
                                 </constraints>
@@ -65,21 +65,22 @@
                             <constraint firstItem="j7A-iS-DOA" firstAttribute="top" secondItem="yvy-FY-66p" secondAttribute="bottom" constant="2" id="QUR-WG-s1I"/>
                             <constraint firstItem="j7A-iS-DOA" firstAttribute="leading" secondItem="oZA-zo-5Os" secondAttribute="leading" constant="8" id="RkU-ey-kdM"/>
                             <constraint firstItem="5Q2-ir-xSZ" firstAttribute="leading" secondItem="oZA-zo-5Os" secondAttribute="leading" constant="8" id="TCN-Kq-KdK"/>
+                            <constraint firstItem="yvy-FY-66p" firstAttribute="top" secondItem="oZA-zo-5Os" secondAttribute="top" constant="7" id="W9x-8m-v7h"/>
                             <constraint firstAttribute="trailing" secondItem="j7A-iS-DOA" secondAttribute="trailing" constant="8" id="iJY-VU-8vW"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                <color key="value" white="0.72207754629999998" alpha="0.79586848160000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="value" white="0.72207754629999998" alpha="0.84411892170000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="endColor">
                                 <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
-                                <real key="value" value="0.76000000000000001"/>
+                                <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
-                                <real key="value" value="0.0"/>
+                                <real key="value" value="0.5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -87,9 +88,9 @@
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Z9K-Hw-VxN" secondAttribute="bottom" id="0Cb-t7-0MM"/>
-                <constraint firstItem="oZA-zo-5Os" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1Pg-lv-HSU"/>
                 <constraint firstAttribute="bottom" secondItem="oZA-zo-5Os" secondAttribute="bottom" id="6cA-Sm-5ib"/>
                 <constraint firstItem="Z9K-Hw-VxN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="D8r-83-9b7"/>
+                <constraint firstItem="oZA-zo-5Os" firstAttribute="trailing" secondItem="Z9K-Hw-VxN" secondAttribute="trailing" id="KbF-M3-pyM"/>
                 <constraint firstAttribute="trailing" secondItem="oZA-zo-5Os" secondAttribute="trailing" id="TYH-lF-tSE"/>
                 <constraint firstItem="oZA-zo-5Os" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="emO-Ss-0V7"/>
                 <constraint firstAttribute="trailing" secondItem="Z9K-Hw-VxN" secondAttribute="trailing" id="qRo-rY-9oc"/>
