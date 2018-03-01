@@ -248,7 +248,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ch9-SB-akl" userLabel="First Name">
                                         <rect key="frame" x="20" y="20" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKP-Gd-Ddk" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST NAME *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKP-Gd-Ddk" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="115" id="odV-Ju-6A8"/>
@@ -279,7 +279,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OG6-FA-Gy5" userLabel="Last Name">
                                         <rect key="frame" x="20" y="60" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FY-dz-9Ii" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAST NAME *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FY-dz-9Ii" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -307,7 +307,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHi-dM-mEC" userLabel="Gender">
                                         <rect key="frame" x="20" y="100" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKP-HY-5Ui" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENDER *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKP-HY-5Ui" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -350,7 +350,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEb-2L-FEt" userLabel="DOB">
                                         <rect key="frame" x="20" y="140" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-UK-quf" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-UK-quf" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -393,7 +393,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfR-go-cHn" userLabel="Mobile">
                                         <rect key="frame" x="20" y="180" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuJ-jZ-Olk" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILE *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuJ-jZ-Olk" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -406,38 +406,25 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AWu-zS-2XS" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqi-bH-oum" customClass="CountryCodeView" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="125" y="0.0" width="45" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="45" id="wqm-aU-Ewz"/>
+                                                    <constraint firstAttribute="width" constant="45" id="TQ4-FV-jzu"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4g-I0-JEr">
-                                                <rect key="frame" x="125" y="0.0" width="45" height="30"/>
-                                                <connections>
-                                                    <action selector="btnCountryCodeTapped:" destination="SSD-sj-Cbx" eventType="touchUpInside" id="A7B-9G-25M"/>
-                                                </connections>
-                                            </button>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="j4g-I0-JEr" firstAttribute="leading" secondItem="AWu-zS-2XS" secondAttribute="leading" id="12f-ZX-7cM"/>
                                             <constraint firstItem="xuJ-jZ-Olk" firstAttribute="centerY" secondItem="DfR-go-cHn" secondAttribute="centerY" id="3A8-e1-dFU"/>
-                                            <constraint firstItem="j4g-I0-JEr" firstAttribute="trailing" secondItem="AWu-zS-2XS" secondAttribute="trailing" id="7kE-OY-nG7"/>
                                             <constraint firstAttribute="height" constant="30" id="CTA-ku-xmw"/>
-                                            <constraint firstItem="j4g-I0-JEr" firstAttribute="bottom" secondItem="AWu-zS-2XS" secondAttribute="bottom" id="JfW-fR-5JY"/>
                                             <constraint firstItem="NZQ-Fs-fEi" firstAttribute="top" secondItem="DfR-go-cHn" secondAttribute="top" id="M69-hf-mcW"/>
-                                            <constraint firstAttribute="bottom" secondItem="AWu-zS-2XS" secondAttribute="bottom" id="OKw-MO-uWH"/>
-                                            <constraint firstItem="AWu-zS-2XS" firstAttribute="leading" secondItem="xuJ-jZ-Olk" secondAttribute="trailing" constant="10" id="avi-hE-omV"/>
-                                            <constraint firstItem="AWu-zS-2XS" firstAttribute="top" secondItem="DfR-go-cHn" secondAttribute="top" id="dvl-nJ-tOc"/>
+                                            <constraint firstItem="wqi-bH-oum" firstAttribute="leading" secondItem="xuJ-jZ-Olk" secondAttribute="trailing" constant="10" id="XUx-qb-SOM"/>
+                                            <constraint firstAttribute="bottom" secondItem="wqi-bH-oum" secondAttribute="bottom" id="aTu-Kb-dbf"/>
+                                            <constraint firstItem="wqi-bH-oum" firstAttribute="top" secondItem="DfR-go-cHn" secondAttribute="top" id="cTn-yP-Jkt"/>
                                             <constraint firstItem="xuJ-jZ-Olk" firstAttribute="leading" secondItem="DfR-go-cHn" secondAttribute="leading" id="fTK-LL-bUZ"/>
                                             <constraint firstAttribute="bottom" secondItem="NZQ-Fs-fEi" secondAttribute="bottom" id="ffx-Cw-xod"/>
-                                            <constraint firstItem="NZQ-Fs-fEi" firstAttribute="leading" secondItem="AWu-zS-2XS" secondAttribute="trailing" constant="5" id="jUD-4N-yUg"/>
-                                            <constraint firstItem="j4g-I0-JEr" firstAttribute="top" secondItem="AWu-zS-2XS" secondAttribute="top" id="lcc-kz-aQE"/>
+                                            <constraint firstItem="NZQ-Fs-fEi" firstAttribute="leading" secondItem="wqi-bH-oum" secondAttribute="trailing" constant="5" id="ugP-JP-sJC"/>
                                             <constraint firstAttribute="trailing" secondItem="NZQ-Fs-fEi" secondAttribute="trailing" id="yFQ-2h-KAx"/>
                                         </constraints>
                                     </view>
@@ -735,11 +722,11 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="btnUpload" destination="dFE-Lu-8jn" id="uAq-40-lCB"/>
+                        <outlet property="countryCodeView" destination="wqi-bH-oum" id="CUy-ja-Xtz"/>
                         <outlet property="imgViewProfilePic" destination="udn-mw-xmB" id="ilL-Mo-MRd"/>
                         <outlet property="txtFAddress1" destination="Mxj-Mg-AIJ" id="21v-s2-kvz"/>
                         <outlet property="txtFAddress2" destination="MZp-2g-Khl" id="emZ-A9-swA"/>
                         <outlet property="txtFCity" destination="obQ-r2-eH4" id="N3Z-V5-fd3"/>
-                        <outlet property="txtFCountryCode" destination="AWu-zS-2XS" id="Bu3-8u-TEZ"/>
                         <outlet property="txtFDOB" destination="Sm4-gM-eX0" id="jVW-Vr-PwL"/>
                         <outlet property="txtFEmail" destination="UfB-zG-yZD" id="xDD-7h-xj2"/>
                         <outlet property="txtFFirstName" destination="Pn5-jB-zuE" id="W3E-cO-l5u"/>
@@ -902,7 +889,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4HF-51-iQU" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4HF-51-iQU" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="21" width="335" height="35"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -984,7 +971,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i18-Kr-xDo" userLabel="OTP">
                                 <rect key="frame" x="20" y="147.5" width="335" height="35"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rqa-v3-A00" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rqa-v3-A00" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
@@ -1119,23 +1106,17 @@
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.74901960779999999" blue="1" alpha="0.97163842430000003" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-Dx-PgR" userLabel="ConfirmPassword">
-                                <rect key="frame" x="20" y="147" width="335" height="45"/>
+                                <rect key="frame" x="20" y="175" width="335" height="58"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-enter" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-4i-KX9" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="115" height="20.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="115" id="Bci-ys-ABI"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-enter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-4i-KX9" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wmx-XD-uXD" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="115" y="0.0" width="220" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wmx-XD-uXD" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22.5" width="335" height="35.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="kHa-lt-Ts9"/>
-                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -1143,29 +1124,29 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Wmx-XD-uXD" firstAttribute="top" secondItem="EpM-Dx-PgR" secondAttribute="top" id="3QJ-oP-Av5"/>
+                                    <constraint firstItem="Wmx-XD-uXD" firstAttribute="top" secondItem="VFd-4i-KX9" secondAttribute="bottom" constant="2" id="1en-eO-XcO"/>
+                                    <constraint firstAttribute="trailing" secondItem="VFd-4i-KX9" secondAttribute="trailing" id="ZA4-nB-Rwa"/>
                                     <constraint firstAttribute="trailing" secondItem="Wmx-XD-uXD" secondAttribute="trailing" id="hRy-QE-oGN"/>
-                                    <constraint firstAttribute="height" constant="45" id="r3N-WX-3Fp"/>
+                                    <constraint firstAttribute="height" constant="58" id="r3N-WX-3Fp"/>
                                     <constraint firstItem="VFd-4i-KX9" firstAttribute="top" secondItem="EpM-Dx-PgR" secondAttribute="top" id="s2I-zS-OcI"/>
                                     <constraint firstItem="VFd-4i-KX9" firstAttribute="leading" secondItem="EpM-Dx-PgR" secondAttribute="leading" id="slB-z5-mWN"/>
-                                    <constraint firstItem="Wmx-XD-uXD" firstAttribute="leading" secondItem="VFd-4i-KX9" secondAttribute="trailing" id="wzu-3T-p48"/>
+                                    <constraint firstItem="Wmx-XD-uXD" firstAttribute="leading" secondItem="EpM-Dx-PgR" secondAttribute="leading" id="tSl-yz-O4V"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wmx-XD-uXD" secondAttribute="bottom" id="xOO-kn-BfK"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3Q-ri-ApD" userLabel="Password">
-                                <rect key="frame" x="20" y="107" width="335" height="30"/>
+                                <rect key="frame" x="20" y="107" width="335" height="58"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhf-WS-eJR" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="115" id="v5x-5w-Jji"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhf-WS-eJR" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Yw-gH-FqZ" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
-                                        <rect key="frame" x="115" y="0.0" width="220" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Yw-gH-FqZ" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="335" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <viewLayoutGuide key="safeArea" id="92i-6f-3f7"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -1173,12 +1154,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="9Yw-gH-FqZ" firstAttribute="top" secondItem="e3Q-ri-ApD" secondAttribute="top" id="0o4-nb-XBU"/>
-                                    <constraint firstAttribute="height" constant="30" id="EBZ-ed-A67"/>
-                                    <constraint firstItem="uhf-WS-eJR" firstAttribute="centerY" secondItem="e3Q-ri-ApD" secondAttribute="centerY" id="KS4-t7-a2s"/>
+                                    <constraint firstAttribute="trailing" secondItem="uhf-WS-eJR" secondAttribute="trailing" id="7v7-WY-PkH"/>
+                                    <constraint firstAttribute="height" constant="58" id="EBZ-ed-A67"/>
+                                    <constraint firstItem="9Yw-gH-FqZ" firstAttribute="top" secondItem="uhf-WS-eJR" secondAttribute="bottom" constant="2" id="Eng-VP-agu"/>
                                     <constraint firstAttribute="trailing" secondItem="9Yw-gH-FqZ" secondAttribute="trailing" id="VFP-JI-6ao"/>
+                                    <constraint firstItem="9Yw-gH-FqZ" firstAttribute="leading" secondItem="e3Q-ri-ApD" secondAttribute="leading" id="YmY-BA-h2K"/>
+                                    <constraint firstItem="uhf-WS-eJR" firstAttribute="top" secondItem="e3Q-ri-ApD" secondAttribute="top" id="bGG-6k-Fwj"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Yw-gH-FqZ" secondAttribute="trailing" id="c5N-fD-NOs"/>
+                                    <constraint firstItem="uhf-WS-eJR" firstAttribute="leading" secondItem="e3Q-ri-ApD" secondAttribute="leading" id="q1R-UH-z47"/>
                                     <constraint firstItem="uhf-WS-eJR" firstAttribute="leading" secondItem="e3Q-ri-ApD" secondAttribute="leading" id="qMl-MW-kwx"/>
-                                    <constraint firstItem="9Yw-gH-FqZ" firstAttribute="leading" secondItem="uhf-WS-eJR" secondAttribute="trailing" id="yJJ-Lg-cpc"/>
                                     <constraint firstAttribute="bottom" secondItem="9Yw-gH-FqZ" secondAttribute="bottom" id="yWZ-XY-j5W"/>
                                 </constraints>
                             </view>
@@ -1205,7 +1189,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMO-Nt-hHX" customClass="HoogaButton" customModule="Hooga" customModuleProvider="target">
-                                <rect key="frame" x="20" y="252" width="335" height="40"/>
+                                <rect key="frame" x="20" y="283" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.050980392159999999" green="0.40000000000000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pnL-3r-TiS"/>
@@ -1223,7 +1207,7 @@
                             <constraint firstAttribute="bottom" secondItem="y51-we-ea4" secondAttribute="bottom" id="6lx-9v-P1k"/>
                             <constraint firstItem="7l9-pD-N7c" firstAttribute="trailing" secondItem="e3Q-ri-ApD" secondAttribute="trailing" constant="20" id="F7z-l7-Eyx"/>
                             <constraint firstItem="EpM-Dx-PgR" firstAttribute="leading" secondItem="7l9-pD-N7c" secondAttribute="leading" constant="20" id="FN3-lk-5yN"/>
-                            <constraint firstItem="PMO-Nt-hHX" firstAttribute="top" secondItem="EpM-Dx-PgR" secondAttribute="bottom" constant="60" id="GEF-4U-4jI"/>
+                            <constraint firstItem="PMO-Nt-hHX" firstAttribute="top" secondItem="EpM-Dx-PgR" secondAttribute="bottom" constant="50" id="GEF-4U-4jI"/>
                             <constraint firstItem="7l9-pD-N7c" firstAttribute="trailing" secondItem="y51-we-ea4" secondAttribute="trailing" id="Rn0-GU-IJy"/>
                             <constraint firstItem="LRg-vv-Nn7" firstAttribute="trailing" secondItem="7l9-pD-N7c" secondAttribute="trailing" id="V2l-fJ-ylH"/>
                             <constraint firstItem="e3Q-ri-ApD" firstAttribute="top" secondItem="LRg-vv-Nn7" secondAttribute="bottom" constant="40" id="Ve5-g4-Ya2"/>

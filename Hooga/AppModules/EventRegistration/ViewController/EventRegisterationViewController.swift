@@ -19,7 +19,7 @@ class EventRegisterationViewController: UIViewController {
     @IBOutlet weak var txtFLastName: HoogaTextField!
     @IBOutlet weak var txtFGender: HoogaTextField!
     @IBOutlet weak var txtFPhoneNumber: HoogaTextField!
-    @IBOutlet weak var txtFCountryCode: HoogaTextField!
+//    @IBOutlet weak var txtFCountryCode: HoogaTextField!
 
     @IBOutlet weak var txtFDOB: HoogaTextField!
     @IBOutlet weak var txtFEmail: HoogaTextField!
@@ -31,12 +31,14 @@ class EventRegisterationViewController: UIViewController {
     @IBOutlet weak var btnUpload: HoogaButton!
     @IBOutlet weak var imgViewBanner: UIImageView!
     @IBOutlet weak var navHeaderView: CustomNavHeaderView!
+    @IBOutlet weak var countryCodeView: CountryCodeView!
 
    fileprivate var arrGender = [Gender.male.rawValue,Gender.female.rawValue]
    fileprivate var arrCity = ["Singapore"]
     var eventDetail:EventDetail?
-    var arrCountryCode = [String]()
- 
+    //var arrCountryCode = [String]()
+    var strCountryCode = "65"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,16 +88,20 @@ class EventRegisterationViewController: UIViewController {
         
         lblEventTitle.font = Font.gillSansBold(size: 17)
         
-       loadCountryData()
+       loadCountryPickerView()
     }
 
     
-    private func loadCountryData(){
-        if let codes = appDelegate.arrCountryCode {
-            arrCountryCode = codes.map({$0.Code! + " - " +  $0.Country! })
-        }else{
-            getCountryCodeAPI()
+    func loadCountryPickerView()  {
+        var arrCountryCode = [String]()
+        if let array = appDelegate.arrCountryCode {
+            arrCountryCode = array.map({$0.Code! + " - " +  $0.Country! })
         }
+        countryCodeView.viewController = appDelegate.window?.visibleViewController
+        countryCodeView.arrCountryCode  = arrCountryCode
+        countryCodeView.txtFCountryCode.text = strCountryCode
+        countryCodeView.countryCodeViewDelegate = self
+        
     }
     
     /*********************************************************************************/
@@ -115,9 +121,9 @@ class EventRegisterationViewController: UIViewController {
             txtFCity.text = userData.city
             txtFPostalCode.text = userData.postalcode
             if let countryCode =  userData.countrycode{
-                txtFCountryCode.text = countryCode
+                strCountryCode = countryCode
             }else{
-                txtFCountryCode.text = "65"
+                strCountryCode = "65"
             }
 
             if let bnanner = userData.profilepic {
@@ -159,15 +165,15 @@ class EventRegisterationViewController: UIViewController {
             view.addSubview(picker)
         }
     }
-    private func openCountryCodePicker(){
-        if let picker = CustomPickerView.loadPickerView(){
-            picker.frame = view.frame
-            picker.pickerType = .countryCode
-            picker.pickerDataSource = arrCountryCode
-            picker.customPickerViewDelegate = self
-            view.addSubview(picker)
-        }
-    }
+//    private func openCountryCodePicker(){
+//        if let picker = CustomPickerView.loadPickerView(){
+//            picker.frame = view.frame
+//            picker.pickerType = .countryCode
+//            picker.pickerDataSource = arrCountryCode
+//            picker.customPickerViewDelegate = self
+//            view.addSubview(picker)
+//        }
+//    }
     
     private func validate()->(message:String?,isEmpty:Bool){
         
@@ -180,11 +186,19 @@ class EventRegisterationViewController: UIViewController {
             message = MessageError.USER_GENDER_BLANK .rawValue
         }else if let value = txtFPhoneNumber.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
             message = MessageError.PHONE_EMPTY .rawValue
-        }else if let value = txtFDOB.text,value == "__/ __/ __" {
+        }else if let value = txtFPhoneNumber.text?.trim(),!value.isPhoneValid(countryCode:strCountryCode){
+            message = MessageError.PHONE_INVALID.rawValue
+        }
+        else if let value = txtFDOB.text,value == "__/ __/ __" {
             message = MessageError.USER_DOB_BLANK .rawValue
-        }else if let value = txtFEmail.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-            message = MessageError.EMAIL_BLANK.rawValue
-        }else if let value = txtFEmail.text,value.isEmail == false{
+        }
+//        else if let value = txtFEmail.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+//            message = MessageError.EMAIL_BLANK.rawValue
+//        }else if let value = txtFEmail.text,value.isEmail == false{
+//            message = MessageError.EMAIL_INVALID.rawValue
+//        }
+        
+        else if let value = txtFEmail.text?.trim(),value.length > 0, value.isEmail == false{
             message = MessageError.EMAIL_INVALID.rawValue
         }
         
@@ -276,12 +290,7 @@ class EventRegisterationViewController: UIViewController {
          view.endEditing(true)
         
     }
-    @IBAction func btnCountryCodeTapped(_ sender: Any) {
-        view.endEditing(true)
-        if arrCountryCode.count > 0{
-            openCountryCodePicker()
-        }
-    }
+ 
     @IBAction func btnCancelTapped(_ sender: Any) {
          view.endEditing(true)
         txtFFirstName.text = ""
@@ -310,11 +319,7 @@ extension EventRegisterationViewController:CustomPickerViewDelegate{
         if let type = pickerType , type == .cityPicker {
             txtFCity.text = title
         }
-        if let type = pickerType , type == .countryCode {
-            if let code = appDelegate.arrCountryCode?[index].Code{
-                txtFCountryCode.text = code
-            }
-        }      
+        
     }
 }
 
@@ -327,7 +332,19 @@ extension EventRegisterationViewController:CustomDatePickerDelegate{
         txtFDOB.text = dob
     }
 }
-
+/*********************************************************************************/
+// MARK: CountryCodeViewDelegate
+/*********************************************************************************/
+extension EventRegisterationViewController:CountryCodeViewDelegate{
+    
+    func countryCodeSelected(code:String,index:Int){
+        if let code = appDelegate.arrCountryCode?[index].Code{
+            countryCodeView.txtFCountryCode.text = code
+            strCountryCode = code
+        }
+    }
+    
+}
 /*********************************************************************************/
 // MARK: API
 /*********************************************************************************/
@@ -340,7 +357,7 @@ extension EventRegisterationViewController{
                                      gender: txtFGender.text!,
                                      dateofbirth: txtFDOB.text!,
                                      handphone: txtFPhoneNumber.text!,
-                                     countrycode:txtFCountryCode.text!,
+                                     countrycode:strCountryCode,
                                      email: txtFEmail.text!,
                                      address1: txtFAddress1.text,
                                      address2: txtFAddress2.text,
@@ -358,18 +375,5 @@ extension EventRegisterationViewController{
                                         }
         }
     }
-    func getCountryCodeAPI()  {
-        LoginService.getCountryCode { [weak self](flag, arraCountryCode) in
-            guard let weakSelf = self else {return}
-            if let countryCodes = arraCountryCode {
-                appDelegate.arrCountryCode = countryCodes
-                weakSelf.loadCountryData()
-            }else{
-                //  Common.showAlert(message: message)
-            }
-        }
-        
-    }
     
-
 }

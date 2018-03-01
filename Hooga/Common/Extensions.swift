@@ -579,13 +579,35 @@ extension String {
         let numberCharacters = NSCharacterSet.decimalDigits.inverted
         return !self.isEmpty && self.rangeOfCharacter(from: numberCharacters) == nil
     }
-    func isPhoneValid() -> Bool {
+    func isPhoneValid(countryCode:String?) -> Bool {
         if isNumber() {
-            if self.trim().count == 8 || self.trim().count == 10 {
+            let tople = getNumberOfDigitForMobileForCountryCode(countryCode: countryCode)
+            if tople.isFixedMobileDigit,tople.digitAccepted == self.trim().count{
+                return true
+            }
+            if tople.isFixedMobileDigit == false,tople.digitAccepted <= self.trim().count{
                 return true
             }
         }
         return false
+    }
+    
+    func getNumberOfDigitForMobileForCountryCode(countryCode:String?) -> (digitAccepted:Int,isFixedMobileDigit:Bool) {
+        guard let countryCode = countryCode else{return (8,true)} // default singapore
+        var minimumAcceptedDigits = 6 // for all
+        var isFixedMobileDigit = false
+        
+        if countryCode == "91"{// India
+            minimumAcceptedDigits = 10
+            isFixedMobileDigit = true
+        }else  if countryCode == "65"{ // Singapore
+            minimumAcceptedDigits = 8
+             isFixedMobileDigit = true
+        }else  if countryCode == "60"{ // Malasiya
+            minimumAcceptedDigits = 7
+             isFixedMobileDigit = false
+        }
+        return (minimumAcceptedDigits,isFixedMobileDigit)
     }
     
     mutating func ucfirst() -> String {

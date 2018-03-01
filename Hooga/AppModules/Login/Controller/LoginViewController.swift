@@ -39,9 +39,11 @@ class LoginViewController: UIViewController {
         var message : String?
         if let userName = txtFEmail.text,userName.trimmingCharacters(in: .whitespaces).isEmpty{
             message = MessageError.USER_NAME_BLANK .rawValue
-        }else if let userName = txtFEmail.text?.trim(),!userName.isPhoneValid() {
+        }
+        else if let userName = txtFEmail.text?.trim(),!userName.isNumber(){
             message = MessageError.PHONE_INVALID.rawValue
-        }else if let password = txtFPassword.text,password.trimmingCharacters(in: .whitespaces).isEmpty {
+        }
+        else if let password = txtFPassword.text,password.trimmingCharacters(in: .whitespaces).isEmpty {
              message = MessageError.PASSWORD_EMPTY.rawValue
         }
         if let errorMsg = message {

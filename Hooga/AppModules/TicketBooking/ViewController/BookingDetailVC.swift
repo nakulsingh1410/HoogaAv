@@ -176,6 +176,10 @@ class BookingDetailVC: UIViewController {
             message = MessageError.USER_GENDER_BLANK .rawValue
         }else if let value = detailView.dob.text,value == "__/ __/ __" {
             message = MessageError.USER_DOB_BLANK .rawValue
+        }else if let value = detailView.mobile.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+            message = MessageError.PHONE_EMPTY .rawValue
+        }else if let value = detailView.mobile.text?.trim(),!value.isPhoneValid(countryCode:detailView.countryCodeView.txtFCountryCode.text){
+            message = MessageError.PHONE_INVALID.rawValue
         }
         return (message == nil) ? (message,false):(message,true)
     }

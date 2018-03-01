@@ -54,7 +54,18 @@ class CountryCodeView: UIView {
         }
     }
     @IBAction func btnCountryCodeTapped(_ sender: Any) {
-        openCountryCodePicker()
+      
+        if arrCountryCode.count > 0 {
+            openCountryCodePicker()
+            return
+        }
+        if let array = appDelegate.arrCountryCode {
+            arrCountryCode = array.map({$0.Code! + " - " +  $0.Country! })
+            openCountryCodePicker()
+
+        }else{
+            appDelegate.getCountryCodeAPI()
+        }
     }
 }
 /*********************************************************************************/

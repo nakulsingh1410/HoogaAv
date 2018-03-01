@@ -12,15 +12,12 @@ class CustomSplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
         if appDelegate.arrCountryCode == nil{
             getCountryCodeAPI()
         }else{
             navigationToFirstScreen()
         }
     }
-    
     
     func navigationToFirstScreen()  {
         if let _ = StorageModel.getUserData()?.userid {
@@ -54,7 +51,6 @@ class CustomSplashViewController: UIViewController {
                 //  Common.showAlert(message: message)
             }
         }
-        
     }
     
 }

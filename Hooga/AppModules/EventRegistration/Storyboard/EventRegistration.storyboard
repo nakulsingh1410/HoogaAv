@@ -100,7 +100,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcA-Tt-Aef" userLabel="First Name">
                                         <rect key="frame" x="20" y="85" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENT-q5-ndv" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST NAME *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENT-q5-ndv" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="115" id="E4W-mL-hUI"/>
@@ -131,7 +131,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfG-CW-Vpg" userLabel="Last Name">
                                         <rect key="frame" x="20" y="125" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q7-gh-EDC" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAST NAME *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q7-gh-EDC" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -159,7 +159,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-cQ-F6j" userLabel="Gender-DOB">
                                         <rect key="frame" x="20" y="165" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWk-Nq-iin" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENDER *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWk-Nq-iin" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,7 +202,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOr-6b-Od5" userLabel="DOB">
                                         <rect key="frame" x="20" y="205" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcn-jw-dKY" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcn-jw-dKY" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,48 +245,38 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcB-lo-mJd" userLabel="Mobile">
                                         <rect key="frame" x="20" y="245" width="335" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISg-Ik-OKY" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILE *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISg-Ik-OKY" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="4.5" width="115" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-Hq-tES" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
-                                                <rect key="frame" x="180" y="0.0" width="155" height="30"/>
+                                                <rect key="frame" x="175" y="0.0" width="160" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xpf-9N-pK2" customClass="HoogaTextField" customModule="Hooga" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1F-pX-iEw" customClass="CountryCodeView" customModule="Hooga" customModuleProvider="target">
                                                 <rect key="frame" x="125" y="0.0" width="45" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="45" id="CqQ-Zb-w4a"/>
+                                                    <constraint firstAttribute="width" constant="45" id="4yr-J5-ZQG"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzf-Gl-hwY">
-                                                <rect key="frame" x="124" y="0.0" width="45" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <connections>
-                                                    <action selector="btnCountryCodeTapped:" destination="DiV-dp-npf" eventType="touchUpInside" id="mTm-Aa-kke"/>
-                                                </connections>
-                                            </button>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="xpf-9N-pK2" secondAttribute="bottom" id="1Ou-Pb-5z0"/>
-                                            <constraint firstItem="xpf-9N-pK2" firstAttribute="top" secondItem="tcB-lo-mJd" secondAttribute="top" id="9fJ-81-zDY"/>
                                             <constraint firstAttribute="bottom" secondItem="fdm-Hq-tES" secondAttribute="bottom" id="Bn1-ow-NpK"/>
+                                            <constraint firstItem="Q1F-pX-iEw" firstAttribute="leading" secondItem="ISg-Ik-OKY" secondAttribute="trailing" constant="10" id="DnM-k8-qsb"/>
+                                            <constraint firstItem="Q1F-pX-iEw" firstAttribute="top" secondItem="tcB-lo-mJd" secondAttribute="top" id="Eis-u8-ILC"/>
                                             <constraint firstItem="ISg-Ik-OKY" firstAttribute="centerY" secondItem="tcB-lo-mJd" secondAttribute="centerY" id="Ggt-K1-JI0"/>
-                                            <constraint firstItem="fdm-Hq-tES" firstAttribute="leading" secondItem="xpf-9N-pK2" secondAttribute="trailing" constant="10" id="LPw-OQ-9j9"/>
+                                            <constraint firstAttribute="bottom" secondItem="Q1F-pX-iEw" secondAttribute="bottom" id="Ite-br-xwA"/>
                                             <constraint firstAttribute="height" constant="30" id="OQx-Xc-Vty"/>
                                             <constraint firstItem="fdm-Hq-tES" firstAttribute="top" secondItem="tcB-lo-mJd" secondAttribute="top" id="bhV-eQ-cDR"/>
                                             <constraint firstItem="ISg-Ik-OKY" firstAttribute="leading" secondItem="tcB-lo-mJd" secondAttribute="leading" id="bkj-4y-AGP"/>
-                                            <constraint firstItem="xpf-9N-pK2" firstAttribute="leading" secondItem="ISg-Ik-OKY" secondAttribute="trailing" constant="10" id="fyf-it-Hy8"/>
+                                            <constraint firstItem="fdm-Hq-tES" firstAttribute="leading" secondItem="Q1F-pX-iEw" secondAttribute="trailing" constant="5" id="fk3-hp-QgQ"/>
                                             <constraint firstAttribute="trailing" secondItem="fdm-Hq-tES" secondAttribute="trailing" id="oXT-22-hQh"/>
                                         </constraints>
                                     </view>
@@ -586,6 +576,7 @@
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
                         <outlet property="btnUpload" destination="aOX-1s-Dlz" id="Wh2-rl-0Wj"/>
+                        <outlet property="countryCodeView" destination="Q1F-pX-iEw" id="l6I-Tc-Ofz"/>
                         <outlet property="imgViewBanner" destination="pR8-3G-q0n" id="yml-kX-SuV"/>
                         <outlet property="imgViewProfilePic" destination="Ob9-V1-ppc" id="aLl-bg-Y7Y"/>
                         <outlet property="lblEventLocation" destination="TJo-p6-bgA" id="mX2-vV-Bi2"/>
@@ -595,7 +586,6 @@
                         <outlet property="txtFAddress1" destination="8hJ-fL-LcQ" id="0R3-Wm-Ov6"/>
                         <outlet property="txtFAddress2" destination="8be-kO-XgN" id="Jj5-0t-lZg"/>
                         <outlet property="txtFCity" destination="4l9-ZP-e6H" id="HTg-Cx-K4Z"/>
-                        <outlet property="txtFCountryCode" destination="xpf-9N-pK2" id="zRq-yg-qaw"/>
                         <outlet property="txtFDOB" destination="1fK-Je-2Xa" id="n5Z-in-rsw"/>
                         <outlet property="txtFEmail" destination="Wqc-aV-0x0" id="iPC-1s-Ls6"/>
                         <outlet property="txtFFirstName" destination="Cjj-z3-B7H" id="tde-qQ-IdJ"/>

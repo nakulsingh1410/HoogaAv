@@ -73,7 +73,7 @@ class SaveBookingDetail: NSObject,Mappable {
         self.tickettypeid = 0
         self.dateofbirth = "__/ __/ __"
         self.isearlybird = ""
-        self.countrycode = StorageModel.getUserData()?.countrycode
+        self.countrycode = StorageModel.getUserData()?.countrycode ?? "65"
         
     }
     

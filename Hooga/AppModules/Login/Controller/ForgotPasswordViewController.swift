@@ -31,9 +31,8 @@ class ForgotPasswordViewController: UIViewController {
            Common.showAlert(message: MessageError.USER_NAME_BLANK .rawValue)
             return
         }
-         if !userName.isPhoneValid() {
+         if !userName.isNumber(){
             Common.showAlert(message: MessageError.PHONE_INVALID .rawValue)
-
          }else{
             setForgotPasswordAPI(password: txtFEmail.text!)
         }

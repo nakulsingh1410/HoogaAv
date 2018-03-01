@@ -22,7 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         return true
     }
-    
+    func getCountryCodeAPI()  {
+        LoginService.getCountryCode {(flag, arraCountryCode) in
+            if let countryCodes = arraCountryCode {
+                appDelegate.arrCountryCode = countryCodes
+            }else{
+                //  Common.showAlert(message: message)
+            }
+        }
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
