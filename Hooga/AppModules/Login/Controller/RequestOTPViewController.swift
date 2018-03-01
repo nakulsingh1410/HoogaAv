@@ -13,11 +13,13 @@ class RequestOTPViewController: UIViewController {
     @IBOutlet weak var lblEmail: HoogaLabel!
     @IBOutlet weak var lblMobile: HoogaLabel!
     @IBOutlet weak var txtFOTP: HoogaTextField!
-   
+    @IBOutlet weak var navHeaderView: CustomNavHeaderView!
+
     
     var screenFlow = ComingFromScreen.registration
     override func viewDidLoad() {
         super.viewDidLoad()
+        configoreNavigationHeader()
         loadValues()
     }
 
@@ -28,16 +30,29 @@ class RequestOTPViewController: UIViewController {
     /*********************************************************************************/
     // MARK: Function
     /*********************************************************************************/
+    func configoreNavigationHeader()  {
+        navHeaderView.viewController = self
+        navHeaderView.navBarTitle = "Submit OTP"
+        navHeaderView.backButtonType = .Back
+        navHeaderView.leftButton.isHidden = true
+    }
     
     private func loadValues(){
+        lblEmail.text = ""
+        lblMobile.text = ""
         if let userData = StorageModel.getUserData(){
-            if let email = userData.email{
-                lblEmail.text = "Email: " + email
-            }else{
-                lblEmail.text = ""
-            }
-            if let phone = userData.handphone{
-                lblMobile.text = "Mobile: " + phone
+//            if let email = userData.email,email.length > 0{
+//                lblEmail.text = "Email" + "\n" + email
+//            }else{
+//                lblEmail.text = ""
+//            }
+            lblEmail.text = ""
+            if let phone = userData.handphone,phone.length>0{
+                 var phoneNo = phone
+                if let countrycode = userData.countrycode,countrycode.length > 0{
+                    phoneNo = countrycode + " " + phoneNo
+                }
+                lblMobile.text = "Hand Phone" + "\n" + phoneNo
             }else{
                 lblMobile.text = ""
             }
@@ -69,7 +84,11 @@ class RequestOTPViewController: UIViewController {
     }
     
     @IBAction func btnRequestOTPTapped(_ sender: Any) {
-
+        if let userData = StorageModel.getUserData(){
+            if let phoneNo = userData.handphone,phoneNo.length>0{
+                generateOTP(mobile: phoneNo)
+            }
+        }
     }
 }
 
@@ -88,6 +107,13 @@ extension RequestOTPViewController{
             }else{
                 Common.showAlert(message: message)
             }
+        }
+    }
+    
+    
+    func generateOTP(mobile:String) {
+        LoginService.generateOTP(handphone: mobile, OTPScreen: screenFlow) {  (flag, message) in
+            Common.showAlert(message: "OTP has been sent to your registered Hand Phone")
         }
     }
     

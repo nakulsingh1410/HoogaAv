@@ -41,6 +41,7 @@ class CountryCodeView: UIView {
         if let nib = bundle.loadNibNamed("CountryCodeView", owner: self, options: nil)?.first as? UIView {
             nibView = nib
             nibView.backgroundColor = .clear
+            txtFCountryCode.text = "65"
         }
     }
     private func openCountryCodePicker(){

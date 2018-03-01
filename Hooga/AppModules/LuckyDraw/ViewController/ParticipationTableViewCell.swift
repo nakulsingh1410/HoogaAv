@@ -33,6 +33,8 @@ class ParticipationTableViewCell: UITableViewCell {
     @IBOutlet weak var viewLuckyDraeNoHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var btnRefreshHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var btnParticipateTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imgViewBanner: UIImageView!
+    @IBOutlet weak var bannerImgHeightConstraint: NSLayoutConstraint!
     
     
     var ticketDetail:ShowMyTicketDetails?
@@ -47,6 +49,7 @@ class ParticipationTableViewCell: UITableViewCell {
         lblHeldOn.text = ""
         btnRefreshHeightConstraint.constant = 0.0
         btnParticipateTopConstraint.constant = 0.0
+        bannerImgHeightConstraint.constant = 0.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,7 +58,7 @@ class ParticipationTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func loadcellData(ticketDetails:ShowMyTicketDetails)  {
+    func loadcellData(ticketDetails:ShowMyTicketDetails,eventDetail:EventDetail?)  {
         ticketDetail = ticketDetails
         lblName.text = ""
         if let string = ticketDetails.firstName{
@@ -88,9 +91,22 @@ class ParticipationTableViewCell: UITableViewCell {
             viewLuckyDraeNoHeightConstraint.constant = 0
         }
         lblLuckyDrawNo.textAlignment = .center
+        if btnParticipateHeighConstraint.constant == 0,let bnanner = eventDetail?.bannerimage {
+            bannerImgHeightConstraint.constant = 150.0
+            
+            let url = kAssets + bnanner
+            imgViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
+                if image == nil {
+                    self.imgViewBanner.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                }
+            }
+            
+        }
+        layoutIfNeeded()
+        
     }
     
-    func loadParticipateResultCellData(result:ShowMyEventLuckyDrawResult,heldOn:String?)  {
+    func loadParticipateResultCellData(result:ShowMyEventLuckyDrawResult,heldOn:String?,eventDetail:EventDetail?)  {
         showMyEventLuckyDrawResult = result
         lblName.text = ""
         if let string = result.firstName{
@@ -122,12 +138,11 @@ class ParticipationTableViewCell: UITableViewCell {
             btnParticipateHeighConstraint.constant = 35
             viewLuckyDraeNoHeightConstraint.constant = 0
         }
-        
+        btnRefreshHeightConstraint.constant = 40.0
         if isParticipate == false {
             if let string = result.isprizewon, string == "True" {
                 btnParticipateHeighConstraint.constant = 35
                 viewLuckyDraeNoHeightConstraint.constant = 75
-                btnRefreshHeightConstraint.constant = 40.0
                 btnParticipateTopConstraint.constant = 15.0
                 btnParticipate.setTitle(ParticipationButtonTitle.ViewPrizeDetails.rawValue, for: .normal)
                 lblLuckyDrawNo.backgroundColor = UIColor(hex: "5CA430")
@@ -140,6 +155,18 @@ class ParticipationTableViewCell: UITableViewCell {
             }
         }
         lblLuckyDrawNo.textAlignment = .center
+        
+        if let bnanner = eventDetail?.bannerimage {
+            bannerImgHeightConstraint.constant = 150.0
+
+            let url = kAssets + bnanner
+            imgViewBanner.kf.setImage(with: URL(string:url), placeholder: nil, options: nil, progressBlock: nil){ (image, error, cacheType, url) in
+                if image == nil {
+                    self.imgViewBanner.kf.setImage(with: placeHolderImageUrl, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                }
+            }
+            
+        }
         layoutIfNeeded()
         
         

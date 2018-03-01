@@ -75,7 +75,7 @@ extension ParticipantResultViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipationTableViewCell") as? ParticipationTableViewCell{
-            cell.loadParticipateResultCellData(result: arrMyEventluckyDrawResult[indexPath.row], heldOn: heldon)
+            cell.loadParticipateResultCellData(result: arrMyEventluckyDrawResult[indexPath.row], heldOn: heldon, eventDetail: eventDetail)
             cell.participationCellDelegate = self
             return cell
         }

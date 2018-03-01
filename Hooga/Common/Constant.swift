@@ -61,7 +61,7 @@ let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 /************************ Server Url ************************/
 let kDomain    = "http://158.140.133.89/HoogaAPI/";
-let kSubDomain = "api/users/";
+let kUser = "api/users/";
 let kEvent     = "api/events/"
 let kGeneral     = "api/general/"
 
@@ -76,7 +76,7 @@ let kUserImageBaseUrl = "http://158.140.133.89/Hooga/HoogaFiles/users/"
 let placeHolderImageUrl = URL(string: "http://158.140.133.89/Hooga/HoogaFiles/Assets/default.png")
 
 
-let kServiceUrl  = kDomain + kSubDomain
+let kServiceUrl  = kDomain + kUser
 
 /************************ FontSizes ************************/
 struct FontSizes {
@@ -139,10 +139,10 @@ public enum ServiceName:String {
     case SHOW_MY_FREE_LUCKY_DRAW_RESULT = "showMyFreeEventLuckyDrawResult"
 
     case GET_COUNTRY_CODE = "getcountrycodes"
+    case GENERATE_OTP = "generateotp"
+    case IS_DEADLINE_CLOSED = "IsEntryDeadlineClosed"
 
     
-    
-
 }
 
 

@@ -34,6 +34,7 @@ class SetPasswordViewController: UIViewController {
             navHeaderView.navBarTitle = "Reset Password"
         }
         navHeaderView.backButtonType = .Back
+        navHeaderView.leftButton.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {

@@ -41,7 +41,7 @@ class CustomSplashViewController: UIViewController {
     
     
     func getCountryCodeAPI()  {
-        LoginService.getCountryCode { [weak self](flag, arraCountryCode) in
+        LoginService.getCountryCode(isLoader: false) { [weak self](flag, arraCountryCode) in
             guard let weakSelf = self else {return}
             if let countryCodes = arraCountryCode {
                 appDelegate.arrCountryCode = countryCodes

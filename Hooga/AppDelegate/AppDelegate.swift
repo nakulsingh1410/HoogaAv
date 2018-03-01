@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func getCountryCodeAPI()  {
-        LoginService.getCountryCode {(flag, arraCountryCode) in
+        LoginService.getCountryCode(isLoader: true) {(flag, arraCountryCode) in
             if let countryCodes = arraCountryCode {
                 appDelegate.arrCountryCode = countryCodes
             }else{

@@ -243,6 +243,29 @@ extension  TicketBookingService{
         }
     }
     
+    static func IsEntryDeadlineClosed(eventID:Int,
+                                  callback: @escaping (Bool) -> Void){
+        
+        var dictParam = Dictionary<String,Any>()
+        dictParam["eventid"] = eventID
+        
+        
+        Common.showHud()
+        let kServerUrl = kDomain + kEvent + ServiceName.IS_DEADLINE_CLOSED.rawValue
+        Service.postRequestWithJsonResponse(endPoint: kServerUrl, params: dictParam)  { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if  let isClosed = obj["DrawEntryClosed"] as? String ,isClosed.caseInsensitiveCompare("yes") == .orderedSame{
+                    callback(true); // means time closed
+                }else{
+                    callback(false);
+                }
+            }else {
+                callback(true);
+            }
+        }
+    }
+    
 }
 
 // for free event

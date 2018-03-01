@@ -32,7 +32,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unl-J0-pPS" userLabel="Gender">
                                     <rect key="frame" x="0.0" y="0.0" width="280" height="30.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENDER *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-t0-7Vx" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-t0-7Vx" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="5" width="115" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
@@ -90,7 +90,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qkS-mJ-j2W" userLabel="DOB">
                                     <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beu-mu-kCo" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beu-mu-kCo" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="5" width="115" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
@@ -145,7 +145,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWo-P0-iMg" userLabel="First Name">
                             <rect key="frame" x="20" y="15" width="280" height="30.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST NAME *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mB-bT-KBU" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mB-bT-KBU" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="5" width="115" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="2yY-ob-IzE"/>
@@ -175,7 +175,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8V-Jx-eYf" userLabel="Last Name">
                             <rect key="frame" x="20" y="55.5" width="280" height="30.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAST NAME *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ux-w0-hqU" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAST NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ux-w0-hqU" customClass="HoogaLabel" customModule="Hooga" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="5" width="115" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="115" id="YSU-Wb-vDd"/>

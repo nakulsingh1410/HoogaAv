@@ -94,7 +94,7 @@ extension ParticipateViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipationTableViewCell") as? ParticipationTableViewCell{
-            cell.loadcellData(ticketDetails: arrTicketDetails[indexPath.row])
+            cell.loadcellData(ticketDetails: arrTicketDetails[indexPath.row], eventDetail: eventDetail)
             cell.participationCellDelegate = self
             return cell
         }
@@ -187,6 +187,17 @@ extension ParticipateViewController{
         }
     }
     
+    
+    func IsEntryDeadlineClosedAPI(eventId:Int,regId:Int)   {
+        TicketBookingService.IsEntryDeadlineClosed(eventID: eventId) { [weak self](flag) in
+            guard let weakSelf = self else{return}
+            if flag{
+                Common.showAlert(message: "Lucky Draw Entry Deadline is closed, user cannot participate in Draw for this event")
+            }else{
+                weakSelf.generateFreeLuckyDrawNumberAPI(eventId: eventId, regId: regId)
+            }
+        }
+    }
 
 }
 ///////////////// xxxxx ////////////////
@@ -217,7 +228,8 @@ extension ParticipateViewController:ParticipationTableViewCellDelegate {
         }else{
             // need to do for free event type
             if let eventId =  cell.ticketDetail?.eventid,let regid = cell.ticketDetail?.registrationid{
-                generateFreeLuckyDrawNumberAPI(eventId: eventId, regId: regid)
+//                generateFreeLuckyDrawNumberAPI(eventId: eventId, regId: regid)
+                IsEntryDeadlineClosedAPI(eventId: eventId, regId: regid)
             }
         }
         

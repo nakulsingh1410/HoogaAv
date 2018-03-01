@@ -129,16 +129,19 @@ class RegisterViewController: UIViewController {
             message = MessageError.USER_FIRST_NAME_BLANK .rawValue
         }else if let value = txtFLastName.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
             message = MessageError.USER_LAST_NAME_BLANK .rawValue
-        }else if let value = txtFGender.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-            message = MessageError.USER_GENDER_BLANK .rawValue
-        }else if let value = txtFPhoneNumber.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+        }
+//        else if let value = txtFGender.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+//            message = MessageError.USER_GENDER_BLANK .rawValue
+//        }
+        else if let value = txtFPhoneNumber.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
             message = MessageError.PHONE_EMPTY .rawValue
-        }else if let value = txtFPhoneNumber.text?.trim(),!value.isPhoneValid(countryCode:strCountryCode){
+        }
+        else if let value = txtFPhoneNumber.text?.trim(),!value.isPhoneValid(countryCode:strCountryCode){
             message = MessageError.PHONE_INVALID.rawValue
         }
-        else if let value = txtFDOB.text,value == "__/ __/ __" {
-            message = MessageError.USER_DOB_BLANK .rawValue
-        }
+//        else if let value = txtFDOB.text,value == "__/ __/ __" {
+//            message = MessageError.USER_DOB_BLANK .rawValue
+//        }
 //        else if let value = txtFEmail.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
 //            message = MessageError.EMAIL_BLANK.rawValue
 //        }
@@ -286,12 +289,21 @@ extension RegisterViewController:CountryCodeViewDelegate{
 // MARK: API
 /*********************************************************************************/
 extension RegisterViewController{
-    
+
     func registerAPI()  {
+        var gender = "Male"
+        var dob = ""
+
+        if let value = txtFGender.text,!value.trimmingCharacters(in: .whitespaces).isEmpty {
+            gender = value
+        }
+        if let value = txtFDOB.text,value != "__/ __/ __" {
+            dob = value
+        }
         LoginService.appRegisterUser(firstname: txtFFirstName.text!,
                                      lastname: txtFLastName.text!,
-                                     gender: txtFGender.text!,
-                                     dateofbirth: txtFDOB.text!,
+                                     gender: gender,
+                                     dateofbirth: dob,
                                      handphone: txtFPhoneNumber.text!,
                                      countrycode:strCountryCode,
                                      email: txtFEmail.text!,

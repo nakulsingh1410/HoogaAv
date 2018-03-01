@@ -72,9 +72,40 @@ class LoginService{
             } else {
                 callback(false,"");
             }
-            
         }
     }
+    
+    static func generateOTP(handphone:String,OTPScreen:ComingFromScreen,callback: @escaping (Bool,String) -> Void)  {
+        
+        var optType = "R"
+        if OTPScreen == ComingFromScreen.registration{
+            optType = "R"
+        }else if OTPScreen == ComingFromScreen.forgotPassword{
+            optType = "F"
+        }
+        var dictParam = Dictionary<String,Any>()
+        dictParam["handphone"] = handphone
+        dictParam["OTPType"] = optType
+
+        let serviceUrl = kDomain + kUser + ServiceName.GENERATE_OTP.rawValue
+         Common.showHud()
+        Service.postRequestWithJsonResponse(endPoint:serviceUrl,params: dictParam) { (response) in
+            Common.hideHud()
+            if let obj = response.result.value as? [String:Any]{
+                if let message = obj["Status"] as? String,message == "Success"{
+                    callback(true,"");
+                    
+                }else{
+                    callback(false,"");
+                }
+            } else {
+                callback(false,"");
+            }
+        }
+    }
+    
+    
+    
     
     static func appRegisterUser(firstname:String,
                                 lastname:String,
@@ -127,6 +158,7 @@ class LoginService{
                     loginModel.userid = userId
                     loginModel.email = email
                     loginModel.handphone = handphone
+                    loginModel.countrycode = countrycode
                     StorageModel.saveUserData(model: loginModel)
                     callback(true,"Success");
                 }else{
@@ -323,9 +355,9 @@ class LoginService{
             
         }
     }
-    static func getCountryCode(callback: @escaping (Bool,[CountryCode]?) -> Void)  {
+    static func getCountryCode(isLoader:Bool,callback: @escaping (Bool,[CountryCode]?) -> Void)  {
  
-        Common.showHud()
+        isLoader == true ? Common.showHud() :Common.hideHud()
         let serviceName = kDomain+kGeneral+ServiceName.GET_COUNTRY_CODE.rawValue
         Service.postRequestWithJsonResponse(endPoint: serviceName,params:[:]) { (response) in
             Common.hideHud()

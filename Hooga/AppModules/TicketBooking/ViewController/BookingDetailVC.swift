@@ -172,11 +172,14 @@ class BookingDetailVC: UIViewController {
             message = MessageError.USER_FIRST_NAME_BLANK .rawValue
         }else if let value = detailView.lastName.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
             message = MessageError.USER_LAST_NAME_BLANK .rawValue
-        }else if let value = detailView.gender.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
-            message = MessageError.USER_GENDER_BLANK .rawValue
-        }else if let value = detailView.dob.text,value == "__/ __/ __" {
-            message = MessageError.USER_DOB_BLANK .rawValue
-        }else if let value = detailView.mobile.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+        }
+//        else if let value = detailView.gender.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
+//            message = MessageError.USER_GENDER_BLANK .rawValue
+//        }
+//        else if let value = detailView.dob.text,value == "__/ __/ __" {
+//            message = MessageError.USER_DOB_BLANK .rawValue
+//        }
+        else if let value = detailView.mobile.text,value.trimmingCharacters(in: .whitespaces).isEmpty {
             message = MessageError.PHONE_EMPTY .rawValue
         }else if let value = detailView.mobile.text?.trim(),!value.isPhoneValid(countryCode:detailView.countryCodeView.txtFCountryCode.text){
             message = MessageError.PHONE_INVALID.rawValue
@@ -226,11 +229,23 @@ extension BookingDetailVC{
         model.countrycode = detailView.countryCodeView.txtFCountryCode.text
         model.postalcode = detailView.postalCode.text
         model.email = detailView.email.text
-        model.gender   = detailView.gender.text
-        model.dateofbirth = detailView.dob.text
+       
         model.city   = detailView.city.text
         arrBookingDetails[ticketId] = model
+        
+        var gender = "Male"
+        var dob = ""
+        
+        if let value = detailView.gender.text,!value.trimmingCharacters(in: .whitespaces).isEmpty {
+            gender = value
+        }
+        if let value = detailView.dob.text,value != "__/ __/ __" {
+            dob = value
+        }
 
+        model.gender   =  gender
+        model.dateofbirth = dob
+        
         let touple =   validate()
         if touple.isEmpty == true , let _ = touple.message {
             model.ticketId = -1
